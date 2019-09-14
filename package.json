@@ -7,8 +7,8 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "director": "",
-    "mongodb": ""
+    "director": "^1.2.8",
+    "mongodb": "^2.2.33"
   },
   "engines": {
     "node": ">= 0.6.0",
