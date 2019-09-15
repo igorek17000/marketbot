@@ -1,6 +1,6 @@
 //var mongoDB     = require('mongodb').MongoClient;
 
-//var connection_string = 'mongodb://0.0.0.0:27017/sampledb';
+var connection_string = 'mongodb://0.0.0.0:27017/sampledb';
 
 //if(process.env.MONGODB_PASSWORD){
 //  connection_string = 'mongodb://' + process.env.MONGODB_USER + ":" +
