@@ -1,13 +1,14 @@
 var mongoDB     = require('mongodb').MongoClient;
 
+var connection_string = 'mongodb://0.0.0.0:27017/sampledb';
+
+
 var uri = "mongodb://User6T6:308boonave@sampledb-shard-00-00-evpdx.gcp.mongodb.net:27017,sampledb-shard-00-01-evpdx.gcp.mongodb.net:27017,sampledb-shard-00-02-evpdx.gcp.mongodb.net:27017/test?ssl=true&replicaSet=sampledb-shard-0&authSource=admin&retryWrites=true&w=majority";
 MongoClient.connect(uri, function(err, client) {
   const collection = client.db("test").collection("devices");
   // perform actions on the collection object
   client.close();
 });
-
-var connection_string = 'mongodb://0.0.0.0:27017/sampledb';
 
 if(process.env.MONGODB_PASSWORD){
   connection_string = 'mongodb://' + process.env.MONGODB_USER + ":" +
