@@ -1,4 +1,4 @@
-//var mongoDB     = require('mongodb').MongoClient;
+var mongoDB     = require('mongodb').MongoClient;
 
 var uri = "mongodb://User6T6:<password>@sampledb-shard-00-00-evpdx.gcp.mongodb.net:27017,sampledb-shard-00-01-evpdx.gcp.mongodb.net:27017,sampledb-shard-00-02-evpdx.gcp.mongodb.net:27017/test?ssl=true&replicaSet=sampledb-shard-0&authSource=admin&retryWrites=true&w=majority";
 MongoClient.connect(uri, function(err, client) {
