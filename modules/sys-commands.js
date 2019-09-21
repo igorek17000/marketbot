@@ -36,7 +36,7 @@ function dateCmd(dataHash, callback) {
 }
 var request = require('request'); 
 var date = new Date(); 
-request('http://example.com', function (error, response, body) { 
+request('http://example.com', function (error, response, body)) { 
 var responseTime = new Date() - start; 
 }
   } else {
