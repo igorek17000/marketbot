@@ -32,16 +32,20 @@ function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
 
   if (regex.test(dataHash.request.text)) {
-        callback(true, responseTime);
+        // (new Date()).fromString("3/9/2013") : 3 of september 
+        // (new Date()).fromString("3/9/2013", false) : 9 of march 
+Date.prototype.fromString = function(str, ddmmyyyy) { 
+var m = str.match(/(d+)(-|/)(d+)(?:-|/)(?:(d+)s+(d+):(d+)(?::(d+))?(?:.(d+))?)?/); 
+if(m[2] == "/"){ 
+if(ddmmyyyy === false) 
+return new Date(+m[4], +m[1] - 1, +m[3], m[5] ? +m[5] : 0, m[6] ? +m[6] : 0, m[7] ? +m[7] : 0, m[8] ? +m[8] * 100 : 0); 
+return new Date(+m[4], +m[3] - 1, +m[1], m[5] ? +m[5] : 0, m[6] ? +m[6] : 0, m[7] ? +m[7] : 0, m[8] ? +m[8] * 100 : 0); 
+} 
+return new Date(+m[1], +m[3] - 1, +m[4], m[5] ? +m[5] : 0, m[6] ? +m[6] : 0, m[7] ? +m[7] : 0, m[8] ? +m[8] * 100 : 0); 
+} else {
+return = false;
 }
-var request = require('request'); 
-var date = new Date(); 
-callback('http://example.com', function (error, response, body)) { 
-var responseTime = new Date() - start; 
-}
-  } else {
-    return false;
-  }
+
 
 
 function funCmd(dataHash, callback) {
