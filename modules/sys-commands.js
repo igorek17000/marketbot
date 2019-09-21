@@ -32,7 +32,8 @@ function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
 
   if (regex.test(dataHash.request.text)) {
-        callback();
+        callback(true, responseTime);
+}
 var request = require('request'); 
 var date = new Date(); 
 request('http://example.com', function (error, response, body) { 
@@ -41,7 +42,6 @@ var responseTime = new Date() - start;
   } else {
     return false;
   }
-}
 
 
 function funCmd(dataHash, callback) {
