@@ -1,6 +1,5 @@
 var fun_mode = true;
 var sysCommands = [datecmd, funCmd, noFunCmd, idCmd, aboutCmd];
-var date = new Date();
 
 exports.modName = "System Commands";
 
