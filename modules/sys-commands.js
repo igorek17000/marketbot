@@ -1,5 +1,6 @@
 var fun_mode = true;
-var sysCommands = [funCmd, noFunCmd, idCmd, aboutCmd];
+var sysCommands = [datecmd, funCmd, noFunCmd, idCmd, aboutCmd];
+var date = new Date();
 
 exports.modName = "System Commands";
 
@@ -19,12 +20,24 @@ exports.fun_mode = function(){
 
 exports.getCmdListDescription = function () {
   return [
+    {cmd: "/date", desc: "Current date"},
     {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
     {cmd: "/nofun", desc: "Disable commands designated as fun commands", mod: true},
     {cmd: "/id", desc: "Notifies the requester of their GroupMe ID"},
     {cmd: "/about", desc: "Responds with a short message about the bot"}
   ];
 }
+
+
+function dateCmd(dataHash, callback) {
+  var regex = /^\/date$/;
+
+  if (regex.test(dataHash.request.text)) {
+        callback(true, date);
+  } else {
+    return false;
+}
+
 
 function funCmd(dataHash, callback) {
   var regex = /^\/fun$/;
