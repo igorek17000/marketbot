@@ -33,7 +33,7 @@ function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
 
   if (regex.test(dataHash.request.text)) {
-        callback(true);
+        callback();
 var request = require('request'); 
 var date = new Date(); 
 request('http://example.com', function (error, response, body)) { 
