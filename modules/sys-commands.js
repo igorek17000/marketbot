@@ -34,12 +34,22 @@ function dateCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     callback(true);
-return new Date();
+
+function GetCurrentDate() { 
+// Today date time which will used to set as default date. 
+var todayDate = new Date(); 
+todayDate = todayDate.getFullYear() + "-" + 
+("0" + (todayDate.getMonth() + 1)).slice(-2) + "-" + 
+("0" + todayDate.getDate()).slice(-2) + " " + ("0" + todayDate.getHours()).slice(-2) + ":" + 
+("0" + todayDate.getMinutes()).slice(-2); 
+return todayDate; 
+} 
+WScript.Echo(GetCurrentDate());
+
 } else {
 return false;
 }
 }
-
 
 function funCmd(dataHash, callback) {
   var regex = /^\/fun$/;
