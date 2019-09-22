@@ -44,7 +44,6 @@ todayDate = todayDate.getFullYear() + "-" +
 ("0" + todayDate.getMinutes()).slice(-2); 
 return todayDate; 
 } 
-WScript.Echo(GetCurrentDate());
 
 } else {
 return false;
