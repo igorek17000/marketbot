@@ -33,11 +33,11 @@ function dateCmd(dataHash, callback) {
   var date = new Date();
 
   if (regex.test(dataHash.request.text)) {
-    callback(true);
+    callback(true, date);
 var datetime = new Date(); 
 console.log(datetime);
 //callback(datetime);
-return new Date();
+//return (new Date());
 } else {
 return false;
 }
