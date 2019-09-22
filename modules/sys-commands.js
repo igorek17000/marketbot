@@ -35,8 +35,8 @@ function dateCmd(dataHash, callback) {
   if (regex.test(dataHash.request.text)) {
     callback(true);
 var datetime = new Date(); 
-console.log(datetime)
-return datetime
+console.log(datetime);
+callback(datetime);
 
 } else {
 return false;
