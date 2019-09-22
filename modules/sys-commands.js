@@ -34,7 +34,7 @@ function dateCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     callback(true);
-return new Date();
+return date;
 } else {
 return false;
 }
