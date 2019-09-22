@@ -44,6 +44,7 @@ todayDate = todayDate.getFullYear() + "-" +
 ("0" + todayDate.getMinutes()).slice(-2); 
 return todayDate; 
 } 
+function GetCurrentDate();
 
 } else {
 return false;
