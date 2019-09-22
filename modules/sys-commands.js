@@ -30,18 +30,11 @@ exports.getCmdListDescription = function () {
 
 function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
+  var date = new Date();
 
   if (regex.test(dataHash.request.text)) {
-        // (new Date()).fromString("3/9/2013") : 3 of september 
-        // (new Date()).fromString("3/9/2013", false) : 9 of march 
-Date.prototype.fromString = function(str, ddmmyyyy) { 
-var m = str.match(/(d+)(-|/)(d+)(?:-|/)(?:(d+)s+(d+):(d+)(?::(d+))?(?:.(d+))?)?/); 
-if(m[2] == "/"){ 
-if(ddmmyyyy === false) 
-return new Date(+m[4], +m[1] - 1, +m[3], m[5] ? +m[5] : 0, m[6] ? +m[6] : 0, m[7] ? +m[7] : 0, m[8] ? +m[8] * 100 : 0); 
-return new Date(+m[4], +m[3] - 1, +m[1], m[5] ? +m[5] : 0, m[6] ? +m[6] : 0, m[7] ? +m[7] : 0, m[8] ? +m[8] * 100 : 0); 
-} 
-return new Date(+m[1], +m[3] - 1, +m[4], m[5] ? +m[5] : 0, m[6] ? +m[6] : 0, m[7] ? +m[7] : 0, m[8] ? +m[8] * 100 : 0); 
+    callback(true);
+Return = date
 } else {
 return = false;
 }
