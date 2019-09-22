@@ -36,8 +36,8 @@ function dateCmd(dataHash, callback) {
     callback(true);
 var datetime = new Date(); 
 console.log(datetime);
-callback(datetime);
-
+//callback(datetime);
+return new Date();
 } else {
 return false;
 }
