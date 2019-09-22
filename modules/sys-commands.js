@@ -38,7 +38,7 @@ return = date
 } else {
 return = false;
 }
-
+}
 
 
 function funCmd(dataHash, callback) {
