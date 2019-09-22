@@ -30,8 +30,7 @@ exports.getCmdListDescription = function () {
 
 function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
-  var date = new Date();
-
+  var date = dateFormat(now);
   if (regex.test(dataHash.request.text)) {
     callback(true, date);
 var datetime = new Date(); 
