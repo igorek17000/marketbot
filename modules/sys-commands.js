@@ -32,10 +32,12 @@ function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
   //var date = new Date();
 
-var date = new Date().toLocaleTimeString();
+var date = new Date().toLocaleDateString();
+
+var time = new Date().toLocaleTimeString();
 
   if (regex.test(dataHash.request.text)) {
-    callback(true, date);
+    callback(true, date, time);
 var datetime = new Date(); 
 console.log(datetime);
 //console.log(datetime);
