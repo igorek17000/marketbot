@@ -32,7 +32,7 @@ function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
   //var date = new Date();
 
-var date = new Date(Date.EST())
+var date = new Date(Date.EST)
 
 var now = new Date(); 
 var options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }; 
