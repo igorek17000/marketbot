@@ -30,14 +30,16 @@ exports.getCmdListDescription = function () {
 
 function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
-  var date = new Date();
+  //var date = new Date();
+
+var date = new Date(Date.EST(...))
 
 var now = new Date(); 
 var options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }; 
 now.toLocaleString('en-us', options); 
 
   if (regex.test(dataHash.request.text)) {
-    callback(true, now, options);
+    callback(true, date);
 var datetime = new Date(); 
 console.log(datetime);
 //console.log(datetime);
