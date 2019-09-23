@@ -45,7 +45,6 @@ var dt = new Date(1458619200000); console.log(dt); // Gives Tue Mar 22 2016 09:3
   //if (regex.test(dataHash.request.text)) {
     //callback(true, time);
 // --var datetime = new Date(); 
-console.log(datetime);
 // --console.log(datetime);
 console.log(estDate);
 //callback(datetime);
