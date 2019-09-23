@@ -40,7 +40,7 @@ var time = new Date().toLocaleTimeString();
     callback(true, date);
   if (regex.test(dataHash.request.text)) {
     callback(true, time);
-Var datetime = new Date(); 
+var datetime = new Date(); 
 console.log(datetime);
 //console.log(datetime);
 //callback(datetime);
