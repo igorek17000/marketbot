@@ -32,7 +32,7 @@ function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
   //var date = new Date();
 
-var date = new Date('Canada, Ontario'); 
+var date = new Date(dd:mmm:yyyy, hh -4:mm); 
 
   if (regex.test(dataHash.request.text)) {
     callback(true, date);
