@@ -33,25 +33,12 @@ function dateCmd(dataHash, callback) {
   //var date = new Date();
 
 
-var dt = new Date(1458619200000); 
-console.log(dt); 
-// Gives Tue Mar 22 2016 09:30:00 GMT+0530 (IST) 
-dt.setTime(dt.getTime()+dt.getTimezoneOffset()*60*1000); 
-console.log(dt); 
-// Gives Tue Mar 22 2016 04:00:00 GMT+0530 (IST) 
-var offset = -300; 
-//Timezone offset for EST in minutes. 
-var estDate = new Date(dt.getTime() + offset*60*1000); 
-console.log('estDate'); 
-//Gives Mon Mar 21 2016 23:00:00 GMT+0530 (IST)
-
-
-// --var date = new Date().toLocaleDateString();
+var date = new Date().toLocaleDateString();
 
 //var time = new Date().toLocaleTimeString();
 
   if (regex.test(dataHash.request.text)) {
-    // --callback(true, date);
+callback(true, date);
   //if (regex.test(dataHash.request.text)) {
     //callback(true, time);
 // --var datetime = new Date(); 
