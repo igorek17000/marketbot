@@ -30,11 +30,12 @@ exports.getCmdListDescription = function () {
 
 function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
-  var date = dateFormat(now);
+  var date = (datetime.toISOString().slice(0,10));
   if (regex.test(dataHash.request.text)) {
     callback(true, date);
 var datetime = new Date(); 
-console.log(datetime);
+console.log(datetime.toISOString().slice(0,10));
+//console.log(datetime);
 //callback(datetime);
 //return (new Date());
 } else {
