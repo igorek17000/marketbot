@@ -34,12 +34,12 @@ function dateCmd(dataHash, callback) {
 
 var date = new Date().toLocaleDateString();
 
-var time = new Date().toLocaleTimeString();
+//var time = new Date().toLocaleTimeString();
 
   if (regex.test(dataHash.request.text)) {
     callback(true, date);
-  if (regex.test(dataHash.request.text)) {
-    callback(true, time);
+  //if (regex.test(dataHash.request.text)) {
+    //callback(true, time);
 var datetime = new Date(); 
 console.log(datetime);
 //console.log(datetime);
