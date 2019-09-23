@@ -37,8 +37,10 @@ var date = new Date().toLocaleDateString();
 var time = new Date().toLocaleTimeString();
 
   if (regex.test(dataHash.request.text)) {
-    callback(true, date, time);
-var datetime = new Date(); 
+    callback(true, date);
+  if (regex.test(dataHash.request.text)) {
+    callback(true, time);
+Var datetime = new Date(); 
 console.log(datetime);
 //console.log(datetime);
 //callback(datetime);
