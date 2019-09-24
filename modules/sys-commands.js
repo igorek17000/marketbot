@@ -43,7 +43,7 @@ callback(true, date);
     //callback(true, time);
 // --var datetime = new Date(); 
 // --console.log(datetime);
-console.log(estDate);
+//console.log(estDate);
 //callback(datetime);
 //return (new Date());
 } else {
