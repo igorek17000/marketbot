@@ -33,3 +33,4 @@ Congratulations! Your new Groupme Bot is up and running! You can now type "/comm
 #ToDo:
 * Make the index.js validate that the request is originating from groupme
 * Have a list of protected commands from the modules / custom modules that can't be over ridden with user added commands
+"# email" 
