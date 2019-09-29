@@ -119,7 +119,7 @@ function emailCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
-       callback(true, transporter)
+       callback(true, transporter);
       
 var nodemailer = require('nodemailer');
 
