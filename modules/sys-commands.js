@@ -125,7 +125,7 @@ function emailCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
-       callback(true)
+       callback(true, send)
       send({
          text: 'gmail-send example 1',
        }, (error, result, fullResult) => {
