@@ -4,7 +4,6 @@ var http, director, bot, router, server, port, db;
 http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
-send        = require('gmail-send');
 
 router = new director.http.Router({
   '/'    : {
