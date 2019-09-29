@@ -115,7 +115,7 @@ function aboutCmd(dataHash, callback) {
 
 function emailCmd(dataHash, callback) {
   var regex = /^\/email$/;
-  var sendemail =
+ 
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
