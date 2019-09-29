@@ -1,5 +1,12 @@
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, emailCmd];
+
+var send = require('gmail-send')({
+  user: 'alexdeabot@gmail.com',
+  pass: '308boonave',
+  to: 'alexdeabot@gmail.com',
+  subject: 'email test to Bot',
+});
 
 exports.modName = "System Commands";
 
@@ -23,7 +30,8 @@ exports.getCmdListDescription = function () {
     {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
     {cmd: "/nofun", desc: "Disable commands designated as fun commands", mod: true},
     {cmd: "/id", desc: "Notifies the requester of their GroupMe ID"},
-    {cmd: "/about", desc: "Responds with a short message about the bot"}
+    {cmd: "/about", desc: "Responds with a short message about the bot"},
+    {cmd: "/email", desc: "Send a test email to bot", mod:true}
   ];
 }
 
@@ -41,7 +49,7 @@ var date = new Date().toLocaleDateString();
 callback(true, date);
   //if (regex.test(dataHash.request.text)) {
     //callback(true, time);
-// --var datetime = new Date(); 
+// --var datetime = new Date();
 // --console.log(datetime);
 //console.log(estDate);
 //callback(datetime);
@@ -74,7 +82,7 @@ function noFunCmd(dataHash, callback) {
   var regex = /^\/nofun$/;
 
   if (regex.test(dataHash.request.text)) {
-    if(dataHash.isMod) {
+    if (dataHash.isMod) {
       if (!fun_mode) {
         callback(true, "I can't be any less fun right now.", []);
       } else {
@@ -104,6 +112,29 @@ function aboutCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     callback(true, "Groupme Bot Beta Version 0.1 By Fo0. If you're interested the source can be found at:\n\nhttps://github.com/jmatty1983/Groupme-Bot.\n\nFeel free to fork and contribute! Thanks!");
+  } else {
+    return false;
+  }
+}
+
+
+//**********************************************************************
+
+function emailCmd(dataHash, callback) {
+  var regex = /^\/email$/;
+
+  if (regex.test(dataHash.request.text)) {
+    if (dataHash.isMod) {
+       callback(true)
+      send({
+         text: 'gmail-send example 1',
+       }, (error, result, fullResult) => {
+         if (error) console.error(error);
+         console.log(result);
+       })
+    } else {
+      callback(true, "You are not authorized to send e-mails", []);
+    }
   } else {
     return false;
   }

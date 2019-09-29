@@ -8,7 +8,21 @@
   },
   "dependencies": {
     "director": "^1.2.8",
-    "mongodb": "^2.2.33"
+    "eslint": "^6.4.0",
+    "file-match": "^1.0.2",
+    "file-system": "^2.2.2",
+    "fs": "0.0.1-security",
+    "gmail-send": "^1.8.10",
+    "grunt": "^1.0.4",
+    "grunt-contrib-jshint": "^2.1.0",
+    "jsinspect": "^0.12.7",
+    "lodash": "^4.17.15",
+    "mocha": "^6.2.0",
+    "mongodb": "^2.2.33",
+    "nodemailer": "^6.3.0",
+    "nps": "^5.9.8",
+    "nps-utils": "^1.7.0",
+    "utils-extend": "^1.0.8"
   },
   "engines": {
     "node": ">= 0.6.0",
