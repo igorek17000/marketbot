@@ -1,13 +1,6 @@
 var fun_mode = true;
 var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, emailCmd];
 
-var send = require('gmail-send')({
-  user: 'alexdeabot@gmail.com',
-  pass: '308boonave',
-  to: 'alexdeabot@gmail.com',
-  subject: 'email test to Bot',
-});
-
 exports.modName = "System Commands";
 
 exports.checkCommands = function(dataHash, callback) {
@@ -122,16 +115,37 @@ function aboutCmd(dataHash, callback) {
 
 function emailCmd(dataHash, callback) {
   var regex = /^\/email$/;
+  var sendemail =
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
-       callback(true
-      send({
-         text: 'gmail-send example 1',
-       }, (error, result, fullResult) => {
-         if (error) console.error(error);
-         console.log(result));
-       })
+       callback(true, next)
+      
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'alexdeabot@gmail.com',
+    pass: '308boonave'
+  }
+});
+
+var mailOptions = {
+  from: 'alexdeabot@gmail.com',
+  to: 'alexdeabot@gmail.com',
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!'
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+
     } else {
       callback(true, "You are not authorized to send e-mails", []);
     }
