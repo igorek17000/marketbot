@@ -142,7 +142,7 @@ transporter.sendMail(mailOptions, function(error, info){
   if (error) {
     callback(true, error);
   } else {
-    callback(true, "Email sent: ' + info.response");
+    callback(true, "Email sent: " + info.response);
   }
 });
 
