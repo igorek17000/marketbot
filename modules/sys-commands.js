@@ -140,7 +140,7 @@ var mailOptions = {
 
 transporter.sendMail(mailOptions, function(error, info){
   if (error) {
-    callback(true, error);
+    callback(true, "Error, could not send e-mail", []);
   } else {
     callback(true, "Email sent: " + info.response);
   }
