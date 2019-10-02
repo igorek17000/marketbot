@@ -131,14 +131,6 @@ var mailOptions = {
   text: 'That was easy!'
 };
 
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
-
 //**********************************************************************
 function emailCmd(dataHash, callback) {
   var regex = /^\/email$/;
@@ -147,6 +139,13 @@ function emailCmd(dataHash, callback) {
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
        callback(true, transporter);
+
+transporter.sendMail(mailOptions, function(error, info){  
+if (error) {    
+console.log(error);  
+} else {    console.log('Email sent: ' + info.response);  
+}
+});
 
     } else {
       callback(true, "You are not authorized to send e-mails", []);
