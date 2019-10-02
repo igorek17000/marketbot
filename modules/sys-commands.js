@@ -113,14 +113,7 @@ function aboutCmd(dataHash, callback) {
 
 //**********************************************************************
 
-function emailCmd(dataHash, callback) {
-  var regex = /^\/email$/;
- 
 
-  if (regex.test(dataHash.request.text)) {
-    if (dataHash.isMod) {
-       callback(true, transporter);
-      
 var nodemailer = require('nodemailer');
 
 var transporter = nodemailer.createTransport({
@@ -140,11 +133,20 @@ var mailOptions = {
 
 transporter.sendMail(mailOptions, function(error, info){
   if (error) {
-    callback(true, "Error, could not send e-mail", []);
+    console.log(error);
   } else {
-    callback(true, "Email sent: " + info.response);
+    console.log('Email sent: ' + info.response);
   }
 });
+
+//**********************************************************************
+function emailCmd(dataHash, callback) {
+  var regex = /^\/email$/;
+ 
+
+  if (regex.test(dataHash.request.text)) {
+    if (dataHash.isMod) {
+       callback(true, transporter);
 
     } else {
       callback(true, "You are not authorized to send e-mails", []);
