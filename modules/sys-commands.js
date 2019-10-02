@@ -138,16 +138,15 @@ function emailCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
-       callback(true, transporter);
+       callback(true {
 
 transporter.sendMail(mailOptions, function(error, info){  
 if (error) {    
-console.log(error);  
+console.log(error)};  
 } else {    
 console.log('Email sent: ' + info.response);  
 }
 });
-
     } else {
       callback(true, "You are not authorized to send e-mails", []);
     }
