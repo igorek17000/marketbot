@@ -138,7 +138,7 @@ function emailCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
-       callback(true {
+       callback(true) {
 
 transporter.sendMail(mailOptions, function(error, info){  
 if (error) {    
