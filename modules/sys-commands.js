@@ -1,7 +1,3 @@
-require('dotenv').config();
-
-var nodemailer = require('nodemailer');
-
 var fun_mode = true;
 var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, emailCmd];
 
@@ -123,11 +119,15 @@ function emailCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
-      callback(true, transporter)
+
+
+      require('dotenv').config();
+
+      var nodemailer = require('nodemailer');
 
   // step 1
 
-  var transporter = nodemailer.createTransport({
+  let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: process.env.EMAIL,
@@ -152,6 +152,9 @@ function emailCmd(dataHash, callback) {
     }
   });
 
+} else {
+  callback(true, "You are not authorized to send e-mails. ", []);
+}
   } else {
     return false;
   }
