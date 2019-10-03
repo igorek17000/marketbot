@@ -127,7 +127,7 @@ function emailCmd(dataHash, callback) {
 
   // step 1
 
-  let transporter = nodemailer.createTransport({
+  var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: process.env.EMAIL,
