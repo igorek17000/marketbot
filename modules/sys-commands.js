@@ -119,13 +119,13 @@ function emailCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
-      var transporter = nodemailer.createTransport({
+      var transporter = nodemailer.createTransport {
   service: 'gmail',
   auth: {
     user: 'alexdeabot@gmail.com',
     pass: '308boonave'
   }
-});
+};
 
 var mailOptions = {
   from: 'alexdeabot@gmail.com',
