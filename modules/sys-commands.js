@@ -114,20 +114,33 @@ function aboutCmd(dataHash, callback) {
 //**********************************************************************
 
 
-function funCmd(dataHash, callback) {
+function emailCmd(dataHash, callback) {
   var regex = /^\/email$/;
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
-      if (fun_mode) {
-        callback(true, "I'm already as much fun as I can be!", []);
-      } else {
-        fun_mode = true;
-        callback(true, "I'm fun again!", []);
-      }
-    } else {
-      callback(true, "You're not the boss of me", []);
-    }
+      var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'alexdeabot@gmail.com',
+    pass: '308boonave'
+  }
+});
+
+var mailOptions = {
+  from: 'alexdeabot@gmail.com',
+  to: 'dstl_mike1@hotmail.com',
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!'
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
   } else {
     return false;
   }
