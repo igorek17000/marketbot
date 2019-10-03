@@ -5,6 +5,8 @@ http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
 
+var nodemailer = require('nodemailer');
+
 router = new director.http.Router({
   '/'    : {
     get: ping
