@@ -1,5 +1,3 @@
-module.exports = {
-  email: function () {
 require('dotenv').config();
 
 var nodemailer = require('nodemailer');
@@ -30,5 +28,3 @@ transporter.sendMail(mailOptions, function(err, data) {
     console.log('email sent!!');
   }
 });
-}
-};
