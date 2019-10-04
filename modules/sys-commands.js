@@ -125,7 +125,7 @@ var nodemailer = require('nodemailer');
       
       // step 1
 
-let transporter = nodemailer.createTransport({
+var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: process.env.EMAIL,
@@ -134,7 +134,7 @@ let transporter = nodemailer.createTransport({
 });
 
 //step 2
-let mailOptions = {
+var mailOptions = {
   from: 'alexdeabot@gmail.com',
   to: 'dstl_mike1@hotmail.com',
   subject: 'Testing and testing',
