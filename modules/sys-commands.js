@@ -116,10 +116,9 @@ function aboutCmd(dataHash, callback) {
 
 function emailCmd(dataHash, callback) {
   var regex = /^\/email$/;
-
+var email = require('./server');
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
-var email = require('./server');
 callback(true, email);
 
 }
