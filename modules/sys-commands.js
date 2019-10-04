@@ -123,7 +123,6 @@ function emailCmd(dataHash, callback) {
   var regex = /^\/email$/;
 
   if (regex.test(dataHash.request.text)) {
-    if (dataHash.isMod) {
       
       // step 1
 
@@ -151,7 +150,7 @@ transporter.sendMail(mailOptions, function(err, data) {
     console.log('email sent!!');
   }
 });
-    }
+
   } else {
     return false;
   }
