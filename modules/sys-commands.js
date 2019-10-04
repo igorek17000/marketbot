@@ -1,3 +1,5 @@
+var email = require('./server');
+
 var fun_mode = true;
 var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, emailCmd];
 
