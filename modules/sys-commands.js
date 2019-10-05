@@ -124,7 +124,6 @@ var go = require('./server');
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
       callback(true, go);
-      }
     } else {
       callback(true, "You are not authorized to send emails", []);
     }
