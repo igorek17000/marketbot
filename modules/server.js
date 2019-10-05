@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 
 //require('dotenv').config();
 
@@ -7,6 +7,7 @@ var nodemailer = require('nodemailer');
 // step 1
 
 let transporter = nodemailer.createTransport({
+  'use strict';
   service: 'gmail',
   auth: {
     //user: process.env.EMAIL,
@@ -18,6 +19,7 @@ pass: '308Boonave!'
 
 //step 2
 let mailOptions = {
+'use strict';
   from: 'alexdeabot@gmail.com',
   to: 'dstl_mike@hotmail.com',
   subject: 'Testing and testing',
