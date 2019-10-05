@@ -126,7 +126,7 @@ function emailCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
-let go = require('.server');
+let go = require('./server');
       callback(true, go);
     } else {
       callback(true, "You are not authorized to send emails", []);
