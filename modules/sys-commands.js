@@ -122,7 +122,7 @@ function emailCmd(dataHash, callback) {
   var regex = /^\/email$/;
 //'use strict';
 
-var go = require('./server');
+let go = require('./server');
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
