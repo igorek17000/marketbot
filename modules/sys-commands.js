@@ -124,7 +124,7 @@ function emailCmd(dataHash, callback) {
 
 
   if (regex.test(dataHash.request.text)) {
-      callback(true, function)
+      callback(true, function);
       // step 1
 
 var transporter = nodemailer.createTransport({
