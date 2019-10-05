@@ -127,7 +127,7 @@ function emailCmd(dataHash, callback) {
       // step 1
 
 var transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'hotmail',
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASSWORD
@@ -136,8 +136,8 @@ var transporter = nodemailer.createTransport({
 
 //step 2
 var mailOptions = {
-  from: 'alexdeabot@gmail.com',
-  to: 'dstl_mike1@hotmail.com',
+  from: 'dstlmike1@hotmail.com',
+  to: 'alexdeabot@gmail.com',
   subject: 'Testing and testing',
   text: 'It worked'
 };
