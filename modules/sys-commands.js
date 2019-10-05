@@ -124,7 +124,7 @@ function emailCmd(dataHash, callback) {
 
 
   if (regex.test(dataHash.request.text)) {
-      callback(true, function);
+      callback(true {
       // step 1
 
 var transporter = nodemailer.createTransport({
@@ -153,7 +153,7 @@ transporter.sendMail(mailOptions, function(err, data) {
     console.log('email sent!!');
   }
 });
-
+)};
   } else {
     return false;
   }
