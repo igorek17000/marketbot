@@ -2,9 +2,6 @@
 
 //require('dotenv').config();
 
-var nodemailer = require('nodemailer');
-
-
 var fun_mode = true;
 var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, emailCmd];
 
@@ -123,6 +120,8 @@ function aboutCmd(dataHash, callback) {
 
 function emailCmd(dataHash, callback) {
   var regex = /^\/email$/;
+  var nodemailer = require('nodemailer');
+
 
   if (regex.test(dataHash.request.text)) {
       
