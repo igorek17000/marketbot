@@ -19,7 +19,7 @@ pass: '308Boonave!'
 //step 2
 let mailOptions = {
   from: 'alexdeabot@gmail.com',
-  to: 'alexdeabot@gmail.com',
+  to: 'dstl_mike@hotmail.com',
   subject: 'Testing and testing',
   text: 'It worked'
 };
