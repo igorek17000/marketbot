@@ -1,3 +1,5 @@
+'use strict';
+
 require('dotenv').config();
 
 var nodemailer = require('nodemailer');
@@ -5,7 +7,7 @@ var nodemailer = require('nodemailer');
 // step 1
 
 let transporter = nodemailer.createTransport({
-  service: 'hotmail',
+  service: 'gmail',
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASSWORD
@@ -14,7 +16,7 @@ let transporter = nodemailer.createTransport({
 
 //step 2
 let mailOptions = {
-  from: 'dstl_mike1@hotmail.com.com',
+  from: 'alexdeabot@gmail.com',
   to: 'alexdeabot@gmail.com',
   subject: 'Testing and testing',
   text: 'It worked'
