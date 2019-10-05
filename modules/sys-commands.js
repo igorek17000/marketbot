@@ -129,8 +129,10 @@ function emailCmd(dataHash, callback) {
 var transporter = nodemailer.createTransport({
   service: 'hotmail',
   auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD
+User: 'dstl_mike1@hotmail.com',
+pass: '113Hopest!'
+    // user: process.env.EMAIL,
+    // pass: process.env.PASSWORD
   }
 });
 
