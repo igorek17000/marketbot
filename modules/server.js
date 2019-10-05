@@ -1,9 +1,9 @@
-//'use strict';
+"use strict";
 
 //require('dotenv').config();
 
 var nodemailer = require('nodemailer');
-'use strict';
+//'use strict';
 // step 1
 
 let transporter = nodemailer.createTransport({
@@ -11,6 +11,7 @@ let transporter = nodemailer.createTransport({
   auth: {
     //user: process.env.EMAIL,
     //pass: process.env.PASSWORD
+//"use strict";
 user: 'alexdeabot@gmail.com',
 pass: '308Boonave!'
   }
