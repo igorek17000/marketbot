@@ -117,44 +117,19 @@ function aboutCmd(dataHash, callback) {
 
 //**********************************************************************
 
-
 function emailCmd(dataHash, callback) {
+var go = require('./server');
   var regex = /^\/email$/;
-  var nodemailer = require('nodemailer');
-
 
   if (regex.test(dataHash.request.text)) {
-      callback(true {
-      // step 1
-
-var transporter = nodemailer.createTransport({
-  service: 'hotmail',
-  auth: {
-User: 'dstl_mike1@hotmail.com',
-pass: '113Hopest!'
-    // user: process.env.EMAIL,
-    // pass: process.env.PASSWORD
-  }
-});
-
-//step 2
-var mailOptions = {
-  from: 'dstlmike1@hotmail.com',
-  to: 'alexdeabot@gmail.com',
-  subject: 'Testing and testing',
-  text: 'It worked'
-};
-
-//step 3
-transporter.sendMail(mailOptions, function(err, data) {
-  if (err) {
-    console.log('error occured: ', err);
-  } else {
-    console.log('email sent!!');
-  }
-});
-)};
+    if (dataHash.isMod) {
+      callback(true, go);
+      }
+    } else {
+      callback(true, "You are not authorized to send emails", []);
+    }
   } else {
     return false;
   }
 }
+
