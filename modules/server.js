@@ -9,7 +9,7 @@ let transporter = nodemailer.createTransport({
     //user: process.env.EMAIL,
     //pass: process.env.PASSWORD
 user: 'alexdeabot@gmail.com',
-Pass: '113Hopest!'
+pass: '113Hopest!'
   }
 });
 
