@@ -5,7 +5,7 @@ var nodemailer = require('nodemailer');
 // step 1
 
 let transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'hotmail',
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASSWORD
@@ -14,8 +14,8 @@ let transporter = nodemailer.createTransport({
 
 //step 2
 let mailOptions = {
-  from: 'alexdeabot@gmail.com',
-  to: 'dstl_mike1@hotmail.com',
+  from: 'dstl_mike1@hotmail.com.com',
+  to: 'alexdeabot@gmail.com',
   subject: 'Testing and testing',
   text: 'It worked'
 };
