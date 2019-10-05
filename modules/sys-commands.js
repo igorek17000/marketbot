@@ -120,6 +120,8 @@ function aboutCmd(dataHash, callback) {
 function emailCmd(dataHash, callback) {
 //var go = require('./server');
   var regex = /^\/email$/;
+'use strict';
+
 var go = require('./server');
 
   if (regex.test(dataHash.request.text)) {
