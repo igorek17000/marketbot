@@ -31,11 +31,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dstlmike/email.git"
+    "url": "git+https://github.com/dstlmike/email.git"
   },
   "keywords": [
     "node",
     "groupme"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dstlmike/email/issues"
+  },
+  "homepage": "https://github.com/dstlmike/email#readme",
+  "devDependencies": {},
+  "author": ""
 }
