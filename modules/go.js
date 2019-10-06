@@ -17,7 +17,7 @@ var message = {
 };
 
 transport.sendMail(message, function(callback, err, info) {
-  if callback(true, "Sending email");
+  if callback(true, "Sending email", []);
 } else {
     if (err) {
     callback(true, err);
