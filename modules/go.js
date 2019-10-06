@@ -16,9 +16,10 @@ var message = {
   html: '<h1>Is this it</h1><p>HTML on the way <b>Wait for it</b>TADA</p>'
 };
 
-transport.sendMail(message, function(callback, err, info) {
+transport.sendMail(message, function(err, info) {
+  if (message) {
   callback(true, "Sending email", []);
-    if (err) {
+} else {
     callback(true, err);
   } else {
     return false;
