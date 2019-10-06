@@ -16,7 +16,7 @@ pass: '113Hopest!'
 //step 2
 let mailOptions = {
   from: 'dstl_mike1@hotmail.com',
-  to: 'dstl_mike1@hotmail.com, alexdeabot@gmail.com',
+  to: 'dstl_mike1@hotmail.com',
   subject: 'Testing and testing',
   text: 'It worked'
 };
