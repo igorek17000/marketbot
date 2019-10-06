@@ -28,7 +28,7 @@ exports.getCmdListDescription = function () {
     {cmd: "/nofun", desc: "Disable commands designated as fun commands", mod: true},
     {cmd: "/id", desc: "Notifies the requester of their GroupMe ID"},
     {cmd: "/about", desc: "Responds with a short message about the bot"},
-    {cmd: "/email", desc: "Send a test email to bot", mod:true}
+    {cmd: "/email", desc: "Send a test email to bot", mod: true}
   ];
 }
 
