@@ -1,6 +1,7 @@
 var nodemailer = require('nodemailer');
 
 let transport = nodemailer.createTransport({
+  service: 'gmail's,
   host: 'smtp.gmail.com',
   port: '465',
   auth: {
@@ -19,8 +20,7 @@ var message = {
 transport.sendMail(message, function(err, info) {
   if (message) {
   callback(true, "Sending email", []);
-if err(callback(true, err));
   } else {
-    return false;
+    return err;
   }
 });
