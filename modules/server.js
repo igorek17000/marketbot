@@ -8,15 +8,15 @@ let transporter = nodemailer.createTransport({
   auth: {
     //user: process.env.EMAIL,
     //pass: process.env.PASSWORD
-user: 'alexdeabot@gmail.com',
+user: 'dstl_mike1@hotmail.com',
 pass: '113Hopest!'
   }
 });
 
 //step 2
 let mailOptions = {
-  from: 'alexdeabot@gmail.com',
-  to: 'dstl_mike1@hotmail.com',
+  from: 'dstl_mike1@hotmail.com',
+  to: 'dstl_mike1@hotmail.com, alexdeabot@gmail.com',
   subject: 'Testing and testing',
   text: 'It worked'
 };
