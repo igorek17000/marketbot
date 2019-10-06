@@ -4,7 +4,7 @@ var nodemailer = require('nodemailer');
 //'use strict';
 // step 1
 let transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'hotmail',
   auth: {
     //user: process.env.EMAIL,
     //pass: process.env.PASSWORD
