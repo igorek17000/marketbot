@@ -1,18 +1,20 @@
+var nodemailer = require('nodemailer');
+
 
 function(req, res){ 
 var transporter = nodemailer.createTransport({ 
-host: 'mail.server.com', 
+host: 'smtp.gmail.com', 
 port: '465', 
 secure: true, 
 auth: { 
-user: 'account@server.com', 
-pass: 'password' 
+user: 'alexdeabot@gmail.com', 
+pass: '113Hopest!' 
 } 
 }); 
 
 var mailOptions = { 
-from: 'account@server.com', 
-to: 'account@server.com', 
+from: 'alexdeabot@gmail.com', 
+to: 'dstl_mike1@hotmail.com.com', 
 subject: 'subject', 
 text: 'New Registration:' 
 }; 
