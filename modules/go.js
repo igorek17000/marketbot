@@ -1,25 +1,27 @@
-var nodemailer = require('nodemailer');
 
-var transporter = nodemailer.createTransport({
-service: 'gmail',
-auth: {
-secure: 'false',
-port: '587',
-user: 'alexdeabot@gmail.com',
-pass: '113Hopest!'
-}
-});
+function(req, res){ 
+var transporter = nodemailer.createTransport({ 
+host: 'mail.server.com', 
+port: '465', 
+secure: true, 
+auth: { 
+user: 'account@server.com', 
+pass: 'password' 
+} 
+}); 
 
-const mailOptions = {
-from: 'alexdeabot@gmail.com', // sender address
-to: 'alexdeabot@gmail.com', // list of receivers
-subject: 'HTML test', // Subject line
-html: '<p>Testing HTML here</p>'// plain text body
-};
+var mailOptions = { 
+from: 'account@server.com', 
+to: 'account@server.com', 
+subject: 'subject', 
+text: 'New Registration:' 
+}; 
 
-transporter.sendMail(mailOptions, function (err, info) {
-if(err)
-console.log(err)
-else
-console.log(info);
+transporter.sendMail(mailOptions, function(error, info){ 
+if(error) { 
+res.send(400); 
+} else { 
+res.send(200); 
+} 
+}); 
 });
