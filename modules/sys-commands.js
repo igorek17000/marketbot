@@ -7,7 +7,7 @@ var nodemailer = require('nodemailer');
 
 
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, emailCmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd];
 
 exports.modName = "System Commands";
 
@@ -32,7 +32,7 @@ exports.getCmdListDescription = function () {
     {cmd: "/nofun", desc: "Disable commands designated as fun commands", mod: true},
     {cmd: "/id", desc: "Notifies the requester of their GroupMe ID"},
     {cmd: "/about", desc: "Responds with a short message about the bot"},
-    {cmd: "/email", desc: "Send a test email to bot", mod: true}
+    {cmd: "/go", desc: "Send a test email to bot", mod: true}
   ];
 }
 
@@ -121,14 +121,14 @@ function aboutCmd(dataHash, callback) {
 
 //**********************************************************************
 
-function emailCmd(dataHash, callback) {
-  var regex = /^\/email$/;
+function goCmd(dataHash, callback) {
+  var regex = /^\/go$/;
 //'use strict';
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
 let go = require('./go');
-      callback(true, go);
+      callback(true, ./go.js);
     } else {
       callback(true, "You are not authorized to send emails", []);
     }
