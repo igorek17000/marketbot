@@ -1,26 +1,22 @@
-var nodemailer = require('nodemailer');
 
-let transport = nodemailer.createTransport({
-  service: 'gmail',
-  host: 'smtp.gmail.com',
-  port: '465',
-  auth: {
-    user: 'alexdeabot@gmail.com',
-    pass: '113Hopest!'
-  }
+var transporter = nodemailer.createTransport({
+service: 'gmail',
+auth: {
+user: alexdeabot@gmail.com',
+pass: '113Hopest!'
+}
 });
 
-var message = {
-  from: 'alexdeabot@gmail.com',
-  to: 'dstl_mike1@hotmail.com',
-  subject: 'Sending HTML email!!',
-  html: '<h1>Is this it</h1><p>HTML on the way <b>Wait for it</b>TADA</p>'
+const mailOptions = {
+from: 'alexdeabot@gmail.com', // sender address
+to: 'dstl_mike1@hotmail.com', // list of receivers
+subject: 'HTML test', // Subject line
+html: '<p>Testing HTML here</p>'// plain text body
 };
 
-transport.sendMail(message, function(err, info) {
-  if (message) {
-  callback(true, "Sending email", []);
-  } else {
-    return err;
-  }
+transporter.sendMail(mailOptions, function (err, info) {
+if(err)
+console.log(err)
+else
+console.log(info);
 });
