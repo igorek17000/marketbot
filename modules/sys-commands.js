@@ -128,7 +128,7 @@ function goCmd(dataHash, callback) {
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
 let go = require('./go');
-      callback(true, go, "email sent.", []);
+      callback(true, go);
     } else {
       callback(true, "You are not authorized to send emails", []);
     }
