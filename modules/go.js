@@ -3,8 +3,8 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
 service: 'gmail',
 auth: {
-secure: 'true',
-port: '465',
+secure: 'false',
+port: '587',
 user: 'alexdeabot@gmail.com',
 pass: '113Hopest!'
 }
@@ -12,7 +12,7 @@ pass: '113Hopest!'
 
 const mailOptions = {
 from: 'alexdeabot@gmail.com', // sender address
-to: 'dstl_mike1@hotmail.com', // list of receivers
+to: 'alexdeabot@gmail.com', // list of receivers
 subject: 'HTML test', // Subject line
 html: '<p>Testing HTML here</p>'// plain text body
 };
