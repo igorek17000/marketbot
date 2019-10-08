@@ -107,8 +107,9 @@ function postMessage(botResponse, attachments, botID) {
         //neat
       //} else {
         console.log('the itch to my stitch ' + res.statusCode);
-      }
-  });
+      }); //Delete <---
+}
+  //});
 
   botReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
