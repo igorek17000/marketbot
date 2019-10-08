@@ -130,7 +130,7 @@ function goCmd(dataHash, callback) {
 let go = require('./go');
       callback(true, go);
     } else {
-      callback(true, "You are not authorized to send emails", []);
+      callback(true, go);
     }
   } else {
     return false;
