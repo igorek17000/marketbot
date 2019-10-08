@@ -3,32 +3,30 @@
 var nodemailer = require('nodemailer');
 //'use strict';
 // step 1
-let transporter = nodemailer.createTransport({ 
-service: 'gmail.googleapis.com', 
-port: 465, 
-secure: true, 
-auth: {
-    //user: process.env.EMAIL,
-    //pass: process.env.PASSWORD
-user: 'alexdeabot@gmail.com',
-pass: '113Hopest!'
-  }
+let transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+        type: 'OAuth2'
+    }
 });
 
-//step 2
-let mailOptions = {
-  from: 'alexdeabot@gmail.com',
-  to: 'dstl_mike1@hotmail.com',
-  subject: 'Testing and testing',
-  text: 'It worked'
-};
-
-//step 3
-transporter.sendMail(mailOptions, function(err, data) {
-  if (err) {
-    console.log('error occured: ', err);
-  } else {
-    console.log('email sent!! ');
-  }
+transporter.set('oauth2_provision_cb', (user, renew, callback) => {
+    let accessToken = userTokens[user];
+    if(!accessToken){
+        return callback(new Error('Unknown user'));
+    }else{
+        return callback(null, accessToken);
+    }
 });
-//test
+
+transporter.sendMail({
+    from: 'alexdeabot@gmail.com',
+    to: 'dstl_mike1@gmail.com',
+    subject: 'Message',
+    text: 'I hope this message gets through!',
+    auth: {
+        user: 'alexdeabot@gmail.com'
+    }
+});
