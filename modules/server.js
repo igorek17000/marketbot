@@ -4,7 +4,7 @@ var nodemailer = require('nodemailer');
 //'use strict';
 // step 1
 let transporter = nodemailer.createTransport({ 
-host: 'smtp.gmail.com', 
+service: 'gmail.googleapis.com', 
 port: 465, 
 secure: true, 
 auth: {
