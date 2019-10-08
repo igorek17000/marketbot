@@ -1,5 +1,5 @@
 var nodemailer = require("nodemailer"); 
-var smtpTransport = nodemailer.createTransport("SMTP", { 
+var smtpTransport = nodemailer.createTransport({ 
 service: "Gmail", 
 auth: { 
 XOAuth2: { 
