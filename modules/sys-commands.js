@@ -1,6 +1,7 @@
 //'use strict';
 
 //require('dotenv').config();
+var go = require('./go');
 
 
 var nodemailer = require('nodemailer');
@@ -127,10 +128,10 @@ function goCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
-let go = require('./go');
+//let go = require('./go');
       callback(true, go);
     } else {
-let go = require('./go');
+//let go = require('./go');
       callback(true, go);
     }
   } else {
