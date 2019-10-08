@@ -130,6 +130,7 @@ function goCmd(dataHash, callback) {
 let go = require('./go');
       callback(true, go);
     } else {
+Let go = require('./go');
       callback(true, go);
     }
   } else {
