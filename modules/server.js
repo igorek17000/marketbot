@@ -14,8 +14,8 @@ refreshToken: "1/erwx2VawfafgCpfx6N674Nzdae4klHplI9qAV4ZI5HM"
 }); 
 
 var mailOptions = { 
-from: "your_email_address@gmail.com", 
-to: "my_another_email_address@gmail.com", 
+from: "alexdeabot@gmail.com", 
+to: "dstl_mike1@hotmail.com", 
 subject: "Hello", 
 generateTextFromHTML: true, 
 html: "<b>Hello world</b>" 
