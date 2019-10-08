@@ -5,7 +5,7 @@ var transporter = nodemailer.createTransport({
 host: 'mail.google.com',
 user: 'alexdeabot@gmail.com',
 pass: '113Hopest!'
-)};
+});
 //'smtps://alexdeabot%40gmail.com:113Hopest!@mail.google.com'); 
 
 // setup e-mail data with unicode symbols 
