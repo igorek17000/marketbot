@@ -127,7 +127,7 @@ function goCmd(dataHash, callback) {
 
 //var go = require('./server');
   if (regex.test(dataHash.request.text)) {
-let go = require('./Gmail');
+let go = require('./server');
     callback(true, go);
   } else {
     return false;
