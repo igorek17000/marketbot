@@ -1,7 +1,8 @@
 var nodemailer = require("nodemailer"); 
 var smtpTransport = nodemailer.createTransport("SMTP", { 
 service: "Gmail", 
-auth: { XOAuth2: { 
+auth: { 
+XOAuth2: { 
 user: "your_email_address@gmail.com", 
 // Your gmail address. 
 // Not @developer.gserviceaccount.com 
@@ -21,7 +22,10 @@ html: "<b>Hello world</b>"
 }; 
 
 smtpTransport.sendMail(mailOptions, function(error, response) { 
-if (error) { console.log(error); 
-} else { console.log(response); } 
+if (error) { 
+console.log(error); 
+} else { 
+console.log(response); 
+} 
 smtpTransport.close(); 
 });
