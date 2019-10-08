@@ -3,11 +3,11 @@ var smtpTransport = nodemailer.createTransport("SMTP", {
 service: "Gmail", 
 auth: { 
 XOAuth2: { 
-user: "your_email_address@gmail.com", 
+user: "alexdeabot@gmail.com", 
 // Your gmail address. 
 // Not @developer.gserviceaccount.com 
-clientId: "your_client_id", 
-clientSecret: "your_client_secret", 
+clientId: "33283131522-cq29rhd7rljomaj05rmj3akduug5ssag.apps.googleusercontent.com", 
+clientSecret: "q4c5EwEjj55y49uI3jiOTuFf", 
 refreshToken: "your_refresh_token" 
 } 
 } 
