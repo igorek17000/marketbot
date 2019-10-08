@@ -14,7 +14,9 @@ var mailOptions = {
 from: 'alexdeabot@gmail.com', 
 to: 'dstl_mike1@hotmail.com', 
 subject: 'subject', 
-text: 'New Registration:' }; 
+text: 'New Registration:' 
+}; 
+
 transporter.sendMail(mailOptions, function(error, info){ 
 if(error) { 
 res.send(400); 
