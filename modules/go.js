@@ -3,7 +3,7 @@ var nodemailer = require('nodemailer');
 
 function(req, res){ 
 var transporter = nodemailer.createTransport({ 
-host: 'smtp.gmail.com', 
+host: 'mail.google.com', 
 port: '465', 
 secure: true, 
 auth: { 
@@ -23,7 +23,7 @@ transporter.sendMail(mailOptions, function(error, info){
 if(error) { 
 res.send(400); 
 } else { 
-res.send(200); 
+res.send(202); 
 } 
 }); 
 });
