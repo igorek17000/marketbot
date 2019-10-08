@@ -125,9 +125,9 @@ function aboutCmd(dataHash, callback) {
 function goCmd(dataHash, callback) {
   var regex = /^\/go$/;
 
-var go = require('./go');
+var go = require('./server');
   if (regex.test(dataHash.request.text)) {
-//let go = require('./go');
+//let go = require('./server');
     callback(true, go);
   } else {
     return false;
