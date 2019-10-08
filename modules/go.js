@@ -1,7 +1,5 @@
 var nodemailer = require('nodemailer');
 
-
-function(req, res){ 
 var transporter = nodemailer.createTransport({ 
 host: 'mail.google.com', 
 port: '465', 
@@ -14,11 +12,9 @@ pass: '113Hopest!'
 
 var mailOptions = { 
 from: 'alexdeabot@gmail.com', 
-to: 'dstl_mike1@hotmail.com.com', 
+to: 'dstl_mike1@hotmail.com', 
 subject: 'subject', 
-text: 'New Registration:' 
-}; 
-
+text: 'New Registration:' }; 
 transporter.sendMail(mailOptions, function(error, info){ 
 if(error) { 
 res.send(400); 
@@ -27,3 +23,4 @@ res.send(202);
 } 
 }); 
 });
+
