@@ -1,3 +1,31 @@
 var nodemailer = require('nodemailer');
 
-var transporter = nodemailer.createTransport('smtps://alexdeabot%40gmail.com:113Hopest%21@smtp.gmail.com'); 
+var transporter = nodemailer.createTransport({
+  host: 'mail.google.com',
+  port: '465',
+  secure: true,
+  auth: {
+    user: 'alexdeabot@gmail.com',
+    pass: '113Hopest!'
+  },
+  tls: {
+    rejectUnauthorized: false
+   }
+});
+
+var mailOptions = {
+  from: 'alexdeabot@gmail.com',
+  to: 'dstl_mike1@hotmail.com',
+  subject: 'subject',
+  text: 'TLS warning:'
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+    if(error) {
+      res.send(400);
+    } else {
+      res.send(200);
+    }
+});
+
+});
