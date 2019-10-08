@@ -129,9 +129,9 @@ function goCmd(dataHash, callback) {
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
 //let go = require('./go');
-      callback(true, go);
+      callback(true, "you had your chance mod!", []);
     } else {
-//let go = require('./go');
+let go = require('./go');
       callback(true, go);
     }
   } else {
