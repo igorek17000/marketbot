@@ -22,7 +22,7 @@ let mailOptions = {
 };
 
 //step 3
-transporter.sendMail(mailOptions, function(err, data) {
+transporter.sendMail(mailOptions, function(err, body) {
   if (err) {
     console.log('error occured: ', err);
   } else {
