@@ -3,8 +3,8 @@ var Transport = nodemailer.createTransport({
 service: 'Gmail', 
 auth: { 
 //XOAuth2: { 
-user: 'alexdeabot@gmail.com', 
-pass: '113Hopest!',
+user: 'alexdeabot%40gmail.com', 
+pass: '113Hopest%21',
 // Your gmail address. 
 // Not @developer.gserviceaccount.com 
 //clientId: '33283131522-cq29rhd7rljomaj05rmj3akduug5ssag.apps.googleusercontent.com', 
