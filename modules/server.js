@@ -1,5 +1,5 @@
 var nodemailer = require('nodemailer'); 
-var smtpTransport = nodemailer.createTransport({ 
+var Transport = nodemailer.createTransport({ 
 service: 'gmail', 
 auth: { 
 XOAuth2: { 
@@ -22,7 +22,7 @@ generateTextFromHTML: true,
 html: '<b>Hello world</b>' 
 }; 
 
-smtpTransport.sendMail(mailOptions, function(error, response) { 
+Transport.sendMail(mailOptions, function(error, response) { 
 if (error) { 
 console.log(error); 
 } else { 
