@@ -24,7 +24,7 @@ let mailOptions = {
 };
 
 //step 3
-transporter.sendMail(mailOptions, function(data, body) {
+transporter.sendMail(mailOptions, function(err, data) {
   if (err) {
     console.log('error occured: ', err);
   } else {
