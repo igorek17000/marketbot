@@ -1,6 +1,6 @@
 var nodemailer = require('nodemailer'); 
 var Transport = nodemailer.createTransport({ 
-service: 'gmail', 
+service: 'Gmail', 
 auth: { 
 XOAuth2: { 
 user: 'alexdeabot@gmail.com', 
