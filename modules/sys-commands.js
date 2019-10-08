@@ -131,7 +131,6 @@ function goCmd(dataHash, callback) {
 //let go = require('./go');
       callback(true, "you had your chance mod!", []);
     } else {
-let go = require('./go');
       callback(true, go);
     }
   } else {
