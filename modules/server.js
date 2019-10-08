@@ -28,5 +28,5 @@ console.log(error);
 } else { 
 console.log(response); 
 } 
-smtpTransport.close(); 
+Transport.close(); 
 });
