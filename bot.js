@@ -102,13 +102,13 @@ function postMessage(botResponse, attachments, botID) {
 
   console.log('sending ' + botResponse + ' to ' + botID);
 
-  botReq = HTTPS.request(options, function(res) {
+  //botReq = HTTPS.request(options, function(res) {
       //if (res.statusCode == 202) {
         //neat
       //} else {
-        console.log('the itch to my stitch ' + res.statusCode);
+        //console.log('the itch to my stitch ' + res.statusCode);
 //}
-});
+//});
 
   botReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
