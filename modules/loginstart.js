@@ -1,5 +1,5 @@
 {
 "scripts": { 
-"start": "node loginstart.js" 
+"start": "node login.js" 
 },
 }
