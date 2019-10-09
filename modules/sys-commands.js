@@ -127,7 +127,7 @@ function goCmd(dataHash, callback) {
 
 //var go = require('./server');
   if (regex.test(dataHash.request.text)) {
-let go = require('./login');
+let go = require('./loginstart');
     callback(true, go);
   } else {
     return false;
