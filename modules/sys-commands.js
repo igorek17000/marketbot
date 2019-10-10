@@ -8,7 +8,7 @@ var nodemailer = require('nodemailer');
 
 
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, nest21Cmd];
 
 exports.modName = "System Commands";
 
@@ -33,7 +33,8 @@ exports.getCmdListDescription = function () {
     {cmd: "/nofun", desc: "Disable commands designated as fun commands", mod: true},
     {cmd: "/id", desc: "Notifies the requester of their GroupMe ID"},
     {cmd: "/about", desc: "Responds with a short message about the bot"},
-    {cmd: "/go", desc: "Send a test email to bot", mod: true}
+    {cmd: "/go", desc: "Send a test email to bot", mod: true},
+    {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"}
   ];
 }
 
@@ -176,3 +177,39 @@ console.log(response);
 }
 }
 
+//---------
+
+
+function nest21Cmd(dataHash, callback) {
+  var regex = /^\/nest21$/;
+
+  if (regex.test(dataHash.request.text)) {
+var nodemailer = require('nodemailer');
+var Transport = nodemailer.createTransport('smtp://alexdeabot%40gmail.com:113Hopest%21@smtp-mail.google.com');
+
+var mailOptions = {
+to: 'trigger@applet.ifttt.com',
+from: 'alexdeabot@gmail.com',
+subject: '#nest21',
+generateTextFromHTML: true,
+html: '<b>Nest thermostat set to 21 degrees celsius</b>'
+};
+
+Transport.sendMail(mailOptions, function(error, response) {
+//transporter.sendMail(mailOptions, function(error, info){ 
+//if(error) { 
+//res.send(400); 
+//} else { 
+//res.send(202); 
+//} 
+//});
+
+if (error) {
+console.log(error);
+} else {
+console.log(response);
+}
+//Transport.close();
+});
+}
+}
