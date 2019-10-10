@@ -103,12 +103,15 @@ function postMessage(botResponse, attachments, botID) {
   console.log('sending ' + botResponse + ' to ' + botID);
 
 botReq = HTTPS.request(options, function(res) {
-      if (res.statusCode != 400) {
+      if (res.statusCode == 200) {
         //neat
       } else {
+if (res.statusCode == 202) {
+} else {
         console.log('rejecting bad status code ' + res.statusCode);
       }
   });
+}
 
   botReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
