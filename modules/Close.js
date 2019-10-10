@@ -16,8 +16,8 @@ pass: '113Hopest!',
 });
 
 var mailOptions = {
+to: 'alexdeabot@gmail.com.com',
 from: 'dstl_mike1@hotmail.com',
-to: 'dstl_mike@hotmail.com',
 subject: 'Hello',
 generateTextFromHTML: true,
 html: '<b>Hello world</b>'
