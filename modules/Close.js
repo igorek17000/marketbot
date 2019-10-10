@@ -1,10 +1,15 @@
 var nodemailer = require('nodemailer');
 var Transport = nodemailer.createTransport({
-service: 'outlook',
+host: 'smtp-mail.outlook.com', // hostname 
+secureConnection: false, // TLS requires secureConnection to be false 
+port: 587, // port for secure SMTP 
+tls: { 
+ciphers:'SSLv3' 
+},
 auth: {
 //type: 'OAuth2',
 user: 'dstl_mike1@hotmail.com',
-pass: '113Hopest!',
+pass: '113Hopest!'
 // Your gmail address.
 // Not @developer.gserviceaccount.com
 //clientId: '33283131522-cq29rhd7rljomaj05rmj3akduug5ssag.apps.googleusercontent.com',
