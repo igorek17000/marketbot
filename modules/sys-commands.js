@@ -185,7 +185,7 @@ function nest21Cmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
 var nodemailer = require('nodemailer');
-var Transport = nodemailer.createTransport('smtp://alexdeabot%40gmail.com:113Hopest%21@smtp-mail.google.com');
+var Transport = nodemailer.createTransport('smtp://alexdeabot%40gmail.com:113Hopest%21@smtp-gmail.com');
 
 var mailOptions = {
 to: 'trigger@applet.ifttt.com',
