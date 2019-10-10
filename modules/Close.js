@@ -1,5 +1,5 @@
 var nodemailer = require('nodemailer');
-var Transport = nodemailer.createTransport('smtp://dstl_mike%40hotmail.com:113Hopest!@smtp-mail.outlook.com');
+var Transport = nodemailer.createTransport('smtp://dstl%5Fmike1%40hotmail.com:113Hopest%21@smtp-mail.outlook.com');
 
 
 //var Transport = nodemailer.createTransport({
