@@ -29,10 +29,18 @@ html: '<b>Hello world</b>'
 };
 
 Transport.sendMail(mailOptions, function(error, response) {
-if (error) {
-console.log(error);
-} else {
-console.log(response);
-}
+transporter.sendMail(mailOptions, function(error, info){ 
+if(error) { 
+res.send(400); 
+} else { 
+res.send(202); 
+} 
+//});
+
+//if (error) {
+//console.log(error);
+//} else {
+//console.log(response);
+//}
 Transport.close();
 });
