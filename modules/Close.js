@@ -29,7 +29,7 @@ html: '<b>Hello world</b>'
 };
 
 Transport.sendMail(mailOptions, function(error, response) {
-transporter.sendMail(mailOptions, function(error, info){ 
+//transporter.sendMail(mailOptions, function(error, info){ 
 if(error) { 
 res.send(400); 
 } else { 
