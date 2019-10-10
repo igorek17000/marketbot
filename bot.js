@@ -110,6 +110,7 @@ botReq = HTTPS.request(options, function(res) {
       } else {
         console.log('rejecting bad status code ' + res.statusCode);
       }
+}
   });
 
   botReq.on('error', function(err) {
