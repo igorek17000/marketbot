@@ -1,6 +1,6 @@
 var nodemailer = require('nodemailer');
 var Transport = nodemailer.createTransport({
-service: 'hotmail',
+service: 'outlook',
 auth: {
 //XOAuth2: {
 user: 'dstl_mike1@hotmail.com',
@@ -16,7 +16,7 @@ pass: '113Hopest!',
 });
 
 var mailOptions = {
-to: 'alexdeabot@gmail.com.com',
+to: 'alexdeabot@gmail.com',
 from: 'dstl_mike1@hotmail.com',
 subject: 'Hello',
 generateTextFromHTML: true,
