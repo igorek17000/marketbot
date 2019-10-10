@@ -105,7 +105,8 @@ function postMessage(botResponse, attachments, botID) {
 botReq = HTTPS.request(options, function(res) {
       if (res.statusCode == 202) {
         //neat
-      } else if (res.statusCode == 200) {
+      } else {
+      if (res.statusCode == 200) {
       } else {
         console.log('rejecting bad status code ' + res.statusCode);
       }
