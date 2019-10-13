@@ -27,9 +27,19 @@ console.log(response);
 Transport.close();
 });
 }
-};
+}
 
 let nest20 = function() {
+var nodemailer = require('nodemailer');
+var Transport = nodemailer.createTransport({
+
+service: 'gmail',
+auth: {
+user: 'alexdeabot@gmail.com',
+pass: '113Hopest!'
+}
+});
+
 let mailOptions = {
 to: 'trigger@applet.ifttt.com',
 from: 'alexdeabot@gmail.com',
@@ -48,7 +58,7 @@ console.log(response);
 Transport.close();
 });
 }
-};
+}
 
 exports.nest20 = nest20;
 exports.nest21 = nest21;
