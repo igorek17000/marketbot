@@ -3,13 +3,15 @@ function nest21Cmd(dataHash, callback) {
   var regex = /^\/nest21$/;
 
   if (regex.test(dataHash.request.text)) {
+
 var nodemailer = require('nodemailer');
 var Transport = nodemailer.createTransport({
 service: 'gmail',
 auth: {
 user: 'alexdeabot@gmail.com',
 pass: '113Hopest!'
-);
+}
+});
 
 var mailOptions = {
 to: 'trigger@applet.ifttt.com',
@@ -33,7 +35,7 @@ console.log(error);
 } else {
 console.log(response);
 }
-//Transport.close();
+Transport.close();
 });
 }
 }
