@@ -1,7 +1,7 @@
 //'use strict';
 
 //require('dotenv').config();
-//var go = require('./go');
+var set = require('./server');
 
 
 var nodemailer = require('nodemailer');
@@ -190,4 +190,16 @@ nest21;
 return false;
 }
 };
-//
+
+//----------
+
+function nest20Cmd(dataHash, callback) {
+  var regex = /^\/nest20$/;
+
+//if (regex.test(dataHash.request.text)) {
+  var nest20 = require('./server');
+set.nest20;
+} else {
+return false;
+}
+};
