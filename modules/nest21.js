@@ -1,4 +1,4 @@
-let nest21 = function() {
+var nest21 = function() {
 var nodemailer = require('nodemailer');
 var Transport = nodemailer.createTransport({
 
@@ -28,7 +28,7 @@ Transport.close();
 });
 }
 
-let nest20 = function() {
+var nest20 = function() {
 var nodemailer = require('nodemailer');
 var Transport = nodemailer.createTransport({
 
