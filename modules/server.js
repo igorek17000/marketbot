@@ -17,7 +17,7 @@ pass: '113Hopest!'
 
 var mailOptions = { 
 from: 'alexdeabot@gmail.com', 
-to: '@', 
+to: 'trigger@applet.ifttt.com', 
 subject: '#nest21' 
 //generateTextFromHTML: true, 
 //html: '<b>Hello world</b>' 
