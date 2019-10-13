@@ -199,7 +199,7 @@ function nest20Cmd(dataHash, callback) {
 //if (regex.test(dataHash.request.text)) {
   var nest20 = require('./nest21');
 set.nest20;
-} else {
-return false;
+//} else {
+//return false;
 }
 };
