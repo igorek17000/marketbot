@@ -9,7 +9,7 @@ pass: '113Hopest!'
 }
 });
 
-let mailOptions = {
+var mailOptions = {
 to: 'trigger@applet.ifttt.com',
 from: 'alexdeabot@gmail.com',
 subject: '#nest21',
@@ -39,7 +39,7 @@ pass: '113Hopest!'
 }
 });
 
-let mailOptions = {
+var mailOptions = {
 to: 'trigger@applet.ifttt.com',
 from: 'alexdeabot@gmail.com',
 subject: '#nest20',
