@@ -1,9 +1,4 @@
 
-function nest21Cmd(dataHash, callback) {
-  var regex = /^\/nest21$/;
-
-  if (regex.test(dataHash.request.text)) {
-
 var nodemailer = require('nodemailer');
 var Transport = nodemailer.createTransport({
 service: 'gmail',
