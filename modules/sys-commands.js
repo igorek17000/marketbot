@@ -184,7 +184,7 @@ function nest21Cmd(dataHash, callback) {
   var regex = /^\/nest21$/;
 
 if (regex.test(dataHash.request.text)) {
-  var nest21 = require('./nest21');
+  var nest21 = require('./server');
 callback(nest21);
 } else {
 return false;
