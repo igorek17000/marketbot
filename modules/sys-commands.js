@@ -185,7 +185,7 @@ function nest21Cmd(dataHash, callback) {
 
 if (regex.test(dataHash.request.text)) {
   var nest21 = require('./nest21');
-temp.nest21;
+nest21;
 } else {
 return false;
 }
@@ -198,7 +198,7 @@ function nest20Cmd(dataHash, callback) {
 
 if (regex.test(dataHash.request.text)) {
   var nest20 = require('./nest21');
-temp.nest20;
+nest20;
 } else {
 return false;
 }
