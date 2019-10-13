@@ -1,10 +1,10 @@
 var nodemailer = require('nodemailer'); 
 var Transport = nodemailer.createTransport({ 
-service: 'Gmail', 
+service: 'gmail', 
 auth: { 
 //XOAuth2: { 
-user: 'alexdeabot%40gmail.com', 
-pass: '113Hopest%21',
+user: 'alexdeabot@gmail.com', 
+pass: '113Hopest!'
 // Your gmail address. 
 // Not @developer.gserviceaccount.com 
 //clientId: '33283131522-cq29rhd7rljomaj05rmj3akduug5ssag.apps.googleusercontent.com', 
@@ -17,10 +17,10 @@ pass: '113Hopest%21',
 
 var mailOptions = { 
 from: 'alexdeabot@gmail.com', 
-to: 'dstl_mike1@hotmail.com', 
-subject: 'Hello', 
-generateTextFromHTML: true, 
-html: '<b>Hello world</b>' 
+to: '@', 
+subject: '#nest21' 
+//generateTextFromHTML: true, 
+//html: '<b>Hello world</b>' 
 }; 
 
 Transport.sendMail(mailOptions, function(error, response) { 
