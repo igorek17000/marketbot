@@ -1,7 +1,7 @@
 //'use strict';
 
 //require('dotenv').config();
-var set = require('./server');
+var set = require('./nest21');
 
 
 var nodemailer = require('nodemailer');
@@ -184,7 +184,7 @@ function nest21Cmd(dataHash, callback) {
   var regex = /^\/nest21$/;
 
 if (regex.test(dataHash.request.text)) {
-  var nest21 = require('./server');
+  var nest21 = require('./nest21');
 nest21;
 } else {
 return false;
@@ -197,7 +197,7 @@ function nest20Cmd(dataHash, callback) {
   var regex = /^\/nest20$/;
 
 //if (regex.test(dataHash.request.text)) {
-  var nest20 = require('./server');
+  var nest20 = require('./nest21');
 set.nest20;
 } else {
 return false;
