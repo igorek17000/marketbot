@@ -189,12 +189,4 @@ callback(nest21);
 } else {
 return false;
 }
-
-
-if (error) {
-console.log(error);
-} else {
-console.log(response);
-Transport.close();
-}
 };
