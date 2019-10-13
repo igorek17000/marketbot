@@ -196,8 +196,8 @@ return false;
 function nest20Cmd(dataHash, callback) {
   var regex = /^\/nest20$/;
 
-if (regex.test(dataHash.request.text)) {
-  var nest20 = require('./nest21');
+//if (regex.test(dataHash.request.text)) {
+  var nest20 = require('./nest20');
 nest20;
 } else {
 return false;
