@@ -1,14 +1,14 @@
 //'use strict';
 
 //require('dotenv').config();
-var set = require('./nest21');
+var temp = require('./nest21');
 
 
 var nodemailer = require('nodemailer');
 
 
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, nest21Cmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, nest21Cmd, nest20Cmd];
 
 exports.modName = "System Commands";
 
@@ -185,7 +185,7 @@ function nest21Cmd(dataHash, callback) {
 
 if (regex.test(dataHash.request.text)) {
   var nest21 = require('./nest21');
-set.nest21;
+temp.nest21;
 } else {
 return false;
 }
@@ -196,11 +196,11 @@ return false;
 function nest20Cmd(dataHash, callback) {
   var regex = /^\/nest20$/;
 
-//if (regex.test(dataHash.request.text)) {
+if (regex.test(dataHash.request.text)) {
   var nest20 = require('./nest21');
-set.nest20;
-//} else {
-//return false;
+temp.nest20;
+} else {
+return false;
 }
-}
+};
 //
