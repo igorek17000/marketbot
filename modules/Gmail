@@ -1,24 +1,5 @@
-var nodemailer = require('nodemailer'); 
-
-// create reusable transporter object using the default SMTP transport 
-var transporter = nodemailer.createTransport('smtps://alexdeabot%40gmail.com:113Hopest%21@smtp.gmail.com'); 
-//host: 'mail.google.com',
-//user: 'alexdeabot@gmail.com',
-//pass: '113Hopest!'
-//'smtps://alexdeabot%40gmail.com:113Hopest%21@smtp.gmail.com'); 
-
-// setup e-mail data with unicode symbols 
-var mailOptions = { 
-from: '"Alex De A. ?" <alexdeabot@gmail.com>', // sender address 
-to: 'dstl_mike1@hotmail.com', // list of receivers 
-subject: 'Hello ', // Subject line 
-text: 'Hello world ?', // plaintext body 
-html: '<b>Hello world ?</b>' // html body 
-}; 
-// send mail with defined transport object 
-transporter.sendMail(mailOptions, function(error, info){ 
-if(error){ 
-return console.log(error); 
-} 
-console.log('Message sent: ' + info.response); 
-});
+function a() {
+var now = require('newDate');
+now;
+Return;
+}
