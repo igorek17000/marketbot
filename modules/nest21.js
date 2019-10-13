@@ -27,7 +27,6 @@ console.log(response);
 Transport.close();
 });
 }
-}
 
 let nest20 = function() {
 var nodemailer = require('nodemailer');
@@ -57,8 +56,7 @@ console.log(response);
 }
 Transport.close();
 });
-}
-}
+
 
 exports.nest20 = nest20;
 exports.nest21 = nest21;
