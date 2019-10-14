@@ -1,10 +1,10 @@
 //'use strict';
 
 //require('dotenv').config();
-var temp = require('./nest21');
+//var temp = require('./nest21');
 
 
-var nodemailer = require('nodemailer');
+//var nodemailer = require('nodemailer');
 
 
 var fun_mode = true;
