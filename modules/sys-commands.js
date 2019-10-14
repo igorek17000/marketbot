@@ -161,8 +161,8 @@ if (regex.test(dataHash.request.text)) {
   //var nest20 = require('./nest20');
 nest20;
 } else {
-return false;
-};
+return;
+}
 }
 
 //----------
@@ -175,7 +175,7 @@ if (regex.test(dataHash.request.text)) {
   //var nest21 = require('./nest21');
 nest21;
 } else {
-return false;
-};
+return;
+}
 }
 //
