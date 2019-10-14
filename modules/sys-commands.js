@@ -150,7 +150,8 @@ function nest20Cmd(dataHash, callback) {
   var regex = /^\/nest20$/;
 //var nest20 = require('./nest20');
 
-if (dataHash.isMod) {
+if (regex.test(dataHash.request.text)) {
+  if (dataHash.isMod) {
   var nest20 = require('./nest20');
 
 //if (regex.test(dataHash.request.text)) {
@@ -167,7 +168,8 @@ function nest21Cmd(dataHash, callback) {
   var regex = /^\/nest21$/;
 //var nest21 = require('./nest21');
 
-if (dataHash.isMod) {
+if (regex.test(dataHash.request.text)) {
+  if (dataHash.isMod) {
 var nest21 = require('./nest21');
 //if (regex.test(dataHash.request.text)) {
   //var nest21 = require('./nest21');
