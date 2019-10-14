@@ -146,13 +146,14 @@ console.log(response);
 
 function nest20Cmd(dataHash, callback) {
   var regex = /^\/nest20$/;
-var nest20 = require('./nest20');
+//var nest20 = require('./nest20');
 
 if (dataHash.isMod) {
+  var nest20 = require('./nest20');
 
 //if (regex.test(dataHash.request.text)) {
   //var nest20 = require('./nest20');
-(nest20);
+nest20;
 } else {
 callback(false, "");
 }
@@ -161,13 +162,13 @@ callback(false, "");
 
 function nest21Cmd(dataHash, callback) {
   var regex = /^\/nest21$/;
-var nest21 = require('./nest21');
+//var nest21 = require('./nest21');
 
 if (dataHash.isMod) {
-
+var nest21 = require('./nest21');
 //if (regex.test(dataHash.request.text)) {
   //var nest21 = require('./nest21');
-(nest21);
+nest21;
 } else {
 return false;
 }
@@ -177,10 +178,11 @@ return false;
 
 function nest18Cmd(dataHash, callback) {
   var regex = /^\/nest18$/;
-var nest18 = require('./nest18');
+//var nest18 = require('./nest18');
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
+      var nest18 = require('./nest18');
 callback(true, "Thermostat set to 18 degrees celsius", []);
 nest18;
 
