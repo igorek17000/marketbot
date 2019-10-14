@@ -1,7 +1,7 @@
 
 const nodemailer = require('nodemailer');
 
-var nest21 = function() {
+let nest21 = function() {
 var Transport = nodemailer.createTransport({
 
 service: 'gmail',
@@ -31,7 +31,7 @@ Transport.close();
 return;
 }
 
-var nest20 = function() {
+let nest20 = function() {
 var Transport = nodemailer.createTransport({
 
 service: 'gmail',
