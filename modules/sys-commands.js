@@ -160,6 +160,7 @@ nest20;
 callback(true, "You're not the boss of me, only mods can change temperature", []);
 }
 }
+}
 //----------
 
 function nest21Cmd(dataHash, callback) {
@@ -173,6 +174,7 @@ var nest21 = require('./nest21');
 nest21;
 } else {
 callback(true, "You're not the boss of me, only mods can change temperature", []);
+}
 }
 }
 
@@ -190,5 +192,6 @@ nest18;
 
   } else {
       callback(true, "You're not the boss of me, only mods can change temperature", []);
+}
 }
 }
