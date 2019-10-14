@@ -157,12 +157,12 @@ function nest20Cmd(dataHash, callback) {
   var regex = /^\/nest20$/;
 var nest20 = require('./nest20');
 
-if (regex.test(dataHash.request.text)) {
+//if (regex.test(dataHash.request.text)) {
   //var nest20 = require('./nest20');
-nest20
+nest20;
 } else {
 return;
-};
+}
 }
 //----------
 
@@ -170,11 +170,11 @@ function nest21Cmd(dataHash, callback) {
   var regex = /^\/nest21$/;
 var nest21 = require('./nest21');
 
-if (regex.test(dataHash.request.text)) {
+//if (regex.test(dataHash.request.text)) {
   //var nest21 = require('./nest21');
-nest21
+nest21;
 } else {
 return;
-};
+}
 }
 //
