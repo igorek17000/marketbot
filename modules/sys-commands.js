@@ -162,7 +162,7 @@ if (regex.test(dataHash.request.text)) {
 nest20;
 } else {
 return false;
-}
+};
 }
 
 //----------
@@ -176,6 +176,6 @@ if (regex.test(dataHash.request.text)) {
 nest21;
 } else {
 return false;
-}
+};
 }
 //
