@@ -152,6 +152,7 @@ function nest20Cmd(dataHash, callback) {
 
 if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
+callback(true, "Thermostat set to 20 degrees celsius", []);
   var nest20 = require('./nest20');
 
 //if (regex.test(dataHash.request.text)) {
@@ -173,6 +174,7 @@ if (regex.test(dataHash.request.text)) {
 var nest21 = require('./nest21');
 //if (regex.test(dataHash.request.text)) {
   //var nest21 = require('./nest21');
+callback(true, "Thermostat set to 21 degrees celsius", []);
 nest21;
 } else {
 callback(true, "You're not the boss of me, only mods can change temperature", []);
