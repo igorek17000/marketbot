@@ -159,7 +159,7 @@ callback(true, "Thermostat set to 20 degrees celsius", []);
   //var nest20 = require('./nest20');
 nest20;
 } else {
-callback(true, "You're not the boss of me, only mods can adjust temperature", []);
+callback(true, "You're not the boss of me, only mods can adjust the temperature", []);
 }
 }
 }
