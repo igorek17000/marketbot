@@ -14,7 +14,7 @@ to: 'trigger@applet.ifttt.com',
 from: 'alexdeabot@gmail.com',
 subject: '#nest21',
 generateTextFromHTML: true,
-html: '<b>Nest thermostat set to 21 degrees celsius</b>'
+html: '<b></b>'
 };
 
 Transport.sendMail(mailOptions, function(error, response) {
