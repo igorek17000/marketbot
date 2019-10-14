@@ -157,8 +157,8 @@ if (dataHash.isMod) {
   //var nest20 = require('./nest20');
 nest20;
 } else {
-callback(true, "You're not the boss of me, only mods can change temperature", []);
-}
+callback(false, "");
+};
 }
 //----------
 
@@ -172,7 +172,7 @@ var nest21 = require('./nest21');
   //var nest21 = require('./nest21');
 nest21;
 } else {
-callback(true, "You're not the boss of me, only mods can change temperature", []);
+return false;
 }
 }
 
@@ -190,5 +190,8 @@ nest18;
 
   } else {
       callback(true, "You're not the boss of me, only mods can change temperature", []);
+    } else {
+
+  return false;
 }
 }
