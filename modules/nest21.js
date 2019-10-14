@@ -28,8 +28,8 @@ console.log(response);
 }
 Transport.close();
 });
-}
 return;
+}
 
 var nest20 = function() {
 var Transport = nodemailer.createTransport({
@@ -58,8 +58,8 @@ console.log(response);
 }
 Transport.close();
 });
-}
 return;
+}
 
 module.exports.nest20 = nest20;
 module.exports.nest21 = nest21;
