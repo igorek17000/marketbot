@@ -1,14 +1,5 @@
-//'use strict';
-
-//require('dotenv').config();
-//var temp = require('./nest21');
-
-
-//var nodemailer = require('nodemailer');
-
-
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, nest21Cmd, nest20Cmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, nest21Cmd, nest20Cmd, nest18Cmd];
 
 exports.modName = "System Commands";
 
@@ -163,7 +154,7 @@ if (dataHash.isMod) {
   //var nest20 = require('./nest20');
 (nest20);
 } else {
-return false;
+callback(false, "");
 }
 }
 //----------
@@ -181,4 +172,20 @@ if (dataHash.isMod) {
 return false;
 }
 }
-//
+
+//----------------***********-------------
+
+function nest18Cmd(dataHash, callback) {
+  var regex = /^\/nest18$/;
+var nest18 = require('./nest18');
+
+  if (regex.test(dataHash.request.text)) {
+    if (dataHash.isMod) {
+callback(true, "Thermostat set to 18 degrees celsius", []);
+nest18;
+
+  } else {
+      callback(false, "You're not the boss of me, only mods can change temperature", []);
+    }
+  }
+}
