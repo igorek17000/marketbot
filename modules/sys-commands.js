@@ -159,7 +159,7 @@ callback(true, "Thermostat set to 20 degrees celsius", []);
   //var nest20 = require('./nest20');
 nest20;
 } else {
-callback(true, "You're not the boss of me, only mods can adjust the temperature", []);
+callback(true, "Access Denied! Only mods can adjust the temperature", []);
 }
 }
 }
@@ -177,7 +177,7 @@ var nest21 = require('./nest21');
 callback(true, "Thermostat set to 21 degrees celsius", []);
 nest21;
 } else {
-callback(true, "You're not the boss of me, only mods can adjust the temperature", []);
+callback(true, "Access Denied! Only mods can adjust the temperature", []);
 }
 }
 }
@@ -195,7 +195,7 @@ callback(true, "Thermostat set to 18 degrees celsius", []);
 nest18;
 
   } else {
-      callback(true, "You're not the boss of me, only mods can adjust the temperature", []);
+      callback(true, "Access Denied! Only mods can adjust the temperature", []);
 }
 }
 }
