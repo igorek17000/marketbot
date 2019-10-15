@@ -1,5 +1,5 @@
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, nest18Cmd, nest20Cmd, nest21Cmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, nest18Cmd, nest20Cmd, nest21Cmd, nest22Cmd];
 
 exports.modName = "System Commands";
 
@@ -28,6 +28,7 @@ exports.getCmdListDescription = function () {
     {cmd: "/nest18", desc: "Set Nest temperature to 18 degrees celsius"},
     {cmd: "/nest20", desc: "Set Nest temperature to 20 degrees celsius"},
     {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"}
+    {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
 }
 
@@ -179,6 +180,22 @@ callback(true, "Access Denied! Only mods can adjust the temperature", []);
 
 //----------------***********-------------
 
+function nest21Cmd(dataHash, callback) {
+  var regex = /^\/nest21$/;
+
+  if (regex.test(dataHash.request.text)) {
+    if (dataHash.isMod) {
+
+callback(true, "Thermostat set to 21 degrees celsius", []);
+var nest21 = require('./modules/nest21');
+nest21;
+} else {
+      callback(true, "Access Denied! Only mods can adjust the temperature", []);
+}
+}
+}
+
+//-----------------------------------------
 function nest22Cmd(dataHash, callback) {
   var regex = /^\/nest22$/;
 
