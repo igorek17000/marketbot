@@ -37,12 +37,12 @@ function dateCmd(dataHash, callback) {
   //var date = new Date();
 
 
-var date = new Date().toLocaleDateString();
+//var date = new Date().toLocaleDateString();
 
-//var time = new Date().toLocaleTimeString();
+var time = new Date().toLocaleTimeString();
 
   if (regex.test(dataHash.request.text)) {
-callback(true, date);
+callback(true, time);
   //if (regex.test(dataHash.request.text)) {
     //callback(true, time);
 // --var datetime = new Date();
@@ -114,7 +114,7 @@ function aboutCmd(dataHash, callback) {
 }
 
 
-//**********************************************************************
+//*****************This is where all the magic happens***************************
 
 function goCmd(dataHash, callback) {
   var regex = /^\/go$/;
@@ -146,18 +146,15 @@ console.log(response);
 //---------
 
 
-function nest20Cmd(dataHash, callback) {
-  var regex = /^\/nest20$/;
-//var nest20 = require('./nest20');
+function nest18Cmd(dataHash, callback) {
+  var regex = /^\/nest18$/;
 
 if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
-callback(true, "Thermostat set to 20 degrees celsius", []);
-  var nest20 = require('./nest20');
 
-//if (regex.test(dataHash.request.text)) {
-  //var nest20 = require('./nest20');
-nest20;
+callback(true, "Thermostat set to 18 degrees celsius", []);
+  var nest18 = require('./modules/nest18');
+nest18;
 } else {
 callback(true, "Access Denied! Only mods can adjust the temperature", []);
 }
@@ -165,17 +162,15 @@ callback(true, "Access Denied! Only mods can adjust the temperature", []);
 }
 //----------
 
-function nest21Cmd(dataHash, callback) {
-  var regex = /^\/nest21$/;
-//var nest21 = require('./nest21');
+function nest20Cmd(dataHash, callback) {
+  var regex = /^\/nest20$/;
 
 if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
-var nest21 = require('./nest21');
-//if (regex.test(dataHash.request.text)) {
-  //var nest21 = require('./nest21');
-callback(true, "Thermostat set to 21 degrees celsius", []);
-nest21;
+
+callback(true, "Thermostat set to 20 degrees celsius", []);
+var nest20 = require('./modules/nest20');
+nest20;
 } else {
 callback(true, "Access Denied! Only mods can adjust the temperature", []);
 }
@@ -184,17 +179,16 @@ callback(true, "Access Denied! Only mods can adjust the temperature", []);
 
 //----------------***********-------------
 
-function nest18Cmd(dataHash, callback) {
-  var regex = /^\/nest18$/;
-//var nest18 = require('./nest18');
+function nest22Cmd(dataHash, callback) {
+  var regex = /^\/nest22$/;
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
-      var nest18 = require('./nest18');
-callback(true, "Thermostat set to 18 degrees celsius", []);
-nest18;
 
-  } else {
+callback(true, "Thermostat set to 22 degrees celsius", []);
+var nest22 = require('./modules/nest22');
+nest22;
+} else {
       callback(true, "Access Denied! Only mods can adjust the temperature", []);
 }
 }
