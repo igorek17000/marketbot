@@ -1,5 +1,5 @@
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd];
 
 exports.modName = "System Commands";
 
@@ -227,4 +227,18 @@ nest22;
       callback(true, "Access Denied! Only mods can adjust the temperature", []);
 }
 }
+}
+
+//-----------
+
+function helpCmd(dataHash, callback) {
+  var regex = /^\/help$/;
+
+  if (regex.test(dataHash.request.text)) {
+    callback(true, "Command List", []);
+  var mainBuiltHTML = require('./command-list');
+mainBuiltHTML;
+  } else {
+    return false;
+  }
 }
