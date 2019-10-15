@@ -27,7 +27,7 @@ exports.getCmdListDescription = function () {
     {cmd: "/go", desc: "Send a test email to bot", mod: true},
     {cmd: "/nest18", desc: "Set Nest temperature to 18 degrees celsius"},
     {cmd: "/nest20", desc: "Set Nest temperature to 20 degrees celsius"},
-    {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"}
+    {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
 }
