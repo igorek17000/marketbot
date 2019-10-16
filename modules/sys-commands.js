@@ -1,5 +1,5 @@
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, getCmdListDescriptionCmd, goCmd, helpCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd];
 
 exports.modName = "System Commands";
 
@@ -241,4 +241,21 @@ mainBuiltHTML;
   } else {
     return false;
   }
+}
+
+//----------
+
+function getCmdListDescriptionCmd(dataHash, callback) {
+  var regex = /^\/getCmdListDescription$/;
+
+  if (regex.test(dataHash.request.text)) {
+    if (dataHash.isMod) {
+
+callback(true, "", []);
+Return getCmdListDescription;
+//nest22;
+} else {
+      callback(true, "Test script", []);
+}
+}
 }
