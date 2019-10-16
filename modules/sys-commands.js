@@ -252,7 +252,7 @@ function getCmdListDescriptionCmd(dataHash, callback) {
     if (dataHash.isMod) {
 
 callback(true, "", []);
-var getCmdListDescription = require('./sys-commands'); 
+var getCmdListDescription = require('bot'); 
 getCmdListDescription;
 //nest22;
 } else {
