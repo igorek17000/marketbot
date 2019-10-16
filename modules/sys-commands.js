@@ -252,7 +252,7 @@ function getCmdListDescriptionCmd(dataHash, callback) {
     if (dataHash.isMod) {
 
 callback(true, "", []);
-Return getCmdListDescription;
+return getCmdListDescription;
 //nest22;
 } else {
       callback(true, "Test script", []);
