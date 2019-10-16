@@ -1,5 +1,0 @@
-function a() {
-var now = require('newDate');
-now;
-Return;
-}
