@@ -245,7 +245,7 @@ mainBuiltHTML;
 
 //----------
 
-function getCmdListDescriptionCmd(dataHash, callback) {
+function nowCmd(dataHash, callback) {
   var regex = /^\/now$/;
 
   if (regex.test(dataHash.request.text)) {
