@@ -1,5 +1,5 @@
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, getCmdListDescriptionCmd, goCmd, helpCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd];
 
 exports.modName = "System Commands";
 
@@ -246,17 +246,17 @@ mainBuiltHTML;
 //----------
 
 function getCmdListDescriptionCmd(dataHash, callback) {
-  var regex = /^\/getCmdListDescription$/;
+  var regex = /^\/now$/;
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
 
-callback(true, "", []);
-var getCmdListDescription = require('./bot'); 
-getCmdListDescription;
+callback(true, "Now", []);
+var now = require('./modules/now'); 
+now;
 //nest22;
 } else {
-      callback(true, "Test script", []);
+      callback(true, "Not now", []);
 }
 }
 }
