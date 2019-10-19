@@ -7,6 +7,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "cron": "^1.7.2",
     "director": "^1.2.8",
     "dotenv": "^8.1.0",
     "eslint": "^6.5.1",
@@ -20,6 +21,7 @@
     "jsinspect": "^0.12.7",
     "lodash": "^4.17.15",
     "mocha": "^6.2.1",
+    "moment": "^2.24.0",
     "mongodb": "^2.2.36",
     "nodemailer": "^6.3.0",
     "nps": "^5.9.8",
