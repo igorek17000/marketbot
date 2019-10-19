@@ -22,6 +22,9 @@ if (error) {
 console.log(error);
 } else {
 console.log(response);
+
+console.log('\u0007');
+
 }
 Transport.close();
 });
