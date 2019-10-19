@@ -180,10 +180,7 @@ if (regex.test(dataHash.request.text)) {
 
 callback(true, "Thermostat set to 20 degrees celsius", []);
 var nest20 = require('./modules/nest20');
-//nest20;
-console.log('\u0007');
-
-
+nest20;
 } else {
 callback(true, "Access Denied! Only mods can adjust the temperature", []);
 }
