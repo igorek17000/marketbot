@@ -36,33 +36,13 @@ exports.getCmdListDescription = function () {
 
 function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
-  //var date = new Date();
 
 var moment = require('moment'); 
-//var time = moment().local().format('LLLL'); 
-//console.log(time);
-
-//var date = moment.utc().format('LLLL'); 
-
 var date = moment().utcOffset(-240).format('LLLL');
-
-//var stillUtc = moment.utc(date).toDate(); 
-//var local = moment(stillUtc).locale().format('LLLL'); 
-//console.log(local);
-
-//var date = new Date().toLocaleDateString();
-
-//var time = new Date().toLocaleTimeString();
 
   if (regex.test(dataHash.request.text)) {
 callback(true, date);
-  //if (regex.test(dataHash.request.text)) {
-    //callback(true, time);
-// --var datetime = new Date();
-// --console.log(datetime);
-//console.log(estDate);
-//callback(datetime);
-//return (new Date());
+  
 } else {
 return false;
 }
