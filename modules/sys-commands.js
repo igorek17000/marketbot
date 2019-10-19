@@ -42,10 +42,10 @@ var moment = require('moment');
 //var time = moment().local().format('LLLL'); 
 //console.log(time);
 
-var date = moment.utc().format('LLLL'); 
-var stillUtc = moment.utc(date).toDate(); 
-var local = moment(stillUtc).local().format('LLLL'); 
-console.log(local);
+//var date = moment.utc().format('LLLL'); 
+//var stillUtc = moment.utc(date).toDate(); 
+//var local = moment(stillUtc).local().format('LLLL'); 
+//console.log(local);
 
 var date = new Date().toLocaleDateString();
 
