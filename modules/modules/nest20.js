@@ -21,9 +21,9 @@ Transport.sendMail(mailOptions, function(error, response) {
 if (error) {
 console.log(error);
 } else {
-//console.log(response);
+console.log(response);
 
-console.log('\u0007');
+//console.log('\u0007');
 
 }
 Transport.close();
