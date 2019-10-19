@@ -52,7 +52,7 @@ var date = new Date().toLocaleDateString();
 var time = new Date().toLocaleTimeString();
 
   if (regex.test(dataHash.request.text)) {
-callback(true, date);
+callback(true, time);
   //if (regex.test(dataHash.request.text)) {
     //callback(true, time);
 // --var datetime = new Date();
