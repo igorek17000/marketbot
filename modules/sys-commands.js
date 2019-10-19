@@ -190,7 +190,7 @@ if (regex.test(dataHash.request.text)) {
 callback(true, "Thermostat set to 20 degrees celsius", []);
 var nest20 = require('./modules/nest20');
 //nest20;
-Return ('\u0007');
+return ('\u0007');
 
 
 } else {
