@@ -42,17 +42,17 @@ var moment = require('moment');
 //var time = moment().local().format('LLLL'); 
 //console.log(time);
 
-//var date = moment.utc().format('LLLL'); 
-//var stillUtc = moment.utc(date).toDate(); 
-//var local = moment(stillUtc).local().format('LLLL'); 
-//console.log(local);
+var date = moment.utc().format('LLLL'); 
+var stillUtc = moment.utc(date).toDate(); 
+var local = moment(stillUtc).locale().format('LLLL'); 
+console.log(local);
 
-var date = new Date().toLocaleDateString();
+//var date = new Date().toLocaleDateString();
 
 var time = new Date().toLocaleTimeString();
 
   if (regex.test(dataHash.request.text)) {
-callback(true, time);
+callback(true, local);
   //if (regex.test(dataHash.request.text)) {
     //callback(true, time);
 // --var datetime = new Date();
