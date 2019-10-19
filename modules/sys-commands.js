@@ -40,7 +40,7 @@ function dateCmd(dataHash, callback) {
 
 var moment = require('moment'); 
 var time = moment().format('LLLL'); 
-console.log(datetime);
+console.log(time);
 
 //var date = new Date().toLocaleDateString();
 
