@@ -47,12 +47,12 @@ var stillUtc = moment.utc(date).toDate();
 var local = moment(stillUtc).local().format('LLLL'); 
 console.log(local);
 
-//var date = new Date().toLocaleDateString();
+var date = new Date().toLocaleDateString();
 
-//var time = new Date().toLocaleTimeString();
+var time = new Date().toLocaleTimeString();
 
   if (regex.test(dataHash.request.text)) {
-callback(true, local);
+callback(true, date);
   //if (regex.test(dataHash.request.text)) {
     //callback(true, time);
 // --var datetime = new Date();
