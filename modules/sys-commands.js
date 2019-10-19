@@ -38,10 +38,13 @@ function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
   //var date = new Date();
 
+var moment = require('moment'); 
+var time = moment().format('LLLL'); 
+console.log(datetime);
 
 //var date = new Date().toLocaleDateString();
 
-var time = new Date().toLocaleTimeString();
+//var time = new Date().toLocaleTimeString();
 
   if (regex.test(dataHash.request.text)) {
 callback(true, time);
