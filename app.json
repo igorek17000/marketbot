@@ -3,8 +3,8 @@
   "description": "Basic Groupme Bot written in Node",
   "repository": "na",
   "logo": "",
-  "keywords": []
+  "keywords": [],
 "dependencies": { 
-"getAllCommands": "./custom_commands/user-commands",
+"getAllCommands": "./custom_commands/user-commands"
 }
 }
