@@ -229,7 +229,7 @@ function helpCmd(dataHash, callback) {
     if (dataHash.isMod) {
     
     callback(true, "Command List", []);
-  var getCmdListDescription = getCmdListDescription; //require('../custom_commands/user-commands.js');
+  var getCmdListDescription = exports.getCmdListDescription; //require('../custom_commands/user-commands.js');
 getCmdListDescripsion;
 //import { getAllCommands } from "user-commands.js";
 //getAllCommands;
