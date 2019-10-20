@@ -227,8 +227,8 @@ function helpCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     callback(true, getAllCommands);
-  var getAllCommands = require('user_commands');
-//import { getAllCommands } from "user_commands.js";
+  var getAllCommands = require('user-commands');
+//import { getAllCommands } from "user-commands.js";
 //getAllCommands;
   } else {
     return false;
