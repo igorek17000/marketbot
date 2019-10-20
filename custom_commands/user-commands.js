@@ -13,7 +13,7 @@ function getAllCommands() {
   });
 }
 
-exports.getAllCommands = function {
+exports.getAllCommands = function(){
 db.getAllDocuments(db_table, function(res){
     commands = res;
   });
