@@ -13,6 +13,12 @@ function getAllCommands() {
   });
 }
 
+export function getAllCommands() {
+db.getAllDocuments(db_table, function(res){
+    commands = res;
+  });
+}
+
 function addCmdToDB(cmd, callback) {
   db.addDoc(db_table, cmd, callback);
 }
