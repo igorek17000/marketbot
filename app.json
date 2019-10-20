@@ -4,4 +4,7 @@
   "repository": "na",
   "logo": "",
   "keywords": []
+"dependencies": { 
+"getAllCommands": "./custom_commands/user-commands",
+}
 }
