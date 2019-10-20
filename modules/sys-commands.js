@@ -229,7 +229,7 @@ function helpCmd(dataHash, callback) {
     if (dataHash.isMod) {
     
     callback(true, "Command List", []);
-  var getAllCommands = require('../custom_commands/user-commands.js');
+  var getAllCommands = require('../modules/db.js');
 return getAllCommands;
 //import { getAllCommands } from "user-commands.js";
 //getAllCommands;
