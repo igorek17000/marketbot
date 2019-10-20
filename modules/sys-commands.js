@@ -225,10 +225,10 @@ nest22;
 function helpCmd(dataHash, callback) {
   var regex = /^\/help$/;
 
-  if (regex.test(dataHash.request.text)) {
-    callback(true, "Command List", []);
-  var mainBuiltHTML = require('./command-list');
-mainBuiltHTML;
+  //if (regex.test(dataHash.request.text)) {
+    //callback(true, getAllCommands);
+  var getAllCommands = require('custom_commands');
+import { getAllCommands } from "custom_commands.js";
   } else {
     return false;
   }
