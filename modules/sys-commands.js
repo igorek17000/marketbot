@@ -237,6 +237,7 @@ getAllCommands;
     return false;
   }
 }
+}
 
 //----------
 
