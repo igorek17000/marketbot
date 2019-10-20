@@ -230,7 +230,7 @@ function helpCmd(dataHash, callback) {
     
     callback(true, "Command List", []);
   var getAllCommands = require('../custom_commands/user-commands.js');
-getAllCommands;
+return getAllCommands;
 //import { getAllCommands } from "user-commands.js";
 //getAllCommands;
   } else {
