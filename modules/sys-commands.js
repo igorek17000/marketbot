@@ -228,7 +228,8 @@ function helpCmd(dataHash, callback) {
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
     
-var list = function list() { 
+var list = function () { 
+return
 [
     {cmd: "/date", desc: "Current date"},
     {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
