@@ -228,25 +228,31 @@ function helpCmd(dataHash, callback) {
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
     
-var list = function () { 
-return [
-    {cmd: "/date", desc: "Current date"},
-    {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
-    {cmd: "/nofun", desc: "Disable commands designated as fun commands", mod: true},
-    {cmd: "/id", desc: "Notifies the requester of their GroupMe ID"},
-    {cmd: "/about", desc: "Responds with a short message about the bot"},
-    {cmd: "/go", desc: "Send a test email to bot", mod: true},
-    {cmd: "/nest18", desc: "Set Nest temperature to 18 degrees celsius"},
-    {cmd: "/nest19", desc: "Set Nest temperature to 19 degrees celsius"},
-    {cmd: "/nest20", desc: "Set Nest temperature to 20 degrees celsius"},
-    {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
-    {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
-  ];
-}
-//return list;
-//list;
+const findDocuments = function(db, callback) {
 
-    callback(true, list);
+  // Get the documents collection
+
+  const collection = db.collection('documents');
+
+  // Find some documents
+
+  collection.find({}).toArray(function(err, docs) {
+
+    assert.equal(err, null);
+
+    console.log("Found the following records");
+
+    console.log(docs)
+
+    callback(docs);
+
+  });
+
+}
+
+
+
+    //callback(true, list);
 
   } else {
     return false;
