@@ -3,7 +3,9 @@ var db = require('mongodb').Db
 
 //var connection_string = 'mongodb://0.0.0.0:27017/sampledb';
 
-var connection_string = 'mongodb+srv://dstlmike1:308boonave@cluster0-esmha.mongodb.net/test';
+//var connection_string = 'mongodb+srv://dstlmike1:308boonave@cluster0-esmha.mongodb.net/test';
+var connection_string = 'mongodb://0.0.0.0:27017/nodejs';
+
 
 if(process.env.MONGODB_PASSWORD){
   connection_string = 'mongodb://' + process.env.MONGODB_USER + ":" +
