@@ -228,8 +228,7 @@ function helpCmd(dataHash, callback) {
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
     
-var list = function () {
-  return [
+var list = [
     {cmd: "/date", desc: "Current date"},
     {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
     {cmd: "/nofun", desc: "Disable commands designated as fun commands", mod: true},
@@ -242,8 +241,9 @@ var list = function () {
     {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
+return list;
 }
-list;
+//list;
 
     //callback(true, "Command List", []);
 
