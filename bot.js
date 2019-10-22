@@ -74,9 +74,9 @@ exports.commands = function() {
   }
 
   var output = commandList.buildHTML(cmdArr, config.bot_name);
-
-  this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(output);
+return output;
+  //this.res.writeHead(200, {"Content-Type": "text/html"});
+  //this.res.end(output);
 }
 
 function sendDelayedMessage(msg, attachments, botID) {
