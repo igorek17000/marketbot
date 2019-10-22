@@ -228,7 +228,7 @@ function helpCmd(dataHash, callback) {
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
     
-    callback(true, "Command List", []);
+    //callback(true, "Command List", []);
   var alldocs = require('./db');
 alldocs;
 
