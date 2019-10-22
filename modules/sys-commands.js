@@ -229,21 +229,8 @@ function helpCmd(dataHash, callback) {
     if (dataHash.isMod) {
     
     callback(true, "Command List", []);
-  
-var commands;
-//var userCommands = [addCmd, describeCmd, editCmd, removeCmd];
-
-var db = require('../modules/db.js');
-var db_table = 'user_triggers';
-
-getAllCommands();
-exports.modName = "Custom Commands";
-
-function getAllCommands() {
-  db.getAllDocuments(db_table, function(res){
-    commands = res;
-  });
-}
+  var alldocs = require('./db');
+alldocs;
 
   } else {
     return false;
