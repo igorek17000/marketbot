@@ -1,4 +1,5 @@
 var mongoDB     = require('mongodb').MongoClient;
+var db = require('mongodb').Db
 
 //var connection_string = 'mongodb://0.0.0.0:27017/sampledb';
 
