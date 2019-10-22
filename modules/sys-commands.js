@@ -242,6 +242,7 @@ var list = function list() {
     {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
+}
 //return list;
 //list;
 
@@ -252,7 +253,7 @@ var list = function list() {
   }
 }
 }
-}
+
 
 //----------
 
