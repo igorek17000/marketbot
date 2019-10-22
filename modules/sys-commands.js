@@ -232,7 +232,7 @@ const findDocuments = function(db, callback) {
 
   // Get the documents collection
 
-  const collection = db.collection('documents');
+  const collection = db.collection('sampledb');
 
   // Find some documents
 
