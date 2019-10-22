@@ -229,8 +229,7 @@ function helpCmd(dataHash, callback) {
     if (dataHash.isMod) {
     
 var list = function () { 
-return
-[
+return [
     {cmd: "/date", desc: "Current date"},
     {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
     {cmd: "/nofun", desc: "Disable commands designated as fun commands", mod: true},
