@@ -61,8 +61,8 @@ exports.getCmdListDescription = function () {
     cmdArr = [
     {cmd: "/room add 'name' 'id'", desc: "Add the bot to another room.", owner: true},
   ];
-
-  return cmdArr;
+//Next line []
+  return [ cmdArr ];
 }
 
 function cmdRoomAdd(request, currentBot, owner, callback) {
