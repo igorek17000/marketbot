@@ -20,7 +20,10 @@ function init() {
 
 //feels pointless, come up with a better way to do this
 function getFileAll(path, callback) {
-  fs.readFile(path, 'utf8', function(err, data){
+  //fs.readFile(path, 'utf8', function(err, data){
+  fs.readFile(path, 'utf8', (err, data) => {
+    if (err) return console.error(err);
+  } else {
     callback(data);
   });
 }
@@ -80,5 +83,5 @@ exports.buildHTML = function (cmdArray, bot_name) {
   mainBuiltHTML = mainBuiltHTML.replace('$$mod', modBuiltHTML);
   mainBuiltHTML = mainBuiltHTML.replace('$$owner', ownerBuiltHTML);
 
-  return mainBuiltHTML;
+  return [ mainBuiltHTML ];
 }
