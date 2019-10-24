@@ -22,8 +22,6 @@ function init() {
 function getFileAll(path, callback) {
   //fs.readFile(path, 'utf8', function(err, data){
   fs.readFile(path, 'utf8', (err, data) => {
-    if (err) return console.error(err);
-  } else {
     callback(data);
   });
 }
