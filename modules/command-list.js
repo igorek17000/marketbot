@@ -1,5 +1,5 @@
 var mainHTML, allHTML, modHTML, ownerHTML;
-var fs = require('fs');
+var fs = require('fs-extra');
 
 init();
 
