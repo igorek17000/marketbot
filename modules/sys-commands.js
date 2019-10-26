@@ -229,12 +229,8 @@ function helpCmd(dataHash, callback) {
     if (dataHash.isMod) {
 
 callback(true, "Command List", []);
-var db = require('./db');
-var getcmdlistdescription = require('./sys-commands');
-
-
-db.getcmdlistdescription.find({});
-return getcmdlistdescription;
+var list = require('./list');
+list
 
 
     //callback(true, list);
