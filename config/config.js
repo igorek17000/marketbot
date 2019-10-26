@@ -25,5 +25,5 @@ function setConfig(){
 }
 
 exports.setConfig = setConfig;
-exports.bot_name = 'Fo0 Bot';
+exports.bot_name = 'Alex Bot';
 exports.delay_time = 1000;
