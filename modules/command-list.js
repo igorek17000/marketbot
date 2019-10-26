@@ -20,11 +20,11 @@ function init() {
 
 //feels pointless, come up with a better way to do this
 function getFileAll(path, callback) {
-  //fs.readFile(path, 'utf8', function(err, data){
-  fs.readFile(path, 'utf8', (err, data) => {
+  fs.readFile(path, 'utf8', function(err, data){
+  //fs.readFile(path, 'utf8', (err, data) => {
     callback(data);
     //var data = res
-    //return data;
+    return data;
   });
 }
 
