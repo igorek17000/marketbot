@@ -24,7 +24,7 @@ function getFileAll(path, callback) {
   fs.readFile(path, 'utf8', (err, data) => {
     callback(data);
     //var data = res
-    return data;
+    //return data;
   });
 }
 
