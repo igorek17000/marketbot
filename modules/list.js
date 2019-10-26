@@ -22,10 +22,10 @@ function connect(callback){
   });
 }
 
-exports.getAllDocuments = function(collection, callback) {
+var list = function(collection, callback) {
   mongoDB.connect(connection_string, function(err, db) {
     if(err) throw err;
-    var allDocs = db.collection(collection).find().toArray(function(err, docs) {
+    db.collection(collection).find().toArray(function(err, docs) {
       //var allDocs = db.collection(sampledb).find().toArray(function(err, docs) {
  
 
