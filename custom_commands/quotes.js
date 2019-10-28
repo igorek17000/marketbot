@@ -70,11 +70,10 @@ function cmdSaveQuote(funMode, request, callback) {
       var quote = request.text.substring(end, request.text.length);
       quote = quote.trim();
 
-      var moment = require('moment'); 
-      var date = moment().utcOffset(-240).format('LLLL');
+      //var moment = require('moment'); 
+      //var date = moment().utcOffset(-240).format('LLLL');
 
-      //var date = new Date();
-
+      var date = new Date();
       var year = date.getFullYear();
       var month = date.getMonth() + 1;
       var day = date.getDate();
