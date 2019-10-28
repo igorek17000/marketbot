@@ -83,5 +83,5 @@ exports.buildHTML = function (cmdArray, bot_name) {
   mainBuiltHTML = mainBuiltHTML.replace('$$mod', modBuiltHTML);
   mainBuiltHTML = mainBuiltHTML.replace('$$owner', ownerBuiltHTML);
 
-  return [ mainBuiltHTML ];
+  return mainBuiltHTML;
 }
