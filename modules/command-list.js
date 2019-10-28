@@ -4,16 +4,16 @@ var fs = require('fs-extra');
 init();
 
 function init() {
-  getFileAll('commands/command.html', function(data) {
+  getFileAll('../commands/command.html', function(data) {
     mainHTML = data;
   });
-  getFileAll('commands/partials/_all.html', function(data) {
+  getFileAll('../commands/partials/_all.html', function(data) {
     allHTML = data;
   });
-  getFileAll('commands/partials/_mod.html', function(data) {
+  getFileAll('../commands/partials/_mod.html', function(data) {
     modHTML = data;
   });
-  getFileAll('commands/partials/_owner.html', function(data) {
+  getFileAll('../commands/partials/_owner.html', function(data) {
     ownerHTML = data;
   });
 }
