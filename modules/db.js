@@ -1,7 +1,7 @@
 var mongoDB     = require('mongodb').MongoClient;
 var db = require('mongodb').Db
 
-var connection_string = 'mongodb://dstl%5Fmike1%40hotmail%2Ecom:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27016/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';   
+var connection_string = 'mongodb://dstl_mike1@hotmail.com:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27016/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';   
 
 //var connection_string = 'mongodb://0.0.0.0:27017/test';
 
