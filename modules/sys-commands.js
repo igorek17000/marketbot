@@ -38,7 +38,7 @@ function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
 
 var moment = require('moment'); 
-var date = moment().utcOffset(-240).format('LLLL');
+var date = moment().utcOffset(-180).format('LLLL');
 
   if (regex.test(dataHash.request.text)) {
 callback(true, date);
