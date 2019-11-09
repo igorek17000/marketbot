@@ -39,22 +39,16 @@ function connect(callback){
   });
 }
 
-exports.getAllDocuments = function(collection, docs, callback) {
-  connect(function(db){
-    //if(err) throw err;
-    //var allDocs = db.collection(collection).find().toArray(function(err, docs) {
-    var allDocs = db.collection(collection).find().toArray(docs, function(err, result){
-      if (callback)
-        callback(result);
+
+exports.getAllDocuments = function(collection, callback) {
+  mongoDB.connect(connection_string, function(err, db) {
+    if(err) throw err;
+    var allDocs = db.collection(collection).find().toArray(function(err, docs) {
+      callback(docs);
       db.close();
     });
   });
-}  
-    //callback(docs);
-      //db.close();
-    //});
-  //});
-//}
+}
 
 exports.findDocs = function(collection, matchHash, callback) {
   connect(function(db){
