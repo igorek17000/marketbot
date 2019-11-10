@@ -136,7 +136,7 @@ for (cmd in commands) {
       "message": cmd["message"]
     };
 
-    commands.querry(answerHash)
+    commands.query(answerHash)
     answerAllCommands(db_table);
     var msg = answerHash;
     callback(true, msg, []);
