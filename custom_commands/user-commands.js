@@ -113,7 +113,7 @@ var valve = regex.exec(reqText);
 if (!isMod {
 var msg = "You don't have permission for this request"
 calback(true, msg, []);
-Return msg;
+return msg;
 }
 
 //for (cmd in commands) {
