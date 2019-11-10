@@ -20,13 +20,7 @@ db.getAllDocuments(db_table, function(res){
 }
 
 function answerAllCommands(cmd, callback) {
-var answerHash = {
-      "name": cmd["name"],
-      "regex": cmd["regex"],
-      "message": cmd["message"],
-    };
-
-db.getAllDocuments(db_table, answerHash, callback);
+db.getAllDocuments(db_table, cmd, callback);
 }
 
 function addCmdToDB(cmd, callback) {
@@ -36,7 +30,7 @@ function addCmdToDB(cmd, callback) {
 function updateCmdDB(cmd, updateJson, callback){
   var findHash = {
     "name": cmd["name"]
-  };
+  }
 
   db.updateOneDoc(db_table, findHash, updateJson, callback);
 }
