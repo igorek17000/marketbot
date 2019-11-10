@@ -135,9 +135,9 @@ return msg;
     };
 
     
-    answerAllCommands(answerHash);
+    answerAllCommands(allDocs);
     var msg = answerHash;
-    callback(true, msg, []);
+    callback(true, doc); //msg, []);
     return msg;
   }
 }
