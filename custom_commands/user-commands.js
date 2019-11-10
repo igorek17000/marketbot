@@ -27,7 +27,7 @@ var answerHash = {
     };
 
 db.getAllDocuments(db_table, answerHash, callback);
-L}
+}
 
 function addCmdToDB(cmd, callback) {
   db.addDoc(db_table, cmd, callback);
@@ -140,9 +140,9 @@ return msg;
       //"message": cmd["message"],
     //};
 
-    .find(cmdHash);
+    
     answerAllCommands(cmdHash);
-    var msg = cmdHash;
+    var msg = answerHash;
     callback(true, msg, []);
     return msg;
   }
