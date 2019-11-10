@@ -110,7 +110,7 @@ var reqText = request.text;
 if (regex.test(reqText)){
 var valve = regex.exec(reqText);
 
-if (!isMod {
+if (!isMod) {
 var msg = "You don't have permission for this request"
 calback(true, msg, []);
 return msg;
