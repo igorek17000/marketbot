@@ -104,7 +104,7 @@ exports.getCmdListDescription = function () {
 
 
 function answerCmd(request, bots, ismod, callback) {
-var regex = /^\/answer;
+var regex = /^\/answer$/;
 var reqText = request.text;
 
 if (regex.test(reqText)){
