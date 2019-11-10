@@ -135,7 +135,7 @@ return msg;
     };
 
     
-    answerAllCommands(answeryHash);
+    answerAllCommands(answerHash);
     var msg = answerHash;
     callback(true, msg, []);
     return msg;
