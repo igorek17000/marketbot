@@ -20,7 +20,7 @@ db.getAllDocuments(db_table, function(res){
 }
 
 function answerAllCommands(cmd, callback) {
-db.getAllDocuments(db_table, cmd, callback);
+db.getAllDocuments(db_table, allDocs, callback);
 }
 
 function addCmdToDB(cmd, callback) {
@@ -137,7 +137,7 @@ return msg;
     
     answerAllCommands(allDocs);
     var msg = answerHash;
-    callback(true, doc); //msg, []);
+    callback(true, msg, []);
     return msg;
   }
 }
