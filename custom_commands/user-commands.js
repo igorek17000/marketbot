@@ -1,5 +1,5 @@
 var commands;
-var userCommands = [addCmd, describeCmd, editCmd, removeCmd];
+var userCommands = [addCmd, answerCmd, describeCmd, editCmd, removeCmd];
 
 var db = require('../modules/db.js');
 var db_table = 'user_triggers';
@@ -100,6 +100,42 @@ exports.getCmdListDescription = function () {
   }
 
   return cmdArr;
+}
+
+
+function answerCmd(request, bots, ismod, callback) {
+var regex = /^\/answer;
+var reqText = request.text;
+
+if (regex.test(reqText)){
+var valve = regex.exec(reqText);
+
+if (!isMod {
+var msg = "You don't have permission for this request"
+calback(true, msg, []);
+Return msg;
+}
+
+//for (cmd in commands) {
+      //if (commands[cmd].name == true) {
+        //var msg = val[1] + " already exists";
+        //callback(true, msg, []);
+        //return msg;
+      //}
+    //}
+
+    var cmdHash = {
+      name: val[1].toLowerCase(),
+      regex: "^\/" + val[1] + "$",
+      message: val[2],
+    };
+
+    commands.find(cmdHash);
+    getAllCommands(cmdHash);
+    var msg = cmdHash;
+    callback(true, msg, []);
+    return msg;
+  }
 }
 
 
