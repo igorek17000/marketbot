@@ -20,7 +20,7 @@ db.getAllDocuments(db_table, function(res){
 }
 
 function answerAllCommands(cmd, callback) {
-db.getAllDocuments(db_table, allDocs, callback);
+db.getAllDocuments(db_table, cmd, callback);
 }
 
 function addCmdToDB(cmd, callback) {
@@ -120,13 +120,13 @@ calback(true, msg, []);
 return msg;
 }
 
-//for (cmd in commands) {
-      //if (commands[cmd].name == true) {
-        //var msg = val[1] + " already exists";
-        //callback(true, msg, []);
-        //return msg;
-      //}
-    //}
+for (cmd in commands) {
+      if (commands[cmd].name == true) {
+        var msg = answerHash;
+        callback(true, msg, []);
+        return msg;
+      }
+    }
 
     var answerHash = {
       "name": cmd["name"],
@@ -135,7 +135,7 @@ return msg;
     };
 
     
-    answerAllCommands(allDocs);
+    answerAllCommands(db_table);
     var msg = answerHash;
     callback(true, msg, []);
     return msg;
