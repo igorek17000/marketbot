@@ -125,9 +125,9 @@ Return msg;
     //}
 
     var cmdHash = {
-      name: val[1].toLowerCase(),
-      regex: "^\/" + val[1] + "$",
-      message: val[2],
+      "name": cmd["name"],
+      "regex": cmd["regex"],
+      "message": cmd["message"],
     };
 
     commands.find(cmdHash);
