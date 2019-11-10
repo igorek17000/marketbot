@@ -128,14 +128,14 @@ return msg;
       //}
     //}
 
-    //var cmdHash = {
-      //"name": cmd["name"],
-      //"regex": cmd["regex"],
-      //"message": cmd["message"],
-    //};
+    var answerHash = {
+      "name": cmd["name"],
+      "regex": cmd["regex"],
+      "message": cmd["message"],
+    };
 
     
-    answerAllCommands(cmdHash);
+    answerAllCommands(answeryHash);
     var msg = answerHash;
     callback(true, msg, []);
     return msg;
