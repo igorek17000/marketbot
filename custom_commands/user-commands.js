@@ -19,6 +19,16 @@ db.getAllDocuments(db_table, function(res){
   });
 }
 
+function answerAllCommands(cmd, callback) {
+var answerHash = {
+      "name": cmd["name"],
+      "regex": cmd["regex"],
+      "message": cmd["message"],
+    };
+
+db.getAllDocuments(db_table, answerHash, callback);
+L}
+
 function addCmdToDB(cmd, callback) {
   db.addDoc(db_table, cmd, callback);
 }
@@ -124,14 +134,14 @@ return msg;
       //}
     //}
 
-    var cmdHash = {
-      "name": cmd["name"],
-      "regex": cmd["regex"],
-      "message": cmd["message"],
-    };
+    //var cmdHash = {
+      //"name": cmd["name"],
+      //"regex": cmd["regex"],
+      //"message": cmd["message"],
+    //};
 
-    commands.find(cmdHash);
-    getAllCommands(cmdHash);
+    .find(cmdHash);
+    answerAllCommands(cmdHash);
     var msg = cmdHash;
     callback(true, msg, []);
     return msg;
