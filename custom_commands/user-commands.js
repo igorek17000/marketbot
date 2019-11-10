@@ -108,7 +108,7 @@ var regex = /^\/answer$/;
 var reqText = request.text;
 
 if (regex.test(reqText)){
-var valve = regex.exec(reqText);
+var val = regex.exec(reqText);
 
 if (!isMod) {
 var msg = "You don't have permission for this request"
