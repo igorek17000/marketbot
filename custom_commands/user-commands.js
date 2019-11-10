@@ -131,7 +131,7 @@ return msg;
     var answerHash = {
       "name": cmd["name"],
       "regex": cmd["regex"],
-      "message": cmd["message"],
+      "message": cmd["message"]
     };
 
     
