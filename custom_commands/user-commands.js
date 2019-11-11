@@ -19,8 +19,8 @@ db.getAllDocuments(db_table, function(res){
   });
 }
 
-function answerAllCommands() {
-db.getAllDocuments(db_table, function(res){
+function answerAllDocuments() {
+db.answerAllDocuments(db_table, cmd, callback);
 }
 
 function addCmdToDB(cmd, callback) {
@@ -134,8 +134,8 @@ for (cmd in commands) {
       "message": cmd["message"]
     };
 
-    commands.querry(answerHash)
-    answerAllCommands(answerHash);
+    
+    answerAllDocuments(answerHash);
     var msg = answerHash;
     callback(true, msg, []);
     return msg;
