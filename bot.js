@@ -100,7 +100,8 @@ function postMessage(botResponse, attachments, botID) {
     "text"        : botResponse
   };
 
-  console.log('sending ' + botResponse + ' to ' + botID);
+  //console.log('sending ' + botResponse + ' to ' + botID);
+callback(attachments);
 
 botReq = HTTPS.request(options, function(res) { 
 console.log(res.statusCode)
