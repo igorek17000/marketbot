@@ -50,6 +50,19 @@ exports.getAllDocuments = function(collection, callback) {
   });
 }
 
+export.answerAllDocumments = function(collection, callback) {
+connect(function(db){
+var cursor = db.collection(collection).find();
+var ret = [];
+cursor.each(function(err, doc){
+if(callback)
+callback(result)
+db.close();
+});
+});
+}
+
+
 exports.findDocs = function(collection, matchHash, callback) {
   connect(function(db){
     var cursor = db.collection(collection).find(matchHash);
