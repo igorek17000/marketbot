@@ -21,8 +21,6 @@ db.getAllDocuments(db_table, function(res){
 
 function answerAllCommands() {
 db.getAllDocuments(db_table, function(res){
-Commands = res;
-});
 }
 
 function addCmdToDB(cmd, callback) {
