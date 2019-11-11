@@ -50,7 +50,7 @@ exports.getAllDocuments = function(collection, callback) {
   });
 }
 
-export.answerAllDocumments = function(collection, callback) {
+export.answerAllDocuments = function(collection, callback) {
 connect(function(db){
 var cursor = db.collection(collection).find();
 var ret = [];
