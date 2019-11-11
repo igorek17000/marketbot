@@ -229,8 +229,8 @@ function helpCmd(dataHash, callback) {
     if (dataHash.isMod) {
 
 callback(true, "Command List", []);
-var list = require('./list');
-list;
+var aldocs = require('./alldocs');
+alldocs.getAllDocuments;
 
 
     //callback(true, list);
