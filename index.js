@@ -45,5 +45,5 @@ server.listen(port, ip);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("I am a robot.");
+  this.res.end("I am AlexBot.");
 }
