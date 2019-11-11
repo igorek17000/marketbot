@@ -85,7 +85,7 @@ function sendDelayedMessage(msg, attachments, botID) {
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, callback) {
+function postMessage(botResponse, attachments, botID) {
   var options, body, botReq;
 
   options = {
@@ -101,7 +101,7 @@ function postMessage(botResponse, attachments, botID, callback) {
   };
 
   //console.log('sending ' + botResponse + ' to ' + botID);
-callback(attachments);
+return attachments;
 
 botReq = HTTPS.request(options, function(res) { 
 console.log(res.statusCode)
