@@ -127,7 +127,7 @@ return msg;
     return msg;
   }
 }
-}
+
 
 
 function addCmd(request, bots, isMod, callback) {
