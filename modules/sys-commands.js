@@ -230,7 +230,7 @@ function helpCmd(dataHash, callback) {
 
 callback(true, "Command List", []);
 var alldocs = require('./alldocs');
-alldocs.getAllDocuments;
+alldocs;
 
 
     //callback(true, list);
