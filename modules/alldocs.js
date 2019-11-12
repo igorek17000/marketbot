@@ -49,3 +49,17 @@ exports.getAllDocuments = function(collection, callback) {
     });
   });
 }
+
+
+exports.getDocuments = function(callback) {
+connect(function(db){
+var docs = db.db_table.find({name : 1}, {regex: 1}, {_id: 0}).forEach(printJson);
+var ret = [];
+//cursor.each(function(err, doc){
+if(callback)
+callback(docs);
+
+db.close();
+});
+});
+}
