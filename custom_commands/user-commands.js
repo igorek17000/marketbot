@@ -19,8 +19,10 @@ db.getAllDocuments(db_table, function(res){
   });
 }
 
-function answerAllDocuments(cmd, callback) {
-db.answerAllDocuments(db_table, cmd, callback);
+function answerAllDocuments() {
+db.answerAllDocuments(db_table, function (res){
+commands = res;
+});
 }
 
 function addCmdToDB(cmd, callback) {
@@ -122,7 +124,7 @@ return msg;
 }
 
     answerAllDocuments();
-    var msg = res;
+    var msg = commands;
     callback(true, msg, []);
     return msg;
   }
