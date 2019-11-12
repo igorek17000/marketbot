@@ -119,11 +119,9 @@ var msg = "You don't have permission for this request"
 callback(true, msg, []);
 return msg;
 
-} else {
+}
 
-
-    
-    answerAllDocuments();
+    answerAllDocuments(callback);
     var msg = res;
     callback(true, msg, []);
     return msg;
