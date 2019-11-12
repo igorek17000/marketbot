@@ -1,7 +1,8 @@
 var mods = [];
+var sys_triggers = [];
 var db = require('./db.js');
 var db_table = 'mods';
-var modCommands = [addModCmd, listModsCmd, removeModCmd];
+var modCommands = [addModCmd, commandCmd, listModsCmd, removeModCmd];
 
 getAllMods();
 exports.modName = "Mod Control";
@@ -91,6 +92,13 @@ function getModNames(){
   return names;
 }
 
+function getDocuments(){
+var names = [];
+for (var one in sys_triggers) {
+names.push(sys_triggers[one].name)
+}
+return names;
+
 function addModCmd(request, owner, callback) {
   var regex = /^\/mod add (.+?) ([\s\S]+)/i;
 
@@ -152,6 +160,16 @@ function listModsCmd(request, owner, callback) {
   if (regex.test(request.text)) {
     var str = "Current mods are: "
     str += getModNames().toString().replace(/,/g, ', ');
+    callback(true, str);
+  }
+}
+
+function commandCmd(request, owner, callback) {
+  var regex = /^\/command list$/;
+
+  if (regex.test(request.text)) {
+    var str = "Current commands are: "
+    str += getDoccuments().toString().replace(/,/g, ', ');
     callback(true, str);
   }
 }
