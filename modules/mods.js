@@ -98,6 +98,7 @@ for (var one in sys_triggers) {
 names.push(sys_triggers[one].name)
 }
 return names;
+}
 
 function addModCmd(request, owner, callback) {
   var regex = /^\/mod add (.+?) ([\s\S]+)/i;
