@@ -116,30 +116,19 @@ var val = regex.exec(reqText);
 
 if (!isMod) {
 var msg = "You don't have permission for this request"
-calback(true, msg, []);
+callback(true, msg, []);
 return msg;
-}
 
-for (cmd in commands) {
-      if (commands[cmd].name == true) {
-        var msg = answerHash;
-        callback(true, msg, []);
-        return msg;
-      }
-    }
+} else {
 
-    var answerHash = {
-      "name": cmd["name"],
-      "regex": cmd["regex"],
-      "message": cmd["message"]
-    };
 
     
-    answerAllDocuments(answerHash);
-    var msg = answerHash;
+    answerAllDocuments();
+    var msg = res;
     callback(true, msg, []);
     return msg;
   }
+}
 }
 
 
