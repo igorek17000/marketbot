@@ -170,7 +170,7 @@ function commandCmd(request, owner, callback) {
 
   if (regex.test(request.text)) {
     var str = "Current commands are: "
-    str += getDoccuments().toString().replace(/,/g, ', ');
+    str += getDocuments().toString().replace(/,/g, ', ');
     callback(true, str);
   }
 }
