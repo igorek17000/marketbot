@@ -1,5 +1,5 @@
 var mods = [];
-var sys_triggers = [];
+var user_triggers = [];
 var db = require('./db.js');
 var db_table = 'mods';
 var modCommands = [addModCmd, commandCmd, listModsCmd, removeModCmd];
@@ -94,8 +94,8 @@ function getModNames(){
 
 function getDocuments(){
 var names = [];
-for (var one in sys_triggers) {
-names.push(sys_triggers[one].name);
+for (var one in user_triggers) {
+names.push(user_triggers[one].name);
 }
 return names;
 }
