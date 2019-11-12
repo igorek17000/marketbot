@@ -32,10 +32,8 @@ if(process.env.MONGODB_PASSWORD){
 }
 
 
-function connect(callback){
   mongoDB.connect(connection_string, function(err, db) {
     if(err) throw err;
-    callback(db);
 var allDocs = db.db_table.find({name : 1}, {regex: 1}, {_id: 0}).forEach(printJson);
 var ret = [];
 //cursor.each(function(err, doc){
