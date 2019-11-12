@@ -95,7 +95,7 @@ function getModNames(){
 function getDocuments(){
 var names = [];
 for (var one in sys_triggers) {
-names.push(sys_triggers[one].name)
+names.push(sys_triggers[one].name);
 }
 return names;
 }
