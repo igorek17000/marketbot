@@ -50,15 +50,10 @@ exports.getAllDocuments = function(collection, callback) {
   });
 }
 
-exports.answerAllDocuments = function(collection, callback) {
+exports.answerAllDocuments = function(user_triggers, callback) {
 connect(function(db){
-var cursor = db.collection(collection).find();
-var ret = [];
-cursor.each(function(err, doc){
-if(callback)
-callback(result)
+db.user_triggers.find({name : 1}, {regex: 1}, {_id: 0}).forEach(printJson);
 db.close();
-});
 });
 }
 
