@@ -94,7 +94,7 @@ function getModNames(){
 
 function getDocuments(){
 var names = [];
-var trigit = 'user_triggers';
+var trigit = user_triggers;
 for (var one in trigit) {
 names.push(trigit[one].name);
 }
