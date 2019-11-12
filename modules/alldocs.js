@@ -34,7 +34,7 @@ if(process.env.MONGODB_PASSWORD){
 
   mongoDB.connect(connection_string, function(err, allDocs) {
     if(err) throw err;
-    var allDocs = db.db_table.find({name : 1}, {regex: 1}, {_id: 0}).forEach(printJson);
-    callback(allDocs);
+    var allDocs = db.user_triggers.find({name : 1}, {regex: 1}, {_id: 0}).forEach(printJson);
+    return allDocs;
       db.close();
 });
