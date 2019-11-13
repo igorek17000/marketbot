@@ -19,10 +19,8 @@ db.getAllDocuments(db_table, function(res){
   });
 }
 
-function answerAllDocuments() {
-db.answerAllDocuments(db_table, function (res){
-commands = res;
-});
+function answerAllDocuments(cmd, callback) {
+db.answerAllDocuments(db_table, cmd, callback);
 }
 
 function addCmdToDB(cmd, callback) {
@@ -109,7 +107,7 @@ exports.getCmdListDescription = function () {
 }
 
 
-function answerCmd(request, bots, isMod, callback, res) {
+function answerCmd(request, bots, isMod, callback) {
 var regex = /^\/answer$/;
 var reqText = request.text;
 
@@ -123,8 +121,15 @@ return msg;
 
 }
 
-    answerAllDocuments();
-    var msg = commands;
+    var answerHash = {
+      name: commands[cmd].name,
+      regex: commands[cmd].regex,
+      message: commands[cmd].message,
+    };
+
+
+    answerAllDocuments(answerHash);
+    var msg = answerHash;
     callback(true, msg, []);
     return msg;
   }
