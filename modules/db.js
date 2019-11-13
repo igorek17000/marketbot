@@ -55,7 +55,7 @@ connect(function(db){
 var name = commands[cmd].name;
 var regex = commands[cmd].regex;
 var id = commands[cmd]._id
-var cursor = db.collection(collection).find({name:true}, {id:0}).forEach().JSON.stringify(...);
+var cursor = db.collection(collection).find({name:true}).forEach().JSON.stringify(...);
 callback(cursor);
 return cursor;
 db.close();
