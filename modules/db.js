@@ -52,7 +52,10 @@ exports.getAllDocuments = function(collection, callback) {
 
 exports.answerAllDocuments = function(collection, callback) {
 connect(function(db){
-var cursor = db.collection(collection).find({commands[cmd].name: 1}, {commands[cmd].regex: 1}, {commands[cmd]._id: 0}).forEach().JSON.stringify();
+var name = commands[cmd].name;
+var regex = commands[cmd].regex;
+var id = commands[cmd]._id
+var cursor = db.collection(collection).find({name: 1}, {regex: 1}, {id: 0}).forEach().JSON.stringify();
 callback(cursor);
 return cursor;
 db.close();
