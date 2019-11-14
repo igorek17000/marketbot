@@ -227,9 +227,11 @@ function helpCmd(dataHash, callback, result) {
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
+var alldocs = require('./alldocs.js');
+
 
 callback(true, alldocs);
-var alldocs = require('./alldocs.js');
+//var alldocs = require('./alldocs.js');
 //alldocs;
 
 
