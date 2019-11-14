@@ -8,9 +8,9 @@ MongoClient.connect(url, function(err, db) {
   var dbo = db.db("sampledb");
   //var query = { name: "test" };
   var query = {};
-  db.collection('user_triggers').find(query).toArray(function(err, result) {
+  db.collection('user_triggers').find(query).toArray(function(err, res) {
     if (err) throw err;
-    console.log(result);
+    console.log(res);
     db.close();
   });
 });
