@@ -65,7 +65,7 @@ callback(cursor);
 return cursor;
 db.close();
 }
-}
+});
 }
 
 
