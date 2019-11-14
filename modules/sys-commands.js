@@ -230,7 +230,7 @@ function helpCmd(dataHash, callback, result) {
 var alldocs = require('./alldocs.js');
 
 
-callback(true, alldocs);
+callback(true, alldocs, result);
 //var alldocs = require('./alldocs.js');
 //alldocs;
 return result;
