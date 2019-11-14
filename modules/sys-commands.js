@@ -233,7 +233,7 @@ var alldocs = require('./alldocs.js');
 callback(true, alldocs);
 //var alldocs = require('./alldocs.js');
 //alldocs;
-
+return result;
 
     //callback(true, list);
 
