@@ -50,7 +50,7 @@ exports.getAllDocuments = function(collection, callback) {
   });
 }
 
-exports.answerAllDocuments = function(collection, callback) {
+exports.answerAllDocuments = function(collection, printJson, callback) {
 connect(function(db){
 //var name = commands[cmd].name;
 //var regex = commands[cmd].regex;
