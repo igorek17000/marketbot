@@ -64,7 +64,6 @@ var cursor = db.collection(collection).find({"name":true}).forEach().JSON.string
 callback(cursor);
 return cursor;
 db.close();
-}
 });
 }
 
