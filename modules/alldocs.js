@@ -11,7 +11,7 @@ MongoClient.connect(url, function(err, db) {
   db.collection('user_triggers').find(query).toArray(function(callback, err, result) {
     if (err) throw err;
     console.log(result);
-callback (result);
+callback(result);
     db.close();
   });
 });
