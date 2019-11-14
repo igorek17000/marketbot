@@ -60,10 +60,14 @@ connect(function(db){
 //while ( cursor.hasNext() ) {
    //printjson( cursor.next() );
 
-var cursor = db.collection(collection).find({"name":true}).forEach().JSON.stringify();
-callback(cursor);
-return cursor;
-db.close();
+var query = {};
+  db.collection('user_triggers').find(query).toArray(function(err, result) {
+    if (err) throw err;
+    console.log(result);
+if (callback)
+callback(result);
+    db.close();
+});
 });
 }
 
