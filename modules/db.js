@@ -52,11 +52,11 @@ exports.getAllDocuments = function(collection, callback) {
 
 exports.answerAllDocuments = function(collection, callback) {
 connect(function(db){
-var name = commands[cmd].name;
-var regex = commands[cmd].regex;
-var id = commands[cmd]._id
+//var name = commands[cmd].name;
+//var regex = commands[cmd].regex;
+//var id = commands[cmd]._id
 
-cursor = db.collection.find();
+cursor = db.collection(collection).find();
 while ( cursor.hasNext() ) {
    printjson( cursor.next() );
 
