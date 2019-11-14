@@ -55,13 +55,18 @@ connect(function(db){
 var name = commands[cmd].name;
 var regex = commands[cmd].regex;
 var id = commands[cmd]._id
-var cursor = db.collection(collection).find({name:true}).forEach().JSON.stringify();
+
+cursor = db.collection.find();
+while ( cursor.hasNext() ) {
+   printjson( cursor.next() );
+
+//var cursor = db.collection(collection).find({name:true}).forEach().JSON.stringify();
 callback(cursor);
 return cursor;
 db.close();
-});
 }
-
+}
+}
 
 
 exports.findDocs = function(collection, matchHash, callback) {
