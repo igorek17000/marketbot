@@ -129,7 +129,7 @@ return msg;
 
 
     answerAllDocuments();
-    var msg = "Command List " + botResponse;
+    var msg = "Command List " + result;
     callback(true, msg, []);
     return msg;
   }
