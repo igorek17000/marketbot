@@ -129,7 +129,7 @@ return msg;
 
 
     answerAllDocuments();
-    var msg = "Command List " + result;
+    var msg = "Command List " + callback;
     callback(true, msg, []);
     return msg;
   }
