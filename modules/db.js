@@ -50,17 +50,17 @@ exports.getAllDocuments = function(collection, callback) {
   });
 }
 
-exports.answerAllDocuments = function(collection, printJson, callback) {
+exports.answerAllDocuments = function(collection, callback) {
 connect(function(db){
 //var name = commands[cmd].name;
 //var regex = commands[cmd].regex;
 //var id = commands[cmd]._id
 
-cursor = db.collection(collection).find();
-while ( cursor.hasNext() ) {
-   printjson( cursor.next() );
+//cursor = db.collection(collection).find();
+//while ( cursor.hasNext() ) {
+   //printjson( cursor.next() );
 
-//var cursor = db.collection(collection).find({name:true}).forEach().JSON.stringify();
+var cursor = db.collection(collection).find({"name":true}).forEach().JSON.stringify();
 callback(cursor);
 return cursor;
 db.close();
