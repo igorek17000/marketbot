@@ -20,7 +20,7 @@ db.getAllDocuments(db_table, function(res){
 }
 
 function answerAllDocuments(cmd, callback) {
-db.answerAllDocuments(db_table, cmd, callback);
+db.answerAllDocuments(cmd, callback);
 }
 
 function addCmdToDB(cmd, callback) {
@@ -129,7 +129,7 @@ return msg;
 
 
     answerAllDocuments();
-    var msg = "Command List " + callback;
+    var msg = "Command List " + result;
     callback(true, msg, []);
     return msg;
   }
