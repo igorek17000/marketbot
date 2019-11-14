@@ -6,8 +6,8 @@ var url = "mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   var dbo = db.db("sampledb");
-  var query = { name: true };
-  db.collection("user_triggers").find(query).toArray(function(err, result) {
+  var query = {name: true};
+  db.collection('user_triggers').find(query).toArray(function(err, result) {
     if (err) throw err;
     console.log(result);
     db.close();
