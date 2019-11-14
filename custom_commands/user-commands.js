@@ -19,7 +19,7 @@ db.getAllDocuments(db_table, function(res){
   });
 }
 
-function answerAllDocuments(cmd, printJson, callback) {
+function answerAllDocuments(cmd, callback) {
 db.answerAllDocuments(db_table, cmd, callback);
 }
 
