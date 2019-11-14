@@ -222,15 +222,15 @@ nest22;
 
 //-----------
 
-function helpCmd(dataHash, callback) {
+function helpCmd(dataHash, callback, result) {
   var regex = /^\/help$/;
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
 
-callback(true, "Command List", []);
-var alldocs = require('./alldocs');
-alldocs;
+callback(true, alldocs);
+var alldocs = require('./alldocs.js');
+//alldocs;
 
 
     //callback(true, list);
