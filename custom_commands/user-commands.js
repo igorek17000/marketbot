@@ -128,8 +128,8 @@ return msg;
     };
 
 
-    answerAllDocuments(answerHash);
-    var msg = answerHash;
+    answerAllDocuments();
+    var msg = "Command List " + botResponse;
     callback(true, msg, []);
     return msg;
   }
