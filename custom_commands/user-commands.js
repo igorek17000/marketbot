@@ -130,8 +130,8 @@ return msg;
 
     //answerAllDocuments();
     var msg = "Command List "
-    callback(true, msg, []);
-    return answerAllDocuments(result);
+    callback(true, msg, + result, []);
+    return answerAllDocuments();
   }
 }
 
