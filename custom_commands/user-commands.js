@@ -129,9 +129,9 @@ return msg;
 
 
     //answerAllDocuments();
-    var msg = "Command List " + answerAllDocuments;
+    var msg = "Command List "
     callback(true, msg, []);
-    return msg;
+    return answerAllDocuments(result);
   }
 }
 
