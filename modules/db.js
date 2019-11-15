@@ -64,8 +64,8 @@ var query = {};
   db.collection('user_triggers').find(query).toArray(function(err, result, callback) {
     if (err) throw err;
     console.log(result);
-if callback(result, result);
-//callback(result);
+if (result);
+callback(result);
     db.close();
 });
 });
