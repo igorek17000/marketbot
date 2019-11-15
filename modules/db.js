@@ -61,7 +61,7 @@ connect(function(db){
    //printjson( cursor.next() );
 
 var query = {};
-  db.collection('user_triggers').find(query).toArray(function(err, result, callback) {
+  db.collection('user_triggers').find(query).toArray(function(err, result) {
     if (err) throw err;
     console.log(result);
 if (result);
