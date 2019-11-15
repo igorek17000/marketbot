@@ -61,11 +61,11 @@ connect(function(db){
    //printjson( cursor.next() );
 
 var query = {};
-  db.collection('user_triggers').find(query).toArray(function(err, result) {
+  var cursor = db.collection('user_triggers').find(query).toArray(function(err, result) {
     if (err) throw err;
+cursor;
     console.log(result);
-if (result);
-callback(result);
+return cursor;
     db.close();
 });
 });
