@@ -222,7 +222,7 @@ nest22;
 
 //-----------
 
-function helpCmd(dataHash, callback, result) {
+function helpCmd(dataHash, callback, docs) {
   var regex = /^\/help$/;
 
   if (regex.test(dataHash.request.text)) {
@@ -230,10 +230,10 @@ function helpCmd(dataHash, callback, result) {
 var alldocs = require('./alldocs.js');
 
 
-callback(true);
+callback(true, docs);
 //var alldocs = require('./alldocs.js');
 alldocs;
-return result;
+//return docs;
 
     //callback(true, list);
 
