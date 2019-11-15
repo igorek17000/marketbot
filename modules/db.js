@@ -65,8 +65,8 @@ var query = {};
     if (err) throw err;
 cursor;
     console.log(result);
-return cursor;
     db.close();
+return result;
 });
 });
 }
