@@ -54,6 +54,7 @@ exports.getAllDocumentsDb = function(collection, callback) {
   connect(function(db){
     var allDocs = db.collection('user_triggers').find({}).toArray(function(err, result) {
 allDocs;
+if (callback)
       callback(result);
       db.close();
     });
