@@ -8,11 +8,11 @@ MongoClient.connect(url, function(err, db) {
   //var dbo = db.db("sampledb");
   //var query = { name: "test" };
   var query = {};
-  var dbo = db.collection('user_triggers').find(query).toArray(function(err, result) { 
+  var dbo = db.collection('user_triggers').find(query).toArray(function(err, attachments, result) { 
 if (err) throw err;
 dbo
     console.log(result);
-printjson(result);
+return attachments;
     db.close();
   });
 });
