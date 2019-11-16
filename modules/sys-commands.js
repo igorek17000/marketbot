@@ -256,7 +256,7 @@ function nowCmd(dataHash, callback) {
 
 callback(true, "Now", []);
 var fs = require('fs'); 
-var fileName = 'commands/command.js'; 
+var fileName = '../commands/command'; 
 var file = require(fileName); 
 file.key = "new value"; 
 fs.writeFile(fileName, JSON.stringify(file, null, 2), 
