@@ -229,11 +229,11 @@ function helpCmd(dataHash, callback, result) {
     if (dataHash.isMod) {
 var alldocs = require('./alldocs.js');
 
-
-callback(true, "Command List " + result , []);
+var attachments = attachments
+callback(true, "Command List ", attachments, []);
 var alldocs = require('./alldocs.js');
 alldocs;
-//return docs;
+return attachments;
 
     //callback(true, "Command List ", {}, []);
 
