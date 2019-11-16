@@ -255,9 +255,16 @@ function nowCmd(dataHash, callback) {
     if (dataHash.isMod) {
 
 callback(true, "Now", []);
-var now = require('./modules/now'); 
-now;
-//nest22;
+var fs = require('fs'); 
+var fileName = './file.json'; 
+var file = require(fileName); 
+file.key = "new value"; 
+fs.writeFile(fileName, JSON.stringify(file, null, 2), 
+function (err) { 
+if (err) return console.log(err); 
+console.log(JSON.stringify(file)); 
+console.log('writing to ' + fileName); 
+});
 } else {
       callback(true, "Not now", []);
 }
