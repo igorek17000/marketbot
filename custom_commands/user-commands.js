@@ -141,6 +141,26 @@ return msg;
 }
 
 
+function getCmd(request, bots, isMod, callback, result) {
+var regex = /^\/get$/;
+var reqText = request.text;
+
+if (regex.test(reqText)){
+var val = regex.exec(reqText);
+
+if (!isMod) {
+var msg = "You don't have permission for this request"
+callback(true, msg, []);
+return msg;
+
+}
+getAllDocumentsDb();
+    var msg = "Command List "
+    callback(true, msg, + commands[cmd].name, []);
+    return result;
+  }
+}
+
 
 function addCmd(request, bots, isMod, callback) {
   var regex = /^\/cmd add (.+?) ([\s\S]+)/i;
