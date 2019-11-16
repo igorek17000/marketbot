@@ -29,7 +29,7 @@ exports.checkCommands = function(dataHash, callback) {
       if (trigger.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && triggerReg.test(dataHash.request.text)){
         var val = triggerReg.exec(dataHash.request.text);
 
-        callback(true, trigger.name\n\trigger.regex\n\trigger.description\n\trigger.message, []);
+        callback(true, trigger.name\n\ trigger.regex\n\ trigger.description\n\ trigger.message, []);
         break;
       }
     }
