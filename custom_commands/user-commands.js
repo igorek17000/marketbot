@@ -130,7 +130,8 @@ return msg;
 
     //answerAllDocuments();
     var msg = "Command List "
-    callback(true, msg, + result, []);
+    var attachments = attachments
+    callback(true, msg, attachments, []);
     return answerAllDocuments();
   }
 }
