@@ -52,7 +52,7 @@ exports.getAllDocuments = function(collection, callback) {
 
 exports.getAllDocumentsDb = function(collection, callback) {
   connect(function(db){
-    var allDocs = db.collection(user_triggers).find({}).toArray(function(err, result) {
+    var allDocs = db.collection('user_triggers').find({}).toArray(function(err, result) {
 alldocs
       callback(result);
       db.close();
