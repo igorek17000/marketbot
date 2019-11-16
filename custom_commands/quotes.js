@@ -21,7 +21,7 @@ function getOneRandomQuote(callback){
 }
 
 function getRandomQuotes(callback){
-  db.randomDoc(db_tables, callback);
+  db.randomDocs(db_tables, callback);
 }
 
 
