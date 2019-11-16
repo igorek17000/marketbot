@@ -136,3 +136,24 @@ function cmdRandomQuote(funMode, request, callback) {
     return false;
   }
 }
+
+
+//************
+exports.randomDocs = function(collection, callback) {
+  connect(function(db){
+    var coll = db.collection('user_triggers');
+    cursor = coll.find({});
+
+    coll.count(function(err, count){
+      //var random = Math.floor(Math.random() * count);
+      //cursor.skip(random);
+      //cursor.limit(1);
+      cursor.each(function(err, doc){
+        if(doc != null){
+          callback(doc);
+          return;
+        }
+      });
+    });
+  });
+}
