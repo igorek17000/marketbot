@@ -1,7 +1,7 @@
 var db = require('../modules/db.js');
 var db_table = 'user_quotes';
 
-var cmds = [cmdSaveQuote, cmdRandomQuote, cmdRandomUserQuote];
+var cmds = [cmdSaveQuote, cmdRandomQuote, cmdRandomQuotes, cmdRandomUserQuote];
 
 function saveQuote(quoteHash, callback){
   db.addDoc(db_table, quoteHash, callback);
@@ -18,6 +18,11 @@ function countQuotes(callback){
 function getOneRandomQuote(callback){
   db.randomDoc(db_table, callback);
 }
+
+function getRandomQuotes(callback){
+  db.randomDoc(db_table, callback);
+}
+
 
 exports.checkCommands = function(dataHash, callBack){
   for (var cmd in cmds) {
@@ -138,22 +143,20 @@ function cmdRandomQuote(funMode, request, callback) {
 }
 
 
-//************
-exports.randomDocs = function(collection, callback) {
-  connect(function(db){
-    var coll = db.collection('user_triggers');
-    cursor = coll.find({});
+function cmdRandomQuotes(funMode, request, callback) {
+  var regex = /^\/quotes$/i;
 
-    coll.count(function(err, count){
-      //var random = Math.floor(Math.random() * count);
-      //cursor.skip(random);
-      //cursor.limit(1);
-      cursor.each(function(err, doc){
-        if(doc != null){
-          callback(doc);
-          return;
-        }
-      });
+  if (regex.test(request.text)){
+    if(!funMode){
+      callback("Sorry I'm no fun right now.");
+      return "Sorry I'm no fun right now.";
+    }
+    getOneRandomQuotes(function(docs){
+      var msg = docs.name + ': "' + docs.description + '" - ' + docs.message;
+      callback(msg);
     });
-  });
+    return true;
+  } else {
+    return false;
+  }
 }
