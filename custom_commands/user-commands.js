@@ -116,7 +116,7 @@ var val = regex.exec(reqText);
 
 if (!isMod) {
 var msg = "You don't have permission for this request"
-callback(true, msg, + commands[cmd].name, []);
+callback(true, msg, []);
 return msg;
 
 }
@@ -131,7 +131,7 @@ return msg;
     //answerAllDocuments();
     var msg = "Command List "
     var attachments = attachments
-    callback(true, msg, attachments, []);
+    callback(true, msg , + commands[cmd].name, []);
     return answerAllDocuments();
   }
 }
