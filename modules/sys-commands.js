@@ -230,10 +230,12 @@ function helpCmd(dataHash, callback, result) {
 var alldocs = require('./alldocs.js');
 
 var attachments = attachments
-callback(true, "Command List ", attachments, []);
+callback(true, "Command List ", []);
 var alldocs = require('./alldocs.js');
 alldocs;
-return attachments;
+alert( "hello");
+var alert = alert( "hello");
+return alert;
 
     //callback(true, "Command List ", {}, []);
 
