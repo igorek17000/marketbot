@@ -12,7 +12,8 @@ MongoClient.connect(url, function(err, db) {
 if (err) throw err;
 dbo
     console.log(result);
-alert( "Hello");
+var alert = alert( "Hello");
+alert;
     db.close();
   });
 });
