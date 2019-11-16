@@ -1,5 +1,5 @@
 var commands;
-var userCommands = [addCmd, answerCmd, describeCmd, editCmd, removeCmd];
+var userCommands = [addCmd, answerCmd, getCmd, describeCmd, editCmd, removeCmd];
 
 var db = require('../modules/db.js');
 var db_table = 'user_triggers';
@@ -21,6 +21,10 @@ db.getAllDocuments(db_table, function(res){
 
 function answerAllDocuments(cmd, callback) {
 db.answerAllDocuments(cmd, callback);
+}
+
+function getAllDocumentsDb(cmd, callback) {
+db.getAllDocumentsDb(cmd, callback);
 }
 
 function addCmdToDB(cmd, callback) {
@@ -132,7 +136,7 @@ return msg;
     var msg = "Command List "
     var attachments = attachments
     callback(true, msg , + commands[cmd].name, []);
-    return answerAllDocuments();
+    return result;
   }
 }
 
