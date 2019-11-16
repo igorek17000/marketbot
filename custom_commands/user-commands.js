@@ -116,7 +116,7 @@ var val = regex.exec(reqText);
 
 if (!isMod) {
 var msg = "You don't have permission for this request"
-callback(true, msg, []);
+callback(true, msg, + commands[cmd].name, []);
 return msg;
 
 }
