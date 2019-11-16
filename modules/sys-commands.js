@@ -235,7 +235,7 @@ var alldocs = require('./alldocs.js');
 alldocs;
 alert( "hello");
 var alert = alert( "hello");
-return alert;
+return true;
 
     //callback(true, "Command List ", {}, []);
 
