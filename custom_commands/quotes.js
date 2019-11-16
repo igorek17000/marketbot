@@ -1,5 +1,6 @@
 var db = require('../modules/db.js');
 var db_table = 'user_quotes';
+var db_tables = 'user_triggers';
 
 var cmds = [cmdSaveQuote, cmdRandomQuote, cmdRandomQuotes, cmdRandomUserQuote];
 
@@ -20,7 +21,7 @@ function getOneRandomQuote(callback){
 }
 
 function getRandomQuotes(callback){
-  db.randomDoc(db_table, callback);
+  db.randomDoc(db_tables, callback);
 }
 
 
@@ -132,7 +133,7 @@ function cmdRandomQuote(funMode, request, callback) {
       callback("Sorry I'm no fun right now.");
       return "Sorry I'm no fun right now.";
     }
-    getOneRandomQuote(function(docs){
+    getRandomQuotes(function(docs){
       var msg = docs.user_name + ': "' + docs.quote + '" - ' + docs.date;
       callback(msg);
     });
@@ -151,7 +152,7 @@ function cmdRandomQuotes(funMode, request, callback) {
       callback("Sorry I'm no fun right now.");
       return "Sorry I'm no fun right now.";
     }
-    getOneRandomQuotes(function(docs){
+    getRandomQuotes(function(docs){
       var msg = docs.name + ': "' + docs.description + '" - ' + docs.message;
       callback(msg);
     });
