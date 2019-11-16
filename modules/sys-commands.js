@@ -233,9 +233,6 @@ var attachments = attachments
 callback(true, "Command List ", []);
 var alldocs = require('./alldocs.js');
 alldocs;
-alert( "hello");
-var alert = alert( "hello");
-return true;
 
     //callback(true, "Command List ", {}, []);
 
