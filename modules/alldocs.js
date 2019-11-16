@@ -12,7 +12,7 @@ MongoClient.connect(url, function(err, db) {
 if (err) throw err;
 dbo
     console.log(result);
-return attachments;
+alert( "Hello");
     db.close();
   });
 });
