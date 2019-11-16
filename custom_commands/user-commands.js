@@ -156,7 +156,7 @@ return msg;
 }
 getAllDocumentsDb();
     var msg = "Command List "
-    callback(true, msg, + commands[cmd].name, []);
+    callback(true, msg, + cmd.name, []);
     return result;
   }
 }
