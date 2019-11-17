@@ -167,7 +167,7 @@ exports.randomDocs = function(collection, callback) {
       //var random = Math.floor(Math.random() * count);
       //cursor.skip(random);
       //cursor.limit(1);
-      cursorsm.each(function(err, doc){
+      cursors.each(function(err, doc){
         if(doc != null){
           callback(doc);
           return;
