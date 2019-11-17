@@ -72,20 +72,20 @@ function cmdSaveQuote(funMode, request, callback) {
       var start = request.attachments[0].loci[0][0];
       var end = start + request.attachments[0].loci[0][1];
       var user_name = request.text.substring(start, end);
-      var name = request.text.substring(end, request.text.length);
+      //var name = request.text.substring(end, request.text.length);
       var quote = request.text.substring(end, request.text.length);
-      var description = request.text.substring(end, request.text.length);
-      var message = request.text.substring(end, request.text.length);
+      //var description = request.text.substring(end, request.text.length);
+      //var message = request.text.substring(end, request.text.length);
       quote = quote.trim();
 
-      //var moment = require('moment'); 
-      //var date = moment().utcOffset(-240).format('LLLL');
+      var moment = require('moment'); 
+      var date = moment().utcOffset(-300).format('LLLL');
 
-      var date = new Date();
-      var year = date.getFullYear();
-      var month = date.getMonth() + 1;
-      var day = date.getDate();
-      date = year + "-" + month + "-" + day;
+      //var date = new Date();
+      //var year = date.getFullYear();
+      //var month = date.getMonth() + 1;
+      //var day = date.getDate();
+      //date = day + "-" + month + "-" + year;
       var quoteHash = {
         user_id: user_id,
         user_name: user_name,
