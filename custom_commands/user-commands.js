@@ -3,6 +3,9 @@ var userCommands = [addCmd, answerCmd, getCmd, describeCmd, editCmd, removeCmd];
 
 var db = require('../modules/db.js');
 var db_table = 'user_triggers';
+var moment = require('moment'); 
+var date = moment().utcOffset(-300).format('LLLL');
+
 
 getAllCommands();
 exports.modName = "Custom Commands";
@@ -129,6 +132,7 @@ return msg;
       name: commands[cmd].name,
       regex: commands[cmd].regex,
       message: commands[cmd].message,
+      date: date,
     };
 
 
@@ -187,6 +191,7 @@ function addCmd(request, bots, isMod, callback) {
       name: val[1].toLowerCase(),
       regex: "^\/" + val[1] + "$",
       message: val[2],
+      date: date
     };
 
     commands.push(cmdHash);
