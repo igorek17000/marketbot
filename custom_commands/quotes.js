@@ -72,8 +72,10 @@ function cmdSaveQuote(funMode, request, callback) {
       var start = request.attachments[0].loci[0][0];
       var end = start + request.attachments[0].loci[0][1];
       var user_name = request.text.substring(start, end);
-      var name = request.text.substring(start, end);
+      var name = request.text.substring(end, request.text.length);
       var quote = request.text.substring(end, request.text.length);
+      var description = request.text.substring(end, request.text.length);
+      var message = request.text.substring(end, request.text.length);
       quote = quote.trim();
 
       //var moment = require('moment'); 
