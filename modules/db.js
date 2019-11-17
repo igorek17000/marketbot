@@ -161,7 +161,7 @@ exports.randomDocs = function(collection, callback) {
   connect(function(db){
     var coll = db.collection('user_triggers');
     cursor = coll.find({});
-    cursors = cursor.toArray();
+    cursors = cursor.toArray({});
 
     coll.count(function(err, count){
       //var random = Math.floor(Math.random() * count);
