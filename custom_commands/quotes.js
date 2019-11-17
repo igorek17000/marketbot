@@ -2,7 +2,7 @@ var db = require('../modules/db.js');
 var db_table = 'user_quotes';
 var db_tables = 'user_triggers';
 
-var cmds = [cmdSaveQuote, cmdRandomQuote, cmdCommandList, cmdRandomUserQuote];
+var cmds = [cmdSaveQuote, cmdRandomQuote, cmdRandomQuotes, cmdRandomUserQuote];
 
 function saveQuote(quoteHash, callback){
   db.addDoc(db_table, quoteHash, callback);
@@ -20,7 +20,7 @@ function getOneRandomQuote(callback){
   db.randomDoc(db_table, callback);
 }
 
-function getCommandList(callback){
+function getRandomQuotes(callback){
   db.randomDocs(db_tables, callback);
 }
 
@@ -146,15 +146,15 @@ function cmdRandomQuote(funMode, request, callback) {
 }
 
 
-function cmdCommandList(funMode, request, callback) {
-  var regex = /^\/commands$/i;
+function cmdRandomQuotes(funMode, request, callback) {
+  var regex = /^\/list$/i;
 
   if (regex.test(request.text)){
     if(!funMode){
       callback("Sorry I'm no fun right now.");
       return "Sorry I'm no fun right now.";
     }
-    getCommandList(function(docs){
+    getRandomQuotes(function(docs){
       var msg = 'cmd name: ' + docs.name + '\n' + 'use /' + docs.name + ' to access cmd' + '\n' + 'cmd description: ' + docs.description;
       callback(msg);
     });
