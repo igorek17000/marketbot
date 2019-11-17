@@ -155,7 +155,7 @@ function cmdRandomQuotes(funMode, request, callback) {
       return "Sorry I'm no fun right now.";
     }
     getRandomQuotes(function(docs){
-      var msg = docs.name + ': "' + docs.description + '" - ' + docs.message;
+      var msg = docs.name + '\n' + docs.description + '\n' + docs.message;
       callback(msg);
     });
     return true;
