@@ -161,7 +161,7 @@ var dbold = ' desc: ';
 var s = '/';
 var naame = docs.name;
 //var deesc = docs.desc;
-var msg = <b>cbold</b> + s.bold() + naame.bold() + dbold.bold() + docs.description;
+var msg = <b> + 'cmd: ' + </b> + s.bold() + naame.bold() + dbold.bold() + docs.description;
  
       callback(msg);
     });
