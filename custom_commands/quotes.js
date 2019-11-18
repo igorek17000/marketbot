@@ -156,7 +156,7 @@ function cmdRandomQuotes(funMode, request, callback) {
     }
     getRandomQuotes(function(docs){
       //var srt = sort.({name: 1});
-      var msg = 'cmd: /' + docs.name + 'desc: ' + docs.description;
+      var msg = '{cmd: /' + docs.name + ' desc: ' + docs.description + '}';
       callback(msg);
     });
     return true;
