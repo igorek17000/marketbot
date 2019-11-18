@@ -172,9 +172,9 @@ exports.randomDocs = function(collection, callback) {
       //cursor.limit(1);
       //cursor.sort(srts);
 cursor.sort(function(a, b) { 
-if (a.cmd < b.cmd) 
+if (a.doc < b.doc) 
 return - 1; 
-else if (a.cmd > b.cmd) 
+else if (a.doc > b.doc) 
 return 1; 
 else 
 return 0; 
