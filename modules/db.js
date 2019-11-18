@@ -161,7 +161,7 @@ exports.randomDocs = function(collection, callback) {
   connect(function(db){
     var coll = db.collection('user_triggers');
     var srts = { name: 1 };
-    cursor = coll.find({});
+    cursor = coll.find({}).sort({name: 1});
     //cursors = cursor.toArray({});
 
       //coll.sort({name: 1});
@@ -174,12 +174,6 @@ exports.randomDocs = function(collection, callback) {
 
       cursor.each(function(err, doc){
       //cursor.sort({'commands[cmd].name'}:1)
-if (a.doc < b.doc) 
-return - 1; 
-else if (a.doc > b.doc) 
-return 1; 
-else 
-return 0; 
         if(doc != null){
        
           callback(doc);
