@@ -161,7 +161,7 @@ exports.randomDocs = function(collection, callback) {
   connect(function(db){
     var coll = db.collection('user_triggers');
     var srts = { name: 1 };
-    cursor = coll.find({}, {sort: {date: 1}});
+    cursor = coll.find({}, {sort: {name: 1}});
     //cursors = cursor.toArray({});
 
       //coll.sort({name: 1});
