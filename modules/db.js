@@ -170,10 +170,10 @@ exports.randomDocs = function(collection, callback) {
       //var random = Math.floor(Math.random() * count);
       //cursor.skip(random);
       //cursor.limit(1);
-//var name = {'name' : 1};
+      var mysort = {name:1};
       //cursor.sort(name){
-cursor.sort({ name: 1 });
-      cursor.each(function(err, doc){
+      cursor.sort(mysort).toArray(function(err, doc){
+      //cursor.each(function(err, doc){
       //cursor.sort({'commands[cmd].name'}:1)
         if(doc != null){
        
