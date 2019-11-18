@@ -169,7 +169,7 @@ exports.randomDocs = function(collection, callback) {
       //var random = Math.floor(Math.random() * count);
       //cursor.skip(random);
       //cursor.limit(1);
-      cursor.sort(1);
+      cursor.sort(function(a,b){
       cursor.each(function(err, doc){
       //cursor.sort({'commands[cmd].name'}:1)
         if(doc != null){
@@ -178,5 +178,6 @@ exports.randomDocs = function(collection, callback) {
         }
       });
     });
+});
   });
 }
