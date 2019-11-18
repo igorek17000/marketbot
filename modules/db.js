@@ -171,7 +171,16 @@ exports.randomDocs = function(collection, callback) {
       //cursor.skip(random);
       //cursor.limit(1);
       //cursor.sort(srts);
-      cursor.sort({'name':1}).each(function(err, doc){
+cursor.sort(function(a, b) { 
+if (a.cmd < b.cmd) 
+return - 1; 
+else if (a.cmd > b.cmd) 
+return 1; 
+else 
+return 0; 
+});
+
+      cursor.each(function(err, doc){
       //cursor.sort({'commands[cmd].name'}:1)
         if(doc != null){
           callback(doc);
