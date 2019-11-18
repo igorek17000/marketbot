@@ -158,7 +158,7 @@ function cmdRandomQuotes(funMode, request, callback) {
       //var srt = sort.({name: 1});
 var nbold = '{cmd: /';
 vat dbold = ' desc: ';
-      var msg = nbold.bold() + docs.name + dbold.bold() + docs.description + '}';
+      var msg = '<b>cmd: </b>' + '/' + docs.name + ' <b>desc: </b>' + docs.description;
       callback(msg);
     });
     return true;
