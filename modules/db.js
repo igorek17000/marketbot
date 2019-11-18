@@ -161,7 +161,7 @@ exports.randomDocs = function(collection, callback) {
   connect(function(db){
     var coll = db.collection('user_triggers');
     var srts = { name: 1 };
-    cursor = coll.find({}).sort({name: 1});
+    cursor = coll.find({});
     //cursors = cursor.toArray({});
 
       //coll.sort({name: 1});
@@ -172,7 +172,7 @@ exports.randomDocs = function(collection, callback) {
       //cursor.limit(1);
       //cursor.sort(srts);
 
-      cursor.each(function(err, doc){
+      cursor.sort({name: 1}).each(function(err, doc){
       //cursor.sort({'commands[cmd].name'}:1)
         if(doc != null){
        
