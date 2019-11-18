@@ -163,8 +163,9 @@ exports.randomDocs = function(collection, callback) {
     cursor = coll.find({});
     //cursors = cursor.toArray({});
 
-      coll.count(function(err, count){
       coll.sort({name: 1});
+      coll.count(function(err, count){
+      
       //var random = Math.floor(Math.random() * count);
       //cursor.skip(random);
       //cursor.limit(1);
