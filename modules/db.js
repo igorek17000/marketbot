@@ -160,10 +160,11 @@ exports.randomDoc = function(collection, callback) {
 exports.randomDocs = function(collection, callback) {
   connect(function(db){
     var coll = db.collection('user_triggers');
-    cursor = coll.find().sort({name: 1});
+    cursor = coll.find({});
     //cursors = cursor.toArray({});
 
-    coll.count(function(err, count){
+      coll.count(function(err, count){
+      coll.sort({name: 1});
       //var random = Math.floor(Math.random() * count);
       //cursor.skip(random);
       //cursor.limit(1);
