@@ -164,7 +164,7 @@ exports.randomDocs = function(collection, callback) {
     //cursors = cursor.toArray({});
 
       //coll.sort({name: 1});
-      coll.count(function(err, count){
+      //coll.count(function(err, count){
       
       //var random = Math.floor(Math.random() * count);
       //cursor.skip(random);
@@ -177,6 +177,6 @@ exports.randomDocs = function(collection, callback) {
           return;
         }
       });
-    });
+    //});
   });
 }
