@@ -156,9 +156,12 @@ function cmdRandomQuotes(funMode, request, callback) {
     }
     getRandomQuotes(function(docs){
       //var srt = sort.({name: 1});
-//var nbold = '{cmd: /';
-//vat dbold = ' desc: ';
-      var msg = '<b>cmd: </b>' + '/' + docs.name + ' <b>desc: </b>' + docs.description;
+var cbold = 'cmd: ';
+var dbold = ' desc: ';
+var s = '/';
+var naame = docs.name;
+var deesc = docs.desc;
+
       callback(msg);
     });
     return true;
