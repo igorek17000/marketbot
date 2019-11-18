@@ -172,7 +172,7 @@ exports.randomDocs = function(collection, callback) {
       //cursor.limit(1);
       //cursor.sort(srts);
 
-      cursor.sort({name: 1}).each(function(err, doc){
+      cursor.each(function(err, doc){
       //cursor.sort({'commands[cmd].name'}:1)
         if(doc != null){
        
