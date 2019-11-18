@@ -163,7 +163,7 @@ exports.randomDocs = function(collection, callback) {
     var srts = { name: 1 };
     cursor = coll.find({});
     //cursors = cursor.toArray({});
-Cc 
+
       //coll.sort({name: 1});
       coll.count(function(err, count){
       
