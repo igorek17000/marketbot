@@ -183,6 +183,14 @@ return 0;
       cursor.each(function(err, doc){
       //cursor.sort({'commands[cmd].name'}:1)
         if(doc != null){
+        cursor.sort(function(a, b) { 
+if (a.doc < b.doc) 
+return - 1; 
+else if (a.doc > b.doc) 
+return 1; 
+else 
+return 0; 
+});
           callback(doc);
           return;
         }
