@@ -163,7 +163,7 @@ exports.randomDocs = function(collection, callback) {
     var srts = { name: 1 };
     cursor = coll.find({});
     //cursors = cursor.toArray({});
-
+Cc 
       //coll.sort({name: 1});
       coll.count(function(err, count){
       
@@ -173,7 +173,7 @@ exports.randomDocs = function(collection, callback) {
 //var name = {'name' : 1};
       //cursor.sort(name){
 
-      //cursor.each(list, function(err, doc){
+      cursor.each(list, function(err, doc){
       //cursor.sort({'commands[cmd].name'}:1)
         if(doc != null){
        
