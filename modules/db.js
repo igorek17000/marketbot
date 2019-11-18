@@ -180,7 +180,6 @@ else if (a.doc > b.doc)
 return 1; 
 else 
 return 0; 
-});
         if(doc != null){
        
           callback(doc);
