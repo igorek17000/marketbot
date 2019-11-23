@@ -256,11 +256,12 @@ function nowCmd(dataHash, callback) {
 var fs = require('fs'); 
 var fileName = './commandlist.js';
 var file = require(fileName); 
-file.key = "new value"; 
+//file.key = "new value"; 
 var fsi = fs.writeFile(fileName, JSON.stringify(file, null, 2), 
 
 
-callback(true, continue, "Now", []);
+callback(true, "Writting to file " + fileName, []);
+file.key = "new value";
 fsi;
 function (err) { 
 if (err) return console.log(err); 
