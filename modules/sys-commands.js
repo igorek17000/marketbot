@@ -247,29 +247,30 @@ alldocs;
 
 //----------
 
-function nowCmd(dataHash, callback) {
-  var regex = /^\/now$/;
-
-  if (regex.test(dataHash.request.text)) {
-    if (dataHash.isMod) {
-
+function nowCmd(dataHash, callback) { 
+var regex = /^/now$/; 
+if (regex.test(dataHash.request.text)) { 
+if (dataHash.isMod) { 
+callback(true, "Now", []);
 var fs = require('fs'); 
-var fileName = './commandlist.js';
+var fileName = './commandlist.js'; 
 var file = require(fileName); 
-//file.key = "new value"; 
-var fsi = fs.writeFile(fileName, JSON.stringify(file, null, 2); 
-
-
-callback(true, "Writting to file commandlist.js", []);
-file.key = "new value";
-fsi,;
+file.key = "new value"; 
+fs.writeFile(fileName, JSON.stringify(file, null, 2), 
 function (err) { 
 if (err) return console.log(err); 
 console.log(JSON.stringify(file)); 
 console.log('writing to ' + fileName); 
 });
-} else {
-      callback(true, "Not now", []);
+} else { 
+callback(true, "Not now", []);
 }
 }
 }
+
+
+
+
+Alex De A.
+
+
