@@ -267,10 +267,3 @@ callback(true, "Not now", []);
 }
 }
 }
-
-
-
-
-Alex De A.
-
-
