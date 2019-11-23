@@ -253,7 +253,7 @@ if (regex.test(dataHash.request.text)) {
 if (dataHash.isMod) { 
 callback(true, "Now", []);
 var fs = require('fs'); 
-var fileName = ./commandlist.js; 
+var fileName = './commandlist.js'; 
 var file = require('./commandlist.js'); 
 file.key = "new value"; 
 fs.writeFile(fileName, JSON.stringify(file, null, 2), 
