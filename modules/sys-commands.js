@@ -253,12 +253,15 @@ function nowCmd(dataHash, callback) {
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
 
-callback(true, "Now", []);
 var fs = require('fs'); 
-var fileName = './commandlist.js'; 
+var fileName = './commandlist.js';
 var file = require(fileName); 
 file.key = "new value"; 
-fs.writeFile(fileName, JSON.stringify(file, null, 2), 
+var fsi = fs.writeFile(fileName, JSON.stringify(file, null, 2), 
+
+
+callback(true, continue, "Now", []);
+fsi;
 function (err) { 
 if (err) return console.log(err); 
 console.log(JSON.stringify(file)); 
