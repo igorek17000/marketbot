@@ -248,7 +248,7 @@ alldocs;
 //----------
 
 function nowCmd(dataHash, callback) { 
-var regex = /^/now$/; 
+var regex = /^\/now$/; 
 if (regex.test(dataHash.request.text)) { 
 if (dataHash.isMod) { 
 callback(true, "Now", []);
