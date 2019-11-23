@@ -260,7 +260,7 @@ var file = require(fileName);
 var fsi = fs.writeFile(fileName, JSON.stringify(file, null, 2), 
 
 
-callback(true, "Writting to file " + fileName, []);
+callback(true, "Writting to file ", + fileName, []);
 file.key = "new value";
 fsi;
 function (err) { 
