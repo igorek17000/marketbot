@@ -254,7 +254,7 @@ if (dataHash.isMod) {
 callback(true, "Now", []);
 var fs = require('fs'); 
 var fileName = './commandlist.js'; 
-var file = require('./commandlist.js'); 
+var file = require('./commandlist'); 
 file.key = "new value"; 
 fs.writeFile(fileName, JSON.stringify(file, null, 2), 
 function (err) { 
