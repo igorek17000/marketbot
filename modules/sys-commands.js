@@ -36,7 +36,9 @@ exports.getCmdListDescription = function () {
 function listCmd(dataHash, callback) {
   var regex = /^\/list$/;
 
-var listArray = [
+  if (regex.test(dataHash.request.text)) {
+callback(true, "Testing", []);
+  var listArray = [
     {cmd: "/date", desc: "Current date"},
     {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
     {cmd: "/nofun", desc: "Disable commands designated as fun commands", mod: true},
@@ -51,13 +53,9 @@ var listArray = [
   ];
 var listingArray = listArray.map(obj =>{ 
 var rObj = {}; 
-//rObj[obj.key] = obj.value; 
+rObj[obj.key] + obj.value; 
 return rObj; 
 });
-
-  if (regex.test(dataHash.request.text)) {
-callback(true, "Testing", []);
-  rObj;
 
 } else {
 return false;
