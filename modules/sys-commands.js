@@ -53,9 +53,9 @@ callback(true, "Testing " + '\n', []);
   ];
 var listingArray = listArray.each({}) =>{ 
 var rObj = {}; 
-var raObj = [];
+var raObj = Object.keys(listArray);
 //rObj[obj.key] + obj.value; 
-return listingArray; 
+return raObj; 
 });
 
 } else {
@@ -63,7 +63,9 @@ return false;
 }
 }
 
-
+keys = Object.keys(object) 
+console.log(keys); 
+console.log(keys.length)
 
 
 
