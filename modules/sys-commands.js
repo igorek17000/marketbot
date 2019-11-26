@@ -51,11 +51,11 @@ callback(true, "Testing " + '\n', []);
     {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
-var listingArray = listArray.forEach(obj =>{ 
+var listingArray = listArray.forEach({}) =>{ 
 var rObj = {}; 
 var raObj = [];
 //rObj[obj.key] + obj.value; 
-return rObj; 
+return listingArray; 
 });
 
 } else {
