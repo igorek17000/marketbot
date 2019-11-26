@@ -52,12 +52,12 @@ var listArray = [
 var listingArray = listArray.map(obj =>{ 
 var rObj = {}; 
 //rObj[obj.key] = obj.value; 
-
+return rObj; 
+});
 
   if (regex.test(dataHash.request.text)) {
 callback(true, "Testing", []);
-  return rObj; 
-});
+  rObj;
 
 } else {
 return false;
