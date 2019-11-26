@@ -51,7 +51,7 @@ callback(true, "Testing " + '\n', []);
     {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
-var listingArray = listArray.map(obj { 
+var listingArray = listArray.each(obj =>{ 
 var rObj = {}; 
 var raObj = [];
 //rObj[obj.key] + obj.value; 
