@@ -37,7 +37,7 @@ function listCmd(dataHash, callback) {
   var regex = /^\/list$/;
 
   if (regex.test(dataHash.request.text)) {
-callback(true, "Testing", []);
+callback(true, "Testing " + '\n' + rObj, []);
   var listArray = [
     {cmd: "/date", desc: "Current date"},
     {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
