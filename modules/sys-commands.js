@@ -55,7 +55,7 @@ var listingArray = listArray.map(obj =>{
 var rObj = {}; 
 var raObj = [];
 //rObj[obj.key] + obj.value; 
-return raObj; 
+return listingArray; 
 });
 
 } else {
