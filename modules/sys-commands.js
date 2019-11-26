@@ -55,7 +55,7 @@ var listingArray = listArray.forEach(obj =>{
 var rObj = {}; 
 var raObj = [];
 //rObj[obj.key] + obj.value; 
-return listingArray; 
+return rObj; 
 });
 
 } else {
