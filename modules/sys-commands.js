@@ -53,7 +53,7 @@ callback(true, "Testing", []);
   ];
 var listingArray = listArray.map(obj =>{ 
 var rObj = {}; 
-rObj[obj.key] + obj.value; 
+//rObj[obj.key] + obj.value; 
 return rObj; 
 });
 
