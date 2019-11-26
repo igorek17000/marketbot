@@ -1,5 +1,5 @@
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd];
 
 exports.modName = "System Commands";
 
@@ -33,7 +33,10 @@ exports.getCmdListDescription = function () {
   ];
 }
 
-var list = [
+function listCmd(dataHash, callback) {
+  var regex = /^\/list$/;
+
+var listArray = [
     {cmd: "/date", desc: "Current date"},
     {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
     {cmd: "/nofun", desc: "Disable commands designated as fun commands", mod: true},
@@ -46,6 +49,23 @@ var list = [
     {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
+var listingArray = listArray.map(obj =>{ 
+var rObj = {}; 
+//rObj[obj.key] = obj.value; 
+
+
+  if (regex.test(dataHash.request.text)) {
+callback(true, "Testing", []);
+  return rObj; 
+});
+
+} else {
+return false;
+}
+}
+
+
+
 
 
 function dateCmd(dataHash, callback) {
