@@ -147,7 +147,7 @@ function cmdRandomQuote(funMode, request, callback) {
 
 
 function cmdRandomQuotes(funMode, request, callback) {
-  var regex = /^\/list$/i;
+  var regex = /^\/lists$/i;
 
   if (regex.test(request.text)){
     if(!funMode){
