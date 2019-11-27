@@ -58,7 +58,7 @@ var allList = [];
 //rObj[obj.key] + obj.value; 
 for(var key in list) {
 allList.push(list[key]);
-return allList.push(list[key]); 
+return allList; 
 
 }
 
