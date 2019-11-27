@@ -51,7 +51,7 @@ var list = [
   ];
 
   if (regex.test(dataHash.request.text)) {
-callback(true, "Testing ", []);
+callback(true, "Testing " + list.cmd + " " + list.desc, []);
   
 //var listArray = this.cmd + this.desc 
 var allList = [];
@@ -60,9 +60,6 @@ var allLists = list.cmd + list.desc;
 //var raObj = Object.keys(listArray);
 //rObj[obj.key] + obj.value; 
 //var lists = allList.property + allList.value
-return allLists; 
-
-}
 
 } else {
 return false;
