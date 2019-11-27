@@ -56,9 +56,8 @@ var allList = [];
 //var rObj = {}; 
 //var raObj = Object.keys(listArray);
 //rObj[obj.key] + obj.value; 
-for(var key in list) {
-allList.push(list[key]);
-return allList; 
+var lists = allList.property + allList.value
+return lists; 
 
 }
 
