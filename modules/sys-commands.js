@@ -37,7 +37,7 @@ function listCmd(dataHash, callback) {
   var regex = /^\/list$/;
 
   if (regex.test(dataHash.request.text)) {
-callback(true, "Testing " + '\n', []);
+callback(true, "Testing ", []);
   var list = [
     {cmd: "/date", desc: "Current date"},
     {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
@@ -57,7 +57,8 @@ var allList = [];
 //var raObj = Object.keys(listArray);
 //rObj[obj.key] + obj.value; 
 for(var key in list) {
-allList.push(list[key]); 
+alllList.push(list[key]);
+return allList.push(list[key]); 
 
 }
 
