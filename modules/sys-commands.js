@@ -38,7 +38,7 @@ function listCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
 callback(true, "Testing " + '\n', []);
-  var listArray = [
+  var list = [
     {cmd: "/date", desc: "Current date"},
     {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
     {cmd: "/nofun", desc: "Disable commands designated as fun commands", mod: true},
@@ -51,22 +51,25 @@ callback(true, "Testing " + '\n', []);
     {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
-var listingArray = listArray.each({}) =>{ 
-var rObj = {}; 
-var raObj = Object.keys(listArray);
+//var listArray = this.cmd + this.desc 
+var allList = [];
+//var rObj = {}; 
+//var raObj = Object.keys(listArray);
 //rObj[obj.key] + obj.value; 
-return raObj; 
-});
+for(var key in list) {
+allList.push(list[key]); 
+
+return key; 
+}
 
 } else {
 return false;
 }
 }
 
-keys = Object.keys(object) 
-console.log(keys); 
-console.log(keys.length)
-
+//keys = Object.keys(object) 
+//console.log(keys); 
+//console.log(keys.length)
 
 
 function dateCmd(dataHash, callback) {
