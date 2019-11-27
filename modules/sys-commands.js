@@ -59,7 +59,6 @@ var allList = [];
 for(var key in list) {
 allList.push(list[key]); 
 
-return key; 
 }
 
 } else {
