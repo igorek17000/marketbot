@@ -42,7 +42,7 @@ var tomorrow = "the next day";
 var today = "the current day";
 var yesterday = "the day before today";
 
-com.forEach(output);
+com.map(output);
 //for (i = 0; i < com.length; i++) { 
 //console.log(arr[i])
 //}
@@ -52,7 +52,7 @@ function output(item, index, array){
 
 
   if (regex.test(dataHash.request.text)) {
-callback(true, array, []);
+callback(true, item, []);
   
 //var listArray = this.cmd + this.desc 
 //var allList = [];
