@@ -36,9 +36,9 @@ exports.getCmdListDescription = function () {
 function listCmd(dataHash, callback) {
   var regex = /^\/list$/;
 
-var tomorrow = the next day;
-var today = the current day;
-var yesterday = the day before today;
+var tomorrow = "the next day";
+var today = "the current day";
+var yesterday = "the day before today";
 
 let com = [‘tomorrow’, ‘today', ‘yesterday'];
 com.forEach(output);
