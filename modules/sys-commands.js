@@ -50,8 +50,8 @@ function output(item, index, array){
 callback(true, item, []);
   
 //var listArray = this.cmd + this.desc 
-var allList = [];
-var allLists = list.cmd + list.desc;
+//var allList = [];
+//var allLists = list.cmd + list.desc;
 //var rObj = {}; 
 //var raObj = Object.keys(listArray);
 //rObj[obj.key] + obj.value; 
