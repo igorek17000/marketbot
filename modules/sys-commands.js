@@ -44,8 +44,6 @@ let com = [‘tomorrow’, ‘today', ‘yesterday'];
 com.forEach(output);
 
 function output(item, index, array){
-callback(true, item);
-}
 
 
   if (regex.test(dataHash.request.text)) {
@@ -61,6 +59,7 @@ var allLists = list.cmd + list.desc;
 
 } else {
 return false;
+}
 }
 }
 
