@@ -36,13 +36,14 @@ exports.getCmdListDescription = function () {
 function listCmd(dataHash, callback) {
   var regex = /^\/list$/;
 
+let com = ["tomorrow", "today", "yesterday"];
+
 var tomorrow = "the next day";
 var today = "the current day";
 var yesterday = "the day before today";
 
-let com = ["tomorrow", "today", "yesterday"];
-com.length(output);
-for (i = 0; i < com.length; i++) { 
+com.forEach(output);
+//for (i = 0; i < com.length; i++) { 
 //console.log(arr[i])
 //}
 
@@ -51,7 +52,7 @@ function output(item, index, array){
 
 
   if (regex.test(dataHash.request.text)) {
-callback(true, item[i], []);
+callback(true, array, []);
   
 //var listArray = this.cmd + this.desc 
 //var allList = [];
