@@ -41,7 +41,7 @@ var today = "the current day";
 var yesterday = "the day before today";
 
 let com = ["tomorrow", "today", "yesterday"];
-//com.each(output);
+com.length(output);
 for (i = 0; i < com.length; i++) { 
 //console.log(arr[i])
 //}
