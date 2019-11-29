@@ -40,7 +40,7 @@ var tomorrow = "the next day";
 var today = "the current day";
 var yesterday = "the day before today";
 
-let com = [‘tomorrow’, ‘today', ‘yesterday'];
+let com = ["tomorrow", "today", "yesterday"];
 com.forEach(output);
 
 function output(item, index, array){
