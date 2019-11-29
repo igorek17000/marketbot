@@ -41,13 +41,17 @@ var today = "the current day";
 var yesterday = "the day before today";
 
 let com = ["tomorrow", "today", "yesterday"];
-com(output);
+//com.each(output);
+for (i = 0; i < com.length; i++) { 
+//console.log(arr[i])
+//}
+
 
 function output(item, index, array){
 
 
   if (regex.test(dataHash.request.text)) {
-callback(true, item, []);
+callback(true, item[i], []);
   
 //var listArray = this.cmd + this.desc 
 //var allList = [];
