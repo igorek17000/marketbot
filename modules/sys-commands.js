@@ -267,7 +267,8 @@ function helpCmd(dataHash, callback, result) {
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
 var fs = require('fs');
-fs.readFile('../modules/help.txt', (err, data) => { 
+var helpful = require('../modules/help');
+fs.readFile('helpful', (err, data) => { 
 if (err) { 
 console.error(err) 
 return 
