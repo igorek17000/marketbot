@@ -266,8 +266,15 @@ function helpCmd(dataHash, callback, result) {
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
-callback(true, "cmd: /date, desc: Current date \n 
-cmd: /fun, desc: Enable commands designated as fun commands, mod: true", []);
+fs.readFile('./help.txt', (err, data) => { 
+if (err) { 
+console.error(err) 
+return 
+} 
+//console.log(data) })
+callback(true, data)
+//callback(true, "Help", []);
+})
    
 
     //callback(true, "Command List ", {}, []);
