@@ -266,7 +266,7 @@ function helpCmd(dataHash, callback, result) {
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
-callback(true, "cmd: /date, desc: Current date" + \n + "cmd: /fun, desc: Enable commands designated as fun commands, mod: true,", []);
+callback(true, "cmd: /date, desc: Current date \n cmd: /fun, desc: Enable commands designated as fun commands, mod: true", []);
    
 
     //callback(true, "Command List ", {}, []);
