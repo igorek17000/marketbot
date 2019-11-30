@@ -274,10 +274,13 @@ fs.readFile(path.resolve(__dirname, "help.txt"), (err, data) => {
 //fs.readFile('', (err, data) => { 
 if (err) { 
 console.error(err) 
-return 
+return;
 } 
 //console.log(data) })
-callback(true, "Command List \n" + data, []);
+callback(true, data, []);
+//callback(true, "Command List \n" + data, []);
+
+
 //return data;
 //callback(true, "Help", []);
 });
