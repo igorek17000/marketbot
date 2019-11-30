@@ -42,8 +42,8 @@ var tomorrow = "the next day";
 var today = "the current day";
 var yesterday = "the day before today";
 
-var cm = com.find({});
-cm(output);
+com(output);
+
 //for (i = 0; i < com.length; i++) { 
 //console.log(arr[i])
 //}
