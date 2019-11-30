@@ -270,7 +270,7 @@ var fs = require('fs');
 var path = require('path');
 fs.readFile(path.resolve(__dirname, "modules/help.txt"), (err, data) => {
 
-//var helpful = require('../modules/help');
+//var helpful = require('../help');
 //fs.readFile('', (err, data) => { 
 if (err) { 
 console.error(err) 
