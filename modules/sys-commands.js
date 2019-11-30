@@ -274,7 +274,7 @@ fs.readFile(path.resolve(__dirname, "help.txt"), (err, data) => {
 //fs.readFile('', (err, data) => { 
 if (err) { 
 console.error(err) 
-return;
+return
 } 
 //console.log(data) })
 callback(true, data, []);
