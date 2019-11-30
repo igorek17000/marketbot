@@ -277,10 +277,10 @@ console.error(err)
 return 
 } 
 //console.log(data) })
-callback(true, data, []);
-return data;
+callback(true, "Command List \n" + data, []);
+//return data;
 //callback(true, "Help", []);
-})
+});
    
 
     //callback(true, "Command List ", {}, []);
