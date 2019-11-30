@@ -277,12 +277,17 @@ function helpCmd(dataHash, callback, result) {
 
   if (regex.test(dataHash.request.text)) {
     if (dataHash.isMod) {
-var alldocs = require('./alldocs.js');
-
-var attachments = attachments
-callback(true, "Command List ", []);
-var alldocs = require('./alldocs.js');
-alldocs;
+callback(true, "cmd: /date, desc: Current date,
+    cmd: /fun, desc: Enable commands designated as fun commands, mod: true,
+    cmd: /nofun, desc: Disable commands designated as fun commands, mod: true,
+    cmd: /id, desc: Notifies the requester of their GroupMe ID,
+    cmd: /about, desc: Responds with a short message about the bot,
+    cmd: /go, desc: Send a test email to bot, mod: true,
+    cmd: /nest18, desc: Set Nest temperature to 18 degrees celsius,
+    cmd: /nest19, desc: Set Nest temperature to 19 degrees celsius,
+    cmd: /nest20, desc: Set Nest temperature to 20 degrees celsius,
+    cmd: /nest21, desc: Set Nest temperature to 21 degrees celsius,
+    cmd: /nest22, desc: Set Nest temperature to 22 degrees celsius", []);
 
     //callback(true, "Command List ", {}, []);
 
