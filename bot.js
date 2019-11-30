@@ -18,6 +18,7 @@ var gif          = require('./custom_commands/giphy-api.js');
 var catFact      = require('./custom_commands/cat-fact.js');
 var urbanDict    = require('./custom_commands/urban-dictionary.js');
 //var go           = require('./modules/server.js');
+var fs = require('fs');
 
 //load config
 var config       = require('./config/config.js');
