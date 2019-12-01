@@ -332,9 +332,9 @@ var date = moment().utcOffset(-300).format('LLLL');
 const chalk = require('chalk'); 
 const sliceAnsi = require('slice-ansi'); 
 const input = "The quick brown " + chalk.red("fox jumped over ") + 	"the lazy " + chalk.green("dog and then ran away with the unicorn."); 
-console.log(sliceAnsi(input, 20, 30));
+console.log(sliceAnsi(input));
 
-callback(true, "Hello " + sliceAnsi(input, 20, 30), []);
+callback(true, "Hello " + sliceAnsi(input), []);
   
 } else {
 return false;
