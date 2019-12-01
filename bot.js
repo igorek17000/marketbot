@@ -76,7 +76,7 @@ exports.commands = function() {
   }
 
   var output = commandList.buildHTML(cmdArr, config.bot_name);
-  var output = cmdArr;
+  //var output = cmdArr;
 return output;
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
