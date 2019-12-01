@@ -332,7 +332,7 @@ var sliceAnsi = require('slice-ansi');
 var input = "The quick brown " + chalk.red('fox jumped over ') + "the lazy " + chalk.green('dog and then ran away with the unicorn.'); 
 
   if (regex.test(dataHash.request.text)) {
-console.log(input);
+console.log(sliceAnsi(input));
 
 callback(true, "Hello " + input, []);
   
