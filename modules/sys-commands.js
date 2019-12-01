@@ -1,5 +1,5 @@
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd, testCmd];
 
 exports.modName = "System Commands";
 
@@ -317,5 +317,26 @@ console.log('writing to ' + fileName);
 } else { 
 callback(true, "Not now", []);
 }
+}
+}
+
+//----------
+
+function testCmd(dataHash, callback) {
+  var regex = /^\/test$/;
+
+var moment = require('moment'); 
+var date = moment().utcOffset(-300).format('LLLL');
+
+  if (regex.test(dataHash.request.text)) {
+const chalk = require('chalk'); 
+const sliceAnsi = require('slice-ansi'); 
+const input = 'The quick brown ' + chalk.red('fox jumped over ') + 	'the lazy ' + chalk.green('dog and then ran away with the unicorn.'); 
+console.log(sliceAnsi(input, 20, 30));
+
+callback(true, "Hello " + sliceAnsi(input, 20, 30), []);
+  
+} else {
+return false;
 }
 }
