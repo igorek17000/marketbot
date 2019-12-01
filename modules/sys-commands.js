@@ -336,14 +336,14 @@ msg = "Goog morning";
 msg = "Good afternoon";
 } else if (time > 20) {
 msg = "Good evening";
-
+}
 callback(true, msg, []);
-  
+  return msg;
 } else {
 return false;
 }
 }
-}
+
 
 //-------
 
