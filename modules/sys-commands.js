@@ -327,7 +327,7 @@ function hiCmd(dataHash, callback) {
 
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var time = date.hour();
+var time = moment().utcOffset(-300).hour();
 
   if (regex.test(dataHash.request.text)) {
 if (time < 12) {
