@@ -327,14 +327,16 @@ function testCmd(dataHash, callback) {
 
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var chalk = require('chalk'); 
-var sliceAnsi = require('slice-ansi'); 
-var input = "The quick brown " + chalk.red('fox jumped over ') + "the lazy " + chalk.green('dog and then ran away with the unicorn.'); 
+const c = require('ansi-colors');
 
+console.log(c.red('This is a red string!'));
+console.log(c.green('This is a red string!'));
+console.log(c.cyan('This is a cyan string!'));
+console.log(c.yellow('This is a yellow string!'));
   if (regex.test(dataHash.request.text)) {
-console.log(sliceAnsi(input));
+//console.log(sliceAnsi(input));
 
-callback(true, "Hello " + input, []);
+callback(true, "Hello ", []);
   
 } else {
 return false;
