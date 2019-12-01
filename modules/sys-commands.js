@@ -329,7 +329,7 @@ var moment = require('moment');
 var date = moment().utcOffset(-300).format('LLLL');
 var chalk = require('chalk'); 
 var sliceAnsi = require('slice-ansi'); 
-var input = "The quick brown " + "chalk.red(fox jumped over )" + "the lazy " + "chalk.green(dog and then ran away with the unicorn.)"; 
+var input = "The quick brown " + chalk.red('fox jumped over ') + "the lazy " + chalk.green('dog and then ran away with the unicorn.'); 
 
   if (regex.test(dataHash.request.text)) {
 console.log(input);
