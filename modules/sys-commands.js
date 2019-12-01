@@ -1,5 +1,5 @@
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd, testCmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd, testCmd];
 
 exports.modName = "System Commands";
 
@@ -321,6 +321,31 @@ callback(true, "Not now", []);
 }
 
 //----------
+
+function hiCmd(dataHash, callback) {
+  var regex = /^\/hi$/;
+
+var moment = require('moment'); 
+var date = moment().utcOffset(-300).format('LLLL');
+var time = date.hour();
+
+  if (regex.test(dataHash.request.text)) {
+if (time < 12) {
+msg = "Goog morning";
+} else if (time < 20) {
+msg = "Good afternoon";
+} else if (time > 20) {
+msg = "Good evening";
+}
+
+callback(true, msg, []);
+  
+} else {
+return false;
+}
+}
+
+//-------
 
 function testCmd(dataHash, callback) {
   var regex = /^\/test$/;
