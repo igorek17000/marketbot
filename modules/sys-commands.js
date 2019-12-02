@@ -331,7 +331,7 @@ var time = moment().utcOffset(-300).hour();
 
   if (regex.test(dataHash.request.text)) {
 if (time < 12) {
-msg = "Goog morning";
+msg = "Good morning";
 } else if (time < 20) {
 msg = "Good afternoon";
 } else if (time > 20) {
