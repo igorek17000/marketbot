@@ -281,7 +281,7 @@ return;
 callback(true, "Command List \n" + data, []);
 
 
-//return data;
+return data;
 //callback(true, "Help", []);
 })
    
