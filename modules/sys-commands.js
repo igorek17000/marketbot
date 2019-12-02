@@ -362,6 +362,7 @@ console.log(c.yellow('This is a yellow string!'));
 //console.log(sliceAnsi(input));
 
 callback(true, "Hello ", []);
+return;
   
 } else {
 return false;
