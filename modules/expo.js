@@ -11,4 +11,4 @@ var expo = [
     {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
-module.exports = { expo };
+module.exports = {expo};
