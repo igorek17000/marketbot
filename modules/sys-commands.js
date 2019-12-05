@@ -347,7 +347,7 @@ return false;
 
 //-------
 
-function testCmd(dataHash, callback) {
+function testsCmd(dataHash, callback) {
   var regex = /^\/tests$/;
 
 var moment = require('moment'); 
