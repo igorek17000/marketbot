@@ -347,24 +347,3 @@ return false;
 
 //-------
 
-function tostCmd(dataHash, callback) {
-  var regex = /^\/tost$/;
-
-var moment = require('moment'); 
-var date = moment().utcOffset(-300).format('LLLL');
-const c = require('ansi-colors');
-
-console.log(c.red('This is a red string!'));
-console.log(c.green('This is a red string!'));
-console.log(c.cyan('This is a cyan string!'));
-console.log(c.yellow('This is a yellow string!'));
-  if (regex.test(dataHash.request.text)) {
-//console.log(sliceAnsi(input));
-
-callback(true, "Hello ", []);
-return;
-  
-} else {
-return false;
-}
-}
