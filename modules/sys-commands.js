@@ -1,5 +1,5 @@
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd, testsCmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd, tostCmd];
 
 exports.modName = "System Commands";
 
@@ -347,8 +347,8 @@ return false;
 
 //-------
 
-function testsCmd(dataHash, callback) {
-  var regex = /^\/tests$/;
+function tostCmd(dataHash, callback) {
+  var regex = /^\/tost$/;
 
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
