@@ -75,8 +75,12 @@ exports.commands = function() {
       cmdArr = cmdArr.concat(newCmds);
   }
 
-  var output = commandList.buildHTML(cmdArr, config.bot_name);
+  //var output = commandList.buildHTML(cmdArr, config.bot_name);
   //var output = cmdArr;
+var output = checkCommandsHSH[].getCmdListDescription();
+ 
+
+
 return output;
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
