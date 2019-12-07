@@ -111,7 +111,7 @@ function postMessage(botResponse, attachments, botID) {
 
 
 botReq = HTTPS.request(options, function(res) { 
-console.log(res.statusMessage\n + res.statusCode)
+console.log(res.statusMessage + '\n' + res.statusCode)
       //if (res.statusCode == 200) || (res.statusCode == 202) {
         //neat
 //} else {
