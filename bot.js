@@ -75,9 +75,9 @@ exports.commands = function() {
       cmdArr = cmdArr.concat(newCmds);
   }
 
-  //var output = commandList.buildHTML(cmdArr, config.bot_name);
+  var output = commandList.buildHTML(cmdArr, config.bot_name);
   //var output = cmdArr;
-var output = checkCommandsHSH[].getCmdListDescription();
+//var output = checkCommandsHSH[].getCmdListDescription();
  
 
 
