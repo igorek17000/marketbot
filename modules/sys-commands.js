@@ -49,7 +49,7 @@ var onetwo = [
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
 onetwo = onetwo.sort(function (a, b) { 
-return a.item.localeCompare(b.item); 
+return a.onetwo.localeCompare(b.onetwo); 
 }); 
 
 if (regex.test(dataHash.request.text)) {
