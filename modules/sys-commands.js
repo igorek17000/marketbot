@@ -48,9 +48,9 @@ var onetwo = [
     {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
-onetwo = onetwo.sort(function(a, b) { 
-return a.cmd.localeCompare(b.cmd); 
-}); 
+//onetwo = onetwo.sort(function(a, b) { 
+//return a.cmd.localeCompare(b.cmd); 
+//}); 
 
 if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
