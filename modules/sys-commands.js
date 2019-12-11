@@ -56,7 +56,7 @@ if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
 
 
-callback(true, onetwo);
+callback(true, onetwo, []);
 console.log(onetwo);
 return onetwo;
 } else {
