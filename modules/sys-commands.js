@@ -1,5 +1,5 @@
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd, onetwoCmd];
 
 exports.modName = "System Commands";
 
@@ -32,6 +32,40 @@ exports.getCmdListDescription = function () {
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
 }
+
+function onetwoCmd(dataHash, callback) {
+  var regex = /^\/onetwo$/;
+var onetwo = [
+    {cmd: "/date", desc: "Current date"},
+    {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
+    {cmd: "/nofun", desc: "Disable commands designated as fun commands", mod: true},
+    {cmd: "/id", desc: "Notifies the requester of their GroupMe ID"},
+    {cmd: "/about", desc: "Responds with a short message about the bot"},
+    {cmd: "/go", desc: "Send a test email to bot", mod: true},
+    {cmd: "/nest18", desc: "Set Nest temperature to 18 degrees celsius"},
+    {cmd: "/nest19", desc: "Set Nest temperature to 19 degrees celsius"},
+    {cmd: "/nest20", desc: "Set Nest temperature to 20 degrees celsius"},
+    {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
+    {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
+  ];
+onetwo = onetwo.sort(function (a, b) { 
+return a.item.localeCompare(b.item); 
+}); 
+
+if (regex.test(dataHash.request.text)) {
+  if (dataHash.isMod) {
+
+
+callback(true, onetwo);
+console.log(onetwo);
+return onetwo;
+} else {
+callback(true, "Access Denied! Testing onetwo", []);
+}
+}
+}
+
+
 
 function listCmd(dataHash, callback) {
   var regex = /^\/list$/;
