@@ -48,6 +48,7 @@ var onetwo = [
     {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
+onetwo = [];
 var oneone = onetwo.sort(function(a, b) { 
 return a.cmd.localeCompare(b.cmd); 
 }); 
