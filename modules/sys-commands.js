@@ -56,9 +56,9 @@ if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
 
 
-callback(true, oneone, []);
+callback(true, onetwo, []);
 console.log(oneone);
-//return onetwo;
+return onetwo;
 } else {
 callback(true, "Access Denied! Testing onetwo", []);
 }
