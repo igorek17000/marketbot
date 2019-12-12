@@ -35,7 +35,8 @@ exports.getCmdListDescription = function () {
 
 function onetwoCmd(dataHash, callback) {
   var regex = /^\/onetwo$/;
-var onetwo = [
+var onetwo = function () {
+  return [
     {cmd: "/date", desc: "Current date"},
     {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
     {cmd: "/nofun", desc: "Disable commands designated as fun commands", mod: true},
@@ -48,7 +49,7 @@ var onetwo = [
     {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
-onetwo = [];
+}
 var oneone = onetwo.sort(function(a, b) { 
 return a.cmd.localeCompare(b.cmd); 
 }); 
