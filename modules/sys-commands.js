@@ -50,7 +50,7 @@ var onetwo = function () {
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
 }
-var oneone = onetwo.sort(function(a, b) { 
+var oneone = onetwo(function(a, b) { 
 return a.cmd.localeCompare(b.cmd); 
 }); 
 
