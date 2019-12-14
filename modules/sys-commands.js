@@ -50,17 +50,17 @@ var onetwo = function () {
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
 }
-//var oneone = onetwo.sort(function(a, b) { 
-//return a.cmd.localeCompare(b.cmd); 
-//}); 
+var oneone = onetwo.sort(function(a, b) { 
+return a.cmd.localeCompare(b.cmd); 
+}); 
 
 if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
 
 
-callback(true, onetwo, []);
+callback(true, "/date", []);
 console.log(oneone);
-return onetwo;
+return onetwo.toString();
 } else {
 callback(true, "Access Denied! Testing onetwo", []);
 }
