@@ -35,6 +35,8 @@ exports.getCmdListDescription = function () {
 
 function onetwoCmd(dataHash, callback) {
   var regex = /^\/onetwo$/;
+var moment = require('moment'); 
+var date = moment().utcOffset(-300).format('LLLL');
 var onetwo = [
     {cmd: "/date", desc: "Current date"},
     {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
