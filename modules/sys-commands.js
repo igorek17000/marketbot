@@ -57,7 +57,7 @@ if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
 
 
-callback(true, Object.values(onetwo), + \n + date,[]);
+callback(true, Object.values(onetwo), + "\n" + date,[]);
 console.log(Object.values(onetwo));
 return onetwo.toString();
 } else {
