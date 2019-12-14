@@ -58,7 +58,7 @@ if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
 
 
-callback(true, "/date", []);
+callback(true, "/date" + oneone.toString(), []);
 console.log(oneone);
 return onetwo.toString();
 } else {
