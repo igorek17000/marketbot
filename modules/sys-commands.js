@@ -35,8 +35,7 @@ exports.getCmdListDescription = function () {
 
 function onetwoCmd(dataHash, callback) {
   var regex = /^\/onetwo$/;
-var onetwo = function () {
-  return [
+var onetwo = [
     {cmd: "/date", desc: "Current date"},
     {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
     {cmd: "/nofun", desc: "Disable commands designated as fun commands", mod: true},
@@ -49,17 +48,17 @@ var onetwo = function () {
     {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
     {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
   ];
-}
-var oneone = onetwo(function(a, b) { 
-return a.cmd.localeCompare(b.cmd); 
-}); 
+
+//var oneone = onetwo(function(a, b) { 
+//return a.cmd.values.localeCompare(b.cmd.values); 
+//}); 
 
 if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
 
 
-callback(true, "/date" + oneone.toString(), []);
-console.log(oneone);
+callback(true, Object.values(onetwo), + \n + date,[]);
+console.log(Object.values(onetwo));
 return onetwo.toString();
 } else {
 callback(true, "Access Denied! Testing onetwo", []);
