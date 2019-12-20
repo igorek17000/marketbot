@@ -1,5 +1,5 @@
 var commands;
-var userCommands = [addCmd, answerCmd, getCmd, describeCmd, editCmd, removeCmd];
+var userCommands = [addCmd, addressCmd, answerCmd, getCmd, describeCmd, editCmd, removeCmd];
 
 var db = require('../modules/db.js');
 var db_table = 'user_triggers';
@@ -51,6 +51,19 @@ function describeCmdDB(cmd, callback) {
 
   updateCmdDB(cmd, updateHash, callback);
 }
+
+//-------
+function addressCmdDb(cmd, callback) {
+  var addressHash = {
+    $set: {
+      "address": cmd["address"]
+    }
+  };
+
+  updateCmdDb(cmd, addressHash, callback);
+}
+
+//-------
 
 function changeMsgCmdDB(cmd, callback) {
   var updateHash = {
@@ -232,6 +245,41 @@ function describeCmd(request, bots, isMod, callback) {
     return msg;
   }
 }
+
+//----------
+function addressCmd(request, bots, isMod, callback) {
+  var regex = /^\/cmd address (.+?) ([\s\S]+)/i;
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = "You don't have permission to describe commands"
+      callback(true, msg, []);
+      return msg;
+    }
+
+    for (cmd in commands) {
+      if (commands[cmd].name == val[1].toLowerCase()) {
+        commands[cmd]["address"] = val[2];
+        addressCmdDB(commands[cmd]);
+
+        var msg = val[1] + " address updated";
+        callback(true, msg, []);
+        return msg;
+      }
+    }
+
+    var msg = val[1] + " doesn't exist";
+    callback(true, msg, []);
+
+    return msg;
+  }
+}
+
+
+//----------
 
 function removeCmd(request, bots, isMod, callback) {
   var regex = /^\/cmd remove (.+)/i;
