@@ -53,14 +53,14 @@ function describeCmdDB(cmd, callback) {
 }
 
 //-------
-function addressCmdDb(cmd, callback) {
+function addressCmdDB(cmd, callback) {
   var addressHash = {
     $set: {
       "address": cmd["address"]
     }
   };
 
-  updateCmdDb(cmd, addressHash, callback);
+  updateCmdDB(cmd, addressHash, callback);
 }
 
 //-------
