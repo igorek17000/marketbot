@@ -201,11 +201,12 @@ function addCmd(request, bots, isMod, callback) {
     }
 
     var cmdHash = {
+    var vall = val[5];
       name: val[1].toLowerCase(),
       regex: "^\/" + val[1] + "$",
       message: val[2],
       date: date,
-      /i: val[5]
+      vall: val[5]
     };
 
     commands.push(cmdHash);
