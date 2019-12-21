@@ -185,6 +185,7 @@ function addCmd(request, bots, isMod, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
+    var vel = val[5];
 
     if (!isMod) {
       var msg = "You don't have permission to add commands"
@@ -206,7 +207,7 @@ function addCmd(request, bots, isMod, callback) {
       regex: "^\/" + val[1] + "$",
       message: val[2],
       date: date,
-      vl: val[5]
+      vel: val[5]
     };
 
     commands.push(cmdHash);
