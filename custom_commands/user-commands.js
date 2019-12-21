@@ -205,7 +205,7 @@ function addCmd(request, bots, isMod, callback) {
       regex: "^\/" + val[1] + "$",
       message: val[2],
       date: date,
-      val[1]: val[5]
+      /i: val[5]
     };
 
     commands.push(cmdHash);
