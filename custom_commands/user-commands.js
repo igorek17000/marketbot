@@ -56,7 +56,7 @@ function describeCmdDB(cmd, callback) {
 function addressCmdDB(cmd, callback) {
   var addressHash = {
     $set: {
-      "val[2]": cmd["val[2]"]
+      "address": cmd["address"]
     }
   };
 
@@ -204,7 +204,8 @@ function addCmd(request, bots, isMod, callback) {
       name: val[1].toLowerCase(),
       regex: "^\/" + val[1] + "$",
       message: val[2],
-      date: date
+      date: date,
+      val[1]: val[5]
     };
 
     commands.push(cmdHash);
