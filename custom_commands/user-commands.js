@@ -56,7 +56,7 @@ function describeCmdDB(cmd, callback) {
 function addressCmdDB(cmd, callback) {
   var addressHash = {
     $set: {
-      "address": cmd["address"]
+      val[1]: cmd[val[1]]
     }
   };
 
