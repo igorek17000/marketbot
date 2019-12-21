@@ -202,7 +202,6 @@ function addCmd(request, bots, isMod, callback) {
     }
 
     var cmdHash = {
-    var vl = val[5];
       name: val[1].toLowerCase(),
       regex: "^\/" + val[1] + "$",
       message: val[2],
