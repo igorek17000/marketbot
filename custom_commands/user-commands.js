@@ -206,7 +206,7 @@ function addCmd(request, bots, isMod, callback) {
       regex: "^\/" + val[1] + "$",
       message: val[3],
       date: date,
-      vel: val[2]
+      test: val[2]
     };
 
     commands.push(cmdHash);
@@ -250,7 +250,7 @@ function describeCmd(request, bots, isMod, callback) {
 
 //----------
 function addressCmd(request, bots, isMod, callback) {
-  var regex = /^\/cmd address (.+?) ([\s\S]+)/i;
+  var regex = /^\/cmd address (.+?) (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -265,6 +265,7 @@ function addressCmd(request, bots, isMod, callback) {
     for (cmd in commands) {
       if (commands[cmd].name == val[1].toLowerCase()) {
         commands[cmd]["address"] = val[2];
+        commands[cmd]["message"] = val[3];
         addressCmdDB(commands[cmd]);
 
         var msg = val[1] + " address updated";
