@@ -16,7 +16,8 @@ router = new director.http.Router({
     get:  bot.init,
     post: bot.init
   },
-  '/commandlist' : {
+  '/commands' : {
+get: ping,
     get: bot.commands
     //post: bot.commands
   },
