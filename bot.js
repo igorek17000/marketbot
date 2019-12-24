@@ -81,9 +81,11 @@ exports.commands = function() {
  
 
 
-return output;
+//return output;
+return cmdArr;
   this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(output);
+  //this.res.end(output);
+this.res.end(cmdArr);
 }
 
 function sendDelayedMessage(msg, attachments, botID) {
