@@ -1,20 +1,19 @@
 var mainHTML, allHTML, modHTML, ownerHTML;
 var fs = require('fs');
-//var path = require('path');
 
 init();
 
 function init() {
-  getFileAll('/commands/command.html', function(data) {
+  getFileAll('commands/command.html', function(data) {
     mainHTML = data;
   });
-  getFileAll('/commands/partials/_all.html', function(data) {
+  getFileAll('commands/partials/_all.html', function(data) {
     allHTML = data;
   });
-  getFileAll('/commands/partials/_mod.html', function(data) {
+  getFileAll('commands/partials/_mod.html', function(data) {
     modHTML = data;
   });
-  getFileAll('/commands/partials/_owner.html', function(data) {
+  getFileAll('commands/partials/_owner.html', function(data) {
     ownerHTML = data;
   });
 }
@@ -22,10 +21,7 @@ function init() {
 //feels pointless, come up with a better way to do this
 function getFileAll(path, callback) {
   fs.readFile(path, 'utf8', function(err, data){
-  //fs.readFile(path, 'utf8', (err, data) => {
     callback(data);
-    //var data = res
-    //return data;
   });
 }
 
