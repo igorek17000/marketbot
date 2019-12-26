@@ -67,9 +67,9 @@ exports.respond = function(botRoom) {
 exports.commands = function() {
   var cmdArr = [];
 
-  console.log('displaying commands at /commands' + res.statusCode);
+  console.log('displaying commands at /commands');
 
-  for(var lib in checkCommandsHSH) {
+  for(var lib in checkCommandsHSH){
     var newCmds = checkCommandsHSH[lib].getCmdListDescription();
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
@@ -79,9 +79,6 @@ exports.commands = function() {
   //var output = cmdArr;
 //var output = checkCommandsHSH[].getCmdListDescription();
  
-
-
-return output;
 //return cmdArr;
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
