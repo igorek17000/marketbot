@@ -67,7 +67,7 @@ exports.respond = function(botRoom) {
 exports.commands = function() {
   var cmdArr = [];
 
-  console.log('displaying commands at /commands');
+  //console.log('displaying commands at /commands');
 
   for(var lib in checkCommandsHSH){
     var newCmds = checkCommandsHSH[lib].getCmdListDescription();
