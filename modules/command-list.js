@@ -29,12 +29,12 @@ function getFileAll(path, callback) {
   });
 }
 
-exports.buildHTML = function (cmdArr, bot_name) {
+exports.buildHTML = function (cmdArray, bot_name) {
   var modArr   = [];
   var ownerArr = [];
   var allArr   = [];
 
-  cmdArr.sort(function(a, b) {
+  cmdArray.sort(function(a, b) {
     if (a.cmd < b.cmd)
       return - 1;
     else if (a.cmd > b.cmd)
@@ -43,16 +43,16 @@ exports.buildHTML = function (cmdArr, bot_name) {
       return 0;
   });
 
-  for (cmd in cmdArr) {
-    if (!cmdArr[cmd].desc)
-      cmdArr[cmd].desc = "No description provided ... thanks lazy mods";
+  for (cmd in cmdArray) {
+    if (!cmdArray[cmd].desc)
+      cmdArray[cmd].desc = "No description provided ... thanks lazy mods";
 
-    if (cmdArr[cmd].owner)
-      ownerArr.push(cmdArr[cmd]);
-    else if (cmdArr[cmd].mod)
-      modArr.push(cmdArr[cmd]);
+    if (cmdArray[cmd].owner)
+      ownerArr.push(cmdArray[cmd]);
+    else if (cmdArray[cmd].mod)
+      modArray.push(cmdArray[cmd]);
     else
-      allArr.push(cmdArr[cmd]);
+      allArr.push(cmdArray[cmd]);
   }
 
   //put this repetitive code in a function ... you're better than this
