@@ -46,5 +46,5 @@ server.listen(port, ip);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("I am AlexBot.\n\for a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands");
+  this.res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands");
 }
