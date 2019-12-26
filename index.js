@@ -16,7 +16,7 @@ router = new director.http.Router({
     get:  bot.init,
     post: bot.init
   },
-  '/commands' : {
+  '/commandlist' : {
     get: bot.commands
     //post: bot.commands
   },
