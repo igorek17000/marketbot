@@ -61,8 +61,8 @@ exports.buildHTML = function (cmdArray, bot_name) {
   var ownerBuiltHTML = '';
 
   for (cmd in allArr) {
-    var addHTML = allHTML.replace($$command_name, allArr[cmd].cmd);
-    addHTML = addHTML.replace($$command_desc, allArr[cmd].desc);
+    var addHTML = allHTML.replace('$$command_name', allArr[cmd].cmd);
+    addHTML = addHTML.replace('$$command_desc', allArr[cmd].desc);
     allBuiltHTML += addHTML;
   }
 
