@@ -1,5 +1,7 @@
 var mainHTML, allHTML, modHTML, ownerHTML;
 var fs = require('fs');
+var config = require('./config/config');
+
 
 init();
 
@@ -75,7 +77,7 @@ exports.buildHTML = function (cmdArray, bot_name) {
   }
 
   var mainBuiltHTML = mainHTML;
-  mainBuiltHTML = mainBuiltHTML.replace('$$bot_name', bot_name);
+  mainBuiltHTML = mainBuiltHTML.replace('$$bot_name', config.bot_name);
   mainBuiltHTML = mainBuiltHTML.replace('$$all', allBuiltHTML);
   mainBuiltHTML = mainBuiltHTML.replace('$$mod', modBuiltHTML);
   mainBuiltHTML = mainBuiltHTML.replace('$$owner', ownerBuiltHTML);
