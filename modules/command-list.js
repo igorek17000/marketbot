@@ -50,7 +50,7 @@ exports.buildHTML = function (cmdArray, bot_name) {
     if (cmdArray[cmd].owner)
       ownerArr.push(cmdArray[cmd]);
     else if (cmdArray[cmd].mod)
-      modArray.push(cmdArray[cmd]);
+      modArr.push(cmdArray[cmd]);
     else
       allArr.push(cmdArray[cmd]);
   }
