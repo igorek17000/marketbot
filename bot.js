@@ -1,28 +1,28 @@
 /*global init*/
 
 //load modules
-var sysCommands  = require('./modules/sys-commands.js');
+var sysCommands  = require('./modules/sys-commands');
 var db           = require('./modules/db.js');
-var mods         = require('./modules/mods.js');
-var commandList  = require('./modules/command-list.js');
-var rooms        = require('./modules/rooms.js');
+var mods         = require('./modules/mods');
+var commandList  = require('./modules/command-list');
+var rooms        = require('./modules/rooms');
 
 //commands with custom actions
-var userCmds     = require('./custom_commands/user-commands.js');
-var userMentions = require('./custom_commands/user-mentions.js');
-var sysTriggers  = require('./custom_commands/system-triggers.js');
-var quotes       = require('./custom_commands/quotes.js');
-var atEveryone   = require('./custom_commands/at-everyone.js');
-var funCommands  = require('./custom_commands/fun-commands.js');
-var gif          = require('./custom_commands/giphy-api.js');
-var catFact      = require('./custom_commands/cat-fact.js');
-var urbanDict    = require('./custom_commands/urban-dictionary.js');
+var userCmds     = require('./custom_commands/user-commands');
+var userMentions = require('./custom_commands/user-mentions');
+var sysTriggers  = require('./custom_commands/system-triggers');
+var quotes       = require('./custom_commands/quotes');
+var atEveryone   = require('./custom_commands/at-everyone');
+var funCommands  = require('./custom_commands/fun-commands');
+var gif          = require('./custom_commands/giphy-api');
+var catFact      = require('./custom_commands/cat-fact');
+var urbanDict    = require('./custom_commands/urban-dictionary');
 //var go         = require('./modules/server.js');
 var fs           = require('fs');
 var concat       = require('concat');
 
 //load config
-var config       = require('./config/config.js');
+var config       = require('./config/config');
 var HTTPS        = require('https');
 
 //Temporarily just an array of the commands functions. Make an object with configuration values.
