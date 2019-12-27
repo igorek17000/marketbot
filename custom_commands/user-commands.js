@@ -145,7 +145,7 @@ return msg;
       name: commands[cmd].name,
       regex: commands[cmd].regex,
       message: commands[cmd].message,
-      date: date,
+      date: date
     };
 
 
@@ -205,8 +205,7 @@ function addCmd(request, bots, isMod, callback) {
       name: val[1].toLowerCase(),
       regex: "^\/" + val[1] + "$",
       message: val[2],
-      date: date,
-      test: val[3]
+      date: date
     };
 
     commands.push(cmdHash);
@@ -265,7 +264,6 @@ function addressCmd(request, bots, isMod, callback) {
     for (cmd in commands) {
       if (commands[cmd].name == val[1].toLowerCase()) {
         commands[cmd]["address"] = val[2];
-        commands[cmd]["message"] = val[3];
         addressCmdDB(commands[cmd]);
 
         var msg = val[1] + " address updated";
