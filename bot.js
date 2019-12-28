@@ -80,7 +80,7 @@ exports.commands = function() {
 //var output = checkCommandsHSH[].getCmdListDescription();
  
 //return cmdArr;
-  this.res.writeHead(200, {"Content-Type": "text/html"});
+  this.res.writeHead(200);
   this.res.end(output);
 //this.res.end(cmdArr);
 }
