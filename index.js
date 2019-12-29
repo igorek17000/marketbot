@@ -53,6 +53,6 @@ function ping() {
 }
 
 function pingit() {
-  this.res.writeHead(200, {"content-type": "image/png"});
+  this.res.writeHead(200, {"content-type": "text/html"});
   this.res.end("I am AlexBot.\n\For a list of commands go to\n\https://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands");
 }
