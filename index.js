@@ -7,6 +7,7 @@ var http, director, bot, router, server, port, db;
 http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
+today       = require('./commands/command.html');
 
 router = new director.http.Router({
   '/'    : {
@@ -54,5 +55,5 @@ function ping() {
 
 function pingit() {
   this.res.writeHead(200, {"content-type": "text/html"});
-  this.res.end("I am AlexBot.\n\For a list of commands go to\n\https://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands");
+  this.res.end(today);
 }
