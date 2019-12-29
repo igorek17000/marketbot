@@ -14,7 +14,7 @@ router = new director.http.Router({
   },
 '/list' : {
 get: pingit
-}
+},
   '/init' : {
     get:  bot.init,
     post: bot.init
