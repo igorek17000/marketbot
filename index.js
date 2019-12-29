@@ -7,7 +7,7 @@ var http, director, bot, router, server, port, db;
 http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
-today       = require('./commands/command.html');
+today       = require('./modules/command-list.js');
 
 router = new director.http.Router({
   '/'    : {
@@ -55,5 +55,5 @@ function ping() {
 
 function pingit() {
   this.res.writeHead(200, {"content-type": "text/html"});
-  this.res.end(today);
+  this.res.end(today.buildHTML);
 }
