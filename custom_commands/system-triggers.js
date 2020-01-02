@@ -22,18 +22,22 @@ function updateSystemTriggerDesc(trigger, callback) {
 }
 
 exports.checkCommands = function(dataHash, callback) {
-  if (dataHash.request.system) {
+  //if (dataHash.request.system) {
     for (trigger in triggers) {
       trigger = triggers[trigger];
-      var triggerReg = new RegExp(trigger.regex, "i");
+   if(cmd.name == 'cc' && dataHash.currentBot.type == 'hp') 
+continue;
+
+     var triggerReg = new RegExp(trigger.regex, "i");
+
       if (trigger.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && triggerReg.test(dataHash.request.text)){
         var val = triggerReg.exec(dataHash.request.text);
 
-        callback(true, trigger.message, []);
+        callback(true, trigger.message, trigger.attachments);
         break;
       }
     }
-  }
+  
 
   for (cmd in sysTriggersCommands) {
     var test = sysTriggersCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
