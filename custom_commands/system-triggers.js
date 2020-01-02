@@ -25,7 +25,7 @@ exports.checkCommands = function(dataHash, callback) {
   //if (dataHash.request.system) {
     for (trigger in triggers) {
       trigger = triggers[trigger];
-   if(cmd.name == 'cc' && dataHash.currentBot.type == 'hp') 
+   if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
 continue;
 
      var triggerReg = new RegExp(trigger.regex, "i");
