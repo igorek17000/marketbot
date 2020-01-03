@@ -107,7 +107,7 @@ exports.checkCommands = function(dataHash, callback) {
     var cmdReg = new RegExp(cmd.regex, "i");
     if (dataHash.request.text && cmdReg.test(dataHash.request.text)){
       var val = cmdReg.exec(dataHash.request.text);
-     if (cmd.mod == true && dataHash.request.sender_type != isMod) {
+     if (cmd.mod == true && != dataHash.isMod) {
       var msg = "Access Denied."
       callback(true, msg, []);
 }
