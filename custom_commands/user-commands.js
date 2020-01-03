@@ -303,15 +303,16 @@ function modCommandCmd(request, bots, isMod, callback) {
     var val = regex.exec(reqText);
 
     if (!isMod) {
-      var msg = "You don't have permission to describe commands"
+      var msg = "You don't have permission to mod a command";
       callback(true, msg, []);
       return msg;
     }
 
     for (cmd in commands) {
       if (commands[cmd].name == val[1].toLowerCase()) {
-        commands[cmd]["mod"] = ["true";
-        describeCmdDB(commands[cmd]);
+       var modMsg = "true";
+        commands[cmd]["mod"] = modMsg;
+        modCommandCmdDB(commands[cmd]);
 
         var msg = val[1] + " Command has been updated";
         callback(true, msg, []);
