@@ -110,11 +110,13 @@ exports.checkCommands = function(dataHash, callback) {
      if (cmd.mod == true && != dataHash.isMod) {
       var msg = "Access Denied."
       callback(true, msg, []);
+       return msg;
 }
       callback(true, cmd.message, cmd.attachments);
       break;
     }
   }
+}
 
   for (cmd in userCommands) {
     var test = userCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
