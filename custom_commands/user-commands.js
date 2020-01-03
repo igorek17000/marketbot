@@ -54,7 +54,7 @@ function describeCmdDB(cmd, callback) {
 
 //-------
 
-function ModCommandCmdDB(cmd, callback) {
+function modCommandCmdDB(cmd, callback) {
 
   var modHash = {
 
