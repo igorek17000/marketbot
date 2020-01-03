@@ -307,11 +307,11 @@ function modCommandCmd(request, bots, isMod, callback) {
       callback(true, msg, []);
       return msg;
     }
-    val[2] = 'true';
+    //val[2] = 'true';
     for (cmd in commands) {
       if (commands[cmd].name == val[1].toLowerCase()) {
        
-        commands[cmd]["mod"] = ["true"];
+        commands[cmd]["mod"] = "true";
         modCommandCmdDB(commands[cmd]);
 
         var msg = val[1] + " Command has been updated";
