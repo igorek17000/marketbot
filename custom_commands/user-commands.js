@@ -116,7 +116,7 @@ exports.checkCommands = function(dataHash, callback) {
       break;
     }
   }
-}
+
 
   for (cmd in userCommands) {
     var test = userCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
