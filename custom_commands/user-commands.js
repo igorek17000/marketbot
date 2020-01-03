@@ -296,7 +296,7 @@ function addressCmd(request, bots, isMod, callback) {
 }
 //-------
 function modCommandCmd(request, bots, isMod, callback) {
-  var regex = /^\/cmd mod (.+?) ([\s\S]+)/i;
+  var regex = /^\/cmd mod (.+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
