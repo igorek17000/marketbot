@@ -23,7 +23,7 @@ function updateSystemTriggerDesc(trigger, callback) {
 }
 
 exports.checkCommands = function(dataHash, callback) {
-  if(mods.isMod(request.user_id)) 
+  if (mods.isMod(request.user_id)) 
    continue;
     for (trigger in triggers) {
       trigger = triggers[trigger];
