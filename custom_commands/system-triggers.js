@@ -22,7 +22,7 @@ function updateSystemTriggerDesc(trigger, callback) {
 }
 
 exports.checkCommands = function(dataHash, callback) {
-  //if (dataHash.request.system) {
+  if (dataHash.request.isMod) {
     for (trigger in triggers) {
       trigger = triggers[trigger];
    //if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
@@ -30,10 +30,6 @@ exports.checkCommands = function(dataHash, callback) {
 
      var triggerReg = new RegExp(trigger.regex, "i");
        
-      if (dataHash.request.sender != isMod) {
-        callback(true);
-        return;
-        }
         
       if (trigger.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && triggerReg.test(dataHash.request.text)){
         var val = triggerReg.exec(dataHash.request.text);
@@ -42,14 +38,15 @@ exports.checkCommands = function(dataHash, callback) {
         break;
       }
     }
-  
+  }
 
   for (cmd in sysTriggersCommands) {
     var test = sysTriggersCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
     if (test)
       return test;
   }
-}
+ }
+
 
 exports.setAll = function(triggerHash) {
   triggers = triggerHash;
