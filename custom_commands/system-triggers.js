@@ -23,7 +23,7 @@ function updateSystemTriggerDesc(trigger, callback) {
 }
 
 exports.checkCommands = function(dataHash, callback) {
-  if (isMod) 
+  if (dataHash.isMod) 
     for (trigger in triggers) {
       trigger = triggers[trigger];
    //if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
