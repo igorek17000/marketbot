@@ -107,7 +107,7 @@ exports.checkCommands = function(dataHash, callback) {
     var cmdReg = new RegExp(cmd.regex, "i");
     if (dataHash.request.text && cmdReg.test(dataHash.request.text)){
       var val = cmdReg.exec(dataHash.request.text);
-}
+
       callback(true, cmd.message, cmd.attachments);
       break;
     }
@@ -119,7 +119,7 @@ exports.checkCommands = function(dataHash, callback) {
     if (test)
       return test;
   }
-
+}
 
 exports.setAll = function(cmdHash) {
   commands = cmdHash;
