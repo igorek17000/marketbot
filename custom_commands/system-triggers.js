@@ -8,6 +8,7 @@ getAllTriggers();
 exports.modName = "System Triggers";
 
 function getAllTriggers() {
+  if (
   db.getAllDocuments(db_table, function(res){
     triggers = res;
   });
@@ -29,8 +30,11 @@ exports.checkCommands = function(dataHash, callback) {
 //continue;
 
      var triggerReg = new RegExp(trigger.regex, "i");
-
-      if (trigger.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.isMod && dataHash.request.text && triggerReg.test(dataHash.request.text)){
+       
+      if (!isMod) {
+        return;
+        
+      if (trigger.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && triggerReg.test(dataHash.request.text)){
         var val = triggerReg.exec(dataHash.request.text);
 
         callback(true, trigger.message, []);
