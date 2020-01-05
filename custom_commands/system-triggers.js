@@ -23,7 +23,8 @@ function updateSystemTriggerDesc(trigger, callback) {
 }
 
 exports.checkCommands = function(dataHash, callback) {
-  if (dataHash.request.text(mods.isMod(request.user_id)) 
+  if(mods.isMod(request.user_id)) 
+   continue;
     for (trigger in triggers) {
       trigger = triggers[trigger];
    //if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
@@ -39,7 +40,7 @@ exports.checkCommands = function(dataHash, callback) {
         break;
       }
     }
-  }
+  
 
   for (cmd in sysTriggersCommands) {
     var test = sysTriggersCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
