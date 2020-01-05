@@ -33,6 +33,7 @@ exports.checkCommands = function(dataHash, callback) {
        
       if (!isMod) {
         return;
+        }
         
       if (trigger.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && triggerReg.test(dataHash.request.text)){
         var val = triggerReg.exec(dataHash.request.text);
@@ -41,7 +42,7 @@ exports.checkCommands = function(dataHash, callback) {
         break;
       }
     }
-  }
+  
 
   for (cmd in sysTriggersCommands) {
     var test = sysTriggersCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
