@@ -30,7 +30,7 @@ exports.checkCommands = function(dataHash, callback) {
 
      var triggerReg = new RegExp(trigger.regex, "i");
        
-      if (dataHash.request.sender.type != isMod) {
+      if (dataHash.request.sender != isMod) {
         callback(true);
         return;
         }
