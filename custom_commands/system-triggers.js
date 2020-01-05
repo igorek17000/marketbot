@@ -8,7 +8,6 @@ getAllTriggers();
 exports.modName = "System Triggers";
 
 function getAllTriggers() {
-  if (
   db.getAllDocuments(db_table, function(res){
     triggers = res;
   });
