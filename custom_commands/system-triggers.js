@@ -31,6 +31,7 @@ exports.checkCommands = function(dataHash, callback) {
      var triggerReg = new RegExp(trigger.regex, "i");
        
       if (!isMod) {
+        callback(true);
         return;
         }
         
