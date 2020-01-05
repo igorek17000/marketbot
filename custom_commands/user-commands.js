@@ -119,7 +119,7 @@ exports.checkCommands = function(dataHash, callback) {
     if (test)
       return test;
   }
-}
+
 
 exports.setAll = function(cmdHash) {
   commands = cmdHash;
