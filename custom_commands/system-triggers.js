@@ -3,6 +3,7 @@ var triggers;
 var db_table = 'system_triggers';
 var sysTriggersCommands = [addCommandCmd, describeCmd];
 var db = require('../modules/db.js');
+var mods = require('../modules/mods');
 
 getAllTriggers();
 exports.modName = "System Triggers";
@@ -22,7 +23,7 @@ function updateSystemTriggerDesc(trigger, callback) {
 }
 
 exports.checkCommands = function(dataHash, callback) {
-  if (dataHash.request.isMod) {
+  if (dataHash.request.text(mods.isMod(request.user_id)) 
     for (trigger in triggers) {
       trigger = triggers[trigger];
    //if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
