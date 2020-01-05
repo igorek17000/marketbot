@@ -41,7 +41,7 @@ exports.checkCommands = function(dataHash, callback) {
         break;
       }
     }
-  
+  }
 
   for (cmd in sysTriggersCommands) {
     var test = sysTriggersCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
