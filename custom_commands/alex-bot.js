@@ -41,8 +41,8 @@ exports.checkCommands = function(dataHash, callback) {
     }
   
 
-  for (cmd in AlexBotCommands) {
-    var test = AlexBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
+  for (cmd in alexBotCommands) {
+    var test = alexBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
     if (test)
       return test;
   }
