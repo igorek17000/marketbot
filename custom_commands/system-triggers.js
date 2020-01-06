@@ -33,7 +33,7 @@ exports.checkCommands = function(dataHash, callback) {
       var triggerReg = new RegExp(trigger.regex, "i");
       if (trigger.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && triggerReg.test(dataHash.request.text)){
         var val = triggerReg.exec(dataHash.request.text);
-        var msg = trigger.message + " by " + dataHash.request.group.message;
+        var msg = trigger.message + " by " + dataHash.request.group.messages;
         callback(true, msg, []);
         break;
       }
