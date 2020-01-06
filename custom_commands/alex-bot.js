@@ -1,6 +1,8 @@
 //A module for handling responses triggered by AlexBot commands
 var alexbot;
 var db_table = 'alex_bot';
+var moment = require('moment'); 
+var date = moment().utcOffset(-300).format('LLLL');
 var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd];
 var db = require('../modules/db.js');
 //var mods = require('../modules/mods');
@@ -86,7 +88,8 @@ function addAlexBotCmd(request, bots, isMod, callback) {
       name: val[1],
       regex: val[1],
       message: val[2],
-      bots: Object.keys(bots)
+      bots: Object.keys(bots),
+      date: date
     };
 
     alexbot.push(alexbHash);
