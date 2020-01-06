@@ -1,6 +1,11 @@
 //A module for handling responses triggered by groupme system messages
 var triggers;
 var db_table = 'system_triggers';
+var moment = require('moment'); 
+var date = moment().utcOffset(-300).format('LLLL');
+
+
+
 var sysTriggersCommands = [addCommandCmd, describeCmd];
 var db = require('../modules/db.js');
 
@@ -79,7 +84,8 @@ function addCommandCmd(request, bots, isMod, callback) {
       name: val[1],
       regex: val[1],
       message: val[2],
-      bots: Object.keys(bots)
+      bots: Object.keys(bots),
+      date: date
     };
 
     triggers.push(trigHash);
