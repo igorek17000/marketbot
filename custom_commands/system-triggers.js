@@ -3,7 +3,6 @@ var triggers;
 var db_table = 'system_triggers';
 var sysTriggersCommands = [addCommandCmd, describeCmd];
 var db = require('../modules/db.js');
-var mods = require('../modules/mods');
 
 getAllTriggers();
 exports.modName = "System Triggers";
@@ -23,15 +22,10 @@ function updateSystemTriggerDesc(trigger, callback) {
 }
 
 exports.checkCommands = function(dataHash, callback) {
-  if (dataHash.isMod) 
+  if (dataHash.request.system) {
     for (trigger in triggers) {
       trigger = triggers[trigger];
-   //if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
-//continue;
-
-     var triggerReg = new RegExp(trigger.regex, "i");
-       
-        
+      var triggerReg = new RegExp(trigger.regex, "i");
       if (trigger.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && triggerReg.test(dataHash.request.text)){
         var val = triggerReg.exec(dataHash.request.text);
 
@@ -39,15 +33,14 @@ exports.checkCommands = function(dataHash, callback) {
         break;
       }
     }
-  
+  }
 
   for (cmd in sysTriggersCommands) {
     var test = sysTriggersCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
     if (test)
       return test;
   }
- }
-
+}
 
 exports.setAll = function(triggerHash) {
   triggers = triggerHash;
