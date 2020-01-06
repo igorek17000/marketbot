@@ -8,6 +8,7 @@ var commandList  = require('./modules/command-list');
 var rooms        = require('./modules/rooms');
 
 //commands with custom actions
+var alexBot      = require('./custom_commands/alex-bot');
 var userCmds     = require('./custom_commands/user-commands');
 var userMentions = require('./custom_commands/user-mentions');
 var sysTriggers  = require('./custom_commands/system-triggers');
@@ -26,7 +27,7 @@ var config       = require('./config/config');
 var HTTPS        = require('https');
 
 //Temporarily just an array of the commands functions. Make an object with configuration values.
-var checkCommandsHSH = [mods, sysTriggers, userCmds, userMentions, sysCommands, atEveryone, funCommands, quotes, rooms, gif, catFact, urbanDict];
+var checkCommandsHSH = [alexBot, mods, sysTriggers, userCmds, userMentions, sysCommands, atEveryone, funCommands, quotes, rooms, gif, catFact, urbanDict];
 
 exports.init = function() {
   var req = this.req;
