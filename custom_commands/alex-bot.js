@@ -64,7 +64,7 @@ exports.getCmdListDescription = function () {
 }
 
 function addAlexBotCmd(request, bots, isMod, callback) {
-  var regex = /^\/addalexbot (.+?) ([\s\S]+)/i;
+  var regex = /^\/alexbot add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -94,14 +94,14 @@ function addAlexBotCmd(request, bots, isMod, callback) {
 
     alexbot.push(alexbHash);
     addAlexBotToDB(alexbHash);
-    var msg = val[1] + " AlexBot command added!";
+    var msg = val[1] + " AlexBot command added! Use '/alexbot describe" + " val[1] " + "to add a description";
     callback(true, msg, []);
     return msg;
   }
 }
 
 function describeAlexBotCmd(request, bots, isMod, callback) {
-  var regex = /^\/describealexbot (.+?) ([\s\S]+)/i;
+  var regex = /^\/alexbot describe (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
