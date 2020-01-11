@@ -92,7 +92,6 @@ exports.checkCommands = function(dataHash, callback) {
         break;
       }
     }
-  }
 
   for (cmd in flynnBotCommands) {
     var test = flynnBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
@@ -100,7 +99,7 @@ exports.checkCommands = function(dataHash, callback) {
       return test;
   }
  }
-
+}
 
 exports.setAll = function(flynnbHash) {
   flynnbot = flynnbHash;
