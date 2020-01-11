@@ -84,8 +84,8 @@ exports.checkCommands = function(dataHash, callback) {
     } else {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday + "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday + "\n" + "Saturday\n" + flynnb.saturday;
     
-         callback(true, msg, []);
-        
+         //callback(true, msg, []);
+        callback(msg, []);
         
         
         //callback(true, "Sunday\n" + "Captured " + flynnb.sunday + "\n" + "Monday\n" + "Captured " + flynnb.monday + "\n" + "Tuesday\n" + "Captured " + flynnb.tuesday + "\n" + "Wednesday\n" + "Captured " + flynnb.wednesday + "\n" + "Thursday\n" + "Captured " + flynnb.thursday + "\n" + "Friday\n" + "Captured " + flynnb.friday + "\n" + "Saturday\n" + "Captured " + flynnb.saturday, []);
