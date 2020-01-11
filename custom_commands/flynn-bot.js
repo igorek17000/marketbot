@@ -66,7 +66,27 @@ exports.checkCommands = function(dataHash, callback) {
       if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
         var val = flynnbReg.exec(dataHash.request.text);
 
-        callback(true, "Sunday\n" + "Captured " + flynnb.sunday + "\n" + "Monday\n" + "Captured " + flynnb.monday + "\n" + "Tuesday\n" + "Captured " + flynnb.tuesday + "\n" + "Wednesday\n" + "Captured " + flynnb.wednesday + "\n" + "Thursday\n" + "Captured " + flynnb.thursday + "\n" + "Friday\n" + "Captured " + flynnb.friday + "\n" + "Saturday\n" + "Captured " + flynnb.saturday, []);
+        var msg = "";
+
+    if (flynnbot[flynnb].sunday) {
+      msg = "Sunday\n + flynnb.sunday, []";
+    } else if (flynnbot[flynnb].monday) {
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday;
+    } else if (flynnbot[flynnb].tuesday) {
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "Tuesday\n" + flynnb.tuesday;
+    } else if (flynnbot[flynnb].wednesday) {
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "Wednesday\n" + flynnb.wednesday;
+    } else if (flynnbot[flynnb].thursday) {
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday "\n" + "Wednesday\n" + flynnb.wednesday "\n" + "Thursday\n" + flynnb.thursday;
+    } else if (flynnbot[flynnb].friday){
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday "\n" + "Wednesday\n" + flynnb.wednesday "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday;
+    } else {
+      var user_id = request.attachments[0].user_ids[0];
+
+        
+        
+        
+        //callback(true, "Sunday\n" + "Captured " + flynnb.sunday + "\n" + "Monday\n" + "Captured " + flynnb.monday + "\n" + "Tuesday\n" + "Captured " + flynnb.tuesday + "\n" + "Wednesday\n" + "Captured " + flynnb.wednesday + "\n" + "Thursday\n" + "Captured " + flynnb.thursday + "\n" + "Friday\n" + "Captured " + flynnb.friday + "\n" + "Saturday\n" + "Captured " + flynnb.saturday, []);
         break;
       }
     }
