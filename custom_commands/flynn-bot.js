@@ -100,7 +100,7 @@ exports.checkCommands = function(dataHash, callback) {
       return test;
   }
  }
-
+}
 
 exports.setAll = function(flynnbHash) {
   flynnbot = flynnbHash;
