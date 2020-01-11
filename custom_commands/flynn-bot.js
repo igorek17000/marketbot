@@ -81,9 +81,9 @@ exports.checkCommands = function(dataHash, callback) {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday + "\n" + "Thursday\n" + flynnb.thursday;
     } else if (!flynnbot[flynnb].saturday) {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday+  "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday;
-    } else if (flynnbot[flynnb].saturday == 1) {
-      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday + "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday + "\n\ + "Saturday\n" + flynnb.saturday;
     } else {
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday + "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday + "\n\ + "Saturday\n" + flynnb.saturday;
+    
          callback(true, msg, []);
         
         
