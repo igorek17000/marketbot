@@ -1,0 +1,132 @@
+//A module for handling responses triggered by FlynnBot commands
+var flynnbot;
+var db_table = 'flynn_bot';
+var moment = require('moment'); 
+var date = moment().utcOffset(-300).format('LLLL');
+var flynnBotCommands = [addFlynnBotCmd, describeFlynnBotCmd, sundayFlynnBotCmd, mondayFlynnBotCmd, tuesdayFlynnBotCmd, wednesdayFlynnBotCmd, thursdayFlynnBotCmd, fridayFlynnBotCmd, saturdayFlynnBotCmd];
+var db = require('../modules/db.js');
+//var mods = require('../modules/mods');
+
+getAllFlynnbot();
+exports.modName = "flynnBot";
+
+function getAllFlynnbot() {
+  db.getAllDocuments(db_table, function(res){
+    flynnbot = res;
+  });
+}
+
+function addFlynnBotToDB(flynnb, callback) {
+  db.addDoc(db_table, flynnb, callback);
+}
+
+function updateFlynnBotDesc(flynnb, callback) {
+  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "description": flynnb.description}}, callback);
+}
+
+exports.checkCommands = function(dataHash, callback) {
+  if (dataHash.isMod) 
+    for (flynnb in flynnbot) {
+      flynnb = flynnbot[flynnb];
+   //if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
+//continue;
+
+     var flynnbReg = new RegExp(flynnb.regex, "i");
+       
+        
+      if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
+        var val = flynnbReg.exec(dataHash.request.text);
+
+        callback(true, flynnb.message, []);
+        break;
+      }
+    }
+  
+
+  for (cmd in flynnBotCommands) {
+    var test = flynnBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
+    if (test)
+      return test;
+  }
+ }
+
+
+exports.setAll = function(flynnbHash) {
+  Flynnbot = flynnbHash;
+}
+
+exports.getAll = function() {
+  return flynnbot;
+}
+
+exports.getCmdListDescription = function () {
+  return null;
+}
+
+function addFlynnBotCmd(request, bots, isMod, callback) {
+  var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = request.name + " you have no power here!";
+      callback(true, msg, []);
+      return msg;
+    }
+
+    for (flynnb in flynnbot) {
+      if (flynnbot[flynnb].name == val[1]) {
+        var msg = val[1] + " already exists";
+        callback(true, msg, []);
+        return msg;
+      }
+    }
+
+    var flynnbHash = {
+      name: val[1],
+      regex: val[1],
+      message: val[2],
+      bots: Object.keys(bots),
+      date: date
+    };
+
+    flynnbot.push(flynnbHash);
+    addFlynnBotToDB(flynnbHash);
+    var msg = val[1] + " FlynnBot hours captured! Use '/timesheet describe" + " val[1] " + "to add a description";
+    callback(true, msg, []);
+    return msg;
+  }
+}
+
+function describeFlynnBotCmd(request, bots, isMod, callback) {
+  var regex = /^\/timesheet describe (.+?) ([\s\S]+)/i;
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = request.name + " who you trying to kid?";
+      callback(true, msg, []);
+      return msg;
+    }
+
+    for (flynnb in flynnbot) {
+      if (flynnbot[flynnb].name == val[1]) {
+        flynnbot[flynnb]["description"] = val[2];
+        updateFlynnBotDesc(flynnbot[flynnb]);
+        var msg = val[1] + " FlynnBot timesheet description updated";
+
+        callback(true, msg, []);
+        return msg;
+      }
+    }
+
+    var msg = val[1] + " doesn't exist";
+    callback(true, msg, []);
+
+    return msg;
+  }
+}
