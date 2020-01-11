@@ -84,7 +84,7 @@ exports.checkCommands = function(dataHash, callback) {
     } else {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday + "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday + "\n" + "Saturday\n" + flynnb.saturday;
     }
-         callback(true, msg, []);
+         callback(true, flynnb.name + "\n" + msg, []);
         //callback(msg, []);
         
         
@@ -198,7 +198,7 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
 
     for (flynnb in flynnbot) {
       if (flynnbot[flynnb].name == val[1]) {
-        flynnbot[flynnb]["sunday"] = date + "\n" + val[2];
+        flynnbot[flynnb]["sunday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
         var msg = val[1] + " FlynnBot timesheet hours captured for Sunday, week of " + val[1];
 
@@ -229,7 +229,7 @@ function mondayFlynnBotCmd(request, bots, isMod, callback) {
 
     for (flynnb in flynnbot) {
       if (flynnbot[flynnb].name == val[1]) {
-        flynnbot[flynnb]["monday"] = date + "\n" + val[2];
+        flynnbot[flynnb]["monday"] = val[2];
         updateFlynnBotMon(flynnbot[flynnb]);
         var msg = val[1] + " FlynnBot timesheet hours captured for Monday, week of " + val[1];
 
@@ -260,7 +260,7 @@ function tuesdayFlynnBotCmd(request, bots, isMod, callback) {
 
     for (flynnb in flynnbot) {
       if (flynnbot[flynnb].name == val[1]) {
-        flynnbot[flynnb]["tuesday"] = date + "\n" + val[2];
+        flynnbot[flynnb]["tuesday"] = val[2];
         updateFlynnBotTue(flynnbot[flynnb]);
         var msg = val[1] + " FlynnBot timesheet hours captured for Tuesday, week of " + val[1];
 
@@ -291,7 +291,7 @@ function wednesdayFlynnBotCmd(request, bots, isMod, callback) {
 
     for (flynnb in flynnbot) {
       if (flynnbot[flynnb].name == val[1]) {
-        flynnbot[flynnb]["wednesday"] = date + "\n" + val[2];
+        flynnbot[flynnb]["wednesday"] = val[2];
         updateFlynnBotWed(flynnbot[flynnb]);
         var msg = val[1] + " FlynnBot timesheet hours captured for Sunday, week of " + val[1];
 
@@ -322,7 +322,7 @@ function thursdayFlynnBotCmd(request, bots, isMod, callback) {
 
     for (flynnb in flynnbot) {
       if (flynnbot[flynnb].name == val[1]) {
-        flynnbot[flynnb]["thursday"] = date + "\n" + val[2];
+        flynnbot[flynnb]["thursday"] = val[2];
         updateFlynnBotThu(flynnbot[flynnb]);
         var msg = val[1] + " FlynnBot timesheet hours captured for Thursday, week of " + val[1];
 
@@ -353,7 +353,7 @@ function fridayFlynnBotCmd(request, bots, isMod, callback) {
 
     for (flynnb in flynnbot) {
       if (flynnbot[flynnb].name == val[1]) {
-        flynnbot[flynnb]["friday"] = date + "\n" + val[2];
+        flynnbot[flynnb]["friday"] = val[2];
         updateFlynnBotFri(flynnbot[flynnb]);
         var msg = val[1] + " FlynnBot timesheet hours captured for Friday, week of " + val[1];
 
@@ -384,7 +384,7 @@ function saturdayFlynnBotCmd(request, bots, isMod, callback) {
 
     for (flynnb in flynnbot) {
       if (flynnbot[flynnb].name == val[1]) {
-        flynnbot[flynnb]["saturday"] = date + "\n" + val[2];
+        flynnbot[flynnb]["saturday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
         var msg = val[1] + " FlynnBot timesheet hours captured for Saturday, week of " + val[1];
 
