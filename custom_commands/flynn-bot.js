@@ -69,17 +69,17 @@ exports.checkCommands = function(dataHash, callback) {
         var msg = "";
     if (!flynnb.sunday) {
       msg = "Please submit hours for Sunday";
-    } else if (!flynnbot[flynnb].monday) {
+    } else if (!flynnb.monday) {
       msg = "Sunday\n + flynnb.sunday, []";
-    } else if (!flynnbot[flynnb].tuesday) {
+    } else if (!flynnb.tuesday) {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday;
-    } else if (!flynnbot[flynnb].wednesday) {
+    } else if (!flynnb.wednesday) {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday;
-    } else if (!flynnbot[flynnb].thursday) {
+    } else if (!flynnb.thursday) {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday;
-    } else if (!flynnbot[flynnb].friday) {
+    } else if (!flynnb.friday) {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday + "\n" + "Thursday\n" + flynnb.thursday;
-    } else if (!flynnbot[flynnb].saturday){
+    } else if (!flynnb.saturday){
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday+  "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday;
     } else {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday + "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday + "\n" + "Saturday\n" + flynnb.saturday;
