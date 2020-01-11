@@ -115,7 +115,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
 
     var flynnbHash = {
       name: val[1],
-      regex: val[1],
+      regex: "^\/" + val[1] + "$",
       message: val[2],
       bots: Object.keys(bots),
       date: date
