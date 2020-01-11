@@ -66,7 +66,7 @@ exports.checkCommands = function(dataHash, callback) {
       if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
         var val = flynnbReg.exec(dataHash.request.text);
 
-        callback(true, flynnb.sunday + \\n + Flynn.monday, []);
+        callback(true, flynnb.sunday + "\\n" + Flynn.monday, []);
         break;
       }
     }
