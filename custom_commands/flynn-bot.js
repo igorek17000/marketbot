@@ -67,7 +67,7 @@ exports.checkCommands = function(dataHash, callback) {
         var val = flynnbReg.exec(dataHash.request.text);
 
         var msg = "";
-    if (!flynnbot[flynnb].sunday) {
+    if (!flynnb.sunday) {
       msg = "Please submit hours for Sunday";
     } else if (!flynnbot[flynnb].monday) {
       msg = "Sunday\n + flynnb.sunday, []";
