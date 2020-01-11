@@ -70,7 +70,7 @@ exports.checkCommands = function(dataHash, callback) {
     if (!flynnb.sunday) {
       msg = "Please submit hours for Sunday";
     } else if (!flynnb.monday) {
-      msg = "Sunday\n + flynnb.sunday, []";
+      msg = "Sunday\n" + flynnb.sunday;
     } else if (!flynnb.tuesday) {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday;
     } else if (!flynnb.wednesday) {
