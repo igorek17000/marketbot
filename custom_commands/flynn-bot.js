@@ -81,7 +81,7 @@ exports.checkCommands = function(dataHash, callback) {
 
 
 exports.setAll = function(flynnbHash) {
-  Flynnbot = flynnbHash;
+  flynnbot = flynnbHash;
 }
 
 exports.getAll = function() {
