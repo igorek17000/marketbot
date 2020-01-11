@@ -78,11 +78,12 @@ exports.checkCommands = function(dataHash, callback) {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "Wednesday\n" + flynnb.wednesday;
     } else if (flynnbot[flynnb].thursday) {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday "\n" + "Wednesday\n" + flynnb.wednesday "\n" + "Thursday\n" + flynnb.thursday;
-    } else if (flynnbot[flynnb].friday){
+    } else if (flynnbot[flynnb].friday) {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday "\n" + "Wednesday\n" + flynnb.wednesday "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday;
+    } else if (flynnbot[flynnb].saturday{
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday "\n" + "Wednesday\n" + flynnb.wednesday "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday + "\n\ + "Saturday\n" + flynnb.saturday;
     } else {
-      var user_id = request.attachments[0].user_ids[0];
-
+         callback(true, msg, []);
         
         
         
