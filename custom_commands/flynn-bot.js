@@ -24,6 +24,35 @@ function updateFlynnBotDesc(flynnb, callback) {
   db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "description": flynnb.description}}, callback);
 }
 
+function updateFlynnBotSun(flynnb, callback) {
+  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "sunday": flynnb.sunday}}, callback);
+}
+
+function updateFlynnBotMon(flynnb, callback) {
+  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "monday": flynnb.monday}}, callback);
+}
+
+function updateFlynnBotTue(flynnb, callback) {
+  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "tuesday": flynnb.tuesday}}, callback);
+}
+
+function updateFlynnBotWed(flynnb, callback) {
+  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "wednesday": flynnb.wednesday}}, callback);
+}
+
+function updateFlynnBotThu(flynnb, callback) {
+  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "thursday": flynnb.thursday}}, callback);
+}
+
+function updateFlynnBotFri(flynnb, callback) {
+  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "friday": flynnb.friday}}, callback);
+}
+
+function updateFlynnBotSat(flynnb, callback) {
+  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "saturday": flynnb.saturday}}, callback);
+}
+
+
 exports.checkCommands = function(dataHash, callback) {
   if (dataHash.isMod) 
     for (flynnb in flynnbot) {
@@ -117,7 +146,226 @@ function describeFlynnBotCmd(request, bots, isMod, callback) {
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["description"] = val[2];
         updateFlynnBotDesc(flynnbot[flynnb]);
-        var msg = val[1] + " FlynnBot timesheet description updated";
+        var msg = val[1] + " FlynnBot timesheet description updated for " + val[1];
+
+        callback(true, msg, []);
+        return msg;
+      }
+    }
+
+    var msg = val[1] + " doesn't exist";
+    callback(true, msg, []);
+
+    return msg;
+  }
+}
+
+
+
+function sundayFlynnBotCmd(request, bots, isMod, callback) {
+  var regex = /^\/timesheet sunday (.+?) ([\s\S]+)/i;
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = request.name + " who you trying to kid?";
+      callback(true, msg, []);
+      return msg;
+    }
+
+    for (flynnb in flynnbot) {
+      if (flynnbot[flynnb].name == val[1]) {
+        flynnbot[flynnb]["sunday"] = date + \n + val[2];
+        updateFlynnBotSun(flynnbot[flynnb]);
+        var msg = val[1] + " FlynnBot timesheet hours captured for Sunday, week of " + val[1];
+
+        callback(true, msg, []);
+        return msg;
+      }
+    }
+
+    var msg = val[1] + " doesn't exist";
+    callback(true, msg, []);
+
+    return msg;
+  }
+}
+
+function mondayFlynnBotCmd(request, bots, isMod, callback) {
+  var regex = /^\/timesheet monday (.+?) ([\s\S]+)/i;
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = request.name + " who you trying to kid?";
+      callback(true, msg, []);
+      return msg;
+    }
+
+    for (flynnb in flynnbot) {
+      if (flynnbot[flynnb].name == val[1]) {
+        flynnbot[flynnb]["monday"] = date + \n + val[2];
+        updateFlynnBotMon(flynnbot[flynnb]);
+        var msg = val[1] + " FlynnBot timesheet hours captured for Monday, week of " + val[1];
+
+        callback(true, msg, []);
+        return msg;
+      }
+    }
+
+    var msg = val[1] + " doesn't exist";
+    callback(true, msg, []);
+
+    return msg;
+  }
+}
+
+function tuesdayFlynnBotCmd(request, bots, isMod, callback) {
+  var regex = /^\/timesheet tuesday (.+?) ([\s\S]+)/i;
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = request.name + " who you trying to kid?";
+      callback(true, msg, []);
+      return msg;
+    }
+
+    for (flynnb in flynnbot) {
+      if (flynnbot[flynnb].name == val[1]) {
+        flynnbot[flynnb]["tuesday"] = date + \n + val[2];
+        updateFlynnBotTue(flynnbot[flynnb]);
+        var msg = val[1] + " FlynnBot timesheet hours captured for Tuesday, week of " + val[1];
+
+        callback(true, msg, []);
+        return msg;
+      }
+    }
+
+    var msg = val[1] + " doesn't exist";
+    callback(true, msg, []);
+
+    return msg;
+  }
+}
+
+function wednesdayFlynnBotCmd(request, bots, isMod, callback) {
+  var regex = /^\/timesheet wednesday (.+?) ([\s\S]+)/i;
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = request.name + " who you trying to kid?";
+      callback(true, msg, []);
+      return msg;
+    }
+
+    for (flynnb in flynnbot) {
+      if (flynnbot[flynnb].name == val[1]) {
+        flynnbot[flynnb]["wednesday"] = date + \n + val[2];
+        updateFlynnBotWed(flynnbot[flynnb]);
+        var msg = val[1] + " FlynnBot timesheet hours captured for Sunday, week of " + val[1];
+
+        callback(true, msg, []);
+        return msg;
+      }
+    }
+
+    var msg = val[1] + " doesn't exist";
+    callback(true, msg, []);
+
+    return msg;
+  }
+}
+
+function thursdayFlynnBotCmd(request, bots, isMod, callback) {
+  var regex = /^\/timesheet thursday (.+?) ([\s\S]+)/i;
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = request.name + " who you trying to kid?";
+      callback(true, msg, []);
+      return msg;
+    }
+
+    for (flynnb in flynnbot) {
+      if (flynnbot[flynnb].name == val[1]) {
+        flynnbot[flynnb]["thursday"] = date + \n + val[2];
+        updateFlynnBotThu(flynnbot[flynnb]);
+        var msg = val[1] + " FlynnBot timesheet hours captured for Thursday, week of " + val[1];
+
+        callback(true, msg, []);
+        return msg;
+      }
+    }
+
+    var msg = val[1] + " doesn't exist";
+    callback(true, msg, []);
+
+    return msg;
+  }
+}
+
+function fridayFlynnBotCmd(request, bots, isMod, callback) {
+  var regex = /^\/timesheet friday (.+?) ([\s\S]+)/i;
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = request.name + " who you trying to kid?";
+      callback(true, msg, []);
+      return msg;
+    }
+
+    for (flynnb in flynnbot) {
+      if (flynnbot[flynnb].name == val[1]) {
+        flynnbot[flynnb]["friday"] = date + \n + val[2];
+        updateFlynnBotFri(flynnbot[flynnb]);
+        var msg = val[1] + " FlynnBot timesheet hours captured for Friday, week of " + val[1];
+
+        callback(true, msg, []);
+        return msg;
+      }
+    }
+
+    var msg = val[1] + " doesn't exist";
+    callback(true, msg, []);
+
+    return msg;
+  }
+}
+
+function saturdayFlynnBotCmd(request, bots, isMod, callback) {
+  var regex = /^\/timesheet saturday (.+?) ([\s\S]+)/i;
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = request.name + " who you trying to kid?";
+      callback(true, msg, []);
+      return msg;
+    }
+
+    for (flynnb in flynnbot) {
+      if (flynnbot[flynnb].name == val[1]) {
+        flynnbot[flynnb]["saturday"] = date + \n + val[2];
+        updateFlynnBotSun(flynnbot[flynnb]);
+        var msg = val[1] + " FlynnBot timesheet hours captured for Saturday, week of " + val[1];
 
         callback(true, msg, []);
         return msg;
