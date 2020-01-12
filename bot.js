@@ -9,7 +9,7 @@ var rooms        = require('./modules/rooms');
 
 //commands with custom actions
 var alexBot      = require('./custom_commands/alex-bot');
-var flynnBot     = require('./custom_commands/flynn-bot');
+var flynnBot     = require('./custom_commands/flynn-bot-timesheet');
 var userCmds     = require('./custom_commands/user-commands');
 var userMentions = require('./custom_commands/user-mentions');
 var sysTriggers  = require('./custom_commands/system-triggers');
