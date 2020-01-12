@@ -144,7 +144,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
 
     flynnbot.push(flynnbHash);
     addFlynnBotToDB(flynnbHash);
-    var msg = val[1] + " FlynnBot hours added! Use '/timesheet describe " + val[1] + "to add a description";
+    var msg = val[1] + " FlynnBot timesheet added! Use '/timesheet describe " + val[1] + " to add a description";
     callback(true, msg, []);
     return msg;
   }
