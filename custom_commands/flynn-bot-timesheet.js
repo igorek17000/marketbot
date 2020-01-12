@@ -1,6 +1,6 @@
 //A module for handling responses triggered by FlynnBot commands
 var flynnbot;
-var db_table = 'flynn_bot';
+var db_table = 'flynn_bot_timesheet';
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
 var flynnBotCommands = [addFlynnBotCmd, describeFlynnBotCmd, sundayFlynnBotCmd, mondayFlynnBotCmd, tuesdayFlynnBotCmd, wednesdayFlynnBotCmd, thursdayFlynnBotCmd, fridayFlynnBotCmd, saturdayFlynnBotCmd];
