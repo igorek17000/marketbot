@@ -131,16 +131,16 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     }
 
     for (flynnb in flynnbot) {
-      if (flynnbot[flynnb].current) {
-        updateFlynnBotCurrent(flynnbot[flynnb]);
-        continue;
       if (flynnbot[flynnb].name == val[1]) {
         var msg = val[1] + " already exists";
         callback(true, msg, []);
         return msg;
       }
     }
-}
+    if (flynnbot[flynnb].current) {
+        updateFlynnBotCurrent(flynnbot[flynnb]);
+    }
+  
     var flynnbHash = {
       name: val[1].toLowerCase(),
       regex: "^\/" + val[1] + "$",
