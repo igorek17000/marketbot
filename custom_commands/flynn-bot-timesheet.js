@@ -24,6 +24,10 @@ function updateFlynnBotDesc(flynnb, callback) {
   db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "description": flynnb.description}}, callback);
 }
 
+function updateFlynnBotCurrent(flynnb, callback) {
+  db.updateOneDoc(db_table, {"current": flynnb.current}, {$unset: { "current": flynnb.current}}, callback);
+}
+
 function updateFlynnBotSun(flynnb, callback) {
   db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "sunday": flynnb.sunday}}, callback);
 }
@@ -127,6 +131,9 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     }
 
     for (flynnb in flynnbot) {
+      if (flynnbot[flynnb].current) {
+        updateFlynnBotCurrent(flynnbot[flynnb]);
+        continue;
       if (flynnbot[flynnb].name == val[1]) {
         var msg = val[1] + " already exists";
         callback(true, msg, []);
@@ -139,6 +146,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
       regex: "^\/" + val[1] + "$",
       message: val[2],
       bots: Object.keys(bots),
+      current: "current",
       date: date
     };
 
