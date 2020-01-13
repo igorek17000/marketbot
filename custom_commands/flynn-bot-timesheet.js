@@ -140,7 +140,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
         return msg;
       }
     }
-
+}
     var flynnbHash = {
       name: val[1].toLowerCase(),
       regex: "^\/" + val[1] + "$",
