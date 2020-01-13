@@ -209,6 +209,10 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["sunday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
+      } else if (flynnbot[flynnb].current == val[1]) {
+        flynnbot[flynnb]["sunday"] = val[2];
+        updateFlynnBotSun(flynnbot[flynnb]);
+      
         var msg = val[1] + " FlynnBot timesheet hours captured for Sunday, week of " + val[1];
 
         callback(true, msg, []);
