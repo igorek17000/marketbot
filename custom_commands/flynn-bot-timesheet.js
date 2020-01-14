@@ -130,16 +130,23 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-    for (flynnb in flynnbot) {
+    for (flynnb in flynnbot) {   
       if (flynnbot[flynnb].name == val[1]) {
         var msg = val[1] + " already exists";
         callback(true, msg, []);
         return msg;
+        
       }
     }
-    if (flynnbot[flynnb].current) {
-        updateFlynnBotCurrent(flynnbot[flynnb]);
     
+    for (flynnb in flynnbot) {
+      if (flynnbot[flynnb].current) {
+        var msg = "current timesheet updated to " val[1];
+        updateFlynnBotCurrent(flynnbot[flynnb]);
+    callback(true, msg []);
+        break;
+        }
+      }
   
     var flynnbHash = {
       name: val[1].toLowerCase(),
@@ -157,7 +164,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     return msg;
   }
 }
-}
+
 
 function describeFlynnBotCmd(request, bots, isMod, callback) {
   var regex = /^\/timesheet describe (.+?) ([\s\S]+)/i;
