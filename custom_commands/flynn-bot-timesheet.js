@@ -212,9 +212,7 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["sunday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
-      } else if (flynnbot[flynnb].current) {
-        flynnbot[flynnb]["sunday"] = val[2];
-        updateFlynnBotSun(flynnbot[flynnb]);
+        
       
         var msg = val[1] + " FlynnBot timesheet hours captured for Sunday, week of " + val[1];
 
@@ -222,7 +220,15 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
         return msg;
       }
     }
-
+if (flynnbot[flynnb].current == val[1]) {
+        flynnbot[flynnb]["sunday"] = val[2];
+        updateFlynnBotSun(flynnbot[flynnb]);
+      var msg = "FlynnBot timesheet hours captured for sunday, week of " + flynnbot[flynnb].name;
+  callback(true, msg, []);
+  return msg;
+  }
+    }
+  
     var msg = val[1] + " doesn't exist";
     callback(true, msg, []);
 
