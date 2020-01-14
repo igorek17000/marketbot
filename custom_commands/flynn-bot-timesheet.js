@@ -138,25 +138,19 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
         
       }
     }
-    
-    for (flynnb in flynnbot) {
-      if (flynnb.current) {
-      updateFlynnBotCurrent(flynnbot[flynnb]);
-        var msg = "current timesheet updated to " + val[1];
-    callback(true, msg, []);
-        continue;
-        }
-      }
-  
-    var flynnbHash = {
+      
+      
+        
+      var flynnbHash = {
       name: val[1].toLowerCase(),
       regex: "^\/" + val[1] + "$",
       message: val[2],
       bots: Object.keys(bots),
       current: "current",
       date: date
-    };
-
+     };
+    
+    updateFlynnBotCurrent(flynnbot[flynnb]);
     flynnbot.push(flynnbHash);
     addFlynnBotToDB(flynnbHash);
     var msg = val[1] + " FlynnBot timesheet added! Use '/timesheet describe " + val[1] + " to add a description";
@@ -216,7 +210,7 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["sunday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
-      } else if (flynnb.current == val[1]) {
+      } else if (flynnbot[flynnb].current == val[1]) {
         flynnbot[flynnb]["sunday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
       
