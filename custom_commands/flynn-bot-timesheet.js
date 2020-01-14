@@ -141,10 +141,10 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     
     for (flynnb in flynnbot) {
       if (flynnbot[flynnb].current) {
+      updateFlynnBotCurrent(flynnbot[flynnb]);
         var msg = "current timesheet updated to " + val[1];
-        updateFlynnBotCurrent(flynnbot[flynnb]);
     callback(true, msg, []);
-        break;
+        continue;
         }
       }
   
@@ -181,7 +181,6 @@ function describeFlynnBotCmd(request, bots, isMod, callback) {
 
     for (flynnb in flynnbot) {
       if (flynnbot[flynnb].name == val[1]) {
-        var current = val[1];
         flynnbot[flynnb]["description"] = val[2];
         updateFlynnBotDesc(flynnbot[flynnb]);
         var msg = val[1] + " FlynnBot timesheet description updated for " + val[1];
