@@ -212,7 +212,7 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["sunday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
-      } else if (flynnbot[flynnb].current == val[1]) {
+      } else if (flynnbot[flynnb].current) {
         flynnbot[flynnb]["sunday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
       
