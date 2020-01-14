@@ -140,7 +140,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     }
     
     for (flynnb in flynnbot) {
-      if (flynnbot[flynnb].current == val[1]) {
+      if (flynnb.current) {
       updateFlynnBotCurrent(flynnbot[flynnb]);
         var msg = "current timesheet updated to " + val[1];
     callback(true, msg, []);
@@ -216,7 +216,7 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["sunday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
-      } else if (flynnbot[flynnb].current == val[1]) {
+      } else if (flynnb.current == val[1]) {
         flynnbot[flynnb]["sunday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
       
