@@ -150,7 +150,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
       date: date
      };
     
-    if (flynnbot[flynnb].current == val[1]) {
+    if (flynnbot[flynnb].current) {
         updateFlynnBotCurrent(flynnbot[flynnb]);
       }
     flynnbot.push(flynnbHash);
