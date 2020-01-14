@@ -141,7 +141,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     
     for (flynnb in flynnbot) {
       if (flynnbot[flynnb].current) {
-        var msg = "current timesheet updated to " val[1];
+        var msg = "current timesheet updated to " + val[1];
         updateFlynnBotCurrent(flynnbot[flynnb]);
     callback(true, msg []);
         break;
