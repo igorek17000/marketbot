@@ -25,7 +25,7 @@ function updateFlynnBotDesc(flynnb, callback) {
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
-  db.updateOneDoc(db_table, {"current": flynnb.current}, {$unset: { "current": flynnb.current}}, callback);
+  db.updateOneDoc(db_table, {"name": flynnb.name}, {$unset: { "current": flynnb.current}}, callback);
 }
 
 function updateFlynnBotSun(flynnb, callback) {
