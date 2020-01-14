@@ -25,7 +25,7 @@ function updateFlynnBotDesc(flynnb, callback) {
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name}, {$unset: { "current": flynnb.current}}, callback);
+  db.updateOneDoc(db_table, {"current": flynnb.current}, {$unset: { "current": flynnb.current}}, callback);
 }
 
 function updateFlynnBotSun(flynnb, callback) {
@@ -150,7 +150,9 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
       date: date
      };
     
-    updateFlynnBotCurrent(flynnbot[flynnb]);
+    if (flynnbot[flynnb].current == val[1]) {
+        updateFlynnBotCurrent(flynnbot[flynnb]);
+      }
     flynnbot.push(flynnbHash);
     addFlynnBotToDB(flynnbHash);
     var msg = val[1] + " FlynnBot timesheet added! Use '/timesheet describe " + val[1] + " to add a description";
