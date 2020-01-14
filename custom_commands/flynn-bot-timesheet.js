@@ -139,7 +139,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     }
     if (flynnbot[flynnb].current) {
         updateFlynnBotCurrent(flynnbot[flynnb]);
-    }
+    
   
     var flynnbHash = {
       name: val[1].toLowerCase(),
@@ -156,6 +156,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     callback(true, msg, []);
     return msg;
   }
+}
 }
 
 function describeFlynnBotCmd(request, bots, isMod, callback) {
