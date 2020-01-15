@@ -3,7 +3,7 @@ var flynnbot;
 var db_table = 'flynn_bot_timesheet';
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var flynnBotCommands = [addFlynnBotCmd, describeFlynnBotCmd, sundayFlynnBotCmd, mondayFlynnBotCmd, tuesdayFlynnBotCmd, wednesdayFlynnBotCmd, thursdayFlynnBotCmd, fridayFlynnBotCmd, saturdayFlynnBotCmd];
+var flynnBotCommands = [updateCmdDb, addFlynnBotCmd, describeFlynnBotCmd, sundayFlynnBotCmd, mondayFlynnBotCmd, tuesdayFlynnBotCmd, wednesdayFlynnBotCmd, thursdayFlynnBotCmd, fridayFlynnBotCmd, saturdayFlynnBotCmd];
 var db = require('../modules/db.js');
 //var mods = require('../modules/mods');
 
