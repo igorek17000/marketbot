@@ -163,6 +163,7 @@ return msg;
     var msg = "BoonBot authenticated"
     callback(true, msg, []);
     continue;
+    }
     
     var answerHash = {
       name: commands[cmd].name,
