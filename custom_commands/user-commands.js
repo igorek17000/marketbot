@@ -159,11 +159,6 @@ return msg;
 
 }
 
-  if (dataHash.request.name == BoonBot) {
-    var msg = "BoonBot authenticated"
-    callback(true, msg, []);
-    continue;
-    }
     
     var answerHash = {
       name: commands[cmd].name,
