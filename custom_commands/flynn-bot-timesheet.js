@@ -3,7 +3,7 @@ var flynnbot;
 var db_table = 'flynn_bot_timesheet';
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var flynnBotCommands = [addFlynnBotCmd, describeFlynnBotCmd, sundayFlynnBotCmd, mondayFlynnBotCmd, tuesdayFlynnBotCmd, wednesdayFlynnBotCmd, thursdayFlynnBotCmd, fridayFlynnBotCmd, saturdayFlynnBotCmd];
+var flynnBotCommands = [updateCmdDb, addFlynnBotCmd, describeFlynnBotCmd, sundayFlynnBotCmd, mondayFlynnBotCmd, tuesdayFlynnBotCmd, wednesdayFlynnBotCmd, thursdayFlynnBotCmd, fridayFlynnBotCmd, saturdayFlynnBotCmd];
 var db = require('../modules/db.js');
 //var mods = require('../modules/mods');
 
@@ -14,6 +14,14 @@ function getAllFlynnbot() {
   db.getAllDocuments(db_table, function(res){
     flynnbot = res;
   });
+}
+
+function updateCmdDB(cmd, updateJson, callback){
+  var findHash = {
+    "name": cmd["name"]
+  }
+
+  db.updateOneDoc(db_table, findHash, updateJson, callback);
 }
 
 function addFlynnBotToDB(flynnb, callback) {
