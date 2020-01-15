@@ -146,13 +146,10 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
       regex: "^\/" + val[1] + "$",
       message: val[2],
       bots: Object.keys(bots),
-      current: "current",
+      //current: "current",
       date: date
      };
     
-    if (flynnbot[flynnb].current) {
-        updateFlynnBotCurrent(flynnbot[flynnb]);
-      }
     flynnbot.push(flynnbHash);
     addFlynnBotToDB(flynnbHash);
     var msg = val[1] + " FlynnBot timesheet added! Use '/timesheet describe " + val[1] + " to add a description";
@@ -213,21 +210,22 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
         flynnbot[flynnb]["sunday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
         
-      
         var msg = val[1] + " FlynnBot timesheet hours captured for Sunday, week of " + val[1];
 
         callback(true, msg, []);
         return msg;
       }
     }
-if (flynnbot[flynnb].current == val[1]) {
-        flynnbot[flynnb]["sunday"] = val[2];
-        updateFlynnBotSun(flynnbot[flynnb]);
-      var msg = "FlynnBot timesheet hours captured for sunday, week of " + flynnbot[flynnb].name;
-  callback(true, msg, []);
-  return msg;
-  }
-    }
+    
+//for (flynnb in flynnbot) {
+//if (flynnbot[flynnb].current == val[1]) {
+        //flynnbot[flynnb]["sunday"] = val[2];
+        //updateFlynnBotSun(flynnbot[flynnb]);
+      //var msg = "FlynnBot timesheet hours captured for sunday, week of " + flynnbot[flynnb].name;
+  //callback(true, msg, []);
+  //return msg;
+  //}
+    //}
   
     var msg = val[1] + " doesn't exist";
     callback(true, msg, []);
@@ -315,7 +313,7 @@ function wednesdayFlynnBotCmd(request, bots, isMod, callback) {
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["wednesday"] = val[2];
         updateFlynnBotWed(flynnbot[flynnb]);
-        var msg = val[1] + " FlynnBot timesheet hours captured for Sunday, week of " + val[1];
+        var msg = val[1] + " FlynnBot timesheet hours captured for Wednesday week of " + val[1];
 
         callback(true, msg, []);
         return msg;
