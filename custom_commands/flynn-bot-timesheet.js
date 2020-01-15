@@ -18,7 +18,7 @@ function getAllFlynnbot() {
 
 function updateCmdDB(cmd, updateJson, callback){
   var findHash = {
-    "name": cmd["name"]
+    "current": flynnb["current"]
   }
 
   db.updateOneDoc(db_table, findHash, updateJson, callback);
@@ -32,8 +32,14 @@ function updateFlynnBotDesc(flynnb, callback) {
   db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "description": flynnb.description}}, callback);
 }
 
-function updateFlynnBotCurrent(flynnb, callback) {
-  db.updateOneDoc(db_table, {"current": flynnb.current}, {$unset: { "current": flynnb.current}}, callback);
+function updateFlynnBotCurrent(flynnb, updateJson, callback) {
+  var uncurrentHash = {
+    $unset: {
+    "current": flynnb["current"]
+  }
+  };
+    
+  db.updateOneDoc(db_table, unccurrentHash, updateJson, callback);
 }
 
 function updateFlynnBotSun(flynnb, callback) {
@@ -146,7 +152,12 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
         
       }
     }
-      
+    
+      if (flynnbot[flynnb].current == "current") {
+        updateFlynnBotCurrent(flynnbot[flynnb]);
+        var msg = "Current week updated";
+        callback(true, msg, []);
+        continue;
       
         
       var flynnbHash = {
@@ -165,7 +176,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     return msg;
   }
 }
-
+}
 
 function describeFlynnBotCmd(request, bots, isMod, callback) {
   var regex = /^\/timesheet describe (.+?) ([\s\S]+)/i;
