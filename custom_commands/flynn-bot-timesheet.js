@@ -157,7 +157,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
         updateFlynnBotCurrent(flynnbot[flynnb]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
-        }
+        };
       
         
       var flynnbHash = {
