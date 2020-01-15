@@ -39,7 +39,7 @@ function updateFlynnBotCurrent(flynnb, updateJson, callback) {
   }
   };
     
-  db.updateOneDoc(db_table, unccurrentHash, updateJson, callback);
+  UpdateCmdDb(db_table, uncurrentHash, updateJson, callback);
 }
 
 function updateFlynnBotSun(flynnb, callback) {
@@ -165,7 +165,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
       regex: "^\/" + val[1] + "$",
       message: val[2],
       bots: Object.keys(bots),
-      //current: "current",
+      current: "current",
       date: date
      };
     
@@ -225,7 +225,7 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
     }
 
     for (flynnb in flynnbot) {
-      if (flynnbot[flynnb].name == val[1]) {
+      if (flynnbot[flynnb].name == val[1]) || (flynnbot[flynnb].current == val[1]) {
         flynnbot[flynnb]["sunday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
         
