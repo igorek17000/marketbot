@@ -19,7 +19,7 @@ function getAllFlynnbot() {
 function updateDbCurrent(flynnb, updateJson, callback){
   var findHash = {
     "current": flynnb["current"]
-  }
+  };
 
   db.updateOneDoc(db_table, findHash, updateJson, callback);
 }
