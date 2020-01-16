@@ -16,7 +16,7 @@ function getAllFlynnbot() {
   });
 }
 
-function updateDbCmd(flynnb, updateJson, callback){
+function updateDbCurrent(flynnb, updateJson, callback){
   var findHash = {
     "current": flynnb["current"]
   }
