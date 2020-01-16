@@ -33,17 +33,6 @@ function updateFlynnBotDesc(flynnb, callback) {
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
-  //var uncurrentHash = {
-    //$unset: {
-    //"current": flynnb["current"]
-  //}
-  //};
-    
-
-//var findHash = {
-    //"current": flynnb.current
- // };
-
   db.updateOneDoc(db_table, {"current": flynnb.current}, {$unset: { "current":"flynnb.current"}}, callback);
 }
 
@@ -108,7 +97,6 @@ exports.checkCommands = function(dataHash, callback) {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday + "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday + "\n" + "Saturday\n" + flynnb.saturday;
     }
          callback(true, flynnb.name + "\n" + msg, []);
-        //callback(msg, []);
         
         
         //callback(true, "Sunday\n" + "Captured " + flynnb.sunday + "\n" + "Monday\n" + "Captured " + flynnb.monday + "\n" + "Tuesday\n" + "Captured " + flynnb.tuesday + "\n" + "Wednesday\n" + "Captured " + flynnb.wednesday + "\n" + "Thursday\n" + "Captured " + flynnb.thursday + "\n" + "Friday\n" + "Captured " + flynnb.friday + "\n" + "Saturday\n" + "Captured " + flynnb.saturday, []);
@@ -176,7 +164,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     
     flynnbot.push(flynnbHash);
     addFlynnBotToDB(flynnbHash);
-    var msg = val[1] + " FlynnBot timesheet added! Use '/timesheet describe " + val[1] + " to add a description";
+    var msg = "FlynnBot timesheet added! Use '/timesheet describe " + flynnbot[flynnb].name + " to add a description";
     callback(true, msg, []);
     return msg;
   }
@@ -200,7 +188,7 @@ function describeFlynnBotCmd(request, bots, isMod, callback) {
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["description"] = val[2];
         updateFlynnBotDesc(flynnbot[flynnb]);
-        var msg = val[1] + " FlynnBot timesheet description updated for " + val[1];
+        var msg = "FlynnBot timesheet description updated for " + flynnbot[flynnb].name;
 
         callback(true, msg, []);
         return msg;
@@ -244,7 +232,7 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
     
 if (flynnbot[flynnb].current == val[1]) {
         flynnbot[flynnb]["sunday"] = val[2];
-updateFlynnBotSun(flynnbot[flynnb]); 
+    updateFlynnBotSun(flynnbot[flynnb]); 
 
     var msg = "FlynnBot timesheet hours captured for Sunday, week of " + flynnbot[flynnb].name;
     callback(true, msg, []);
