@@ -162,7 +162,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
         updateFlynnBotCurrent(flynnbot[flynnb]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
-        }
+        
       
         
       var flynnbHash = {
@@ -181,7 +181,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     return msg;
   }
 }
-
+}
 
 function describeFlynnBotCmd(request, bots, isMod, callback) {
   var regex = /^\/timesheet describe (.+?) ([\s\S]+)/i;
