@@ -44,7 +44,7 @@ var findHash = {
     "current": flynnb.current
   };
 
-  db.updateOneDoc(db_table, findHash, {"current": flynnb.current}, {$unset: { "current":""}}, callback);
+  db.updateOneDoc(db_table, {"current": flynnb.current}, {$unset: { "current":""}}, callback);
 }
 
 function updateFlynnBotSun(flynnb, callback) {
