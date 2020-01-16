@@ -48,7 +48,7 @@ function updateFlynnBotCurrent(flynnb, callback) {
 }
 
 function updateFlynnBotSun(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "sunday": flynnb.sunday}}, callback);
+  db.updateOneDoc(db_table, {"name": flynnb.name || "current": flynnb.current}, {$set: { "sunday": flynnb.sunday}}, callback);
 }
 
 function updateFlynnBotMon(flynnb, callback) {
@@ -246,6 +246,11 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
     
 if (flynnbot[flynnb].current == val[1]) {
         flynnbot[flynnb]["sunday"] = val[2];
+var msg = "Try it";
+callback(true, msg, []);
+return msg;
+}
+}
   
 
 
