@@ -247,7 +247,7 @@ if (flynnbot[flynnb].current == val[1]) {
 updateFlynnBotSun(flynnbot[flynnb]); 
 
     var msg = "FlynnBot timesheet hours captured for Sunday, week of " + flynnbot[flynnb].name;
-C    callback(true, msg, []);
+    callback(true, msg, []);
     return msg;
 }
   
