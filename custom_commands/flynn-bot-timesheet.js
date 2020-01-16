@@ -37,7 +37,7 @@ function updateFlynnBotCurrent(flynnb, updateJson, callback) {
     $unset: {
     "current": flynnb["current"]
   }
-  };
+  }
     
   UpdateDbCurrent(db_table, uncurrentHash, updateJson, callback);
 }
