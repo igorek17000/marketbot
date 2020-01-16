@@ -40,9 +40,9 @@ function updateFlynnBotCurrent(flynnb, callback) {
   //};
     
 
-var findHash = {
-    "current": flynnb.current
-  };
+//var findHash = {
+    //"current": flynnb.current
+ // };
 
   db.updateOneDoc(db_table, {"current": flynnb.current}, {$unset: { "current":""}}, callback);
 }
@@ -232,6 +232,9 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
     for (flynnb in flynnbot) {
       if (flynnbot[flynnb].name == val[1] {
         flynnbot[flynnb]["sunday"] = val[2];
+        updateFlynnBotSun(flynnbot[flynnb]);
+        
+        var msg = val[1] + " FlynnBot timesheet hours captured for Sunday, week of " + val[1];
       } else if (flynnbot[flynnb].current == val[1] {
         flynnbot[flynnb]["sunday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
