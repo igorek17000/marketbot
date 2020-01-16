@@ -37,7 +37,7 @@ function updateFlynnBotCurrent(flynnb, updateJson, callback) {
     $unset: {
     "current": flynnb["current"]
   }
-  }
+  };
     
   UpdateDbCurrent(db_table, uncurrentHash, updateJson, callback);
 }
@@ -157,7 +157,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
         updateFlynnBotCurrent(flynnbot[flynnb]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
-        };
+        }
       
         
       var flynnbHash = {
