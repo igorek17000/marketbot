@@ -44,7 +44,7 @@ function updateFlynnBotCurrent(flynnb, callback) {
     //"current": flynnb.current
  // };
 
-  db.updateOneDoc(db_table, {"current": flynnb.current}, {$unset: { "current":""}}, callback);
+  db.updateOneDoc(db_table, {"current": flynnb.current}, {$unset: { "current":"flynnb.current"}}, callback);
 }
 
 function updateFlynnBotSun(flynnb, callback) {
@@ -158,7 +158,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
       }
     }
     
-      if (flynnbot[flynnb].current == "current") {
+      if (flynnbot[flynnb].current == val[1]) {
         updateFlynnBotCurrent(flynnbot[flynnb]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
@@ -206,8 +206,9 @@ function describeFlynnBotCmd(request, bots, isMod, callback) {
         return msg;
       }
     }
-
-    var msg = val[1] + " doesn't exist";
+   
+  
+  var msg = val[1] + " doesn't exist";
     callback(true, msg, []);
 
     return msg;
@@ -234,10 +235,7 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
         flynnbot[flynnb]["sunday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
         
-        var msg = val[1] + " FlynnBot timesheet hours captured for Sunday, week of " + val[1];
-      } else if (flynnbot[flynnb].current == val[1] {
-        flynnbot[flynnb]["sunday"] = val[2];
-        updateFlynnBotSun(flynnbot[flynnb]);
+        //updateFlynnBotSun(flynnbot[flynnb]);
         
         var msg = val[1] + " FlynnBot timesheet hours captured for Sunday, week of " + val[1];
 
@@ -246,6 +244,11 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
       }
     }
     
+if (flynnbot[flynnb].current == val[1]) {
+        flynnbot[flynnb]["sunday"] = val[2];
+  
+
+
 //for (flynnb in flynnbot) {
 //if (flynnbot[flynnb].current == val[1]) {
         //flynnbot[flynnb]["sunday"] = val[2];
