@@ -18,7 +18,7 @@ function getAllFlynnbot() {
 
 function updateDbCurrent(flynnb, updateJson, callback){
   var findHash = {
-    "current": flynnb["current"]
+    "current": flynnb.current
   };
 
   db.updateOneDoc(db_table, findHash, updateJson, callback);
@@ -32,14 +32,14 @@ function updateFlynnBotDesc(flynnb, callback) {
   db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "description": flynnb.description}}, callback);
 }
 
-function updateFlynnBotCurrent(flynnb, updateJson, callback) {
-  var uncurrentHash = {
-    $unset: {
-    "current": flynnb["current"]
-  }
-  };
+function updateFlynnBotCurrent(flynnb, callback) {
+  //var uncurrentHash = {
+    //$unset: {
+    //"current": flynnb["current"]
+  //}
+  //};
     
-  UpdateDbCurrent(db_table, uncurrentHash, updateJson, callback);
+  db.updateOneDoc(db_table, {"current": flynnb.current}, {$unset: { "current":""}}, callback);
 }
 
 function updateFlynnBotSun(flynnb, callback) {
