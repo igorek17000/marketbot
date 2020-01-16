@@ -39,7 +39,7 @@ function updateFlynnBotCurrent(flynnb, updateJson, callback) {
   }
   };
     
-  UpdateDbCmd(db_table, uncurrentHash, updateJson, callback);
+  UpdateDbCurrent(db_table, uncurrentHash, updateJson, callback);
 }
 
 function updateFlynnBotSun(flynnb, callback) {
