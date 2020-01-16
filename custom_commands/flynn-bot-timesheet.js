@@ -52,27 +52,27 @@ function updateFlynnBotSun(flynnb, callback) {
 }
 
 function updateFlynnBotMon(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "monday": flynnb.monday}}, callback);
+  db.updateOneDoc(db_table, {"name": flynnb.name} || {"current": flynnb.current}, {$set: { "monday": flynnb.monday}}, callback);
 }
 
 function updateFlynnBotTue(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "tuesday": flynnb.tuesday}}, callback);
+  db.updateOneDoc(db_table, {"name": flynnb.name} || {"current": flynnb.current}, {$set: { "tuesday": flynnb.tuesday}}, callback);
 }
 
 function updateFlynnBotWed(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "wednesday": flynnb.wednesday}}, callback);
+  db.updateOneDoc(db_table, {"name": flynnb.name} || {"current": flynnb.current}, {$set: { "wednesday": flynnb.wednesday}}, callback);
 }
 
 function updateFlynnBotThu(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "thursday": flynnb.thursday}}, callback);
+  db.updateOneDoc(db_table, {"name": flynnb.name} || {"current": flynnb.current}, {$set: { "thursday": flynnb.thursday}}, callback);
 }
 
 function updateFlynnBotFri(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "friday": flynnb.friday}}, callback);
+  db.updateOneDoc(db_table, {"name": flynnb.name} || {"current": flynnb.current}, {$set: { "friday": flynnb.friday}}, callback);
 }
 
 function updateFlynnBotSat(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "saturday": flynnb.saturday}}, callback);
+  db.updateOneDoc(db_table, {"name": flynnb.name} || {"current": flynnb.current}, {$set: { "saturday": flynnb.saturday}}, callback);
 }
 
 
@@ -235,7 +235,7 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
         flynnbot[flynnb]["sunday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
                 
-        var msg = val[1] + " FlynnBot timesheet hours captured for Sunday, week of " + val[1];
+        var msg = "FlynnBot timesheet hours captured for Sunday, week of " + flynnbot[flynnb].name;
 
         callback(true, msg, []);
         return msg;
@@ -246,9 +246,9 @@ if (flynnbot[flynnb].current == val[1]) {
         flynnbot[flynnb]["sunday"] = val[2];
 updateFlynnBotSun(flynnbot[flynnb]); 
 
-var msg = "Try it";
-callback(true, msg, []);
-return msg;
+    var msg = "FlynnBot timesheet hours captured for Sunday, week of " + flynnbot[flynnb].name;
+C    callback(true, msg, []);
+    return msg;
 }
   
     var msg = val[1] + " doesn't exist";
