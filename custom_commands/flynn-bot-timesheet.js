@@ -246,6 +246,8 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
     
 if (flynnbot[flynnb].current == val[1]) {
         flynnbot[flynnb]["sunday"] = val[2];
+updateFlynnBotSun(flynnbot[flynnb]); 
+
 var msg = "Try it";
 callback(true, msg, []);
 return msg;
