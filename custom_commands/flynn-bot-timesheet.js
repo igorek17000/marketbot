@@ -73,7 +73,7 @@ exports.checkCommands = function(dataHash, callback) {
 //continue;
 
      var flynnbReg = new RegExp(flynnb.regex, "i"); 
-     if (val[1] == "current") {
+     if (dataHash.request.text == "/current") {
       flynnb.regex = flynnb.regexcurrent;
 }
 
