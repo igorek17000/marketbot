@@ -72,14 +72,14 @@ exports.checkCommands = function(dataHash, callback) {
    //if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
 //continue;
 
-     var flynnbReg = new RegExp(flynnb.regex, "i");
-     var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
+     var flynnbReg = new RegExp(flynnb.regex, "i") || new RegExp(flynnb.regexcurrent, "i");
+     //var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
         
       if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
         var val = flynnbReg.exec(dataHash.request.text);
 
-      if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
-        var val = flynnbcReg.exec(dataHash.request.text);
+      //if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
+        //var val = flynnbcReg.exec(dataHash.request.text);
 
 
 
@@ -108,7 +108,7 @@ exports.checkCommands = function(dataHash, callback) {
         break;
       }
     }
-  }
+  
 
   for (cmd in flynnBotCommands) {
     var test = flynnBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
