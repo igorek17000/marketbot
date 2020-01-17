@@ -106,7 +106,7 @@ exports.checkCommands = function(dataHash, callback) {
     }
          callback(true, flynnb.name + "\n" + msg, []);
     break;
-      }
+      //}
     } else {
        //if (val[1] == "current") {
       //val[1] = flynnbot[flynnb].regex;    
@@ -152,7 +152,7 @@ exports.checkCommands = function(dataHash, callback) {
 break;
       }
     }
-  
+  }
 
   for (cmd in flynnBotCommands) {
     var test = flynnBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
