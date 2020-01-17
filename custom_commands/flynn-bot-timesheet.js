@@ -239,7 +239,7 @@ if (flynnbot[flynnb].current == val[1]) {
     return msg;
 }
   
-    var msg = val[1] + " doesn't exist";
+    var msg = "Current week not set";
     callback(true, msg, []);
 
     return msg;
@@ -263,14 +263,24 @@ function mondayFlynnBotCmd(request, bots, isMod, callback) {
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["monday"] = val[2];
         updateFlynnBotMon(flynnbot[flynnb]);
-        var msg = val[1] + " FlynnBot timesheet hours captured for Monday, week of " + val[1];
+                
+        var msg = "FlynnBot timesheet hours captured for Monday, week of " + flynnbot[flynnb].name;
 
         callback(true, msg, []);
         return msg;
       }
     }
+    
+if (flynnbot[flynnb].current == val[1]) {
+        flynnbot[flynnb]["monday"] = val[2];
+    updateFlynnBotMon(flynnbot[flynnb]); 
 
-    var msg = val[1] + " doesn't exist";
+    var msg = "FlynnBot timesheet hours captured for Monday, week of " + flynnbot[flynnb].name;
+    callback(true, msg, []);
+    return msg;
+}
+  
+    var msg = "Current week not set";
     callback(true, msg, []);
 
     return msg;
@@ -294,14 +304,24 @@ function tuesdayFlynnBotCmd(request, bots, isMod, callback) {
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["tuesday"] = val[2];
         updateFlynnBotTue(flynnbot[flynnb]);
-        var msg = val[1] + " FlynnBot timesheet hours captured for Tuesday, week of " + val[1];
+                
+        var msg = "FlynnBot timesheet hours captured for Tuesday, week of " + flynnbot[flynnb].name;
 
         callback(true, msg, []);
         return msg;
       }
     }
+    
+if (flynnbot[flynnb].current == val[1]) {
+        flynnbot[flynnb]["tuesday"] = val[2];
+    updateFlynnBotTue(flynnbot[flynnb]); 
 
-    var msg = val[1] + " doesn't exist";
+    var msg = "FlynnBot timesheet hours captured for Tuesday, week of " + flynnbot[flynnb].name;
+    callback(true, msg, []);
+    return msg;
+}
+  
+    var msg = val[1] + "Current week not set";
     callback(true, msg, []);
 
     return msg;
@@ -325,14 +345,24 @@ function wednesdayFlynnBotCmd(request, bots, isMod, callback) {
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["wednesday"] = val[2];
         updateFlynnBotWed(flynnbot[flynnb]);
-        var msg = val[1] + " FlynnBot timesheet hours captured for Wednesday week of " + val[1];
+                
+        var msg = "FlynnBot timesheet hours captured for Wednesday, week of " + flynnbot[flynnb].name;
 
         callback(true, msg, []);
         return msg;
       }
     }
+    
+if (flynnbot[flynnb].current == val[1]) {
+        flynnbot[flynnb]["wednesday"] = val[2];
+    updateFlynnBotWed(flynnbot[flynnb]); 
 
-    var msg = val[1] + " doesn't exist";
+    var msg = "FlynnBot timesheet hours captured for Wednesday, week of " + flynnbot[flynnb].name;
+    callback(true, msg, []);
+    return msg;
+}
+  
+    var msg = "Current week not set";
     callback(true, msg, []);
 
     return msg;
@@ -356,14 +386,24 @@ function thursdayFlynnBotCmd(request, bots, isMod, callback) {
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["thursday"] = val[2];
         updateFlynnBotThu(flynnbot[flynnb]);
-        var msg = val[1] + " FlynnBot timesheet hours captured for Thursday, week of " + val[1];
+                
+        var msg = "FlynnBot timesheet hours captured for Thursday, week of " + flynnbot[flynnb].name;
 
         callback(true, msg, []);
         return msg;
       }
     }
+    
+if (flynnbot[flynnb].current == val[1]) {
+        flynnbot[flynnb]["thursday"] = val[2];
+    updateFlynnBotThu(flynnbot[flynnb]); 
 
-    var msg = val[1] + " doesn't exist";
+    var msg = "FlynnBot timesheet hours captured for Thursday, week of " + flynnbot[flynnb].name;
+    callback(true, msg, []);
+    return msg;
+}
+  
+    var msg = val[1] + "Current week not set";
     callback(true, msg, []);
 
     return msg;
@@ -387,14 +427,24 @@ function fridayFlynnBotCmd(request, bots, isMod, callback) {
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["friday"] = val[2];
         updateFlynnBotFri(flynnbot[flynnb]);
-        var msg = val[1] + " FlynnBot timesheet hours captured for Friday, week of " + val[1];
+                
+        var msg = "FlynnBot timesheet hours captured for Friday, week of " + flynnbot[flynnb].name;
 
         callback(true, msg, []);
         return msg;
       }
     }
+    
+if (flynnbot[flynnb].current == val[1]) {
+        flynnbot[flynnb]["friday"] = val[2];
+    updateFlynnBotFri(flynnbot[flynnb]); 
 
-    var msg = val[1] + " doesn't exist";
+    var msg = "FlynnBot timesheet hours captured for Friday, week of " + flynnbot[flynnb].name;
+    callback(true, msg, []);
+    return msg;
+}
+  
+    var msg = val[1] + "Current week not set";
     callback(true, msg, []);
 
     return msg;
@@ -417,18 +467,27 @@ function saturdayFlynnBotCmd(request, bots, isMod, callback) {
     for (flynnb in flynnbot) {
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["saturday"] = val[2];
-        updateFlynnBotSun(flynnbot[flynnb]);
-        var msg = val[1] + " FlynnBot timesheet hours captured for Saturday, week of " + val[1];
+        updateFlynnBotSat(flynnbot[flynnb]);
+                
+        var msg = "FlynnBot timesheet hours captured for Saturday, week of " + flynnbot[flynnb].name;
 
         callback(true, msg, []);
         return msg;
       }
     }
+    
+if (flynnbot[flynnb].current == val[1]) {
+        flynnbot[flynnb]["saturday"] = val[2];
+    updateFlynnBotSat(flynnbot[flynnb]); 
 
-    var msg = val[1] + " doesn't exist";
+    var msg = "FlynnBot timesheet hours captured for Saturday, week of " + flynnbot[flynnb].name;
+    callback(true, msg, []);
+    return msg;
+}
+  
+    var msg = val[1] + "Current week not set";
     callback(true, msg, []);
 
     return msg;
   }
 }
-//
