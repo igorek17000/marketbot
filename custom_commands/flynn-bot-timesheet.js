@@ -36,6 +36,10 @@ function updateFlynnBotCurrent(flynnb, callback) {
   db.updateOneDoc(db_table, {"current": flynnb.current}, {$unset: { "current":"flynnb.current"}}, callback);
 }
 
+function updateFlynnBotRegexCurrent(flynnb, callback) {
+  db.updateOneDoc(db_table, {"regexcurrent": flynnb.regexcurrent}, {$unset: { "regexcurrent":"flynnb.regexcurrent"}}, callback);
+}
+
 function updateFlynnBotSun(flynnb, callback) {
   db.updateOneDoc(db_table, {"name": flynnb.name} || {"current": flynnb.current}, {$set: { "sunday": flynnb.sunday}}, callback);
 }
@@ -160,6 +164,12 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     
       if (flynnbot[flynnb].current) {
         updateFlynnBotCurrent(flynnbot[flynnb]);
+        //var msg = "Current week updated";
+        //callback(true, msg, []);
+        }
+
+      if (flynnbot[flynnb].regexcurrent) {
+        updateFlynnBotRegexCurrent(flynnbot[flynnb]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
