@@ -106,8 +106,8 @@ exports.checkCommands = function(dataHash, callback) {
     }
          callback(true, flynnb.name + "\n" + msg, []);
         
-    if (flynnbot[flynnb].current) {
-      val[1] = flynnbot[flynnb].name;    
+    if (val[1] == "current") {
+      val[1] = flynnbot[flynnb].regex;    
 
          callback(true, flynnb.name + "\n" + msg, []);
         //callback(true, "Sunday\n" + "Captured " + flynnb.sunday + "\n" + "Monday\n" + "Captured " + flynnb.monday + "\n" + "Tuesday\n" + "Captured " + flynnb.tuesday + "\n" + "Wednesday\n" + "Captured " + flynnb.wednesday + "\n" + "Thursday\n" + "Captured " + flynnb.thursday + "\n" + "Friday\n" + "Captured " + flynnb.friday + "\n" + "Saturday\n" + "Captured " + flynnb.saturday, []);
