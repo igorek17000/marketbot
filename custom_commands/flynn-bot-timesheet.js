@@ -73,7 +73,7 @@ exports.checkCommands = function(dataHash, callback) {
 //continue;
 
      var flynnbReg = new RegExp(flynnb.regex, "i");
-     var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
+     //var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
         
       if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
         var val = flynnbReg.exec(dataHash.request.text);
@@ -106,15 +106,51 @@ exports.checkCommands = function(dataHash, callback) {
     }
          callback(true, flynnb.name + "\n" + msg, []);
         
-    if (val[1] == "current") {
-      val[1] = flynnbot[flynnb].regex;    
+    //if (val[1] == "current") {
+      //val[1] = flynnbot[flynnb].regex;    
 
-         callback(true, flynnb.name + "\n" + msg, []);
+         //callback(true, flynnb.name + "\n" + msg, []);
         //callback(true, "Sunday\n" + "Captured " + flynnb.sunday + "\n" + "Monday\n" + "Captured " + flynnb.monday + "\n" + "Tuesday\n" + "Captured " + flynnb.tuesday + "\n" + "Wednesday\n" + "Captured " + flynnb.wednesday + "\n" + "Thursday\n" + "Captured " + flynnb.thursday + "\n" + "Friday\n" + "Captured " + flynnb.friday + "\n" + "Saturday\n" + "Captured " + flynnb.saturday, []);
-        break;
+        
+var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
+        
+      //if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
+        //var val = flynnbReg.exec(dataHash.request.text);
+      if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
+        var val = flynnbcReg.exec(dataHash.request.text);
+   
+
+      //if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
+        //var val = flynnbcReg.exec(dataHash.request.text);
+
+
+
+        var msg = "";
+    if (!flynnb.sunday) {
+      msg = "Please submit hours for Sunday";
+    } else if (!flynnb.monday) {
+      msg = "Sunday\n" + flynnb.sunday;
+    } else if (!flynnb.tuesday) {
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday;
+    } else if (!flynnb.wednesday) {
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday;
+    } else if (!flynnb.thursday) {
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday;
+    } else if (!flynnb.friday) {
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday + "\n" + "Thursday\n" + flynnb.thursday;
+    } else if (!flynnb.saturday){
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday+  "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday;
+    } else {
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday + "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday + "\n" + "Saturday\n" + flynnb.saturday;
+    }
+         callback(true, flynnb.name + "\n" + msg, []);
+        
+
+
+break;
       }
     }
-  }
+  //}
 
   for (cmd in flynnBotCommands) {
     var test = flynnBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
