@@ -67,12 +67,12 @@ function updateFlynnBotSat(flynnb, callback) {
 
 exports.checkCommands = function(dataHash, callback) {
   if (dataHash.isMod) 
-    for (flynnb in flynnbot || flynnbc in flynnbot) {
-      flynnb = flynnbot[flynnb] || flynnbc = flynnbot[flynnb];
+    for (flynnb in flynnbot) {
+      flynnb = flynnbot[flynnb];
    //if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
 //continue;
 
-     var flynnbReg = new RegExp(flynnb.regex, "i");
+     var flynnbReg = new RegExp(flynnb.regex || flynnb.regexcurrent, "i");
      //var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
         
       if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
