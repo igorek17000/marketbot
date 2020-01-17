@@ -67,8 +67,8 @@ function updateFlynnBotSat(flynnb, callback) {
 
 exports.checkCommands = function(dataHash, callback) {
   if (dataHash.isMod) 
-    for (flynnb in flynnbot) {
-      flynnb = flynnbot[flynnb];
+    for (flynnb || flynnbc in flynnbot) {
+      flynnb || flynnbc = flynnbot[flynnb];
    //if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
 //continue;
 
