@@ -73,10 +73,15 @@ exports.checkCommands = function(dataHash, callback) {
 //continue;
 
      var flynnbReg = new RegExp(flynnb.regex, "i");
-       
+     var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
         
       if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
         var val = flynnbReg.exec(dataHash.request.text);
+
+      if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
+        var val = flynnbcReg.exec(dataHash.request.text);
+
+
 
         var msg = "";
     if (!flynnb.sunday) {
@@ -103,6 +108,7 @@ exports.checkCommands = function(dataHash, callback) {
         break;
       }
     }
+  }
 
   for (cmd in flynnBotCommands) {
     var test = flynnBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
@@ -156,6 +162,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
       var flynnbHash = {
       name: val[1].toLowerCase(),
       regex: "^\/" + val[1] + "$",
+      regexcurrent: "^\/" + "current" + "$",
       message: val[2],
       bots: Object.keys(bots),
       current: "current",
