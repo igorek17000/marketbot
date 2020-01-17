@@ -180,6 +180,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
       regex: "^\/" + val[1] + "$",
       regexcurrent: "^\/" + "current" + "$",
       message: val[2],
+      description: "Timesheet week of " + val[1],
       bots: Object.keys(bots),
       current: "current",
       date: date
@@ -187,7 +188,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     
     flynnbot.push(flynnbHash);
     addFlynnBotToDB(flynnbHash);
-    var msg = "FlynnBot timesheet added and current week updated! Use '/timesheet describe' " + val[1] + " to add a description";
+    var msg = "FlynnBot timesheet added and current week updated! Description set for week of " + val[1];
     callback(true, msg, []);
     return msg;
   }
