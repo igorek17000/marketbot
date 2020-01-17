@@ -72,7 +72,7 @@ exports.checkCommands = function(dataHash, callback) {
    //if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
 //continue;
 
-     var flynnbReg = new RegExp(flynnb.regex || flynnb.regexcurrent, "i");
+     var flynnbReg = new RegExp(flynnb.regex, "i") || new RegExp(flynnb.regexcurrent, "i");
      //var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
         
       if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
