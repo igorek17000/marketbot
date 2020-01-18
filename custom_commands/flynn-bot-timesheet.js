@@ -128,6 +128,8 @@ exports.checkCommands = function(dataHash, callback) {
  }
 
 
+exports.botName = "FlynnBot";
+
 exports.setAll = function(flynnbHash) {
   flynnbot = flynnbHash;
 }
