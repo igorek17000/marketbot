@@ -93,9 +93,9 @@ function sendDelayedMessage(msg, attachments, botID, NAME) {
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, botRoom, NAME) {
+function postMessage(botResponse, attachments, botID, NAME) {
   var options, body, botReq;
-  var sendit = rooms.getRoom(botRoom);
+  var sendit = rooms[room].name;
 
   options = {
     hostname: 'api.groupme.com',
