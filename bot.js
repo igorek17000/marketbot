@@ -106,7 +106,7 @@ function postMessage(botResponse, attachments, botID, botName) {
     
     "attachments" : attachments,
     "bot_id"      : botID,
-    "botName"     : botName
+    "botName"     : botName,
     "text"        : botResponse
   };
 
