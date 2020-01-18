@@ -105,11 +105,11 @@ function postMessage(botResponse, attachments, botID, NAME) {
   body = {
     "attachments" : attachments,
     "bot_id"      : botID,
-    "name"        : NAME,
+    "bot_path"    : NAME,
     "text"        : botResponse
   };
 
-  console.log('sending ' + botResponse + ' to ' + dataHash.currentBot.name);
+  console.log('sending ' + botResponse + ' to ' + rooms[room].name);
 
 
 botReq = HTTPS.request(options, function(res) { 
