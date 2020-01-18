@@ -87,13 +87,13 @@ exports.commands = function() {
 //this.res.end(cmdArr);
 }
 
-function sendDelayedMessage(msg, attachments, botID, name) {
+function sendDelayedMessage(msg, attachments, botID, botNAME) {
   setTimeout(function() {
-    postMessage(msg, attachments, botID, name);
+    postMessage(msg, attachments, botID, botNAME);
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, name) {
+function postMessage(botResponse, attachments, botID, botNAME) {
   var options, body, botReq;
 
   options = {
@@ -105,11 +105,11 @@ function postMessage(botResponse, attachments, botID, name) {
   body = {
     "attachments" : attachments,
     "bot_id"      : botID,
-    "bot_name"    : name,
+    "name"        : botNAME,
     "text"        : botResponse
   };
 
-  console.log('sending ' + botResponse + ' to ' + name);
+  console.log('sending ' + botResponse + ' to ' + botNAME);
 
 
 botReq = HTTPS.request(options, function(res) { 
