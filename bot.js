@@ -87,15 +87,15 @@ exports.commands = function() {
 //this.res.end(cmdArr);
 }
 
-function sendDelayedMessage(msg, attachments, botID, name, NAME) {
+function sendDelayedMessage(msg, attachments, botID, NAME) {
   setTimeout(function() {
-    postMessage(msg, attachments, botID, name, NAME);
+    postMessage(msg, attachments, botID, NAME);
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, name, NAME) {
+function postMessage(botResponse, attachments, botID, NAME) {
   var options, body, botReq;
-  var sendit = rooms[room].name;
+  var sendit = rooms[room];
 
   options = {
     hostname: 'api.groupme.com',
