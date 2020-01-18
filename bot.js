@@ -87,13 +87,13 @@ exports.commands = function() {
 //this.res.end(cmdArr);
 }
 
-function sendDelayedMessage(msg, attachments, botID, dataHash, request, currentBot, NAME) {
+function sendDelayedMessage(msg, attachments, botID, botReq) {
   setTimeout(function() {
-    postMessage(msg, attachments, botID, dataHash, request, currentBot, NAME);
+    postMessage(msg, attachments, botID, botReq);
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, dataHash, request, currentBot, NAME) {
+function postMessage(botResponse, attachments, botID, botReq) {
   var options, body, botReq;
   var sendit = rooms.getRoom();
 
@@ -107,11 +107,11 @@ function postMessage(botResponse, attachments, botID, dataHash, request, current
     
     "attachments" : attachments,
     "bot_id"      : botID,
-    "sendit"      : NAME,
+    "botReq"      : NAME,
     "text"        : botResponse
   };
 
-  console.log('sending ' + botResponse + ' to ' + NAME);
+  console.log('sending ' + botResponse + ' to ' + bot);
 
 
 botReq = HTTPS.request(options, function(res) { 
