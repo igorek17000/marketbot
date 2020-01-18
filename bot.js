@@ -87,15 +87,15 @@ exports.commands = function() {
 //this.res.end(cmdArr);
 }
 
-function sendDelayedMessage(msg, attachments, botID) {
+function sendDelayedMessage(msg, attachments, botID, botName) {
   setTimeout(function() {
-    postMessage(msg, attachments, botID);
+    postMessage(msg, attachments, botID, botName);
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID) {
+function postMessage(botResponse, attachments, botID, botName) {
   var options, body, botReq;
-
+  var botName = request.name
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
@@ -106,10 +106,11 @@ function postMessage(botResponse, attachments, botID) {
     
     "attachments" : attachments,
     "bot_id"      : botID,
+    "botName"     : botName
     "text"        : botResponse
   };
 
-  console.log('sending ' + botResponse + ' to ' + botID);
+  console.log('sending ' + botResponse + ' to ' + botName);
 
 
 botReq = HTTPS.request(options, function(res) { 
