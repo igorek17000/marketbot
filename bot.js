@@ -95,7 +95,6 @@ function sendDelayedMessage(msg, attachments, botID) {
 
 function postMessage(botResponse, attachments, botID) {
   var options, body, botReq;
-  var sendit = rooms.getRoom();
 
   options = {
     hostname: 'api.groupme.com',
@@ -107,7 +106,6 @@ function postMessage(botResponse, attachments, botID) {
     
     "attachments" : attachments,
     "bot_id"      : botID,
-    "botReq"      : NAME,
     "text"        : botResponse
   };
 
