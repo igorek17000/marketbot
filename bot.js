@@ -87,9 +87,9 @@ exports.commands = function() {
 //this.res.end(cmdArr);
 }
 
-function sendDelayedMessage(msg, attachments, botID, botName) {
+function sendDelayedMessage(msg, attachments, botID, name) {
   setTimeout(function() {
-    postMessage(msg, attachments, botID, botName);
+    postMessage(msg, attachments, botID, name);
   }, config.delay_time);
 }
 
