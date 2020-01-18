@@ -107,7 +107,7 @@ function postMessage(botResponse, attachments, botID, dataHash, currentBot, NAME
     
     "attachments" : attachments,
     "bot_id"      : botID,
-    "sendit"      : NAME,
+    "group_name"      : NAME,
     "text"        : botResponse
   };
 
