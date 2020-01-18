@@ -93,7 +93,7 @@ function sendDelayedMessage(msg, attachments, botID, botName, request) {
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, botName request) {
+function postMessage(botResponse, attachments, botID, botName, request) {
   var options, body, botReq;
   var botName = request.name;
   options = {
