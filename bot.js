@@ -95,7 +95,7 @@ function sendDelayedMessage(msg, attachments, botID, botName, request) {
 
 function postMessage(botResponse, attachments, botID, botName, request) {
   var options, body, botReq;
-  var botName = request.name;
+  var botName = '\'%s\': %s', request.name;
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
