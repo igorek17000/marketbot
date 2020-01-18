@@ -87,13 +87,13 @@ exports.commands = function() {
 //this.res.end(cmdArr);
 }
 
-function sendDelayedMessage(msg, attachments, botID, NAME) {
+function sendDelayedMessage(msg, attachments, botID, res, NAME) {
   setTimeout(function() {
-    postMessage(msg, attachments, botID, NAME);
+    postMessage(msg, attachments, botID, res, NAME);
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, NAME) {
+function postMessage(botResponse, attachments, botID, res, NAME) {
   var options, body, botReq;
   var sendit = res[room].bots.indexOf(dataHash.currentBot.type) > -1;
 
