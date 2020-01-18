@@ -109,7 +109,7 @@ function postMessage(botResponse, attachments, botID, NAME) {
     "text"        : botResponse
   };
 
-  console.log('sending ' + botResponse + ' to ' + rooms[room].name);
+  console.log('sending ' + botResponse + ' to ' + NAME);
 
 
 botReq = HTTPS.request(options, function(res) { 
