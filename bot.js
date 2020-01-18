@@ -105,7 +105,7 @@ function postMessage(botResponse, attachments, botID, botNAME) {
   body = {
     "attachments" : attachments,
     "bot_id"      : botID,
-    "name"        : botNAME,
+    "bot"         : botNAME,
     "text"        : botResponse
   };
 
