@@ -61,7 +61,7 @@ exports.respond = function(botRoom) {
 
   for(var lib in checkCommandsHSH) {
     checkCommandsHSH[lib].checkCommands(dataHash, function(check, result, attachments){
-      if (check) sendDelayedMessage(result, attachments, rooms.getRoom(botRoom).id, rooms.getRoom(botRoom).name);
+      if (check) sendDelayedMessage(result, attachments, rooms.getRoom(botRoom).id, rooms.getRoom(botRoom));
     });
   }
 }
@@ -93,7 +93,7 @@ function sendDelayedMessage(msg, attachments, botID, NAME) {
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, NAME) {
+function postMessage(botResponse, attachments, botID, currentBot, NAME) {
   var options, body, botReq;
 
   options = {
@@ -103,9 +103,10 @@ function postMessage(botResponse, attachments, botID, NAME) {
   };
 
   body = {
+    var sendit = currentBot.type;
     "attachments" : attachments,
     "bot_id"      : botID,
-    "bot_path"    : NAME,
+    "sendit"      : NAME,
     "text"        : botResponse
   };
 
