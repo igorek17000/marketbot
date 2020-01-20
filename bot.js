@@ -87,13 +87,13 @@ exports.commands = function() {
 //this.res.end(cmdArr);
 }
 
-function sendDelayedMessage(msg, attachments, botID, botName, dataHash) {
+function sendDelayedMessage(msg, attachments, botID, botRoom, botName, dataHash) {
   setTimeout(function() {
-    postMessage(msg, attachments, botID, botName, dataHash);
+    postMessage(msg, attachments, botID, botRoom, botName, dataHash);
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, botName, dataHash) {
+function postMessage(botResponse, attachments, botID, botRoom, botName, dataHash) {
   var options, body, botReq;
   var botName = flynnBot.botName;
   options = {
