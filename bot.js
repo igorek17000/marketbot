@@ -87,13 +87,13 @@ exports.commands = function() {
 //this.res.end(cmdArr);
 }
 
-function sendDelayedMessage(msg, attachments, botID, botRoom, botName, dataHash) {
+function sendDelayedMessage(msg, attachments, botID, currentBot, botName, dataHash) {
   setTimeout(function() {
-    postMessage(msg, attachments, botID, botRoom, botName, dataHash);
+    postMessage(msg, attachments, botID, currentBot, botName, dataHash);
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, botRoom, botName, dataHash) {
+function postMessage(botResponse, attachments, botID, currentBot, botName, dataHash) {
   var options, body, botReq;
   var botName = flynnBot.botName;
   options = {
@@ -110,7 +110,7 @@ function postMessage(botResponse, attachments, botID, botRoom, botName, dataHash
     "text"        : botResponse
   };
 
-  console.log('sending ' + botResponse + ' to ' + botRoom);
+  console.log('sending ' + botResponse + ' to ' + currentBot);
 
 
 botReq = HTTPS.request(options, function(res) { 
