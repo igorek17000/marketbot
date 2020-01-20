@@ -87,13 +87,13 @@ exports.commands = function() {
 //this.res.end(cmdArr);
 }
 
-function sendDelayedMessage(msg, attachments, botID, currentBot, botName, dataHash) {
+function sendDelayedMessage(msg, attachments, botID, currentBot, botName, dataHash, request) {
   setTimeout(function() {
-    postMessage(msg, attachments, botID, currentBot, botName, dataHash);
+    postMessage(msg, attachments, botID, currentBot, botName, dataHash, request);
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, currentBot, botName, dataHash) {
+function postMessage(botResponse, attachments, botID, currentBot, botName, dataHash, request) {
   var options, body, botReq;
 var botName;
 if (dataHash.request.text) {
@@ -111,7 +111,7 @@ botName = dataHash.request.name;
     
     "attachments" : attachments,
     "bot_id"      : botID,
-    "botRoom"     : botName,
+    "botName"     : botName,
     "text"        : botResponse
   };
 
