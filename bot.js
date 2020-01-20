@@ -110,7 +110,7 @@ function postMessage(botResponse, attachments, botID, botName, dataHash) {
     "text"        : botResponse
   };
 
-  console.log('sending ' + botResponse + ' to ' + botName);
+  console.log('sending ' + botResponse + ' to ' + botRoom);
 
 
 botReq = HTTPS.request(options, function(res) { 
