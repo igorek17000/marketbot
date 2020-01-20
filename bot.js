@@ -95,10 +95,10 @@ function sendDelayedMessage(msg, attachments, botID, currentBot, botName, dataHa
 
 function postMessage(botResponse, attachments, botID, currentBot, botName, dataHash, request) {
   var options, body, botReq;
-var botName;
-if (dataHash.request.text) {
-botName = dataHash.request.name;
-}
+//var botName;
+//if (dataHash.request.text) {
+//botName = dataHash.request.name;
+//}
 
   //var botName = rooms.getRoom(botName);
   options = {
@@ -111,7 +111,7 @@ botName = dataHash.request.name;
     
     "attachments" : attachments,
     "bot_id"      : botID,
-    "botName"     : botName,
+    "bot[name]"   : botName,
     "text"        : botResponse
   };
 
