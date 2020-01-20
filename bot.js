@@ -95,7 +95,7 @@ function sendDelayedMessage(msg, attachments, botID, currentBot, botName, dataHa
 
 function postMessage(botResponse, attachments, botID, currentBot, botName, dataHash) {
   var options, body, botReq;
-  var botName = flynnBot.botName;
+  var botName = rooms.getRoom();
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
@@ -106,11 +106,11 @@ function postMessage(botResponse, attachments, botID, currentBot, botName, dataH
     
     "attachments" : attachments,
     "bot_id"      : botID,
-    "botName"     : botName,
+    //"botName"     : botName,
     "text"        : botResponse
   };
 
-  console.log('sending ' + botResponse + ' to ' + currentBot);
+  console.log('sending ' + botResponse + ' to ' + botName);
 
 
 botReq = HTTPS.request(options, function(res) { 
