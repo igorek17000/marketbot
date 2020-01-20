@@ -95,6 +95,11 @@ function sendDelayedMessage(msg, attachments, botID, currentBot, botName, dataHa
 
 function postMessage(botResponse, attachments, botID, currentBot, botName, dataHash) {
   var options, body, botReq;
+var botName;
+if (dataHash.request.text) {
+botName = dataHash.request.name;
+}
+
   //var botName = rooms.getRoom(botName);
   options = {
     hostname: 'api.groupme.com',
