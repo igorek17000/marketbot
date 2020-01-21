@@ -41,10 +41,9 @@ exports.getNick = function (getNick, currentBot, callback) {
     rooms = res;
 
     for (room in rooms) {
-      var nick;
      if (rooms[room].id == currentBot.id) 
-      rooms[room].name = nick;
-      return nick;
+      rooms[room].name = nickName;
+      return nickName;
 
     }
 
