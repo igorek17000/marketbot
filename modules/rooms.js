@@ -36,7 +36,7 @@ function getNick(){
 
 exports.getNick = function (getNick){
 
-  db.getAllDocuments(db_table, dataHash, function(res){
+  db.getAllDocuments(db_table, function(res){
 
     rooms = res;
 
