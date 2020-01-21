@@ -5,6 +5,7 @@ var rooms;
 var roomCommands = [cmdRoomAdd, cmdToken, cmdConfig];
 
 getAllRooms();
+getNick();
 exports.modName = "Rooms Control";
 
 function getAllRooms(){
@@ -20,13 +21,13 @@ function getNick(){
 
   db.getAllDocuments(db_table, function(res){
 
-    rooms = res;
+    rooms = [];
 
-    for (room in rooms) {
-      var nick;
-     if (rooms[room].id == dataHash.currentBot.id) 
-      nick = rooms[room].name;
-      return nick;
+    for (room in res) {
+     rooms[res[room].id] = res[room].id;
+      rooms[res[room].name = res[room].name;
+      var nickName = res[room].name;
+      return rooms;
 
     }
 
@@ -34,16 +35,21 @@ function getNick(){
 
 }
 
-exports.getNick = function (getNick, currentBot, callback) {
+exports.getNick = function (dataHash, currentBot, callback) {
 
   db.getAllDocuments(db_table, function(res){
 
-    rooms = res;
+    rooms = [];
 
-    for (room in rooms) {
-     if (rooms[room].id == currentBot.id) 
-      rooms[room].name = nickName;
-      return nickName;
+    for (room in res) {
+      rooms[res[room].name] = res[room].name || rooms[res[room].id] = res[room].id;
+      var nickHash = {
+      nickName : res[room].name,
+      nickID   : rooms[room].id
+        };
+     if (res[room].id == currentBot.type) 
+      res[room].name = nickName;
+      return rooms;
 
     }
 
