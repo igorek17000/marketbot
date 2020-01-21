@@ -87,13 +87,13 @@ exports.commands = function() {
 //this.res.end(cmdArr);
 }
 
-function sendDelayedMessage(msg, attachments, botID, currentBot, botName, dataHash, request, getNick) {
+function sendDelayedMessage(msg, attachments, botID, currentBot, botName, dataHash, request, nickName) {
   setTimeout(function() {
-    postMessage(msg, attachments, botID, currentBot, botName, dataHash, request, getNick);
+    postMessage(msg, attachments, botID, currentBot, botName, dataHash, request, nickName);
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, currentBot, botName, dataHash, request, getNick) {
+function postMessage(botResponse, attachments, botID, currentBot, botName, dataHash, request, nickName) {
   var options, body, botReq;
 //var botName;
 //if (dataHash.request.text) {
@@ -111,11 +111,11 @@ function postMessage(botResponse, attachments, botID, currentBot, botName, dataH
     
     "attachments" : attachments,
     "bot_id"      : botID,
-    "getNick"     : rooms.getNick(),
+    "nickName"     : rooms.getNick(),
     "text"        : botResponse
   };
 
-  console.log('sending ' + botResponse + ' to ' + getNick);
+  console.log('sending ' + botResponse + ' to ' + nickName);
 
 
 botReq = HTTPS.request(options, function(res) { 
