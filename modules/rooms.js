@@ -34,7 +34,7 @@ function getNick(){
 
 }
 
-exports.getNick = function (getNick){
+exports.getNick = function (getNick) {
 
   db.getAllDocuments(db_table, function(res){
 
