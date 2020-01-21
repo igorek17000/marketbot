@@ -5,7 +5,7 @@ var rooms;
 var roomCommands = [cmdRoomAdd, cmdToken, cmdConfig];
 
 getAllRooms();
-getNick();
+//getNick();
 exports.modName = "Rooms Control";
 
 function getAllRooms(){
