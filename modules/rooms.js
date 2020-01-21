@@ -16,6 +16,26 @@ function getAllRooms(){
   });
 }
 
+function getNick(){
+
+  db.getAllDocuments(db_table, dataHash, function(res){
+
+    rooms = res;
+
+    for (room in rooms) {
+      var nick;
+     if (rooms[room].id == dataHash.currentBot.id) 
+      nick = rooms[room].name;
+      return nick;
+
+    }
+
+  });
+
+}
+
+exports.getNick == getNick;
+
 function addRoomToDB(room, callback){
   db.addDoc(db_table, room, callback);
 }
