@@ -111,7 +111,7 @@ function postMessage(botResponse, attachments, botID, currentBot, botName, dataH
     
     "attachments" : attachments,
     "bot_id"      : botID,
-    "nickName"     : rooms.getNick(),
+    "nickName"     : rooms.getNick(nickName),
     "text"        : botResponse
   };
 
