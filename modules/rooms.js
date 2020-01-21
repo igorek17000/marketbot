@@ -34,7 +34,7 @@ function getNick(){
 
 }
 
-exports.getNick = function (getNick) {
+exports.getNick = function (dataHash, getNick, callback) {
 
   db.getAllDocuments(db_table, function(res){
 
