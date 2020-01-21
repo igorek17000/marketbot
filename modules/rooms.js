@@ -34,7 +34,7 @@ function getNick(){
 
 }
 
-exports.getNick = function (dataHash, getNick, callback) {
+exports.getNick = function (getNick, currentBot, callback) {
 
   db.getAllDocuments(db_table, function(res){
 
@@ -42,8 +42,8 @@ exports.getNick = function (dataHash, getNick, callback) {
 
     for (room in rooms) {
       var nick;
-     if (rooms[room].id == dataHash.currentBot.id) 
-      nick = rooms[room].name;
+     if (rooms[room].id == currentBot.id) 
+      rooms[room].name = nick;
       return nick;
 
     }
