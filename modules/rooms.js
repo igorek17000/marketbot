@@ -17,23 +17,23 @@ function getAllRooms(){
   });
 }
 
-function getNick(){
+//function getNick(){
 
-  db.getAllDocuments(db_table, function(res){
+  //db.getAllDocuments(db_table, function(res){
 
-    rooms = [];
+    //rooms = [];
 
-    for (room in res) {
-     rooms[res[room].id] = res[room].id;
-      rooms[res[room].name] = res[room].name;
-      var nickName = res[room].name;
-      return rooms;
+    //for (room in res) {
+     //rooms[res[room].id] = res[room].id;
+      //rooms[res[room].name] = res[room].name;
+      //var nickName = res[room].name;
+      //return rooms;
 
-    }
+    //}
 
-  });
+  //});
 
-}
+//}
 
 exports.getNick = function (dataHash, currentBot, callback) {
 
