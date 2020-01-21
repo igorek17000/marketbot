@@ -25,7 +25,7 @@ function getNick(){
 
     for (room in res) {
      rooms[res[room].id] = res[room].id;
-      rooms[res[room].name = res[room].name;
+      rooms[res[room].name] = res[room].name;
       var nickName = res[room].name;
       return rooms;
 
