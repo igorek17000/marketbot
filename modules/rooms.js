@@ -43,9 +43,9 @@ exports.getRoom = function(path) {
     room.type = path;
     room.id = rooms[path];
   }
-    if (botID == rooms[res[room].id]) {
-      botName = rooms[res[room].name];
-      }
+    //if (botID == rooms[res[room].id]) {
+      //botName = rooms[res[room].name];
+      //}
   return room;
 }
 
