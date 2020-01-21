@@ -39,17 +39,17 @@ exports.getNick = function (dataHash, currentBot, callback) {
 
   db.getAllDocuments(db_table, function(res){
 
-    rooms = [];
+    rooms = res;
 
-    for (room in res) {
-      rooms[res[room].name] = res[room].name;
-      rooms[res[room].id] = res[room].id;
+    for (room in rooms) {
+      nickName == rooms[room].name;
+      nickID = rooms[room].id;
       var nickHash = {
       nickName : res[room].name,
       nickID   : res[room].id
         };
-     if (res[room].id == currentBot) 
-      var nickName = res[room].name;
+     if (rooms[room].id == currentBot) 
+      rooms[room].name = nickName;
       return nickName;
 
     }
