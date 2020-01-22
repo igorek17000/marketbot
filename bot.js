@@ -121,7 +121,7 @@ function postMessage(botResponse, attachments, botID, nickName) {
            } else if (botID == "8631a4c35f0f0f250bd5d46f44' {
            nickName = 'FlynnBot';
            } else if (botID == '2184cee4d169628e83e82ee05f' {
-           nickName = "AshleyBot";
+           nickName = 'AshleyBot';
            }
   console.log('sending ' + botResponse + ' to ' + nickName);
 
