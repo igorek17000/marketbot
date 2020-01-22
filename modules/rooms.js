@@ -35,28 +35,28 @@ function getAllRooms(){
 
 //}
 
-exports.getNick = function (dataHash, currentBot, callback) {
+//exports.getNick = function (dataHash, currentBot, callback) {
 
-  db.getAllDocuments(db_table, function(res){
+  //db.getAllDocuments(db_table, function(res){
 
-    rooms = res;
+    //rooms = res;
 
-    for (room in rooms) {
-      var nickName = rooms[room].name;
-      var nickID = rooms[room].id;
-      var nickHash = {
-      "nickName" : res[room].name,
-      "nickID"   : res[room].id
+    //for (room in rooms) {
+      //var nickName = rooms[room].name;
+      //var nickID = rooms[room].id;
+      //var nickHash = {
+      //"nickName" : res[room].name,
+      //"nickID"   : res[room].id
         };
-     if (rooms[room].id == currentBot) 
-      rooms[room].name = nickName;
-      return nickName;
+     //if (rooms[room].id == currentBot) 
+      //rooms[room].name = nickName;
+      //return nickName;
 
-    }
+    //}
 
-  });
+  //});
 
-}
+//}
 
 function addRoomToDB(room, callback){
   db.addDoc(db_table, room, callback);
