@@ -47,7 +47,7 @@ function getAllRooms(){
       //var nickHash = {
       //"nickName" : res[room].name,
       //"nickID"   : res[room].id
-        };
+        //};
      //if (rooms[room].id == currentBot) 
       //rooms[room].name = nickName;
       //return nickName;
