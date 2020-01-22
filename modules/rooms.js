@@ -42,8 +42,8 @@ exports.getNick = function (dataHash, currentBot, callback) {
     rooms = res;
 
     for (room in rooms) {
-      "nickName": rooms[room].name;
-      "nickID": rooms[room].id;
+      var nickName = rooms[room].name;
+      var nickID = rooms[room].id;
       var nickHash = {
       "nickName" : res[room].name,
       "nickID"   : res[room].id
