@@ -122,7 +122,9 @@ function postMessage(botResponse, attachments, botID, nickName) {
            nickName = 'FlynnBot';
            } else if (botID == '2184cee4d169628e83e82ee05f') {
            nickName = 'AshleyBot';
-           }
+           } else {
+             nickName = botID;
+             }
   console.log('sending ' + botResponse + ' to ' + nickName);
 
 
