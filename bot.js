@@ -87,13 +87,13 @@ exports.commands = function() {
 //this.res.end(cmdArr);
 }
 
-function sendDelayedMessage(msg, attachments, botID) {
+function sendDelayedMessage(msg, attachments, botID, nickName) {
   setTimeout(function() {
-    postMessage(msg, attachments, botID);
+    postMessage(msg, attachments, botID, nickName);
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID) {
+function postMessage(botResponse, attachments, botID, nickName) {
   var options, body, botReq;
 //var botName;
 //if (dataHash.request.text) {
@@ -113,8 +113,17 @@ function postMessage(botResponse, attachments, botID) {
     "bot_id"      : botID,
     "text"        : botResponse
   };
-
-  console.log('sending ' + botResponse + ' to ' + botID);
+    var nickName = "";
+      if (botID == "b6c42cc2a1bee3c38f07723d78" {
+           nickName = "Config";
+           } else if (botID == "282865de8ce30137567238148f" {
+           nickName = "308BoonBot";
+           } else if (botID == "8631a4c35f0f0f250bd5d46f44" {
+           nickName = "FlynnBot";
+           } else if (botID == "2184cee4d169628e83e82ee05f" {
+           nickName = "AshleyBot";
+           }
+  console.log('sending ' + botResponse + ' to ' + nickName);
 
 
 botReq = HTTPS.request(options, function(res) { 
