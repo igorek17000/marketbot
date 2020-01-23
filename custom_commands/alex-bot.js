@@ -37,7 +37,7 @@ exports.checkCommands = function(dataHash, callback) {
       if (alexb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && alexbReg.test(dataHash.request.text)){
         var val = alexbReg.exec(dataHash.request.text);
 
-        callback(true, alexb.name + "\n" + alexb.message, []);
+        callback(true, alexb.message, []);
         break;
       }
     }
