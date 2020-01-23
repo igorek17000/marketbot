@@ -125,7 +125,7 @@ function postMessage(botResponse, attachments, botID, nickName) {
            } else {
              nickName = botID;
              }
-  console.log('sending cmd to ' + nickname + '\n' + botResponse);
+  console.log('sending cmd to ' + nickName + '\n' + botResponse);
 
 
 botReq = HTTPS.request(options, function(res) { 
