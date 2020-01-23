@@ -85,8 +85,8 @@ function addAlexBotCmd(request, bots, isMod, callback) {
     }
 
     var alexbHash = {
-      name: val[1],
-      regex: val[1],
+      name: val[1].toLowerCase(), 
+      regex: "^\/" + val[1] + "$",
       message: val[2],
       bots: Object.keys(bots),
       date: date
@@ -94,7 +94,7 @@ function addAlexBotCmd(request, bots, isMod, callback) {
 
     alexbot.push(alexbHash);
     addAlexBotToDB(alexbHash);
-    var msg = val[1] + " AlexBot command added! Use '/alexbot describe " + val[1] + "' to add a description";
+    var msg = "AlexBot command added! Use '/alexbot describe " + val[1] + "' to add a description";
     callback(true, msg, []);
     return msg;
   }
