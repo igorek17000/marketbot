@@ -1,3 +1,7 @@
+var cron = require("node-cron"); 
+var express = require("express"); 
+
+
 var nodemailer = require('nodemailer');
 
 var transporter = nodemailer.createTransport({ 
@@ -10,6 +14,7 @@ pass: '113Hopest!'
 } 
 }); 
 
+cron.schedule("1 * * * *", function(){
 var mailOptions = { 
 from: 'alexdeabot@gmail.com', 
 to: 'dstl_mike1@hotmail.com', 
@@ -24,4 +29,5 @@ res.send(400);
 res.send(202); 
 } 
 }); 
+});
 });
