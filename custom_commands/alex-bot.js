@@ -94,7 +94,7 @@ function addAlexBotCmd(request, bots, isMod, callback) {
 
     alexbot.push(alexbHash);
     addAlexBotToDB(alexbHash);
-    var msg = val[1] + " AlexBot command added! Use '/alexbot describe" + " val[1] " + "to add a description";
+    var msg = val[1] + " AlexBot command added! Use '/alexbot describe " + val[1] + "' to add a description";
     callback(true, msg, []);
     return msg;
   }
