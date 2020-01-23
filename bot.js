@@ -125,11 +125,11 @@ function postMessage(botResponse, attachments, botID, nickName) {
            } else {
              nickName = botID;
              }
-  console.log('sending ' + botResponse + ' to ' + nickName);
+  console.log('sending cmd ' + botResponse + ' to ' + nickName + "\n");
 
 
 botReq = HTTPS.request(options, function(res) { 
-console.log(res.statusMessage + '\n ' + res.statusCode)
+console.log('cmd status ' + res.statusMessage + ' status code: ' + res.statusCode)
       //if (res.statusCode == 200) || (res.statusCode == 202) {
         //neat
 //} else {
