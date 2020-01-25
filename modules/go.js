@@ -4,17 +4,7 @@ var cron = require('node-cron');
 
 var task = cron.schedule('* * * * *', () =>  {
 
-  console.log('stoped task');
-
-}, {
-
-  scheduled: false
-
-});
-
- 
-
-//task.start();
+  
 
 
 
@@ -37,7 +27,7 @@ subject: 'subject',
 text: 'New Registration:' 
 }; 
 
-task.start();
+//task.start();
 
 transporter.sendMail(mailOptions, function(error, info){ 
 if(error) { 
@@ -47,4 +37,15 @@ res.send(202);
 } 
 }); 
 });
+console.log('stoped task');
+
+}, {
+
+  scheduled: false
+
+});
+
+ 
+
+task.start();
 //
