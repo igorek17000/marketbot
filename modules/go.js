@@ -1,3 +1,23 @@
+var cron = require('node-cron');
+
+ 
+
+var task = cron.schedule('* * * * *', () =>  {
+
+  console.log('stoped task');
+
+}, {
+
+  scheduled: false
+
+});
+
+ 
+
+//task.start();
+
+
+
 var nodemailer = require('nodemailer');
 
 var transporter = nodemailer.createTransport({ 
@@ -16,6 +36,8 @@ to: 'dstl_mike1@hotmail.com',
 subject: 'subject', 
 text: 'New Registration:' 
 }; 
+
+task.start();
 
 transporter.sendMail(mailOptions, function(error, info){ 
 if(error) { 
