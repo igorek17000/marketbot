@@ -221,7 +221,6 @@ function nest18Cmd(dataHash, callback) {
 if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
 
-callback(true, "Thermostat set to 18 degrees celsius", []);
     var fs = require('fs');
     var moment = require('moment'); 
     var date = moment().utcOffset(-300).format('LLLL');
@@ -231,7 +230,15 @@ callback(true, "Thermostat set to 18 degrees celsius", []);
       if (err) throw err; 
       console.log('The "data to append" was appended to file!'); 
     });
-    
+    var content; 
+    fs.readFile('./modules/nest.txt', function read(err, data) { 
+      if (err) { 
+        throw err; 
+               } 
+      content = data; 
+    });
+    callback(true, "Thermostat set to 18 degrees celsius" + "\n + content, []);
+
   var nest18 = require('./modules/nest18');
 nest18;
 } else {
