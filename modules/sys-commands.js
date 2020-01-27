@@ -222,6 +222,12 @@ if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
 
 callback(true, "Thermostat set to 18 degrees celsius", []);
+    
+    fs.appendFile('../modules/modules/nest.txt', 'Thermostat adjusted ' + date, (err) => { 
+      if (err) throw err; 
+      console.log('The "data to append" was appended to file!'); 
+    });
+    
   var nest18 = require('./modules/nest18');
 nest18;
 } else {
