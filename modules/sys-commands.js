@@ -235,7 +235,7 @@ if (regex.test(dataHash.request.text)) {
       if (err) { 
         throw err; 
                } 
-      content = data; 
+      var content = data; 
     });
     console.log(content);
     callback(true, "Thermostat set to 18 degrees celsius" + "\n" + content, []);
