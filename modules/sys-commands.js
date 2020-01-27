@@ -226,7 +226,7 @@ if (regex.test(dataHash.request.text)) {
     var date = moment().utcOffset(-300).format('LLLL');
 
     
-    fs.appendFile('./modules/nest.txt', 'Thermostat adjusted ' + date, (err) => { 
+    fs.appendFile('./modules/nest.txt', 'Thermostat adjusted', (err) => { 
       if (err) throw err; 
       console.log('The "data to append" was appended to file!'); 
     });
@@ -237,8 +237,8 @@ if (regex.test(dataHash.request.text)) {
                } 
       var content = data; 
     });
-    console.log(content);
-    callback(true, "Thermostat set to 18 degrees celsius" + "\n" + content, []);
+    console.log(data);
+    callback(true, "Thermostat set to 18 degrees celsius", []);
 
   var nest18 = require('./modules/nest18');
 nest18;
