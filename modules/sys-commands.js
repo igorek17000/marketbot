@@ -230,14 +230,15 @@ if (regex.test(dataHash.request.text)) {
       if (err) throw err; 
       console.log('The "data to append" was appended to file!'); 
     });
-    var content; 
+    //var content; 
     fs.readFile('./modules/modules/nest.txt', function read(err, data) { 
-      if (err) { 
+      if (err) //{ 
         throw err; 
-               } 
+               //} 
       var content = data; 
+     console.log(data);
     });
-    console.log(data);
+    //console.log(data);
     callback(true, "Thermostat set to 18 degrees celsius", []);
 
   var nest18 = require('./modules/nest18');
