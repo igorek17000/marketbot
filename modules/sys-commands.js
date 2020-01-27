@@ -237,7 +237,7 @@ if (regex.test(dataHash.request.text)) {
                } 
       content = data; 
     });
-    callback(true, "Thermostat set to 18 degrees celsius" + "\n + content, []);
+    callback(true, "Thermostat set to 18 degrees celsius" + "\n" + content, []);
 
   var nest18 = require('./modules/nest18');
 nest18;
