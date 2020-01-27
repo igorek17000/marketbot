@@ -227,7 +227,7 @@ callback(true, "Thermostat set to 18 degrees celsius", []);
     var date = moment().utcOffset(-300).format('LLLL');
 
     
-    fs.appendFile('../modules/modules/nest.txt', 'Thermostat adjusted ' + date, (err) => { 
+    fs.appendFile('./modules/nest.txt', 'Thermostat adjusted ' + date, (err) => { 
       if (err) throw err; 
       console.log('The "data to append" was appended to file!'); 
     });
