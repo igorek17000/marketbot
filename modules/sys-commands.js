@@ -226,9 +226,13 @@ if (regex.test(dataHash.request.text)) {
     var date = moment().utcOffset(-300).format('LLLL');
 
     
-    fs.appendFile('./modules/nest.txt', 'Thermostat adjusted', (err) => { 
-      if (err) throw err; 
-      console.log('The "data to append" was appended to file!'); 
+    var stream = fs.createWriteStream("append.txt", {flags:'a'}); 
+    console.log(new Date().toISOString()); 
+    [...Array(10000)].forEach( function (item,index) { 
+      stream.write(index + "\n"); 
+    }); 
+    console.log(new Date().toISOString()); 
+    stream.end();
     //});
  
     //var content; 
@@ -239,7 +243,7 @@ if (regex.test(dataHash.request.text)) {
       var content = data; 
      console.log(data);
     });
-      });
+      //});
     //console.log(data);
     callback(true, "Thermostat set to 18 degrees celsius", []);
 
