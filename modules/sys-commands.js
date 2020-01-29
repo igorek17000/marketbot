@@ -229,7 +229,8 @@ if (regex.test(dataHash.request.text)) {
     fs.appendFile('./modules/nest.txt', 'Thermostat adjusted', (err) => { 
       if (err) throw err; 
       console.log('The "data to append" was appended to file!'); 
-    });
+    //});
+      continue;
     //var content; 
     fs.readFile('./modules/modules/nest.txt', function read(err, data) { 
       if (err) //{ 
@@ -238,6 +239,7 @@ if (regex.test(dataHash.request.text)) {
       var content = data; 
      console.log(data);
     });
+      });
     //console.log(data);
     callback(true, "Thermostat set to 18 degrees celsius", []);
 
