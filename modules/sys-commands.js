@@ -230,7 +230,7 @@ if (regex.test(dataHash.request.text)) {
       if (err) throw err; 
       console.log('The "data to append" was appended to file!'); 
     //});
-      continue;
+ 
     //var content; 
     fs.readFile('./modules/modules/nest.txt', function read(err, data) { 
       if (err) //{ 
