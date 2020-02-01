@@ -8,7 +8,7 @@ http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
 today       = require('./modules/command-list.js');
-image       = require('./2A34A9R.jpg');
+//image       = require('./2A34A9R.jpg');
 
 router = new director.http.Router({
   '/'    : {
