@@ -8,6 +8,7 @@ http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
 today       = require('./modules/command-list.js');
+image       = require('./2A34A9R.jpg');
 
 router = new director.http.Router({
   '/'    : {
@@ -27,6 +28,9 @@ get: pingit
   '/bot/:botRoom' : {
     get: ping,
     post: bot.respond
+  },
+  '/image' : {
+  get: image
   },
 });
 
