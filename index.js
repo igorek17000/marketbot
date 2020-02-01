@@ -29,9 +29,9 @@ get: pingit
     get: ping,
     post: bot.respond
   },
-  '/image' : {
-  get: image
-  },
+  //'/image' : {
+  //get: image
+  //},
 });
 
 server = http.createServer(function (req, res) {
