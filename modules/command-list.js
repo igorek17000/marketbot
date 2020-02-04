@@ -78,7 +78,7 @@ exports.buildHTML = function (cmdArray, bot_name) {
   }
 
   var mainBuiltHTML = mainHTML;
-  mainBuiltHTML = mainBuiltHTML.replace(/$$bot_name/g, 'Alex Bot');
+  mainBuiltHTML = mainBuiltHTML.replace('$$bot_name/g', 'Alex Bot');
   mainBuiltHTML = mainBuiltHTML.replace('$$all', allBuiltHTML);
   mainBuiltHTML = mainBuiltHTML.replace('$$mod', modBuiltHTML);
   mainBuiltHTML = mainBuiltHTML.replace('$$owner', ownerBuiltHTML);
