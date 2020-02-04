@@ -59,5 +59,5 @@ function ping() {
 
 function pingit() {
   this.res.writeHead(200);
-  this.res.end("The sky's the limit.\find what you love to do and what makes you happy and embrace it.\nAlexBot quotes");
+  this.res.end("The sky's the limit.\nFind what you love to do, what\nmakes you happy and embrace it.\nAlexBot quotes");
 }
