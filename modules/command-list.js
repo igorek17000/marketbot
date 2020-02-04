@@ -27,7 +27,7 @@ function getFileAll(path, callback) {
   });
 }
 
-exports.buildHTML = function (cmdArray, bot_name, nameit) {
+exports.buildHTML = function (cmdArray, bot_name) {
   var modArr   = [];
   var ownerArr = [];
   var allArr   = [];
