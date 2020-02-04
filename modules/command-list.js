@@ -27,7 +27,7 @@ function getFileAll(path, callback) {
   });
 }
 
-exports.buildHTML = function (cmdArray, bot_name) {
+exports.buildHTML = function (cmdArray, bot_name, nameit) {
   var modArr   = [];
   var ownerArr = [];
   var allArr   = [];
@@ -78,7 +78,7 @@ exports.buildHTML = function (cmdArray, bot_name) {
   }
 
   var mainBuiltHTML = mainHTML;
-  mainBuiltHTML = mainBuiltHTML.replace('$$bot_name/g', 'Alex Bot');
+  mainBuiltHTML = mainBuiltHTML.replace('$$nameit', nameit);
   mainBuiltHTML = mainBuiltHTML.replace('$$all', allBuiltHTML);
   mainBuiltHTML = mainBuiltHTML.replace('$$mod', modBuiltHTML);
   mainBuiltHTML = mainBuiltHTML.replace('$$owner', ownerBuiltHTML);
