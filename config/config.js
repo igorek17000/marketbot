@@ -27,4 +27,18 @@ function setConfig(){
 exports.setConfig = setConfig;
 exports.bot_name = 'Alex Bot';
 exports.delay_time = 1000;
+exports.nameit = function() {
+var nameit = '';
+      if (botID == 'b6c42cc2a1bee3c38f07723d78') {
+           nameit = 'Config';
+           } else if (botID == '282865de8ce30137567238148f') {
+           nameit = '308BoonBot';
+           } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
+           nameit = 'FlynnBot';
+           } else if (botID == '2184cee4d169628e83e82ee05f') {
+           nameit = 'AshleyBot';
+           } else {
+             nameit = botID;
+             }
+}
 //
