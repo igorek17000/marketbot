@@ -14,7 +14,7 @@ router = new director.http.Router({
   '/'    : {
     get: ping
   },
-'/list' : {
+'/quotes' : {
 get: pingit
 },
   '/init' : {
@@ -58,6 +58,6 @@ function ping() {
 }
 
 function pingit() {
-  this.res.writeHead(200, {"content-type": "text/html"});
-  this.res.end(today.buildHTML);
+  this.res.writeHead(200);
+  this.res.end("The sky's the limit.\find what you love to do and what makes you happy and embrace it.\nAlexBot quotes");
 }
