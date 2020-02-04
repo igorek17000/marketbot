@@ -38,20 +38,7 @@ exports.init = function() {
   });
 }
 
-exports.nameit = function() {
-var botsname = '';
-      if (botID == 'b6c42cc2a1bee3c38f07723d78') {
-           botsname = 'Config';
-           } else if (botID == '282865de8ce30137567238148f') {
-           botsname = '308BoonBot';
-           } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
-           botsname = 'FlynnBot';
-           } else if (botID == '2184cee4d169628e83e82ee05f') {
-           botsname = 'AshleyBot';
-           } else {
-             botsname = botID;
-             }
-}
+
 
 exports.respond = function(botRoom) {
   var request = JSON.parse(this.req.chunks[0]);
@@ -92,7 +79,7 @@ exports.commands = function() {
       cmdArr = cmdArr.concat(newCmds);
   }
 
-  var output = commandList.buildHTML(cmdArr, config.bot_name);
+  var output = commandList.buildHTML(cmdArr, config.bot_name, config.nameit);
   //var output = cmdArr;
 //var output = checkCommandsHSH[].getCmdListDescription();
  
