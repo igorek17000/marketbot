@@ -3,7 +3,7 @@ var alexbot;
 var db_table = 'alex_bot';
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd];
+var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd];
 var db = require('../modules/db.js');
 //var mods = require('../modules/mods');
 
@@ -22,6 +22,10 @@ function addAlexBotToDB(alexb, callback) {
 
 function updateAlexBotDesc(alexb, callback) {
   db.updateOneDoc(db_table, {"name": alexb.name}, {$set: { "description": alexb.description}}, callback);
+}
+
+function updateAlexBotMessage(alexb, callback) {
+  db.updateOneDoc(db_table, {"name": alexb.name}, {$set: { "message": alexb.message}}, callback);
 }
 
 exports.checkCommands = function(dataHash, callback) {
@@ -127,6 +131,40 @@ function describeAlexBotCmd(request, bots, isMod, callback) {
     var msg = val[1] + " doesn't exist";
     callback(true, msg, []);
 
+    return msg;
+  }
+}
+
+function editAlexBotCmd(request, bots, isMod, callback) {
+  //var regex = /^\/cmd edit (.+?) ([\s\S]+)/i;
+  var regex = /^\/- ([\s\S]+)/i;
+  
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = "You don't have permission to edit commands"
+      callback(true, msg, []);
+      return msg;
+    }
+
+    //val[1] = val[1].toLowerCase();
+    val[1] = "308boonave";
+    for (cmd in commands) {
+      if (commands[cmd].name == val[1]) {
+        commands[cmd].message = "- " + val[2];
+        updateAlexBotMessage(commands[cmd]);
+
+        var msg = val[1] + " message updated.";
+        callback(true, msg, []);
+        return msg;
+      }
+    }
+
+    var msg = val[1] + "doesn't exist";
+    callback(true, msg, []);
     return msg;
   }
 }
