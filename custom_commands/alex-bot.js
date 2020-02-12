@@ -28,6 +28,10 @@ function updateAlexBotMessage(alexb, callback) {
   db.updateOneDoc(db_table, {"name": alexb.name}, {$set: { "message": alexb.message}}, callback);
 }
 
+function updateAlexBotModDate(alexb, callback) {
+  db.updateOneDoc(db_table, {"name": alexb.name}, {$push: { "date": date}}, callback);
+}
+
 exports.checkCommands = function(dataHash, callback) {
   if (dataHash.isMod) 
     for (alexb in alexbot) {
@@ -156,6 +160,7 @@ function editAlexBotCmd(request, bots, isMod, callback) {
     for (alexb in alexbot) {
       if (alexbot[alexb].name == "308boonave") {
         alexbot[alexb].message = "- " + val[1] + " " + val[2];
+        updateAlexBotModDate(alexbot[alexb]);
         updateAlexBotMessage(alexbot[alexb]);
 
         var msg = alexbot[alexb].name + " message updated.";
