@@ -152,7 +152,7 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 
     val[1] = val[1].toLowerCase();
     //val[1] = "308boonave";
-    alexbot[alexb].name = "308boonave";
+    //alexbot[alexb].name = "308boonave";
     for (alexb in alexbot) {
       if (alexbot[alexb].name == "308boonave") {
         alexbot[alexb].message = "- " + val[2];
