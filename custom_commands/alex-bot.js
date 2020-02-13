@@ -29,7 +29,11 @@ function updateAlexBotMessage(alexb, callback) {
 }
 
 function updateAlexBotModDate(alexb, callback) {
-  db.updateOneDoc(db_table, {"name": alexb.name}, {$push: { "date modified": date + "\n" + "- " + val[1] + " " + val[2]}}, callback);
+  db.updateOneDoc(db_table, {"name": alexb.name}, {$push: { "date modified": date}}, callback);
+}
+
+function updateAlexBotModDateMessage(alexb, callback) {
+  db.updateOneDoc(db_table, {"name": alexb.name}, {$push: { "date modified.date": message}}, callback);
 }
 
 exports.checkCommands = function(dataHash, callback) {
@@ -162,6 +166,8 @@ function editAlexBotCmd(request, bots, isMod, callback) {
         alexbot[alexb].message = "- " + val[1] + " " + val[2];
         updateAlexBotModDate(alexbot[alexb]);
         updateAlexBotMessage(alexbot[alexb]);
+        updateAlexBotModDateMessage(alexbot[alexb]);
+        
 
         var msg = alexbot[alexb].name + " message updated.";
         callback(true, msg, []);
