@@ -260,7 +260,7 @@ function nest19Cmd(dataHash, callback) {
   var regex = /^\/nest19$/;
 
 if (regex.test(dataHash.request.text)) {
-  if (dataHash.isMod) || (dataHash.request.sender_id = 685) {
+  if (dataHash.isMod || (dataHash.request.sender_id = 685)) {
 
 callback(true, "Thermostat set to 19 degrees celsius", []);
   var nest19 = require('./modules/nest19');
