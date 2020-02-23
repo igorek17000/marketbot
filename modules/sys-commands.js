@@ -323,41 +323,57 @@ nest22;
 
 //-----------
 
-function helpCmd(dataHash, callback, result) {
+function helpCmd(dataHash, callback) {
   var regex = /^\/help$/;
 
   if (regex.test(dataHash.request.text)) {
-    if (dataHash.isMod) {
-var fs = require('fs');
-var path = require('path');
-fs.readFile(path.resolve(__dirname, "./modules/help.txt"), (err, data) => {
+   // if (dataHash.isMod) {
 
-//var helpful = require('../help');
-//fs.readFile('', (err, data) => { 
-if (err) { 
-console.error(err) 
-return;
-} 
-//console.log(data) })
-//callback(true, data, []);
-callback(true, "Command List \n" + data, []);
+callback(true, "Click the link for a list of commands\nhttp://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands", []);
+
+} else {
+      return false;
+}
+}
 
 
-return data;
-//callback(true, "Help", []);
-})
+
+
+//function helpCmd(dataHash, callback, result) {
+ // var regex = /^\/help$/;
+
+  //if (regex.test(dataHash.request.text)) {
+    //if (dataHash.isMod) {
+//var fs = require('fs');
+//var path = require('path');
+//fs.readFile(path.resolve(__dirname, "./modules/help.txt"), (err, data) => {
+
+ // //var helpful = require('../help');
+// //fs.readFile('', (err, data) => { 
+//if (err) { 
+//console.error(err) 
+//return;
+//} 
+////console.log(data) })
+////callback(true, data, []);
+//callback(true, "Command List \n" + data, []);
+
+
+//return data;
+////callback(true, "Help", []);
+//})
    
 
-    //callback(true, "Command List ", {}, []);
+    ////callback(true, "Command List ", {}, []);
 
 
 
 
-  } else {
-    return false;
-  }
-}
-}
+  //} else {
+    //return false;
+  //}
+//}
+//}
 
 //----------
 
