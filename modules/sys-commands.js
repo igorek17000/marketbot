@@ -47,7 +47,7 @@ function listCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     
-    const { stdin, stdout } = process; 
+    var { stdin, stdout } = process; 
 
 function prompt(question) { 
 
@@ -69,13 +69,13 @@ async function main() {
 
 try { 
 
-const name = await prompt("What's your name? ") 
+var name = await prompt("What's your name? ") 
 
-const age = await prompt("What's your age? "); 
+var age = await prompt("What's your age? "); 
 
-const email = await prompt("What's your email address? "); 
+var email = await prompt("What's your email address? "); 
 
-const user = { name, age, email }; 
+var user = { name, age, email }; 
 
 console.log(user); 
 
