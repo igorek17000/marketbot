@@ -91,7 +91,7 @@ console.log(error);
 
 process.exit(); 
 
-} 
+
 
 
     
@@ -105,7 +105,7 @@ callback(true, user, []);
 return false;
 }
 }
-
+}
 //keys = Object.keys(object) 
 //console.log(keys); 
 //console.log(keys.length)
