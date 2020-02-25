@@ -78,8 +78,7 @@ var email = await prompt("What's your email address? ");
 var user = { name, age, email }; 
 
 console.log(user); 
-  callback(true, user, []);
-
+  
 stdin.pause(); 
 
 } catch(error) { 
@@ -96,7 +95,7 @@ process.exit();
 
 
     
-
+callback(true, user, []);
     //return data;
     //return main();
     
