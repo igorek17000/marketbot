@@ -95,7 +95,8 @@ process.exit();
 
 
     
-callback(true, main, []);
+callback(true, []);
+    main;
     //return data;
     //return main();
     
