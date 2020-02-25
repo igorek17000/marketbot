@@ -78,6 +78,7 @@ var email = await prompt("What's your email address? ");
 var user = { name, age, email }; 
 
 console.log(user); 
+  callback(true, user, []);
 
 stdin.pause(); 
 
@@ -91,14 +92,14 @@ console.log(error);
 
 process.exit(); 
 
-
+}
 
 
     
-callback(true, user, []);
+
     //return data;
     //return main();
-    }
+    
  // var question = require('./modules/question');
 //question;
 } else {
