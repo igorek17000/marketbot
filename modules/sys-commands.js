@@ -47,55 +47,19 @@ function listCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     
-    function prompt(question) { 
-
-return new Promise((resolve, reject) => { 
-
-stdin.resume(); 
-
-stdout.write(question); 
-
-stdin.on('data', data => resolve(data.toString().trim())); 
-
-stdin.on('error', err => reject(err)); 
-
-}); 
-
-} 
-
-async function main() { 
-
-try { 
-
-const name = await prompt("What's your name? ") 
-
-const age = await prompt("What's your age? "); 
-
-const email = await prompt("What's your email address? "); 
-
-const user = { name, age, email }; 
-
-console.log(user); 
-  if (callback) {
-    callback(data);
-    }
-
-stdin.pause(); 
-
-} catch(error) { 
-
-console.log("There's an error!"); 
-
-console.log(error); 
-
-} 
-
-process.exit(); 
-
-} 
+    const readline = require('readline'); 
+    const rl = readline.createInterface({ 
+      input: process.stdin, 
+      output: process.stdout 
+    }); 
+    rl.question('Please enter a color? ', (value) => { 
+      let color = value 
+      console.log(`You entered ${color}`); 
+      rl.close(); 
+    });
     
-callback(true, prompt, []);
-    return data;
+callback(true, color, []);
+    //return data;
     //return main();
     
  // var question = require('./modules/question');
