@@ -25,11 +25,11 @@ exports.getCmdListDescription = function () {
     {cmd: "/id", desc: "Notifies the requester of their GroupMe ID"},
     {cmd: "/about", desc: "Responds with a short message about the bot"},
     {cmd: "/go", desc: "Send a test email to bot", mod: true},
-    {cmd: "/nest18", desc: "Set Nest temperature to 18 degrees celsius"},
-    {cmd: "/nest19", desc: "Set Nest temperature to 19 degrees celsius"},
-    {cmd: "/nest20", desc: "Set Nest temperature to 20 degrees celsius"},
-    {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
-    {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
+    {cmd: "/nest18", desc: "Set Nest temperature to 18 degrees celsius", mod: true},
+    {cmd: "/nest19", desc: "Set Nest temperature to 19 degrees celsius", mod: true},
+    {cmd: "/nest20", desc: "Set Nest temperature to 20 degrees celsius", mod: true},
+    {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius", mod: true},
+    {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius", mod: true}
   ];
 }
 
