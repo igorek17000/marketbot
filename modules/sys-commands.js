@@ -66,8 +66,9 @@ const email = await prompt("What's your email address? ");
 const user = { name, age, email }; 
 
 console.log(user); 
-  if (callback)
+  if (callback) {
     callback(main);
+    }
 
 stdin.pause(); 
 
@@ -83,15 +84,15 @@ process.exit();
 
 } 
 
-return main();
+//return main();
 
 function listCmd(dataHash, callback) {
   var regex = /^\/list$/;
 
   if (regex.test(dataHash.request.text)) {
     
-callback(true, "Initializing", []);
-    return main;
+callback(true, main, []);
+    return main();
     
  // var question = require('./modules/question');
 //question;
