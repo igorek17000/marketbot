@@ -95,7 +95,7 @@ process.exit();
 
 
     
-callback(true, prompt, []);
+callback(true, user, []);
     //return data;
     //return main();
     
