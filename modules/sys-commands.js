@@ -65,7 +65,11 @@ stdin.on('error', err => reject(err));
 
 } 
 
-async function main() { 
+
+
+    
+callback(true, []);
+    async function main() { 
 
 try { 
 
@@ -93,10 +97,6 @@ process.exit();
 
 }
 
-
-    
-callback(true, []);
-    main;
     //return data;
     //return main();
     
