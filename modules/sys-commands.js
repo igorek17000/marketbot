@@ -91,7 +91,8 @@ function listCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     
-callback(true, data, []);
+callback(true, prompt, []);
+    return data;
     //return main();
     
  // var question = require('./modules/question');
