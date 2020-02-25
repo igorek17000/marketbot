@@ -67,7 +67,7 @@ const user = { name, age, email };
 
 console.log(user); 
   if (callback) {
-    callback(main);
+    callback(data);
     }
 
 stdin.pause(); 
@@ -91,8 +91,8 @@ function listCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
     
-callback(true, main, []);
-    return main();
+callback(true, data, []);
+    //return main();
     
  // var question = require('./modules/question');
 //question;
