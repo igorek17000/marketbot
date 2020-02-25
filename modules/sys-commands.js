@@ -37,7 +37,17 @@ exports.getCmdListDescription = function () {
 
 
 
-function prompt(question) { 
+
+
+
+//return main();
+
+function listCmd(dataHash, callback) {
+  var regex = /^\/list$/;
+
+  if (regex.test(dataHash.request.text)) {
+    
+    function prompt(question) { 
 
 return new Promise((resolve, reject) => { 
 
@@ -83,13 +93,6 @@ console.log(error);
 process.exit(); 
 
 } 
-
-//return main();
-
-function listCmd(dataHash, callback) {
-  var regex = /^\/list$/;
-
-  if (regex.test(dataHash.request.text)) {
     
 callback(true, prompt, []);
     return data;
