@@ -1,5 +1,5 @@
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd, onetwoCmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd];
 
 exports.modName = "System Commands";
 
@@ -33,75 +33,18 @@ exports.getCmdListDescription = function () {
   ];
 }
 
-function onetwoCmd(dataHash, callback) {
-  var regex = /^\/onetwo$/;
-var moment = require('moment'); 
-var date = moment().utcOffset(-300).format('LLLL');
-var onetwo = [
-    {cmd: "/date", desc: "Current date"},
-    {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
-    {cmd: "/nofun", desc: "Disable commands designated as fun commands", mod: true},
-    {cmd: "/id", desc: "Notifies the requester of their GroupMe ID"},
-    {cmd: "/about", desc: "Responds with a short message about the bot"},
-    {cmd: "/go", desc: "Send a test email to bot", mod: true},
-    {cmd: "/nest18", desc: "Set Nest temperature to 18 degrees celsius"},
-    {cmd: "/nest19", desc: "Set Nest temperature to 19 degrees celsius"},
-    {cmd: "/nest20", desc: "Set Nest temperature to 20 degrees celsius"},
-    {cmd: "/nest21", desc: "Set Nest temperature to 21 degrees celsius"},
-    {cmd: "/nest22", desc: "Set Nest temperature to 22 degrees celsius"}
-  ];
-
-//var oneone = onetwo(function(a, b) { 
-//return a.cmd.values.localeCompare(b.cmd.values); 
-//}); 
-
-if (regex.test(dataHash.request.text)) {
-  if (dataHash.isMod) {
-
-
-callback(true, Object.values(onetwo), + "\n" + date,[]);
-console.log(Object.values(onetwo));
-return onetwo.toString();
-} else {
-callback(true, "Access Denied! Testing onetwo", []);
-}
-}
-}
 
 
 
 function listCmd(dataHash, callback) {
   var regex = /^\/list$/;
 
-//let com = ["tomorrow", "today", "yesterday"];
-    var tomorrow = "the next day";
-var today = "the current day";
-var yesterday = "the day before today";
-
-//com(output);
-
-//for (i = 0; i < com.length; i++) { 
-//console.log(arr[i])
-//}
-
-
-function output(item, index, array){
-
-
   if (regex.test(dataHash.request.text)) {
-callback(true, item, []);
-  
-//var listArray = this.cmd + this.desc 
-//var allList = [];
-//var allLists = list.cmd + list.desc;
-//var rObj = {}; 
-//var raObj = Object.keys(listArray);
-//rObj[obj.key] + obj.value; 
-//var lists = allList.property + allList.value
-
+callback(true, "Initializing sequence", []);
+  var question = require('./modules/question');
+question;
 } else {
 return false;
-}
 }
 }
 
