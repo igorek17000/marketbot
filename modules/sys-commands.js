@@ -44,6 +44,11 @@ exports.getCmdListDescription = function () {
 
 function listCmd(dataHash, callback) {
   var regex = /^\/list$/;
+  var name = await prompt("What's your name? ") 
+  var age = await prompt("What's your age? "); 
+  var email = await prompt("What's your email address? "); 
+  var user = { name, age, email }; 
+
 
   if (regex.test(dataHash.request.text)) {
     
