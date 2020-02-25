@@ -81,14 +81,16 @@ process.exit();
 
 } 
 
-main();
+return main();
 
 function listCmd(dataHash, callback) {
   var regex = /^\/list$/;
 
   if (regex.test(dataHash.request.text)) {
     
-callback(true, prompt, []);
+callback(true, "Initializing", []);
+    return prompt;
+    
  // var question = require('./modules/question');
 //question;
 } else {
