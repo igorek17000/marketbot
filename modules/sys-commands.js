@@ -188,7 +188,7 @@ function aboutCmd(dataHash, callback) {
 //*****************This is where all the magic happens***************************
 
 function emailCmd(dataHash, request, callback) {
-  var regex = /^\/email (.+?) ([\s\S]+)/i; 
+  var regex = /^\/email (.+?) (.+?) ([\s\S]+)/i; 
   var reqText = dataHash.request.text; 
   if (regex.test(reqText)){ 
   var val = regex.exec(reqText);
@@ -208,9 +208,9 @@ pass: '113Hopest'
 var mailOptions = {
 to: val[1],
 from: 'alexdeabot@gmail.com',
-subject: 'AlexBot',
+subject: val[2],
 generateTextFromHTML: true,
-text: val[2]
+text: val[3]
 };
 
 Transport.sendMail(mailOptions, function(error, response) {
