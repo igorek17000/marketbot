@@ -188,7 +188,7 @@ function aboutCmd(dataHash, callback) {
 //*****************This is where all the magic happens***************************
 
 function emailCmd(dataHash, request, callback) {
-  var regex = /^\/email (.+?) (.+?) ([\s\S]+)/i; 
+  var regex = /^\/email (.+?) (.+?\n) ([\s\S]+)/i; 
   var reqText = dataHash.request.text; 
   if (regex.test(reqText)){ 
   var val = regex.exec(reqText);
