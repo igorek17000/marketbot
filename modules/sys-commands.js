@@ -187,9 +187,9 @@ function aboutCmd(dataHash, callback) {
 
 //*****************This is where all the magic happens***************************
 
-function goCmd(request, callback) {
+function goCmd(dataHash, request, callback) {
   var regex = /^\/go (.+?) ([\s\S]+)/i; 
-  var reqText = request.text; 
+  var reqText = dataHash.request.text; 
   if (regex.test(reqText)){ 
   var val = regex.exec(reqText);
 
