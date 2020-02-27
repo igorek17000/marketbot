@@ -188,9 +188,12 @@ function aboutCmd(dataHash, callback) {
 //*****************This is where all the magic happens***************************
 
 function goCmd(dataHash, callback) {
-  var regex = /^\/go$/;
+  var regex = /^\/go (.+?) ([\s\S]+)/i; 
+  var reqText = request.text; 
+  if (regex.test(reqText)){ 
+  var val = regex.exec(reqText);
 
-  if (regex.test(dataHash.request.text)) {
+  //if (regex.test(dataHash.request.text)) {
 var nodemailer = require('nodemailer');
 
 var Transport = nodemailer.createTransport({
@@ -203,11 +206,11 @@ pass: '113Hopest'
 });
 
 var mailOptions = {
-to: 'trigger@applet.ifttt.com',
+to: val[1],
 from: 'alexdeabot@gmail.com',
-subject: '#nest18',
+subject: 'AlexBot',
 generateTextFromHTML: true,
-html: '<b></b>'
+html: val[2]
 };
 
 Transport.sendMail(mailOptions, function(error, response) {
