@@ -210,7 +210,7 @@ to: val[1],
 from: 'alexdeabot@gmail.com',
 subject: 'AlexBot',
 generateTextFromHTML: true,
-html: val[2]
+text: val[2]
 };
 
 Transport.sendMail(mailOptions, function(error, response) {
