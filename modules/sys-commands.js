@@ -192,15 +192,22 @@ function goCmd(dataHash, callback) {
 
   if (regex.test(dataHash.request.text)) {
 var nodemailer = require('nodemailer');
-var Transport = nodemailer.createTransport('smtp://dstl%5Fmike1%40hotmail.com:113Hopest%21@smtp-mail.outlook.com');
 
+var Transport = nodemailer.createTransport({
+
+service: 'gmail',
+auth: {
+user: 'alexdeabot@gmail.com',
+pass: '113Hopest'
+}
+});
 
 var mailOptions = {
-to: 'alexdeabot@gmail.com',
-from: 'dstl_mike1@hotmail.com',
-subject: 'Hello',
+to: 'trigger@applet.ifttt.com',
+from: 'alexdeabot@gmail.com',
+subject: '#nest18',
 generateTextFromHTML: true,
-html: '<b>Hello world</b>'
+html: '<b></b>'
 };
 
 Transport.sendMail(mailOptions, function(error, response) {
@@ -210,6 +217,7 @@ console.log(error);
 } else {
 console.log(response);
 }
+Transport.close();
 });
 }
 }
