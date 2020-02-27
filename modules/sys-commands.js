@@ -1,5 +1,5 @@
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, goCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, emailCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd];
 var { stdin, stdout } = process; 
 
 exports.modName = "System Commands";
@@ -187,8 +187,8 @@ function aboutCmd(dataHash, callback) {
 
 //*****************This is where all the magic happens***************************
 
-function goCmd(dataHash, request, callback) {
-  var regex = /^\/go (.+?) ([\s\S]+)/i; 
+function emailCmd(dataHash, request, callback) {
+  var regex = /^\/email (.+?) ([\s\S]+)/i; 
   var reqText = dataHash.request.text; 
   if (regex.test(reqText)){ 
   var val = regex.exec(reqText);
