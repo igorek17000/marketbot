@@ -394,22 +394,23 @@ function nowCmd(dataHash, callback) {
 var regex = /^\/now$/; 
 if (regex.test(dataHash.request.text)) { 
 if (dataHash.isMod) { 
-callback(true, "Now", []);
-var fs = require('fs'); 
-var fileName = './commandlist.js'; 
-var file = require('./commandlist'); 
-file.key = "new value"; 
-fs.writeFile(fileName, JSON.stringify(file, null, 2), 
-function (err) { 
-if (err) return console.log(err); 
-console.log(JSON.stringify(file)); 
-console.log('writing to ' + fileName); 
-});
+  const readline = require('readline'); 
+  const rl = readline.createInterface({ 
+    input: process.stdin, 
+    output: process.stdout 
+  }); 
+  rl.question('What do you think of Node.js? ', (answer) => { 
+    // TODO: Log the answer in a database 
+    console.log(`Thank you for your valuable feedback: ${answer}`); 
+    rl.close(); 
+  });
+callback(true, answer, []);
+
 } else { 
 callback(true, "Not now", []);
 }
 }
-}
+
 
 //----------
 
