@@ -84,7 +84,8 @@ function addAlexBotCmd(request, bots, isMod, callback) {
 
     if (!isMod) {
       var msg = request.name + " you have no power here!";
-      callback(true, msg, []);
+      var bold = msg.bold();
+      callback(true, bold, []);
       return msg;
     }
 
