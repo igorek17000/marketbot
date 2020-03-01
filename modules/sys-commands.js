@@ -390,7 +390,7 @@ callback(true, "Click the link for a list of commands\nhttp://nodejs-mongo-persi
 
 //----------
 
-function nowCmd(dataHash, callback) { 
+function nowCmd(dataHash, answer, callback) { 
 var regex = /^\/now$/; 
 if (regex.test(dataHash.request.text)) { 
 if (dataHash.isMod) { 
