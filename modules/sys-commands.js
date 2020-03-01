@@ -390,17 +390,17 @@ callback(true, "Click the link for a list of commands\nhttp://nodejs-mongo-persi
 
 //----------
 
-function nowCmd(dataHash, answer, callback) { 
+function nowCmd(dataHash, callback) { 
 var regex = /^\/now$/; 
-if (regex.test(dataHash.request.text)) { 
-if (dataHash.isMod) { 
-  
-callback(true, []);
-  const readline = require('readline'); 
-  const rl = readline.createInterface({ 
+  var readline = require('readline'); 
+  var rl = readline.createInterface({ 
     input: process.stdin, 
     output: process.stdout 
   }); 
+if (regex.test(dataHash.request.text)) { 
+if (dataHash.isMod) { 
+  
+callback(true, "next", []);
   
 rl.question('What do you think of Node.js? ', (answer) => { 
     // TODO: Log the answer in a database 
