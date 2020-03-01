@@ -399,18 +399,18 @@ if (dataHash.isMod) {
     input: process.stdin, 
     output: process.stdout 
   }); 
-  rl.question('What do you think of Node.js? ', (answer) => { 
+  
+callback(true, []);
+rl.question('What do you think of Node.js? ', (answer) => { 
     // TODO: Log the answer in a database 
     console.log(`Thank you for your valuable feedback: ${answer}`); 
     rl.close(); 
-  });
-callback(true, answer, []);
-
+ 
 } else { 
 callback(true, "Not now", []);
 }
 }
-  }
+  });
 
 
 //----------
