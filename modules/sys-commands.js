@@ -400,8 +400,8 @@ var regex = /^\/now$/;
 if (regex.test(dataHash.request.text)) { 
 if (dataHash.isMod) { 
   
-callback(true, botResponse, []);
-  
+callback(true, "now", []);
+  return botResponse;
 rl.question('What do you think of Node.js? ', (answer) => { 
     // TODO: Log the answer in a database 
     print('Thank you for your valuable feedback: ${answer}'); 
