@@ -408,9 +408,9 @@ rl.question('What do you think of Node.js? ', (answer) => {
  
 } else { 
 callback(true, "Not now", []);
+});
 }
-}
-  });
+  }
 
 
 //----------
