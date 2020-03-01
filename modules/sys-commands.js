@@ -400,12 +400,14 @@ var regex = /^\/now$/;
 if (regex.test(dataHash.request.text)) { 
 if (dataHash.isMod) { 
   
-callback(true, "next", []);
+callback(true, when, []);
   
 rl.question('What do you think of Node.js? ', (answer) => { 
     // TODO: Log the answer in a database 
     console.log(`Thank you for your valuable feedback: ${answer}`); 
     rl.close(); 
+  var when = rl.on('line', (input) => { 
+    console.log(`Received: ${input}`); });
  });
 } else { 
 callback(true, "Not now", []);
