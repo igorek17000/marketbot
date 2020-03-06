@@ -122,7 +122,7 @@ var f1 = require('./expo');
 
     next();
     var regex = /^\/why$/;
-    if (regex(dataHash.request.text)) {
+    if (regex.test(dataHash.request.text)) {
       callback(true, date);
   f1.expo;
 } else {
