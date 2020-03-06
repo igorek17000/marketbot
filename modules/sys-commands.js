@@ -112,19 +112,24 @@ return false;
 //console.log(keys.length)
 
 
-function dateCmd(dataHash, callback) {
+function dateCmd(dataHash, next, callback) {
   var regex = /^\/date$/;
 
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
 var f1 = require('./expo');
   if (regex.test(dataHash.request.text)) {
-callback(true, date);
+
+    next();
+    var regex = /^\/why$/;
+    if (regex(dataHash.request.text)) {
+      callback(true, date);
   f1.expo;
 } else {
 return false;
 }
 }
+  }
 
 function funCmd(dataHash, callback) {
   var regex = /^\/fun$/;
