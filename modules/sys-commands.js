@@ -120,16 +120,14 @@ var date = moment().utcOffset(-300).format('LLLL');
 var f1 = require('./expo');
   if (regex.test(dataHash.request.text)) {
 
-    next()
     
-    if (dataHash.request.text == "why") {
       callback(true, date);
   f1.expo;
 } else {
 return false;
 }
 }
-  }
+  
 
 function funCmd(dataHash, callback) {
   var regex = /^\/fun$/;
