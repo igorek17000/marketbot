@@ -120,7 +120,7 @@ var date = moment().utcOffset(-300).format('LLLL');
 var f1 = require('./expo');
   if (regex.test(dataHash.request.text)) {
 
-    next();
+    next()
     
     if (dataHash.request.text == /^\/why$/) {
       callback(true, date);
