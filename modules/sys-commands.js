@@ -194,8 +194,23 @@ function emailCmd(dataHash, request, callback) {
   var regex = /^\/email (.+?) ([^\n])([\s\S]+)/i; 
   var reqText = dataHash.request.text; 
   if (regex.test(reqText)){ 
-  var val = regex.exec(reqText);
-
+    var val = regex.exec(reqText);
+    return new Promise(function(resolve, reject){
+reqText(val[1], function(error, result){
+if(error){
+reject(error);
+} else {
+resolve(result);
+}
+})
+});
+}
+  
+  async function SomeAsyncData(dataHash, request, callback){
+const result = await emailCmd(dataHash, request, callback);
+return result;
+}
+  
   //if (regex.test(dataHash.request.text)) {
 var nodemailer = require('nodemailer');
 
