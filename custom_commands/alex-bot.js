@@ -93,6 +93,8 @@ function addAlexBotCmd(request, bots, isMod, callback) {
       if (alexbot[alexb].name == val[1]) {
         var msg = val[1] + " already exists";
         callback(true, msg, []);
+        next();
+        date;
         return msg;
       }
     }
