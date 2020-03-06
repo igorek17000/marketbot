@@ -122,7 +122,7 @@ var f1 = require('./expo');
 
     next()
     
-    if (dataHash.request.text == /^\/why$/) {
+    if (dataHash.request.text == "why") {
       callback(true, date);
   f1.expo;
 } else {
