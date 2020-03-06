@@ -112,7 +112,7 @@ return false;
 //console.log(keys.length)
 
 
-function dateCmd(dataHash, next, callback) {
+function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
 
 var moment = require('moment'); 
