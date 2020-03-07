@@ -193,13 +193,13 @@ function aboutCmd(dataHash, callback) {
 function emailCmd(dataHash, request, callback) {
   var regex = /^\/email (.+?) ([^\n])([\s\S]+)/i; 
   var reqText = dataHash.request.text; 
-  var weather = true
   var promise = new promise(resolve, reject) {
     
   if (regex.test(reqText)){ 
     var val = regex.exec(reqText);
+    var weather = true;
     if (weather)
-    resolve(val)
+    resolve(weather)
   } else {
     reject(console.log('error')
            }
