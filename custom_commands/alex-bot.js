@@ -241,7 +241,8 @@ var date = moment().utcOffset(-300).format('LLLL');
     reject("error");
     });
       if(reqnew("/^\/sender$/")){
-        callback(true, date);
+        callback(true, date, []);
+        return date;
         
       } else {
         console.log(reject);
