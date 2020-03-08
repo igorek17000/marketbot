@@ -183,3 +183,34 @@ function editAlexBotCmd(request, bots, isMod, callback) {
     return msg;
   }
 }
+
+
+
+//------------
+
+async function date1Cmd(dataHash, callback) {
+
+  var regex = /^\/date1$/;
+
+var moment = require('moment'); 
+
+var date = moment().utcOffset(-240).format('LLLL');
+
+
+
+  if (regex.test(dataHash.request.text)) {
+
+   var dater = new promise(resolve, reject);
+    
+
+      callback(true, date);
+
+  
+
+} else {
+
+return false;
+
+}
+
+}
