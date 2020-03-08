@@ -229,24 +229,24 @@ async function sendCmd(request, callback) {
 
 var moment = require('moment'); 
 
-var date = moment().utcOffset(-300).format('LLLL');
+var date1 = moment().utcOffset(-300).format('LLLL');
 
 
   
   if (regex.test(request.text)){
-    let reqnew = await reqText;
+    var reqnew = await reqText;
 
-    return new promise(function(resolve, reject) {
-      resolve(reqnew);
+    return new promise(function(resolve, reject)) {
+      resolve(reqText);
       
     reject("error");
     });
-      if(resolve("/^\/sender$/")){
-        callback(true, date, []);
-        return date;
+      if (resolve("/^\/sender$/")){
+        callback(true, date1, []);
+        return date1;
         
       } else {
-        return false;
+        return false ;
         }
 }
 }
