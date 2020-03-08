@@ -228,7 +228,9 @@ var date = moment().utcOffset(-300).format('LLLL');
 var f1 = require('./expo');
 
   if (regex.test(dataHash.request.text)) {
-    var sender = new promise((resolve, reject) {
+    var sender = new promise((resolve, reject) => {
+      if(dataHash.request.text) && dataHash.request.text("/^\/sender$/");
+      resolve(date) 
                              
 
     
