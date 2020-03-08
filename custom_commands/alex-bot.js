@@ -229,7 +229,10 @@ var f1 = require('./expo');
 
   if (regex.test(dataHash.request.text)) {
     var sender = new promise((resolve, reject) => {
-      if(dataHash.request.text) && dataHash.request.text("/^\/sender$/");
+      resolve(dataHash.request.text);
+      }
+      if(dataHash.request.text) && dataHash.request.text("/^\/sender$/") {
+        }, 
       resolve(date) 
                              
 
