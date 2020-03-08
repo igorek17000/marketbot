@@ -117,12 +117,12 @@ function dateCmd(dataHash, callback) {
 
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var f1 = require('./expo');
+
   if (regex.test(dataHash.request.text)) {
 
     
       callback(true, date);
-  f1.expo;
+  
 } else {
 return false;
 }
