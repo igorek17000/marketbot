@@ -190,6 +190,39 @@ function aboutCmd(dataHash, callback) {
 
 //*****************This is where all the magic happens***************************
 
+async function date1Cmd(dataHash, callback) {
+
+  var regex = /^\/date1$/;
+
+var moment = require('moment'); 
+
+var date = moment().utcOffset(-300).format('LLLL');
+
+  var dater = new promise(resolve, reject);
+
+
+  if (regex.test(dataHash.request.text)) {
+
+    
+
+      callback(true, date);
+
+
+
+} else {
+
+return false;
+
+}
+
+}
+
+
+
+
+
+
+//------------
 function emailCmd(dataHash, request, callback) {
   var regex = /^\/email (.+?) ([^\n])([\s\S]+)/i; 
   var reqText = dataHash.request.text; 
