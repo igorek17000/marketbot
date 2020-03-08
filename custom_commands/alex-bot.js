@@ -204,7 +204,7 @@ var msg = async function() {
   var msg = await sendCmd(); 
 
   console.log('Message:', msg); 
-
+}
    //var dater = new promise((resolve, reject) {
                            
     
@@ -220,7 +220,7 @@ return false;
 }
 
 }
-}
+
 
 async function sendCmd(request, callback) {
 
@@ -235,16 +235,16 @@ var f1 = require('./expo');
   var reqnew = await reqText;
 
   if (regex.test(request.text)) {
-    //var sender = new promise(function(resolve, reject) => {
-      //resolve(reqnew);
+    return new promise(function(resolve, reject) => {
+      resolve(reqnew);
       
-    //reject("error");
-    //});
-      //if(reqnew) && dataHash.request.text("/^\/sender$/") {
+    reject("error");
+    });
+      if(resolve) && request.text("/^\/sender$/") {
         callback(true, date);
         
       } else {
         console.log('error');
         }
 }
-
+}
