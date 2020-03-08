@@ -235,7 +235,7 @@ var f1 = require('./expo');
   var reqnew = await reqText;
 
   if (regex.test(request.text)) {
-    return new promise(function(resolve, reject) => {
+    return new promise(function(resolve, reject) {
       resolve(reqnew);
       
     reject("error");
@@ -244,7 +244,7 @@ var f1 = require('./expo');
         callback(true, date);
         
       } else {
-        console.log('error');
+        console.log(reject);
         }
 }
 }
