@@ -232,20 +232,21 @@ var moment = require('moment');
 var date = moment().utcOffset(-300).format('LLLL');
 
 
-  var reqnew = await reqText;
-
+  
   if (regex.test(request.text)){
+    let reqnew = await reqText;
+
     return new promise(function(resolve, reject) {
       resolve(reqnew);
       
     reject("error");
     });
-      if(reqnew("/^\/sender$/")){
+      if(resolve("/^\/sender$/")){
         callback(true, date, []);
         return date;
         
       } else {
-        console.log(reject);
+        return false;
         }
 }
 }
