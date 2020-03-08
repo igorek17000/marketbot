@@ -3,7 +3,7 @@ var alexbot;
 var db_table = 'alex_bot';
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd];
+var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, sendCmd];
 var db = require('../modules/db.js');
 //var mods = require('../modules/mods');
 
@@ -215,3 +215,33 @@ return false;
 }
 
 }
+
+
+async function sendCmd(dataHash, callback) {
+
+  var regex = /^\/send$/;
+
+var moment = require('moment'); 
+
+var date = moment().utcOffset(-300).format('LLLL');
+
+var f1 = require('./expo');
+
+  if (regex.test(dataHash.request.text)) {
+    var sender = new promise((resolve, reject) {
+                             
+
+    
+
+      callback(true, date);
+
+  f1.expo;
+
+} else {
+
+return false;
+
+}
+
+}
+
