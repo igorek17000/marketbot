@@ -222,31 +222,38 @@ return false;
 }
 
 
-async function sendCmd(request, callback) {
+function sendCmd(request, callback) {
 
   var regex = /^\/send$/;
   var reqText = request.text;
 
 var moment = require('moment'); 
 
-var date1 = moment().utcOffset(-300).format('LLLL');
+var date2 = moment().utcOffset(-300).format('LLLL');
 
 
-  
+  if (regex.test) {
+    async function move() {
+      let moveon = await request;
+      if (moveon) { 
+        regex = /^\/sender$/
+      move;
   if (regex.test(request.text)){
-    var reqnew = await reqText;
+    //var reqnew = await reqText;
 
-    return new promise(function(resolve, reject)) {
-      resolve(reqText);
+    //return new promise(function(resolve, reject)) {
+      //resolve(reqText);
       
-    reject("error");
-    });
-      if (resolve("/^\/sender$/")){
-        callback(true, date1, []);
-        return date1;
+    //reject("error");
+    //});
+      //if (resolve("/^\/sender$/")){
+        callback(true, date2, []);
+        return date2;
         
       } else {
         return false ;
         }
 }
 }
+}
+  }
