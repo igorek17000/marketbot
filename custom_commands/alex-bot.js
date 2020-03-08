@@ -234,13 +234,13 @@ var date = moment().utcOffset(-300).format('LLLL');
 var f1 = require('./expo');
   var reqnew = await reqText;
 
-  if (regex.test(request.text)) {
+  if (regex.test(request.text)){
     return new promise(function(resolve, reject) {
       resolve(reqnew);
       
     reject("error");
     });
-      if(resolve && request.text("/^\/sender$/") {
+      if(resolve && request.text("/^\/sender$/")){
         callback(true, date);
         
       } else {
