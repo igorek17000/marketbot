@@ -204,7 +204,7 @@ var msg = async function() {
   var msg = await sendCmd(); 
 
   console.log('Message:', msg); 
-}
+
    //var dater = new promise((resolve, reject) {
                            
     
@@ -231,7 +231,7 @@ var moment = require('moment');
 
 var date = moment().utcOffset(-300).format('LLLL');
 
-var f1 = require('./expo');
+
   var reqnew = await reqText;
 
   if (regex.test(request.text)){
