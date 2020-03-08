@@ -188,17 +188,17 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 
 //------------
 
-function date1Cmd(dataHash, callback) {
+function date1Cmd(request, callback) {
 
   var regex = /^\/date1$/;
-
+  var reqText = request.text
 var moment = require('moment'); 
 
 var date = moment().utcOffset(-240).format('LLLL');
 
 
 
-  if (regex.test(dataHash.request.text)) {
+  if (regex.test(request.text)) {
 var msg = async function() { 
 
   var msg = await sendCmd(); 
@@ -222,10 +222,10 @@ return false;
 }
 
 
-async function sendCmd(dataHash, callback) {
+async function sendCmd(request, callback) {
 
   var regex = /^\/send$/;
-  var reqText = dataHash.request.text;
+  var reqText = request.text;
 
 var moment = require('moment'); 
 
@@ -234,7 +234,7 @@ var date = moment().utcOffset(-300).format('LLLL');
 var f1 = require('./expo');
   var reqnew = await reqText;
 
-  if (regex.test(dataHash.request.text)) {
+  if (regex.test(request.text)) {
     //var sender = new promise(function(resolve, reject) => {
       //resolve(reqnew);
       
@@ -244,7 +244,7 @@ var f1 = require('./expo');
         callback(true, date);
         
       } else {
-        console.log(reject);
+        console.log('error');
         }
 }
 
