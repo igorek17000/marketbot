@@ -204,7 +204,7 @@ var msg = async function() {
   var msg = await sendCmd(); 
 
   console.log('Message:', msg); 
-}
+
    //var dater = new promise((resolve, reject) {
                            
     
@@ -220,7 +220,7 @@ return false;
 }
 
 }
-
+}
 
 async function sendCmd(request, callback) {
 
