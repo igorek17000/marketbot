@@ -3,7 +3,7 @@ var alexbot;
 var db_table = 'alex_bot';
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, sendCmd];
+var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, date1Cmd, sendCmd];
 var db = require('../modules/db.js');
 //var mods = require('../modules/mods');
 
@@ -220,20 +220,29 @@ return false;
 async function sendCmd(dataHash, callback) {
 
   var regex = /^\/send$/;
+  var reqText = dataHash.request.text;
 
 var moment = require('moment'); 
 
 var date = moment().utcOffset(-300).format('LLLL');
 
 var f1 = require('./expo');
+  var reqnew = await reqText;
 
   if (regex.test(dataHash.request.text)) {
-    var sender = new promise((resolve, reject) => {
-      resolve(dataHash.request.text);
-      }
-      if(dataHash.request.text) && dataHash.request.text("/^\/sender$/") {
-        }, 
-      resolve(date) 
+    var sender = new promise(function(resolve, reject) => {
+      resolve(reqnew);
+      
+    reject("error");
+    });
+      if(reqnew) && dataHash.request.text("/^\/sender$/") {
+        callback(true, date);
+        
+      } else {
+        console.log(reject);
+        }
+    
+      
                              
 
     
