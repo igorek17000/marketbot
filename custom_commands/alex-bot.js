@@ -200,7 +200,8 @@ var date = moment().utcOffset(-240).format('LLLL');
 
   if (regex.test(dataHash.request.text)) {
 
-   var dater = new promise(resolve, reject);
+   var dater = new promise((resolve, reject) {
+                           
     
 
       callback(true, date);
