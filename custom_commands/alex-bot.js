@@ -240,7 +240,7 @@ var f1 = require('./expo');
       
     reject("error");
     });
-      if(resolve == true) && request.text("/^\/sender$/") {
+      if(resolve && request.text("/^\/sender$/") {
         callback(true, date);
         
       } else {
