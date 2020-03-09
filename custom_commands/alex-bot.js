@@ -253,7 +253,7 @@ var date2 = moment().utcOffset(-300).format('LLLL');
         return date2;
         
       } else {
-        return false ;
+        return false;
         }
 }
 }
