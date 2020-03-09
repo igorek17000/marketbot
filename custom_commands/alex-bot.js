@@ -188,38 +188,7 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 
 //------------
 
-function date1Cmd(request, callback) {
 
-  var regex = /^\/date1$/;
-  var reqText = request.text
-var moment = require('moment'); 
-
-var date = moment().utcOffset(-240).format('LLLL');
-
-
-
-  if (regex.test(request.text)) {
-var msg = async function() { 
-
-  var msg = await sendCmd(); 
-
-  console.log('Message:', msg); 
-
-   //var dater = new promise((resolve, reject) {
-                           
-    
-
-      callback(true, msg);
-
-  
-
-} else {
-
-return false;
-
-}
-}
-}
 
 
 function sendingCmd(request, callback) {
