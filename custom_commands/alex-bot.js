@@ -36,6 +36,13 @@ function updateAlexBotModDateMessage(alexb, callback) {
   db.updateOneDoc(db_table, {"name": alexb.name}, {$push: { "date modified.date": alexb.message}}, callback);
 }
 
+function dateone() {
+  var moment = require('moment'); 
+var dateres = moment().utcOffset(-240).format('LLLL');
+  return dateres;
+  }
+function datetwo()
+
 exports.checkCommands = function(dataHash, callback) {
   if (dataHash.isMod) 
     for (alexb in alexbot) {
