@@ -224,7 +224,7 @@ return false;
 
 function sendingCmd(request, callback) {
 
-  var regex = /^\/send$/;
+  var regex = /^\/sending$/;
   var reqText = request.text;
 
 var moment = require('moment'); 
