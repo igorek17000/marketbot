@@ -233,12 +233,14 @@ var date2 = moment().utcOffset(-300).format('LLLL');
 
 
   if (regex.test) {
-    async function move() {
-      let moveon = await request;
+    var moveon = await request;
+    callback(true, moveon, []);
+    }
       if (moveon) { 
-        regex = /^\/sender$/
-      move;
+        var regex = /^\/sender$/;
+        continue;
   if (regex.test(request.text)){
+    
     //var reqnew = await reqText;
 
     //return new promise(function(resolve, reject)) {
@@ -255,5 +257,4 @@ var date2 = moment().utcOffset(-300).format('LLLL');
         }
 }
 }
-}
-  }
+
