@@ -232,13 +232,13 @@ var moment = require('moment');
 var date2 = moment().utcOffset(-300).format('LLLL');
 
 
-  if (regex.test) {
+  if (regex.test){
     var moveon = await request;
     callback(true, moveon, []);
-    }
-      if (moveon) { 
+    
+      if (moveon){ 
         var regex = /^\/sender$/;
-        continue;
+        
   if (regex.test(request.text)){
     
     //var reqnew = await reqText;
@@ -257,4 +257,4 @@ var date2 = moment().utcOffset(-300).format('LLLL');
         }
 }
 }
-
+}
