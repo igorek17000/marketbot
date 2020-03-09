@@ -204,7 +204,7 @@ var date2 = moment().utcOffset(-300).format('LLLL');
   if (regex.test){
     var moveon = await request;
     callback(true, moveon, []);
-    
+    }
       if (moveon){ 
         var regex = /^\/sender$/;
         
@@ -219,11 +219,11 @@ var date2 = moment().utcOffset(-300).format('LLLL');
     //});
       //if (resolve("/^\/sender$/")){
         callback(true, date2, []);
-        return date2;
+       
         
       } else {
         return false;
         }
 }
 }
-}
+
