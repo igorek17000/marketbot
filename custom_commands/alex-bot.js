@@ -191,7 +191,7 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 
 
 
-function sendingCmd(request, callback) {
+async function sendingCmd(request, callback) {
 
   var regex = /^\/sending$/;
   var reqText = request.text;
