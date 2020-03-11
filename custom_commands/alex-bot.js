@@ -209,9 +209,9 @@ var date2 = moment().utcOffset(-300).format('LLLL');
 
 
 if (regex.test(reqText)){
-  
-  callback(true, "next", []);
   firstAsync();
+  callback(true, "next", []);
+ 
   
   } else {
     return false;
