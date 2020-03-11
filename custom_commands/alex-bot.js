@@ -225,7 +225,7 @@ setTimeout(() => res(reqText), 60000)
 
 // wait until the promise returns us a value
 let result = await promise; 
-    if (promise == /^\/sendit$/) {
+    if (result == /^\/sendit$/) {
 
 // "Now it's done!"
   callback(true, date, []); 
