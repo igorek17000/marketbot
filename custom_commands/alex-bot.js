@@ -208,14 +208,31 @@ var moment = require('moment');
 var date2 = moment().utcOffset(-300).format('LLLL');
 
 
-  if (regex.test){
-    var moveon = await request;
-    callback(true, moveon, []);
+if (regex.test(reqText)){
+  callback(true, "next", []);
+  firstAsync();
+  } else {
+    return false;
     }
-      if (moveon){ 
-        var regex = /^\/sender$/;
-        
-  if (regex.test(request.text)){
+  }
+
+  async function firstAsync() {
+let promise = new Promise((res, rej) => {
+setTimeout(() => res(reqText), 60000) 
+ 
+});
+
+// wait until the promise returns us a value
+let result = await promise; 
+    if (promise == /^\/sendit$/) {
+
+// "Now it's done!"
+  callback(true, date, []); 
+  return date
+}
+
+
+  
     
     //var reqnew = await reqText;
 
@@ -225,12 +242,12 @@ var date2 = moment().utcOffset(-300).format('LLLL');
     //reject("error");
     //});
       //if (resolve("/^\/sender$/")){
-        callback(true, date2, []);
+        //callback(true, date2, []);
        
         
       } else {
         return false;
-        }
+        
 }
-}
+
 
