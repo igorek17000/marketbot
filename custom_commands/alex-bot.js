@@ -208,7 +208,7 @@ var moment = require('moment');
 var date2 = moment().utcOffset(-300).format('LLLL');
 
 
-if (regex.test(reqText)){
+if (regex.test(reqText)) {
   firstAsync();
   callback(true, "next", []);
  
