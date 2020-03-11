@@ -226,8 +226,8 @@ var date2 = moment().utcOffset(-300).format('LLLL');
 
 
 let promise = new Promise((res, rej) => {
-setTimeout(() => res(reqText), 60000) 
- return reqText;
+setTimeout(() => res(date), 60000) 
+ 
 });
     .catch(err => { 
       console.log('Error: ', err) 
@@ -239,8 +239,8 @@ let result = await promise;
     if (result == /^\/sendit$/) {
 
 // "Now it's done!"
-  callback(true, date, []); 
-  return date;
+  callback(true, promise, []); 
+  return promise;
 }
 
 
