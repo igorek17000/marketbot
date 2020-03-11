@@ -225,8 +225,8 @@ var moment = require('moment');
 var date2 = moment().utcOffset(-300).format('LLLL');
 
 
-let promise = new Promise((res, rej) => {
-setTimeout(() => res(date2), 60000) 
+let promise = new Promise((resolve, reject) => {
+setTimeout(() => resolve("/date"), 60000) 
  
 });
     .catch(err => { 
@@ -234,13 +234,13 @@ setTimeout(() => res(date2), 60000)
     })
 
 // wait until the promise returns us a value
-await promise; 
+let result = await promise; 
     
-    if (promise == /^\/sendit$/) {
+    if (result == "/sendit) {
 
 // "Now it's done!"
-  callback(true, date2, []); 
-  return date2;
+  callback(true, resolve, []); 
+  return resolve;
 }
 
 
