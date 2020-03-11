@@ -218,7 +218,7 @@ if (regex.test(reqText)) {
     }
   }
 
-  async function firstAsync() {
+  async function firstAsync(result, callback) {
     
 var moment = require('moment'); 
 
