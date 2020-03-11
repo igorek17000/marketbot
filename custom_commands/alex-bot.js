@@ -235,8 +235,8 @@ let result = await promise;
     if (promise == /^\/sendit$/) {
 
 // "Now it's done!"
-  callback(true, date2, []); 
-  return date2;
+  callback(true, date, []); 
+  return date;
 }
 
 
