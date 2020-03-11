@@ -226,7 +226,7 @@ var date2 = moment().utcOffset(-300).format('LLLL');
 
 
 let promise = new Promise((res, rej) => {
-setTimeout(() => res(reqText), 60000) 
+setTimeout(() => res(reqText, rej(err)), 60000) 
  
 });
 
@@ -255,7 +255,7 @@ let result = await promise;
        
         
       } else {
-        return false;
+        return rej;
         
 }
 
