@@ -229,7 +229,7 @@ let promise = new Promise((res, rej) => {
 setTimeout(() => res(reqText), 60000) 
  
 });
-    .catch(err => { 
+    catch(err => { 
       console.log('Error: ', err) 
     })
 
