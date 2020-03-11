@@ -218,6 +218,12 @@ if (regex.test(reqText)){
   }
 
   async function firstAsync() {
+    
+var moment = require('moment'); 
+
+var date2 = moment().utcOffset(-300).format('LLLL');
+
+
 let promise = new Promise((res, rej) => {
 setTimeout(() => res(reqText), 60000) 
  
@@ -228,8 +234,8 @@ let result = await promise;
     if (result == /^\/sendit$/) {
 
 // "Now it's done!"
-  callback(true, date, []); 
-  return date
+  callback(true, date2, []); 
+  return date2;
 }
 
 
