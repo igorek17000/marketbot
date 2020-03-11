@@ -226,9 +226,12 @@ var date2 = moment().utcOffset(-300).format('LLLL');
 
 
 let promise = new Promise((res, rej) => {
-setTimeout(() => res(reqText, rej(err)), 60000) 
+setTimeout(() => res(reqText), 60000) 
  
 });
+    .catch(err => { 
+      console.log('Error: ', err) 
+    })
 
 // wait until the promise returns us a value
 let result = await promise; 
@@ -255,7 +258,7 @@ let result = await promise;
        
         
       } else {
-        return rej;
+        return false;
         
 }
 
