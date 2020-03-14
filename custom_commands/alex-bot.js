@@ -218,7 +218,7 @@ if (regex.test(reqText)) {
     }
   }
 
-  async function firstAsync(request, callback) {
+  async function firstAsync() {
     //var regex = /^\/sendit$/;
   var reqText = request.text;
 
