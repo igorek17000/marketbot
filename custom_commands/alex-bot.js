@@ -198,7 +198,7 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 
 
 
-async function sendingCmd(request, callback) {
+function sendingCmd(request, callback) {
 
   var regex = /^\/sending$/;
   var reqText = request.text;
@@ -218,30 +218,30 @@ if (regex.test(reqText)) {
     }
   }
 
-  async function firstAsync(result, callback) {
-    
+  async function firstAsync(request, callback) {
+    //var regex = /^\/sendit$/;
+  var reqText = request.text;
+
 var moment = require('moment'); 
 
 var date2 = moment().utcOffset(-300).format('LLLL');
 
 
-let promise = new Promise((resolve, reject) => {
-setTimeout(() => resolve("/date"), 60000) 
+return new Promise((resolve, reject) => {
+resolve("/date")
  
 });
-    .catch(err => { 
+    catch(err => { 
       console.log('Error: ', err) 
-    })
+    });
 
 // wait until the promise returns us a value
-let result = await promise; 
-    
-    if (result == "/sendit) {
+
 
 // "Now it's done!"
   callback(true, resolve, []); 
   return resolve;
-}
+
 
 
   
@@ -258,7 +258,7 @@ let result = await promise;
        
         
       } else {
-        return false;
+        return err;
         
 }
 
