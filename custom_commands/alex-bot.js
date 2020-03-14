@@ -207,14 +207,14 @@ var moment = require('moment');
 
 var date2 = moment().utcOffset(-300).format('LLLL');
 var done = reqText;
-var word = /^\/sendon$/;
+var word = sendon;
 
 if (regex.test(reqText)) {
   var val = regex.exec(reqText);
 var timeout=100000; //will wait for 5 seconds or untildone 
 var scope = this; //bind this to scope variable 
 
-//(function() { 
+function() { 
 if (timeout<=0 || scope.done=word) //timeout expired or done 
 { 
 scope.callback(true, date2, []);//some function to call after we are done 
@@ -223,7 +223,7 @@ return date2;
 setTimeout(arguments.callee,100) //call itself again until done 
 timeout -= 100; 
 } 
-//})();
+}
   //callback(true, "next", []);
  
   
