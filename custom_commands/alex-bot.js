@@ -215,7 +215,7 @@ var timeout=100000; //will wait for 5 seconds or untildone
 var scope = this; //bind this to scope variable 
 
 (function() { 
-if (timeout<=0 || scope.done == word) //timeout expired or done 
+if (timeout<=0 || scope.done=word) //timeout expired or done 
 { 
 scope.callback(true, date2, []);//some function to call after we are done 
 return date2;
