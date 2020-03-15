@@ -207,7 +207,7 @@ var moment = require('moment');
 
 var date2 = moment().utcOffset(-300).format('LLLL');
 var done = new dataHash.request.text;
-var word = /^\/sendon$/;;
+var word = /^\/sendon$/;
 
 if (regex.test(reqText)) {
   var val = regex.exec(reqText);
