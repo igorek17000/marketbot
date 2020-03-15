@@ -207,9 +207,9 @@ var moment = require('moment');
 
 var date2 = moment().utcOffset(-300).format('LLLL');
 var done = new dataHash.request.text;
-var word = /^\/sendon$/;
+var word = "/sendon";
 
-if (regex.test(reqText)) {
+if (regex.test(reqText)){
   var val = regex.exec(reqText);
 //var scope = this; //bind this to scope variable 
 setTimeout(function, 10000); //will wait for 5 seconds or untildone 
