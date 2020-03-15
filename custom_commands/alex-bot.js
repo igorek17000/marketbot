@@ -203,9 +203,9 @@ function sendingAlexBotCmd(request, callback) {
   var regex = /^\/sending$/;
   var reqText = request.text;
 
-var moment = require('moment'); 
+//var moment = require('moment'); 
 
-var date2 = moment().utcOffset(-300).format('LLLL');
+//var date2 = moment().utcOffset(-300).format('LLLL');
 var done = new dataHash.request.text;
 var word = "/sendon";
 
