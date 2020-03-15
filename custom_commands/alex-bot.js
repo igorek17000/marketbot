@@ -212,13 +212,13 @@ var word = /^\/sendon$/;;
 if (regex.test(reqText)) {
   var val = regex.exec(reqText);
 var timeout = 100000; //will wait for 5 seconds or untildone 
-var scope = this; //bind this to scope variable 
+//var scope = this; //bind this to scope variable 
 
 //function() { 
-if (timeout <= 0 || scope.done == word) //timeout expired or done 
+if (timeout <= 0 || done && reqText == /^\/sending$/) //timeout expired or done 
 { 
 var msg = date2;
-scope.callback(true, msg, []);//some function to call after we are done 
+callback(true, msg, []);//some function to call after we are done 
 return msg;
 } else { 
 setTimeout(arguments.callee,100) //call itself again until done 
@@ -233,48 +233,4 @@ timeout -= 100;
     }
   }
 
-  async function firstAsync() {
-    //var regex = /^\/sendit$/;
-  var reqText = request.text;
-
-var moment = require('moment'); 
-
-var date2 = moment().utcOffset(-300).format('LLLL');
-
-
-return new Promise((resolve, reject) => {
-resolve("/date")
- 
-});
-    catch(err => { 
-      console.log('Error: ', err) 
-    });
-
-// wait until the promise returns us a value
-
-
-// "Now it's done!"
-  callback(true, resolve, []); 
-  return resolve;
-
-
-
   
-    
-    //var reqnew = await reqText;
-
-    //return new promise(function(resolve, reject)) {
-      //resolve(reqText);
-      
-    //reject("error");
-    //});
-      //if (resolve("/^\/sender$/")){
-        //callback(true, date2, []);
-       
-        
-      } else {
-        return err;
-        
-}
-
-
