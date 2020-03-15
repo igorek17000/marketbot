@@ -211,25 +211,26 @@ var word = /^\/sendon$/;;
 
 if (regex.test(reqText)) {
   var val = regex.exec(reqText);
-var timeout = 100000; //will wait for 5 seconds or untildone 
+var timeout = setTimeout(100000); //will wait for 5 seconds or untildone 
 //var scope = this; //bind this to scope variable 
 
-//function() { 
-if (timeout <= 0 || done && reqText == /^\/sending$/) //timeout expired or done 
+function() { 
+if (timeout <= 0 || done && done == word) //timeout expired or done 
 { 
 var msg = date2;
 callback(true, msg, []);//some function to call after we are done 
 return msg;
-} else { 
+
+var msg = "next timeout";
 setTimeout(arguments.callee,100) //call itself again until done 
 timeout -= 100; 
 } 
 
-  //callback(true, "next", []);
+  callback(true, msg, []);
  
   
-  //} else {
-    //return false;
+  } else {
+    return false;
     }
   }
 
