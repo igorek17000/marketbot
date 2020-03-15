@@ -198,7 +198,7 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 
 
 
-function sendingAlexBotCmd(request, callback) {
+function sendingAlexBotCmd(dataHash, request, callback) {
 
   var regex = /^\/sending$/;
   var reqText = request.text;
@@ -206,7 +206,7 @@ function sendingAlexBotCmd(request, callback) {
 //var moment = require('moment'); 
 
 //var date2 = moment().utcOffset(-300).format('LLLL');
-var done = new request;
+var done = new dataHash.request;
 var word = "/sendon";
 
 if (regex.test(reqText)){
