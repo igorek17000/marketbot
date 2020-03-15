@@ -223,7 +223,7 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 
 
 
-function sendingAlexBotCmd(dataHash, request, callback) {
+function sendingAlexBotCmd(request, callback) {
 
   var regex = /^\/sending$/;
   var reqText = request.text;
