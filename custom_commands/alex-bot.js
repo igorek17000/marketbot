@@ -212,14 +212,14 @@ var word = "/sendon";
 if (regex.test(reqText)){
   var val = regex.exec(reqText);
 //var scope = this; //bind this to scope variable 
-setTimeout(function, 10000); //will wait for 5 seconds or untildone 
-function() { 
-if (Timeout <= 0 || done && done == word) //timeout expired or done 
+var timer = setTimeout(function () {  //will wait for 5 seconds or untildone 
+if (timer <= 0 || done && done == word) //timeout expired or done 
 { 
-var msg = date;
+
+var msg = "/date";
 callback(true, msg, []);//some function to call after we are done 
 return msg;
-}
+}, 100);
 
 var msg = "next timeout";
 setTimeout(arguments.callee,100) //call itself again until done 
