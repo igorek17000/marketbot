@@ -211,11 +211,10 @@ var word = /^\/sendon$/;;
 
 if (regex.test(reqText)) {
   var val = regex.exec(reqText);
-var timeout = setTimeout(100000); //will wait for 5 seconds or untildone 
 //var scope = this; //bind this to scope variable 
-
+setTimeout(100000); //will wait for 5 seconds or untildone 
 function() { 
-if (timeout <= 0 || done && done == word) //timeout expired or done 
+if (Timeout <= 0 || done && done == word) //timeout expired or done 
 { 
 var msg = date;
 callback(true, msg, []);//some function to call after we are done 
