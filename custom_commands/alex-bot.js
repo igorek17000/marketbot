@@ -230,6 +230,7 @@ timeout -= 100;
  
   
   } else {
+console.log(errors);
     return false;
     }
   }
