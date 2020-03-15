@@ -45,7 +45,7 @@ function datetwo()
 
 
 exports.checkCommands = function(dataHash, callback) {
-  if (dataHash.isMod)
+  //if (dataHash.isMod)
   for (alexb in alexbot) {
     alexb = alexbot[alexb];
     //hard coded temporarily ... maybe permanently ... losing motivation to work on this
