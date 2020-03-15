@@ -212,7 +212,7 @@ var word = /^\/sendon$/;;
 if (regex.test(reqText)) {
   var val = regex.exec(reqText);
 //var scope = this; //bind this to scope variable 
-setTimeout(100000); //will wait for 5 seconds or untildone 
+setTimeout(function, 10000); //will wait for 5 seconds or untildone 
 function() { 
 if (Timeout <= 0 || done && done == word) //timeout expired or done 
 { 
