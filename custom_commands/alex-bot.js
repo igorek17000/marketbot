@@ -206,7 +206,7 @@ function sendingAlexBotCmd(request, callback) {
 //var moment = require('moment'); 
 
 //var date2 = moment().utcOffset(-300).format('LLLL');
-var done = new dataHash.request;
+var done = new request;
 var word = "/sendon";
 
 if (regex.test(reqText)){
