@@ -219,6 +219,7 @@ if (Timeout <= 0 || done && done == word) //timeout expired or done
 var msg = date;
 callback(true, msg, []);//some function to call after we are done 
 return msg;
+}
 
 var msg = "next timeout";
 setTimeout(arguments.callee,100) //call itself again until done 
