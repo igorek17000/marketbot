@@ -217,7 +217,7 @@ var timeout = setTimeout(100000); //will wait for 5 seconds or untildone
 function() { 
 if (timeout <= 0 || done && done == word) //timeout expired or done 
 { 
-var msg = date2;
+var msg = date;
 callback(true, msg, []);//some function to call after we are done 
 return msg;
 
@@ -227,6 +227,7 @@ timeout -= 100;
 } 
 
   callback(true, msg, []);
+return msg;
  
   
   } else {
