@@ -43,23 +43,47 @@ var dateres = moment().utcOffset(-240).format('LLLL');
   }
 function datetwo()
 
+
 exports.checkCommands = function(dataHash, callback) {
-  if (dataHash.isMod) 
-    for (alexb in alexbot) {
-      alexb = alexbot[alexb];
+  for (alexb in alexbot) {
+    alexb = alexbot[alexb];
+    //hard coded temporarily ... maybe permanently ... losing motivation to work on this
+    if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp')
+      continue;
+    var cmdReg = new RegExp(alexb.regex, "i");
+    if (dataHash.request.text && cmdReg.test(dataHash.request.text)){
+      var val = alexbReg.exec(dataHash.request.text);
+
+      callback(true, alexb.message, alexb.attachments);
+      break;
+    }
+  }
+
+
+  for (alexb in alexBotCommands) {
+    var test = alexBotCommands[alexb](dataHash.request, dataHash.bots, dataHash.isMod, callback);
+    if (test)
+      return test;
+  }
+}
+
+//exports.checkCommands = function(dataHash, callback) {
+  //if (dataHash.isMod) 
+    //for (alexb in alexbot) {
+      //alexb = alexbot[alexb];
    //if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
 //continue;
 
-     var alexbReg = new RegExp(alexb.regex, "i");
+     //var alexbReg = new RegExp(alexb.regex, "i");
        
         
-      if (alexb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && alexbReg.test(dataHash.request.text)){
-        var val = alexbReg.exec(dataHash.request.text);
+      //if (alexb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && alexbReg.test(dataHash.request.text)){
+        //var val = alexbReg.exec(dataHash.request.text);
 
-        callback(true, alexb.message, []);
-        break;
-      }
-    }
+        //callback(true, alexb.message, []);
+        //break;
+      //}
+    //}
   
 
   for (cmd in alexBotCommands) {
