@@ -50,8 +50,8 @@ exports.checkCommands = function(dataHash, callback) {
     //hard coded temporarily ... maybe permanently ... losing motivation to work on this
     if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp')
       continue;
-    var cmdReg = new RegExp(alexb.regex, "i");
-    if (dataHash.request.text && cmdReg.test(dataHash.request.text)){
+    var alexbReg = new RegExp(alexb.regex, "i");
+    if (dataHash.request.text && alexbReg.test(dataHash.request.text)){
       var val = alexbReg.exec(dataHash.request.text);
 
       callback(true, alexb.message, alexb.attachments);
@@ -60,8 +60,8 @@ exports.checkCommands = function(dataHash, callback) {
   }
 
 
-  for (alexb in alexBotCommands) {
-    var test = alexBotCommands[alexb](dataHash.request, dataHash.bots, dataHash.isMod, callback);
+  for (cmd in alexBotCommands) {
+    var test = alexBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
     if (test)
       return test;
   }
@@ -86,12 +86,12 @@ exports.checkCommands = function(dataHash, callback) {
     //}
   
 
-  for (cmd in alexBotCommands) {
-    var test = alexBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
-    if (test)
-      return test;
-  }
- }
+  //for (cmd in alexBotCommands) {
+    //var test = alexBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
+    //if (test)
+      //return test;
+  //}
+ //}
 
 
 exports.setAll = function(alexbHash) {
