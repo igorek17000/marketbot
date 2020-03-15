@@ -45,6 +45,7 @@ function datetwo()
 
 
 exports.checkCommands = function(dataHash, callback) {
+  if (dataHash.isMod)
   for (alexb in alexbot) {
     alexb = alexbot[alexb];
     //hard coded temporarily ... maybe permanently ... losing motivation to work on this
@@ -54,7 +55,7 @@ exports.checkCommands = function(dataHash, callback) {
     if (dataHash.request.text && alexbReg.test(dataHash.request.text)){
       var val = alexbReg.exec(dataHash.request.text);
 
-      callback(true, alexb.message, alexb.attachments);
+      callback(true, alexb.message, alexb.attachments, []);
       break;
     }
   }
