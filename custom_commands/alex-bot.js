@@ -12,7 +12,7 @@ exports.modName = "AlexBot";
 
 function getAllAlexbot() {
   db.getAllDocuments(db_table, function(res){
-    alexbot = res;
+    commands = res;
   });
 }
 
