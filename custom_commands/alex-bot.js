@@ -49,8 +49,8 @@ exports.checkCommands = function(dataHash, callback) {
   for (alexb in alexbot) {
     alexb = alexbot[alexb];
     //hard coded temporarily ... maybe permanently ... losing motivation to work on this
-    if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp')
-      continue;
+    //if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp')
+      //continue;
     var alexbReg = new RegExp(alexb.regex, "i");
     if (dataHash.request.text && alexbReg.test(dataHash.request.text)){
       var val = alexbReg.exec(dataHash.request.text);
@@ -265,9 +265,9 @@ var msg = "next timeout";
 return msg;
  
   
-  } else {
-console.log(errors);
-    return false;
+  //} else {
+//console.log(errors);
+    //return false;
     }
   }
 
