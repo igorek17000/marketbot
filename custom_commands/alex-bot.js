@@ -258,7 +258,7 @@ var timer = setTimeout(function () { //will wait for 5 seconds or untildone
 
   setTimeout(arguments.callee,100) //call itself again until done 
 setTimeout -= 100; 
-  
+  }
   
 
   timer;
@@ -286,7 +286,7 @@ return msg;
   //} else {
 //console.log(errors);
     //return false;
-    }
+    
   }
 
   
