@@ -41,7 +41,25 @@ function updateAlexBotModDateMessage(alexb, callback) {
 //var request = require('request'); 
 function getQuote() { 
 return new Promise(function(resolve, reject) { 
-if (getQuote, function(error, response, body) { 
+server = http.createServer(function (req, res) {
+  req.chunks = [];
+
+  req.on('data', function (chunk) {
+    req.chunks.push(chunk.toString());
+  });
+
+  router.dispatch(req, res, function(err) {
+    res.writeHead(err.status, {"Content-Type": "text/plain"});
+    res.end(err.message);
+  });
+});
+
+port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
+ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
+
+server.listen(port, ip);
+
+if (data, function(error, response, body) { 
 if (error) return reject(error); 
 resolve(body); 
 }); 
