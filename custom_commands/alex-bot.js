@@ -246,7 +246,7 @@ function sendingAlexBotCmd(request, callback) {
   var regex = /^\/sending$/;
   var reqText = request.text;
   
-  var done = new request;
+  var done = new request.text;
 var word = "/sendon";
 var timer = setTimeout(function () { //will wait for 5 seconds or untildone 
  }, 100);
