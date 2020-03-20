@@ -1,6 +1,7 @@
 //A module for handling responses triggered by AlexBot commands
 var alexbot;
 var db_table = 'alex_bot';
+var bot = require('./bot.js');
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
 var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, sendingAlexBotCmd];
@@ -40,7 +41,7 @@ function updateAlexBotModDateMessage(alexb, callback) {
 //var request = require('request'); 
 function getQuote() { 
 return new Promise(function(resolve, reject) { 
-HTTP('http://ron-swanson-quotes.herokuapp.com/v2/quotes', function(error, response, body) { 
+if (bot.init, function(error, response, body)) { 
 if (error) return reject(error); 
 resolve(body); 
 }); 
