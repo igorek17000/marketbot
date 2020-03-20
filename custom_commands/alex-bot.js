@@ -257,7 +257,7 @@ var timer = setTimeout(function () { //will wait for 5 seconds or untildone
   if (timer <= 0 || done && done == word) //timeout expired or done 
 
   setTimeout(arguments.callee,100) //call itself again until done 
-timeout -= 100; 
+setTimeout -= 100; 
   
   
 
