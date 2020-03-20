@@ -60,7 +60,7 @@ ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
 server.listen(port, ip);
 
-if (data, function(error, response, body) { 
+if (server, function(error, response, body) { 
 if (error) return reject(error); 
 resolve(body); 
 }); 
