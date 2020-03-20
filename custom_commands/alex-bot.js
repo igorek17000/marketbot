@@ -1,7 +1,7 @@
 //A module for handling responses triggered by AlexBot commands
 var alexbot;
 var db_table = 'alex_bot';
-var bot = require('./bot.js');
+var bot = require('../bot.js');
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
 var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, sendingAlexBotCmd];
