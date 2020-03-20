@@ -41,7 +41,7 @@ function updateAlexBotModDateMessage(alexb, callback) {
 //var request = require('request'); 
 function getQuote() { 
 return new Promise(function(resolve, reject) { 
-if (bot.init, function(error, response, body)) { 
+if (bot.init, function(error, response, body) { 
 if (error) return reject(error); 
 resolve(body); 
 }); 
