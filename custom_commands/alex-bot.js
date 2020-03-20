@@ -68,7 +68,7 @@ return result; // 1
 
 //server.listen(port, ip);
 
-if (result, function(error, response, body) { 
+Promise(result, function(error, response, body) { 
 if (error) return reject(error); 
 resolve(body); 
 }); 
