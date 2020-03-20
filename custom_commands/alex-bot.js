@@ -41,7 +41,7 @@ function updateAlexBotModDateMessage(alexb, callback) {
 
 //var request = require('request'); 
 function getQuote() { 
-return new Promise(function(resolve, reject) { 
+
 server = http.createServer(function (req, res) {
   req.chunks = [];
 
@@ -55,12 +55,19 @@ server = http.createServer(function (req, res) {
   });
 });
 
+var promise = new Promise(function(resolve, reject) { 
+setTimeout(() => resolve(server), 1000); }).then(function(result) { alert(result); // 1 
+return promise;
+}
+//new Promise((resolve, reject) => { // (*) 
+//setTimeout(() => resolve(result), 1000); });
+
 //port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
 //ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
 //server.listen(port, ip);
 
-if (server, function(error, response, body) { 
+if (result, function(error, response, body) { 
 if (error) return reject(error); 
 resolve(body); 
 }); 
