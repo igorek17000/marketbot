@@ -5,7 +5,7 @@ var moment = require('moment');
 var date = moment().utcOffset(-300).format('LLLL');
 var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, sendingAlexBotCmd];
 var db = require('../modules/db.js');
-var HTTPS = require('https');
+var HTTP = require('https');
 //var mods = require('../modules/mods');
 
 getAllAlexbot();
@@ -40,7 +40,7 @@ function updateAlexBotModDateMessage(alexb, callback) {
 //var request = require('request'); 
 function getQuote() { 
 return new Promise(function(resolve, reject) { 
-HTTPS('http://ron-swanson-quotes.herokuapp.com/v2/quotes', function(error, response, body) { 
+HTTP('http://ron-swanson-quotes.herokuapp.com/v2/quotes', function(error, response, body) { 
 if (error) return reject(error); 
 resolve(body); 
 }); 
