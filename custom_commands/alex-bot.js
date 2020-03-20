@@ -57,7 +57,7 @@ function dateone() {
 var dateres = moment().utcOffset(-240).format('LLLL');
   return dateres;
   }
-function datetwo()
+
 
 
 exports.checkCommands = function(dataHash, callback) {
