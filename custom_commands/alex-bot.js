@@ -7,7 +7,7 @@ var date = moment().utcOffset(-300).format('LLLL');
 var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd];
 var db = require('../modules/db.js');
 var http = require('http');
-var server;
+var server, port, ip;
 //var mods = require('../modules/mods');
 
 getAllAlexbot();
