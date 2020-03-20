@@ -3,7 +3,7 @@ var alexbot;
 var db_table = 'alex_bot';
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd];
+var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, sendingAlexBotCmd];
 var db = require('../modules/db.js');
 var HTTPS = require('https');
 //var mods = require('../modules/mods');
