@@ -5,6 +5,7 @@ var moment = require('moment');
 var date = moment().utcOffset(-300).format('LLLL');
 var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, sendingAlexBotCmd];
 var db = require('../modules/db.js');
+var HTTPS = require('https');
 //var mods = require('../modules/mods');
 
 getAllAlexbot();
@@ -35,6 +36,21 @@ function updateAlexBotModDate(alexb, callback) {
 function updateAlexBotModDateMessage(alexb, callback) {
   db.updateOneDoc(db_table, {"name": alexb.name}, {$push: { "date modified.date": alexb.message}}, callback);
 }
+
+function getQuote() { 
+var quote; 
+return new Promise(function(resolve, reject) { 
+HTTPS('http://ron-swanson-quotes.herokuapp.com/v2/quotes', function(error, response, body) { 
+quote = body; 
+resolve(quote); 
+}); 
+}); 
+} 
+async function main() { 
+var quote = await getQuote(); 
+console.log(quote); 
+} 
+
 
 function dateone() {
   var moment = require('moment'); 
@@ -141,6 +157,9 @@ function addAlexBotCmd(request, bots, isMod, callback) {
 
     alexbot.push(alexbHash);
     addAlexBotToDB(alexbHash);
+main(); 
+console.log('Ron once said,');
+
     var msg = "AlexBot command added! Use '/alexbot describe " + val[1] + "' to add a description";
     callback(true, msg, []);
     return msg;
