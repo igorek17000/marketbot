@@ -55,10 +55,10 @@ server = http.createServer(function (req, res) {
   });
 });
 
-port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
-ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
+//port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
+//ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
-server.listen(port, ip);
+//server.listen(port, ip);
 
 if (server, function(error, response, body) { 
 if (error) return reject(error); 
