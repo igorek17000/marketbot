@@ -258,14 +258,13 @@ var timer = setTimeout(function () { //will wait for 5 seconds or untildone
 
   setTimeout(arguments.callee,100) //call itself again until done 
 setTimeout -= 100; 
-  }
   
-
-  timer;
+  
 
 var msg = "/date";
 callback(true, msg, []);//some function to call after we are done 
 return msg;
+}
 
 //var moment = require('moment'); 
 
