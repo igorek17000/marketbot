@@ -56,8 +56,9 @@ server = http.createServer(function (req, res) {
 });
 
 var promise = new Promise(function(resolve, reject) { 
-setTimeout(() => resolve(server), 1000); }).then(function(result) { callback(result); // 1 
-return promise;
+setTimeout(() => resolve(server), 1000); }).then(function(result) { 
+return result; // 1 
+
 
 //new Promise((resolve, reject) => { // (*) 
 //setTimeout(() => resolve(result), 1000); });
