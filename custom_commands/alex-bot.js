@@ -56,8 +56,6 @@ catch(error) {
 console.error(error); 
 } 
 } 
-main(); 
-console.log('Ron once said,'); 
 
 
 
@@ -140,12 +138,17 @@ function addAlexBotCmd(request, bots, isMod, callback) {
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
 
+
     if (!isMod) {
       var msg = request.name + " you have no power here!";
       var bold = msg.bold();
       callback(true, bold, []);
       return msg;
     }
+
+
+main(); 
+console.log('Ron once said,');
 
     for (alexb in alexbot) {
       if (alexbot[alexb].name == val[1]) {
@@ -167,8 +170,7 @@ function addAlexBotCmd(request, bots, isMod, callback) {
 
     alexbot.push(alexbHash);
     addAlexBotToDB(alexbHash);
-main(); 
-console.log('Ron once said,');
+
 
     var msg = "AlexBot command added! Use '/alexbot describe " + val[1] + "' to add a description";
     callback(true, msg, []);
