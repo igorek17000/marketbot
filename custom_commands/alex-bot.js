@@ -63,10 +63,10 @@ return result; // 1
 //new Promise((resolve, reject) => { // (*) 
 //setTimeout(() => resolve(result), 1000); });
 
-//port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
-//ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
+port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
+ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
-//server.listen(port, ip);
+server.listen(port, ip);
 
 Promise(result, function(error, response, body) { 
 if (error) return reject(error); 
