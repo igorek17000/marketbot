@@ -8,7 +8,7 @@ var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd];
 var db = require('../modules/db.js');
 var http = require('http');
 
-var = server, ip, router;
+var, server, ip, router;
 server = http.createServer(function (req, res) {
   req.chunks = [];
 
