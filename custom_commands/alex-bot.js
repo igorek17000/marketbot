@@ -7,7 +7,26 @@ var date = moment().utcOffset(-300).format('LLLL');
 var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd];
 var db = require('../modules/db.js');
 var http = require('http');
-var server, port, ip;
+
+var = server, ip, router;
+server = http.createServer(function (req, res) {
+  req.chunks = [];
+
+  req.on('data', function (chunk) {
+    req.chunks.push(chunk.toString());
+  });
+
+  router.dispatch(req, res, function(err) {
+    res.writeHead(err.status, {"Content-Type": "text/plain"});
+    res.end(err.message);
+  });
+});
+
+port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
+ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
+
+server.listen(port, ip);
+
 //var mods = require('../modules/mods');
 
 getAllAlexbot();
@@ -41,19 +60,7 @@ function updateAlexBotModDateMessage(alexb, callback) {
 
 //var request = require('request'); 
 function getQuote() { 
-var = server, ip, router;
-server = http.createServer(function (req, res) {
-  req.chunks = [];
 
-  req.on('data', function (chunk) {
-    req.chunks.push(chunk.toString());
-  });
-
-  router.dispatch(req, res, function(err) {
-    res.writeHead(err.status, {"Content-Type": "text/plain"});
-    res.end(err.message);
-  });
-});
 
 var promise = new Promise(function(resolve, reject) { 
 setTimeout(() => resolve(server), 1000); }).then(function(result) { 
@@ -63,14 +70,12 @@ return result; // 1
 //new Promise((resolve, reject) => { // (*) 
 //setTimeout(() => resolve(result), 1000); });
 
-port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
-ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
-server.listen(port, ip);
 
 Promise(result, function(error, response, body) { 
 if (error) return reject(error); 
-resolve(body); 
+var data = body;
+resolve(data); 
 }); 
 }); 
 } 
