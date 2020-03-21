@@ -41,7 +41,7 @@ function updateAlexBotModDateMessage(alexb, callback) {
 
 //var request = require('request'); 
 function getQuote() { 
-
+var = server, ip, router;
 server = http.createServer(function (req, res) {
   req.chunks = [];
 
