@@ -1,4 +1,7 @@
 //A module for handling responses triggered by AlexBot commands
+
+#!/bin/env node
+
 var alexbot;
 var db_table = 'alex_bot';
 var bot = require('../bot.js');
@@ -8,7 +11,7 @@ var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd];
 var db = require('../modules/db.js');
 var http = require('http');
 
-var server, ip, router;
+var server, port, ip, router;
 server = http.createServer(function (req, res) {
   req.chunks = [];
 
