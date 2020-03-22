@@ -216,7 +216,7 @@ function bodyCmd(request, bots, isMod, callback) {
     //val[1] = val[1].toLowerCase();
     for (cmd in commands) {
       if (commands[cmd].name == "draft") {
-        commands[cmd].body = val[1];
+        commands[cmd]["body"] = val[1];
         bodyCmdDB(commands[cmd]);
 
         var msg = "Email body added. Type /send to send email.";
@@ -238,7 +238,7 @@ function sendCmd(request, callback) {
 
   if (regex.test(request.text)) {
 var nodemailer = require('nodemailer');
-    if(cmd.name == "draft")
+    if(cmd.name = "draft")
 var Transport = nodemailer.createTransport({
 
 service: 'gmail',
