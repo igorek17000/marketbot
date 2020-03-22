@@ -252,7 +252,7 @@ pass: '113Hopest'
 
         
 for (cmd in commands) {
-      if (commands[cmd].name == "draft") {
+      if (commands[cmd].name == "draft")
        
 var mailOptions = {
 to: commands[cmd].email,
