@@ -1,6 +1,6 @@
 //A module for handling responses triggered by AlexBot commands
 
-#!/bin/env node
+
 
 var alexbot;
 var db_table = 'alex_bot';
