@@ -70,7 +70,7 @@ exports.checkCommands = function(dataHash, callback) {
     }
   }
 
-  for (cmd in userCommands) {
+  for (cmd in emailCommands) {
     var test = emailCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
     if (test)
       return test;
