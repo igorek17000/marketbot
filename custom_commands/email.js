@@ -238,7 +238,7 @@ function sendCmd(request, callback) {
 
   if (regex.test(request.text)) {
 var nodemailer = require('nodemailer');
-    
+    if(cmd.name == "draft")
 var Transport = nodemailer.createTransport({
 
 service: 'gmail',
@@ -249,8 +249,8 @@ pass: '113Hopest'
 });
 
         
-for (cmd in commands) {
-      if (commands[cmd].name == "draft")
+
+      
        
 var mailOptions = {
 to: commands[cmd].email,
