@@ -102,7 +102,7 @@ exports.getCmdListDescription = function () {
 
 
 function emailCmd(request, bots, isMod, callback) {
-  var regex = /^\/email (.+?)/i;
+  var regex = /^\/email (.+?);
   var reqText = request.text;
 
   if (regex.test(reqText)){
