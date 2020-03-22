@@ -253,11 +253,11 @@ pass: '113Hopest'
       
        
 var mailOptions = {
-to: commands[cmd].email,
+to: cmd.email,
 from: 'alexdeabot@gmail.com',
-subject: commands[cmd].subject,
+subject: cmd.subject,
 generateTextFromHTML: true,
-text: commands[cmd].body
+text: cmd.body
 };
       
 Transport.sendMail(mailOptions, function(error, response) {
