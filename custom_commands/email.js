@@ -1,6 +1,6 @@
 
 var commands;
-var userCommands = [addCmd, describeCmd, editCmd, removeCmd];
+var userCommands = [emailCmd, describeCmd, editCmd, removeCmd];
 
 var db = require('../modules/db.js');
 var db_table = 'email';
@@ -98,7 +98,7 @@ exports.getCmdListDescription = function () {
 }
 
 
-function addCmd(request, bots, isMod, callback) {
+function emailCmd(request, bots, isMod, callback) {
   var regex = /^\/cmd add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
