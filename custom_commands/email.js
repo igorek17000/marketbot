@@ -132,7 +132,7 @@ function emailCmd(request, bots, isMod, callback) {
 
     commands.push(cmdHash);
     addCmdToDB(cmdHash);
-    var msg = "Type /subject followed by email subject to continue;
+    var msg = "Type /subject followed by email subject to continue";
     callback(true, msg, []);
     return msg;
       }
