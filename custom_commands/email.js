@@ -1,6 +1,6 @@
 
 var commands;
-var emailCommands = [emailCmd, subjectCmd, deleteCmd, bodyCmd];
+var emailCommands = [emailCmd, subjectCmd, deleteCmd, bodyCmd, sendCmd];
 
 var db = require('../modules/db.js');
 var db_table = 'email';
@@ -234,7 +234,7 @@ function bodyCmd(request, bots, isMod, callback) {
 }
 
 
-function emailCmd(request, callback) {
+function sendCmd(request, callback) {
   var regex = /^\/send$/; 
   var reqText = request.text; 
 
