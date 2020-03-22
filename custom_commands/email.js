@@ -234,11 +234,11 @@ function bodyCmd(request, bots, isMod, callback) {
 }
 
 
-function emailCmd(dataHash, request, callback) {
+function emailCmd(request, callback) {
   var regex = /^\/send$/; 
-  var reqText = dataHash.request.text; 
+  var reqText = request.text; 
 
-  if (regex.test(dataHash.request.text)) {
+  if (regex.test(request.text)) {
 var nodemailer = require('nodemailer');
     
 var Transport = nodemailer.createTransport({
