@@ -232,3 +232,44 @@ function bodyCmd(request, bots, isMod, callback) {
     return msg;
   }
 }
+
+
+function emailCmd(dataHash, request, callback) {
+  var regex = /^\/send$/; 
+  var reqText = dataHash.request.text; 
+
+  if (regex.test(dataHash.request.text)) {
+var nodemailer = require('nodemailer');
+    
+var Transport = nodemailer.createTransport({
+
+service: 'gmail',
+auth: {
+user: 'alexdeabot@gmail.com',
+pass: '113Hopest'
+}
+});
+
+        
+for (cmd in commands) {
+      if (commands[cmd].name == "draft") {
+       
+var mailOptions = {
+to: commands[cmd].email,
+from: 'alexdeabot@gmail.com',
+subject: commands[cmd].subject,
+generateTextFromHTML: true,
+text: commands[cmd].body
+};
+      }
+Transport.sendMail(mailOptions, function(error, response) {
+
+if (error) {
+console.log(error);
+} else {
+console.log(response);
+}
+Transport.close();
+});
+}
+}
