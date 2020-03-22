@@ -120,9 +120,9 @@ function emailCmd(request, bots, isMod, callback) {
     }
 
     var cmdHash = {
-      name: val[1].toLowerCase(),
-      regex: "^\/" + val[1] + "$",
-      message: val[2],
+      name: "draft",
+      date: date
+     
     };
 
     commands.push(cmdHash);
