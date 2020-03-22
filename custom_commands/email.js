@@ -1,9 +1,12 @@
 
 var commands;
-var userCommands = [emailCmd, describeCmd, editCmd, removeCmd];
+var userCommands = [emailCmd, subjectCmd, deleteCmd, bodyCmd];
 
 var db = require('../modules/db.js');
 var db_table = 'email';
+
+var moment = require('moment'); 
+var date = moment().utcOffset(-300).format('LLLL');
 
 getAllCommands();
 exports.modName = "Custom Commands";
@@ -26,20 +29,20 @@ function updateCmdDB(cmd, updateJson, callback){
   db.updateOneDoc(db_table, findHash, updateJson, callback);
 }
 
-function describeCmdDB(cmd, callback) {
+function subjectCmdDB(cmd, callback) {
   var updateHash = {
     $set: {
-      "description": cmd["description"]
+      "subject": cmd["subject"]
     }
   };
 
   updateCmdDB(cmd, updateHash, callback);
 }
 
-function changeMsgCmdDB(cmd, callback) {
+function bodyCmdDB(cmd, callback) {
   var updateHash = {
     $set: {
-      "message": cmd["message"]
+      "body": cmd["body"]
     }
   };
 
@@ -99,25 +102,27 @@ exports.getCmdListDescription = function () {
 
 
 function emailCmd(request, bots, isMod, callback) {
-  var regex = /^\/cmd add (.+?) ([\s\S]+)/i;
+  var regex = /^\/email (.+?)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
 
     if (!isMod) {
-      var msg = "You don't have permission to add commands"
+      var msg = "You don't have permission to send emails"
       callback(true, msg, []);
       return msg;
     }
 
     for (cmd in commands) {
-      if (commands[cmd].name == val[1]) {
-        var msg = val[1] + " already exists";
-        callback(true, msg, []);
-        return msg;
-      }
-    }
+      if (commands[cmd].name == "draft") { 
+        deleteCmdFromDB(commands[cmd]);
+        commands.splice(cmd, 1);
+        //var msg = "Draft email deleted. You may start another email";
+        //callback(true, msg, []);
+        //return msg;
+      //}
+    //}
 
     var cmdHash = {
       name: "draft",
@@ -127,76 +132,78 @@ function emailCmd(request, bots, isMod, callback) {
 
     commands.push(cmdHash);
     addCmdToDB(cmdHash);
-    var msg = val[1] + " command added! please use \"/cmd describe " + val[1] + " <description>\" to add a description for your new command";
+    var msg = "Type /subject followed by email subject to continue;
     callback(true, msg, []);
     return msg;
+      }
+    }
   }
 }
 
-function describeCmd(request, bots, isMod, callback) {
-  var regex = /^\/cmd describe (.+?) ([\s\S]+)/i;
+function subjectCmd(request, bots, isMod, callback) {
+  var regex = /^\/subject ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
 
     if (!isMod) {
-      var msg = "You don't have permission to describe commands"
+      var msg = "You don't have permission to send emails"
       callback(true, msg, []);
       return msg;
     }
 
     for (cmd in commands) {
-      if (commands[cmd].name == val[1].toLowerCase()) {
-        commands[cmd]["description"] = val[2];
-        describeCmdDB(commands[cmd]);
+      if (commands[cmd].name == "draft") {
+        commands[cmd]["subject"] = val[1];
+        subjectCmdDB(commands[cmd]);
 
-        var msg = val[1] + " description updated";
+        var msg = "Subject received. Type /body followed by email body to continue";
         callback(true, msg, []);
         return msg;
       }
     }
 
-    var msg = val[1] + " doesn't exist";
+    var msg = "No draft emails available.";
     callback(true, msg, []);
 
     return msg;
   }
 }
 
-function removeCmd(request, bots, isMod, callback) {
-  var regex = /^\/cmd remove (.+)/i;
+function deleteCmd(request, bots, isMod, callback) {
+  var regex = /^\/delete draft (.+)/i;
   var reqText = request.text.toLowerCase();
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
 
     if (!isMod) {
-      var msg = "You don't have permission to remove commands"
+      var msg = "You don't have permission to send emails"
       callback(true, msg, []);
       return msg;
     }
 
-    val[1] = val[1].toLowerCase();
+    //val[1] = val[1].toLowerCase();
 
     for (cmd in commands) {
-      if (commands[cmd].name == val[1]) {
+      if (commands[cmd].name == "draft") {
         deleteCmdFromDB(commands[cmd]);
         commands.splice(cmd, 1);
-        var msg = val[1] + " command deleted for ever and ever and ever and ... you get it.";
+        var msg = val[1] + "Email draft deleted. You can start another email by typing /email followed by email address";
         callback(true, msg, []);
         return msg;
       }
     }
-
-    callback(true, "No such command.", []);
+    var msg = "No draft emails available."
+    callback(true, msg, []);
     return msg;
   }
 }
 
 
-function editCmd(request, bots, isMod, callback) {
-  var regex = /^\/cmd edit (.+?) ([\s\S]+)/i;
+function bodyCmd(request, bots, isMod, callback) {
+  var regex = /^\/body ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -208,19 +215,19 @@ function editCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-    val[1] = val[1].toLowerCase();
+    //val[1] = val[1].toLowerCase();
     for (cmd in commands) {
-      if (commands[cmd].name == val[1]) {
-        commands[cmd].message = val[2];
-        changeMsgCmdDB(commands[cmd]);
+      if (commands[cmd].name == "draft") {
+        commands[cmd].body = val[1];
+        bodyCmdDB(commands[cmd]);
 
-        var msg = val[1] + " message updated.";
+        var msg = val[1] + "Email body added. Type /send to send email.";
         callback(true, msg, []);
         return msg;
       }
     }
 
-    var msg = val[1] + "doesn't exist";
+    var msg = "No draft emails available.";
     callback(true, msg, []);
     return msg;
   }
