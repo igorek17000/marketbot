@@ -1,6 +1,6 @@
 
 var commands;
-var userCommands = [emailCmd, subjectCmd, deleteCmd, bodyCmd];
+var emailCommands = [emailCmd, subjectCmd, deleteCmd, bodyCmd];
 
 var db = require('../modules/db.js');
 var db_table = 'email';
@@ -71,7 +71,7 @@ exports.checkCommands = function(dataHash, callback) {
   }
 
   for (cmd in userCommands) {
-    var test = userCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
+    var test = emailCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
     if (test)
       return test;
   }
