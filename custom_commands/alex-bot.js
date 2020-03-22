@@ -11,27 +11,6 @@ var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd];
 var db = require('../modules/db.js');
 var http = require('http');
 
-var server, port, ip, router;
-server = http.createServer(function (req, res) {
-  req.chunks = [];
-
-  req.on('data', function (chunk) {
-    req.chunks.push(chunk.toString());
-  });
-
-  router.dispatch(req, res, function(err) {
-    res.writeHead(err.status, {"Content-Type": "text/plain"});
-    res.end(err.message);
-  });
-});
-
-port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
-ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
-
-server.listen(port, ip);
-
-//var mods = require('../modules/mods');
-
 getAllAlexbot();
 exports.modName = "AlexBot";
 
@@ -60,48 +39,6 @@ function updateAlexBotModDate(alexb, callback) {
 function updateAlexBotModDateMessage(alexb, callback) {
   db.updateOneDoc(db_table, {"name": alexb.name}, {$push: { "date modified.date": alexb.message}}, callback);
 }
-
-//var request = require('request'); 
-function getQuote() { 
-
-
-var promise = new Promise(function(resolve, reject) { 
-setTimeout(() => resolve(server), 1000); }).then(function(result) { 
-return result; // 1 
-
-
-//new Promise((resolve, reject) => { // (*) 
-//setTimeout(() => resolve(result), 1000); });
-
-
-
-Promise(result, function(error, response, body) { 
-if (error) return reject(error); 
-var data = body;
-resolve(data); 
-}); 
-}); 
-} 
-async function main() { 
-try { 
-var quote = await getQuote(); 
-console.log(quote); 
-} 
-catch(error) { 
-console.error(error); 
-} 
-} 
-
-
-
-
-function dateone() {
-  var moment = require('moment'); 
-var dateres = moment().utcOffset(-240).format('LLLL');
-  return dateres;
-  }
-
-
 
 exports.checkCommands = function(dataHash, callback) {
   //if (dataHash.isMod)
@@ -176,14 +113,11 @@ function addAlexBotCmd(request, bots, isMod, callback) {
 
     if (!isMod) {
       var msg = request.name + " you have no power here!";
-      var bold = msg.bold();
-      callback(true, bold, []);
+   
+      callback(true, msg, []);
       return msg;
     }
 
-
-main(); 
-console.log('Ron once said,');
 
     for (alexb in alexbot) {
       if (alexbot[alexb].name == val[1]) {
