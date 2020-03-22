@@ -87,10 +87,10 @@ exports.getAll = function() {
 
 exports.getCmdListDescription = function () {
   cmdArr = [
-    {cmd: "/email 'email address'" desc: "Send an email", mod: true},
-    {cmd: "/subject 'email subject'" desc: "Add a subject to the email to send", mod: true},
-    {cmd: "/body 'email body'" desc: "Add the mody to the email to send", mod: true},
-    {cmd: "/delete draft" desc: "Deletes email draft", mod: true}
+    {cmd: "/email 'email address'", desc: "Send an email", mod: true},
+    {cmd: "/subject 'email subject'", desc: "Add a subject to the email to send", mod: true},
+    {cmd: "/body 'email body'", desc: "Add the mody to the email to send", mod: true},
+    {cmd: "/delete draft", desc: "Deletes email draft", mod: true}
   ];
 
   for (cmd in commands) {
