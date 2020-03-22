@@ -266,7 +266,7 @@ function sendCmd(request, callback) {
   if (regex.test(request.text)) {
 var nodemailer = require('nodemailer');
     if(commands[cmd].name == "draft") {
-    commands[cmd].name = "sent"
+    commands[cmd].name = "sent";
     commands[cmd].sent-date = date;
     commands[cmd].message = "email sent on " + date;
     sentCmdDb(commands[cmd]);
