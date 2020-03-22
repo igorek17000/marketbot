@@ -1,5 +1,5 @@
 var commands;
-var userCommands = [addCmd, describeCmd, editCmd, removeCmd];
+var userCommands = [emailCmd, subjectCmd, editCmd, removeCmd];
 
 var db = require('../modules/db.js');
 var db_table = 'user_email';
@@ -42,42 +42,20 @@ function updateCmdDB(cmd, updateJson, callback){
   db.updateOneDoc(db_table, findHash, updateJson, callback);
 }
 
-function describeCmdDB(cmd, callback) {
-  var updateHash = {
+
+
+function subjectCmdDB(cmd, callback) {
+  var subjectHash = {
     $set: {
-      "description": cmd["description"]
+      "subject": cmd["subject"]
     }
   };
 
-  updateCmdDB(cmd, updateHash, callback);
+  updateCmdDB(cmd, subjectHash, callback);
 }
 
 //-------
 
-function modCommandCmdDB(cmd, callback) {
-
-  var modHash = {
-
-    $set: {
-
-      "mod": cmd["mod"]
-
-    }
-
-  };
-updateCmdDB(cmd, modHash, callback);
-}
-
-//-------
-function addressCmdDB(cmd, callback) {
-  var addressHash = {
-    $set: {
-      "address": cmd["address"]
-    }
-  };
-
-  updateCmdDB(cmd, addressHash, callback);
-}
 
 //-------
 
@@ -147,13 +125,13 @@ exports.getCmdListDescription = function () {
 
 
 
-function addCmd(request, bots, isMod, callback) {
-  var regex = /^\/cmd add (.+?) ([\s\S]+)/i;
+function emailCmd(request, bots, isMod, callback) {
+  var regex = /^\/email (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-    var vel = val[5];
+    
 
     if (!isMod) {
       var msg = "You don't have permission to add commands"
@@ -162,30 +140,33 @@ function addCmd(request, bots, isMod, callback) {
     }
 
     for (cmd in commands) {
-      if (commands[cmd].name == val[1]) {
-        var msg = val[1] + " already exists";
-        callback(true, msg, []);
-        return msg;
-      }
-    }
+      if (commands[cmd].draft) {
+        deleteCmdFromDB(commands[cmd]);
+        commands.splice(cmd, 1);
+      
+
+
 
     var cmdHash = {
       name: val[1].toLowerCase(),
-      regex: "^\/" + val[1] + "$",
-      message: val[2],
+      draft: "draft$",
+      //regex: "^\/" + val[1] + "$",
+      //message: val[2],
       date: date
     };
 
     commands.push(cmdHash);
     addCmdToDB(cmdHash);
-    var msg = val[1] + " command added! please use \"/cmd describe " + val[1] + " <description>\" to add a description for your new command";
+    var msg = "Type subject + email subject";
     callback(true, msg, []);
     return msg;
+      }   
+    }
   }
 }
 
-function describeCmd(request, bots, isMod, callback) {
-  var regex = /^\/cmd describe (.+?) ([\s\S]+)/i;
+function subjectCmd(request, bots, isMod, callback) {
+  var regex = /^\/subject ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -198,9 +179,9 @@ function describeCmd(request, bots, isMod, callback) {
     }
 
     for (cmd in commands) {
-      if (commands[cmd].name == val[1].toLowerCase()) {
-        commands[cmd]["description"] = val[2];
-        describeCmdDB(commands[cmd]);
+      if (commands[cmd].draft) {
+        commands[cmd]["subject"] = val[1];
+        subjectCmdDB(commands[cmd]);
 
         var msg = val[1] + " description updated";
         callback(true, msg, []);
