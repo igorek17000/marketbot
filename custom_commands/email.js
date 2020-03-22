@@ -259,7 +259,7 @@ subject: commands[cmd].subject,
 generateTextFromHTML: true,
 text: commands[cmd].body
 };
-      }
+      
 Transport.sendMail(mailOptions, function(error, response) {
 
 if (error) {
