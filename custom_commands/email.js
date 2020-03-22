@@ -29,6 +29,31 @@ function updateCmdDB(cmd, updateJson, callback){
   db.updateOneDoc(db_table, findHash, updateJson, callback);
 }
 
+function unsetDraftCmdDB(cmd, callback) {
+  var updateHash = {
+    $set: {
+      "name": cmd["draft unset"],
+      "draft unset date": cmd[date]
+    }
+  };
+
+  updateCmdDB(cmd, updateHash, callback);
+}
+
+function sentCmdDB(cmd, callback) {
+  var updateHash = {
+    $set: {
+      "name": cmd["sent"],
+      "sent date": cmd[date]
+    }
+  };
+
+  updateCmdDB(cmd, updateHash, callback);
+}
+
+
+
+
 function subjectCmdDB(cmd, callback) {
   var updateHash = {
     $set: {
@@ -116,8 +141,8 @@ function emailCmd(request, bots, isMod, callback) {
 
     
       if(cmd.name == "draft") 
-        deleteCmdFromDB(commands[cmd]);
-        commands.splice(cmd, 1);        //var msg = "Draft email deleted. You may start another email";
+        unsetDraftCmdFromDB(commands[cmd]);
+        //var msg = "Draft email deleted. You may start another email";
         //callback(true, msg, []);
         //return msg;
       //}
@@ -239,7 +264,9 @@ function sendCmd(request, callback) {
 
   if (regex.test(request.text)) {
 var nodemailer = require('nodemailer');
-    if(cmd.name = "draft")
+    if(cmd.name = "draft") {
+    sentCmdDb(commands[cmd]);
+
 var Transport = nodemailer.createTransport({
 
 service: 'gmail',
