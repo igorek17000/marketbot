@@ -115,7 +115,7 @@ function emailCmd(request, bots, isMod, callback) {
     }
 
     
-      if(commands[cmd].name == "draft") 
+      if(cmd.name == "draft") 
         deleteCmdFromDB(commands[cmd]);
         commands.splice(cmd, 1);        //var msg = "Draft email deleted. You may start another email";
         //callback(true, msg, []);
