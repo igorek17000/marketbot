@@ -33,7 +33,7 @@ function unsetDraftCmdDB(cmd, callback) {
   var updateHash = {
     $set: {
       "name": cmd["draft unset"],
-      "draft unset date": cmd[date]
+      "draft-unset-date": cmd[date]
     }
   };
 
@@ -44,7 +44,7 @@ function sentCmdDB(cmd, callback) {
   var updateHash = {
     $set: {
       "name": cmd["name"],
-      "sent date": cmd["sent date"],
+      "sent-date": cmd["sent-date"],
       "message": cmd["message"]
     }
   };
@@ -267,7 +267,7 @@ function sendCmd(request, callback) {
 var nodemailer = require('nodemailer');
     if(commands[cmd].name == "draft") {
     commands[cmd].name = "sent"
-    commands[cmd].sent date = date;
+    commands[cmd].sent-date = date;
     commands[cmd].message = "email sent on " + date;
     sentCmdDb(commands[cmd]);
 }
