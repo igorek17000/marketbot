@@ -87,10 +87,10 @@ exports.getAll = function() {
 
 exports.getCmdListDescription = function () {
   cmdArr = [
-    {cmd: "/cmd add 'name' 'message'", desc: "Add a new custom command", mod: true},
-    {cmd: "/cmd describe 'name' 'description'", desc: "Adds a description to a custom command for this command list", mod: true},
-    {cmd: "/cmd edit 'name' 'message with tags'", desc: "Changes the response of an existing command", mod: true},
-    {cmd: "/cmd remove 'name'", desc: "Deletes a custom command", mod: true}
+    {cmd: "/email 'email address'" desc: "Send an email", mod: true},
+    {cmd: "/subject 'email subject'" desc: "Add a subject to the email to send", mod: true},
+    {cmd: "/body 'email body'" desc: "Add the mody to the email to send", mod: true},
+    {cmd: "/delete draft" desc: "Deletes email draft", mod: true}
   ];
 
   for (cmd in commands) {
@@ -172,7 +172,7 @@ function subjectCmd(request, bots, isMod, callback) {
 }
 
 function deleteCmd(request, bots, isMod, callback) {
-  var regex = /^\/delete draft (.+)/i;
+  var regex = /^\/delete draft$/;
   var reqText = request.text.toLowerCase();
 
   if (regex.test(reqText)){
@@ -190,7 +190,7 @@ function deleteCmd(request, bots, isMod, callback) {
       if (commands[cmd].name == "draft") {
         deleteCmdFromDB(commands[cmd]);
         commands.splice(cmd, 1);
-        var msg = val[1] + "Email draft deleted. You can start another email by typing /email followed by email address";
+        var msg = "Email draft deleted. You can start another email by typing /email followed by email address";
         callback(true, msg, []);
         return msg;
       }
@@ -221,7 +221,7 @@ function bodyCmd(request, bots, isMod, callback) {
         commands[cmd].body = val[1];
         bodyCmdDB(commands[cmd]);
 
-        var msg = val[1] + "Email body added. Type /send to send email.";
+        var msg = "Email body added. Type /send to send email.";
         callback(true, msg, []);
         return msg;
       }
