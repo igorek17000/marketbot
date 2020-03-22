@@ -125,6 +125,7 @@ function emailCmd(request, bots, isMod, callback) {
 
     var cmdHash = {
       name: "draft",
+      email: val[1],
       date: date
      
     };
