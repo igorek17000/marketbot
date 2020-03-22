@@ -102,7 +102,7 @@ exports.getCmdListDescription = function () {
 
 
 function emailCmd(request, bots, isMod, callback) {
-  var regex = /^\/email (.+?)/i;
+  var regex = /^\/email (.+?);
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -114,11 +114,10 @@ function emailCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-    for (cmd in commands) {
-      if (commands[cmd].name == "draft") { 
+    
+      if(commands[cmd].name == "draft") 
         deleteCmdFromDB(commands[cmd]);
-        commands.splice(cmd, 1);
-        //var msg = "Draft email deleted. You may start another email";
+        commands.splice(cmd, 1);        //var msg = "Draft email deleted. You may start another email";
         //callback(true, msg, []);
         //return msg;
       //}
@@ -137,8 +136,7 @@ function emailCmd(request, bots, isMod, callback) {
     return msg;
       }
     }
-  }
-}
+
 
 function subjectCmd(request, bots, isMod, callback) {
   var regex = /^\/subject ([\s\S]+)/i;
