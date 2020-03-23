@@ -1,9 +1,10 @@
 //A module for handling responses triggered by FlynnBot commands
 var flynnbot;
-var db_table = 'flynn_bot_timesheet';
+var db_table = 'email';
+var db_tables = 'email_draft';
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var flynnBotCommands = [addFlynnBotCmd, describeFlynnBotCmd, sundayFlynnBotCmd, mondayFlynnBotCmd, tuesdayFlynnBotCmd, wednesdayFlynnBotCmd, thursdayFlynnBotCmd, fridayFlynnBotCmd, saturdayFlynnBotCmd];
+var emailCommands = [addFlynnBotCmd, describeFlynnBotCmd, sundayFlynnBotCmd, mondayFlynnBotCmd, tuesdayFlynnBotCmd, wednesdayFlynnBotCmd, thursdayFlynnBotCmd, fridayFlynnBotCmd, saturdayFlynnBotCmd];
 var db = require('../modules/db.js');
 //var mods = require('../modules/mods');
 
@@ -12,8 +13,14 @@ exports.modName = "flynnBot";
 
 function getAllFlynnbot() {
   db.getAllDocuments(db_table, function(res){
-    flynnbot = res;
+    commands = res;
   });
+}
+
+
+
+function addFlynnBotToDB(flynnb, callback) {
+  db.addDoc(db_table, flynnb, callback);
 }
 
 function updateDbCurrent(flynnb, updateJson, callback){
@@ -22,10 +29,6 @@ function updateDbCurrent(flynnb, updateJson, callback){
   };
 
   db.updateOneDoc(db_table, findHash, updateJson, callback);
-}
-
-function addFlynnBotToDB(flynnb, callback) {
-  db.addDoc(db_table, flynnb, callback);
 }
 
 function updateFlynnBotDesc(flynnb, callback) {
