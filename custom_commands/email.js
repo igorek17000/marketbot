@@ -51,8 +51,8 @@ exports.checkCommands = function(dataHash, callback) {
  if (dataHash.isMod) 
     for (cmd in commands) {
       cmd = commands[cmd];
-  if (cmd.draft == 'cc' && dataHash.currentBot.type == 'hp') 
-continue;
+  //if (cmd.draft == 'cc' && dataHash.currentBot.type == 'hp') 
+//continue;
 
      var cmdReg = new RegExp(cmd.regex, "i"); 
 
