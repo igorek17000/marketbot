@@ -36,16 +36,12 @@ function updateUndraft(cmd, callback) {
   db.updateOneDoc(db_table, {"draft": cmd.draft}, {$unset: { "draft": cmd.draft}}, callback);
 }
 
-function updateFlynnBotCurrent(flynnb, callback) {
-  db.updateOneDoc(db_table, {"current": flynnb.current}, {$unset: { "current":"flynnb.current"}}, callback);
+function updateSubject(cmd, callback) {
+  db.updateOneDoc(db_table, {"draft": cmd.draft}, {$set: { "subject":"cmd.subject"}}, callback);
 }
 
-function updateFlynnBotRegexCurrent(flynnb, callback) {
-  db.updateOneDoc(db_table, {"regexcurrent": flynnb.regexcurrent}, {$unset: { "regexcurrent":"flynnb.regexcurrent"}}, callback);
-}
-
-function updateFlynnBotSun(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name} || {"current": flynnb.current}, {$set: { "sunday": flynnb.sunday}}, callback);
+function updateBody(cmd, callback) {
+  db.updateOneDoc(db_table, {"draft": cmd.draft}, {$set: { "body": cmd.body}}, callback);
 }
 
 function updateFlynnBotMon(flynnb, callback) {
@@ -81,13 +77,10 @@ exports.checkCommands = function(dataHash, callback) {
 //continue;
 
      var cmdReg = new RegExp(cmd.regex, "i"); 
-     if (cmd.regexcurrent) { // == "^\/" + "current" + "$") {
-      cmdReg = new RegExp(cmd.regexcurrent, "i");
-}
 
      //var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
         
-      if (cmd.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && cmdReg.test(dataHash.request.text)){
+      if (dataHash.request.text && cmdReg.test(dataHash.request.text)){
         var val = cmdReg.exec(dataHash.request.text);
       
      // } else if (flynnbc.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
@@ -165,38 +158,27 @@ function addEmailCmd(request, bots, isMod, callback) {
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
-    
-      
-
-      if (flynnbot[flynnb].regexcurrent) {
-        updateFlynnBotRegexCurrent(flynnbot[flynnb]);
-        //var msg = "Current week updated";
-        //callback(true, msg, []);
-        }
       
         
       var emailHash = {
-      name: val[1].toLowerCase(),
-      regex: "^\/" + val[1] + "$",
-      regexcurrent: "^\/" + "current" + "$",
-      message: val[2],
-      description: "Timesheet week of " + val[1],
-      bots: Object.keys(bots),
-      current: "current",
+      name: "Drafted by " + request.name + " on " + date,
+      to: val[1];
+      draft: "draft",
+      description: "Email Bot",
       date: date
      };
     
-    flynnbot.push(emailHash);
+    commands.push(emailHash);
     addEmailToDB(emailHash);
-    var msg = "FlynnBot timesheet added and current week updated! Description set for week of " + val[1];
+    var msg = "Email address received, type /subject followed by email subject to continue";
     callback(true, msg, []);
     return msg;
   }
 }
 
 
-function describeFlynnBotCmd(request, bots, isMod, callback) {
-  var regex = /^\/timesheet describe (.+?) ([\s\S]+)/i;
+function addSubjectCmd(request, bots, isMod, callback) {
+  var regex = /^\/subject ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -208,11 +190,11 @@ function describeFlynnBotCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-    for (flynnb in flynnbot) {
-      if (flynnbot[flynnb].name == val[1]) {
-        flynnbot[flynnb]["description"] = val[2];
-        updateFlynnBotDesc(flynnbot[flynnb]);
-        var msg = "FlynnBot timesheet description updated for " + flynnbot[flynnb].name;
+    for (cmd in commands) {
+      if (commands[cmd].draft) {
+        commands[cmd]["subject"] = val[1];
+        updateSubject(commands[cmd]);
+        var msg = "Email subject recieved, type /body followed by email body to continue";
 
         callback(true, msg, []);
         return msg;
@@ -220,17 +202,17 @@ function describeFlynnBotCmd(request, bots, isMod, callback) {
     }
    
   
-  var msg = val[1] + " doesn't exist";
-    callback(true, msg, []);
+ // var msg = val[1] + " doesn't exist";
+   // callback(true, msg, []);
 
-    return msg;
+   // return msg;
   }
 }
 
 
 
-function sundayFlynnBotCmd(request, bots, isMod, callback) {
-  var regex = /^\/timesheet sunday (.+?) ([\s\S]+)/i;
+function addBodyCmd(request, bots, isMod, callback) {
+  var regex = /^\/body ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -242,36 +224,22 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-    for (flynnb in flynnbot) {
-      if (flynnbot[flynnb].name == val[1]) {
-        flynnbot[flynnb]["sunday"] = val[2];
-        updateFlynnBotSun(flynnbot[flynnb]);
+    for (cmd in commands) {
+      if (commands[cmd].draft) {
+        commands[cmd]["body"] = val[1];
+        updateBody(commands[cmd]);
                 
-        var msg = "FlynnBot timesheet hours captured for Sunday, week of " + flynnbot[flynnb].name;
+        var msg = "Email body recieved, type /send to send email";
 
         callback(true, msg, []);
         return msg;
       }
     }
-    
-if (flynnbot[flynnb].current == val[1]) {
-        flynnbot[flynnb]["sunday"] = val[2];
-    updateFlynnBotSun(flynnbot[flynnb]); 
-
-    var msg = "FlynnBot timesheet hours captured for Sunday, week of " + flynnbot[flynnb].name;
-    callback(true, msg, []);
-    return msg;
-}
-  
-    var msg = "Current week not set";
-    callback(true, msg, []);
-
-    return msg;
   }
 }
 
-function mondayFlynnBotCmd(request, bots, isMod, callback) {
-  var regex = /^\/timesheet monday (.+?) ([\s\S]+)/i;
+function sendEmailCmd(request, bots, isMod, callback) {
+  var regex = /^\/sendemail$;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -283,8 +251,8 @@ function mondayFlynnBotCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-    for (flynnb in flynnbot) {
-      if (flynnbot[flynnb].name == val[1]) {
+    for (cmd in commands) {
+      if (commands[cmd].body && commands[cmd].subject && commands[cmd].email) {
         flynnbot[flynnb]["monday"] = val[2];
         updateFlynnBotMon(flynnbot[flynnb]);
                 
