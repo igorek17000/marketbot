@@ -2,6 +2,7 @@
 var commands;
 var db_table = 'email';
 var db_tables = 'email_draft';
+var db_tabled = 'email_sent';
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
 var emailCommands = [addFlynnBotCmd, describeFlynnBotCmd, sundayFlynnBotCmd, mondayFlynnBotCmd, tuesdayFlynnBotCmd, wednesdayFlynnBotCmd, thursdayFlynnBotCmd, fridayFlynnBotCmd, saturdayFlynnBotCmd];
