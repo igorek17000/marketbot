@@ -65,7 +65,7 @@ continue;
         //var val = flynnbcReg.exec(dataHash.request.text);
    
 
-      if (cmdReg.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && cmdReg.test(dataHash.request.text)){
+      if (cmd.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && cmdReg.test(dataHash.request.text)){
         var val = cmdReg.exec(dataHash.request.text);
 
 //var msg = "Hello there";
