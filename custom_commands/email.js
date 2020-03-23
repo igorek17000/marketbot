@@ -126,6 +126,7 @@ function addEmailCmd(request, bots, isMod, callback) {
       to: val[1],
       draft: "draft",
       description: "Email Bot",
+      bots: Object.keys(bots),
       date: date
      };
     
