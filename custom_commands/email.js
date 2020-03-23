@@ -199,7 +199,7 @@ function addBodyCmd(request, isMod, callback) {
 }
 
 function sendEmailCmd(request, isMod, callback) {
-  var regex = /^\/sendemail$;
+  var regex = /^\/sendemail$/;
   var reqText = request.text;
 
   if (regex.test(reqText)){
