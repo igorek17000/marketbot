@@ -248,9 +248,11 @@ var msg = "Email sent to " + commands[cmd].to;
         callback(true, msg, []);
         return msg;
       }
-    } else {
-    return false;
+    } 
+var msg = "email incomplete";
+callback(true, msg, []);
+    return msg;
     }
   }
-}
+
 
