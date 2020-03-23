@@ -12,7 +12,7 @@ var db = require('../modules/db.js');
 getAllCommands();
 exports.modName = "email";
 
-function getAllFlynnbot() {
+function getAllCommands() {
   db.getAllDocuments(db_table, function(res){
     commands = res;
   });
@@ -20,20 +20,20 @@ function getAllFlynnbot() {
 
 
 
-function addFlynnBotToDB(flynnb, callback) {
-  db.addDoc(db_table, flynnb, callback);
+function addEmailToDB(cmd, callback) {
+  db.addDoc(db_table, cmd, callback);
 }
 
-function updateDbCurrent(flynnb, updateJson, callback){
+function updateDraft(flynnb, updateJson, callback){
   var findHash = {
-    "current": flynnb.current
+    "draft": cmd.draft
   };
 
   db.updateOneDoc(db_table, findHash, updateJson, callback);
 }
 
-function updateFlynnBotDesc(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "description": flynnb.description}}, callback);
+function updateUndraft(cmd, callback) {
+  db.updateOneDoc(db_table, {"draft": cmd.draft}, {$unset: { "draft": cmd.draft}}, callback);
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
@@ -75,20 +75,20 @@ function updateFlynnBotSat(flynnb, callback) {
 
 exports.checkCommands = function(dataHash, callback) {
   if (dataHash.isMod) 
-    for (flynnb in flynnbot) {
-      flynnb = flynnbot[flynnb];
+    for (cmd in commands) {
+      cmd = commands[cmd];
    //if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
 //continue;
 
-     var flynnbReg = new RegExp(flynnb.regex, "i"); 
-     if (flynnb.regexcurrent) { // == "^\/" + "current" + "$") {
-      flynnbReg = new RegExp(flynnb.regexcurrent, "i");
+     var cmdReg = new RegExp(cmd.regex, "i"); 
+     if (cmd.regexcurrent) { // == "^\/" + "current" + "$") {
+      cmdReg = new RegExp(cmd.regexcurrent, "i");
 }
 
      //var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
         
-      if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
-        var val = flynnbReg.exec(dataHash.request.text);
+      if (cmd.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && cmdReg.test(dataHash.request.text)){
+        var val = cmdReg.exec(dataHash.request.text);
       
      // } else if (flynnbc.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
         //var val = flynnbcReg.exec(dataHash.request.text);
@@ -100,9 +100,9 @@ exports.checkCommands = function(dataHash, callback) {
 
 
         var msg = "";
-    if (!flynnb.sunday) {
+    if (!cmd.sunday) {
       msg = "Please submit hours for Sunday";
-    } else if (!flynnb.monday) {
+    } else if (!cmd.monday) {
       msg = "Sunday\n" + flynnb.sunday;
     } else if (!flynnb.tuesday) {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday;
@@ -124,30 +124,30 @@ exports.checkCommands = function(dataHash, callback) {
     }
   }
 
-  for (cmd in flynnBotCommands) {
-    var test = flynnBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
+  for (cmd in emailCommands) {
+    var test = emailCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
     if (test)
       return test;
   }
  }
 
 
-exports.botName = "FlynnBot";
+exports.botName = "emailBot";
 
-exports.setAll = function(flynnbHash) {
-  flynnbot = flynnbHash;
+exports.setAll = function(emailHash) {
+  commands = emailHash;
 }
 
 exports.getAll = function() {
-  return flynnbot;
+  return commands;
 }
 
 exports.getCmdListDescription = function () {
   return null;
 }
 
-function addFlynnBotCmd(request, bots, isMod, callback) {
-  var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
+function addEmailCmd(request, bots, isMod, callback) {
+  var regex = /^\/email ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -159,20 +159,14 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-    for (flynnb in flynnbot) {   
-      if (flynnbot[flynnb].name == val[1]) {
-        var msg = val[1] + " already exists";
-        callback(true, msg, []);
-        return msg;
-        
-      }
-    }
-    
-      if (flynnbot[flynnb].current) {
-        updateFlynnBotCurrent(flynnbot[flynnb]);
+    for (cmd in commands) {   
+      if (commands[cmd].draft) {
+        updateUndraft(commands[cmd]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
+    
+      
 
       if (flynnbot[flynnb].regexcurrent) {
         updateFlynnBotRegexCurrent(flynnbot[flynnb]);
@@ -181,7 +175,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
         }
       
         
-      var flynnbHash = {
+      var emailHash = {
       name: val[1].toLowerCase(),
       regex: "^\/" + val[1] + "$",
       regexcurrent: "^\/" + "current" + "$",
@@ -192,8 +186,8 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
       date: date
      };
     
-    flynnbot.push(flynnbHash);
-    addFlynnBotToDB(flynnbHash);
+    flynnbot.push(emailHash);
+    addEmailToDB(emailHash);
     var msg = "FlynnBot timesheet added and current week updated! Description set for week of " + val[1];
     callback(true, msg, []);
     return msg;
