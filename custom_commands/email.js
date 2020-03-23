@@ -48,7 +48,7 @@ function updateBody(cmd, callback) {
 
 
 exports.checkCommands = function(dataHash, callback) {
- // if (dataHash.isMod) 
+ if (dataHash.isMod) 
     for (cmd in commands) {
       cmd = commands[cmd];
    //if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
@@ -65,11 +65,11 @@ exports.checkCommands = function(dataHash, callback) {
         //var val = flynnbcReg.exec(dataHash.request.text);
    
 
-      if (cmd.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && cmdReg.test(dataHash.request.text)){
+      if (cmdReg.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && cmdReg.test(dataHash.request.text)){
         var val = cmdReg.exec(dataHash.request.text);
 
 //var msg = "Hello there";
-         callback(true, cmd.msg, cmd.attachments);
+         callback(true, cmd.msg, cmd.attachments, []);
     
 
     break;
@@ -77,7 +77,7 @@ exports.checkCommands = function(dataHash, callback) {
   }
 
   for (cmd in emailCommands) {
-    var test = emailCommands[cmd](dataHash.request, dataHash.isMod, callback);
+    var test = emailCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
     if (test)
       return test;
   }
