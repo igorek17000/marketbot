@@ -68,8 +68,8 @@ exports.checkCommands = function(dataHash, callback) {
       //if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
         //var val = flynnbcReg.exec(dataHash.request.text);
 
-var msg = "Hello there";
-         callback(true, msg, []);
+//var msg = "Hello there";
+         callback(true, cmd.msg, cmd.attachments, []);
     
 
     break;
