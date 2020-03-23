@@ -216,7 +216,7 @@ function sendEmailCmd(request, bots, isMod, callback) {
     }
 
     for (cmd in commands) {
-      if (commands[cmd].body && commands[cmd].subject && commands[cmd].to) {
+      if (commands[cmd].body) && commands[cmd].subject && commands[cmd].to) {
        
 var nodemailer = require('nodemailer');
 
