@@ -252,7 +252,7 @@ function sendEmailCmd(request, bots, isMod, callback) {
     }
 
     for (cmd in commands) {
-      if (commands[cmd].body && commands[cmd].subject && commands[cmd].email) {
+      if (commands[cmd].body && commands[cmd].subject && commands[cmd].to) {
         flynnbot[flynnb]["monday"] = val[2];
         updateFlynnBotMon(flynnbot[flynnb]);
                 
