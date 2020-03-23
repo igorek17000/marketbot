@@ -121,7 +121,7 @@ function addEmailCmd(request, isMod, callback) {
         
       var emailHash = {
       name: "Drafted by " + request.name + " on " + date,
-      to: val[1];
+      to: val[1],
       draft: "draft",
       description: "Email Bot",
       date: date
