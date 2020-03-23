@@ -253,9 +253,7 @@ var msg = "Email sent to " + commands[cmd].to;
         return msg;
       }
     } 
-var msg = "email incomplete";
-callback(true, msg, []);
-    return msg;
+
     }
   }
 
