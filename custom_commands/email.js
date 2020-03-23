@@ -24,7 +24,7 @@ function addEmailToDB(cmd, callback) {
   db.addDoc(db_table, cmd, callback);
 }
 
-function updateDraft(flynnb, updateJson, callback){
+function updateDraft(cmd, updateJson, callback){
   var findHash = {
     "draft": cmd.draft
   };
@@ -77,7 +77,7 @@ var msg = "Hello there";
   }
 
   for (cmd in emailCommands) {
-    var test = emailCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
+    var test = emailCommands[cmd](dataHash.request, dataHash.isMod, callback);
     if (test)
       return test;
   }
@@ -98,7 +98,7 @@ exports.getCmdListDescription = function () {
   return null;
 }
 
-function addEmailCmd(request, bots, isMod, callback) {
+function addEmailCmd(request, isMod, callback) {
   var regex = /^\/email ([\s\S]+)/i;
   var reqText = request.text;
 
@@ -136,7 +136,7 @@ function addEmailCmd(request, bots, isMod, callback) {
 }
 
 
-function addSubjectCmd(request, bots, isMod, callback) {
+function addSubjectCmd(request, isMod, callback) {
   var regex = /^\/subject ([\s\S]+)/i;
   var reqText = request.text;
 
@@ -170,7 +170,7 @@ function addSubjectCmd(request, bots, isMod, callback) {
 
 
 
-function addBodyCmd(request, bots, isMod, callback) {
+function addBodyCmd(request, isMod, callback) {
   var regex = /^\/body ([\s\S]+)/i;
   var reqText = request.text;
 
@@ -197,7 +197,7 @@ function addBodyCmd(request, bots, isMod, callback) {
   }
 }
 
-function sendEmailCmd(request, bots, isMod, callback) {
+function sendEmailCmd(request, isMod, callback) {
   var regex = /^\/sendemail$;
   var reqText = request.text;
 
@@ -225,11 +225,11 @@ pass: '113Hopest'
 });
 
 var mailOptions = {
-to: val[1],
+to: commands[cmd].to,
 from: 'alexdeabot@gmail.com',
-subject: val[2],
+subject: commands[cmd].subject,
 generateTextFromHTML: true,
-text: val[3]
+text: commands[cmd].body
 };
 
 Transport.sendMail(mailOptions, function(error, response) {
