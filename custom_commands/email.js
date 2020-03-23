@@ -132,6 +132,7 @@ function addEmailCmd(request, isMod, callback) {
     var msg = "Email address received, type /subject followed by email subject to continue";
     callback(true, msg, []);
     return msg;
+    }
   }
 }
 
