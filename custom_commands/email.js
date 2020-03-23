@@ -5,7 +5,7 @@ var db_tables = 'email_draft';
 var db_tabled = 'email_sent';
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var emailCommands = [addFlynnBotCmd, describeFlynnBotCmd, sundayFlynnBotCmd, mondayFlynnBotCmd, tuesdayFlynnBotCmd, wednesdayFlynnBotCmd, thursdayFlynnBotCmd, fridayFlynnBotCmd, saturdayFlynnBotCmd];
+var emailCommands = [addEmailCmd, addSubjectCmd, addBodyCmd, sendEmailCmd];
 var db = require('../modules/db.js');
 //var mods = require('../modules/mods');
 
