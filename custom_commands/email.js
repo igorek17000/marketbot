@@ -253,29 +253,43 @@ function sendEmailCmd(request, bots, isMod, callback) {
 
     for (cmd in commands) {
       if (commands[cmd].body && commands[cmd].subject && commands[cmd].to) {
-        flynnbot[flynnb]["monday"] = val[2];
-        updateFlynnBotMon(flynnbot[flynnb]);
-                
-        var msg = "FlynnBot timesheet hours captured for Monday, week of " + flynnbot[flynnb].name;
+       
+var nodemailer = require('nodemailer');
+
+var Transport = nodemailer.createTransport({
+
+service: 'gmail',
+auth: {
+user: 'alexdeabot@gmail.com',
+pass: '113Hopest'
+}
+});
+
+var mailOptions = {
+to: val[1],
+from: 'alexdeabot@gmail.com',
+subject: val[2],
+generateTextFromHTML: true,
+text: val[3]
+};
+
+Transport.sendMail(mailOptions, function(error, response) {
+
+if (error) {
+console.log(error);
+} else {
+console.log(response);
+}
+Transport.close();
+});
+
+var msg = "Email sent to " + commands[cmd].to;
 
         callback(true, msg, []);
         return msg;
       }
-    }
-    
-if (flynnbot[flynnb].current == val[1]) {
-        flynnbot[flynnb]["monday"] = val[2];
-    updateFlynnBotMon(flynnbot[flynnb]); 
-
-    var msg = "FlynnBot timesheet hours captured for Monday, week of " + flynnbot[flynnb].name;
-    callback(true, msg, []);
-    return msg;
-}
-  
-    var msg = "Current week not set";
-    callback(true, msg, []);
-
-    return msg;
+    } else {
+    return false;
   }
 }
 
