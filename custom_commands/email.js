@@ -100,7 +100,7 @@ exports.getCmdListDescription = function () {
   return null;
 }
 
-function addEmailCmd(request, isMod, callback) {
+function addEmailCmd(request, bots, isMod, callback) {
   var regex = /^\/email ([\s\S]+)/i;
   var reqText = request.text;
 
@@ -139,7 +139,7 @@ function addEmailCmd(request, isMod, callback) {
 }
 
 
-function addSubjectCmd(request, isMod, callback) {
+function addSubjectCmd(request, bots, isMod, callback) {
   var regex = /^\/subject ([\s\S]+)/i;
   var reqText = request.text;
 
@@ -173,7 +173,7 @@ function addSubjectCmd(request, isMod, callback) {
 
 
 
-function addBodyCmd(request, isMod, callback) {
+function addBodyCmd(request, bots, isMod, callback) {
   var regex = /^\/body ([\s\S]+)/i;
   var reqText = request.text;
 
@@ -200,7 +200,7 @@ function addBodyCmd(request, isMod, callback) {
   }
 }
 
-function sendEmailCmd(request, isMod, callback) {
+function sendEmailCmd(request, bots, isMod, callback) {
   var regex = /^\/sendemail$/;
   var reqText = request.text;
 
