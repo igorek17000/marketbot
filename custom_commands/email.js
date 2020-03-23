@@ -1,5 +1,5 @@
-//A module for handling responses triggered by FlynnBot commands
-var flynnbot;
+//A module for sending e-mails
+var commands;
 var db_table = 'email';
 var db_tables = 'email_draft';
 var moment = require('moment'); 
@@ -8,8 +8,8 @@ var emailCommands = [addFlynnBotCmd, describeFlynnBotCmd, sundayFlynnBotCmd, mon
 var db = require('../modules/db.js');
 //var mods = require('../modules/mods');
 
-getAllFlynnbot();
-exports.modName = "flynnBot";
+getAllCommands();
+exports.modName = "email";
 
 function getAllFlynnbot() {
   db.getAllDocuments(db_table, function(res){
