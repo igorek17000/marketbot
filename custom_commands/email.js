@@ -48,7 +48,7 @@ function updateBody(cmd, callback) {
 
 
 exports.checkCommands = function(dataHash, callback) {
-  if (dataHash.isMod) 
+  //if (dataHash.isMod) 
     for (cmd in commands) {
       cmd = commands[cmd];
    //if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
