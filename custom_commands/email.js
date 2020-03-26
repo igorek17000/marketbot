@@ -222,7 +222,7 @@ function sendEmailCmd(request, bots, isMod, callback) {
 
     for (cmd in commands) {
       if (commands[cmd].status = "draft") {
-       var msg = Email sent.";
+       var msg = "Email sent.";
         callback(true, msg, []);
 
 var nodemailer = require('nodemailer');
