@@ -35,15 +35,15 @@ function updateDraft(cmd, updateJson, callback){
 
 
 function updateUndraft(cmd, callback) {
-  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { cmd.status: "drafted"}}, callback);
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "drafted": cmd.status}}, callback);
 }
 
 function updateSent(cmd, callback) {
-  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { cmd.status: "sent"}}, callback);
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "sent": cmd.status}}, callback);
 }
 
 function updateSubject(cmd, callback) {
-  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "subject":"cmd.subject"}}, callback);
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "subject":cmd.subject}}, callback);
 }
 
 function updateBody(cmd, callback) {
