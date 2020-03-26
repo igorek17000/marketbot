@@ -267,9 +267,9 @@ console.log(response);
 
 var msg = "Email sent";
 
-    //callback(true, msg, []);
-    return msg;
-
+    callback(true, msg, []);
+    
+}
 console.log(response);
 }
 Transport.close();
