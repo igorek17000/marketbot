@@ -255,22 +255,26 @@ Transport.sendMail(mailOptions, function(error, response) {
 
 if (error) {
 console.log(error);
+
+
+var msg = "error";
+    callback(true, msg, []);
+    return msg;
+
+//console.log(error);
 } else {
+console.log(response);
+
+var msg = "Email sent";
+
+    //callback(true, msg, []);
+    return msg;
+
 console.log(response);
 }
 Transport.close();
 });
 
-var msg = "Email sent";
-    callback(true, msg, []);
-    return msg;
-
-      }
-  
-  var msg = "error";
-    callback(true, msg, []);
-    return msg;
 }
-    
 
 //
