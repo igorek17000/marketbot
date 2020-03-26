@@ -6,7 +6,7 @@ var db_tables = 'email_draft';
 var db_tabled = 'email_sent';
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var emailCommands = [addEmailCmd, addSubjectCmd, addBodyCmd, sendEmailCmd];
+var emailCommands = [addEmailCmd, addSubjectCmd, addBodyCmd, sendEmailCmd, emailCmd];
 var db = require('../modules/db.js');
 //var mods = require('../modules/mods');
 
@@ -230,8 +230,8 @@ var msg = "Email sent to " + commands[cmd].to;
   }
 
 
-function sendEmailCmd(request, bots, isMod, callback) {
-  var regex = /^\/sendemail$/;
+function emailCmd(request, bots, isMod, callback) {
+  //var regex = /^\/sendemail$/;
   var reqText = request.text;
 
   //if (regex.test(reqText)){
@@ -243,8 +243,8 @@ function sendEmailCmd(request, bots, isMod, callback) {
       //return msg;
     //}
 
-    for (cmd in commands) {
-      if (commands[cmd].draft) {
+    //for (cmd in commands) {
+      //if (commands[cmd].) {
 
        
 var nodemailer = require('nodemailer');
@@ -276,3 +276,4 @@ console.log(response);
 Transport.close();
 });
 
+}
