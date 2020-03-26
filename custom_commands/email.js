@@ -120,7 +120,7 @@ function addEmailCmd(request, bots, isMod, callback) {
     }
 
     for (cmd in commands) {   
-      if (commands[cmd].draft) {
+      if (commands[cmd].status = "draft") {
         updateUndraft(commands[cmd]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
