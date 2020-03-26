@@ -238,11 +238,11 @@ text: cmd.body
       return msg;
     }
 
-    for (cmd in commands) {
-      if (commands[cmd].status == "draft") {
-        commands[cmd]["status"] = "sent";
+    //for (cmd in commands) {
+      //if (commands[cmd].status == "draft") {
+        //commands[cmd]["status"] = "sent";
        
-        updateDraft(commands[cmd]);
+        //updateDraft(commands[cmd]);
        //commands[cmd]["status"] = "Email sent.";
         //callback(true, msg, []);
 
@@ -258,7 +258,6 @@ Transport.close();
 
       }
   }
-    }
-  }
+    
 
 //
