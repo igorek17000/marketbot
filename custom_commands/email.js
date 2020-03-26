@@ -35,7 +35,7 @@ function updateDraft(cmd, updateJson, callback){
 
 
 function updateUndraft(cmd, callback) {
-  db.updateOneDoc(db_table, {cmd.status: "draft"}, {$set: { cmd.status: "drafted"}}, callback);
+  db.updateOneDoc(db_table, { cmd.status: "draft"}, {$set: { cmd.status: "drafted"}}, callback);
 }
 
 function updateSent(cmd, callback) {
