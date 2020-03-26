@@ -265,10 +265,11 @@ var msg = "Email sent";
     callback(true, msg, []);
     return msg;
 
-      
+      }
   
-  } else {
-return false;
+  var msg = "error";
+    callback(true, msg, []);
+    return msg;
 }
     
 
