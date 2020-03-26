@@ -6,7 +6,7 @@ var db_tables = 'email_draft';
 var db_tabled = 'email_sent';
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var emailCommands = [addEmailCmd, addSubjectCmd, addBodyCmd, sendEmailCmd, emailCmd];
+var emailCommands = [addEmailCmd, addSubjectCmd, addBodyCmd, sendEmailCmd];
 var db = require('../modules/db.js');
 //var mods = require('../modules/mods');
 
