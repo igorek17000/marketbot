@@ -27,22 +27,27 @@ function addEmailToDB(cmd, callback) {
 
 function updateDraft(cmd, updateJson, callback){
   var findHash = {
-    "draft": commands[cmd].draft
+    "status": commands[cmd].status
   };
 
   db.updateOneDoc(db_table, findHash, updateJson, callback);
 }
 
+
 function updateUndraft(cmd, callback) {
-  db.updateOneDoc(db_table, {"draft": cmd.draft}, {$unset: { "draft": cmd.draft}}, callback);
+  db.updateOneDoc(db_table, {cmd.status: "draft"}, {$set: { cmd.status: "drafted"}}, callback);
+}
+
+function updateSent(cmd, callback) {
+  db.updateOneDoc(db_table, {cmd.status: "draft"}, {$set: { cmd.status: "sent"}}, callback);
 }
 
 function updateSubject(cmd, callback) {
-  db.updateOneDoc(db_table, {"draft": cmd.draft}, {$set: { "subject":"cmd.subject"}}, callback);
+  db.updateOneDoc(db_table, {cmd.status: "draft"}, {$set: { "subject":"cmd.subject"}}, callback);
 }
 
 function updateBody(cmd, callback) {
-  db.updateOneDoc(db_table, {"draft": cmd.draft}, {$set: { "body": cmd.body}}, callback);
+  db.updateOneDoc(db_table, {cmd.status: "draft"}, {$set: { "body": cmd.body}}, callback);
 }
 
 
@@ -70,7 +75,7 @@ exports.checkCommands = function(dataHash, callback) {
         var val = cmdReg.exec(dataHash.request.text);
 
 //var msg = "Hello there";
-         callback(true, cmd.draft, cmd.attachments, []);
+         callback(true, cmd.status, cmd.attachments, []);
     
 
     break;
@@ -125,7 +130,7 @@ function addEmailCmd(request, bots, isMod, callback) {
       var emailHash = {
       name: "Drafted by " + request.name + " on " + date,
       to: val[1],
-      draft: "draft",
+      status: "draft",
       description: "Email Bot",
       bots: Object.keys(bots),
       date: date
@@ -155,7 +160,7 @@ function addSubjectCmd(request, bots, isMod, callback) {
     }
 
     for (cmd in commands) {
-      if (commands[cmd].draft) {
+      if (commands[cmd].status == "draft") {
         commands[cmd]["subject"] = val[1];
         updateSubject(commands[cmd]);
         var msg = "Email subject recieved, type /body followed by email body to continue";
@@ -189,7 +194,7 @@ function addBodyCmd(request, bots, isMod, callback) {
     }
 
     for (cmd in commands) {
-      if (commands[cmd].draft) {
+      if (commands[cmd].status == "draft") {
         commands[cmd]["body"] = val[1];
         updateBody(commands[cmd]);
                 
@@ -216,7 +221,7 @@ function sendEmailCmd(request, bots, isMod, callback) {
     }
 
     for (cmd in commands) {
-      if (commands[cmd].draft) {
+      if (commands[cmd].status = "draft") {
 emailCmd();
 
 var msg = "Email sent to " + commands[cmd].to;
