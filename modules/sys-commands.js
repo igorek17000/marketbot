@@ -1,5 +1,5 @@
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, emailCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd];
+var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, eemailCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd];
 var { stdin, stdout } = process; 
 
 exports.modName = "System Commands";
@@ -223,7 +223,7 @@ return false;
 
 
 //------------
-function emailCmd(dataHash, request, callback) {
+function eemailCmd(dataHash, request, callback) {
   var regex = /^\/email (.+?) ([^\n])([\s\S]+)/i; 
   var reqText = dataHash.request.text; 
 
