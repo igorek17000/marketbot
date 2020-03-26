@@ -222,11 +222,11 @@ pass: '113Hopest'
 });
 
 var mailOptions = {
-to: cmd.to,
+to: commands[cmd].to,
 from: 'alexdeabot@gmail.com',
-subject: cmd.subject,
+subject: commands[cmd].subject,
 generateTextFromHTML: true,
-text: cmd.body
+text: commands[cmd].body
 };
   
   if (regex.test(reqText)){
@@ -239,7 +239,7 @@ text: cmd.body
     }
 
     //for (cmd in commands) {
-      if (commands[cmd].status == "draft") 
+      if (commands[cmd].status = "draft") 
         //commands[cmd]["status"] = "sent";
        
         //updateDraft(commands[cmd]);
