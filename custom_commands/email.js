@@ -224,7 +224,7 @@ function sendEmailCmd(request, bots, isMod, callback) {
       if (commands[cmd].status = "draft") {
        var msg = "Email sent.";
         callback(true, msg, []);
-
+}
 var nodemailer = require('nodemailer');
 
 var Transport = nodemailer.createTransport({
@@ -258,6 +258,6 @@ Transport.close();
     } 
 
     }
-  }
+  
 
 
