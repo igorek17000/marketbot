@@ -221,10 +221,10 @@ function sendEmailCmd(request, bots, isMod, callback) {
     }
 
     for (cmd in commands) {
-      if (commands[cmd].status == "draft") {
-       commands[cmd]["status"] = "Email sent.";
+      if (commands[cmd].status = "draft") 
+       //commands[cmd]["status"] = "Email sent.";
         //callback(true, msg, []);
-}
+
 var nodemailer = require('nodemailer');
 
 var Transport = nodemailer.createTransport({
