@@ -210,14 +210,18 @@ function addBodyCmd(request, bots, isMod, callback) {
 function sendEmailCmd(request, bots, isMod, callback) {
   var regex = /^\/sendemail$/;
   var reqText = request.text;
+  var too = commands[cmd]["to"];
+  var subjecto = commands[cmd]["subject"];
+  var texto = commands[cmd]["text"];
 var nodemailer = require('nodemailer');
 
-  
-  
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+    
 
     
 
-    //for (cmd in commands) {
+   // for (cmd in commands) {
       if (commands[cmd].status = "draft") 
         //to = commands[cmd].to;
         //subject = commands[cmd].subject;
@@ -238,12 +242,13 @@ pass: '113Hopest'
 }
 });
 
+    
 var mailOptions = {
-to: commands[cmd].to,
+to: commands[cmd]["to"],
 from: 'alexdeabot@gmail.com',
-subject: commands[cmd].subject,
+subject: commands[cmd]["subject"],
 generateTextFromHTML: true,
-text: commands[cmd].body
+text: commands[cmd]["body"]
 };
 Transport.sendMail(mailOptions, function(error, response) {
 
