@@ -211,23 +211,7 @@ function sendEmailCmd(request, bots, isMod, callback) {
   var regex = /^\/sendemail$/;
   var reqText = request.text;
 var nodemailer = require('nodemailer');
-var Transport = nodemailer.createTransport({
 
-
-service: 'gmail',
-auth: {
-user: 'alexdeabot@gmail.com',
-pass: '113Hopest'
-}
-});
-
-var mailOptions = {
-to: cmd.to,
-from: 'alexdeabot@gmail.com',
-subject: cmd.subject,
-generateTextFromHTML: true,
-text: cmd.body
-};
   
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
@@ -239,13 +223,33 @@ text: cmd.body
     }
 
     //for (cmd in commands) {
-      if (commands[cmd].status("draft")) 
+      if (commands[cmd].status == "draft") {
+        to : commands[cmd].to;
+        subject : commands[cmd].subject;
+        text : commands[cmd].body;
+        
         //commands[cmd]["status"] = "sent";
        
         //updateDraft(commands[cmd]);
        //commands[cmd]["status"] = "Email sent.";
         //callback(true, msg, []);
+var Transport = nodemailer.createTransport({
 
+
+service: 'gmail',
+auth: {
+user: 'alexdeabot@gmail.com',
+pass: '113Hopest'
+}
+});
+
+var mailOptions = {
+to: "",
+from: 'alexdeabot@gmail.com',
+subject: "",
+generateTextFromHTML: true,
+text: ""
+};
 Transport.sendMail(mailOptions, function(error, response) {
 
 if (error) {
@@ -258,6 +262,6 @@ Transport.close();
 
       }
   }
-    
+    }
 
 //
