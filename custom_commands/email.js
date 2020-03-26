@@ -25,7 +25,7 @@ function addEmailToDB(cmd, callback) {
   db.addDoc(db_table, cmd, callback);
 }
 
-function updateDraft(cmd, updateJson, callback){
+function updateeDraft(cmd, updateJson, callback){
   var findHash = {
     "status": cmd.status
   };
@@ -34,8 +34,8 @@ function updateDraft(cmd, updateJson, callback){
 }
 
 
-function updateUndraft(cmd, callback) {
-  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "drafted": cmd.status}}, callback);
+function updateDraft(cmd, callback) {
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": cmd.status}}, callback);
 }
 
 function updateSent(cmd, callback) {
@@ -210,6 +210,7 @@ function addBodyCmd(request, bots, isMod, callback) {
 function sendEmailCmd(request, bots, isMod, callback) {
   var regex = /^\/sendemail$/;
   var reqText = request.text;
+var nodemailer = require('nodemailer');
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
@@ -221,14 +222,21 @@ function sendEmailCmd(request, bots, isMod, callback) {
     }
 
     for (cmd in commands) {
-      if (commands[cmd].status = "draft") 
-        updateSent(commands[cmd]);
+      if (commands[cmd].status == "draft") {
+        commands[cmd]["status"] = "sent";
+       
+        updateDraft(commands[cmd]);
        //commands[cmd]["status"] = "Email sent.";
         //callback(true, msg, []);
+}
+}
+}
 
-var nodemailer = require('nodemailer');
+
+
 
 var Transport = nodemailer.createTransport({
+
 
 service: 'gmail',
 auth: {
@@ -256,9 +264,6 @@ Transport.close();
 });
 
       }
-    } 
-
-    }
   
 
 //
