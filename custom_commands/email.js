@@ -217,6 +217,35 @@ function sendEmailCmd(request, bots, isMod, callback) {
 
     for (cmd in commands) {
       if (commands[cmd].body) && commands[cmd].subject && commands[cmd].to) {
+
+
+var msg = "Email sent to " + commands[cmd].to;
+
+        callback(true, msg, []);
+        return msg;
+      }
+    } 
+
+    }
+  }
+
+
+function sendEmailCmd(request, bots, isMod, callback) {
+  var regex = /^\/sendemail$/;
+  var reqText = request.text;
+
+  //if (regex.test(reqText)){
+    //var val = regex.exec(reqText);
+
+    //if (!isMod) {
+      //var msg = request.name + " who you trying to kid?";
+      //callback(true, msg, []);
+      //return msg;
+    //}
+
+    for (cmd in commands) {
+      if (commands[cmd].draft) {
+
        
 var nodemailer = require('nodemailer');
 
@@ -246,15 +275,4 @@ console.log(response);
 }
 Transport.close();
 });
-
-var msg = "Email sent to " + commands[cmd].to;
-
-        callback(true, msg, []);
-        return msg;
-      }
-    } 
-
-    }
-  }
-
 
