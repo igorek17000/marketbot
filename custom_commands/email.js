@@ -269,8 +269,8 @@ var msg = "Email sent";
 
     callback(true, msg, []);
     
-}
-console.log(response);
+
+//console.log(response);
 }
 Transport.close();
 });
