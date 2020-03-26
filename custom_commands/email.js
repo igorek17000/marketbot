@@ -264,7 +264,7 @@ pass: '113Hopest'
 });
 
 var mailOptions = {
-to: commands[cmd].to,
+to: cmd.to,
 from: 'alexdeabot@gmail.com',
 subject: commands[cmd].subject,
 generateTextFromHTML: true,
