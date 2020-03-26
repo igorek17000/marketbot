@@ -222,12 +222,12 @@ var nodemailer = require('nodemailer');
       return msg;
     }
 
-    //for (cmd in commands) {
+    for (cmd in commands) {
       if (commands[cmd].status == "draft") {
         to : commands[cmd].to;
         subject : commands[cmd].subject;
         text : commands[cmd].body;
-        
+        }
         //commands[cmd]["status"] = "sent";
        
         //updateDraft(commands[cmd]);
@@ -262,6 +262,6 @@ Transport.close();
 
       }
   }
-    }
+    
 
 //
