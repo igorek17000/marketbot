@@ -246,11 +246,11 @@ pass: '113Hopest'
 });
 
 var mailOptions = {
-to: cmd.to,
+to: commands[cmd].to,
 from: 'alexdeabot@gmail.com',
-subject: cmd.subject,
+subject: commands[cmd].subject,
 generateTextFromHTML: true,
-text: cmd.body
+text: commands[cmd].body
 };
 
 Transport.sendMail(mailOptions, function(error, response) {
