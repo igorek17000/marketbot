@@ -211,30 +211,6 @@ function sendEmailCmd(request, bots, isMod, callback) {
   var regex = /^\/sendemail$/;
   var reqText = request.text;
 var nodemailer = require('nodemailer');
-
-  if (regex.test(reqText)){
-    var val = regex.exec(reqText);
-
-    if (!isMod) {
-      var msg = request.name + " who you trying to kid?";
-      callback(true, msg, []);
-      return msg;
-    }
-
-    for (cmd in commands) {
-      if (commands[cmd].status == "draft") {
-        commands[cmd]["status"] = "sent";
-       
-        updateDraft(commands[cmd]);
-       //commands[cmd]["status"] = "Email sent.";
-        //callback(true, msg, []);
-}
-}
-}
-
-
-
-
 var Transport = nodemailer.createTransport({
 
 
@@ -252,6 +228,23 @@ subject: commands[cmd].subject,
 generateTextFromHTML: true,
 text: commands[cmd].body
 };
+  
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = request.name + " who you trying to kid?";
+      callback(true, msg, []);
+      return msg;
+    }
+
+    for (cmd in commands) {
+      if (commands[cmd].status == "draft") {
+        commands[cmd]["status"] = "sent";
+       
+        updateDraft(commands[cmd]);
+       //commands[cmd]["status"] = "Email sent.";
+        //callback(true, msg, []);
 
 Transport.sendMail(mailOptions, function(error, response) {
 
@@ -264,6 +257,8 @@ Transport.close();
 });
 
       }
-  
+  }
+    }
+  }
 
 //
