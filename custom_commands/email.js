@@ -71,15 +71,15 @@ exports.checkCommands = function(dataHash, callback) {
         //var val = flynnbcReg.exec(dataHash.request.text);
    
 
-      if (cmd.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && cmdReg.test(dataHash.request.text)){
+      //if (cmd.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && cmdReg.test(dataHash.request.text)){
         var val = cmdReg.exec(dataHash.request.text);
 
 //var msg = "Hello there";
-         callback(true, cmd.status, cmd.attachments, []);
+         //callback(true, cmd.status, cmd.attachments, []);
     
 
-    break;
-    }
+    //break;
+    //}
   }
 
   for (cmd in emailCommands) {
@@ -222,12 +222,12 @@ var nodemailer = require('nodemailer');
       return msg;
     }
 
-    for (cmd in commands) {
-      if (commands[cmd].status == "draft") {
-        to = commands[cmd].to;
-        subject = commands[cmd].subject;
-        text = commands[cmd].body;
-        }
+    //for (cmd in commands) {
+      if (commands[cmd].status = "draft") 
+        //to = commands[cmd].to;
+        //subject = commands[cmd].subject;
+        //text = commands[cmd].body;
+        
         //commands[cmd]["status"] = "sent";
        
         //updateDraft(commands[cmd]);
@@ -244,11 +244,11 @@ pass: '113Hopest'
 });
 
 var mailOptions = {
-to: "",
+to: commands[cmd].to,
 from: 'alexdeabot@gmail.com',
-subject: "",
+subject: commands[cmd].subject,
 generateTextFromHTML: true,
-text: ""
+text: commands[cmd].body
 };
 Transport.sendMail(mailOptions, function(error, response) {
 
@@ -261,7 +261,7 @@ Transport.close();
 });
 
       }
-  }
-    }
+  
+    
 
 //
