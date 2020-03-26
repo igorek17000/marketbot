@@ -27,7 +27,7 @@ function addEmailToDB(cmd, callback) {
 
 function updateDraft(cmd, updateJson, callback){
   var findHash = {
-    "status": commands[cmd].status
+    "status": cmd.status
   };
 
   db.updateOneDoc(db_table, findHash, updateJson, callback);
