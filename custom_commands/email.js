@@ -222,6 +222,7 @@ function sendEmailCmd(request, bots, isMod, callback) {
 
     for (cmd in commands) {
       if (commands[cmd].status = "draft") 
+        updateSent(commands[cmd]);
        //commands[cmd]["status"] = "Email sent.";
         //callback(true, msg, []);
 
