@@ -210,9 +210,9 @@ function addBodyCmd(request, bots, isMod, callback) {
 function sendEmailCmd(request, bots, isMod, callback) {
   var regex = /^\/sendemail$/;
   var reqText = request.text;
-  var too = commands[cmd]["to"];
-  var subjecto = commands[cmd]["subject"];
-  var texto = commands[cmd]["text"];
+  //var too = commands[cmd]["to"];
+  //var subjecto = commands[cmd]["subject"];
+  //var texto = commands[cmd]["text"];
 var nodemailer = require('nodemailer');
 
   if (regex.test(reqText)){
