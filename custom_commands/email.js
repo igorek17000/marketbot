@@ -239,7 +239,7 @@ text: cmd.body
     }
 
     //for (cmd in commands) {
-      //if (commands[cmd].status == "draft") {
+      if (commands[cmd].status == "draft") 
         //commands[cmd]["status"] = "sent";
        
         //updateDraft(commands[cmd]);
