@@ -213,14 +213,9 @@ function sendEmailCmd(request, bots, isMod, callback) {
 var nodemailer = require('nodemailer');
 
   
-  if (regex.test(reqText)){
-    var val = regex.exec(reqText);
+  
 
-    if (!isMod) {
-      var msg = request.name + " who you trying to kid?";
-      callback(true, msg, []);
-      return msg;
-    }
+    
 
     //for (cmd in commands) {
       if (commands[cmd].status = "draft") 
@@ -261,7 +256,7 @@ Transport.close();
 });
 
       }
-  }
+  
   
     
 
