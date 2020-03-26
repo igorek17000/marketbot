@@ -27,7 +27,7 @@ function addEmailToDB(cmd, callback) {
 
 function updateDraft(cmd, updateJson, callback){
   var findHash = {
-    "draft": cmd.draft
+    "draft": commands[cmd].draft
   };
 
   db.updateOneDoc(db_table, findHash, updateJson, callback);
@@ -216,8 +216,8 @@ function sendEmailCmd(request, bots, isMod, callback) {
     }
 
     for (cmd in commands) {
-      if (commands[cmd].body) && commands[cmd].subject && commands[cmd].to) {
-
+      if (commands[cmd].draft) {
+emailCmd();
 
 var msg = "Email sent to " + commands[cmd].to;
 
