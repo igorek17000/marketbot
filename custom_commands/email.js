@@ -25,12 +25,12 @@ function addEmailToDB(cmd, callback) {
   db.addDoc(db_table, cmd, callback);
 }
 
-function updateeDraft(cmd, updateJson, callback){
-  var findHash = {
+function findDraft(cmd, callback){
+  var matchHash = {
     "status": cmd.status
   };
 
-  db.updateOneDoc(db_table, findHash, updateJson, callback);
+  db.findDocs(db_table, matchHash, callback);
 }
 
 
@@ -223,15 +223,16 @@ var nodemailer = require('nodemailer');
 
    // for (cmd in commands) {
       if (commands[cmd]["status"] = "draft") 
-        //to = commands[cmd].to;
-        //subject = commands[cmd].subject;
-        //text = commands[cmd].body;
+        to: commands[cmd]["to"];
+        subject: commands[cmd]["subject"];
+        text: commands[cmd]["body"];
         
         //commands[cmd]["status"] = "sent";
        
-        //updateDraft(commands[cmd]);
+        findDraft(commands[cmd]);
        //commands[cmd]["status"] = "Email sent.";
         //callback(true, msg, []);
+}
 var Transport = nodemailer.createTransport({
 
 
@@ -260,9 +261,15 @@ console.log(response);
 Transport.close();
 });
 
-      }
+var msg = "Email sent";
+    callback(true, msg, []);
+    return msg;
+
+      
   
-  
+  } else {
+return false;
+}
     
 
 //
