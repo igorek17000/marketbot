@@ -223,7 +223,7 @@ var nodemailer = require('nodemailer');
 
       for (cmd in commands) {
         cmd = commands[cmd];
-      if (cmd.status == "draft") 
+      if (cmd.status == "draft") {
         cmd.to = mailOptions.to;
         cmd.subject = mailOptions.subject;
         cmd.text = mailOptions.body;
@@ -234,6 +234,9 @@ var nodemailer = require('nodemailer');
        //commands[cmd]["status"] = "Email sent.";
         //callback(true, msg, []);
 }
+        }
+    }
+  
 var Transport = nodemailer.createTransport({
 
 
@@ -265,5 +268,5 @@ Transport.close();
 });
 
 }
-}
+
 //
