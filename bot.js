@@ -90,9 +90,12 @@ exports.commands = function() {
 //this.res.end(cmdArr);
 }
 
-function sendDelayedMessage(msg, attachments, botID, nickName) {
+function sendDelayedMessage(msg, attachments, botID, logID, nickName) {
   setTimeout(function() {
     postMessage(msg, attachments, botID, nickName);
+    logMessage(msg, attachments, logID, nickName);
+
+
   }, config.delay_time);
 }
 
@@ -148,5 +151,61 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   botReq.end(JSON.stringify(body));
+}
+//
+
+
+function logMessage(logResponse, attachments, logID, logName) {
+  var options, body, logReq;
+//var botName;
+//if (dataHash.request.text) {
+//botName = dataHash.request.name;
+//}
+var logID = '92987b0c560d8f6a9c06d51c47';
+  //var botName = rooms.getRoom(botName);
+  options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+  body = {
+    
+    "attachments" : attachments,
+    "bot_id"      : logID,
+    "text"        : logResponse
+  };
+    var nickName = '';
+      if (logID == 'b6c42cc2a1bee3c38f07723d78') {
+           nickName = 'Config';
+           } else if (logID == '282865de8ce30137567238148f') {
+           nickName = '308BoonBot';
+           } else if (logID == '8631a4c35f0f0f250bd5d46f44') {
+           nickName = 'FlynnBot';
+           } else if (logID == '2184cee4d169628e83e82ee05f') {
+           nickName = 'AshleyBot';
+           } else {
+             nickName = logID;
+             }
+  console.log('sending to ' + nickName + '\n' + logResponse);
+
+
+logReq = HTTPS.request(options, function(res) { 
+console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
+      //if (res.statusCode == 200) || (res.statusCode == 202) {
+        //neat
+//} else {
+        //console.log('rejecting bad status code ' + res.statusCode);
+      //}
+  });
+
+
+  logReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  logReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+  logReq.end(JSON.stringify(body));
 }
 //
