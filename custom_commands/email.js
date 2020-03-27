@@ -229,7 +229,7 @@ var nodemailer = require('nodemailer');
         
         //commands[cmd]["status"] = "sent";
        
-        findDraft(commands[cmd]);
+        getAllCommands(commands[cmd]);
        //commands[cmd]["status"] = "Email sent.";
         //callback(true, msg, []);
 }
