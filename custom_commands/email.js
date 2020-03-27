@@ -221,15 +221,16 @@ var nodemailer = require('nodemailer');
 
     
 
-   // for (cmd in commands) {
-      if (commands[cmd]["status"] = "draft") 
-        to: commands[cmd]["to"];
-        subject: commands[cmd]["subject"];
-        text: commands[cmd]["body"];
+      for (cmd in commands) {
+        cmd = commands[cmd];
+      if (cmd.status == "draft") 
+        cmd.to = mailOptions.to;
+        cmd.subject: mailOptions.subject;
+        cmd.text: mailOptions.body;
         
         //commands[cmd]["status"] = "sent";
        
-        getAllCommands(commands[cmd]);
+        getAllCommands(cmd);
        //commands[cmd]["status"] = "Email sent.";
         //callback(true, msg, []);
 }
@@ -245,36 +246,24 @@ pass: '113Hopest'
 
     
 var mailOptions = {
-to: commands[cmd]["to"],
+to: cmd.to,
 from: 'alexdeabot@gmail.com',
-subject: commands[cmd]["subject"],
+subject: cmd.subject,
 generateTextFromHTML: true,
-text: commands[cmd]["body"]
+text: cmd.body
 };
 Transport.sendMail(mailOptions, function(error, response) {
 
 if (error) {
 console.log(error);
 
-
-var msg = "error";
-    callback(true, msg, []);
-    return msg;
-
 //console.log(error);
 } else {
 console.log(response);
-
-var msg = "Email sent";
-
-    callback(true, msg, []);
-    
-
-//console.log(response);
 }
 Transport.close();
 });
 
 }
-
+}
 //
