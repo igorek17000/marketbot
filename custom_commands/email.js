@@ -225,8 +225,8 @@ var nodemailer = require('nodemailer');
         cmd = commands[cmd];
       if (cmd.status == "draft") 
         cmd.to = mailOptions.to;
-        cmd.subject: mailOptions.subject;
-        cmd.text: mailOptions.body;
+        cmd.subject = mailOptions.subject;
+        cmd.text = mailOptions.body;
         
         //commands[cmd]["status"] = "sent";
        
