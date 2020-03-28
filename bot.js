@@ -201,7 +201,8 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
 
 
   logReq.on('error', function(err) {
-    console.log('error posting message '  + JSON.stringify(err));
+    //console.log('error posting message '  + JSON.stringify(err));
+    botReq.end(JSON.stringify(err));
   });
   logReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
