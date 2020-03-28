@@ -50,37 +50,7 @@ exports.getAllDocuments = function(collection, callback) {
   });
 }
 
-exports.getAllDocumentsDb = function(collection, callback) {
-  connect(function(db){
-    var allDocs = db.collection('user_triggers').find({}).toArray(function(err, result) {
-allDocs;
-if (callback)
-      callback(result);
-      db.close();
-    });
-  });
-}
 
-exports.answerAllDocuments = function(collection, callback) {
-connect(function(db){
-//var name = commands[cmd].name;
-//var regex = commands[cmd].regex;
-//var id = commands[cmd]._id
-
-//cursor = db.collection(collection).find();
-//while ( cursor.hasNext() ) {
-   //printjson( cursor.next() );
-
-var query = {};
-  var cursor = db.collection('user_triggers').find(query).toArray(function(err, result) {
-    if (err) throw err;
-cursor;
-    console.log(result);
-bot.sendDelayedMessage;
-    db.close();
-});
-});
-}
 
 
 exports.findDocs = function(collection, matchHash, callback) {
@@ -157,6 +127,40 @@ exports.randomDoc = function(collection, callback) {
 
 
 //************
+
+exports.getAllDocumentsDb = function(collection, callback) {
+  connect(function(db){
+    var allDocs = db.collection('user_triggers').find({}).toArray(function(err, result) {
+allDocs;
+if (callback)
+      callback(result);
+      db.close();
+    });
+  });
+}
+
+exports.answerAllDocuments = function(collection, callback) {
+connect(function(db){
+//var name = commands[cmd].name;
+//var regex = commands[cmd].regex;
+//var id = commands[cmd]._id
+
+//cursor = db.collection(collection).find();
+//while ( cursor.hasNext() ) {
+   //printjson( cursor.next() );
+
+var query = {};
+  var cursor = db.collection('user_triggers').find(query).toArray(function(err, result) {
+    if (err) throw err;
+cursor;
+    console.log(result);
+bot.sendDelayedMessage;
+    db.close();
+});
+});
+}
+
+
 exports.randomDocs = function(collection, callback) {
   connect(function(db){
     var coll = db.collection('user_triggers');
