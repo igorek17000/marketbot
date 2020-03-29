@@ -41,17 +41,17 @@ server = http.createServer(function (req, res) {
     req.chunks.push(chunk.toString());
   });
 
-
+router.on('error', function(err) {
+this.res.writeHead(err.status, {"Content-Type": "text/plain"});
+    this.res.end(err.message);
+});
 
   router.dispatch(req, res, function(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
   });
 
-router.on('error', function(err) {
-this.res.writeHead(err.status, {"Content-Type": "text/plain"});
-    this.res.end(err.message);
-});
+
 
 });
 
