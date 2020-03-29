@@ -136,9 +136,8 @@ function postMessage(botResponse, attachments, botID, nickName) {
 
 botReq = HTTPS.request(options, function(res) { 
 console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
-botReq.on('err', function(err) {
 this.res.writeHead(200);
-  this.res.end(err);
+this.res.end(JSON.stringify(message));
 
       //if (res.statusCode == 200) || (res.statusCode == 202) {
         //neat
