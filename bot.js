@@ -176,7 +176,8 @@ var logID = 'b6c42cc2a1bee3c38f07723d78';
     
     "attachments" : attachments,
     "bot_id"      : logID,
-    "text"        : logResponse
+    "text"        : logResponse,
+    "name"        : logName
   };
     var nickName = '';
       if (logID == 'b6c42cc2a1bee3c38f07723d78') {
