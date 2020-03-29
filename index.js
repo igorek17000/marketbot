@@ -34,7 +34,7 @@ get: pingit
   //},
 });
 
-server = http.createServer(function (req, res) {
+server = http.createServer(function (req, res, err) {
   req.chunks = [];
 
   req.on('data', function (chunk) {
