@@ -164,7 +164,7 @@ function logMessage(logResponse, attachments, logID, logName) {
 //if (dataHash.request.text) {
 //botName = dataHash.request.name;
 //}
-var logID = '92987b0c560d8f6a9c06d51c47';
+var logID = 'b6c42cc2a1bee3c38f07723d78';
   //var botName = rooms.getRoom(botName);
   options = {
     hostname: 'api.groupme.com',
@@ -205,7 +205,7 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
 
   logReq.on('error', function(err) {
     //console.log('error posting message '  + JSON.stringify(err));
-    logReq.end(JSON.stringify(err));
+    //logReq.end(JSON.stringify(err));
   });
   logReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
