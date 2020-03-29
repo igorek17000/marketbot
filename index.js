@@ -42,7 +42,7 @@ server = http.createServer(function (req, res, err) {
   });
 
   
-res.on('err', function (chunk) {
+req.on('err', function (chunk) {
     req.chunks.push(chunk.toString());
   });
 
