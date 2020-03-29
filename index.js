@@ -41,7 +41,7 @@ server = http.createServer(function (req, res) {
     req.chunks.push(chunk.toString());
   });
 
-router.on('error', function(err) {
+router.send('error', function(err) {
 res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
 });
