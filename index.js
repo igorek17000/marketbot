@@ -41,14 +41,18 @@ server = http.createServer(function (req, res) {
     req.chunks.push(chunk.toString());
   });
 
-req.on('err', function (err) {
-    req.err.push(err.toString());
-  });
+
 
   router.dispatch(req, res, function(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
   });
+
+router.on('error', function(err) {
+this.res.writeHead(err.status, {"Content-Type": "text/plain"});
+    this.res.end(err.message);
+});
+
 });
 
 port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
