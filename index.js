@@ -42,8 +42,8 @@ server = http.createServer(function (req, res) {
   });
 
 router.on('error', function(err) {
-this.res.writeHead(err.status, {"Content-Type": "text/plain"});
-    this.res.end(err.message);
+res.writeHead(err.status, {"Content-Type": "text/plain"});
+    res.end(err.message);
 });
 
   router.dispatch(req, res, function(err) {
