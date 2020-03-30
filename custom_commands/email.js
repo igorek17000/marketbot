@@ -262,11 +262,18 @@ console.log(response);
 Transport.close();
 });
 
-
-        cmd.status = "sent";
-        updateDraft(cmd);
 }
 
+for (cmd in commands) {
+        cmd = commands[cmd];
+
+if (cmd.status == "draft") {
+
+cmd.status = "sent";
+        updateDraft(cmd);
+
+}
+}
 }
 }
 
