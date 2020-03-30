@@ -53,7 +53,7 @@ function updateBody(cmd, callback) {
 
 
 
-exports.checkCommands = function(result, dataHash, callback) {
+exports.checkCommands = function(dataHash, callback) {
  if (dataHash.isMod) 
     for (cmd in commands) {
       cmd = commands[cmd];
