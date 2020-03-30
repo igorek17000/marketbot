@@ -251,7 +251,7 @@ text: cmd.body
 };
 
 cmd.status == "sent";
-        updateDraft(cmd);
+        updateDraft(commands[cmd]);
 
 Transport.sendMail(mailOptions, function(error, response) {
 
