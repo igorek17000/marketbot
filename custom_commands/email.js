@@ -223,20 +223,20 @@ var nodemailer = require('nodemailer');
 
     
 
-      for (cmd in commands) {
-        cmd = commands[cmd];
-      if (cmd.status == "draft") {
-        cmd.to = mailOptions.to;
-        cmd.subject = mailOptions.subject;
-        cmd.text = mailOptions.body;
+     // for (cmd in commands) {
+        //cmd = commands[cmd];
+      //if (cmd.status == "draft") {
+        //cmd.to = mailOptions.to;
+        //cmd.subject = mailOptions.subject;
+        //cmd.text = mailOptions.body;
         
         //commands[cmd]["status"] = "sent";
        
-        getAllCommands(cmd);
+        //getAllCommands(cmd);
        //commands[cmd]["status"] = "Email sent.";
         //callback(true, msg, []);
-}
-        }
+//}
+        //}
     }
   
 var Transport = nodemailer.createTransport({
@@ -251,6 +251,14 @@ pass: '113Hopest'
 
     
 var mailOptions = {
+
+for (cmd in commands) {
+        cmd = commands[cmd];
+      if (cmd.status == "draft") {
+        //cmd.to = to;
+        //cmd.subject = subject;
+        //cmd.body = text;
+
 to: cmd.to,
 from: 'alexdeabot@gmail.com',
 subject: cmd.subject,
@@ -270,6 +278,8 @@ console.log(response);
 Transport.close();
 });
 
+}
+}
 }
 
 //
