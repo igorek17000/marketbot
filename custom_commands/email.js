@@ -249,6 +249,10 @@ subject: cmd.subject,
 generateTextFromHTML: true,
 text: cmd.body
 };
+
+cmd.status = "sent";
+        updateDraft(cmd);
+
 Transport.sendMail(mailOptions, function(error, response) {
 
 if (error) {
@@ -264,15 +268,7 @@ Transport.close();
 
 }
 
-for (cmd in commands) {
-        cmd = commands[cmd];
 
-if (cmd.status == "draft") {
-
-cmd["status"] = "sent";
-        updateDraft(cmd);
-
-}
 }
 }
 }
