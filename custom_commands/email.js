@@ -226,7 +226,7 @@ var nodemailer = require('nodemailer');
      for (cmd in commands) {
         cmd = commands[cmd];
       if (cmd.status == "draft") 
-        commands[cmd]["status"] = "sent";
+        cmd["status"] = "sent";
         updateDraft(cmd);
     
   
