@@ -269,7 +269,7 @@ for (cmd in commands) {
 
 if (cmd.status == "draft") {
 
-cmd.status = "sent";
+cmd["status"] = "sent";
         updateDraft(cmd);
 
 }
