@@ -225,7 +225,7 @@ var nodemailer = require('nodemailer');
 
      for (cmd in commands) {
         cmd = commands[cmd];
-      if (cmd.status == "draft") 
+      if (cmd.status == "draft") {
         //cmd["status"] = "sent";
         //updateDraft(cmd);
     
@@ -265,7 +265,7 @@ Transport.close();
 
         cmd["status"] = "sent";
         updateDraft(cmd);
-
+}
 
 }
 }
