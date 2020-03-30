@@ -77,7 +77,7 @@ exports.checkCommands = function(dataHash, callback) {
 //var msg = "Hello there";
           if (callback) {
           
-         callback(true, cmd.message, cmd.attachments, []);
+         callback(true, cmd.msg, cmd.attachments, []);
     
 
     break;
