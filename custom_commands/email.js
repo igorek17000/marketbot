@@ -255,6 +255,7 @@ var mailOptions = {
 for (cmd in commands) {
         cmd = commands[cmd];
       if (cmd.status == "draft") {
+getAllCommands(cmd);
         //cmd.to = to;
         //cmd.subject = subject;
         //cmd.body = text;
