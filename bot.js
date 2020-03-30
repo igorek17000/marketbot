@@ -153,7 +153,8 @@ botReq.end(JSON.stringify(res.Message));
   botReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
-  this.res.writeHead(200); 
+  this.res.writeHead(200, {"Content-Type": "text/html"});
+
   this.res.send();
 
   botReq.end(JSON.stringify(body));
