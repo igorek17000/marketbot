@@ -64,7 +64,7 @@ exports.checkCommands = function(dataHash, callback) {
 
      //var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
         
-     // if (dataHash.request.text && cmdReg.test(dataHash.request.text)){
+     // if (cmd.status----dataHash.request.text) && cmdReg.test(dataHash.request.text)){
       //  var val = cmdReg.exec(dataHash.request.text);
       
      // } else if (flynnbc.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
