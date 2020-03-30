@@ -39,11 +39,11 @@ function updateDraft(cmd, callback) {
 }
 
 function updateSent(cmd, callback) {
-  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "sent": cmd.status}}, callback);
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": cmd.status}}, callback);
 }
 
 function updateSubject(cmd, callback) {
-  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "subject":cmd.subject}}, callback);
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "subject": cmd.subject}}, callback);
 }
 
 function updateBody(cmd, callback) {
