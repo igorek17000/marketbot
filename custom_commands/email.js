@@ -250,8 +250,8 @@ generateTextFromHTML: true,
 text: cmd.body
 };
 
-cmd.status == "sent";
-        updateDraft(commands[cmd]);
+cmd[status] == "sent";
+        updateDraft(cmd);
 
 Transport.sendMail(mailOptions, function(error, response) {
 
