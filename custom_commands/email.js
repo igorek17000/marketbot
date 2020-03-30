@@ -223,9 +223,9 @@ var nodemailer = require('nodemailer');
 
     
 
-     // for (cmd in commands) {
-        //cmd = commands[cmd];
-      //if (cmd.status == "draft") {
+     for (cmd in commands) {
+        cmd = commands[cmd];
+      if (cmd.status == "draft") 
         //cmd.to = mailOptions.to;
         //cmd.subject = mailOptions.subject;
         //cmd.text = mailOptions.body;
@@ -252,14 +252,6 @@ pass: '113Hopest'
     
 var mailOptions = {
 
-for (cmd in commands) {
-        cmd = commands[cmd];
-      if (cmd.status == "draft") {
-getAllCommands(cmd);
-        //cmd.to = to;
-        //cmd.subject = subject;
-        //cmd.body = text;
-
 to: cmd.to,
 from: 'alexdeabot@gmail.com',
 subject: cmd.subject,
@@ -282,6 +274,6 @@ Transport.close();
 }
 }
 }
-}
+
 
 //
