@@ -77,7 +77,7 @@ exports.checkCommands = function(dataHash, callback) {
 //var msg = "Hello there";
           if (callback) {
           
-         callback(result, cmd.attachments, []);
+         callback(data, cmd.attachments, []);
     
 
     break;
@@ -226,9 +226,9 @@ var nodemailer = require('nodemailer');
       for (cmd in commands) {
         cmd = commands[cmd];
       if (cmd.status == "draft") {
-        cmd.to = mailOptionsTo;
-        cmd.subject = mailOptionsSubject;
-        cmd.text = mailOptionsBody;
+        cmd.["to"] = mailOptions.to;
+        cmd.["subject"] = mailOptions.subject;
+        cmd.["text"] = mailOptions.body;
         
         //commands[cmd]["status"] = "sent";
        
