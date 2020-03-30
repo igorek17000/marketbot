@@ -237,7 +237,7 @@ var nodemailer = require('nodemailer');
         //callback(true, msg, []);
 //}
         //}
-    }
+    
   
 var Transport = nodemailer.createTransport({
 
@@ -278,6 +278,7 @@ console.log(response);
 Transport.close();
 });
 
+}
 }
 }
 }
