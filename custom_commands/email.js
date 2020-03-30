@@ -262,10 +262,10 @@ console.log(response);
 Transport.close();
 });
 
-if (cmd.status == "draft") {
+
         cmd["status"] = "sent";
         updateDraft(cmd);
-}
+
 
 }
 }
