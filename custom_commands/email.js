@@ -53,7 +53,7 @@ function updateBody(cmd, callback) {
 
 
 
-exports.checkCommands = function(dataHash, callback) {
+exports.checkCommands = function(result, dataHash, callback) {
  if (dataHash.isMod) 
     for (cmd in commands) {
       cmd = commands[cmd];
@@ -75,11 +75,13 @@ exports.checkCommands = function(dataHash, callback) {
         var val = cmdReg.exec(dataHash.request.text);
 
 //var msg = "Hello there";
-         //callback(true, cmd.status, cmd.attachments, []);
+          if (callback) {
+          
+         callback(result, cmd.attachments, []);
     
 
-    //break;
-    //}
+    break;
+    }
   }
 
   for (cmd in emailCommands) {
