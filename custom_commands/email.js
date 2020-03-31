@@ -69,20 +69,20 @@ exports.checkCommands = function(dataHash, callback) {
 
      //var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
         
-     if (cmd.status == "draft" && dataHash.request.text && cmdReg.test(dataHash.request.text)){
+     //if (cmd.status == "draft" && dataHash.request.text && cmdReg.test(dataHash.request.text)){
       //  var val = cmdReg.exec(dataHash.request.text);
       
      // } else if (flynnbc.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
         //var val = flynnbcReg.exec(dataHash.request.text);
    
 
-      //if (cmd.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && cmdReg.test(dataHash.request.text)){
+      if (cmd.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && cmdReg.test(dataHash.request.text)){
         var val = cmdReg.exec(dataHash.request.text);
 
-//var msg = cmd.msg;
+//var msg = "";
           //if (callback) {
           
-         callback(true, cmd.attachments, []);
+         callback(true, msg, cmd.attachments, []);
     
 
     break;
