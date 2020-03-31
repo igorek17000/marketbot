@@ -86,7 +86,7 @@ var msg = "";
     
 
     break;
-   // }
+    }
   }
 
   for (cmd in emailCommands) {
