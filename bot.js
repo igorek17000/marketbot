@@ -167,7 +167,7 @@ function logMessage(logResponse, attachments, logID, nickName) {
 //if (dataHash.request.text) {
 //botName = dataHash.request.name;
 //}
-//var logID = 'b6c42cc2a1bee3c38f07723d78';
+var logID = 'b6c42cc2a1bee3c38f07723d78';
   //var botName = rooms.getRoom(botName);
   options = {
     hostname: 'api.groupme.com',
