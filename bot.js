@@ -161,7 +161,7 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 //
 
 
-function logMessage(logResponse, attachments, logID, nickName) {
+function logMessage(logResponse, attachments, logID, logName) {
   var options, body, logReq;
 //var botName;
 //if (dataHash.request.text) {
@@ -182,19 +182,19 @@ var logID = 'b6c42cc2a1bee3c38f07723d78';
     "text"        : logResponse
     //"name"        : logName
   };
-    var nickName = '';
+    var logName = '';
       if (logID == 'b6c42cc2a1bee3c38f07723d78') {
-           nickName = 'Config';
+           logName = 'Config';
            } else if (logID == '282865de8ce30137567238148f') {
-           nickName = '308BoonBot';
+           logName = '308BoonBot';
            } else if (logID == '8631a4c35f0f0f250bd5d46f44') {
-           nickName = 'FlynnBot';
+           logName = 'FlynnBot';
            } else if (logID == '2184cee4d169628e83e82ee05f') {
-           nickName = 'AshleyBot';
+           logName = 'AshleyBot';
          //  } else {
-           //  nickName = logID;
+           //  logName = logID;
              }
-  console.log('sending to ' + nickName + '\n' + logResponse);
+  console.log('sending to ' + logName + '\n' + logResponse);
 
 
 logReq = HTTPS.request(options, function(res) { 
