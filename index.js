@@ -43,8 +43,8 @@ server = http.createServer(function (req, res, err) {
   });
 
   
-req.on('err', function (err) {
-    res.chunks.push(err.toString());
+res.on('data', function (chunk) {
+    res.chunks.push(chunk.toString());
     //res.writeHead(err.status, {"Content-Type": "text/plain"});
     //res.end(err.message)
   });
