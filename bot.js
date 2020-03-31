@@ -90,7 +90,7 @@ exports.commands = function() {
 //this.res.end(cmdArr);
 }
 
-function sendDelayedMessage(msg, attachments, botID, logID, logName. nickName) {
+function sendDelayedMessage(msg, attachments, botID, logID, logName, nickName) {
   setTimeout(function() {
     postMessage(msg, attachments, botID, nickName);
     logMessage(msg, attachments, logID, logName);
