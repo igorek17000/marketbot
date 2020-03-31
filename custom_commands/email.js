@@ -263,8 +263,8 @@ text: cmd.body
 Transport.sendMail(mailOptions, function(error, response) {
 
 if (error) {
-//console.log(error);
-callback(error);
+console.log(error);
+//callback(error);
 
 //console.log(error);
 } else {
