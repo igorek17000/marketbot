@@ -43,12 +43,12 @@ server = http.createServer(function (req, res, err) {
 
   
 req.on('err', function (err) {
-    req.chunks.push(err.toString());
-    res.writeHead(err.status, {"Content-Type": "text/plain"});
-    res.end(err.message);
+    req.chunks.push(chunk.toString());
+    //res.writeHead(err.status, {"Content-Type": "text/plain"});
+    //res.end(err.message)
   });
 
-  router.dispatch(req, res, err, function(err) {
+  router.dispatch(req, res, function(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
   });
