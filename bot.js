@@ -191,8 +191,8 @@ var logID = 'b6c42cc2a1bee3c38f07723d78';
            logName = 'FlynnBot';
            } else if (logID == '2184cee4d169628e83e82ee05f') {
            logName = 'AshleyBot';
-         //  } else {
-           //  logName = logID;
+           } else {
+             logName = logID;
              }
   console.log('sending response to ' + logName + '\n' + logResponse);
 
