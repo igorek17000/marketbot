@@ -161,7 +161,7 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
 //
 
 
-function logMessage(logResponse, attachments, logID, logName) {
+function logMessage(logResponse, attachments, logID, nickName) {
   var options, body, logReq;
 //var botName;
 //if (dataHash.request.text) {
