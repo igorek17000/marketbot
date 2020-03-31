@@ -93,7 +93,7 @@ exports.commands = function() {
 function sendDelayedMessage(msg, attachments, botID, logID, nickName) {
   setTimeout(function() {
     postMessage(msg, attachments, botID, nickName);
-    logMessage(msg, attachments, logID, nickName);
+    logMessage(msg, attachments, logID, logName);
 
 
   }, config.delay_time);
@@ -131,7 +131,7 @@ function postMessage(botResponse, attachments, botID, nickName) {
            } else {
              nickName = botID;
              }
-  console.log('sending cmd message to ' + nickName + '\n' + botResponse);
+  console.log('sending response to ' + nickName + '\n' + botResponse);
 
 
 botReq = HTTPS.request(options, function(res) { 
@@ -194,7 +194,7 @@ var logID = 'b6c42cc2a1bee3c38f07723d78';
          //  } else {
            //  logName = logID;
              }
-  console.log('sending to ' + logName + '\n' + logResponse);
+  console.log('sending response to ' + logName + '\n' + logResponse);
 
 
 logReq = HTTPS.request(options, function(res) { 
