@@ -36,6 +36,7 @@ get: pingit
 
 server = http.createServer(function (req, res, err) {
   req.chunks = [];
+  res.chunks = [];
 
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
@@ -43,7 +44,7 @@ server = http.createServer(function (req, res, err) {
 
   
 req.on('err', function (err) {
-    req.chunks.push(err.toString());
+    res.chunks.push(err.toString());
     //res.writeHead(err.status, {"Content-Type": "text/plain"});
     //res.end(err.message)
   });
