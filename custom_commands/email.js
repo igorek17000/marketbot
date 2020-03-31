@@ -79,14 +79,14 @@ exports.checkCommands = function(dataHash, callback) {
       //if (cmd.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && cmdReg.test(dataHash.request.text)){
         var val = cmdReg.exec(dataHash.request.text);
 
-//var msg = "Hello there";
-          if (callback) {
+//var msg = cmd.msg;
+          //if (callback) {
           
-         callback(true, cmd.msg, cmd.attachments, []);
+         callback(true, msg, cmd.attachments, []);
     
 
     break;
-    }
+   // }
   }
 
   for (cmd in emailCommands) {
