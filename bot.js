@@ -191,8 +191,8 @@ function logMessage(logResponse, attachments, logID, nickName) {
            nickName = 'FlynnBot';
            } else if (logID == '2184cee4d169628e83e82ee05f') {
            nickName = 'AshleyBot';
-           } else {
-             nickName = logID;
+         //  } else {
+           //  nickName = logID;
              }
   console.log('sending to ' + nickName + '\n' + logResponse);
 
