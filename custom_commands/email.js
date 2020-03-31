@@ -257,7 +257,7 @@ text: cmd.body
 
 updateUndraft(cmd);
 
-cmd["status"] == "sent";
+cmd.status == "sent";
         updateDraft(cmd);
 
 Transport.sendMail(mailOptions, function(error, response) {
