@@ -255,10 +255,10 @@ generateTextFromHTML: true,
 text: cmd.body
 };
 
-updateUndraft(cmd);
+//updateUndraft(cmd);
 
-cmd.status == "sent";
-        updateDraft(cmd);
+//cmd.status == "sent";
+        //updateDraft(cmd);
 
 Transport.sendMail(mailOptions, function(error, response) {
 
