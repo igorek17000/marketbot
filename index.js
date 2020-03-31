@@ -40,6 +40,7 @@ server = http.createServer(function (req, res, err) {
 
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
+     
   });
 
   
@@ -50,6 +51,7 @@ res.on('data', function (chunk) {
   });
 
   router.dispatch(req, res, function(err) {
+    res.send(body);
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
   });
