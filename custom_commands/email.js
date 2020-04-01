@@ -237,12 +237,6 @@ pass: '113Hopest'
 });
 
 
-     for (cmd in commands) {
-        cmd = commands[cmd];
-      if (cmd.status == "draft") 
-        //cmd["status"] = "sent";
-        //updateDraft(cmd);
-
     
 var mailOptions = {
 
@@ -252,6 +246,14 @@ subject: cmd.subject,
 generateTextFromHTML: true,
 text: cmd.body
 };
+
+
+      for (cmd in commands) {
+        cmd = commands[cmd];
+      if (cmd.status == "draft") 
+        //cmd["status"] = "sent";
+        //updateDraft(cmd);
+
 
 //updateUndraft(cmd);
 
