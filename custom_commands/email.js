@@ -225,7 +225,19 @@ var nodemailer = require('nodemailer');
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
     
-  
+  for (cmd in commands) {
+        cmd = commands[cmd];
+      if (cmd.status == "draft") 
+        //cmd["status"] = "sent";
+        //updateDraft(cmd);
+
+
+//updateUndraft(cmd);
+
+//cmd.status == "sent";
+        //updateDraft(cmd);
+
+
 var Transport = nodemailer.createTransport({
 
 
@@ -248,17 +260,7 @@ text: cmd.body
 };
 
 
-      for (cmd in commands) {
-        cmd = commands[cmd];
-      if (cmd.status == "draft") 
-        //cmd["status"] = "sent";
-        //updateDraft(cmd);
-
-
-//updateUndraft(cmd);
-
-//cmd.status == "sent";
-        //updateDraft(cmd);
+      
 
 Transport.sendMail(mailOptions, function(error, response) {
 
