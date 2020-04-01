@@ -87,13 +87,13 @@ var msg = "";
 
     break;
     }
- // }
+  }
 
   for (cmd in emailCommands) {
     var test = emailCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
     if (test)
       return test;
-  }
+   }
  }
 
 
