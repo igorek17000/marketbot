@@ -29,9 +29,7 @@ get: pingit
     get: ping,
     post: bot.respond
   },
-  //'/image' : {
-  //get: image
-  //},
+  
 });
 
 server = http.createServer(function (req, res) {
@@ -45,7 +43,6 @@ server = http.createServer(function (req, res) {
 
 
   router.dispatch(req, res, function(err) {
-    
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
   });
