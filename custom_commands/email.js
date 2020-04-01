@@ -225,15 +225,6 @@ var nodemailer = require('nodemailer');
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
     
-
-    
-
-     for (cmd in commands) {
-        cmd = commands[cmd];
-      if (cmd.status == "draft") 
-        //cmd["status"] = "sent";
-        //updateDraft(cmd);
-    
   
 var Transport = nodemailer.createTransport({
 
@@ -244,6 +235,13 @@ user: 'alexdeabot@gmail.com',
 pass: '113Hopest'
 }
 });
+
+
+     for (cmd in commands) {
+        cmd = commands[cmd];
+      if (cmd.status == "draft") 
+        //cmd["status"] = "sent";
+        //updateDraft(cmd);
 
     
 var mailOptions = {
