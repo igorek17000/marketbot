@@ -193,9 +193,9 @@ var logID = 'b6c42cc2a1bee3c38f07723d78';
            logName = 'AshleyBot';
            } else {
              logName = logID;
-             }
-  console.log('sending response to ' + logName + '\n' + logResponse);
-
+             
+  console.log('sending response to ' + logName + '\n' + logResponse + res.message);
+}
 
 logReq = HTTPS.request(options, function(res) { 
 console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
