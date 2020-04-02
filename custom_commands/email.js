@@ -234,17 +234,12 @@ var nodemailer = require('nodemailer');
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
     
-  //for (cmd in commands) {
+  for (cmd in commands) {
         //cmd = commands[cmd];
-      //if (cmd.status == "draft") 
+
+      if (commands[cmd].status == "draft") 
       //continue;
         //cmd["status"] = "sent";
-        //updateDraft(cmd);
-
-
-//updateUndraft(cmd);
-
-//cmd.status == "sent";
         //updateDraft(cmd);
 
 
@@ -258,13 +253,7 @@ pass: '113Hopest'
 }
 });
 
-for (cmd in commands) {
-        //cmd = commands[cmd];
 
-      if (commands[cmd].status == "draft") 
-      //continue;
-        //cmd["status"] = "sent";
-        //updateDraft(cmd);
     
 var mailOptions = {
 
