@@ -26,22 +26,23 @@ function addEmailToDB(cmd, callback) {
 }
 
 function findDocs(cmd, callback){ 
-  var mailOptions {
-    "to": commands[cmd].to,
-    "subject": commands[cmd].subject,
-    "text": commands[cmd].body
+  var matchHash {
+    "status": commands[cmd].status
+    //"to": commands[cmd].to,
+    //"subject": commands[cmd].subject,
+    //"text": commands[cmd].body
   }
 
-db.findDocs(db_table, mailOptions, callback);
-return mailOptions;
+db.findDocs(db_table, matchHash, callback);
+
 }
 
 function updateDraft(cmd, updateJson, callback){
-  var findHash = {
+  var findJson = {
     "status": cmd["status"]
   }
 
-  db.updateOneDoc(db_table, findHash, updateJson, callback);
+  db.updateOneDoc(db_table, findJson, updateJson, callback);
 }
 
 
