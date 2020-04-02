@@ -26,7 +26,14 @@ function addEmailToDB(cmd, callback) {
 }
 
 function findDocs(cmd, callback){ 
-db.findDocs(db_table, { "status": commands[cmd].status }, callback);
+  var mailOptions {
+    "to": commands[cmd].to,
+    "subject": commands[cmd].subject,
+    "text": commands[cmd].body
+  }
+
+db.findDocs(db_table, mailOptions, callback);
+return mailOptions;
 }
 
 function updateDraft(cmd, updateJson, callback){
@@ -256,14 +263,15 @@ pass: '113Hopest'
 for (cmd in commands) {
         //cmd = commands[cmd];
 
-      if (commands[cmd].status == "draft") 
-      //continue;
-        //cmd["status"] = "sent";
-        //updateDraft(cmd);
+      if (commands[cmd].status == "draft") {
+      to = commands[cmd].to,
+      subject = commands[cmd].subject,
+      text = commands[cmd].subject(cmd);
+   findDocs(mailoptions);
     
 var mailOptions = {
 
-to: commands[cmd].to,
+to: to,
 from: 'alexdeabot@gmail.com',
 subject: commands[cmd].subject,
 generateTextFromHTML: true,
@@ -289,7 +297,7 @@ Transport.close();
 });
 
 }
-
+}
 
 }
 }
