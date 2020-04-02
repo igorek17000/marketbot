@@ -25,6 +25,10 @@ function addEmailToDB(cmd, callback) {
   db.addDoc(db_table, cmd, callback);
 }
 
+function findDocs(cmd, callback){ 
+db.findDocs(db_table, { "status": commands[cmd].status }, callback);
+}
+
 function updateDraft(cmd, updateJson, callback){
   var findHash = {
     "status": cmd["status"]
