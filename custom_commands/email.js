@@ -243,11 +243,11 @@ function sendEmailCmd(request, bots, isMod, callback) {
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
     for (cmd in commands) {
-        commands[cmd].to = to,
-        commands[cmd].subject = subject,
-        Commands[cmd].body = text
+        //commands[cmd].to = to,
+        //commands[cmd].subject = subject,
+        //Commands[cmd].body = text
 
-      if (commands[cmd].status == "draft") 
+      //if (commands[cmd].status == "draft") 
   
 
 
@@ -265,18 +265,19 @@ for (cmd in commands) {
         //cmd = commands[cmd];
 
       if (commands[cmd].status == "draft") {
-      to = commands[cmd].to,
-      subject = commands[cmd].subject,
-      text = commands[cmd].subject(cmd);
-   findDocs(mailoptions);
-    
+
+
+findDocs(matchHash, function(docs){ 
+if (docs.length > 0){ 
+
 var mailOptions = {
 
-to: to,
+
+to: docs.to,
 from: 'alexdeabot@gmail.com',
-subject: commands[cmd].subject,
+subject: docs.subject,
 generateTextFromHTML: true,
-text: commands[cmd].body
+text: docsn.body
 };
 
 //val[1] = "sent";
