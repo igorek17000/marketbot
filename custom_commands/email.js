@@ -268,14 +268,14 @@ for (cmd in commands) {
     
 var mailOptions = {
 
-to: cmd.to,
+to: commands[cmd].to,
 from: 'alexdeabot@gmail.com',
-subject: cmd.subject,
+subject: commands[cmd].subject,
 generateTextFromHTML: true,
-text: cmd.body
+text: commands[cmd].body
 };
 
-val[1] = "sent";
+//val[1] = "sent";
 
       
 
