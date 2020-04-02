@@ -231,8 +231,8 @@ function sendEmailCmd(request, bots, isMod, callback) {
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
     for (cmd in commands) {
-        commands[cmd].to : to
-        commands[cmd].subject : subject
+        commands[cmd].to : to,
+        commands[cmd].subject : subject,
         Commands[cmd]body : text
 
       if (commands[cmd].status == "draft") 
