@@ -259,9 +259,9 @@ pass: '113Hopest'
 });
 
 for (cmd in commands) {
-        cmd = commands[cmd];
-}
-      if (cmd.status == "draft") 
+        //cmd = commands[cmd];
+
+      if (commands[cmd].status == "draft") 
       //continue;
         //cmd["status"] = "sent";
         //updateDraft(cmd);
