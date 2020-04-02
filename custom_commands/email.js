@@ -26,7 +26,7 @@ function addEmailToDB(cmd, callback) {
 }
 
 function findDocs(cmd, callback){ 
-  var matchHash {
+  var matchHash = {
     "status": commands[cmd].status
     //"to": commands[cmd].to,
     //"subject": commands[cmd].subject,
