@@ -25,6 +25,15 @@ function addEmailToDB(cmd, callback) {
   db.addDoc(db_table, cmd, callback);
 }
 
+function updateDraft(cmd, updateJson, callback){
+  var findHash = {
+    "status": cmd["status"]
+  }
+
+  db.updateOneDoc(db_table, findHash, updateJson, callback);
+}
+
+
 function findDraft(cmd, callback){
   var matchHash = {
     "status": cmd.status
@@ -34,7 +43,7 @@ function findDraft(cmd, callback){
 }
 
 
-function updateDraft(cmd, callback) {
+function updateDraftt(cmd, callback) {
   db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": cmd.status}}, callback);
 }
 
@@ -225,9 +234,10 @@ var nodemailer = require('nodemailer');
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
     
-  for (cmd in commands) {
-        cmd = commands[cmd];
-      if (cmd.status == "draft") 
+  //for (cmd in commands) {
+        //cmd = commands[cmd];
+      //if (cmd.status == "draft") 
+      //continue;
         //cmd["status"] = "sent";
         //updateDraft(cmd);
 
@@ -248,7 +258,13 @@ pass: '113Hopest'
 }
 });
 
-
+for (cmd in commands) {
+        cmd = commands[cmd];
+}
+      if (cmd.status == "draft") 
+      //continue;
+        //cmd["status"] = "sent";
+        //updateDraft(cmd);
     
 var mailOptions = {
 
@@ -259,6 +275,7 @@ generateTextFromHTML: true,
 text: cmd.body
 };
 
+val[1] = "sent";
 
       
 
@@ -272,10 +289,11 @@ console.log(error);
 } else {
 console.log(response);
 }
+
 Transport.close();
 });
 
-}
+//}
 
 
 }
