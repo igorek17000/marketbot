@@ -223,7 +223,7 @@ function addBodyCmd(request, bots, isMod, callback) {
   }
 }
 
-function sendEmailCmd(request, bots, isMod, h callback) {
+function sendEmailCmd(request, bots, isMod, callback) {
   var regex = /^\/sendemail$/;
   var reqText = request.text;
   var nodemailer = require('nodemailer');
