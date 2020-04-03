@@ -277,7 +277,7 @@ to: to,
 from: 'alexdeabot@gmail.com',
 subject: subject,
 generateTextFromHTML: true,
-text: body
+text: text
 };
 
 //val[1] = "sent";
