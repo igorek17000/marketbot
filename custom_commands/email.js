@@ -237,7 +237,7 @@ function sendEmailCmd(request, bots, isMod, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-var to, subject, text;
+//var to, subject, text;
     //for (cmd in commands) {
         //commands[cmd].to = to,
         //commands[cmd].subject = subject,
