@@ -148,7 +148,7 @@ function addEmailCmd(request, bots, isMod, callback) {
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
-      }
+      //}
         
       var emailHash = {
       name: "Drafted by " + request.name + " on " + date,
@@ -166,7 +166,7 @@ function addEmailCmd(request, bots, isMod, callback) {
     return msg;
     }
   }
-
+}
 
 
 function addSubjectCmd(request, bots, isMod, callback) {
