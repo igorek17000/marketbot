@@ -25,16 +25,8 @@ function addEmailToDB(cmd, callback) {
   db.addDoc(db_table, cmd, callback);
 }
 
-function findDocs(cmd, callback){ 
-  var matchHash = {
-    "status": commands[cmd].status
-    //"to": commands[cmd].to,
-    //"subject": commands[cmd].subject,
-    //"text": commands[cmd].body
-  }
-
-db.findDocs(db_table, matchHash, callback);
-
+function findQuotes(status, callback){ 
+db.findDocs(db_table, {"status": commands[cmd].status}, callback);
 }
 
 function updateDraft(cmd, updateJson, callback){
