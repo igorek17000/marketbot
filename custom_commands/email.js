@@ -246,7 +246,7 @@ function sendEmailCmd(request, bots, isMod, callback) {
   
 
 
-let Transport = nodemailer.createTransport({
+var Transport = nodemailer.createTransport({
 
 
 service: 'gmail',
@@ -265,7 +265,7 @@ pass: '113Hopest'
 //findDocs(matchHash, function(docs){ 
 //if (docs.length > 0){ 
 
-let mailOptions = {
+var mailOptions = {
 
 
 to: commands[cmd].to,
