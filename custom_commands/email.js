@@ -237,13 +237,13 @@ function sendEmailCmd(request, bots, isMod, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
+var to, subject, body;
     //for (cmd in commands) {
         //commands[cmd].to = to,
         //commands[cmd].subject = subject,
         //Commands[cmd].body = text
 
-      if (commands[cmd].status == "draft") 
-  
+      
 
 
 var Transport = nodemailer.createTransport({
@@ -256,8 +256,13 @@ pass: '113Hopest'
 }
 });
 
-//for (cmd in commands) {
-        //cmd = commands[cmd];
+for (cmd in commands) {
+        
+if (commands[cmd].status == "draft") {
+to = Commands[cmd]["to"];
+Subject = Commands[cmd]["subject"];
+text = Commands[cmd]["body"];
+  
 
       //if (commands[cmd].status == "draft") 
 
@@ -268,11 +273,11 @@ pass: '113Hopest'
 var mailOptions = {
 
 
-to: commands[cmd].to,
+to: to,
 from: 'alexdeabot@gmail.com',
-subject: commands[cmd].subject,
+subject: subject,
 generateTextFromHTML: true,
-text: commands[cmd].body
+text: body
 };
 
 //val[1] = "sent";
@@ -293,6 +298,8 @@ console.log(response);
 Transport.close();
 });
 
+}
+}
 }
 }
 
