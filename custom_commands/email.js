@@ -239,11 +239,11 @@ function sendEmailCmd(request, bots, isMod, callback) {
         //commands[cmd].subject = subject,
         //Commands[cmd].body = text
 
-      //if (commands[cmd].status == "draft") 
+      if (commands[cmd].status == "draft") 
   
 
 
-var Transport = nodemailer.createTransport({
+let Transport = nodemailer.createTransport({
 
 
 service: 'gmail',
@@ -253,23 +253,23 @@ pass: '113Hopest'
 }
 });
 
-for (cmd in commands) {
+//for (cmd in commands) {
         //cmd = commands[cmd];
 
-      if (commands[cmd].status == "draft") {
+      //if (commands[cmd].status == "draft") 
 
 
-findDocs(matchHash, function(docs){ 
-if (docs.length > 0){ 
+//findDocs(matchHash, function(docs){ 
+//if (docs.length > 0){ 
 
-var mailOptions = {
+let mailOptions = {
 
 
-to: docs.to,
+to: commands[cmd].to,
 from: 'alexdeabot@gmail.com',
-subject: docs.subject,
+subject: commands[cmd].subject,
 generateTextFromHTML: true,
-text: docsn.body
+text: commands[cmd].body
 };
 
 //val[1] = "sent";
@@ -294,8 +294,7 @@ Transport.close();
 }
 
 }
-}
-}
+
 
 
 
