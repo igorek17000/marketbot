@@ -8,6 +8,9 @@ var moment = require('moment');
 var date = moment().utcOffset(-300).format('LLLL');
 var emailCommands = [addEmailCmd, addSubjectCmd, addBodyCmd, sendEmailCmd];
 var db = require('../modules/db.js');
+var nodemailer = require('nodemailer');
+
+
 //var mods = require('../modules/mods');
 
 getAllCommands();
@@ -230,7 +233,7 @@ function addBodyCmd(request, bots, isMod, callback) {
 function sendEmailCmd(request, bots, isMod, callback) {
   var regex = /^\/sendemail$/;
   var reqText = request.text;
-  var nodemailer = require('nodemailer');
+  //var nodemailer = require('nodemailer');
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
