@@ -34,13 +34,16 @@ get: pingit
 
 server = http.createServer(function (req, res) {
   req.chunks = [];
-  
+  res.chunks = [];
 
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
      
   });
-
+  
+  res.on('err', function (chunck) {
+  res.chunks.push(chunk.toString());
+  });
 
   router.dispatch(req, res, function(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
