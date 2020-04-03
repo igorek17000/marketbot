@@ -147,7 +147,7 @@ function addEmailCmd(request, bots, isMod, callback) {
         updateUndraft(commands[cmd]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
-        }
+        };
       //}
         
       var emailHash = {
