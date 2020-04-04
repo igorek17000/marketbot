@@ -32,7 +32,7 @@ get: pingit
   
 });
 
-server = http.createServer(function (req, res) {
+server = http.createServer(function (req, res, err) {
   req.chunks = [];
   res.chunks = [];
 
@@ -44,6 +44,11 @@ server = http.createServer(function (req, res) {
   res.on('err', function (chunck) {
   res.chunks.push(chunk.toString());
   });
+
+router.on('dispatch', function (chunk) {
+req.chunks.push(chunk.toString());
+
+}
 
   router.dispatch(req, res, function(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
