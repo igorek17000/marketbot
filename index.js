@@ -41,12 +41,12 @@ server = http.createServer(function (req, res, err) {
      
   });
   
-  res.on('err', function (chunck) {
-  res.chunks.push(chunk.toString());
+  req.on('error', function (chunck) {
+  req.chunks.push(chunk.toString());
   });
 
-router.on('dispatch', function (chunk) {
-req.chunks.push(chunk.toString());
+res.on('error', function (chunk) {
+res.chunks.push(chunk.toString());
 
 });
 
