@@ -72,7 +72,7 @@ function updateBody(cmd, callback) {
 }
 
 function where() {
-cron.schedule('* * * * * 5', function () {
+setTimeout(5) {
 console.log('Running Cron Job');
 });
 }
