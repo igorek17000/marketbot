@@ -9,7 +9,7 @@ var date = moment().utcOffset(-300).format('LLLL');
 var emailCommands = [addEmailCmd, addSubjectCmd, addBodyCmd, sendEmailCmd];
 var db = require('../modules/db.js');
 var nodemailer = require('nodemailer');
-var cron = require("node-cron");
+var cron = require('node-cron');
 
 //var mods = require('../modules/mods');
 
