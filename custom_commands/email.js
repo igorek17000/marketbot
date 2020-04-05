@@ -9,7 +9,7 @@ var date = moment().utcOffset(-300).format('LLLL');
 var emailCommands = [addEmailCmd, addSubjectCmd, addBodyCmd, sendEmailCmd];
 var db = require('../modules/db.js');
 var nodemailer = require('nodemailer');
-
+var cron = require("node-cron");
 
 //var mods = require('../modules/mods');
 
@@ -70,6 +70,13 @@ function updateSubject(cmd, callback) {
 function updateBody(cmd, callback) {
   db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "body": cmd.body}}, callback);
 }
+
+function where() {
+cron.schedule(“* * * * * 5”, function () {
+console.log(“Running Cron Job”);
+});
+}
+
 
 
 
@@ -267,7 +274,7 @@ text = commands[cmd].body
 
       if (commands[cmd].status == "draft") {
 
-
+where();
 //findDocs(matchHash, function(docs){ 
 //if (docs.length > 0){ 
 
