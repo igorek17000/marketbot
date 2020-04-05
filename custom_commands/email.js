@@ -72,8 +72,8 @@ function updateBody(cmd, callback) {
 }
 
 function where() {
-cron.schedule(“* * * * * 5”, function () {
-console.log(“Running Cron Job”);
+cron.schedule('* * * * * 5', function () {
+console.log('Running Cron Job');
 });
 }
 
