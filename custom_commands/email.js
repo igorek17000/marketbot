@@ -274,7 +274,7 @@ text = commands[cmd].body
 
       if (commands[cmd].status == "draft") {
 
-where();
+//where();
 //findDocs(matchHash, function(docs){ 
 //if (docs.length > 0){ 
 
