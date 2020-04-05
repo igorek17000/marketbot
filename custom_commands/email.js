@@ -237,7 +237,7 @@ function sendEmailCmd(request, bots, isMod, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-//var to, subject, text;
+var to, subject, text;
     //for (cmd in commands) {
         //commands[cmd].to = to,
         //commands[cmd].subject = subject,
@@ -258,14 +258,14 @@ pass: '113Hopest'
 
 for (cmd in commands) {
         
-if (!commands[cmd].status == "draft") {
+if (!commands[cmd].status == "draft") 
 return;
 to = commands[cmd].to,
 subject = commands[cmd].subject,
 text = commands[cmd].body
   
 
-      //if (commands[cmd].status == "draft") 
+      if (commands[cmd].status == "draft") {
 
 
 //findDocs(matchHash, function(docs){ 
