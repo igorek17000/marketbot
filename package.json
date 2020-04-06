@@ -12,6 +12,7 @@
     "director": "^1.2.8",
     "dotenv": "^8.1.0",
     "eslint": "^6.5.1",
+    "express": "^4.17.1",
     "file-match": "^1.0.2",
     "file-system": "^2.2.2",
     "fs": "0.0.1-security",
@@ -26,8 +27,9 @@
     "mocha": "^6.2.1",
     "moment": "^2.24.0",
     "mongodb": "^2.2.36",
+    "node-cron": "^2.0.3",
     "nodemailer": "^6.3.0",
-    "nps": "^5.9.8",
+    "nps": "^5.9.12",
     "nps-utils": "^1.7.0",
     "utils-extend": "^1.0.8"
   },
