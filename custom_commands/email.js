@@ -250,9 +250,10 @@ function sendEmailCmd(request, bots, isMod, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
+    var to, subject, text;
 
 
-   for (cmd in commands) {
+  // for (cmd in commands) {
         //commands[cmd].to = to,
         //commands[cmd].subject = subject,
         //Commands[cmd].body = text
@@ -270,8 +271,14 @@ pass: '113Hopest'
 }
 });
 
-//for (cmd in commands) {
-var to, subject, text;
+for (cmd in commands) {
+
+
+to = commands[cmd].to,
+subject = commands[cmd].subject,
+text = commands[cmd].body
+  
+
 
         
 //if (!commands[cmd].status == "draft") {
@@ -279,12 +286,6 @@ var to, subject, text;
 
 
 if (commands[cmd].status == "draft") {
-
-to = commands[cmd].to,
-subject = commands[cmd].subject,
-text = commands[cmd].body
-  
-
       
 
 //where();
