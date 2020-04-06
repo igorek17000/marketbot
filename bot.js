@@ -23,6 +23,11 @@ var urbanDict    = require('./custom_commands/urban-dictionary');
 //var go         = require('./modules/server.js');
 var fs           = require('fs');
 var concat       = require('concat');
+var cron = require('node-cron'); 
+var express = require('express'); 
+var nodemailer = require('nodemailer'); 
+app = express(); 
+
 
 //load config
 var config       = require('./config/config');
