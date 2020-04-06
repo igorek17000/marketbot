@@ -274,7 +274,7 @@ for (cmd in commands) {
 var to, subject, text;
 
         
-if (!commands[cmd].status == "draft") 
+if (!commands[cmd].status == "draft") {
 return;
 
 
@@ -327,7 +327,7 @@ Transport.close();
 }
 }
 }
-//}
+}
 
 
 
