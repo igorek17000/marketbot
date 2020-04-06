@@ -252,7 +252,7 @@ function sendEmailCmd(request, bots, isMod, callback) {
     var val = regex.exec(reqText);
 
 
-   // for (cmd in commands) {
+   for (cmd in commands) {
         //commands[cmd].to = to,
         //commands[cmd].subject = subject,
         //Commands[cmd].body = text
@@ -270,11 +270,11 @@ pass: '113Hopest'
 }
 });
 
-for (cmd in commands) {
+//for (cmd in commands) {
 var to, subject, text;
 
         
-if (!commands[cmd].status == "draft") {
+if (!commands[cmd].status == "draft") 
 return;
 
 
