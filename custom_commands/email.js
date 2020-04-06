@@ -242,12 +242,14 @@ function sendEmailCmd(request, bots, isMod, callback) {
   var reqText = request.text;
   //var nodemailer = require('nodemailer');
 
-  if (regex.test(reqText)){
-    var val = regex.exec(reqText);
 
 cron.schedule("* * * * *", function(){ 
 console.log("---------------------"); 
 console.log("Running Cron Job"); 
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
 
 var to, subject, text;
     //for (cmd in commands) {
