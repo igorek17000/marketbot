@@ -256,7 +256,7 @@ function sendEmailCmd(request, bots, isMod, callback) {
    for (cmd in commands) {
         commands[cmd].to = to,
         commands[cmd].subject = subject,
-        Commands[cmd].body = text
+        commands[cmd].body = text
 
       
 
