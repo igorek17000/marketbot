@@ -253,7 +253,7 @@ function sendEmailCmd(request, bots, isMod, callback) {
     var to, subject, text;
 
 
-  // for (cmd in commands) {
+   for (cmd in commands) {
         //commands[cmd].to = to,
         //commands[cmd].subject = subject,
         //Commands[cmd].body = text
@@ -271,7 +271,7 @@ pass: '113Hopest'
 }
 });
 
-for (cmd in commands) {
+//for (cmd in commands) {
 
 
 to = commands[cmd].to,
