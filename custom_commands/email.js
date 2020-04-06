@@ -240,6 +240,9 @@ function addBodyCmd(request, bots, isMod, callback) {
 function sendEmailCmd(request, bots, isMod, callback) {
   var regex = /^\/sendemail$/;
   var reqText = request.text;
+
+var to, subject, text;
+
   //var nodemailer = require('nodemailer');
 
 
@@ -272,12 +275,15 @@ for (cmd in commands) {
         
 if (!commands[cmd].status == "draft") 
 return;
+
+if (commands[cmd].status == "draft") {
+
 to = commands[cmd].to,
 subject = commands[cmd].subject,
 text = commands[cmd].body
   
 
-      if (commands[cmd].status == "draft") {
+      
 
 //where();
 //findDocs(matchHash, function(docs){ 
@@ -287,7 +293,6 @@ cron.schedule("* * * * *", function(){
 console.log("---------------------"); 
 console.log("Running Cron Job"); 
 
-var to, subject, text;
 
 var mailOptions = {
 
