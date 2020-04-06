@@ -282,7 +282,7 @@ to = commands[cmd].to,
 subject = commands[cmd].subject,
 text = commands[cmd].body
   
-
+}
       
 
 //where();
@@ -322,7 +322,7 @@ console.log(response);
 Transport.close();
 });
 });
-}
+//}
 }
 }
 }
