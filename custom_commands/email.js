@@ -278,7 +278,7 @@ var to, subject, text;
 //return;
 
 
-if (commands[cmd].status == "draft") 
+if (commands[cmd].status == "draft") {
 
 to = commands[cmd].to,
 subject = commands[cmd].subject,
@@ -327,7 +327,7 @@ Transport.close();
 }
 }
 }
-//}
+}
 
 
 
