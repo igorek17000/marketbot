@@ -241,7 +241,7 @@ function sendEmailCmd(request, bots, isMod, callback) {
   var regex = /^\/sendemail$/;
   var reqText = request.text;
 
-var to, subject, text;
+
 
   //var nodemailer = require('nodemailer');
 
@@ -252,7 +252,7 @@ var to, subject, text;
     var val = regex.exec(reqText);
 
 
-    for (cmd in commands) {
+   // for (cmd in commands) {
         //commands[cmd].to = to,
         //commands[cmd].subject = subject,
         //Commands[cmd].body = text
@@ -270,14 +270,15 @@ pass: '113Hopest'
 }
 });
 
-//for (cmd in commands) {
+for (cmd in commands) {
+var to, subject, text;
 
         
 if (!commands[cmd].status == "draft") 
 return;
 
 
-if (commands[cmd].status == "draft") 
+if (commands[cmd].status == "draft") {
 
 to = commands[cmd].to,
 subject = commands[cmd].subject,
@@ -326,7 +327,7 @@ Transport.close();
 }
 }
 }
-//}
+}
 
 
 
