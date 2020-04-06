@@ -273,9 +273,9 @@ pass: '113Hopest'
 //for (cmd in commands) {
 
         
-if (commands[cmd].status != "draft") {
+if (commands[cmd].status != "draft") 
 return;
-}
+
 
 if (commands[cmd].status == "draft") 
 
