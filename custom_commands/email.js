@@ -281,7 +281,7 @@ text = commands[cmd]["body"]
   
 
         
-if (commands[cmd].status == "draft") 
+//if (commands[cmd].status == "draft") 
 //return;
 
 
