@@ -282,16 +282,16 @@ to = commands[cmd].to,
 subject = commands[cmd].subject,
 text = commands[cmd].body
   
-}
+
       
 
 //where();
 //findDocs(matchHash, function(docs){ 
 //if (docs.length > 0){ 
 
-cron.schedule("* * * * *", function(){ 
-console.log("---------------------"); 
-console.log("Running Cron Job"); 
+//cron.schedule("* * * * *", function(){ 
+//console.log("---------------------"); 
+//console.log("Running Cron Job"); 
 
 
 var mailOptions = {
@@ -321,8 +321,8 @@ console.log(response);
 
 Transport.close();
 });
-});
-//}
+//});
+}
 }
 }
 }
