@@ -274,8 +274,8 @@ pass: '113Hopest'
 var to, subject, text;
 
         
-if (!commands[cmd].status == "draft") {
-return;
+//if (!commands[cmd].status == "draft") {
+//return;
 
 
 if (commands[cmd].status == "draft") 
@@ -327,7 +327,7 @@ Transport.close();
 }
 }
 }
-}
+//}
 
 
 
