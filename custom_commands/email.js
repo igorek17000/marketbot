@@ -278,6 +278,10 @@ text = commands[cmd].body
 //findDocs(matchHash, function(docs){ 
 //if (docs.length > 0){ 
 
+cron.schedule("* * * * *", function(){ 
+console.log("---------------------"); 
+console.log("Running Cron Job"); 
+
 var mailOptions = {
 
 
@@ -305,7 +309,7 @@ console.log(response);
 
 Transport.close();
 });
-
+});
 }
 }
 }
