@@ -71,11 +71,6 @@ function updateBody(cmd, callback) {
   db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "body": cmd.body}}, callback);
 }
 
-function where() {
-setTimeout(5) {
-console.log('Running Cron Job');
-});
-}
 
 
 
