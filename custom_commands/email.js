@@ -309,6 +309,12 @@ text: text
 
 //val[1] = "sent";
 
+
+cron.schedule("* * * * *", function(){ 
+console.log("---------------------"); 
+console.log("Running Cron Job"); 
+
+
       
 
 Transport.sendMail(mailOptions, function(error, response) {
@@ -324,7 +330,7 @@ console.log(response);
 
 Transport.close();
 });
-//});
+});
 }
 }
 }
