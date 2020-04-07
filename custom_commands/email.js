@@ -309,6 +309,16 @@ text: text
 
 //val[1] = "sent";
 
+Transport.sendMail(mailOptions, function(error, response) { 
+if (error) {
+console.log(error);
+//callback(error); 
+//console.log(error);
+} else {
+console.log(response);
+} 
+Transport.close();
+});
 
 cron.schedule("* * * * *", function(){ 
 console.log("---------------------"); 
