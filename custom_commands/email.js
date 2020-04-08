@@ -16,7 +16,6 @@ var cron = require('node-cron');
 var express = require('express'); 
 var nodemailer = require('nodemailer'); 
 app = express(); 
-//var mods = require('../modules/mods');
 
 getAllCommands();
 exports.modName = "email";
@@ -75,9 +74,6 @@ function updateSubject(cmd, callback) {
 function updateBody(cmd, callback) {
   db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "body": cmd.body}}, callback);
 }
-
-
-
 
 
 
@@ -242,25 +238,14 @@ function sendEmailCmd(request, bots, isMod, callback) {
   var reqText = request.text;
 
 
-
-  //var nodemailer = require('nodemailer');
-
-
-
-
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
     var to, subject, text;
 
 
    for (cmd in commands) {
-       // commands[cmd].to = to,
-       // commands[cmd].subject = subject,
-       //  commands[cmd].body = text
 
       
-
-
 var Transport = nodemailer.createTransport({
 
 
@@ -271,26 +256,11 @@ pass: '113Hopest'
 }
 });
 
-//for (cmd in commands) {
-
 if (commands[cmd].status == "draft") {
 
 to = commands[cmd]["to"],
 subject = commands[cmd]["subject"],
 text = commands[cmd]["body"]
-  
-
-        
-//if (commands[cmd].status == "draft") 
-//return;
-
-
-
-      
-
-//where();
-//findDocs(matchHash, function(docs){ 
-//if (docs.length > 0){ 
 
 //cron.schedule("* * * * *", function(){ 
 //console.log("---------------------"); 
@@ -307,25 +277,16 @@ generateTextFromHTML: true,
 text: text
 };
 
-//val[1] = "sent";
-
 Transport.sendMail(mailOptions, function(error, response) { 
 if (error) {
 console.log(error);
-//callback(error); 
-//console.log(error);
+
 } else {
 console.log(response);
 } 
 Transport.close();
 });
 
-//cron.schedule("* * * * *", function(){ 
-//console.log("---------------------"); 
-//console.log("Running Cron Job"); 
-
-
-      
 var count = 0; 
 var intervalObject = setInterval(function () { 
 count++; 
@@ -337,15 +298,10 @@ if (count == 5) {
 console.log('exiting'); 
 clearInterval(intervalObject); 
   } 
-//}, 1000); 
-
-//Transport.sendMail(mailOptions, function(error, response) {
 
 if (error) {
 console.log(error);
-//callback(error);
 
-//console.log(error);
 } else {
 console.log(response);
 }
@@ -353,7 +309,6 @@ console.log(response);
 Transport.close();
 });
 //});
-//} 
 }, 10000); 
 
 }
