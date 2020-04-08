@@ -337,7 +337,7 @@ if (count == 5) {
 console.log('exiting'); 
 clearInterval(intervalObject); 
   } 
-}, 1000); 
+//}, 1000); 
 
 //Transport.sendMail(mailOptions, function(error, response) {
 
@@ -353,6 +353,9 @@ console.log(response);
 Transport.close();
 });
 //});
+//} 
+}, 1000); 
+
 }
 }
 }
