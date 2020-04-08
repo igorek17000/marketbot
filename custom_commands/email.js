@@ -320,14 +320,26 @@ console.log(response);
 Transport.close();
 });
 
-cron.schedule("* * * * *", function(){ 
-console.log("---------------------"); 
-console.log("Running Cron Job"); 
+//cron.schedule("* * * * *", function(){ 
+//console.log("---------------------"); 
+//console.log("Running Cron Job"); 
 
 
       
-
+var count = 0; 
+var intervalObject = setInterval(function () { 
+count++; 
+console.log(count, 'seconds passed'); 
 Transport.sendMail(mailOptions, function(error, response) {
+
+
+if (count == 5) { 
+console.log('exiting'); 
+clearInterval(intervalObject); 
+  } 
+}, 1000); 
+
+//Transport.sendMail(mailOptions, function(error, response) {
 
 if (error) {
 console.log(error);
