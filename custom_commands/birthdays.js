@@ -1,5 +1,5 @@
 var commands;
-var birthdayCommands = [birthdayAddCmd] //, addressCmd, answerCmd, getCmd, describeCmd, editCmd, modCommandCmd, removeCmd];
+var birthdayCommands = [birthdayAddCmd]: //, addressCmd, answerCmd, getCmd, describeCmd, editCmd, modCommandCmd, removeCmd];
 
 var db = require('../modules/db.js');
 var db_table = 'commands';
@@ -70,7 +70,7 @@ exports.checkCommands = function(dataHash, callback) {
     var cmdReg = new RegExp(cmd.regex, "i");
     if (dataHash.request.text && cmdReg.test(dataHash.request.text)){
       var val = cmdReg.exec(dataHash.request.text);
-      var msg = cmd.full + " born " + cmd.month + " " + cmd.day + ", " + cmd.year
+      var msg = cmd.full + " born " + cmd.month + " " + cmd.day + ", " + cmd.year;
       callback(true, msg, cmd.attachments);
       break;
     }
@@ -185,7 +185,7 @@ function birthdayDescribeCmd(request, bots, isMod, callback) {
 }
 
 //----------
-/*
+
 function addressCmd(request, bots, isMod, callback) {
   var regex = /^\/cmd address (.+?) (.+?) ([\s\S]+)/i;
   var reqText = request.text;
@@ -250,9 +250,9 @@ function modCommandCmd(request, bots, isMod, callback) {
 }
 
 //-------
-*/
+
 ----------
-/*
+
 function removeCmd(request, bots, isMod, callback) {
   var regex = /^\/cmd remove (.+)/i;
   var reqText = request.text.toLowerCase();
