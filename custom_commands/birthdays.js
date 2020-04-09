@@ -70,7 +70,7 @@ exports.checkCommands = function(dataHash, callback) {
     var cmdReg = new RegExp(cmd.regex, "i");
     if (dataHash.request.text && cmdReg.test(dataHash.request.text)){
       var val = cmdReg.exec(dataHash.request.text);
-
+      var msg = cmd.full + " " + cmd.
       callback(true, cmd.message, cmd.attachments);
       break;
     }
