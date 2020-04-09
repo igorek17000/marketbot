@@ -1,5 +1,5 @@
 var commands;
-var userCommands = [addCmd, addressCmd, answerCmd, getCmd, describeCmd, editCmd, modCommandCmd, removeCmd];
+var birthdayCommands = [addCmd, addressCmd, answerCmd, getCmd, describeCmd, editCmd, modCommandCmd, removeCmd];
 
 var db = require('../modules/db.js');
 var db_table = 'birthdays';
@@ -8,7 +8,7 @@ var date = moment().utcOffset(-300).format('LLLL');
 
 
 getAllCommands();
-exports.modName = "Birthdays Commands";
+exports.modName = "Birthday Commands";
 
 function getAllCommands() {
   db.getAllDocuments(db_table, function(res){
@@ -22,70 +22,70 @@ db.getAllDocuments(db_table, function(res){
   });
 }
 
-function addCmdToDB(cmd, callback) {
-  db.addDoc(db_table, cmd, callback);
+function addCmdToDB(bday, callback) {
+  db.addDoc(db_table, bday, callback);
 }
 
-function updateCmdDB(cmd, updateJson, callback){
+function updateCmdDB(bday, updateJson, callback){
   var findHash = {
-    "name": cmd["name"]
+    "name": bday["name"]
   }
 
   db.updateOneDoc(db_table, findHash, updateJson, callback);
 }
 
-function describeCmdDB(cmd, callback) {
+function describeCmdDB(bday, callback) {
   var updateHash = {
     $set: {
-      "description": cmd["description"]
+      "description": bday["description"]
     }
   };
 
-  updateCmdDB(cmd, updateHash, callback);
+  updateCmdDB(bday, updateHash, callback);
 }
 
-function changeMsgCmdDB(cmd, callback) {
+function changeMsgCmdDB(bday, callback) {
   var updateHash = {
     $set: {
-      "message": cmd["message"]
+      "message": bday["message"]
     }
   };
 
-  updateCmdDB(cmd, updateHash, callback);
+  updateCmdDB(bday, updateHash, callback);
 }
 
-function deleteCmdFromDB(cmd, callback){
-  var findJson = { "name": cmd["name"] };
+function deleteCmdFromDB(bday, callback){
+  var findJson = { "name": bday["name"] };
 
   db.removeOneDoc(db_table, findJson);
 }
 
 //exports
 exports.checkCommands = function(dataHash, callback) {
-  for (cmd in birthdays) {
-    cmd = commands[cmd];
+  for (bday in birthdays) {
+    bday = birthdays[bday];
     //hard coded temporarily ... maybe permanently ... losing motivation to work on this
-    if(cmd.name == 'cc' && dataHash.currentBot.type == 'hp')
+    if(bday.name == 'cc' && dataHash.currentBot.type == 'hp')
       continue;
-    var cmdReg = new RegExp(cmd.regex, "i");
+    var cmdReg = new RegExp(bday.regex, "i");
     if (dataHash.request.text && cmdReg.test(dataHash.request.text)){
       var val = cmdReg.exec(dataHash.request.text);
 
-      callback(true, cmd.message, cmd.attachments);
+      callback(true, bday.message, bday.attachments);
       break;
     }
   }
 
 
-  for (cmd in userCommands) {
-    var test = userCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
+  for (cmd in birthdayCommands) {
+    var test = birthdayCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
     if (test)
       return test;
   }
 }
 
 exports.setAll = function(cmdHash) {
-  borthdays = cmdHash;
+  birthdays = cmdHash;
 }
 
 exports.getAll = function() {
