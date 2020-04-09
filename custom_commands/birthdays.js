@@ -251,8 +251,8 @@ function modCommandCmd(request, bots, isMod, callback) {
 
 //-------
 */
-//----------
-
+----------
+/*
 function removeCmd(request, bots, isMod, callback) {
   var regex = /^\/cmd remove (.+)/i;
   var reqText = request.text.toLowerCase();
