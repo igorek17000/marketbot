@@ -188,3 +188,16 @@ exports.randomDocs = function(collection, callback) {
     });
   });
 }
+
+
+---------
+
+exports.addSentDoc = function(collection, doc, callback) {
+  connect(function(db){
+    var ret = db.collection('sent_emails').insert(doc, function(err, result){
+      if (callback)
+        callback(result);
+      db.close();
+    });
+  });
+}
