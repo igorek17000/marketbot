@@ -287,7 +287,7 @@ console.log(response);
 Transport.close();
 });
 
-var count = 0; 
+/* var count = 0; 
 var intervalObject = setInterval(function () { 
 count++; 
 console.log(count, 'seconds passed'); 
@@ -309,7 +309,7 @@ console.log(response);
 Transport.close();
 });
 //});
-}, 10000); 
+}, 10000); */
 
 }
 }
