@@ -1,5 +1,5 @@
 var commands;
-var birthdayCommands = [addCmd, addressCmd, answerCmd, getCmd, describeCmd, editCmd, modCommandCmd, removeCmd];
+var birthdayCommands = [birthdayAddCmd] //, addressCmd, answerCmd, getCmd, describeCmd, editCmd, modCommandCmd, removeCmd];
 
 var db = require('../modules/db.js');
 var db_table = 'commands';
@@ -152,6 +152,7 @@ function birthdayAddCmd(request, bots, isMod, callback) {
   }
 }
 
+/*
 function birthdayDescribeCmd(request, bots, isMod, callback) {
   var regex = /^\/birthday describe (.+?) (.+?) ([\s\S]+)/i;
   var reqText = request.text;
@@ -166,7 +167,7 @@ function birthdayDescribeCmd(request, bots, isMod, callback) {
     }
 
     for (cmd in commands) {
-      if (commands[cmd].name == val[1].toLowerCase()) {
+      if (commands[cmd].name == val[1].toLowerCase() && ) {
         commands[cmd]["description"] = val[3];
         birthdayDescribeCmdDB(commands[cmd]);
 
@@ -313,3 +314,5 @@ function editCmd(request, bots, isMod, callback) {
     return msg;
   }
 }
+
+*/
