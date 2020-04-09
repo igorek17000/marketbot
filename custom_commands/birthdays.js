@@ -131,13 +131,18 @@ function birthdayAddCmd(request, bots, isMod, callback) {
     }
 
     var bHash = {
-      name: val[1] + val[2],,
-      regex: "^\/" + val[1] + "$",
-      message: val[2],
+      name: val[1].toLowerCase(),
+      full: val[1] + val[2], 
+      day: val[3]
+      month: val[4],
+      year: val[5],
+      regex: "^\/" + "birthday " + val[1] + "$",
+      message: val[6],
+      description: val[1] + val[2] + "'s date of birth.",
       date: date
     };
 
-    commands.push(bHash);
+    birthdays.push(bHash);
     addCmdToDB(bHash);
     var msg = val[1] + " command added! please use \"/cmd describe " + val[1] + " <description>\" to add a description for your new command";
     callback(true, msg, []);
@@ -145,8 +150,8 @@ function birthdayAddCmd(request, bots, isMod, callback) {
   }
 }
 
-function describeCmd(request, bots, isMod, callback) {
-  var regex = /^\/cmd describe (.+?) ([\s\S]+)/i;
+function birthdayDescribeCmd(request, bots, isMod, callback) {
+  var regex = /^\/birthday describe (.+?) (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -158,12 +163,12 @@ function describeCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-    for (cmd in commands) {
-      if (commands[cmd].name == val[1].toLowerCase()) {
-        commands[cmd]["description"] = val[2];
-        describeCmdDB(commands[cmd]);
+    for (bday in birthdays) {
+      if (birthdays[bday].name == val[1].toLowerCase()) {
+        birthdays[bday]["description"] = val[3];
+        birthdayDescribeCmdDB(birthdays[bday]);
 
-        var msg = val[1] + " description updated";
+        var msg = birthdays[bday].full + "'s date of birth description updated";
         callback(true, msg, []);
         return msg;
       }
