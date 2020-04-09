@@ -45,7 +45,7 @@ server = http.createServer(function (req, res, err) {
   req.chunks.push(chunk.toString());
   });
 
-res.on('error', function (chunk) {
+res.on('errors', function (chunk) {
 res.chunks.push(chunk.toString());
 
 });
@@ -73,3 +73,4 @@ function pingit() {
   this.res.writeHead(200);
   this.res.end("The sky's the limit.\nFind what you love to do and embrace it.\nEverything else will fall into place.\nAlexBot quotes");
 }
+// -
