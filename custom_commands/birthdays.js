@@ -2,7 +2,7 @@ var commands;
 var birthdayCommands = [addCmd, addressCmd, answerCmd, getCmd, describeCmd, editCmd, modCommandCmd, removeCmd];
 
 var db = require('../modules/db.js');
-var db_table = 'birthdays';
+var db_table = 'commands';
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
 
@@ -12,66 +12,66 @@ exports.modName = "Birthday Commands";
 
 function getAllCommands() {
   db.getAllDocuments(db_table, function(res){
-    birthdays = res;
+    commands = res;
   });
 }
 
 exports.getAllCommands = function(){
 db.getAllDocuments(db_table, function(res){
-    birthdays = res;
+    commands = res;
   });
 }
 
-function addCmdToDB(bday, callback) {
-  db.addDoc(db_table, bday, callback);
+function addCmdToDB(cmd, callback) {
+  db.addDoc(db_table, cmd, callback);
 }
 
-function updateCmdDB(bday, updateJson, callback){
+function updateCmdDB(cmd, updateJson, callback){
   var findHash = {
-    "name": bday["name"]
+    "name": cmd["name"]
   }
 
   db.updateOneDoc(db_table, findHash, updateJson, callback);
 }
 
-function describeCmdDB(bday, callback) {
+function describeCmdDB(cmd, callback) {
   var updateHash = {
     $set: {
-      "description": bday["description"]
+      "description": cmd["description"]
     }
   };
 
-  updateCmdDB(bday, updateHash, callback);
+  updateCmdDB(cmd, updateHash, callback);
 }
 
-function changeMsgCmdDB(bday, callback) {
+function changeMsgCmdDB(cmd, callback) {
   var updateHash = {
     $set: {
-      "message": bday["message"]
+      "message": cmd["message"]
     }
   };
 
-  updateCmdDB(bday, updateHash, callback);
+  updateCmdDB(cmd, updateHash, callback);
 }
 
-function deleteCmdFromDB(bday, callback){
-  var findJson = { "name": bday["name"] };
+function deleteCmdFromDB(cmd, callback){
+  var findJson = { "name": cmd["name"] };
 
   db.removeOneDoc(db_table, findJson);
 }
 
 //exports
 exports.checkCommands = function(dataHash, callback) {
-  for (bday in birthdays) {
-    bday = birthdays[bday];
+  for (cmd in commands) {
+    cmd = commands[cmd];
     //hard coded temporarily ... maybe permanently ... losing motivation to work on this
-    if(bday.name == 'cc' && dataHash.currentBot.type == 'hp')
+    if(cmd.name == 'cc' && dataHash.currentBot.type == 'hp')
       continue;
-    var cmdReg = new RegExp(bday.regex, "i");
+    var cmdReg = new RegExp(cmd.regex, "i");
     if (dataHash.request.text && cmdReg.test(dataHash.request.text)){
       var val = cmdReg.exec(dataHash.request.text);
 
-      callback(true, bday.message, bday.attachments);
+      callback(true, cmd.message, cmd.attachments);
       break;
     }
   }
@@ -85,11 +85,11 @@ exports.checkCommands = function(dataHash, callback) {
 }
 
 exports.setAll = function(bHash) {
-  birthdays = bHash;
+  commands = bHash;
 }
 
 exports.getAll = function() {
-  return birthdays;
+  return commands;
 }
 
 exports.getCmdListDescription = function () {
@@ -100,8 +100,8 @@ exports.getCmdListDescription = function () {
     {cmd: "/cmd remove 'name'", desc: "Deletes a custom command", mod: true}
   ];
 
-  for (cmd in birthdays) {
-    cmdArr.push({cmd: "/" + birthdays[cmd].name, desc: birthdays[cmd].description});
+  for (cmd in commands) {
+    cmdArr.push({cmd: "/" + commands[cmd].name, desc: commands[cmd].description});
   }
 
   return cmdArr;
@@ -122,8 +122,8 @@ function birthdayAddCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-    for (bday in birthdays) {
-      if (birthdays[bday].name == val[1]) {
+    for (cmd in commands) {
+      if (commands[cmd].name == val[1]) {
         var msg = val[1] + " already exists";
         callback(true, msg, []);
         return msg;
@@ -142,7 +142,7 @@ function birthdayAddCmd(request, bots, isMod, callback) {
       date: date
     };
 
-    birthdays.push(bHash);
+    commands.push(bHash);
     addCmdToDB(bHash);
     var msg = val[1] + " command added! please use \"/cmd describe " + val[1] + " <description>\" to add a description for your new command";
     callback(true, msg, []);
@@ -163,12 +163,12 @@ function birthdayDescribeCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-    for (bday in birthdays) {
-      if (birthdays[bday].name == val[1].toLowerCase()) {
-        birthdays[bday]["description"] = val[3];
-        birthdayDescribeCmdDB(birthdays[bday]);
+    for (cmd in commands) {
+      if (commands[cmd].name == val[1].toLowerCase()) {
+        commands[cmd]["description"] = val[3];
+        birthdayDescribeCmdDB(commands[cmd]);
 
-        var msg = birthdays[bday].full + "'s date of birth description updated";
+        var msg = commands[cmd].full + "'s date of birth description updated";
         callback(true, msg, []);
         return msg;
       }
