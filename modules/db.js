@@ -190,7 +190,7 @@ exports.randomDocs = function(collection, callback) {
 }
 
 
----------
+//---------
 
 exports.addSentDoc = function(collection, doc, callback) {
   connect(function(db){
