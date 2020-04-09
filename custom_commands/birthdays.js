@@ -182,6 +182,7 @@ function birthdayDescribeCmd(request, bots, isMod, callback) {
 }
 
 //----------
+/*
 function addressCmd(request, bots, isMod, callback) {
   var regex = /^\/cmd address (.+?) (.+?) ([\s\S]+)/i;
   var reqText = request.text;
@@ -246,7 +247,7 @@ function modCommandCmd(request, bots, isMod, callback) {
 }
 
 //-------
-
+*/
 //----------
 
 function removeCmd(request, bots, isMod, callback) {
