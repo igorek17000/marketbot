@@ -1,5 +1,5 @@
 var commands;
-var birthdayCommands = [birthdayAddCmd]: //, addressCmd, answerCmd, getCmd, describeCmd, editCmd, modCommandCmd, removeCmd];
+var birthdayCommands = [birthdayAddCmd]; // addressCmd, answerCmd, getCmd, describeCmd, editCmd, modCommandCmd, removeCmd];
 
 var db = require('../modules/db.js');
 var db_table = 'commands';
