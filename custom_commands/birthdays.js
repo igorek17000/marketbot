@@ -84,8 +84,8 @@ exports.checkCommands = function(dataHash, callback) {
   }
 }
 
-exports.setAll = function(cmdHash) {
-  birthdays = cmdHash;
+exports.setAll = function(bHash) {
+  birthdays = bHash;
 }
 
 exports.getAll = function() {
@@ -109,13 +109,12 @@ exports.getCmdListDescription = function () {
 
 
 
-function addCmd(request, bots, isMod, callback) {
-  var regex = /^\/cmd add (.+?) ([\s\S]+)/i;
+function birthdayAddCmd(request, bots, isMod, callback) {
+  var regex = /^\/birthday add (.+?) (.+?) (.+?) (.+?) (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-    var vel = val[5];
 
     if (!isMod) {
       var msg = "You don't have permission to add commands"
@@ -123,23 +122,23 @@ function addCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-    for (cmd in commands) {
-      if (commands[cmd].name == val[1]) {
+    for (bday in birthdays) {
+      if (birthdays[bday].name == val[1]) {
         var msg = val[1] + " already exists";
         callback(true, msg, []);
         return msg;
       }
     }
 
-    var cmdHash = {
-      name: val[1].toLowerCase(),
+    var bHash = {
+      name: val[1] + val[2],,
       regex: "^\/" + val[1] + "$",
       message: val[2],
       date: date
     };
 
-    commands.push(cmdHash);
-    addCmdToDB(cmdHash);
+    commands.push(bHash);
+    addCmdToDB(bHash);
     var msg = val[1] + " command added! please use \"/cmd describe " + val[1] + " <description>\" to add a description for your new command";
     callback(true, msg, []);
     return msg;
