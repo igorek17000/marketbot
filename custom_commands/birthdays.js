@@ -70,8 +70,8 @@ exports.checkCommands = function(dataHash, callback) {
     var cmdReg = new RegExp(cmd.regex, "i");
     if (dataHash.request.text && cmdReg.test(dataHash.request.text)){
       var val = cmdReg.exec(dataHash.request.text);
-      var msg = cmd.full + " " + cmd.
-      callback(true, cmd.message, cmd.attachments);
+      var msg = cmd.full + " born " + cmd.month + " " + cmd.day + ", " + cmd.year
+      callback(true, msg, cmd.attachments);
       break;
     }
   }
@@ -132,9 +132,11 @@ function birthdayAddCmd(request, bots, isMod, callback) {
 
     var bHash = {
       name: val[1].toLowerCase(),
-      full: val[1] + val[2], 
-      day: val[3]
-      month: val[4],
+      full: val[1] + " " + val[2], 
+      month: val[3],
+
+      day: val[4],
+      
       year: val[5],
       regex: "^\/" + "birthday " + val[1] + "$",
       message: val[6],
