@@ -50,11 +50,11 @@ exports.checkCommands = function(dataHash, callback) {
     var alexbReg = new RegExp(alexb.regex, "i");
     if (dataHash.request.text && alexbReg.test(dataHash.request.text)){
       var val = alexbReg.exec(dataHash.request.text);
-    if (dataHash.currentBot("282865de8ce30137567238148f")) {
-      var msg = "308BoonBot\n" + alexb.message;
-      callback(true, msg, alexb.attachments, []);
+   // if (dataHash.currentBot("282865de8ce30137567238148f")) {
+      //var msg = "308BoonBot\n" + alexb.message;
+      callback(true, alexb.message, alexb.attachments, []);
       break;
-    }
+   // }
   }
 }
 
