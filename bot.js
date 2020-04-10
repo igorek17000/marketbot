@@ -70,14 +70,14 @@ exports.respond = function(botRoom) {
 
 if (rooms.getRoom(botRoom) == '282865de8ce30137567238148f') {
     logName = "308BoonBon";
-   //}
+   }
   
 
   for(var lib in checkCommandsHSH) {
     checkCommandsHSH[lib].checkCommands(dataHash, function(check, result, attachments){
       if (check) sendDelayedMessage(result, attachments, rooms.getRoom(botRoom).id);
     });
-}
+//}
   }
 }
 
