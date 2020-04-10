@@ -182,7 +182,21 @@ var logID = 'b6c42cc2a1bee3c38f07723d78';
   };
 
   body = {
-    
+
+    var logName = "";
+      if (logID == "b6c42cc2a1bee3c38f07723d78") {
+           logName = "Config";
+           } else if (logID == "282865de8ce30137567238148f") {
+           logName = "308BoonBot";
+           } else if (logID == "8631a4c35f0f0f250bd5d46f44") {
+           logName = "FlynnBot";
+           } else if (logID == "2184cee4d169628e83e82ee05f") {
+           logName = "AshleyBot";
+           } else {
+             logName = logID;
+             
+  //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
+}
     "attachments" : attachments,
     "bot_id"      : logID,
 
@@ -224,19 +238,6 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
  // logReq(logName));
 
 
-var logName = "";
-      if (logID == "b6c42cc2a1bee3c38f07723d78") {
-           logName = "Config";
-           } else if (logID == "282865de8ce30137567238148f") {
-           logName = "308BoonBot";
-           } else if (logID == "8631a4c35f0f0f250bd5d46f44") {
-           logName = "FlynnBot";
-           } else if (logID == "2184cee4d169628e83e82ee05f") {
-           logName = "AshleyBot";
-           } else {
-             logName = logID;
-             
-  //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
-}
+
   logReq.end(logName, JSON.stringify(body));
 }
