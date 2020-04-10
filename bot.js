@@ -186,12 +186,12 @@ var logID = 'b6c42cc2a1bee3c38f07723d78';
     path: '/v3/bots/post',
     method: 'POST'
   };
-logResponse = logName && logResponse;
+//logResponse = logName && logResponse;
   body = {
 
     "attachments" : attachments,
     "bot_id"      : logID,
-
+    "text"        : logName
     "text"        : logResponse
     //"name"        : logName
   };
