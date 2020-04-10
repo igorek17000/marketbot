@@ -68,6 +68,11 @@ exports.respond = function(botRoom) {
   if (!rooms.getRoom(botRoom).id && botRoom != 'config')
     return;
 
+if (rooms.getRoom(botRoom).id && botRoom == '308boonbot') {
+    logName = 308BoonBon';
+   }
+  
+
   for(var lib in checkCommandsHSH) {
     checkCommandsHSH[lib].checkCommands(dataHash, function(check, result, attachments){
       if (check) sendDelayedMessage(result, attachments, rooms.getRoom(botRoom).id);
