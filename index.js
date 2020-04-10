@@ -37,7 +37,7 @@ server = http.createServer(function (req, res, err) {
   res.chunks = [];
 
   //req.on('data', function (chunk) {
-function chunk() {
+function() {
     req.chunks.push(chunk.toString());
      }
   //});
