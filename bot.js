@@ -69,7 +69,7 @@ exports.respond = function(botRoom) {
     return;
 
 if (rooms.getRoom(botRoom).id && botRoom == '308boonbot') {
-    logName = 308BoonBon';
+    logName = '308BoonBon';
    }
   
 
