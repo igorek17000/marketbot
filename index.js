@@ -36,31 +36,22 @@ server = http.createServer(function (req, res, err) {
   req.chunks = [];
   res.chunks = [];
 
-  //req.on('data', function (chunk) {
-function() {
+  req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
-     }
-  //});
-  
-  //req.on('error', function (chunck) {
-  //req.chunks.push(chunk.toString());
-  //});
+     
+  });
+ 
 
-//res.on('errors', function (chunk) {
-//res.chunks.push(chunk.toString());
-
-//});
 
   router.dispatch(req, res, function(err) {
-if(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
-}
+
   });
 
 
-
 });
+
 
 port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
 ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
