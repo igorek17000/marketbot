@@ -195,7 +195,7 @@ var logID = 'b6c42cc2a1bee3c38f07723d78';
     "text"        : logResponse
     //"name"        : logName
   };
-
+logName = "";
       if (logID == "b6c42cc2a1bee3c38f07723d78") {
            logName = "Config";
            } else if (logID == "282865de8ce30137567238148f") {
