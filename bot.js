@@ -168,7 +168,7 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
 function logMessage(logResponse, attachments, logID, logName) {
-  var options, body, logReq;
+  var options, body, logReq, logName;
 //var botName;
 //if (dataHash.request.text) {
 //botName = dataHash.request.name;
@@ -180,7 +180,7 @@ var logID = 'b6c42cc2a1bee3c38f07723d78';
     path: '/v3/bots/post',
     method: 'POST'
   };
-
+logResponse = logName, logResponse;
   body = {
 
     "attachments" : attachments,
