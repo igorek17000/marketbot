@@ -39,7 +39,12 @@ var checkCommandsHSH = [alexBot, flynnBot, emailBot, birthdayBot, mods, sysTrigg
 
 exports.init = function() {
   var req = this.req;
-  init.initPage(req, function(body){
+  init.initPage(req, function(err, body){
+   if(err) {
+    this.res.writeHead(200, {"Content-Type": "text/html"});
+    this.res.end(err);
+  });
+
     this.res.writeHead(200, {"Content-Type": "text/html"});
     this.res.end(body);
   });
