@@ -50,9 +50,9 @@ exports.checkCommands = function(dataHash, callback) {
     var alexbReg = new RegExp(alexb.regex, "i");
     if (dataHash.request.text && alexbReg.test(dataHash.request.text)){
       var val = alexbReg.exec(dataHash.request.text);
-    if (rooms.getRoom(botRoom == "282865de8ce30137567238148f") {
+    if (rooms.getRoom(botRoom) == "282865de8ce30137567238148f" {
       var msg = "308BoonBot\n" + alexb.message;
-      callback(true, alexb.message, alexb.attachments, []);
+      callback(true, msg, alexb.attachments, []);
       break;
     }
   }
