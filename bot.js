@@ -43,7 +43,7 @@ exports.init = function() {
    if(err) {
     this.res.writeHead(200, {"Content-Type": "text/html"});
     this.res.end(err);
-  });
+  }
 
     this.res.writeHead(200, {"Content-Type": "text/html"});
     this.res.end(body);
