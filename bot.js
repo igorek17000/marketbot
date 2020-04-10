@@ -68,8 +68,8 @@ exports.respond = function(botRoom) {
   if (!rooms.getRoom(botRoom).id && botRoom != 'config')
     return;
 
-if (rooms.getRoom(botRoom) == '282865de8ce30137567238148f') 
-    logName = "308BoonBon";
+//if (rooms.getRoom(botRoom) == '282865de8ce30137567238148f') 
+    //logName = "308BoonBon";
    
   
 
