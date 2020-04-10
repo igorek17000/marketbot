@@ -36,23 +36,25 @@ server = http.createServer(function (req, res, err) {
   req.chunks = [];
   res.chunks = [];
 
-  req.on('data', function (chunk) {
+  //req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
      
-  });
+  //});
   
-  req.on('error', function (chunck) {
-  req.chunks.push(chunk.toString());
-  });
+  //req.on('error', function (chunck) {
+  //req.chunks.push(chunk.toString());
+  //});
 
-res.on('errors', function (chunk) {
-res.chunks.push(chunk.toString());
+//res.on('errors', function (chunk) {
+//res.chunks.push(chunk.toString());
 
-});
+//});
 
   router.dispatch(req, res, function(err) {
+if(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
+}
   });
 
 
