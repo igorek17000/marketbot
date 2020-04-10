@@ -225,6 +225,9 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
   logReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
-body = logName += body
+  logReq.send(JSON.stringify(logName));
+
+
+
   logReq.end(JSON.stringify(body));
 }
