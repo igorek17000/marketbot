@@ -190,8 +190,8 @@ var logID = 'b6c42cc2a1bee3c38f07723d78';
     
     "attachments" : attachments,
     "bot_id"      : logID,
-    "text"        : logResponse
-    "bot_name"        : logName
+    "text"        : logResponse,
+    "name"        : logName
   };
     var logName = '';
       if (logID == 'b6c42cc2a1bee3c38f07723d78') {
@@ -205,7 +205,7 @@ var logID = 'b6c42cc2a1bee3c38f07723d78';
            } else {
              logName = logID;
              
-  console.log('sending response to ' + logName + '\n' + logResponse + res.message);
+  //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
 }
 
 logReq = HTTPS.request(options, function(res) { 
