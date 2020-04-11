@@ -31,9 +31,12 @@ app = express();
 
 //var logName = '';
 //var logID = '';
-var botID;
+
 if (botID == 'b6c42cc2a1bee3c38f07723d78') {
 var logName = '';
+var botID = '';
+
+
            logName = 'Config';
 
            } else if (botID == '282865de8ce30137567238148f') {
@@ -43,7 +46,7 @@ var logName = '';
            } else if (botID == '2184cee4d169628e83e82ee05f') {
            logName = 'AshleyBot';
            } else {
-             logName = logID;
+             logName =  botID;
              
   //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
 }
