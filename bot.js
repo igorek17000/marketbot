@@ -208,7 +208,7 @@ var logName = '';
            logName = 'AshleyBot';
            } else {
              logName = bot_id;
-continue
+continue;
              }
 
 //getAllRooms();
