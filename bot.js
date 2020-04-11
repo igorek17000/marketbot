@@ -189,7 +189,7 @@ var botName;
 //botName =  rooms.getRoom(botRoom).name;
 //}
 //var logName = '';
-for (room in rooms) {
+for (room in res) {
  
 var logName = '';
       if (res[room].id == 'b6c42cc2a1bee3c38f07723d78') {
