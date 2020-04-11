@@ -208,16 +208,6 @@ var botName;
     method: 'POST'
   };
 
-  body = {
-
-    "attachments" : attachments,
-    "bot_id"      : "b6c42cc2a1bee3c38f07723d78",
-   // "text"        : logName
-    "text"        : logName + logResponse
-    //"name"        : logName
-  };
-
-//var logName = logName;
 
 for (room in rooom) {
 room = rooom[room];
@@ -235,6 +225,18 @@ var logName = '';
              logName = bot_id;
 //continue;
   }  
+
+  body = {
+
+    "attachments" : attachments,
+    "bot_id"      : "b6c42cc2a1bee3c38f07723d78",
+   // "text"        : logName
+    "text"        : logName + logResponse
+    //"name"        : logName
+  };
+
+
+
 
 
 logReq = HTTPS.request(options, function(res) { 
