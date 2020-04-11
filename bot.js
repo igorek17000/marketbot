@@ -31,10 +31,10 @@ app = express();
 
 //var logName = '';
 //var logID = '';
-
+/*
 if (botID == 'b6c42cc2a1bee3c38f07723d78') {
 var logName = '';
-var botID = '';
+//var botID = '';
 
 
            logName = 'Config';
@@ -50,7 +50,7 @@ var botID = '';
              
   //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
 }
-
+*/
 
 //load config
 var config       = require('./config/config');
