@@ -202,7 +202,7 @@ var botName;
 //botName = dataHash.request.name;
 //}
 //var logName = '';
-var botID = rooms.getRoom;
+var botID = rooms.getRoom(room);
 if (botID == 'b6c42cc2a1bee3c38f07723d78') {
 
            logName = "Config";
