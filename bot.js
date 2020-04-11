@@ -197,12 +197,12 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 function logMessage(logResponse, attachments, botID, bot_id, logName) {
   var options, body, logReq, logName;
-//var botName;
+var botName;
 //if (dataHash.request.text) {
 //botName = dataHash.request.name;
 //}
 var logName = '';
-var botID = '';
+//var botID = '';
 if (botID == 'b6c42cc2a1bee3c38f07723d78') {
 
            logName = 'Config';
