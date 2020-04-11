@@ -203,7 +203,7 @@ var logName = '';
            logName = 'AshleyBot';
            } else {
              logName = bot_id;
-
+break;
              }
 //getAllRooms();
  // console.log('sending response to ' + nickName + '\n' + botResponse);
