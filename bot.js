@@ -200,14 +200,13 @@ var logName = '';
            logName = 'FlynnBot';
            } else if (rooom[room].id == '2184cee4d169628e83e82ee05f') {
            logName = 'AshleyBot';
-          // } else {
-           //  logName = bot_id;
+           } else {
+             logName = bot_id;
              }
 //getAllRooms();
  // console.log('sending response to ' + nickName + '\n' + botResponse);
 
   //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
-}
 
 
   options = {
@@ -250,5 +249,6 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
 
   logReq.end(JSON.stringify(body));
 
+}
 }
 //
