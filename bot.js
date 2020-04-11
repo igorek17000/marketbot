@@ -30,8 +30,8 @@ var nodemailer = require('nodemailer');
 app = express(); 
 
 
-var rooms;
-getAllRooms();
+var rooom;
+getAllRooom();
 function getAllRooms(){ 
 db.getAllDocuments('rooms', function(res){ 
 rooom = res; 
@@ -245,10 +245,10 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
   });
  // logReq(logName));
 
-}
+
 
   logReq.end(JSON.stringify(body));
 
-
+}
 }
 //
