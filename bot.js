@@ -29,7 +29,7 @@ var express = require('express');
 var nodemailer = require('nodemailer'); 
 app = express(); 
 
-/*var logName = '';
+var logName = '';
 var logID = '';
 var botID ='';
 if (botID == 'b6c42cc2a1bee3c38f07723d78') {
