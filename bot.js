@@ -29,7 +29,7 @@ var express = require('express');
 var nodemailer = require('nodemailer'); 
 app = express(); 
 
-/*var logName = '';
+var logName = '';
 var logID = '';
 if (botID == 'b6c42cc2a1bee3c38f07723d78') {
 
@@ -46,7 +46,7 @@ if (botID == 'b6c42cc2a1bee3c38f07723d78') {
              
   //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
 }
-*/
+
 
 //load config
 var config       = require('./config/config');
