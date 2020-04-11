@@ -196,7 +196,7 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
 function logMessage(logResponse, attachments, botID, bot_id, logName) {
-  var options, body, logReq, logName;
+  var options, body, logReq, logName, botID;
 var botName;
 //if (dataHash.request.text) {
 //botName = dataHash.request.name;
