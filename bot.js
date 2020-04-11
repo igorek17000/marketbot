@@ -209,7 +209,7 @@ var logName = '';
            } else {
              logName = bot_id;
 continue;
-             }
+             
 
 //getAllRooms();
  // console.log('sending response to ' + nickName + '\n' + botResponse);
@@ -258,6 +258,7 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
 
 
   logReq.end(JSON.stringify(body));
+}
 }
 }
 //
