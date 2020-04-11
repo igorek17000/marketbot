@@ -198,8 +198,8 @@ var logName = '';
            logName = '308BoonBot';
            } else if (rooom[room].id == '8631a4c35f0f0f250bd5d46f44') {
            logName = 'FlynnBot';
-       //    } else if (rooom[room].id =='2184cee4d169628e83e82ee05f') {
-          // logName = 'AshleyBot';
+           } else if (rooom[room].id == '2184cee4d169628e83e82ee05f') {
+           logName = 'AshleyBot';
            } else {
              logName = botID;
              }
