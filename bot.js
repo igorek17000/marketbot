@@ -214,7 +214,7 @@ var logName = '';
     path: '/v3/bots/post',
     method: 'POST'
   };
-}
+
   body = {
 
     "attachments" : attachments,
@@ -223,7 +223,7 @@ var logName = '';
     "text"        : logName + logResponse
     //"name"        : logName
   };
-
+}
 //var logName = logName;
 
 logReq = HTTPS.request(options, function(res) { 
