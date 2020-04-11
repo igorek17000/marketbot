@@ -29,7 +29,7 @@ var express = require('express');
 var nodemailer = require('nodemailer'); 
 app = express(); 
 
-var logName = '';
+/*var logName = '';
 var logID = '';
 var botID;
 if (botID == 'b6c42cc2a1bee3c38f07723d78') {
@@ -47,7 +47,7 @@ if (botID == 'b6c42cc2a1bee3c38f07723d78') {
              
   //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
 }
-
+*/
 
 //load config
 var config       = require('./config/config');
@@ -198,19 +198,19 @@ function logMessage(logResponse, attachments, logID, logName) {
 //if (dataHash.request.text) {
 //botName = dataHash.request.name;
 //}
-var logID = 'b6c42cc2a1bee3c38f07723d78';
-/*if (logID == 'b6c42cc2a1bee3c38f07723d78') {
+var logName = '';
+if (bot_id == 'b6c42cc2a1bee3c38f07723d78') {
 
            logName = 'Config';
 
-           } else if (logID == '282865de8ce30137567238148f') {
+           } else if (bot_id == '282865de8ce30137567238148f') {
            logName = '308BoonBot';
-           } else if (logID == '8631a4c35f0f0f250bd5d46f44') {
+           } else if (bot_id == '8631a4c35f0f0f250bd5d46f44') {
            logName = 'FlynnBot';
-           } else if (logID == '2184cee4d169628e83e82ee05f') {
+           } else if (bot_id == '2184cee4d169628e83e82ee05f') {
            logName = 'AshleyBot';
            } else {
-             logName = logID;
+             logName = bot_id;
              
   //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
 }
@@ -225,7 +225,7 @@ var logID = 'b6c42cc2a1bee3c38f07723d78';
   body = {
 
     "attachments" : attachments,
-    "bot_id"      : logID,
+    "bot_id"      : "b6c42cc2a1bee3c38f07723d78",
    // "text"        : logName
     "text"        : logName + logResponse
     //"name"        : logName
