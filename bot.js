@@ -198,23 +198,6 @@ function logMessage(logResponse, attachments, logID, logName) {
 //botName = dataHash.request.name;
 //}
 var logID = 'b6c42cc2a1bee3c38f07723d78';
-  //var botName = rooms.getRoom(botName);
-  options = {
-    hostname: 'api.groupme.com',
-    path: '/v3/bots/post',
-    method: 'POST'
-  };
-//logResponse = logName && logResponse;
-  body = {
-
-    "attachments" : attachments,
-    "bot_id"      : logID,
-   // "text"        : logName
-    "text"        : logName + logResponse
-    //"name"        : logName
-  };
-
-var logName = logName;
 if (logID == 'b6c42cc2a1bee3c38f07723d78') {
 
            logName = 'Config';
@@ -230,6 +213,24 @@ if (logID == 'b6c42cc2a1bee3c38f07723d78') {
              
   //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
 }
+
+
+  options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+  body = {
+
+    "attachments" : attachments,
+    "bot_id"      : logID,
+   // "text"        : logName
+    "text"        : logName + logResponse
+    //"name"        : logName
+  };
+
+//var logName = logName;
 
 logReq = HTTPS.request(options, function(res) { 
 console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
