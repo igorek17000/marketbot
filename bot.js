@@ -234,7 +234,7 @@ var logName = '';
            } else {
              logName = bot_id;
 //continue;
-  };          
+  }  
 
 
 logReq = HTTPS.request(options, function(res) { 
