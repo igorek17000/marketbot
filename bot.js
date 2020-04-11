@@ -245,11 +245,12 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
     console.log('timeout posting message '  + JSON.stringify(err));
   });
  // logReq(logName));
-
+}
+break;
 
 
   logReq.end(JSON.stringify(body));
-}
+
 
 }
 //
