@@ -199,6 +199,7 @@ function logMessage(logResponse, attachments, bot_id, logName) {
 //botName = dataHash.request.name;
 //}
 var logName = '';
+var bot_id = '';
 if (bot_id == 'b6c42cc2a1bee3c38f07723d78') {
 
            logName = 'Config';
