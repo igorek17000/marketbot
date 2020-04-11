@@ -34,8 +34,8 @@ var rooms;
 getAllRooms();
 function getAllRooms(){ 
 db.getAllDocuments('rooms', function(res){ 
-room = {}; 
-return room;
+rooms = {}; 
+return rooms;
 });
 }
 
