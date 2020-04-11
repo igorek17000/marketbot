@@ -228,7 +228,7 @@ var logName = '';
 
 //var logName = logName;
 break;
-}
+
 logReq = HTTPS.request(options, function(res) { 
 console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
       //if (res.statusCode == 200) || (res.statusCode == 202) {
@@ -251,7 +251,7 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
 
 
   logReq.end(JSON.stringify(body));
-
+}
 
 }
 //
