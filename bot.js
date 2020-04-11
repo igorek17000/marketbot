@@ -249,10 +249,10 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
   });
  // logReq(logName));
 
-break;
+
 
   logReq.end(JSON.stringify(body));
 }
-
+break;
 }
 //
