@@ -31,6 +31,7 @@ app = express();
 
 var logName = '';
 var logID = '';
+var botID;
 if (botID == 'b6c42cc2a1bee3c38f07723d78') {
 
            logName = 'Config';
