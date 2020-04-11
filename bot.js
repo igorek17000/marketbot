@@ -29,11 +29,11 @@ var express = require('express');
 var nodemailer = require('nodemailer'); 
 app = express(); 
 
-var logName = '';
-var logID = '';
-var botID = '';
+//var logName = '';
+//var logID = '';
+var botID;
 if (botID == 'b6c42cc2a1bee3c38f07723d78') {
-
+var logName = '';
            logName = 'Config';
 
            } else if (botID == '282865de8ce30137567238148f') {
@@ -192,7 +192,7 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 //
 
 
-function logMessage(logResponse, attachments, bot_id, logName) {
+function logMessage(logResponse, attachments, botID, bot_id, logName) {
   var options, body, logReq, logName;
 //var botName;
 //if (dataHash.request.text) {
