@@ -201,7 +201,7 @@ var logName = '';
            } else if (rooom[room].id == '2184cee4d169628e83e82ee05f') {
            logName = 'AshleyBot';
            } else {
-             logName = botID;
+             logName = bot_id;
              }
 //getAllRooms();
  // console.log('sending response to ' + nickName + '\n' + botResponse);
