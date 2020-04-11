@@ -203,8 +203,7 @@ var logName = '';
            logName = 'AshleyBot';
            } else {
              logName = bot_id;
-break;
-}
+
              }
 //getAllRooms();
  // console.log('sending response to ' + nickName + '\n' + botResponse);
@@ -228,7 +227,8 @@ break;
   };
 
 //var logName = logName;
-
+break;
+}
 logReq = HTTPS.request(options, function(res) { 
 console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
       //if (res.statusCode == 200) || (res.statusCode == 202) {
