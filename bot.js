@@ -203,6 +203,8 @@ var logName = '';
            logName = 'AshleyBot';
            } else {
              logName = bot_id;
+break;
+}
              }
 //getAllRooms();
  // console.log('sending response to ' + nickName + '\n' + botResponse);
@@ -245,8 +247,7 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
     console.log('timeout posting message '  + JSON.stringify(err));
   });
  // logReq(logName));
-}
-break;
+
 
 
   logReq.end(JSON.stringify(body));
