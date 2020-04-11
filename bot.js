@@ -34,8 +34,8 @@ var rooms;
 getAllRooms();
 function getAllRooms(){ 
 db.getAllDocuments('rooms', function(res){ 
-rooms = {}; 
-return rooms;
+room = {}; 
+return room;
 });
 }
 
@@ -192,13 +192,13 @@ var botName;
 for (room in rooms) {
  
 var logName = '';
-      if (rooms[room].id == 'b6c42cc2a1bee3c38f07723d78') {
+      if (res[room].id == 'b6c42cc2a1bee3c38f07723d78') {
            logName = 'Config';
-           } else if (rooms[room].id == '282865de8ce30137567238148f') {
+           } else if (res[room].id == '282865de8ce30137567238148f') {
            logName = '308BoonBot';
-           } else if (rooms[room].id == '8631a4c35f0f0f250bd5d46f44') {
+           } else if (res[room].id == '8631a4c35f0f0f250bd5d46f44') {
            logName = 'FlynnBot';
-           } else if (rooms[room].id =='2184cee4d169628e83e82ee05f') {
+           } else if (res[room].id =='2184cee4d169628e83e82ee05f') {
            logName = 'AshleyBot';
            } else {
              logName = botID;
