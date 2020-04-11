@@ -31,7 +31,7 @@ app = express();
 
 /*var logName = '';
 var logID = '';
-var botID;
+var botID ='';
 if (botID == 'b6c42cc2a1bee3c38f07723d78') {
 
            logName = 'Config';
@@ -47,7 +47,7 @@ if (botID == 'b6c42cc2a1bee3c38f07723d78') {
              
   //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
 }
-*/
+
 
 //load config
 var config       = require('./config/config');
@@ -199,7 +199,7 @@ function logMessage(logResponse, attachments, bot_id, logName) {
 //botName = dataHash.request.name;
 //}
 var logName = '';
-var bot_id;
+var bot_id = "";
 if (bot_id == 'b6c42cc2a1bee3c38f07723d78') {
 
            logName = 'Config';
