@@ -202,12 +202,12 @@ var botName;
 //botName = dataHash.request.name;
 //}
 //var logName = '';
-var botID = rooms.getRoom(room).id;
+var botID = rooms.getRoom(room).type;
 if (botID == 'b6c42cc2a1bee3c38f07723d78') {
 
            logName = "Config";
 
-           } else if (botID == '282865de8ce30137567238148f') {
+           } else if (botID == 'boonbot') {
            logName = "308BoonBot";
            } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
            logName = "FlynnBot";
