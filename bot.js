@@ -32,7 +32,7 @@ app = express();
 
 var rooom;
 getAllRooom();
-function getAllRooms(){ 
+function getAllRooom(){ 
 db.getAllDocuments('rooms', function(res){ 
 rooom = res; 
 return rooom;
