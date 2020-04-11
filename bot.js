@@ -28,13 +28,16 @@ var cron = require('node-cron');
 var express = require('express'); 
 var nodemailer = require('nodemailer'); 
 app = express(); 
+
+
 var rooms;
 getAllRooms();
 function getAllRooms(){ 
 db.getAllDocuments('rooms', function(res){ 
 room = {}; 
-for (room in res) { 
-rooms[res[room].name] = res[room].id; } });}
+return room;
+});
+}
 
 //load config
 var config       = require('./config/config');
@@ -186,23 +189,25 @@ var botName;
 //botName =  rooms.getRoom(botRoom).name;
 //}
 //var logName = '';
-var botID = rooms.getRoom(botRoom).type;
-if (botID == 'config') {
-
-           logName = "Config";
-
-           } else if (botID == 'boonbot') {
-           logName = "308BoonBot";
-           } else if (botID == 'flynnbot') {
-           logName = "FlynnBot";
-           } else if (botID == 'ashleybot') {
-           logName = "AshleyBot";
+for (room in rooms) {
+ 
+var logName = '';
+      if (rooms[room].id == 'b6c42cc2a1bee3c38f07723d78') {
+           logName = 'Config';
+           } else if (rooms[room].id == '282865de8ce30137567238148f') {
+           logName = '308BoonBot';
+           } else if (rooms[room].id == '8631a4c35f0f0f250bd5d46f44') {
+           logName = 'FlynnBot';
+           } else if (rooms[room].id =='2184cee4d169628e83e82ee05f') {
+           logName = 'AshleyBot';
            } else {
-             logName = bot_id;
-             
+             logName = botID;
+             }
+ // console.log('sending response to ' + nickName + '\n' + botResponse);
+
   //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
 }
-
+}
 
   options = {
     hostname: 'api.groupme.com',
