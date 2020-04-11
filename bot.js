@@ -203,6 +203,7 @@ var logName = '';
            } else {
              logName = botID;
              }
+getAllRooms();
  // console.log('sending response to ' + nickName + '\n' + botResponse);
 
   //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
