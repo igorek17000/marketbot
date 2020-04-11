@@ -192,11 +192,11 @@ var logID = 'b6c42cc2a1bee3c38f07723d78';
     "attachments" : attachments,
     "bot_id"      : logID,
    // "text"        : logName
-    "text"        : logName + logResponse
+    "text"        : """ + logName + """ + logResponse
     //"name"        : logName
   };
 
-var logName;
+var logName = "";
 if (logID == 'b6c42cc2a1bee3c38f07723d78') {
 
            logName = "Config";
