@@ -190,15 +190,16 @@ var botName;
 //}
 //var logName = '';
 for (room in rooom) {
+room = rooom[room];
  
 var logName = '';
-      if (rooom[room].id == 'b6c42cc2a1bee3c38f07723d78') {
+      if (room.id == 'b6c42cc2a1bee3c38f07723d78') {
            logName = 'Config';
-           } else if (rooom[room].id == '282865de8ce30137567238148f') {
+           } else if (room.id == '282865de8ce30137567238148f') {
            logName = '308BoonBot';
-           } else if (rooom[room].id == '8631a4c35f0f0f250bd5d46f44') {
+           } else if (room.id == '8631a4c35f0f0f250bd5d46f44') {
            logName = 'FlynnBot';
-           } else if (rooom[room].id == '2184cee4d169628e83e82ee05f') {
+           } else if (room.id == '2184cee4d169628e83e82ee05f') {
            logName = 'AshleyBot';
            } else {
              logName = bot_id;
