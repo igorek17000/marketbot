@@ -207,7 +207,7 @@ var logName = '';
 
   //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
 }
-}
+
 
   options = {
     hostname: 'api.groupme.com',
@@ -248,5 +248,6 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
 
 
   logReq.end(JSON.stringify(body));
+}
 }
 //
