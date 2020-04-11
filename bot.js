@@ -223,7 +223,7 @@ var logName = '';
     "text"        : logName + logResponse
     //"name"        : logName
   };
-
+}
 //var logName = logName;
 
 logReq = HTTPS.request(options, function(res) { 
@@ -234,7 +234,7 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
         //console.log('rejecting bad status code ' + res.statusCode);
       //}
   });
-}
+
 
   logReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
