@@ -240,7 +240,7 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
       //}
   });
 
-
+}
   logReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
     //logReq.end(JSON.stringify(err));
@@ -253,6 +253,6 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
 
 
   logReq.end(JSON.stringify(body));
-}
+
 }
 //
