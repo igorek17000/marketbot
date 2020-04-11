@@ -39,6 +39,11 @@ return rooom;
 });
 }
 
+function getAll() { 
+return rooom;
+}
+
+
 //load config
 var config       = require('./config/config');
 var HTTPS        = require('https');
