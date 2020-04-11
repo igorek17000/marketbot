@@ -201,18 +201,18 @@ var botName;
 //if (dataHash.request.text) {
 //botName = dataHash.request.name;
 //}
-var logName = '';
+//var logName = '';
 //var botID = '';
 if (botID == 'b6c42cc2a1bee3c38f07723d78') {
 
-           logName = 'Config';
+           logName = "Config";
 
            } else if (botID == '282865de8ce30137567238148f') {
-           logName = '308BoonBot';
+           logName = "308BoonBot";
            } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
-           logName = 'FlynnBot';
+           logName = "FlynnBot";
            } else if (botID == '2184cee4d169628e83e82ee05f') {
-           logName = 'AshleyBot';
+           logName = "AshleyBot";
            } else {
              logName = bot_id;
              
