@@ -208,9 +208,9 @@ var logName = '';
            logName = 'AshleyBot';
            } else {
              logName = bot_id;
-
+continue
              }
-continue;
+
 //getAllRooms();
  // console.log('sending response to ' + nickName + '\n' + botResponse);
 
@@ -233,7 +233,7 @@ continue;
   };
 
 //var logName = logName;
-}
+
 
 
 logReq = HTTPS.request(options, function(res) { 
@@ -245,7 +245,7 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
       //}
   });
 
-
+}
   logReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
     //logReq.end(JSON.stringify(err));
