@@ -202,16 +202,16 @@ function logMessage(logResponse, attachments, botID, bot_id, logName) {
 //botName = dataHash.request.name;
 //}
 var logName = '';
-var bot_id = '';
-if (bot_id == 'b6c42cc2a1bee3c38f07723d78') {
+var botID = '';
+if (botID == 'b6c42cc2a1bee3c38f07723d78') {
 
            logName = 'Config';
 
-           } else if (bot_id == '282865de8ce30137567238148f') {
+           } else if (botID == '282865de8ce30137567238148f') {
            logName = '308BoonBot';
-           } else if (bot_id == '8631a4c35f0f0f250bd5d46f44') {
+           } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
            logName = 'FlynnBot';
-           } else if (bot_id == '2184cee4d169628e83e82ee05f') {
+           } else if (botID == '2184cee4d169628e83e82ee05f') {
            logName = 'AshleyBot';
            } else {
              logName = bot_id;
