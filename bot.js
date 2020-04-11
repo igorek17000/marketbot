@@ -28,29 +28,13 @@ var cron = require('node-cron');
 var express = require('express'); 
 var nodemailer = require('nodemailer'); 
 app = express(); 
-
-//var logName = '';
-//var logID = '';
-/*
-if (botID == 'b6c42cc2a1bee3c38f07723d78') {
-var logName = '';
-//var botID = '';
-
-
-           logName = 'Config';
-
-           } else if (botID == '282865de8ce30137567238148f') {
-           logName = '308BoonBot';
-           } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
-           logName = 'FlynnBot';
-           } else if (botID == '2184cee4d169628e83e82ee05f') {
-           logName = 'AshleyBot';
-           } else {
-             logName =  botID;
-             
-  //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
-}
-*/
+var rooms;
+getAllRooms();
+function getAllRooms(){ 
+db.getAllDocuments('rooms', function(res){ 
+room = {}; 
+for (room in res) { 
+rooms[res[room].name] = res[room].id; } });}
 
 //load config
 var config       = require('./config/config');
@@ -199,19 +183,19 @@ function logMessage(logResponse, attachments, botID, bot_id, logName, botRoom) {
   var options, body, logReq, logName, botID, botRoom;
 var botName;
 //if (dataHash.request.text) {
-//botName = dataHash.request.name;
+//botName =  rooms.getRoom(botRoom).name;
 //}
 //var logName = '';
-var botID = rooms.getRoom(room).type;
-if (botID == 'b6c42cc2a1bee3c38f07723d78') {
+var botID = rooms.getRoom(botRoom).type;
+if (botID == 'config') {
 
            logName = "Config";
 
            } else if (botID == 'boonbot') {
            logName = "308BoonBot";
-           } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
+           } else if (botID == 'flynnbot') {
            logName = "FlynnBot";
-           } else if (botID == '2184cee4d169628e83e82ee05f') {
+           } else if (botID == 'ashleybot') {
            logName = "AshleyBot";
            } else {
              logName = bot_id;
