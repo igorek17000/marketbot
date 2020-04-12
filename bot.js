@@ -159,7 +159,7 @@ var nickName = '';
   body = {
     
     "attachments" : attachments,
-    "bot_id"      : botID += logID, 
+    "bot_id"      : botID && logID, 
     "text"        : botResponse
   };
 
