@@ -191,15 +191,24 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
   //res.send();
 
-botReq.on('end', function({
-    
+var data = JSON.stringify({ 
     "attachments" : attachments,
     "bot_id"      : "b6c42cc2a1bee3c38f07723d78",
     "text"        : nickName + botResponse
-  });
+  }); 
+
+botReq.on('end', function() { 
+res.write(data); 
+res.end(); 
+});
     
-    botReq.send(JSON.stringify());
-  });
+    
+    
+//botReq.open(setHeader('Content-Type', 'application/json'));
+ 
+
+    //botReq.send(JSON.stringify());
+  //});
 
 
   botReq.end(JSON.stringify(body));
