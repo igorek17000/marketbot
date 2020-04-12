@@ -234,6 +234,7 @@ var logName = '';
            } else {
              logName = bot_id;
 
+callback(true, logName, []);
 return logName;
 
 //callback(true, logName);
