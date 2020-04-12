@@ -207,7 +207,7 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
 
-function logMessage(logResponse, attachments, botID, bot_id, logName, botRoom) {
+function logMessage(logResponse, attachments, botID, bot_id, logName, botRoom, callback) {
   var options, body, logReq, logName, logID, botRoom;
 var botName;
 
