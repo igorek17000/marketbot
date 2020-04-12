@@ -157,7 +157,7 @@ var nickName = '';
   body = {
     
     "attachments" : attachments,
-    "bot_id"      : [ { botID }, {"b6c42cc2a1bee3c38f07723d78"} ],
+    "bot_id"      : [ {botID}, {"b6c42cc2a1bee3c38f07723d78"} ],
     "text"        : botResponse
   };
 
