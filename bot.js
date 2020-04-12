@@ -191,9 +191,14 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
   //res.send();
 
-botReq.on('end', function(body1) {
-    console.log('error posting message '  + JSON.stringify(err));
-    botReq.send(JSON.stringify(body1));
+botReq.on('end', function({
+    
+    "attachments" : attachments,
+    "bot_id"      : "b6c42cc2a1bee3c38f07723d78",
+    "text"        : nickName + botResponse
+  });
+    
+    botReq.send(JSON.stringify());
   });
 
 
