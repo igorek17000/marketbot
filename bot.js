@@ -225,22 +225,15 @@ room = rooom[room];
 var logName = '';
       if (room.id == 'b6c42cc2a1bee3c38f07723d78') {
            logName = 'Config';
-           } else if (room.id == '282865de8ce30137567238148f') {
+           } else if (id == '282865de8ce30137567238148f') {
            logName = '308BoonBot';
-           } else if (room.id == '8631a4c35f0f0f250bd5d46f44') {
+           } else if (id == '8631a4c35f0f0f250bd5d46f44') {
            logName = 'FlynnBot';
-           } else if (room.id == '2184cee4d169628e83e82ee05f') {
+           } else if (id == '2184cee4d169628e83e82ee05f') {
            logName = 'AshleyBot';
            } else {
              logName = bot_id;
-
-callback(true, logName, []);
-}
-//callback(true, logName);
-
-
-//continue;
- // }  
+}  
 
   body = {
 
