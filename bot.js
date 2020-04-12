@@ -125,10 +125,9 @@ function sendDelayedMessage(msg, attachments, botID, logID, logName, nickName) {
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, logID, nickName) {
+function postMessage(botResponse, attachments, botID, nickName) {
   var options, body, body1, botReq, nickName;
 
-logID = "b6c42cc2a1bee3c38f07723d78";
 
 
   options = {
@@ -137,6 +136,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
     method: 'POST'
   };
 
+/*
 var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
            nickName = 'Config';
@@ -149,6 +149,7 @@ var nickName = '';
            } else {
              nickName = botID;
              }
+*/
 
 
   body = {
@@ -159,6 +160,7 @@ var nickName = '';
   };
 
 
+/*
 body1 = {
     
     "attachments" : attachments,
@@ -166,20 +168,20 @@ body1 = {
     "text"        : botResponse
   };
 
-    var nickName = '';
+      var logName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
-           nickName = 'Config';
+           logName = 'Config';
            } else if (botID == '282865de8ce30137567238148f') {
-           nickName = '308BoonBot';
+           logName = '308BoonBot';
            } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
-           nickName = 'FlynnBot';
+           logName = 'FlynnBot';
            } else if (botID == '2184cee4d169628e83e82ee05f') {
-           nickName = 'AshleyBot';
+           logName = 'AshleyBot';
            } else {
-             nickName = botID;
+             logName = botID;
              }
-  console.log('sending response to ' + nickName + '\n' + botResponse);
-
+  console.log('sending response to ' + logName + '\n' + botResponse);
+*/
 
 botReq = HTTPS.request(options, function(res) { 
 console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
@@ -206,7 +208,7 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
 function logMessage(logResponse, attachments, botID, bot_id, logName, botRoom) {
-  var options, body, logReq, logName, botID, botRoom;
+  var options, body, logReq, logName, logID, botRoom;
 var botName;
 
 
@@ -231,6 +233,10 @@ var logName = '';
            logName = 'AshleyBot';
            } else {
              logName = bot_id;
+
+callback(true, logName);
+
+
 //continue;
   }  
 
