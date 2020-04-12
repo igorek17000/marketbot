@@ -119,7 +119,7 @@ exports.commands = function() {
 function sendDelayedMessage(msg, attachments, botID, logID, logName, nickName) {
   setTimeout(function() {
     postMessage(msg, attachments, botID, nickName);
-    logMessage(msg, attachments, logID, logName);
+    //logMessage(msg, attachments, logID, logName);
 
 
   }, config.delay_time);
