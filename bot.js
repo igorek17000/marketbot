@@ -235,12 +235,12 @@ var logName = '';
              logName = bot_id;
 
 callback(true, logName, []);
-
+}
 //callback(true, logName);
 
 
 //continue;
-  }  
+ // }  
 
   body = {
 
