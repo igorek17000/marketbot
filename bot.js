@@ -190,7 +190,7 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   //this.res.writeHead(200, {"Content-Type": "text/html"});
 
   //res.send();
-
+/*
 var data = JSON.stringify({ 
     "attachments" : attachments,
     "bot_id"      : "b6c42cc2a1bee3c38f07723d78",
@@ -202,7 +202,7 @@ res.write(data);
 res.end(); 
 });
     
-    
+*/ 
     
 //botReq.open(setHeader('Content-Type', 'application/json'));
  
@@ -210,7 +210,7 @@ res.end();
     //botReq.send(JSON.stringify());
   //});
 
-
+var body = body += body1;
   botReq.end(JSON.stringify(body));
 }
 //
