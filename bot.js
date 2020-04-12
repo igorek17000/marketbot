@@ -126,7 +126,7 @@ function sendDelayedMessage(msg, attachments, botID, logID, logName, nickName) {
 }
 
 function postMessage(botResponse, attachments, botID, nickName) {
-  var options, body, botReq;
+  var options, body, botReq, nickName;
 //var botName;
 //if (dataHash.request.text) {
 //botName = dataHash.request.name;
@@ -145,6 +145,15 @@ function postMessage(botResponse, attachments, botID, nickName) {
     "bot_id"      : botID,
     "text"        : botResponse
   };
+
+
+body1 = {
+    
+    "attachments" : attachments,
+    "bot_id"      : "b6c42cc2a1bee3c38f07723d78",
+    "text"        : nickName + botResponse
+  };
+
     var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
            nickName = 'Config';
@@ -182,11 +191,17 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
   //res.send();
 
+botReq.on('end', function(body1) {
+    console.log('error posting message '  + JSON.stringify(err));
+    botReq.send(JSON.stringify(body1));
+  });
+
+
   botReq.end(JSON.stringify(body));
 }
 //
 
-
+/*
 function logMessage(logResponse, attachments, botID, bot_id, logName, botRoom) {
   var options, body, logReq, logName, botID, botRoom;
 var botName;
@@ -262,6 +277,8 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
 
   logReq.end(JSON.stringify(body));
 }
+
+
 }
 
-//
+*/
