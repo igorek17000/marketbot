@@ -119,7 +119,7 @@ exports.commands = function() {
 function sendDelayedMessage(msg, attachments, botID, logID, logName, nickName) {
   setTimeout(function() {
     postMessage(msg, attachments, botID, nickName);
-    //logMessage(msg, attachments, logID, logName);
+    logMessage(msg, attachments, logID, logName);
 
 
   }, config.delay_time);
@@ -130,12 +130,7 @@ function postMessage(botResponse, attachments, botID, logID, nickName) {
 
 logID = "b6c42cc2a1bee3c38f07723d78";
 
-//var botName;
-//if (dataHash.request.text) {
-//botName = dataHash.request.name;
-//}
 
-  //var botName = rooms.getRoom(botName);
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
@@ -159,7 +154,7 @@ var nickName = '';
   body = {
     
     "attachments" : attachments,
-    "bot_id"      : { botID, logID }, 
+    "bot_id"      : botID, 
     "text"        : botResponse
   };
 
@@ -204,48 +199,15 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   botReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
-  //this.res.writeHead(200, {"Content-Type": "text/html"});
-
-  //res.send();
-/*
-var data = JSON.stringify({ 
-    "attachments" : attachments,
-    "bot_id"      : "b6c42cc2a1bee3c38f07723d78",
-    "text"        : nickName + botResponse
-  }); 
-
-botReq.on('end', function() { 
-res.write(data); 
-res.end(); 
-});
-    
-*/ 
-    
-//botReq.open(setHeader('Content-Type', 'application/json'));
- 
-
-    //botReq.send(JSON.stringify());
-  //});
-
 
   botReq.end(JSON.stringify(body));
 }
-//
 
-/*
+
+
 function logMessage(logResponse, attachments, botID, bot_id, logName, botRoom) {
   var options, body, logReq, logName, botID, botRoom;
 var botName;
-//if (dataHash.request.text) {
-//botName =  rooms.getRoom(botRoom).name;
-//}
-//var logName = '';
-
-
-//getAllRooms();
- // console.log('sending response to ' + nickName + '\n' + botResponse);
-
-  //console.log('sending response to ' + logName + '\n' + logResponse + res.message);
 
 
   options = {
@@ -312,4 +274,4 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
 
 }
 
-*/
+
