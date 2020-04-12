@@ -127,6 +127,7 @@ function sendDelayedMessage(msg, attachments, botID, logID, logName, nickName) {
 
 function postMessage(botResponse, attachments, botID, nickName) {
   var options, body, body1, botReq, nickName;
+body = body, body1;
 //var botName;
 //if (dataHash.request.text) {
 //botName = dataHash.request.name;
