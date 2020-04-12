@@ -125,8 +125,10 @@ function sendDelayedMessage(msg, attachments, botID, logID, logName, nickName) {
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, nickName) {
+function postMessage(botResponse, attachments, botID, logID, nickName) {
   var options, body, body1, botReq, nickName;
+
+logID = "b6c42cc2a1bee3c38f07723d78";
 
 //var botName;
 //if (dataHash.request.text) {
@@ -157,7 +159,7 @@ var nickName = '';
   body = {
     
     "attachments" : attachments,
-    "bot_id"      : botID && "b6c42cc2a1bee3c38f07723d78", 
+    "bot_id"      : botID && logID, 
     "text"        : botResponse
   };
 
