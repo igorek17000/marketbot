@@ -126,7 +126,7 @@ function sendDelayedMessage(msg, attachments, botID, logID, logName, nickName) {
 }
 
 function postMessage(botResponse, attachments, botID, nickName) {
-  var options, body, botReq, nickName;
+  var options, body, body1, botReq, nickName;
 //var botName;
 //if (dataHash.request.text) {
 //botName = dataHash.request.name;
@@ -138,6 +138,20 @@ function postMessage(botResponse, attachments, botID, nickName) {
     path: '/v3/bots/post',
     method: 'POST'
   };
+
+var nickName = '';
+      if (botID == 'b6c42cc2a1bee3c38f07723d78') {
+           nickName = 'Config';
+           } else if (botID == '282865de8ce30137567238148f') {
+           nickName = '308BoonBot';
+           } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
+           nickName = 'FlynnBot';
+           } else if (botID == '2184cee4d169628e83e82ee05f') {
+           nickName = 'AshleyBot';
+           } else {
+             nickName = botID;
+             }
+
 
   body = {
     
