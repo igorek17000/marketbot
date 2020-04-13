@@ -224,9 +224,9 @@ var botName;
 for (room in rooom) {
 room = rooom[room];
  
-var logName = '';
+//var logName = '';
       if (rooms.getRoom(botRoom).id && dataHash.currentBot.type == '308boonbot') { // == 'b6c42cc2a1bee3c38f07723d78') {
-           logName = 'BoonBot';
+           logName = "BoonBot";
        /*     } else if (id == '282865de8ce30137567238148f') {
            logName = '308BoonBot';
            } else if (id == '8631a4c35f0f0f250bd5d46f44') {
