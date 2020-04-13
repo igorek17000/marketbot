@@ -267,7 +267,7 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
   });
 
 logReq.on('end', function() {
-this.res.writeHead(200,  'Content-Type': 'application/json');
+this.res.writeHead(200, {"Content-Type": "application/json"});
 This.res.end();
 });
 
