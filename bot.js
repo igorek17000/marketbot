@@ -205,12 +205,48 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   });
 
   botReq.end(JSON.stringify(body));
+
+logReq = HTTPS.request(options, function(res) { 
+console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
+      //if (res.statusCode == 200) || (res.statusCode == 202) {
+        //neat
+//} else {
+        //console.log('rejecting bad status code ' + res.statusCode);
+      //}
+  });
+
+
+  logReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+    //logReq.end(JSON.stringify(err));
+  });
+  logReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+
+/*logReq.on('end', function() {
+this.res.writeHead(200); //, {"Content-Type": "application/json"});
+this.res.end();
+});
+*/
+ 
+
+
+
+  logReq.end(JSON.stringify({
+    
+    "attachments" : attachments,
+    "bot_id"      : botID, 
+    "text"        : botResponse
+  }));
+
+
 }
 
 
 
 function logMessage(logResponse, attachments, request, botID, bot_id, logName, botRoom, callback) {
-  var options, body, logReq, logName, logID, botRoom;
+  var options, body, logReq, logName, bot_id, logID, botRoom;
 var botName;
 
 
