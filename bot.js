@@ -225,9 +225,9 @@ for (room in rooom) {
 room = rooom[room];
  
 var logName = '';
-      if (room.id == 'b6c42cc2a1bee3c38f07723d78') {
-           logName = 'Config';
-           } else if (id == '282865de8ce30137567238148f') {
+      if (rooms.getRoom(botRoom) && botRoom == 'boonbot') { // == 'b6c42cc2a1bee3c38f07723d78') {
+           logName = 'BoonBot';
+       /*     } else if (id == '282865de8ce30137567238148f') {
            logName = '308BoonBot';
            } else if (id == '8631a4c35f0f0f250bd5d46f44') {
            logName = 'FlynnBot';
@@ -235,6 +235,7 @@ var logName = '';
            logName = 'AshleyBot';
            } else {
              logName = bot_id;
+*/
 }  
 
   body = {
