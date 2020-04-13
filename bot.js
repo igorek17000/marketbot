@@ -225,7 +225,7 @@ for (room in rooom) {
 room = rooom[room];
  
 var logName = '';
-      if (rooms.getRoom(botRoom).id && botRoom == '308boonbot') { // == 'b6c42cc2a1bee3c38f07723d78') {
+      if (rooms.getRoom(botRoom).id && dataHash.currentBot.type == '308boonbot') { // == 'b6c42cc2a1bee3c38f07723d78') {
            logName = 'BoonBot';
        /*     } else if (id == '282865de8ce30137567238148f') {
            logName = '308BoonBot';
@@ -270,7 +270,7 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
   });
 
 logReq.on('end', function() {
-this.res.writeHead(200, {"Content-Type": "application/json"});
+this.res.writeHead(200); //, {"Content-Type": "application/json"});
 this.res.end();
 });
 
