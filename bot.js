@@ -29,11 +29,13 @@ var express = require('express');
 var nodemailer = require('nodemailer'); 
 app = express(); 
 
+var db_table = 'rooms';
+
 
 var rooom;
 getAllRooom();
-function getAllRooom(){ 
-db.getAllDocuments('rooms', function(res){ 
+function getAllRooom(){ //logReq
+db.findDocs(db_table, function(res){ 
 rooom = res; 
 return rooom;
 });
