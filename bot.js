@@ -35,7 +35,7 @@ var db_table = 'rooms';
 var rooom;
 getAllRooom();
 function getAllRooom(){ //logReq
-db.findDocs(db_table, function(res){ 
+db.getAllDocuments(db_table, function(res){ 
 rooom = res; 
 return rooom;
 });
