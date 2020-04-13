@@ -266,9 +266,9 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
     console.log('timeout posting message '  + JSON.stringify(err));
   });
 
-on('end', function() {
-res.write(200);
-res.end();
+logReq.on('end', function() {
+this.res.writeHead(200,  'Content-Type': 'application/json');
+This.res.end();
 });
 
  // logReq(logName));
