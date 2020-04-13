@@ -162,7 +162,7 @@ var nickName = '';
   };
 
 
-/*
+
 body1 = {
     
     "attachments" : attachments,
@@ -183,7 +183,7 @@ body1 = {
              logName = botID;
              }
   console.log('sending response to ' + logName + '\n' + botResponse);
-*/
+
 
 botReq = HTTPS.request(options, function(res) { 
 console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
@@ -206,6 +206,8 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
   botReq.end(JSON.stringify(body));
 
+continue;
+
 logReq = HTTPS.request(options, function(res) { 
 console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
       //if (res.statusCode == 200) || (res.statusCode == 202) {
@@ -223,28 +225,17 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
   logReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
-
-/*logReq.on('end', function() {
-this.res.writeHead(200); //, {"Content-Type": "application/json"});
-this.res.end();
-});
-*/
  
 
+body = body1;
 
-
-  logReq.end(JSON.stringify({
-    
-    "attachments" : attachments,
-    "bot_id"      : botID, 
-    "text"        : botResponse
-  }));
+  logReq.end(JSON.stringify(body));
 
 
 }
 
 
-
+/*
 function logMessage(logResponse, attachments, request, botID, bot_id, logName, botRoom, callback) {
   var options, body, logReq, logName, bot_id, logID, botRoom;
 var botName;
@@ -320,4 +311,4 @@ this.res.end();
 
 }
 
-
+*/
