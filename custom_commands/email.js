@@ -32,7 +32,7 @@ function addEmailToDB(cmd, callback) {
   db.addDoc(db_table, cmd, callback);
 }
 
-function findQuotes(status, callback){ 
+function findStatus(status, callback){ 
 db.findDocs(db_table, {"status": commands[cmd].status}, callback);
 }
 
