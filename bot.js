@@ -196,15 +196,6 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
       //}
   });
 
-logReq = HTTPS.request(options, function(res) { 
-console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
-      //if (res.statusCode == 200) || (res.statusCode == 202) {
-        //neat
-//} else {
-        //console.log('rejecting bad status code ' + res.statusCode);
-      //}
-//body = body1;
-  });
 
 
 
@@ -215,11 +206,20 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
     console.log('timeout posting message '  + JSON.stringify(err));
   });
 
-  botReq.end(JSON.stringify(body));
+  botReq.end(JSON.stringify(body))
 
 //continue;
 
 
+logReq = HTTPS.request(options, function(res) { 
+console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
+      //if (res.statusCode == 200) || (res.statusCode == 202) {
+        //neat
+//} else {
+        //console.log('rejecting bad status code ' + res.statusCode);
+      //}
+//body = body1;
+  });
 
 
   logReq.on('error', function(err) {
