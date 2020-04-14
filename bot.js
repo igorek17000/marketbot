@@ -232,7 +232,7 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
   });
 botReq.on('end', function(res) {
 logReq.end(JSON.stringify(body1));
-};
+});
   botReq.end(JSON.stringify(body));
 
 //continue;
