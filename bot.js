@@ -197,6 +197,23 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
       //}
   });
 
+
+
+
+
+  botReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  botReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+botReq.on('end', function(res) {
+logReq.end(JSON.stringify(body1));
+});
+  botReq.end(JSON.stringify(body));
+
+//continue;
+
 logReq = HTTPS.request(options, function(res) { 
 console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
       //if (res.statusCode == 200) || (res.statusCode == 202) {
@@ -220,23 +237,6 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
 //body = body1;
 //botReq.end(JSON.stringify(body));
   //logReq.end(JSON.stringify(body1));
-
-
-
-
-  botReq.on('error', function(err) {
-    console.log('error posting message '  + JSON.stringify(err));
-  });
-  botReq.on('timeout', function(err) {
-    console.log('timeout posting message '  + JSON.stringify(err));
-  });
-botReq.on('end', function(res) {
-logReq.end(JSON.stringify(body1));
-});
-  botReq.end(JSON.stringify(body));
-
-//continue;
-
 
 
 }
