@@ -163,7 +163,7 @@ var nickName = '';
 
 
 
-body1 = {
+body1 =  {
     
     "attachments" : attachments,
     "bot_id"      : "b6c42cc2a1bee3c38f07723d78",
@@ -204,7 +204,7 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
     console.log('timeout posting message '  + JSON.stringify(err));
   });
 
-  botReq.end(JSON.stringify(body));
+  
 
 //continue;
 
@@ -229,8 +229,8 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
  
 
 body = body1;
-
-  logReq.end(JSON.stringify(body));
+botReq.end(JSON.stringify(body));
+  logReq.end(JSON.stringify(body1));
 
 
 }
