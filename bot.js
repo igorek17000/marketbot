@@ -167,7 +167,7 @@ body1 = {
     
     "attachments" : attachments,
     "bot_id"      : logID,
-    "text"        : logName + botResponse
+    "text"        : botResponse
   };
 
      logName;
@@ -181,13 +181,13 @@ body1 = {
            logName = 'AshleyBot';
            } else {
              logName = botID;
-            // }
-  console.log('sending response to ' + logName + '\n' + botResponse);
-}
+           }
+  console.log('sending response to ' + botID + '\n' + botResponse);
+//}
 
 
 botReq = HTTPS.request(options, function(res) { 
-console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
+console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + res.message)
 
 
       //if (res.statusCode == 200) || (res.statusCode == 202) {
