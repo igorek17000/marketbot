@@ -142,7 +142,7 @@ function postMessage(botResponse, attachments, logName, botID, nickName) {
 var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
            nickName = 'Config';
-           } else if (botID == '282865de8ce30137567238148f') {
+           } else if (botID == 282865de8ce30137567238148f) {
            nickName = '308BoonBot';
            } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
            nickName = 'FlynnBot';
@@ -173,7 +173,7 @@ body1 = {
      logName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
            logName = 'Config';
-           } else if (botID == '"282865de8ce30137567238148f"') {
+           } else if (botID == '282865de8ce30137567238148f') {
            logName = '"308BoonBot"';
            } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
            logName = 'FlynnBot';
@@ -196,6 +196,17 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
       //}
   });
 
+logReq = HTTPS.request(options, function(res) { 
+console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
+      //if (res.statusCode == 200) || (res.statusCode == 202) {
+        //neat
+//} else {
+        //console.log('rejecting bad status code ' + res.statusCode);
+      //}
+//body = body1;
+  });
+
+
 
   botReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
@@ -208,15 +219,7 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 //continue;
 
-logReq = HTTPS.request(options, function(res) { 
-console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
-      //if (res.statusCode == 200) || (res.statusCode == 202) {
-        //neat
-//} else {
-        //console.log('rejecting bad status code ' + res.statusCode);
-      //}
-//body = body1;
-  });
+
 
 
   logReq.on('error', function(err) {
