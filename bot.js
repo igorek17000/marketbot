@@ -215,7 +215,7 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
     console.log('timeout posting message '  + JSON.stringify(err));
   });
 
-  
+  botReq.end(JSON.stringify(body));
 
 //continue;
 
