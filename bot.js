@@ -127,8 +127,8 @@ function sendDelayedMessage(msg, attachments, botID, logID, logName, nickName) {
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, nickName) {
-  var options, body, body1, botReq, nickName;
+function postMessage(botResponse, attachments, logName, botID, nickName) {
+  var options, body, body1, botReq, logName, nickName;
 
 
 
@@ -167,10 +167,10 @@ body1 = {
     
     "attachments" : attachments,
     "bot_id"      : "b6c42cc2a1bee3c38f07723d78",
-    "text"        : botResponse
+    "text"        : logName + botResponse
   };
 
-      var logName = '';
+     // var logName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
            logName = 'Config';
            } else if (botID == '282865de8ce30137567238148f') {
