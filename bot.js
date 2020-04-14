@@ -120,7 +120,7 @@ exports.commands = function() {
 
 function sendDelayedMessage(msg, attachments, botID, logID, logName, nickName) {
   setTimeout(function() {
-    postMessage(msg, attachments, botID, logName, nickName);
+    postMessage(msg, attachments, botID, logID, logName, nickName);
    // logMessage(msg, attachments, logID, logName);
 
 
@@ -138,11 +138,11 @@ logID = "b6c42cc2a1bee3c38f07723d78";
     method: 'POST'
   };
 
-/*
+
 var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
            nickName = 'Config';
-           } else if (botID == 282865de8ce30137567238148f) {
+           } else if (botID == '282865de8ce30137567238148f') {
            nickName = '308BoonBot';
            } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
            nickName = 'FlynnBot';
@@ -151,7 +151,7 @@ var nickName = '';
            } else {
              nickName = botID;
              }
-*/
+
 
 
   body = {
