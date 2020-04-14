@@ -215,7 +215,7 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
 //} else {
         //console.log('rejecting bad status code ' + res.statusCode);
       //}
-//body = body1;
+body = body1;
   });
 
 
@@ -228,7 +228,7 @@ console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
   });
  
 
-body == body1;
+//body = body1;
 
   logReq.end(JSON.stringify(body));
 
