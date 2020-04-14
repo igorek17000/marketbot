@@ -206,7 +206,7 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
   botReq.end(JSON.stringify(body));
 
-continue;
+//continue;
 
 logReq = HTTPS.request(options, function(res) { 
 console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
