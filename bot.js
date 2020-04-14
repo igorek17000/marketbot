@@ -118,17 +118,17 @@ exports.commands = function() {
 //this.res.end(cmdArr);
 }
 
-function sendDelayedMessage(msg, attachments, botID, logID, logName, nickName) {
+function sendDelayedMessage(msg, attachments, botID) {
   setTimeout(function() {
-    postMessage(msg, attachments, botID, logID, logName, nickName);
+    postMessage(msg, attachments, botID);
    // logMessage(msg, attachments, logID, logName);
 
 
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, logName, botID, nickName) {
-  var options, body, body1, botReq, logReq, logName, nickName;
+function postMessage(botResponse, attachments, botID) {
+  var options, body, botReq;
 //logID = "b6c42cc2a1bee3c38f07723d78";
 
 
@@ -139,7 +139,7 @@ function postMessage(botResponse, attachments, logName, botID, nickName) {
   };
 
 
-//var nickName = '';
+/*    var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
            nickName = 'Config';
            } else if (botID == '282865de8ce30137567238148f') {
@@ -153,7 +153,7 @@ function postMessage(botResponse, attachments, logName, botID, nickName) {
              }
 
 
-
+*/
   body = {
     
     "attachments" : attachments,
@@ -184,7 +184,7 @@ function postMessage(botResponse, attachments, logName, botID, nickName) {
            }
 */
   console.log('sending response to ' + botID + '\n' + botResponse);
-//}
+
 
 
 botReq = HTTPS.request(options, function(res) { 
@@ -209,9 +209,6 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode +
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   botReq.end(JSON.stringify(body));
-
-//continue;
-
 
 }
 
