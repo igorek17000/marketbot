@@ -181,9 +181,9 @@ body1 = {
            logName = 'AshleyBot';
            } else {
              logName = botID;
-             }
+            // }
   console.log('sending response to ' + logName + '\n' + botResponse);
-
+}
 
 botReq = HTTPS.request(options, function(res) { 
 console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
