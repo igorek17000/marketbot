@@ -29,7 +29,7 @@ var express = require('express');
 var nodemailer = require('nodemailer'); 
 app = express(); 
 
-var db_table = 'rooms';
+/* var db_table = 'rooms';
 
 
 var rooom;
@@ -44,7 +44,7 @@ return rooom;
 function getAll() { 
 return rooom;
 }
-
+*/
 
 //load config
 var config       = require('./config/config');
@@ -129,7 +129,7 @@ function sendDelayedMessage(msg, attachments, botID, logID, logName, nickName) {
 
 function postMessage(botResponse, attachments, logName, botID, nickName) {
   var options, body, body1, botReq, logReq, logName, nickName;
-logID = "b6c42cc2a1bee3c38f07723d78";
+//logID = "b6c42cc2a1bee3c38f07723d78";
 
 
   options = {
@@ -139,7 +139,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
   };
 
 
-var nickName = '';
+//var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
            nickName = 'Config';
            } else if (botID == '282865de8ce30137567238148f') {
@@ -163,7 +163,7 @@ var nickName = '';
 
 
 
-body1 = {
+/* body1 = {
     
     "attachments" : attachments,
     "bot_id"      : logID,
@@ -182,6 +182,7 @@ body1 = {
            } else {
              logName = botID;
            }
+*/
   console.log('sending response to ' + botID + '\n' + botResponse);
 //}
 
