@@ -120,7 +120,7 @@ exports.commands = function() {
 
 function sendDelayedMessage(msg, attachments, botID, logID, logName, nickName) {
   setTimeout(function() {
-    postMessage(msg, attachments, botID, nickName);
+    postMessage(msg, attachments, botID, logName, nickName);
    // logMessage(msg, attachments, logID, logName);
 
 
