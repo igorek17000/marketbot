@@ -207,35 +207,6 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   botReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
-botReq.on('end', function(res) {
-logReq = HTTPS.request(options, function(res) { 
-console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
-      //if (res.statusCode == 200) || (res.statusCode == 202) {
-        //neat
-//} else {
-        //console.log('rejecting bad status code ' + res.statusCode);
-      //}
-//body = body1;
-  });
-
-
-  logReq.on('error', function(err) {
-    console.log('error posting message '  + JSON.stringify(err));
-    //logReq.end(JSON.stringify(err));
-  });
-  logReq.on('timeout', function(err) {
-    console.log('timeout posting message '  + JSON.stringify(err));
-  });
- 
-
-//body = body1;
-//botReq.end(JSON.stringify(body));
-  //logReq.end(JSON.stringify(body1));
-
-
-
-logReq.end(JSON.stringify(body1));
-});
   botReq.end(JSON.stringify(body));
 
 //continue;
