@@ -196,12 +196,12 @@ var nickName = '';
              logName = botID;
            }
 */
-  console.log('sending response to ' + botID + '\n' + botResponse + '\n' + res.data);
+  console.log('sending response to ' + botID + '\n' + botResponse);
 
 
 
 botReq = HTTPS.request(options, function(res) { 
-console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
+console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + res.data)
 
 
       //if (res.statusCode == 200) || (res.statusCode == 202) {
