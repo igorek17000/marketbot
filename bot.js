@@ -128,7 +128,7 @@ function sendDelayedMessage(msg, attachments, botID, logID, nickName) {
 }
 
 function postMessage(botResponse, attachments, botID, logID, nickName) {
-  var options, body, botReq, botID, logID, nickName;
+  var options, body, botReq, logReq, botID, logID, nickName;
 botID = botID;
 logID = "b6c42cc2a1bee3c38f07723d78";
 
