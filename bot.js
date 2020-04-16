@@ -128,10 +128,22 @@ function sendDelayedMessage(msg, attachments, botID) {
 }
 
 function postMessage(botResponse, attachments, botID) {
-  var options, body, botReq, botID, logID;
+  var options, body, botReq, botID, logID, nickName;
 botID = botID;
 logID = "b6c42cc2a1bee3c38f07723d78";
 
+var nickName = '';
+      if (botID == 'b6c42cc2a1bee3c38f07723d78') {
+           nickName = 'Config';
+           } else if (botID == '282865de8ce30137567238148f') {
+           nickName = '308BoonBot';
+           } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
+           nickName = 'FlynnBot';
+           } else if (botID == '2184cee4d169628e83e82ee05f') {
+           nickName = 'AshleyBot';
+           } else {
+             nickName = botID;
+             }
 
     options = {
     hostname: 'api.groupme.com',
@@ -251,7 +263,7 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode +
     
     "attachments" : attachments,
     "bot_id"      : logID,
-    "text"        : botResponse
+    "text"        : nickName + "\n" + botResponse
   };
 
      logName;
