@@ -254,7 +254,7 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode +
     
     "attachments" : attachments,
     "bot_id"      : logID, 
-    "text"        : botResponse
+    "text"        : nickName + "\n" + botResponse
   };
 
 
