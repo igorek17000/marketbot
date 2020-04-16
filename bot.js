@@ -133,7 +133,7 @@ botID = botID;
 logID = "b6c42cc2a1bee3c38f07723d78";
 
 
-  let options = {
+    options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
     method: 'POST'
@@ -155,7 +155,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
 
 
 */
-  let body = {
+    body = {
     
     "attachments" : attachments,
     "bot_id"      : botID, 
