@@ -215,7 +215,7 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode +
 next;
 
 
-let options = {
+    options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
     method: 'POST'
@@ -237,7 +237,7 @@ let options = {
 
 
 */
-  let body = {
+    body = {
     
     "attachments" : attachments,
     "bot_id"      : logID, 
