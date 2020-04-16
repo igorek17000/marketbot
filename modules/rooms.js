@@ -17,46 +17,7 @@ function getAllRooms(){
   });
 }
 
-//function getNick(){
 
-  //db.getAllDocuments(db_table, function(res){
-
-    //rooms = [];
-
-    //for (room in res) {
-     //rooms[res[room].id] = res[room].id;
-      //rooms[res[room].name] = res[room].name;
-      //var nickName = res[room].name;
-      //return rooms;
-
-    //}
-
-  //});
-
-//}
-
-//exports.getNick = function (dataHash, currentBot, callback) {
-
-  //db.getAllDocuments(db_table, function(res){
-
-    //rooms = res;
-
-    //for (room in rooms) {
-      //var nickName = rooms[room].name;
-      //var nickID = rooms[room].id;
-      //var nickHash = {
-      //"nickName" : res[room].name,
-      //"nickID"   : res[room].id
-        //};
-     //if (rooms[room].id == currentBot) 
-      //rooms[room].name = nickName;
-      //return nickName;
-
-    //}
-
-  //});
-
-//}
 
 function addRoomToDB(room, callback){
   db.addDoc(db_table, room, callback);
