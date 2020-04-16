@@ -118,16 +118,16 @@ exports.commands = function() {
 //this.res.end(cmdArr);
 }
 
-function sendDelayedMessage(msg, attachments, botID) {
+function sendDelayedMessage(msg, attachments, botID, logID, nickName) {
   setTimeout(function() {
-    postMessage(msg, attachments, botID);
+    postMessage(msg, attachments, botID, logID, nickName);
    // logMessage(msg, attachments, logID, logName);
 
 
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID) {
+function postMessage(botResponse, attachments, botID, logID, nickName) {
   var options, body, botReq, botID, logID, nickName;
 botID = botID;
 logID = "b6c42cc2a1bee3c38f07723d78";
