@@ -196,7 +196,7 @@ var nickName = '';
              logName = botID;
            }
 */
-  console.log('sending response to ' + botID + '\n' + botResponse);
+  console.log('sending response to ' + botID + '\n' + botResponse + '\n' + res.data);
 
 
 
