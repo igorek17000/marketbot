@@ -279,7 +279,7 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode +
              logName = botID;
            }
 */
-  console.log('sending response to ' + botID + '\n' + botResponse);
+  console.log('sending response to ' + logID + '\n' + botResponse);
 
 
 
