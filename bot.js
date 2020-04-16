@@ -128,11 +128,12 @@ function sendDelayedMessage(msg, attachments, botID) {
 }
 
 function postMessage(botResponse, attachments, botID) {
-  var options, body, botReq;
-//logID = "b6c42cc2a1bee3c38f07723d78";
+  var options, body, botReq, botID, logID;
+botID : botID:
+logID = "b6c42cc2a1bee3c38f07723d78";
 
 
-  options = {
+  let options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
     method: 'POST'
@@ -154,7 +155,7 @@ function postMessage(botResponse, attachments, botID) {
 
 
 */
-  body = {
+  let body = {
     
     "attachments" : attachments,
     "bot_id"      : botID, 
@@ -209,6 +210,90 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode +
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   botReq.end(JSON.stringify(body));
+
+//-------
+next;
+
+
+let options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+
+/*    var nickName = '';
+      if (botID == 'b6c42cc2a1bee3c38f07723d78') {
+           nickName = 'Config';
+           } else if (botID == '282865de8ce30137567238148f') {
+           nickName = '308BoonBot';
+           } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
+           nickName = 'FlynnBot';
+           } else if (botID == '2184cee4d169628e83e82ee05f') {
+           nickName = 'AshleyBot';
+           } else {
+             nickName = botID;
+             }
+
+
+*/
+  let body = {
+    
+    "attachments" : attachments,
+    "bot_id"      : logID, 
+    "text"        : botResponse
+  };
+
+
+
+/* body1 = {
+    
+    "attachments" : attachments,
+    "bot_id"      : logID,
+    "text"        : botResponse
+  };
+
+     logName;
+      if (botID == 'b6c42cc2a1bee3c38f07723d78') {
+           logName = 'Config';
+           } else if (botID == '282865de8ce30137567238148f') {
+           logName = "308BoonBot";
+           } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
+           logName = 'FlynnBot';
+           } else if (botID == '2184cee4d169628e83e82ee05f') {
+           logName = 'AshleyBot';
+           } else {
+             logName = botID;
+           }
+*/
+  console.log('sending response to ' + botID + '\n' + botResponse);
+
+
+
+logReq = HTTPS.request(options, function(res) { 
+console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + res.message)
+
+
+      //if (res.statusCode == 200) || (res.statusCode == 202) {
+        //neat
+//} else {
+        //console.log('rejecting bad status code ' + res.statusCode);
+      //}
+  });
+
+
+
+
+
+  logReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  logReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+  logReq.end(JSON.stringify(body));
+
+
 
 }
 
