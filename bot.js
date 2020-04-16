@@ -212,7 +212,8 @@ console.log('Status: ' + res.statusMessage + ' Status code: ' + res.statusCode +
   botReq.end(JSON.stringify(body));
 
 //-------
-next;
+
+return true;
 
 
     options = {
