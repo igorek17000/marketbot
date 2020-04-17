@@ -12,7 +12,7 @@ var db_table = 'alex_bot';
 var bot = require('../bot.js');
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd];
+var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, weatherAlexBotCmd];
 var db = require('../modules/db.js');
 var http = require('http');
 
@@ -227,7 +227,7 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 
 //------------
 
-function editAlexBotCmd(request, bots, isMod, callback) {
+function weatherAlexBotCmd(request, bots, isMod, callback) {
   //var regex = /^\/cmd weather$/;
   var regex = /^\- (.+?) ([\s\S]+)/i;
   
