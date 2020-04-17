@@ -228,7 +228,7 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 //------------
 
 function editAlexBotCmd(request, bots, isMod, callback) {
-  //var regex = /^\/cmd weather (.+?) ([\s\S]+)/i;
+  //var regex = /^\/cmd weather$/;
   var regex = /^\- (.+?) ([\s\S]+)/i;
   
   var reqText = request.text;
