@@ -205,7 +205,7 @@ var nickName = '';
   };
 */
 
-     var nickName = '';
+     var nickName;
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
            nickName = 'Config';
            } else if (botID == '282865de8ce30137567238148f') {
