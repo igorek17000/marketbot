@@ -1,5 +1,10 @@
 //A module for handling responses triggered by AlexBot commands
 
+var weather = require('weather-js');
+
+ 
+
+
 
 
 var alexbot;
@@ -222,5 +227,55 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 
 //------------
 
+function editAlexBotCmd(request, bots, isMod, callback) {
+  //var regex = /^\/cmd weather (.+?) ([\s\S]+)/i;
+  var regex = /^\- (.+?) ([\s\S]+)/i;
+  
+  var reqText = request.text;
 
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = "You don't have permission to edit commands"
+      callback(true, msg, []);
+      return msg;
+    }
+
+    //val[1] = val[1].toLowerCase();
+    //val[1] = "308boonave";
+    //alexbot[alexb].name = "308boonave";
+  
+// Options:
+
+// search:     location name or zipcode
+
+// degreeType: F or C
+
+ 
+
+weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {
+
+  if(err) console.log(err);
+
+ 
+
+  console.log(JSON.stringify(result, null, 2));
+
+var msg = result;
+        callback(true, msg, []);
+        return msg;
+
+});
+
+
+        
+      
+    }
+
+    var msg = val[1] + "doesn't exist";
+    callback(true, msg, []);
+    return msg;
+  }
+}
 
