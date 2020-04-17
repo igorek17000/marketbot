@@ -205,7 +205,7 @@ var nickName = '';
   };
 */
 
-     var nickName;
+     nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
            nickName = 'Config';
            } else if (botID == '282865de8ce30137567238148f') {
@@ -308,7 +308,7 @@ console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.
 
 
 logReq = HTTPS.request(options, function(res) { 
-console.log(nickName ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
+console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
       //if (res.statusCode == 200) || (res.statusCode == 202) {
