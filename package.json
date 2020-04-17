@@ -9,8 +9,9 @@
   "dependencies": {
     "concat": "^1.0.3",
     "cron": "^1.7.2",
+    "curl": "^0.1.4",
     "director": "^1.2.8",
-    "dotenv": "^8.1.0",
+    "dotenv": "^8.2.0",
     "eslint": "^6.5.1",
     "express": "^4.17.1",
     "file-match": "^1.0.2",
@@ -31,7 +32,8 @@
     "nodemailer": "^6.3.0",
     "nps": "^5.9.12",
     "nps-utils": "^1.7.0",
-    "utils-extend": "^1.0.8"
+    "utils-extend": "^1.0.8",
+    "weather-js": "^2.0.0"
   },
   "engines": {
     "node": ">= 0.6.0",
