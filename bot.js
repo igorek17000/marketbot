@@ -220,7 +220,7 @@ var nickName = '';
 
 
 
-  console.log('sending response to ' + botID + '\n' + botResponse);
+  console.log('sending response to ' + nickName + '\n' + botResponse);
 
 
 
@@ -303,7 +303,7 @@ console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.
              logName = botID;
            }
 */
-  console.log('sending response to ' + logID + '\n' + botResponse);
+  console.log('sending response to ' + nickName + '\n' + botResponse);
 
 
 
