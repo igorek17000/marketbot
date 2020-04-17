@@ -97,6 +97,7 @@ exports.respond = function(botRoom) {
   }
 }
 
+/*
 exports.commands = function() {
   var cmdArr = [];
 
@@ -117,6 +118,26 @@ exports.commands = function() {
   this.res.end(output);
 //this.res.end(cmdArr);
 }
+*/
+
+exports.commands = function() {
+  var cmdArr = [];
+
+  console.log('displaying commands at /commands');
+
+  for(var lib in checkCommandsHSH){
+    var newCmds = checkCommandsHSH[lib].getCmdListDescription();
+    if (newCmds)
+      cmdArr = cmdArr.concat(newCmds);
+  }
+
+  var output = commandList.buildHTML(cmdArr, config.bot_name);
+
+  this.res.writeHead(200, {"Content-Type": "text/html"});
+  this.res.end(output);
+}
+
+
 
 function sendDelayedMessage(msg, attachments, botID, logID, nickName) {
   setTimeout(function() {
