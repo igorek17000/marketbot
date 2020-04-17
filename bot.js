@@ -205,7 +205,7 @@ var nickName = '';
   };
 */
 
-     var nickName;
+     var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
            nickName = 'Config';
            } else if (botID == '282865de8ce30137567238148f') {
@@ -289,21 +289,23 @@ console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.
     "bot_id"      : logID,
     "text"        : nickName + "\n" + botResponse
   };
+*/
 
-     logName;
-      if (botID == 'b6c42cc2a1bee3c38f07723d78') {
+
+    var logName ='';
+      if (logID == 'b6c42cc2a1bee3c38f07723d78') {
            logName = 'Config';
-           } else if (botID == '282865de8ce30137567238148f') {
+           } else if (logID == '282865de8ce30137567238148f') {
            logName = "308BoonBot";
-           } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
+           } else if (logID == '8631a4c35f0f0f250bd5d46f44') {
            logName = 'FlynnBot';
-           } else if (botID == '2184cee4d169628e83e82ee05f') {
+           } else if (logID == '2184cee4d169628e83e82ee05f') {
            logName = 'AshleyBot';
            } else {
-             logName = botID;
+             logName = logID;
            }
-*/
-  console.log('sending response to ' + nickName + '\n' + botResponse);
+
+  console.log('sending response to ' + logName + '\n' + botResponse);
 
 
 
