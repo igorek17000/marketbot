@@ -203,6 +203,7 @@ var nickName = '';
     "bot_id"      : logID,
     "text"        : botResponse
   };
+*/
 
      var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
