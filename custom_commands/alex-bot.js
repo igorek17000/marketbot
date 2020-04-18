@@ -243,7 +243,7 @@ function weatherAlexBotCmd(request, weather, bots, isMod, callback) {
   //var regex = /^\- (.+?) ([\s\S]+)/i;
   
   var reqText = request.text;
-
+var weather;
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
 
