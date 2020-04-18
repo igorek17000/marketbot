@@ -6,8 +6,8 @@ var itemArray; //= weather.weatherItem;
 var currentArray; //= weather.weatherItem.current;
 var forecastArray; //= weather.weatherItem.forecast;
 itemArray : weather.weatherItem;
-currentArray : weather.weatherItem["current"];
-forecastArray : weather.weatherItem["forecast"];
+currentArray : weatherData.weather["current"];
+forecastArray : weatherData.weather["forecast"];
 
 
 
