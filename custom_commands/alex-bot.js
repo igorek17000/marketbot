@@ -298,7 +298,7 @@ weather;
 var msg = result;
  callback(true, msg, []);
         return msg;
-
+});
 }
 
 
@@ -310,5 +310,4 @@ var msg = result;
     callback(true, msg, []);
     return msg;
   }
-});
 
