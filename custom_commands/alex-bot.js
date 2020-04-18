@@ -25,7 +25,7 @@ var db = require('../modules/db.js');
 var http = require('http');
 
 var weather = require('weather-js');
-
+var weather;
 
 getAllAlexbot();
 exports.modName = "AlexBot";
@@ -243,7 +243,7 @@ function weatherAlexBotCmd(request, weather, bots, isMod, callback) {
   //var regex = /^\- (.+?) ([\s\S]+)/i;
   
   var reqText = request.text;
-var weather;
+
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
 
@@ -282,7 +282,7 @@ console.log(item); // logs items in myArray }
 
 //items = itemArray.forEach(item) //{ 
  */
-weather;
+
 Weather.getCurrent("Toronto", function(current) { 
 console.log( 
 ["currently:" + current.temperature() + "and" + current.conditions()].join(" ") 
