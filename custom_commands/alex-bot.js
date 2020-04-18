@@ -266,7 +266,7 @@ console.log(err);
   console.log(JSON.stringify(result, null, 2));
 
 
-for (items in itemArray) { 
+for (item in itemArray) { 
 console.log(item); // logs items in myArray }
 
 
