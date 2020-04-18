@@ -1,8 +1,8 @@
 //A module for handling responses triggered by AlexBot commands
 
 var weather = require('weather-js');
-
- 
+var itemArray;
+itemArray = result;
 
 
 
@@ -256,21 +256,25 @@ function weatherAlexBotCmd(request, bots, isMod, callback) {
 
 weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {
 
-  if(err) console.log(err);
+  if(err) 
+console.log(err);
 
  
 
   console.log(JSON.stringify(result, null, 2));
 
 
-var resultArray = result;
+for (items in itemArray) { 
+console.log(item); // logs items in myArray }
 
-resultArray.forEach(item) //{ 
-console.log(item); 
-var msg = item;
+
+
+items = itemArray.forEach(item) //{ 
+ 
+var msg = items;
         callback(true, msg, []);
         return msg;
-//});
+}
 });
 
 
