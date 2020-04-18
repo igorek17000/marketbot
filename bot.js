@@ -28,7 +28,7 @@ var cron = require('node-cron');
 var express = require('express'); 
 var nodemailer = require('nodemailer'); 
 app = express(); 
-
+var weather = require(weather-js');
 /* var db_table = 'rooms';
 
 
