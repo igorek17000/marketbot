@@ -282,7 +282,7 @@ console.log(item); // logs items in myArray }
 
 //items = itemArray.forEach(item) //{ 
  */
-
+weather = weather.find;
 Weather.getCurrent("Toronto", function(current) { 
 console.log( 
 ["currently:" + current.temperature() + "and" + current.conditions()].join(" ") 
