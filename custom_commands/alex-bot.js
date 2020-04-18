@@ -25,7 +25,7 @@ var db = require('../modules/db.js');
 var http = require('http');
 
 var weather = require('weather-js');
-var weather;
+weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {;
 
 getAllAlexbot();
 exports.modName = "AlexBot";
@@ -282,20 +282,20 @@ console.log(item); // logs items in myArray }
 
 //items = itemArray.forEach(item) //{ 
  */
-weather = weather.find;
+/*weather = weather.find;
 Weather.getCurrent("Toronto", function(current) { 
 console.log( 
 ["currently:" + current.temperature() + "and" + current.conditions()].join(" ") 
 ); 
 //}); 
-/*Weather.getForecast("Toronto", function(forecast) { 
+Weather.getForecast("Toronto", function(forecast) { 
 console.log("Forecast High in Kelvin: " + forecast.high()); 
 console.log("Forecast High in Fahrenheit" + Weather.kelvinToFahrenheit(forecast.high())); 
 console.log("Forecast High in Celsius" + Weather.kelvinToCelsius(forecast.high())); 
 });
 */
-
-var msg = "currently: " + current.temperature() + " and " + current.conditions().join("");
+weather
+var msg = result, null, 2;
  callback(true, msg, []);
         return msg;
 
