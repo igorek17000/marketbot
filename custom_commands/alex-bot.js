@@ -295,7 +295,7 @@ console.log("Forecast High in Celsius" + Weather.kelvinToCelsius(forecast.high()
 });
 */
 
-var msg = "currently: " + current.temperature() + " and " + current.conditions().join("")";
+var msg = "currently: " + current.temperature() + " and " + current.conditions().join("");
  callback(true, msg, []);
         return msg;
 
