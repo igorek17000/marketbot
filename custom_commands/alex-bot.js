@@ -4,7 +4,7 @@
 var weather = require('weather-js');
 var itemArray = weather.weatherItem;
 var currentArray = weather.weatherItem[current];
-var forecastArray = weather.weatherItem.[forecast];
+var forecastArray = weather.weatherItem[forecast];
 
 
 
