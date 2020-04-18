@@ -1,15 +1,18 @@
 //A module for handling responses triggered by AlexBot commands
-var current;
+
+
+
+/*var current;
 var forecast;
 var weatherData = require('weather-js');
-var weather = require('weather-js');
+
 var itemArray; //= weather.weatherItem;
 var currentArray; //= weather.weatherItem.current;
 var forecastArray; //= weather.weatherItem.forecast;
 itemArray : weather.weatherItem;
 currentArray : weather.weatherItem.null[1];
 forecastArray : weather.weatherItem.null[2];
-
+*/
 
 
 var alexbot;
@@ -20,6 +23,9 @@ var date = moment().utcOffset(-300).format('LLLL');
 var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, weatherAlexBotCmd];
 var db = require('../modules/db.js');
 var http = require('http');
+
+var weather = require('weather-js');
+
 
 getAllAlexbot();
 exports.modName = "AlexBot";
@@ -259,7 +265,7 @@ function weatherAlexBotCmd(request, bots, isMod, callback) {
 
  
 
-weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {
+/*weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {
 
   if(err) 
 console.log(err);
@@ -275,11 +281,24 @@ console.log(item); // logs items in myArray }
 
 
 //items = itemArray.forEach(item) //{ 
- 
-var msg = itemArray + "\n" + currentArray + "\n" + forecastArray;
-        callback(true, msg, []);
+ */
+
+Weather.getCurrent("Toronto", function(current) { 
+console.log( 
+["currently:" + current.temperature() + "and" + current.conditions()].join(" ") 
+); 
+//}); 
+/*Weather.getForecast("Toronto", function(forecast) { 
+console.log("Forecast High in Kelvin: " + forecast.high()); 
+console.log("Forecast High in Fahrenheit" + Weather.kelvinToFahrenheit(forecast.high())); 
+console.log("Forecast High in Celsius" + Weather.kelvinToCelsius(forecast.high())); 
+});
+*/
+
+var msg = "currently: " + current.temperature() + " and " + current.conditions().join("")";
+ callback(true, msg, []);
         return msg;
-}
+
 });
 
 
