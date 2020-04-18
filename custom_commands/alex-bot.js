@@ -1,9 +1,10 @@
 //A module for handling responses triggered by AlexBot commands
-
+//var current;
+//var forecast;
 var weather = require('weather-js');
 var itemArray = weather.weatherItem;
-var currentArray = weather.weatherItem.current;
-var forecastArray = weather.weatherItem.forecast;
+var currentArray = weather.weatherItem[current];
+var forecastArray = weather.weatherItem.[forecast];
 
 
 
