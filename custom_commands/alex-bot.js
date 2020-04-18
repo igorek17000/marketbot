@@ -299,7 +299,7 @@ var msg = result;
  callback(true, msg, []);
         return msg;
 
-});
+}
 
 
         
