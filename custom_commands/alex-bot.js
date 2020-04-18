@@ -1,8 +1,9 @@
 //A module for handling responses triggered by AlexBot commands
 
 var weather = require('weather-js');
-var itemArray;
-itemArray = result;
+var itemArray = weather.weatherItem;
+var currentArray = weather.weatherItem.current;
+var forecastArray = weather.weatherItem.forecast;
 
 
 
@@ -269,9 +270,9 @@ console.log(item); // logs items in myArray }
 
 
 
-items = itemArray.forEach(item) //{ 
+//items = itemArray.forEach(item) //{ 
  
-var msg = items;
+var msg = itemArray + "\n" + currentArray + "\n" + forecastArray;
         callback(true, msg, []);
         return msg;
 }
