@@ -265,12 +265,12 @@ weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result)
 
 var resultArray = result;
 
-resultArray.forEach(item) { 
+resultArray.forEach(item) //{ 
 console.log(item); 
 var msg = item;
         callback(true, msg, []);
         return msg;
-});
+//});
 });
 
 
