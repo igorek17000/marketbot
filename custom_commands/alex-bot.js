@@ -294,7 +294,7 @@ console.log("Forecast High in Fahrenheit" + Weather.kelvinToFahrenheit(forecast.
 console.log("Forecast High in Celsius" + Weather.kelvinToCelsius(forecast.high())); 
 });
 */
-weather
+weather;
 var msg = result, null, 2;
  callback(true, msg, []);
         return msg;
