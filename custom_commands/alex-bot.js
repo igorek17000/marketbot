@@ -261,11 +261,16 @@ weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result)
  
 
   console.log(JSON.stringify(result, null, 2));
-var result = {};
-var msg = result;
+
+
+var resultArray = result;
+
+resultArray.forEach(item) { 
+console.log(item); 
+var msg = item;
         callback(true, msg, []);
         return msg;
-
+});
 });
 
 
