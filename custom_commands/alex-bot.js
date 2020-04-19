@@ -301,12 +301,13 @@ console.log("Forecast High in Fahrenheit" + Weather.kelvinToFahrenheit(forecast.
 console.log("Forecast High in Celsius" + Weather.kelvinToCelsius(forecast.high())); 
 });
 */
-current(result);
+current();
+return result;
 
 
-var msg = result;
- callback(true, msg, []);
-        return msg;
+//var msg = result;
+ //callback(true, msg, []);
+        //return msg;
 }
 }
 
