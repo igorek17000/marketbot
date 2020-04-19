@@ -303,7 +303,8 @@ console.log("Forecast High in Celsius" + Weather.kelvinToCelsius(forecast.high()
 */
 var winn = require('./weatherrr');
 winn;
-return msg;
+callback(result)
+return result;
 
 
 //var msg = result;
