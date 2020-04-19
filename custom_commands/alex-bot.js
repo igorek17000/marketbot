@@ -29,7 +29,7 @@ var weather = weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function
    if(err) 
 console.log(err);  
 return result;
-}
+});
 
 getAllAlexbot();
 exports.modName = "AlexBot";
