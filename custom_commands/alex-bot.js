@@ -273,7 +273,7 @@ function weatherAlexBotCmd(request, weather, bots, isMod, callback) {
 
  
 
-/*weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {
+/* weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {
 
   if(err) 
 console.log(err);
@@ -289,9 +289,9 @@ console.log(item); // logs items in myArray }
 
 
 //items = itemArray.forEach(item) //{ 
- */
-/*weather = weather.find;
-Weather.getCurrent("Toronto", function(current) { 
+ 
+weather = weather.find;
+weather.getCurrent("Toronto", function(current) { 
 console.log( 
 ["currently:" + current.temperature() + "and" + current.conditions()].join(" ") 
 ); 
@@ -302,7 +302,7 @@ console.log("Forecast High in Fahrenheit" + Weather.kelvinToFahrenheit(forecast.
 console.log("Forecast High in Celsius" + Weather.kelvinToCelsius(forecast.high())); 
 });
 */
-weather;
+current();
 var msg = result;
  callback(true, msg, []);
         return msg;
