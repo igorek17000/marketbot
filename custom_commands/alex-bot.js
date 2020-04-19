@@ -253,7 +253,7 @@ function weatherAlexBotCmd(request, bots, isMod, result, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-var result;
+var msg;;
     if (!isMod) {
       var msg = "You don't have permission to edit commands"
       callback(true, msg, []);
@@ -303,7 +303,7 @@ console.log("Forecast High in Celsius" + Weather.kelvinToCelsius(forecast.high()
 */
 var winn = require('./weatherrr');
 winn;
-
+return msg;
 
 
 //var msg = result;
