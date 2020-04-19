@@ -244,7 +244,7 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 
 //------------
 
-function weatherAlexBotCmd(request, weather, bots, isMod, callback) {
+function weatherAlexBotCmd(request, bots, isMod, result, callback) {
   var regex = /^\/cmd weather$/;
   //var regex = /^\- (.+?) ([\s\S]+)/i;
   
@@ -301,7 +301,7 @@ console.log("Forecast High in Celsius" + Weather.kelvinToCelsius(forecast.high()
 });
 */
 current();
-var msg = result.current + result.forecast;
+var msg;
  callback(true, msg, []);
         return msg;
 }
