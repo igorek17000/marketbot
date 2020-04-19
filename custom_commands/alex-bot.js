@@ -302,7 +302,7 @@ console.log("Forecast High in Celsius" + Weather.kelvinToCelsius(forecast.high()
 });
 */
 current();
-return result;
+
 
 
 //var msg = result;
