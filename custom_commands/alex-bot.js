@@ -30,6 +30,7 @@ var msg;
 function current(err, result) { 
 weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {
 var result = [];
+return result
 });
 }
 
@@ -301,7 +302,7 @@ console.log("Forecast High in Celsius" + Weather.kelvinToCelsius(forecast.high()
 });
 */
 current(result);
-if (callback)
+
 
 var msg = result;
  callback(true, msg, []);
