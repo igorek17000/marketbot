@@ -305,16 +305,5 @@ var msg = result.current + result.forecast;
  callback(true, msg, []);
         return msg;
 }
-
-
-
-        
-      
-    
-
-    var msg = "doesn't exist";
-    callback(true, msg, []);
-    return msg;
-  }
-
+}
 
