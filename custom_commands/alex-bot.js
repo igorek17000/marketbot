@@ -253,7 +253,7 @@ function weatherAlexBotCmd(request, bots, isMod, result, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-var result = [...];
+var result;
     if (!isMod) {
       var msg = "You don't have permission to edit commands"
       callback(true, msg, []);
