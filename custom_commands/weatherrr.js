@@ -42,7 +42,7 @@ msg = JSON.stringify(result, null, 2);
 
 /* jslint node: true, sub: true */
 
-
+'use strict';
 var request = require('request'),
     qs      = require('querystring'),
     xml2JS  = require('xml2js'),
