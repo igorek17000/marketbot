@@ -301,7 +301,7 @@ console.log("Forecast High in Celsius" + Weather.kelvinToCelsius(forecast.high()
 });
 */
 current(result);
-if (!err)
+if (callback)
 
 var msg = result;
  callback(true, msg, []);
