@@ -28,7 +28,7 @@ var weather = require('weather-js');
 var msg;
 
 function current(err, result, callback) { 
-weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {
+weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result, callback) {
 var result = [];
 });
 }
@@ -300,7 +300,9 @@ console.log("Forecast High in Fahrenheit" + Weather.kelvinToFahrenheit(forecast.
 console.log("Forecast High in Celsius" + Weather.kelvinToCelsius(forecast.high())); 
 });
 */
-current();
+current(result);
+if (!err)
+
 var msg = result;
  callback(true, msg, []);
         return msg;
