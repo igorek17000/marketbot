@@ -314,7 +314,7 @@ var msg = result;
       
     
 
-    var msg = val[1] + "doesn't exist";
+    var msg = "doesn't exist";
     callback(true, msg, []);
     return msg;
   }
