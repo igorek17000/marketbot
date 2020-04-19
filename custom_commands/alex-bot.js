@@ -25,7 +25,11 @@ var db = require('../modules/db.js');
 var http = require('http');
 
 var weather = require('weather-js');
-var weather = weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {;
+var weather = weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result, callback) {
+   if(err) 
+console.log(err);  
+return result;
+}
 
 getAllAlexbot();
 exports.modName = "AlexBot";
@@ -298,7 +302,7 @@ weather;
 var msg = result;
  callback(true, msg, []);
         return msg;
-});
+}
 
 
 
