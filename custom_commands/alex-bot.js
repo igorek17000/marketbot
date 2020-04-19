@@ -253,7 +253,7 @@ function weatherAlexBotCmd(request, bots, isMod, result, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-
+var result = [...]
     if (!isMod) {
       var msg = "You don't have permission to edit commands"
       callback(true, msg, []);
@@ -272,7 +272,7 @@ function weatherAlexBotCmd(request, bots, isMod, result, callback) {
 
  
 
-/* weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {
+weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {
 
   if(err) 
 console.log(err);
@@ -281,7 +281,7 @@ console.log(err);
 
   console.log(JSON.stringify(result, null, 2));
 
-
+/*
 for (item in itemArray) { 
 console.log(item); // logs items in myArray }
 
@@ -301,8 +301,8 @@ console.log("Forecast High in Fahrenheit" + Weather.kelvinToFahrenheit(forecast.
 console.log("Forecast High in Celsius" + Weather.kelvinToCelsius(forecast.high())); 
 });
 */
-current();
-
+return result;
+}
 
 
 //var msg = result;
