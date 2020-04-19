@@ -20,7 +20,7 @@ weather.find({search: 'Toronto, ON', degreeType: 'C'}, function(err, resul
  
 
   console.log(JSON.stringify(result, null, 2));
-msg = JSON.stringify(result, null, 2);
+return result;
 
 
 
