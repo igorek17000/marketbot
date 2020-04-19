@@ -2,7 +2,7 @@
 
 
 var weather = require('weather-js');
-
+var msg;
  
 
 // Options:
@@ -20,6 +20,9 @@ weather.find({search: 'San Francisco, CA', degreeType: 'F'}, function(err,
  
 
   console.log(JSON.stringify(result, null, 2));
+msg = JSON.stringify(result, null, 2);
+return msg;
+
 
 });
 
