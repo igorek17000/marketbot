@@ -13,7 +13,7 @@ var msg;
 
  
 
-weather.find({search: 'San Francisco, CA', degreeType: 'F'}, function(err, result) {
+weather.find({search: 'Toronto, ON', degreeType: 'C'}, function(err, result) {
 
   if(err) console.log(err);
 
