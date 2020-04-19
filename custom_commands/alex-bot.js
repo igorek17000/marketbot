@@ -27,8 +27,8 @@ var http = require('http');
 var weather = require('weather-js');
 var msg;
 
-function current(err, result, callback) { 
-weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result, callback) {
+function current(err, result) { 
+weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {
 var result = [];
 });
 }
