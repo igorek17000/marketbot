@@ -12,7 +12,7 @@ body = {
     
     "attachments" : attachments,
     "bot_id"      : logID, 
-    "text"        : res.messages
+    "text"        : res.results
   };
 
 var postBotCommands = [postBotCmd];
@@ -51,10 +51,10 @@ function postBotCmd(request, bots, isMod, callback) {
       return msg;
     }
 
+postBotCmd();
 
 
-
-    var msg = val[1] + " doesn't exist";
+    var msg = " Message sent";
     callback(true, msg, []);
 
     return msg;
@@ -64,11 +64,10 @@ function postBotCmd(request, bots, isMod, callback) {
 
 
 function postMessage(botResponse, attachments, botID, logID, nickName) {
-  var options, body, botReq, logReq, botID, logID, nickName;
-botID = botID;
+  var options, body, curlReq, logID, nickName;
 logID = "b6c42cc2a1bee3c38f07723d78";
 
-var nickName = '';
+// /*var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
            nickName = 'Config';
            } else if (botID == '282865de8ce30137567238148f') {
@@ -81,26 +80,9 @@ var nickName = '';
              nickName = botID;
              }
 
-
+//*/
 //-------
 
-
-
-
-    options = {
-    hostname: 'api.groupme.com',
-    path: '/v3/bots/post',
-    method: val[1]
-  };
-
-
-
-    body = {
-    
-    "attachments" : attachments,
-    "bot_id"      : logID, 
-    "text"        : val[2]
-  };
 
 
 
@@ -118,7 +100,7 @@ var nickName = '';
              logName = logID;
            }
 
-  console.log('sending response to ' + logName + '\n' + botResponse);
+  console.log('sending response to ' + logName + '\n' + res.results);
 
 
 
