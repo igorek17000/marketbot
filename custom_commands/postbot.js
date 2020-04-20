@@ -1,3 +1,6 @@
+var request = JSON.parse(this.req.chunks[0]);
+
+
 var reqText = request.text;
 var val = regex.exec(reqText);
 logID = "b6c42cc2a1bee3c38f07723d78";
