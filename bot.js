@@ -95,6 +95,15 @@ exports.respond = function(botRoom) {
     });
 //}
   }
+/*
+for(var lib in checkCommandsHSHA) {
+    checkCommandsHSHA[lib].checkCommands(dataHash, function(check, result, attachments){
+      if (check) sendDelayedMessage(result, attachments, rooms.getRoom(botRoom).id);
+    });
+//}
+  }
+
+*/
 }
 
 /*
