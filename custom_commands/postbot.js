@@ -147,7 +147,7 @@ function postBotCmd(request, callback) {
   var reqText = request.text;
 
    if (regex.test(reqText)){
-    //var val = regex.exec(reqText);
+    var val = regex.exec(reqText);
 
    // if (!isMod) {
       //var msg = "You don't have permission to describe commands"
