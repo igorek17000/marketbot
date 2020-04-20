@@ -46,6 +46,38 @@ exports.checkCommands = function(dataHash, callback) {
 
 
 
+function describeCmd(request, bots, isMod, callback) {
+  var regex = /^\/cmd describe (.+?) ([\s\S]+)/i;
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = "You don't have permission to describe commands"
+      callback(true, msg, []);
+      return msg;
+    }
+
+    for (cmd in commands) {
+      if (commands[cmd].name == val[1].toLowerCase()) {
+        commands[cmd]["description"] = val[2];
+        describeCmdDB(commands[cmd]);
+
+        var msg = val[1] + " description updated";
+        callback(true, msg, []);
+        return msg;
+      }
+    }
+
+    var msg = val[1] + " doesn't exist";
+    callback(true, msg, []);
+
+    return msg;
+  }
+}
+
+
 
 function postMessage(botResponse, attachments, botID, logID, nickName) {
   var options, body, botReq, logReq, botID, logID, nickName;
