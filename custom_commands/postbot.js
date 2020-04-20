@@ -2,7 +2,7 @@ var request = request;
 
   var dataHash = {
     request:      request,
-    currentBot:   rooms.getRoom(botRoom),
+    //currentBot:   rooms.getRoom(botRoom),
     isMod:        mods.isMod(request.user_id),
     bots:         rooms.getRooms(),
     //funMode:      sysCommands.fun_mode(),
