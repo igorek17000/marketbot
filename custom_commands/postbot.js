@@ -1,5 +1,4 @@
 var commands;
-var userCommands = [addCmd, addressCmd, answerCmd, getCmd, describeCmd, editCmd, modCommandCmd, removeCmd];
 
 var db = require('../modules/db.js');
 var db_table = 'user_triggers';
@@ -7,7 +6,82 @@ var moment = require('moment');
 var date = moment().utcOffset(-300).format('LLLL');
 
 
+var HTTPS = require('https');
+var request = request;
 
+var reqText = request.text;
+var val = regex.exec(reqText);
+var logID = "b6c42cc2a1bee3c38f07723d78";
+
+var options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/' + val[2],
+    method: val[1]
+  };
+
+body = {
+    
+    "attachments" : attachments,
+    "bot_id"      : logID, 
+    "text"        : res.results
+  };
+
+var postBotCommands = [postBotCmd];
+
+
+var botID = logID;
+
+/*
+function respond() {
+ 
+      botRegex = /^\/cool guy$/;
+
+ 
+    this.res.writeHead(200);
+    console.log('Sent');
+    postMessage();
+    this.res.end();
+}
+
+function postMessage() {
+  var botResponse, options, body, botReq;
+
+  botResponse = cool();
+
+  options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+  body = {
+    "bot_id" : botID,
+    "text" : botResponse
+  };
+
+  console.log('sending ' + botResponse + ' to ' + botID);
+
+  botReq = HTTPS.request(options, function(res) {
+      if(res.statusCode == 202) {
+        //neat
+      } else {
+        console.log('rejecting bad status code ' + res.statusCode);
+      }
+  });
+
+  botReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  botReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+  botReq.end(JSON.stringify(body));
+}
+
+
+*/
+
+// -------
 
 /* function editCmd(request, bots, isMod, callback) {
   var regex = /^\/cmd edit (.+?) ([\s\S]+)/i;
@@ -42,39 +116,6 @@ var date = moment().utcOffset(-300).format('LLLL');
 
 */
 
-var request = request;
-
-  var dataHash = {
-    request:      request,
-    //currentBot:   rooms.getRoom(botRoom),
-    isMod:        mods.isMod(request.user_id),
-    bots:         rooms.getRooms(),
-    //funMode:      sysCommands.fun_mode(),
-    //owner:        config.env().owner
-  };
-
-var mods         = require('../modules/mods');
-var rooms        = require('../modules/rooms');
-
-
-var reqText = request.text;
-var val = regex.exec(reqText);
-logID = "b6c42cc2a1bee3c38f07723d78";
-
-var options = {
-    hostname: 'api.groupme.com',
-    path: '/v3/' + val[2],
-    method: val[1]
-  };
-
-body = {
-    
-    "attachments" : attachments,
-    "bot_id"      : logID, 
-    "text"        : res.results
-  };
-
-var postBotCommands = [postBotCmd];
 
 //------------
 
@@ -97,19 +138,20 @@ exports.checkCommands = function(dataHash, callback) {
 
 
 
-function postBotCmd(request, bots, isMod, callback) {
+function postBotCmd(request, callback) {
   var regex = /^\/curl (.+?) ([\s\S]+)/i;
   //var reqText = request.text;
 
-  if (regex.test(reqText)){
+  /* if (regex.test(reqText)){
     //var val = regex.exec(reqText);
 
-    if (!isMod) {
-      var msg = "You don't have permission to describe commands"
-      callback(true, msg, []);
-      return msg;
+   // if (!isMod) {
+      //var msg = "You don't have permission to describe commands"
+      //callback(true, msg, []);
+      //return msg;
     }
-
+//
+*/
 postBotMessage();
 
 
@@ -117,49 +159,19 @@ postBotMessage();
     callback(true, msg, []);
 
     return msg;
-  }
+ // }
 }
 
 
 
-function postBotMessage(botResponse, attachments, botID, logID, nickName) {
-  var options, body, curlReq, logID, nickName;
+function postBotMessage(botResponse, attachments, logID) {
+  var options, body, curlReq, logID;
 logID = "b6c42cc2a1bee3c38f07723d78";
 
-/* var nickName = '';
-      if (botID == 'b6c42cc2a1bee3c38f07723d78') {
-           nickName = 'Config';
-           } else if (botID == '282865de8ce30137567238148f') {
-           nickName = '308BoonBot';
-           } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
-           nickName = 'FlynnBot';
-           } else if (botID == '2184cee4d169628e83e82ee05f') {
-           nickName = 'AshleyBot';
-           } else {
-             nickName = botID;
-             }
 
-*/
 //-------
 
-
-
-
-
-    var logName ='';
-      if (logID == 'b6c42cc2a1bee3c38f07723d78') {
-           logName = 'Config';
-           } else if (logID == '282865de8ce30137567238148f') {
-           logName = "308BoonBot";
-           } else if (logID == '8631a4c35f0f0f250bd5d46f44') {
-           logName = 'FlynnBot';
-           } else if (logID == '2184cee4d169628e83e82ee05f') {
-           logName = 'AshleyBot';
-           } else {
-             logName = logID;
-           }
-
-  console.log('sending response to ' + logName + '\n' + res.results);
+console.log('sending response to ' + logID);
 
 
 
