@@ -10,7 +10,7 @@ var HTTPS = require('https');
 var request = require('request');
 request = request;
 
-var request.text = request.text.trim;
+request.text = request.text.trim;
 var reqText = request.text;
 var regex = /^\/curl (.+?) ([\s\S]+)/i;
 
