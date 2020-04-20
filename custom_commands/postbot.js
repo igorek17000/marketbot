@@ -7,12 +7,14 @@ var date = moment().utcOffset(-300).format('LLLL');
 
 
 var HTTPS = require('https');
-var request = request;
+var request = require('request');
+request : request;
 
-//var reqText = request.text;
+var request.text = request.text.trim
+var reqText = request.text;
 var regex = /^\/curl (.+?) ([\s\S]+)/i;
 
-var val = regex.exec(regex);
+var val = regex.exec(reqText);
 var logID = "b6c42cc2a1bee3c38f07723d78";
 
 var options = {
@@ -25,7 +27,7 @@ body = {
     
     "attachments" : attachments,
     "bot_id"      : logID, 
-    "text"        : res.results
+    "text"        : result
   };
 
 var postBotCommands = [postBotCmd];
@@ -81,7 +83,7 @@ function postMessage() {
 }
 
 
-
+*/
 // -------
 
 /* function editCmd(request, bots, isMod, callback) {
@@ -116,7 +118,7 @@ function postMessage() {
 }
 
 
-
+*/
 //------------
 
 
@@ -142,9 +144,9 @@ function postBotCmd(request, callback) {
   var regex = /^\/curl (.+?) ([\s\S]+)/i;
 
 
-  //var reqText = request.text;
+  var reqText = request.text;
 
-  /* if (regex.test(reqText)){
+   if (regex.test(reqText)){
     //var val = regex.exec(reqText);
 
    // if (!isMod) {
@@ -167,7 +169,7 @@ postBotMessage();
 
 
 function postBotMessage(botResponse, attachments, logID) {
-  var options, body, curlReq, logID;
+  var options, body, curlReq, botID, logID;
 logID = "b6c42cc2a1bee3c38f07723d78";
 
 
@@ -204,4 +206,4 @@ console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.
 
 }
 
-*/
+
