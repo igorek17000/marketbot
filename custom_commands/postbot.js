@@ -10,6 +10,8 @@ var HTTPS = require('https');
 var request = request;
 
 //var reqText = request.text;
+var regex = /^\/curl (.+?) ([\s\S]+)/i;
+
 var val = regex.exec(regex);
 var logID = "b6c42cc2a1bee3c38f07723d78";
 
@@ -140,6 +142,8 @@ exports.checkCommands = function(dataHash, callback) {
 
 function postBotCmd(request, callback) {
   var regex = /^\/curl (.+?) ([\s\S]+)/i;
+
+
   //var reqText = request.text;
 
   /* if (regex.test(reqText)){
