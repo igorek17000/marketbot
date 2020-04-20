@@ -4,7 +4,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
 
 var options = {
     hostname: 'api.groupme.com',
-    path: '/v3/bots/post',
+    path: '/v3/' + 'val[2],
     method: val[1]
   };
 
@@ -12,7 +12,7 @@ body = {
     
     "attachments" : attachments,
     "bot_id"      : logID, 
-    "text"        : val[2]
+    "text"        : res.messages
   };
 
 var postBotCommands = [postBotCmd];
@@ -40,10 +40,10 @@ exports.checkCommands = function(dataHash, callback) {
 
 function postBotCmd(request, bots, isMod, callback) {
   var regex = /^\/curl (.+?) ([\s\S]+)/i;
-  var reqText = request.text;
+  //var reqText = request.text;
 
   if (regex.test(reqText)){
-    var val = regex.exec(reqText);
+    //var val = regex.exec(reqText);
 
     if (!isMod) {
       var msg = "You don't have permission to describe commands"
@@ -51,7 +51,7 @@ function postBotCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-    var options
+
 
 
     var msg = val[1] + " doesn't exist";
@@ -122,7 +122,7 @@ var nickName = '';
 
 
 
-logReq = HTTPS.request(options, function(res) { 
+curlReq = HTTPS.request(options, function(res) { 
 console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
@@ -137,13 +137,13 @@ console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.
 
 
 
-  logReq.on('error', function(err) {
+  curlReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
   });
-  logReq.on('timeout', function(err) {
+  curlReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
-  logReq.end(JSON.stringify(body));
+  curlReq.end(JSON.stringify(body));
 
 
 
