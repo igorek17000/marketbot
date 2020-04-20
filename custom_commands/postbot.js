@@ -8,9 +8,9 @@ var date = moment().utcOffset(-300).format('LLLL');
 
 var HTTPS = require('https');
 var request = require('request');
-request : request;
+request = request;
 
-var request.text = request.text.trim
+var request.text = request.text.trim;
 var reqText = request.text;
 var regex = /^\/curl (.+?) ([\s\S]+)/i;
 
@@ -153,7 +153,7 @@ function postBotCmd(request, callback) {
       //var msg = "You don't have permission to describe commands"
       //callback(true, msg, []);
       //return msg;
-    }
+    
 //
 
 postBotMessage();
@@ -163,7 +163,7 @@ postBotMessage();
     callback(true, msg, []);
 
     return msg;
- // }
+ }
 }
 
 
