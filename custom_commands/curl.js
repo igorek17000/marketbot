@@ -33,6 +33,15 @@ exports.checkCommands = function(dataHash, callback) {
 
 
 
+exports.checkCommands = function(dataHash, callback) {
+  for (command in sysCommands) {
+    var test = sysCommands[command](dataHash, callback);
+    if (test)
+      return test;
+  }
+
+  return false;
+}
 
 
 
