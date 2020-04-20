@@ -5,8 +5,8 @@ var request = request;
     currentBot:   rooms.getRoom(botRoom),
     isMod:        mods.isMod(request.user_id),
     bots:         rooms.getRooms(),
-    funMode:      sysCommands.fun_mode(),
-    owner:        config.env().owner
+    //funMode:      sysCommands.fun_mode(),
+    //owner:        config.env().owner
   };
 
 var mods         = require('../modules/mods');
