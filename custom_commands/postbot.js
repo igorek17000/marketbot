@@ -4,7 +4,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
 
 var options = {
     hostname: 'api.groupme.com',
-    path: '/v3/' + 'val[2],
+    path: '/v3/' + val[2],
     method: val[1]
   };
 
