@@ -1,4 +1,16 @@
-var request = JSON.parse(this.req.chunks[0]);
+var request = request;
+
+  var dataHash = {
+    request:      request,
+    currentBot:   rooms.getRoom(botRoom),
+    isMod:        mods.isMod(request.user_id),
+    bots:         rooms.getRooms(),
+    funMode:      sysCommands.fun_mode(),
+    owner:        config.env().owner
+  };
+
+var mods         = require('./modules/mods');
+var rooms        = require('./modules/rooms');
 
 
 var reqText = request.text;
