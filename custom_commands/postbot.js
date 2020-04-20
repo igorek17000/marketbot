@@ -17,18 +17,7 @@ var regex = /^\/curl (.+?) ([\s\S]+)/i;
 var val = regex.exec(reqText);
 var logID = "b6c42cc2a1bee3c38f07723d78";
 
-var options = {
-    hostname: 'api.groupme.com',
-    path: '/v3/' + val[2],
-    method: val[1]
-  };
 
-body = {
-    
-    "attachments" : attachments,
-    "bot_id"      : logID, 
-    "text"        : result
-  };
 
 var postBotCommands = [postBotCmd];
 
@@ -172,6 +161,19 @@ function postBotMessage(botResponse, attachments, logID) {
   var options, body, curlReq, botID, logID;
 logID = "b6c42cc2a1bee3c38f07723d78";
 
+
+var options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/' + val[2],
+    method: val[1]
+  };
+
+body = {
+    
+    "attachments" : attachments,
+    "bot_id"      : logID, 
+    "text"        : result
+  };
 
 //-------
 
