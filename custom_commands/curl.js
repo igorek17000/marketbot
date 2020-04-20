@@ -32,7 +32,7 @@ var nickName = '';
     options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
-    method: 'POST'
+    method: val[1]
   };
 
 
@@ -41,7 +41,7 @@ var nickName = '';
     
     "attachments" : attachments,
     "bot_id"      : logID, 
-    "text"        : nickName + "\n" + botResponse
+    "text"        : val[2]
   };
 
 
