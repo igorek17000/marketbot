@@ -9,8 +9,8 @@ var request = request;
     owner:        config.env().owner
   };
 
-var mods         = require('./modules/mods');
-var rooms        = require('./modules/rooms');
+var mods         = require('../modules/mods');
+var rooms        = require('../modules/rooms');
 
 
 var reqText = request.text;
