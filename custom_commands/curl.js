@@ -1,41 +1,33 @@
+var reqText = request.text;
+var val = regex.exec(reqText);
+logID = "b6c42cc2a1bee3c38f07723d78";
 
+var options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: val[1]
+  };
 
+body = {
+    
+    "attachments" : attachments,
+    "bot_id"      : logID, 
+    "text"        : val[2]
+  };
 
+var postBotCommands = [postBotCmd];
 
 //------------
 
 
 /* 
 
-//exports
-exports.checkCommands = function(dataHash, callback) {
-  for (cmd in commands) {
-    cmd = commands[cmd];
-    //hard coded temporarily ... maybe permanently ... losing motivation to work on this
-    if(cmd.name == 'cc' && dataHash.currentBot.type == 'hp')
-      continue;
-    var cmdReg = new RegExp(cmd.regex, "i");
-    if (dataHash.request.text && cmdReg.test(dataHash.request.text)){
-      var val = cmdReg.exec(dataHash.request.text);
-
-      callback(true, cmd.message, cmd.attachments);
-      break;
-    }
-  }
-
-
-  for (cmd in userCommands) {
-    var test = userCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
-    if (test)
-      return test;
-  }
-}
 
 
 
 exports.checkCommands = function(dataHash, callback) {
-  for (command in sysCommands) {
-    var test = sysCommands[command](dataHash, callback);
+  for (command in postBotCommands) {
+    var test = postBotCommands[command](dataHash, callback);
     if (test)
       return test;
   }
@@ -46,8 +38,8 @@ exports.checkCommands = function(dataHash, callback) {
 
 
 
-function describeCmd(request, bots, isMod, callback) {
-  var regex = /^\/cmd describe (.+?) ([\s\S]+)/i;
+function postBotCmd(request, bots, isMod, callback) {
+  var regex = /^\/curl (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -59,16 +51,8 @@ function describeCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-    for (cmd in commands) {
-      if (commands[cmd].name == val[1].toLowerCase()) {
-        commands[cmd]["description"] = val[2];
-        describeCmdDB(commands[cmd]);
+    var options
 
-        var msg = val[1] + " description updated";
-        callback(true, msg, []);
-        return msg;
-      }
-    }
 
     var msg = val[1] + " doesn't exist";
     callback(true, msg, []);
