@@ -9,8 +9,8 @@ var date = moment().utcOffset(-300).format('LLLL');
 var HTTPS = require('https');
 var request = request;
 
-var reqText = request.text;
-var val = regex.exec(reqText);
+//var reqText = request.text;
+var val = regex.exec(regex);
 var logID = "b6c42cc2a1bee3c38f07723d78";
 
 var options = {
