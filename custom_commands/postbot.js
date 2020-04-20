@@ -51,7 +51,7 @@ function postBotCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-postBotCmd();
+postBotMessage();
 
 
     var msg = " Message sent";
@@ -63,7 +63,7 @@ postBotCmd();
 
 
 
-function postMessage(botResponse, attachments, botID, logID, nickName) {
+function postBotMessage(botResponse, attachments, botID, logID, nickName) {
   var options, body, curlReq, logID, nickName;
 logID = "b6c42cc2a1bee3c38f07723d78";
 
