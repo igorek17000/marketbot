@@ -20,7 +20,7 @@ var postBotCommands = [postBotCmd];
 //------------
 
 
-/* 
+
 
 
 
@@ -67,7 +67,7 @@ function postBotMessage(botResponse, attachments, botID, logID, nickName) {
   var options, body, curlReq, logID, nickName;
 logID = "b6c42cc2a1bee3c38f07723d78";
 
-// /*var nickName = '';
+/* var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
            nickName = 'Config';
            } else if (botID == '282865de8ce30137567238148f') {
@@ -80,7 +80,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
              nickName = botID;
              }
 
-// */
+*/
 //-------
 
 
@@ -131,4 +131,3 @@ console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.
 
 }
 
-*/
