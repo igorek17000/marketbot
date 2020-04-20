@@ -1,4 +1,4 @@
-/* var commands;
+ var commands;
 
 var db = require('../modules/db.js');
 var db_table = 'user_triggers';
