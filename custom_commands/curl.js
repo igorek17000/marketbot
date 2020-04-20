@@ -5,7 +5,40 @@
 //------------
 
 
-/* function postMessage(botResponse, attachments, botID, logID, nickName) {
+/* 
+
+//exports
+exports.checkCommands = function(dataHash, callback) {
+  for (cmd in commands) {
+    cmd = commands[cmd];
+    //hard coded temporarily ... maybe permanently ... losing motivation to work on this
+    if(cmd.name == 'cc' && dataHash.currentBot.type == 'hp')
+      continue;
+    var cmdReg = new RegExp(cmd.regex, "i");
+    if (dataHash.request.text && cmdReg.test(dataHash.request.text)){
+      var val = cmdReg.exec(dataHash.request.text);
+
+      callback(true, cmd.message, cmd.attachments);
+      break;
+    }
+  }
+
+
+  for (cmd in userCommands) {
+    var test = userCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
+    if (test)
+      return test;
+  }
+}
+
+
+
+
+
+
+
+
+function postMessage(botResponse, attachments, botID, logID, nickName) {
   var options, body, botReq, logReq, botID, logID, nickName;
 botID = botID;
 logID = "b6c42cc2a1bee3c38f07723d78";
