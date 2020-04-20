@@ -310,7 +310,7 @@ console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.
 
 
 logReq = HTTPS.request(options, function(res) { 
-console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
+console.log(logName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
       //if (res.statusCode == 200) || (res.statusCode == 202) {
