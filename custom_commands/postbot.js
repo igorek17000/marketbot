@@ -1,4 +1,4 @@
-var commands;
+/* var commands;
 
 var db = require('../modules/db.js');
 var db_table = 'user_triggers';
@@ -81,7 +81,6 @@ function postMessage() {
 }
 
 
-*/
 
 // -------
 
@@ -116,7 +115,6 @@ function postMessage() {
   }
 }
 
-*/
 
 
 //------------
@@ -155,7 +153,7 @@ function postBotCmd(request, callback) {
       //return msg;
     }
 //
-*/
+
 postBotMessage();
 
 
@@ -206,3 +204,4 @@ console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.
 
 }
 
+*/
