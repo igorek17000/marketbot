@@ -1,3 +1,47 @@
+var commands;
+var userCommands = [addCmd, addressCmd, answerCmd, getCmd, describeCmd, editCmd, modCommandCmd, removeCmd];
+
+var db = require('../modules/db.js');
+var db_table = 'user_triggers';
+var moment = require('moment'); 
+var date = moment().utcOffset(-300).format('LLLL');
+
+
+
+
+/* function editCmd(request, bots, isMod, callback) {
+  var regex = /^\/cmd edit (.+?) ([\s\S]+)/i;
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = "You don't have permission to edit commands"
+      callback(true, msg, []);
+      return msg;
+    }
+
+    val[1] = val[1].toLowerCase();
+    for (cmd in commands) {
+      if (commands[cmd].name == val[1]) {
+        commands[cmd].message = val[2];
+        changeMsgCmdDB(commands[cmd]);
+
+        var msg = val[1] + " message updated.";
+        callback(true, msg, []);
+        return msg;
+      }
+    }
+
+    var msg = val[1] + "doesn't exist";
+    callback(true, msg, []);
+    return msg;
+  }
+}
+
+*/
+
 var request = request;
 
   var dataHash = {
