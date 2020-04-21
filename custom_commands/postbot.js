@@ -14,7 +14,7 @@ request = request;
 var reqText = request.text;
 //var regex = /^\/curl (.+?) ([\s\S]+)/i;
 
-var val = regex.exec(reqText);
+//var val = regex.exec(reqText);
 var logID = "b6c42cc2a1bee3c38f07723d78";
 
 
