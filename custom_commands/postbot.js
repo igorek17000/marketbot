@@ -8,7 +8,7 @@ var date = moment().utcOffset(-300).format('LLLL');
 
 var HTTPS = require('https');
 var request = require('request');
-request = request;
+//request = request;
 
 //request.text = request.text.trim;
 var reqText = request.text;
