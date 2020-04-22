@@ -210,7 +210,7 @@ console.log(err);     
 console.log(JSON.stringify(result, null, 2));
 callback(result);
 return result; 
-}
+});
 }
 
 
