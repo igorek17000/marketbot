@@ -174,7 +174,8 @@ postBotMessage();
 
 
 function postBotMessage(botResponse, attachments, logID) {
-  var options, body, curlReq, botID, logID,results;
+  var options, body, curlReq, botID, logID, results;
+botResponse = results;
 results = response.results;
 response.results = []; ;
 logID = "b6c42cc2a1bee3c38f07723d78";
