@@ -211,7 +211,7 @@ function weatherCmd(find, request, callback){
     return false;
   }
 
-
+}
 
 
 
