@@ -117,8 +117,8 @@ function postMessage() {
 
 
 exports.checkCommands = function(dataHash, callback) {
-  for (command in postBotCommands) {
-    var test = postBotCommands[command](dataHash, callback);
+  for (command in postCommands) {
+    var test = postCommands[command](dataHash, callback);
     if (test)
       return test;
   }
