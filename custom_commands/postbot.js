@@ -215,13 +215,21 @@ function weatherCmd(find, request, callback){
         msg = result;
         
 
-        callback(true, msg, []);
-    
-    find({search: 'Toronto, ON', degreeType: 'C'}, function(err, result) {   if(err) console.log(err);     console.log(JSON.stringify(result, null, 2));return result; });
+        callback(msg, []);
+
 
     
+    find({search: 'Toronto, ON', degreeType: 'C'}, function(err, result) {   
+if(err) 
+console.log(err);     
+console.log(JSON.stringify(result, null, 2));
+return result; 
+});
+
+  /*  
   } else {
     return false;
+*/
   }
 
 }
