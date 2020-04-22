@@ -130,7 +130,7 @@ exports.checkCommands = function(dataHash, callback) {
 
 
 function postCmd(request, response, callback) {
-  var regex = /^\/curl (.+?) ([\s\S]+)/i;
+  var regex = /^\/curl POST bots\/post;
   var reqText = request.text;
   var options, body, results;
 results = response.results;
