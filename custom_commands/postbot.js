@@ -9,7 +9,32 @@ var HTTPS = require('https');
  */
 
 /* jslint node: true, sub: true */
+
+
+exports.checkCommands = function(dataHash, callback) {
+  cmds.some(function(cmd){
+    return cmd(dataHash.funMode, dataHash.request.text, callback);
+  });
+}
+
+exports.getCmdListDescription = function () {
+  var cmdArr = [
+    {cmd: "/urban 'string'", desc: "Responds with the first dictionary found on Urban Dictionary.", fun: true}
+  ];
+
+  return cmdArr;
+}
+
+
+
+
 'use strict';
+
+
+
+
+
+
 
 var request = require('request'),
     qs      = require('querystring'),
@@ -130,21 +155,9 @@ var request = require('request'),
 
 
 
-exports.modName = "Urban Dictionary";
+//exports.modName = "Urban Dictionary";
 
-exports.checkCommands = function(dataHash, callback) {
-  cmds.some(function(cmd){
-    return cmd(dataHash.funMode, dataHash.request.text, callback);
-  });
-}
 
-exports.getCmdListDescription = function () {
-  var cmdArr = [
-    {cmd: "/urban 'string'", desc: "Responds with the first dictionary found on Urban Dictionary.", fun: true}
-  ];
-
-  return cmdArr;
-}
 /*
 function cmdUrbanRnd(funMode, request, callback){
   var regex = /^\/urban/i;
@@ -191,7 +204,7 @@ function cmdUrbanRnd(funMode, request, callback){
 
 
 function weatherCmd(find, request, callback){
-  var regex = /^\/urban (.+)/i;
+  var regex = /^\/weather/i;
   if (regex.test(request)){
   
 
