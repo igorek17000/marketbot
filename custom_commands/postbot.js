@@ -19,7 +19,7 @@ var logID = "b6c42cc2a1bee3c38f07723d78";
 
 
 
-var postBotCommands = [postBotCmd];
+var postCommands = [postCmd];
 
 
 var botID = logID;
@@ -129,14 +129,30 @@ exports.checkCommands = function(dataHash, callback) {
 
 
 
-function postBotCmd(request, callback) {
+function postCmd(request, response, callback) {
   var regex = /^\/curl (.+?) ([\s\S]+)/i;
-
-
   var reqText = request.text;
+  var options, body, results;
+results = response.results;
+response.results = [];
+
 
    if (regex.test(reqText)){
     var val = regex.exec(reqText);
+
+var options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/' + val[2],
+    method: val[1]
+  };
+
+body = {
+    
+    "attachments" : attachments,
+    "bot_id"      : logID, 
+    "text"        : results
+  };
+
 
    // if (!isMod) {
       //var msg = "You don't have permission to describe commands"
@@ -158,7 +174,9 @@ postBotMessage();
 
 
 function postBotMessage(botResponse, attachments, logID) {
-  var options, body, curlReq, botID, logID;
+  var options, body, curlReq, botID, logID,results;
+results = response.results;
+response.results = []; ;
 logID = "b6c42cc2a1bee3c38f07723d78";
 
 
@@ -172,7 +190,7 @@ body = {
     
     "attachments" : attachments,
     "bot_id"      : logID, 
-    "text"        : result
+    "text"        : results
   };
 
 //-------
