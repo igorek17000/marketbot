@@ -125,7 +125,7 @@ var request = require('request'),
   return {
     find: find
   };
-}();
+}()
 
 
 
