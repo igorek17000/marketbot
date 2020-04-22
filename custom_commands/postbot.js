@@ -190,52 +190,29 @@ function cmdUrbanRnd(funMode, request, callback){
 */
 
 
-function weatherCmd(find, callback){
+function weatherCmd(find, request, callback){
   var regex = /^\/urban (.+)/i;
-  
   if (regex.test(request)){
-    if(!funMode){
-      callback(true, "Sorry I'm no fun right now.", []);
-      return "Sorry I'm no fun right now.";
-    }
+  
 
     var val = regex.exec(request);
 
-    var options = {
-      hostname: "api.urbandictionary.com",
-      path: "/v0/define?term=" + encodeURIComponent(val[1]),
-      rejectUnauthorized: false
-    };
-
-    var callbackAPI = function(response) {
-      var str = '';
-
-      response.on('data', function(chunk) {
-        str += chunk;
-      });
-
-      response.on('end', function() {
-        str = JSON.parse(str);
+   
+        var msg = [];
+        msg = result;
         
-        var msg = '';
-        if (typeof(str.list[0].definition) !== 'undefined'){
-          msg = str.list[0].definition;
-        } else {
-          msg = "That's not even found in a fake internet dictionary.";
-        }
 
         callback(true, msg, []);
-      });
-    };
     
-    HTTPS.request(options, callbackAPI).end();
+    find({search: 'Toronto, ON', degreeType: 'C'}, function(err, result) {   if(err) console.log(err);     console.log(JSON.stringify(result, null, 2));return result; });
+
+    
   } else {
     return false;
   }
-}
 
 
 
 
 
-}
+
