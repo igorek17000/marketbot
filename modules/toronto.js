@@ -8,5 +8,9 @@ console.log('error:', error);
 } else { 
 var weather = JSON.parse(body) 
 var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
-callback(message); 
+var msg = "It's ${weather.main.temp} degrees in ${weather.name}!"; 
+
+
+console.log(message); 
+callback(msg);
 }});
