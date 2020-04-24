@@ -147,16 +147,18 @@ console.log('error:', error);
 var weather = JSON.parse(body) 
 var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
 var msg = "It's ${weather.main.temp} degrees in ${weather.name}!"; 
+console.log(message);
 callback(true, msg, []);
-
-console.log(message); 
-//callback(msg);
-//}});
-//} else {
-return msg;
 }
-});
+//}});
+} else {
+//return msg;
+
+
+}
+
 return false;
+}
 }
   
 
