@@ -130,15 +130,32 @@ var date = moment().utcOffset(-300).format('LLLL');
 //callback(result);
 //});
 
+var request = require('request'); 
+var apiKey = '3ff9b16eb3019ed16c69ce87658e04d3';
+var city = 'toronto';
+var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}` 
 
-  if (regex.test(dataHash.request.text)) {
-    
+
+  if (regex.test(dataHash.request.text)) //{
+    continue;
+
       callback(true, "Test it out", []);
-  var toronto = require('./toronto');
-toronto;
-} else {
-return false;
+  request(url, function (err, response, body) { 
+if(err){ 
+console.log('error:', error); 
+} else { 
+var weather = JSON.parse(body) 
+var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
+var msg = "It's ${weather.main.temp} degrees in ${weather.name}!"; 
+
+
+console.log(message); 
+//callback(msg);
+//}});
+//} else {
+return msg;
 }
+});
 }
   
 
