@@ -113,7 +113,7 @@ return false;
 //console.log(keys.length)
 
 
-/---------
+//---------
 
 function weatherCmd(dataHash, callback) {
   var regex = /^\/weathertoronto$/;
