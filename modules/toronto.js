@@ -10,13 +10,13 @@ weather.find({search: 'San Francisco, CA', degreeType: 'F'}, function(err, resul
 */
 
 
-exports.toronto = function(result, callback) { 
-weather.find({search: 'Toronto, ON', degreeType: 'C'}, function(err, result) { 
+//exports.toronto = function(result, callback) { 
+var find = weather.find({search: 'Toronto, ON', degreeType: 'C'}, function(err, callback) { 
 if(err) throw err; 
-var callback = callback;
+//var callback = callback;
 callback(result);
 });
-}
+//}
 
 /*mongoDB.connect(connection_string, function(err, db) { 
 if(err) throw err; 
