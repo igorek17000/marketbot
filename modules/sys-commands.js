@@ -143,6 +143,7 @@ var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric
   request(url, function (err, response, body) { 
 if(err){ 
 console.log('error:', error); 
+}
 } else { 
 var weather = JSON.parse(body) 
 var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
@@ -155,7 +156,7 @@ callback(true, msg, []);
 //return msg;
 
 
-}
+
 
 return false;
 }
