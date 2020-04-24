@@ -1,29 +1,11 @@
-var weather = require('weather-js');
-
-/*weather.find({search: 'Toronto, ON', degreeType: 'C'}, function(err, result) { 
-if(err) console.log(err); 
-console.log(JSON.stringify(result, null, 2)); //callback(result);//});
-
-
-
-weather.find({search: 'San Francisco, CA', degreeType: 'F'}, function(err, result) { if(err) console.log(err); console.log(JSON.stringify(result, null, 2)); });
-*/
-
-
-//exports.toronto = function(result, callback) { 
-var find = weather.find({search: 'Toronto, ON', degreeType: 'C'}, function(err, result) { 
-if(err) throw err; 
-var result = [];
-//var callback = callback;
-callback(result);
-});
-//}
-
-/*mongoDB.connect(connection_string, function(err, db) { 
-if(err) throw err; 
-var allDocs = db.collection(collection).find().toArray(function(err, docs) { 
-callback(docs); //db.close(); 
-}); 
-});
-}
-*/
+let request = require('request'); 
+let apiKey = '***********************************';
+let city = 'portland';
+let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}` 
+request(url, function (err, response, body) { 
+if(err){ 
+console.log('error:', error); 
+} else { 
+let weather = JSON.parse(body) 
+let message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
+console.log(message); }});
