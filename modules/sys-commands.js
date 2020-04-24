@@ -5,10 +5,10 @@ var weather = require('./toronto');
 
 exports.modName = "System Commands";
 
-function toronto(result, callback) {
+/*function toronto(result, callback) {
 weather.toronto(result, callback);
 }
-
+*/
 exports.checkCommands = function(dataHash, callback) {
   for (command in sysCommands) {
     var test = sysCommands[command](dataHash, callback);
