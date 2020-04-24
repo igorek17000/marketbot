@@ -128,9 +128,9 @@ var toronto = weather.find({search: 'Toronto, ON', degreeType: 'C'}); //, functi
 
 
   if (regex.test(dataHash.request.text)) {
-
+toronto;
     
-      callback(true, toronto);
+      callback(true, result);
   
 } else {
 return false;
