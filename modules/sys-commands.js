@@ -135,7 +135,7 @@ var date = moment().utcOffset(-300).format('LLLL');
     
       callback(true, "Test it out", []);
   var toronto = require('./toronto');
-toronto.toronto;
+toronto.toronto(callback);
 } else {
 return false;
 }
