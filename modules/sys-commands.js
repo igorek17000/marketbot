@@ -1,6 +1,7 @@
 var fun_mode = true;
-var sysCommands = [dateCmd, funCmd, noFunCmd, idCmd, aboutCmd, eemailCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd];
+var sysCommands = [dateCmd, weatherCmd, funCmd, noFunCmd, idCmd, aboutCmd, eemailCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd];
 var { stdin, stdout } = process; 
+var weather = require('weather-js');
 
 exports.modName = "System Commands";
 
@@ -110,6 +111,30 @@ return false;
 //keys = Object.keys(object) 
 //console.log(keys); 
 //console.log(keys.length)
+
+
+/---------
+
+function weatherCmd(dataHash, callback) {
+  var regex = /^\/weathertoronto$/;
+
+var moment = require('moment'); 
+var date = moment().utcOffset(-300).format('LLLL');
+
+  if (regex.test(dataHash.request.text)) {
+
+    
+      callback(true, date);
+  
+} else {
+return false;
+}
+}
+  
+
+//---------
+
+
 
 
 function dateCmd(dataHash, callback) {
