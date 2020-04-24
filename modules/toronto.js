@@ -10,7 +10,7 @@ weather.find({search: 'San Francisco, CA', degreeType: 'F'}, function(err, resul
 */
 
 
-exports.toronto = function(find, callback) { 
+exports.toronto = function(result, callback) { 
 weather.find({search: 'Toronto, ON', degreeType: 'C'}, function(err, result) { 
 if(err) throw err; 
 var callback = callback;
