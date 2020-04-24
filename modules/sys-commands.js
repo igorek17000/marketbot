@@ -132,10 +132,10 @@ var date = moment().utcOffset(-300).format('LLLL');
 
 
   if (regex.test(dataHash.request.text)) {
-toronto(result);
-    var msg = "Test it out";
-      callback(true, msg, []);
-  
+    
+      callback(true, "Test it out", []);
+  var toronto = require('./toronto');
+toronto.toronto;
 } else {
 return false;
 }
