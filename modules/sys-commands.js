@@ -1,9 +1,13 @@
 var fun_mode = true;
 var sysCommands = [dateCmd, weatherCmd, funCmd, noFunCmd, idCmd, aboutCmd, eemailCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd];
 var { stdin, stdout } = process; 
-var weather = require('weather-js');
+var weather = require('./toronto');
 
 exports.modName = "System Commands";
+
+function toronto(result, callback) {
+weather.toronto(result, callback);
+}
 
 exports.checkCommands = function(dataHash, callback) {
   for (command in sysCommands) {
@@ -115,7 +119,7 @@ return false;
 
 //---------
 
-function weatherCmd(dataHash, result, callback) {
+function weatherCmd(dataHash, callback) {
   var regex = /^\/weathertoronto$/;
 
 var moment = require('moment'); 
@@ -128,9 +132,9 @@ var toronto = weather.find({search: 'Toronto, ON', degreeType: 'C'}); //, functi
 
 
   if (regex.test(dataHash.request.text)) {
-toronto;
-    
-      callback(true, result);
+toronto(result);
+    var msg = "Test it out";
+      callback(true, msg, []);
   
 } else {
 return false;
