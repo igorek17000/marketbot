@@ -123,7 +123,7 @@ var date = moment().utcOffset(-300).format('LLLL');
 var toronto = weather.find({search: 'Toronto, ON', degreeType: 'C'}, function(err, result) { 
 if(err) console.log(err); 
 //console.log(JSON.stringify(result, null, 2)); 
-callback(result);
+//callback(result);
 });
 
 
