@@ -136,10 +136,10 @@ var city = 'toronto';
 var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}` 
 
 
-  if (regex.test(dataHash.request.text)) //{
-    continue;
+  if (regex.test(dataHash.request.text)) {
+    
 
-      callback(true, "Test it out", []);
+      //callback(true, "Test it out", []);
   request(url, function (err, response, body) { 
 if(err){ 
 console.log('error:', error); 
@@ -147,7 +147,7 @@ console.log('error:', error);
 var weather = JSON.parse(body) 
 var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
 var msg = "It's ${weather.main.temp} degrees in ${weather.name}!"; 
-
+callback(true, msg, []);
 
 console.log(message); 
 //callback(msg);
@@ -156,6 +156,7 @@ console.log(message);
 return msg;
 }
 });
+return false;
 }
   
 
