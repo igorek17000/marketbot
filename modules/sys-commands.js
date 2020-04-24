@@ -120,11 +120,17 @@ function weatherCmd(dataHash, callback) {
 
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
+var toronto = weather.find({search: 'Toronto, ON', degreeType: 'C'}, function(err, result) { 
+if(err) console.log(err); 
+//console.log(JSON.stringify(result, null, 2)); 
+callback(result);
+});
+
 
   if (regex.test(dataHash.request.text)) {
 
     
-      callback(true, date);
+      callback(true, toronto, result);
   
 } else {
 return false;
