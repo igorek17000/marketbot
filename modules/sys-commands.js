@@ -115,7 +115,7 @@ return false;
 
 //---------
 
-function weatherCmd(dataHash, callback) {
+function weatherCmd(dataHash, result, callback) {
   var regex = /^\/weathertoronto$/;
 
 var moment = require('moment'); 
