@@ -120,7 +120,7 @@ return false;
 //---------
 
 function weatherCmd(dataHash, callback) {
-  var regex = /^\/weathertoronto$/;
+  var regex = /^\/weather current$/;
 
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
@@ -153,7 +153,7 @@ var weather = JSON.parse(body)
 
 var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
 
-var msg = "Current weather in " + weather.name + "\n" + "Current: " + weather.main.temp + "\n" + "mainly: " + weather.description + "\n" + "High: " + weather.main.temp_max + "\n" + "Low: " + weather.main.temp_min + "\n" + "relative humidity: " + weather.main.humidity + "!"; 
+var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.main.description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "!"; 
 console.log(message);
 callback(true, msg, []);
 }
