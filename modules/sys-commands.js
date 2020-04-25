@@ -146,7 +146,7 @@ console.log('error:', error);
 
 } else { 
 var weather = JSON.parse(body) 
-weather.main = {};
+//weather.main = {};
 var message = `It's ${weather.main} degrees in ${weather.name}!`; 
 
 
