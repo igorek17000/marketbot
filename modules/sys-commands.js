@@ -147,13 +147,13 @@ console.log('error:', error);
 } else { 
 var weather = JSON.parse(body) 
 //weather.main = {};
-var message = `It's ${weather.main} degrees in ${weather.name}!`; 
+//var message = `It's ${weather.main} degrees in ${weather.name}!`; 
 
 
 
-//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
+var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
 
-var msg = "It's " + weather.main + " degrees in " + weather.name + "!"; 
+var msg = "Current weather in " + weather.name + "\n" + "Current: " + weather.main.temp + "\n" + "mainly: " + weather.description + "\n" + "High: " + weather.main.temp_max + "\n" + "Low: " + weather.main.temp_min + "\n" + "relative humidity: " + weather.main.humidity + "!"; 
 console.log(message);
 callback(true, msg, []);
 }
