@@ -209,6 +209,7 @@ console.log(message);
 
 
 callback(true, msg, []);
+return msg;
 
 }
 });
