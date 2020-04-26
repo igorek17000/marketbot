@@ -179,7 +179,7 @@ weather.wind.deg = "W/NW";
 weather.wind.deg = "NW";
 } else {
 weather.wind.deg = "N/NW";
-
+}
 
 
 
@@ -195,7 +195,7 @@ console.log(message);
 
 
 callback(true, msg, []);
-}
+
 }
 });
 } else {
