@@ -160,7 +160,7 @@ var weather = JSON.parse(body);
 //var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction; 
 
 var direction = "";
-if (weather.wind.deg && weather.wind.deg == 350 || 360 || 10) {
+if (weather.wind.deg == 350 || weather.wind.deg == 360 || weather.wind.deg == 10) {
 direction = "N";
 } else if (weather.wind.deg == 20 || 30) {
 direction = "N/NE";
