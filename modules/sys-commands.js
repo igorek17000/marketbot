@@ -148,38 +148,39 @@ console.log('error:', error);
 
 var weather = JSON.parse(body);
 /*
+var direction;
 if (weather.wind.deg == 350 || 360 || 10) {
-weather.wind.deg = "N";
+direction = "N";
 } else if (weather.wind.deg == 20 || 30) {
-weather.wind.deg = "N/NE";
+direction = "N/NE";
 } else if (weather.wind.deg == 40 || 50) {
-weather.wind.deg = "NE";
+direction = "NE";
 } else if (weather.wind.deg == 60 || 70) {
-weather.wind.deg = "E/NE";
+direction = "E/NE";
 } else if (weather.wind.deg == 80 || 90 || 100) {
-weather.wind.deg = "E";
+direction = "E";
 } else if (weather.wind.deg == 110 || 120) {
-weather.wind.deg = "E/SE";
+direction = "E/SE";
 } else if (weather.wind.deg == 130 || 140) {
-weather.wind.deg = "SE";
+direction = "SE";
 } else if (weather.wind.deg == 150 || 160) {
-weather.wind.deg = "S/SE";
+direction = "S/SE";
 } else if (weather.wind.deg == 170 || 180 || 190) {
-weather.wind.deg = "S";
+direction = "S";
 } else if (weather.wind.deg == 200 || 210) {
-weather.wind.deg = "S/SW";
+direction = "S/SW";
 } else if (weather.wind.deg == 220 || 230) {
-weather.wind.deg = "SW";
+direction = "SW";
 } else if (weather.wind.deg == 240 || 250) {
-weather.wind.deg = "W/SW";
+direction = "W/SW";
 } else if (weather.wind.deg == 260 || 270 || 280) {
-weather.wind.deg = "W";
+direction = "W";
 } else if (weather.wind.deg == 290 || 300) {
-weather.wind.deg = "W/NW";
+direction = "W/NW";
 } else if (weather.wind.deg == 310 || 320) {
-weather.wind.deg = "NW";
+direction = "NW";
 } else {
-weather.wind.deg = "N/NW";
+direction = "N/NW";
 }
 
 */
@@ -191,7 +192,7 @@ weather.wind.deg = "N/NW";
 var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
 
 
-var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg; 
+var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + direction; 
 console.log(message);
 
 
