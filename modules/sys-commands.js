@@ -147,6 +147,7 @@ console.log('error:', error);
 } else { 
 
 var weather = JSON.parse(body);
+/*
 if (weather.wind.deg == 350 || 360 || 10) {
 weather.wind.deg = "N";
 } else if (weather.wind.deg == 20 || 30) {
@@ -181,7 +182,7 @@ weather.wind.deg = "NW";
 weather.wind.deg = "N/NW";
 }
 
-
+*/
 
 //var message = `It's ${weather.main} degrees in ${weather.name}!`; 
 
