@@ -192,8 +192,8 @@ direction = "W/NW";
 direction = "NW";
 } else if (weather.wind.deg == 330 || 340) {
 direction = "N/NW";
-
-
+}
+direction: direction;
 
 
 //var message = `It's ${weather.main} degrees in ${weather.name}!`; 
@@ -204,7 +204,7 @@ var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
 
 
 var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction; 
-}
+
 console.log(message);
 
 
