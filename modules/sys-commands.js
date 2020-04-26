@@ -148,8 +148,39 @@ console.log('error:', error);
 
 var weather = JSON.parse(body);
 
+
+
+
+
 if (weather.wind.deg == 60 || 70) {
 weather.wind.deg = "E/NE";
+} else if (weather.wind.deg == 80 || 90 || 100) {
+weather.wind.deg = "E";
+} else if (weather.wind.deg == 110 || 120) {
+weather.wind.deg = "E/SE";
+} else if (weather.wind.deg == 130 || 140) {
+weather.wind.deg = "SE";
+} else if (weather.wind.deg == 150 || 160) {
+weather.wind.deg = "S/SE";
+} else if (weather.wind.deg == 170 || 180 || 190) {
+weather.wind.deg = "S";
+} else if (weather.wind.deg == 200 || 210) {
+weather.wind.deg = "S/SW";
+} else if (weather.wind.deg == 220 || 230) {
+weather.wind.deg = "SW";
+} else if (weather.wind.deg == 240 || 250) {
+weather.wind.deg = "W/SW";
+} else if (weather.wind.deg == 260 || 270 || 280) {
+weather.wind.deg = "W";
+} else if (weather.wind.deg == 290 || 300) {
+weather.wind.deg = "W/NW";
+} else if (weather.wind.deg == 310 || 320) {
+weather.wind.deg = "NW";
+
+} else if (weather.wind.deg == 330 || 340) {
+weather.wind.deg = "N/NW";
+
+
 
 
 //var message = `It's ${weather.main} degrees in ${weather.name}!`; 
