@@ -148,7 +148,7 @@ console.log('error:', error);
 
 var weather = JSON.parse(body);
 
-if (weather.wind.deg == 60) {
+if (weather.wind.deg == 60 || 70) {
 weather.wind.deg = "E/NE";
 
 
