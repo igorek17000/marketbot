@@ -177,7 +177,7 @@ weather.wind.deg = "W";
 weather.wind.deg = "W/NW";
 } else if (weather.wind.deg == 310 || 320) {
 weather.wind.deg = "NW";
-} else if (weather.wind.deg == 330 || 340) {
+} else {
 weather.wind.deg = "N/NW";
 
 
