@@ -134,7 +134,7 @@ var request = require('request');
 var apiKey = '3ff9b16eb3019ed16c69ce87658e04d3';
 var city = 'toronto';
 var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}` 
-var direction;
+var direction = "";
 
   if (regex.test(dataHash.request.text)) {
     
@@ -147,12 +147,12 @@ console.log('error:', error);
 } else { 
 
 var weather = JSON.parse(body);
-var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
+//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
 
 
-var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction; 
+//var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction; 
 
-
+direction;
 if (weather.wind.deg == 350 || 360 || 10) {
 direction = "N";
 } else if (weather.wind.deg == 20 || 30) {
@@ -193,10 +193,10 @@ direction = "N/NW";
 
 
 
-//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
+var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
 
 
-//var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction; 
+var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction; 
 console.log(message);
 
 
