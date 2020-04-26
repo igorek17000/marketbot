@@ -147,12 +147,13 @@ console.log('error:', error);
 } else { 
 
 var weather = JSON.parse(body);
-
-
-
-
-
-if (weather.wind.deg == 60 || 70) {
+if (weather.wind.deg == 350 || 360 || 10) {
+weather.wind.deg = "N";
+} else if (weather.wind.deg == 20 || 30) {
+weather.wind.deg = "N/NE";
+} else if (weather.wind.deg == 40 || 50) {
+weather.wind.deg = "NE";
+} else if (weather.wind.deg == 60 || 70) {
 weather.wind.deg = "E/NE";
 } else if (weather.wind.deg == 80 || 90 || 100) {
 weather.wind.deg = "E";
@@ -176,7 +177,6 @@ weather.wind.deg = "W";
 weather.wind.deg = "W/NW";
 } else if (weather.wind.deg == 310 || 320) {
 weather.wind.deg = "NW";
-
 } else if (weather.wind.deg == 330 || 340) {
 weather.wind.deg = "N/NW";
 
