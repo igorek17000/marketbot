@@ -153,35 +153,35 @@ var weather = JSON.parse(body);
 //var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction; 
 
 direction = "";
-if (weather.wind.deg) == 350 || 360 || 10 {
+if (weather.wind.deg(350 || 360 || 10)) {
 direction = "N";
-} else if (weather.wind.deg) == 20 || 30 {
+} else if (weather.wind.deg(20 || 30)) {
 direction = "N/NE";
-} else if (weather.wind.deg) == 40 || 50 {
+} else if (weather.wind.deg(40 || 50)) {
 direction = "NE";
-} else if (weather.wind.deg) == 60 || 70 {
+} else if (weather.wind.deg(60 || 70)) {
 direction = "E/NE";
-} else if (weather.wind.deg) == 80 || 90 || 100 {
+} else if (weather.wind.deg(80 || 90 || 100)) {
 direction = "E";
-} else if (weather.wind.deg) == 110 || 120 {
+} else if (weather.wind.deg(110 || 120)) {
 direction = "E/SE";
-} else if (weather.wind.deg) == 130 || 140 {
+} else if (weather.wind.deg(130 || 140)) {
 direction = "SE";
-} else if (weather.wind.deg) == 150 || 160 {
+} else if (weather.wind.deg(150 || 160)) {
 direction = "S/SE";
-} else if (weather.wind.deg) == 170 || 180 || 190 {
+} else if (weather.wind.deg(170 || 180 || 190)) {
 direction = "S";
-} else if (weather.wind.deg) == 200 || 210 {
+} else if (weather.wind.deg(200 || 210)) {
 direction = "S/SW";
-} else if (weather.wind.deg) == 220 || 230 {
+} else if (weather.wind.deg(220 || 230)) {
 direction = "SW";
-} else if (weather.wind.deg) == 240 || 250 {
+} else if (weather.wind.deg(240 || 250)) {
 direction = "W/SW";
-} else if (weather.wind.deg) == 260 || 270 || 280 {
+} else if (weather.wind.deg(260 || 270 || 280)) {
 direction = "W";
-} else if (weather.wind.deg) == 290 || 300 {
+} else if (weather.wind.deg(290 || 300)) {
 direction = "W/NW";
-} else if (weather.wind.deg) == 310 || 320 {
+} else if (weather.wind.deg(310 || 320)) {
 direction = "NW";
 } else {
 direction = "N/NW";
