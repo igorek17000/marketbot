@@ -32,11 +32,18 @@ function cmdPost(funMode, request, callback){
 
     var val = regex.exec(request);
 
-    var options = {
-      hostname: "api.urbandictionary.com",
-      path: "/v0/define?term=" + encodeURIComponent(val[1]),
-      rejectUnauthorized: false
+    options = { 
+        hostname: 'api.groupme.com', 
+        path: '/v3/bots/post', 
+        method: 'POST' 
     };
+
+    body = {
+    
+       "attachments" : attachments,
+       "bot_id"      : botID, 
+       "text"        : botResponse
+  };
 
     var callbackAPI = function(response) {
       var str = '';
