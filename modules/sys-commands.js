@@ -204,7 +204,7 @@ direction: direction;
 var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
 
 
-var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind gusts: " + weather.wind.gust + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees."; 
+var msg = weather.name + " weather readings as of " + weather.dt + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees."; 
 
 console.log(message);
 
