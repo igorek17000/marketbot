@@ -1,15 +1,9 @@
 
-var cmds = [weatherCmd];
+var cmds = [cmdPost];
 
 var HTTPS = require('https');
 
-/*
- * Weather
- * For the full copyright and license information, please view the LICENSE.txt file.
- */
-
-/* jslint node: true, sub: true */
-
+exports.modName = "Post module";
 
 exports.checkCommands = function(dataHash, callback) {
   cmds.some(function(cmd){
@@ -19,7 +13,7 @@ exports.checkCommands = function(dataHash, callback) {
 
 exports.getCmdListDescription = function () {
   var cmdArr = [
-    {cmd: "/urban 'string'", desc: "Responds with the first dictionary found on Urban Dictionary.", fun: true}
+    {cmd: "/post 'string'", desc: "Responds with a user input post.", fun: false}
   ];
 
   return cmdArr;
@@ -27,140 +21,8 @@ exports.getCmdListDescription = function () {
 
 
 
-
-'use strict';
-
-
-
-
-
-
-
-var request = require('request'),
-    qs      = require('querystring'),
-    xml2JS  = require('xml2js');
-
-// Init the module
-
-  var xmlParser     = new xml2JS.Parser({charkey: 'C$', attrkey: 'A$', explicitArray: true}),
-      defLang       = 'en-US',
-      defDegreeType = 'F',
-      defTimeout    = 10000,
-      findUrl       = 'http://weather.service.msn.com/find.aspx';
-
-  var find = function find(options, callback) {
-
-    if(typeof callback !== 'function')
-      callback = function callback(err, result) { return err || result; };
-
-    if(!options || typeof options !== 'object')
-      return callback('invalid options');
-
-    if(!options.search)
-      return callback('missing search input');
-
-    var result     = [],
-        lang       = options.lang || defLang,
-        degreeType = options.degreeType || defDegreeType,
-        timeout    = options.timeout || defTimeout,
-        search     = qs.escape(''+options.search),
-        reqUrl     = findUrl + '?src=outlook&weadegreetype=' + (''+degreeType) + '&culture=' + (''+lang) + '&weasearchstr=' + search;
-
-    request.get({url: reqUrl, timeout: timeout}, function(err, res, body) {
-
-      if(err)                    return callback(err);
-      if(res.statusCode !== 200) return callback(new Error('request failed (' + res.statusCode + ')'));
-      if(!body)                  return callback(new Error('failed to get body content'));
-
-      // Check body content
-      if(body.indexOf('<') !== 0) {
-        if(body.search(/not found/i) !== -1) {
-          return callback(null, result);
-        }
-        return callback(new Error('invalid body content'));
-      }
-
-      // Parse body
-      xmlParser.parseString(body, function(err, resultJSON) {
-        if(err) return callback(err);
-
-        if(!resultJSON || !resultJSON.weatherdata || !resultJSON.weatherdata.weather)
-          return callback(new Error('failed to parse weather data'));
-
-        if(resultJSON.weatherdata.weather['A$'] && resultJSON.weatherdata.weather['A$'].errormessage)
-          return callback(resultJSON.weatherdata.weather['A$'].errormessage);
-
-        if(!(resultJSON.weatherdata.weather instanceof Array)) {
-          return callback(new Error('missing weather info'));
-        }
-
-        // Iterate over weather data
-        var weatherLen = resultJSON.weatherdata.weather.length,
-            weatherItem;
-        for(var i = 0; i < weatherLen; i++) {
-
-          if(typeof resultJSON.weatherdata.weather[i]['A$'] !== 'object')
-            continue;
-
-          // Init weather item
-          weatherItem = {
-            location: {
-              name: resultJSON.weatherdata.weather[i]['A$']['weatherlocationname'],
-              zipcode: resultJSON.weatherdata.weather[i]['A$']['zipcode'],
-              lat: resultJSON.weatherdata.weather[i]['A$']['lat'],
-              long: resultJSON.weatherdata.weather[i]['A$']['long'],
-              timezone: resultJSON.weatherdata.weather[i]['A$']['timezone'],
-              alert: resultJSON.weatherdata.weather[i]['A$']['alert'],
-              degreetype: resultJSON.weatherdata.weather[i]['A$']['degreetype'],
-              imagerelativeurl: resultJSON.weatherdata.weather[i]['A$']['imagerelativeurl']
-              //url: resultJSON.weatherdata.weather[i]['A$']['url'],
-              //code: resultJSON.weatherdata.weather[i]['A$']['weatherlocationcode'],
-              //entityid: resultJSON.weatherdata.weather[i]['A$']['entityid'],
-              //encodedlocationname: resultJSON.weatherdata.weather[i]['A$']['encodedlocationname']
-            },
-            current: null,
-            forecast: null
-          };
-
-          if(resultJSON.weatherdata.weather[i]['current'] instanceof Array && resultJSON.weatherdata.weather[i]['current'].length > 0) {
-            if(typeof resultJSON.weatherdata.weather[i]['current'][0]['A$'] === 'object') {
-              weatherItem.current = resultJSON.weatherdata.weather[i]['current'][0]['A$'];
-
-              weatherItem.current.imageUrl = weatherItem.location.imagerelativeurl + 'law/' + weatherItem.current.skycode + '.gif';
-            }
-          }
-
-          if(resultJSON.weatherdata.weather[i]['forecast'] instanceof Array) {
-            weatherItem.forecast = [];
-            for(var k = 0; k < resultJSON.weatherdata.weather[i]['forecast'].length; k++) {
-              if(typeof resultJSON.weatherdata.weather[i]['forecast'][k]['A$'] === 'object')
-                weatherItem.forecast.push(resultJSON.weatherdata.weather[i]['forecast'][k]['A$']);
-            }
-          }
-
-          // Push weather item into result
-          result.push(weatherItem);
-        }
-
-        return callback(null, result);
-      });
-    });
-  };
-
-  return {
-    find: find
-  };
-});//()
-
-
-
-
-//exports.modName = "Urban Dictionary";
-
-
-/*
-function cmdUrbanRnd(funMode, request, callback){
-  var regex = /^\/urban/i;
+function cmdUrban(funMode, request, callback){
+  var regex = /^\/urban (.+)/i;
   
   if (regex.test(request)){
     if(!funMode){
@@ -168,14 +30,16 @@ function cmdUrbanRnd(funMode, request, callback){
       return "Sorry I'm no fun right now.";
     }
 
+    var val = regex.exec(request);
+
     var options = {
       hostname: "api.urbandictionary.com",
-      path: "/v0/random",
+      path: "/v0/define?term=" + encodeURIComponent(val[1]),
       rejectUnauthorized: false
     };
 
     var callbackAPI = function(response) {
-      var str = [];
+      var str = '';
 
       response.on('data', function(chunk) {
         str += chunk;
@@ -186,7 +50,7 @@ function cmdUrbanRnd(funMode, request, callback){
         
         var msg = '';
         if (typeof(str.list[0].definition) !== 'undefined'){
-          msg = str.list[0].word + " - " + str.list[0].definition;
+          msg = str.list[0].definition;
         } else {
           msg = "That's not even found in a fake internet dictionary.";
         }
@@ -200,47 +64,109 @@ function cmdUrbanRnd(funMode, request, callback){
     return false;
   }
 }
+
+
+
+
+
+
+
+
+function postMessage(botResponse, attachments, botID, logID, nickName) {
+  var options, body, botReq, logReq, botID, logID, nickName;
+botID = botID;
+logID = "b6c42cc2a1bee3c38f07723d78";
+
+var nickName = '';
+      if (botID == 'b6c42cc2a1bee3c38f07723d78') {
+           nickName = 'Config';
+           } else if (botID == '282865de8ce30137567238148f') {
+           nickName = '308BoonBot';
+           } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
+           nickName = 'FlynnBot';
+           } else if (botID == '2184cee4d169628e83e82ee05f') {
+           nickName = 'AshleyBot';
+           } else {
+             nickName = botID;
+             }
+
+    options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+
+/*    var nickName = '';
+      if (botID == 'b6c42cc2a1bee3c38f07723d78') {
+           nickName = 'Config';
+           } else if (botID == '282865de8ce30137567238148f') {
+           nickName = '308BoonBot';
+           } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
+           nickName = 'FlynnBot';
+           } else if (botID == '2184cee4d169628e83e82ee05f') {
+           nickName = 'AshleyBot';
+           } else {
+             nickName = botID;
+             }
+
+
+*/
+    body = {
+    
+    "attachments" : attachments,
+    "bot_id"      : botID, 
+    "text"        : botResponse
+  };
+
+
+
+/* body1 = {
+    
+    "attachments" : attachments,
+    "bot_id"      : logID,
+    "text"        : botResponse
+  };
 */
 
+     var nickName = '';
+      if (botID == 'b6c42cc2a1bee3c38f07723d78') {
+           nickName = 'Config';
+           } else if (botID == '282865de8ce30137567238148f') {
+           nickName = '308BoonBot';
+           } else if (botID == '8631a4c35f0f0f250bd5d46f44') {
+           nickName = 'FlynnBot';
+           } else if (botID == '2184cee4d169628e83e82ee05f') {
+           nickName = 'AshleyBot';
+           } else {
+             nickName = botID;
+             }
 
-function findWeather(result, callback) {
-find({search: 'Toronto, ON', degreeType: 'C'}, function(err, result) {   
-if(err) 
-console.log(err);     
-console.log(JSON.stringify(result, null, 2));
-callback(result);
-return result; 
-});
-}
+
+
+  console.log('sending response to ' + nickName + '\n' + botResponse);
 
 
 
-function weatherCmd(find, request, callback){
-  var regex = /^\/weather/i;
-  if (regex.test(request)){
-  
+botReq = HTTPS.request(options, function(res) { 
+console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
-    var val = regex.exec(request);
 
-   
-        var msg = [];
-        msg = result;
-        
-
-        callback(msg, []);
-
-findWeather();
-    
-    
-
-  /*  
-  } else {
-    return false;
-*/
-  }
-
-}
+      //if (res.statusCode == 200) || (res.statusCode == 202) {
+        //neat
+//} else {
+        //console.log('rejecting bad status code ' + res.statusCode);
+      //}
+  });
 
 
 
 
+
+  botReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  botReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+  botReq.end(JSON.stringify(body));
