@@ -34,19 +34,19 @@ function cmdPost(funMode, request, callback){
 
     options = { 
         hostname: 'api.groupme.com', 
-        path: '/v3/bots/post', 
+        path: '/v3/' + val[1], 
         method: 'POST' 
     };
 
     body = {
     
        "attachments" : attachments,
-       "bot_id"      : botID, 
-       "text"        : botResponse
+       "bot_id"      : "282865de8ce30137567238148f", 
+       "text"        : []
   };
 
     var callbackAPI = function(response) {
-      var str = '';
+      var str = [];
 
       response.on('data', function(chunk) {
         str += chunk;
@@ -55,9 +55,9 @@ function cmdPost(funMode, request, callback){
       response.on('end', function() {
         str = JSON.parse(str);
         
-        var msg = '';
-        if (typeof(str.list[0].definition) !== 'undefined'){
-          msg = str.list[0].definition;
+        var msg = [];
+        if (typeof(str.meta[0].code) !== '400'){
+          msg = str.response[];
         } else {
           msg = "That's not even found in a fake internet dictionary.";
         }
