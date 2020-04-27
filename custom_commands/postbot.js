@@ -1,4 +1,4 @@
-
+var fun_command = true;
 var cmds = [cmdPost];
 
 var HTTPS = require('https');
@@ -13,7 +13,7 @@ exports.checkCommands = function(dataHash, callback) {
 
 exports.getCmdListDescription = function () {
   var cmdArr = [
-    {cmd: "/post 'string'", desc: "Responds with a user input post.", fun: false}
+    {cmd: "/post 'string'", desc: "Responds with a user input post.", fun: true}
   ];
 
   return cmdArr;
@@ -21,8 +21,8 @@ exports.getCmdListDescription = function () {
 
 
 
-function cmdUrban(funMode, request, callback){
-  var regex = /^\/urban (.+)/i;
+function cmdPost(funMode, request, callback){
+  var regex = /^\/post (.+)/i;
   
   if (regex.test(request)){
     if(!funMode){
