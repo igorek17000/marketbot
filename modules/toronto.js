@@ -54,7 +54,7 @@ console.log(body);
 });
 
 */
-
+var navigator;
 
 geolocation.getCurrentPosition(function (err, position) { 
 if (err) throw err 
