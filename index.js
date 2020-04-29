@@ -56,7 +56,11 @@ server = http.createServer(function (req, res, err) {
 port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
 ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
-server.listen(port, ip);
+//server.listen(port, ip);
+
+server.listen(port, ip, function() { 
+console.log((new Date()) + ' Server is listening on port ' + port);
+});
 
 function ping() {
   this.res.writeHead(200);
