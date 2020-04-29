@@ -153,7 +153,7 @@ if(err){
 console.log('error:', error); 
 
 } else { 
-//body = body.length;
+body = body.length;
 
 var weather = JSON.parse(body);
 //var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
