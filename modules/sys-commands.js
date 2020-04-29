@@ -254,7 +254,7 @@ var request = require('request');
 var apiKey = '3ff9b16eb3019ed16c69ce87658e04d3';
 var city = 'toronto';
 //<<<<<<< HEAD
-var url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
+//var url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
 //=======
 var url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=2&appid=${apiKey}` 
 //>>>>>>> 91e2a81bc0ddb59b2639c538bc2136c8b39444aa
