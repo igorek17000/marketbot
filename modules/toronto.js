@@ -56,8 +56,8 @@ console.log(body);
 */
 
 
-/*geolocation.getCurrentPosition(function (err, position) { 
+geolocation.getCurrentPosition(function (err, position) { 
 if (err) throw err 
-console.log(position);
+console.log(position)
 });
-*/
+
