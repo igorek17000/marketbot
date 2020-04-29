@@ -155,8 +155,16 @@ console.log('error:', error);
 
 } else {
 
+
 var weather = JSON.parse(body);
+<<<<<<< HEAD
 //var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+=======
+var oneof = "";
+oneof += body;
+//var oneoff = JSON.parse(oneof);
+//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
+>>>>>>> 91e2a81bc0ddb59b2639c538bc2136c8b39444aa
 
 
 //var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction;
@@ -205,8 +213,13 @@ direction: direction;
 var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
 
 
+<<<<<<< HEAD
 var msg = weather.name + " weather at " + weather.dt_txt + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees.";
 
+=======
+var msg = weather.name + " weather at " + date + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Gusts: " + weather.wind.gust + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees."; 
+//var msg = oneof;
+>>>>>>> 91e2a81bc0ddb59b2639c538bc2136c8b39444aa
 console.log(message);
 
 
@@ -240,7 +253,11 @@ var date = moment().utcOffset(-300).format('LLLL');
 var request = require('request');
 var apiKey = '3ff9b16eb3019ed16c69ce87658e04d3';
 var city = 'toronto';
+<<<<<<< HEAD
 var url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
+=======
+var url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=2&appid=${apiKey}` 
+>>>>>>> 91e2a81bc0ddb59b2639c538bc2136c8b39444aa
 //var weather = JSON.parse(body);
 
 //var direction;
@@ -261,12 +278,18 @@ console.log('error:', error);
 } else {
 
 var forecast = JSON.parse(body);
+<<<<<<< HEAD
 //var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
 
+=======
+//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
+var oneof = "";
+oneof += body;
+>>>>>>> 91e2a81bc0ddb59b2639c538bc2136c8b39444aa
 
 //var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction;
 
-var direction = "";
+/*var direction = "";
 if (forecast.wind.deg == 350 || forecast.wind.deg == 360 || forecast.wind.deg == 10) {
 direction = "N";
 } else if (forecast.wind.deg == 20 || forecast.wind.deg == 30) {
@@ -301,18 +324,25 @@ direction = "NW";
 direction = "N/NW";
 }
 direction: direction;
-
+*/
 
 //var message = `It's ${forecast.main} degrees in ${forecast.name}!`;
 
 
 
+<<<<<<< HEAD
 var message = `It's ${forecast.main.temp} degrees in ${forecast.name}!`;
 
 
 var msg = "Current weather in " + forecast.name + "\n" + "Currently: " + forecast.main.temp + "° celsius" + "\n" + "Mainly: " + forecast.weather[0].description + "\n" + "High: " + forecast.main.temp_max +  "° celcius" + "\n" + "Low: " + forecast.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + forecast.main.humidity + "\n" + "Wind: " + forecast.wind.speed + " km/h" + "\n" + "Wind gusts: " + forecast.wind.gust + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + forecast.wind.deg + "° degrees.";
+=======
+//var message = `It's ${forecast.main.temp} degrees in ${forecast.name}!`; 
 
-console.log(message);
+
+var msg = oneof; //"Current weather in " + forecast.name + "\n" + "Currently: " + forecast.main.temp + "° celsius" + "\n" + "Mainly: " + forecast.weather[0].description + "\n" + "High: " + forecast.main.temp_max +  "° celcius" + "\n" + "Low: " + forecast.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + forecast.main.humidity + "\n" + "Wind: " + forecast.wind.speed + " km/h" + "\n" + "Wind gusts: " + forecast.wind.gust + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + forecast.wind.deg + "° degrees."; 
+>>>>>>> 91e2a81bc0ddb59b2639c538bc2136c8b39444aa
+
+console.log(msg); //message);
 
 
 callback(true, msg, []);
