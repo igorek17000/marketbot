@@ -1,6 +1,9 @@
 #!/bin/env node
 
 var nodemailer = require('nodemailer');
+var moment = require('moment'); 
+var date = moment().utcOffset(-300).format('LLLL');
+
 
 var http, director, bot, router, server, port, db;
 
