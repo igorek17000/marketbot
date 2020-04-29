@@ -243,7 +243,7 @@ var date = moment().utcOffset(-300).format('LLLL');
 var request = require('request'); 
 var apiKey = '3ff9b16eb3019ed16c69ce87658e04d3';
 var city = 'toronto';
-var url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=5&appid=${apiKey}` 
+var url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=2&appid=${apiKey}` 
 //var weather = JSON.parse(body);
 
 //var direction;
