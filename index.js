@@ -2,7 +2,7 @@
 
 var nodemailer = require('nodemailer');
 var moment = require('moment'); 
-var date = moment().utcOffset(-300).format('LLLL');
+var date = moment().utcOffset(-240).format('LLLL');
 
 
 var http, director, bot, router, server, port, db;
@@ -62,7 +62,7 @@ ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 //server.listen(port, ip);
 
 server.listen(port, ip, function() { 
-console.log(date + ' Server is listening on port ' + port);
+console.log('Server started at\n' + date + '\n Listening on port ' + port);
 
 
 //console.log((new Date()) + ' Server is listening on port ' + port);
