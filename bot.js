@@ -22,6 +22,12 @@ var funCommands  = require('./custom_commands/fun-commands');
 var gif          = require('./custom_commands/giphy-api');
 var catFact      = require('./custom_commands/cat-fact');
 var urbanDict    = require('./custom_commands/urban-dictionary');
+
+
+var moment = require('moment'); 
+var date = moment().utcOffset(-300).format('LLLL');
+
+
 //var go         = require('./modules/server.js');
 var fs           = require('fs');
 var concat       = require('concat');
