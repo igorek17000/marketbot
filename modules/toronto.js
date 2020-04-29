@@ -54,7 +54,7 @@ console.log(body);
 });
 
 */
-var navigator;
+var navigator = require('geolocation');
 
 geolocation.getCurrentPosition(function (err, position) { 
 if (err) throw err 
