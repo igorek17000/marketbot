@@ -59,7 +59,10 @@ ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 //server.listen(port, ip);
 
 server.listen(port, ip, function() { 
-console.log((new Date()) + ' Server is listening on port ' + port);
+console.log(date + ' Server is listening on port ' + port);
+
+
+//console.log((new Date()) + ' Server is listening on port ' + port);
 });
 
 function ping() {
