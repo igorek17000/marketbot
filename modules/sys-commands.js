@@ -311,7 +311,7 @@ direction: direction;
 
 
 
-var message = `It's ${forecast.main.temp} degrees in ${forecast.name}!`; 
+//var message = `It's ${forecast.main.temp} degrees in ${forecast.name}!`; 
 
 
 var msg = oneof; //"Current weather in " + forecast.name + "\n" + "Currently: " + forecast.main.temp + "° celsius" + "\n" + "Mainly: " + forecast.weather[0].description + "\n" + "High: " + forecast.main.temp_max +  "° celcius" + "\n" + "Low: " + forecast.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + forecast.main.humidity + "\n" + "Wind: " + forecast.wind.speed + " km/h" + "\n" + "Wind gusts: " + forecast.wind.gust + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + forecast.wind.deg + "° degrees."; 
