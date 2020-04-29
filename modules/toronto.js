@@ -18,7 +18,7 @@ callback(msg);
 
 
 var geolocation = require('geolocation');
-var http = require("https"); var options = { 	"method": "GET", 	"hostname": "ip-geolocation-ipwhois-io.p.rapidapi.com", 	"port": null, 	"path": "/json/?ip=72.143.201.34", 	"headers": { 		"x-rapidapi-host": "ip-geolocation-ipwhois-io.p.rapidapi.com", 		"x-rapidapi-key": "b0eb0323cdmsh4acdf0a8b6ee640p12bbf5jsn5cc6fcc144b3" 	} }; var req = http.request(options, function (res) { 	var chunks = []; 	res.on("data", function (chunk) { 		chunks.push(chunk); 	}); 	res.on("end", function () { 		var body = Buffer.concat(chunks); 		console.log(body.toString()); 	}); }); req.end();
+//var http = require("https"); var options = { 	"method": "GET", 	"hostname": "ip-geolocation-ipwhois-io.p.rapidapi.com", 	"port": null, 	"path": "/json/?ip=72.143.201.34", 	"headers": { 		"x-rapidapi-host": "ip-geolocation-ipwhois-io.p.rapidapi.com", 		"x-rapidapi-key": "b0eb0323cdmsh4acdf0a8b6ee640p12bbf5jsn5cc6fcc144b3" 	} }; var req = http.request(options, function (res) { 	var chunks = []; 	res.on("data", function (chunk) { 		chunks.push(chunk); 	}); 	res.on("end", function () { 		var body = Buffer.concat(chunks); 		console.log(body.toString()); 	}); }); req.end();
 
 
 
