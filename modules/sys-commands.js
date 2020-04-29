@@ -373,7 +373,8 @@ var moment = require('moment');
 var date = moment().utcOffset(-300).format('LLLL');
 
   if (regex.test(dataHash.request.text)) {
-
+var toronto = require('./toronto');
+toronto;
 
       callback(true, date);
 
