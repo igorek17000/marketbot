@@ -156,7 +156,8 @@ console.log('error:', error);
 
 
 var weather = JSON.parse(body);
-var oneof = JSON.parse(response.length);
+var oneof = "";
+oneof += data;
 //var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
 
 
