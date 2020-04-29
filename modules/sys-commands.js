@@ -1,7 +1,8 @@
 //
+//
 var fun_mode = true;
 var sysCommands = [dateCmd, weatherCurrentCmd, weatherForecastCmd, funCmd, noFunCmd, idCmd, aboutCmd, eemailCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd];
-var { stdin, stdout } = process; 
+var { stdin, stdout } = process;
 //var weather = require('./toronto');
 
 exports.modName = "System Commands";
@@ -52,60 +53,60 @@ function listCmd(dataHash, callback) {
   var regex = /^\/list$/;
 
   if (regex.test(dataHash.request.text)) {
-    
-    var { stdin, stdout } = process; 
 
-function prompt(question) { 
+    var { stdin, stdout } = process;
 
-return new Promise((resolve, reject) => { 
+function prompt(question) {
 
-stdin.resume(); 
+return new Promise((resolve, reject) => {
 
-stdout.write(question); 
+stdin.resume();
 
-stdin.on('data', data => resolve(data.toString().trim())); 
+stdout.write(question);
 
-stdin.on('error', err => reject(err)); 
+stdin.on('data', data => resolve(data.toString().trim()));
 
-}); 
+stdin.on('error', err => reject(err));
 
-} 
+});
+
+}
 
 
 
-    
+
 callback(true, []);
-    async function main() { 
+    async function main() {
 
-try { 
+try {
 
-var name = await prompt("What's your name? ") 
+var name = await prompt("What's your name? ")
 
-var age = await prompt("What's your age? "); 
+var age = await prompt("What's your age? ");
 
-var email = await prompt("What's your email address? "); 
+var email = await prompt("What's your email address? ");
 
-var user = { name, age, email }; 
+var user = { name, age, email };
 
-console.log(user); 
-  
-stdin.pause(); 
+console.log(user);
 
-} catch(error) { 
+stdin.pause();
 
-console.log("There's an error!"); 
+} catch(error) {
 
-console.log(error); 
+console.log("There's an error!");
 
-} 
+console.log(error);
 
-process.exit(); 
+}
+
+process.exit();
 
 }
 
     //return data;
     //return main();
-    
+
  // var question = require('./modules/question');
 //question;
 } else {
@@ -113,8 +114,8 @@ return false;
 }
 }
 
-//keys = Object.keys(object) 
-//console.log(keys); 
+//keys = Object.keys(object)
+//console.log(keys);
 //console.log(keys.length)
 
 
@@ -123,42 +124,42 @@ return false;
 function weatherCurrentCmd(dataHash, callback) {
   var regex = /^\/weather current$/;
 
-var moment = require('moment'); 
+var moment = require('moment');
 var date = moment().utcOffset(-300).format('LLLL');
-//var toronto = weather.find({search: 'Toronto, ON', degreeType: 'C'}); //, function(err, result) { 
-//if(err) console.log(err); 
-//console.log(JSON.stringify(result, null, 2)); 
+//var toronto = weather.find({search: 'Toronto, ON', degreeType: 'C'}); //, function(err, result) {
+//if(err) console.log(err);
+//console.log(JSON.stringify(result, null, 2));
 //callback(result);
 //});
 
-var request = require('request'); 
+var request = require('request');
 var apiKey = '3ff9b16eb3019ed16c69ce87658e04d3';
 var city = 'toronto';
-var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}` 
+var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
 //var weather = JSON.parse(body);
 
 //var direction;
-//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
+//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
 
-//var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction; 
+//var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction;
 
 
 
   if (regex.test(dataHash.request.text)) {
-    
+
 
       //callback(true, "Test it out", []);
-  request(url, function (err, response, body) { 
-if(err){ 
-console.log('error:', error); 
+  request(url, function (err, response, body) {
+if(err){
+console.log('error:', error);
 
-} else { 
+} else {
 
 var weather = JSON.parse(body);
-//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
+//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
 
 
-//var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction; 
+//var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction;
 
 var direction = "";
 if (weather.wind.deg == 350 || weather.wind.deg == 360 || weather.wind.deg == 10) {
@@ -197,14 +198,14 @@ direction = "N/NW";
 direction: direction;
 
 
-//var message = `It's ${weather.main} degrees in ${weather.name}!`; 
+//var message = `It's ${weather.main} degrees in ${weather.name}!`;
 
 
 
-var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
+var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
 
 
-var msg = weather.name + " weather at " + weather.dt_txt + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees."; 
+var msg = weather.name + " weather at " + weather.dt_txt + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees.";
 
 console.log(message);
 
@@ -228,42 +229,42 @@ return false;
 function weatherForecastCmd(dataHash, callback) {
   var regex = /^\/weather forecast$/;
 
-var moment = require('moment'); 
+var moment = require('moment');
 var date = moment().utcOffset(-300).format('LLLL');
-//var toronto = weather.find({search: 'Toronto, ON', degreeType: 'C'}); //, function(err, result) { 
-//if(err) console.log(err); 
-//console.log(JSON.stringify(result, null, 2)); 
+//var toronto = weather.find({search: 'Toronto, ON', degreeType: 'C'}); //, function(err, result) {
+//if(err) console.log(err);
+//console.log(JSON.stringify(result, null, 2));
 //callback(result);
 //});
 
-var request = require('request'); 
+var request = require('request');
 var apiKey = '3ff9b16eb3019ed16c69ce87658e04d3';
 var city = 'toronto';
-var url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}` 
+var url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
 //var weather = JSON.parse(body);
 
 //var direction;
-//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
+//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
 
-//var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction; 
+//var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction;
 
 
 
   if (regex.test(dataHash.request.text)) {
-    
+
 
       //callback(true, "Test it out", []);
-  request(url, function (err, response, body) { 
-if(err){ 
-console.log('error:', error); 
+  request(url, function (err, response, body) {
+if(err){
+console.log('error:', error);
 
-} else { 
+} else {
 
 var forecast = JSON.parse(body);
-//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
+//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
 
 
-//var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction; 
+//var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction;
 
 var direction = "";
 if (forecast.wind.deg == 350 || forecast.wind.deg == 360 || forecast.wind.deg == 10) {
@@ -302,14 +303,14 @@ direction = "N/NW";
 direction: direction;
 
 
-//var message = `It's ${forecast.main} degrees in ${forecast.name}!`; 
+//var message = `It's ${forecast.main} degrees in ${forecast.name}!`;
 
 
 
-var message = `It's ${forecast.main.temp} degrees in ${forecast.name}!`; 
+var message = `It's ${forecast.main.temp} degrees in ${forecast.name}!`;
 
 
-var msg = "Current weather in " + forecast.name + "\n" + "Currently: " + forecast.main.temp + "° celsius" + "\n" + "Mainly: " + forecast.weather[0].description + "\n" + "High: " + forecast.main.temp_max +  "° celcius" + "\n" + "Low: " + forecast.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + forecast.main.humidity + "\n" + "Wind: " + forecast.wind.speed + " km/h" + "\n" + "Wind gusts: " + forecast.wind.gust + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + forecast.wind.deg + "° degrees."; 
+var msg = "Current weather in " + forecast.name + "\n" + "Currently: " + forecast.main.temp + "° celsius" + "\n" + "Mainly: " + forecast.weather[0].description + "\n" + "High: " + forecast.main.temp_max +  "° celcius" + "\n" + "Low: " + forecast.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + forecast.main.humidity + "\n" + "Wind: " + forecast.wind.speed + " km/h" + "\n" + "Wind gusts: " + forecast.wind.gust + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + forecast.wind.deg + "° degrees.";
 
 console.log(message);
 
@@ -338,19 +339,19 @@ return false;
 function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
 
-var moment = require('moment'); 
+var moment = require('moment');
 var date = moment().utcOffset(-300).format('LLLL');
 
   if (regex.test(dataHash.request.text)) {
 
-    
+
       callback(true, date);
-  
+
 } else {
 return false;
 }
 }
-  
+
 
 function funCmd(dataHash, callback) {
   var regex = /^\/fun$/;
@@ -417,7 +418,7 @@ async function date1Cmd(dataHash, callback) {
 
   var regex = /^\/date1$/;
 
-var moment = require('moment'); 
+var moment = require('moment');
 
 var date = moment().utcOffset(-300).format('LLLL');
 
@@ -426,7 +427,7 @@ var date = moment().utcOffset(-300).format('LLLL');
 
   if (regex.test(dataHash.request.text)) {
 
-    
+
 
       callback(true, date);
 
@@ -447,8 +448,8 @@ return false;
 
 //------------
 function eemailCmd(dataHash, request, callback) {
-  var regex = /^\/email (.+?) ([^\n])([\s\S]+)/i; 
-  var reqText = dataHash.request.text; 
+  var regex = /^\/email (.+?) ([^\n])([\s\S]+)/i;
+  var reqText = dataHash.request.text;
 
   if (regex.test(dataHash.request.text)) {
 var nodemailer = require('nodemailer');
@@ -492,25 +493,25 @@ if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
 
     var fs = require('fs');
-    var moment = require('moment'); 
+    var moment = require('moment');
     var date = moment().utcOffset(-300).format('LLLL');
 
-    
-    var stream = fs.createWriteStream("append.txt", {flags:'a'}); 
-    console.log(new Date().toISOString()); 
-    [...Array(10000)].forEach( function (item,index) { 
-      stream.write(index + "\n"); 
-    }); 
-    console.log(new Date().toISOString()); 
+
+    var stream = fs.createWriteStream("append.txt", {flags:'a'});
+    console.log(new Date().toISOString());
+    [...Array(10000)].forEach( function (item,index) {
+      stream.write(index + "\n");
+    });
+    console.log(new Date().toISOString());
     stream.end();
     //});
- 
-    //var content; 
-    fs.readFile('./modules/modules/nest.txt', function read(err, data) { 
-      if (err) //{ 
-        throw err; 
-               //} 
-      var content = data; 
+
+    //var content;
+    fs.readFile('./modules/modules/nest.txt', function read(err, data) {
+      if (err) //{
+        throw err;
+               //}
+      var content = data;
      console.log(data);
     });
       //});
@@ -619,11 +620,11 @@ callback(true, "Click the link for a list of commands\nhttp://nodejs-mongo-persi
 //fs.readFile(path.resolve(__dirname, "./modules/help.txt"), (err, data) => {
 
  // //var helpful = require('../help');
-// //fs.readFile('', (err, data) => { 
-//if (err) { 
-//console.error(err) 
+// //fs.readFile('', (err, data) => {
+//if (err) {
+//console.error(err)
 //return;
-//} 
+//}
 ////console.log(data) })
 ////callback(true, data, []);
 //callback(true, "Command List \n" + data, []);
@@ -632,7 +633,7 @@ callback(true, "Click the link for a list of commands\nhttp://nodejs-mongo-persi
 //return data;
 ////callback(true, "Help", []);
 //})
-   
+
 
     ////callback(true, "Command List ", {}, []);
 
@@ -647,27 +648,27 @@ callback(true, "Click the link for a list of commands\nhttp://nodejs-mongo-persi
 
 //----------
 
-function nowCmd(dataHash, botResponse, callback) { 
-var regex = /^\/now$/; 
-  var readline = require('readline'); 
-  var rl = readline.createInterface({ 
-    input: process.stdin, 
-    output: process.stdout 
-  }); 
-if (regex.test(dataHash.request.text)) { 
-if (dataHash.isMod) { 
-  
+function nowCmd(dataHash, botResponse, callback) {
+var regex = /^\/now$/;
+  var readline = require('readline');
+  var rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+if (regex.test(dataHash.request.text)) {
+if (dataHash.isMod) {
+
 callback(true, "now", []);
   return botResponse;
-rl.question('What do you think of Node.js? ', (answer) => { 
-    // TODO: Log the answer in a database 
-    print('Thank you for your valuable feedback: ${answer}'); 
+rl.question('What do you think of Node.js? ', (answer) => {
+    // TODO: Log the answer in a database
+    print('Thank you for your valuable feedback: ${answer}');
 
-  rl.close(); 
-  var when = rl.on('line', (input) => { 
+  rl.close();
+  var when = rl.on('line', (input) => {
     console.log('Received: ${input}'); });
  });
-} else { 
+} else {
 callback(true, "Not now", []);
 }
 }
@@ -679,7 +680,7 @@ callback(true, "Not now", []);
 function hiCmd(dataHash, callback) {
   var regex = /^\/hi$/;
 
-var moment = require('moment'); 
+var moment = require('moment');
 var date = moment().utcOffset(-300).format('LLLL');
 var time = moment().utcOffset(-300).hour();
 var msg;
@@ -701,4 +702,3 @@ return false;
 
 
 //-------
-
