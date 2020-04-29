@@ -265,11 +265,12 @@ console.log('error:', error);
 
 var forecast = JSON.parse(body);
 //var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
-
+var oneof == "";
+oneof += body;
 
 //var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction; 
 
-var direction = "";
+/*var direction = "";
 if (forecast.wind.deg == 350 || forecast.wind.deg == 360 || forecast.wind.deg == 10) {
 direction = "N";
 } else if (forecast.wind.deg == 20 || forecast.wind.deg == 30) {
@@ -304,7 +305,7 @@ direction = "NW";
 direction = "N/NW";
 }
 direction: direction;
-
+*/
 
 //var message = `It's ${forecast.main} degrees in ${forecast.name}!`; 
 
@@ -313,9 +314,9 @@ direction: direction;
 var message = `It's ${forecast.main.temp} degrees in ${forecast.name}!`; 
 
 
-var msg = "Current weather in " + forecast.name + "\n" + "Currently: " + forecast.main.temp + "° celsius" + "\n" + "Mainly: " + forecast.weather[0].description + "\n" + "High: " + forecast.main.temp_max +  "° celcius" + "\n" + "Low: " + forecast.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + forecast.main.humidity + "\n" + "Wind: " + forecast.wind.speed + " km/h" + "\n" + "Wind gusts: " + forecast.wind.gust + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + forecast.wind.deg + "° degrees."; 
+var msg = oneof; //"Current weather in " + forecast.name + "\n" + "Currently: " + forecast.main.temp + "° celsius" + "\n" + "Mainly: " + forecast.weather[0].description + "\n" + "High: " + forecast.main.temp_max +  "° celcius" + "\n" + "Low: " + forecast.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + forecast.main.humidity + "\n" + "Wind: " + forecast.wind.speed + " km/h" + "\n" + "Wind gusts: " + forecast.wind.gust + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + forecast.wind.deg + "° degrees."; 
 
-console.log(message);
+console.log(msg); //message);
 
 
 callback(true, msg, []);
