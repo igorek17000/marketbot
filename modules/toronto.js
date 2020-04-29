@@ -19,7 +19,7 @@ callback(msg);
 
 var geolocation = require('geolocation');
 
-var request = require("request"); 
+var request = require('request'); 
 var options = { 
 method: 'GET', 
 url: 'https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/', 
