@@ -236,7 +236,7 @@ function addBodyCmd(request, bots, isMod, callback) {
 function sendEmailCmd(request, bots, isMod, callback) {
   var regex = /^\/sendemail$/;
   var reqText = request.text;
-
+  //var to, subject, text;
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
@@ -281,12 +281,12 @@ text: text
 Transport.sendMail(mailOptions, function(error, response) { 
 if (error) {
 console.log(error);
-}
+
 
 } else {
 console.log(response);
 } 
-
+}
 Transport.close();
 });
 
