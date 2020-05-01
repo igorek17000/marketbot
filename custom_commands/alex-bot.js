@@ -255,16 +255,16 @@ function restartCmd(funMode, request, callback){
     }
 
     var options = {
-      hostname: "api.pro-us-east-1.openshift.com",
-      path: "/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic",
-      method: "POST"
+      hostname: 'api.pro-us-east-1.openshift.com',
+      path: '/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic',
+      method: 'POST'
     };
 
 //https://api.pro-us-east-1.openshift.com/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic
 
 
     var callbackAPI = function(response) {
-     var str = "";
+     var str = '';
 
       response.on('data', function(chunk) {
         str += chunk;
@@ -280,11 +280,16 @@ function restartCmd(funMode, request, callback){
           msg = "That's not even found in a fake internet dictionary.";
         } */
 
-        callback(true, msg, []);
-      });
-    };
+       // callback(true, msg, []);
+     // });
+   // };
     
     HTTPS.request(options, callbackAPI).end();
+callback(true, msg, []);
+return msg;
+      });
+    };
+
   } else {
     return false;
   }
