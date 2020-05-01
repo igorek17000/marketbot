@@ -255,8 +255,9 @@ function restartCmd(funMode, request, callback){
     }
 
     var options = {
-      hostname: 'api.pro-us-east-1.openshift.com',
-      path: '/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic',
+      //hostname: 'api.pro-us-east-1.openshift.com',
+      //path: '/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic',
+      url: 'https://api.pro-us-east-1.openshift.com/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic',
       method: 'POST'
     };
 
@@ -264,7 +265,7 @@ function restartCmd(funMode, request, callback){
 
 
     var callbackAPI = function(response) {
-     var str = '';
+     var str = "";
 
       response.on('data', function(chunk) {
         str += chunk;
