@@ -258,7 +258,17 @@ function restartCmd(funMode, request, callback){
       //hostname: 'api.pro-us-east-1.openshift.com',
       //path: '/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic',
       url: 'https://api.pro-us-east-1.openshift.com/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic',
-      method: 'POST'
+      method: 'POST',
+      headers: { 
+      "Content-Type": "application/json" allowEnv } };
+
+
+type: "Generic"
+generic:
+  secretReference:
+    name: "mysecret"
+  allowEnv: true 
+
     };
 
 //https://api.pro-us-east-1.openshift.com/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic
