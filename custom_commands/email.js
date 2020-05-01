@@ -279,14 +279,14 @@ text: text
 
 
 Transport.sendMail(mailOptions, function(error, response) { 
-if (error) {
+if (error) throw error; //{
 console.log(error);
 
 
-} else {
+}); // else {
 console.log(response);
 } 
-};
+
 Transport.close();
 });
 
