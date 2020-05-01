@@ -286,6 +286,8 @@ return error;
 
 } else {
 console.log(response);
+var msg = "Email sent";
+callback(true, msg, []);
 } 
 
 Transport.close();
