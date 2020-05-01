@@ -286,7 +286,7 @@ function restartCmd(funMode, request, callback){
     
     HTTPS.request(options, callbackAPI).end();
 callback(true, msg, []);
-return msg;
+//return msg;
       });
     };
 
