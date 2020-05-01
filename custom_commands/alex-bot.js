@@ -257,7 +257,7 @@ function restartCmd(funMode, request, callback){
     var options = {
       //hostname: 'api.pro-us-east-1.openshift.com',
       //path: '/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic',
-      url: 'https://api.pro-us-east-1.openshift.com/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic',
+      url: 'https://api.pro-us-east-1.openshift.com:8080/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic',
       method: 'POST',
       headers: { 
       Content-Type: 'application/json'
@@ -279,13 +279,9 @@ console.log(responseString); // print to console when response ends
 var reqBody = "sometext"; 
 req.write(reqBody);
 
-reqBody here is a string, it can also be a buffer. Use a module like fs to handle file streams.
-
-Lastly, end the request:
-
 req.end(reqBody);
 
-
+/*
     };
 
 //https://api.pro-us-east-1.openshift.com/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic
@@ -302,17 +298,21 @@ req.end(reqBody);
         str = JSON.parse(str);
         
         var msg = "AlexBot restarted";
-     /*   if (typeof(str.list[0].definition) !== 'undefined'){
+        if (typeof(str.list[0].definition) !== 'undefined'){
           msg = str.list[0].word + " - " + str.list[0].definition;
         } else {
           msg = "That's not even found in a fake internet dictionary.";
-        } */
+        } 
 
        // callback(true, msg, []);
       });
     };
     
     HTTPS.request(options, callbackAPI).end();
+
+*/
+
+var msg = responseString;
 callback(true, msg, []);
 //return msg;
      // });
