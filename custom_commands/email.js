@@ -276,15 +276,17 @@ subject: subject,
 generateTextFromHTML: true,
 text: text
 };
-}
+
 
 Transport.sendMail(mailOptions, function(error, response) { 
 if (error) {
 console.log(error);
+}
 
 } else {
 console.log(response);
 } 
+
 Transport.close();
 });
 
