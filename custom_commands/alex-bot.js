@@ -264,7 +264,26 @@ function restartCmd(funMode, request, callback){
 } 
 };
 
+var req = http.request(options, function (res) { 
+var responseString = ""; 
 
+res.on("data", function (data) { 
+responseString += data; // save all the data from response 
+}); 
+
+res.on("end", function () { 
+console.log(responseString); // print to console when response ends 
+}); 
+});
+
+var reqBody = "sometext"; 
+req.write(reqBody);
+
+reqBody here is a string, it can also be a buffer. Use a module like fs to handle file streams.
+
+Lastly, end the request:
+
+req.end(reqBody);
 
 
     };
