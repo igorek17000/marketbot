@@ -260,14 +260,12 @@ function restartCmd(funMode, request, callback){
       url: 'https://api.pro-us-east-1.openshift.com/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic',
       method: 'POST',
       headers: { 
-      "Content-Type": "application/json" allowEnv } };
+      "Content-Type": "application/json" 
+} 
+};
 
 
-type: "Generic"
-generic:
-  secretReference:
-    name: "mysecret"
-  allowEnv: true 
+
 
     };
 
