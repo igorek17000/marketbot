@@ -20,9 +20,10 @@ var db_table = 'alex_bot';
 var bot = require('../bot.js');
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, weatherAlexBotCmd];
+var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, weatherAlexBotCmd, restartCmd];
 var db = require('../modules/db.js');
 var http = require('http');
+var https = require('https');
 
 var weather = require('weather-js');
 var msg;
@@ -244,6 +245,52 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 
 
 //------------
+function restartCmd(funMode, request, callback){
+  var regex = /^\/restart/i;
+  
+  if (regex.test(request)){
+    if(!funMode){
+      callback(true, "Sorry I'm no fun right now.", []);
+      return "Sorry I'm no fun right now.";
+    }
+
+    var options = {
+      hostname: "api.urbandictionary.com",
+      path: "/v0/random",
+      rejectUnauthorized: false
+    };
+
+    var callbackAPI = function(response) {
+      var str = '';
+
+      response.on('data', function(chunk) {
+        str += chunk;
+      });
+
+      response.on('end', function() {
+        str = JSON.parse(str);
+        
+        var msg = '';
+        if (typeof(str.list[0].definition) !== 'undefined'){
+          msg = str.list[0].word + " - " + str.list[0].definition;
+        } else {
+          msg = "That's not even found in a fake internet dictionary.";
+        }
+
+        callback(true, msg, []);
+      });
+    };
+    
+    HTTPS.request(options, callbackAPI).end();
+  } else {
+    return false;
+  }
+}
+
+
+
+
+//-------
 
 function weatherAlexBotCmd(request, bots, isMod, result, callback) {
   var regex = /^\/cmd weather$/;
