@@ -260,7 +260,7 @@ function restartCmd(funMode, request, callback){
       url: 'https://api.pro-us-east-1.openshift.com/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic',
       method: 'POST',
       headers: { 
-      "Content-Type": "application/json" 
+      Content-Type: 'application/json'
 } 
 };
 
