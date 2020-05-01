@@ -264,7 +264,7 @@ function restartCmd(funMode, request, callback){
 
 
     var callbackAPI = function(response) {
-    /*  var str = "";
+     var str = "";
 
       response.on('data', function(chunk) {
         str += chunk;
@@ -272,7 +272,7 @@ function restartCmd(funMode, request, callback){
 
       response.on('end', function() {
         str = JSON.parse(str);
-        */
+        
         var msg = "AlexBot restarted";
      /*   if (typeof(str.list[0].definition) !== 'undefined'){
           msg = str.list[0].word + " - " + str.list[0].definition;
@@ -281,7 +281,7 @@ function restartCmd(funMode, request, callback){
         } */
 
         callback(true, msg, []);
-      //});
+      });
     };
     
     HTTPS.request(options, callbackAPI).end();
