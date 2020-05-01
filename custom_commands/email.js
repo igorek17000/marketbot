@@ -281,7 +281,9 @@ text: text
 Transport.sendMail(mailOptions, function(error, response) { 
 if (error) { // throw error; //{
 console.log(error);
-return error;
+var msg = "There was an error sending email.";
+callback(true, msg, []);
+return msg;
 
 
 } else {
