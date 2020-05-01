@@ -282,7 +282,7 @@ function restartCmd(funMode, request, callback){
 
         callback(true, msg, []);
       //});
-   // };
+    };
     
     HTTPS.request(options, callbackAPI).end();
   } else {
