@@ -709,7 +709,7 @@ callback(true, "Not now", []);
 //----------
 
 function hiCmd(dataHash, callback) {
-  var regex = /^\/hi$/;
+  var regex = /^\/hi$/ || /^\/hi.$/;
 
 var moment = require('moment');
 var date = moment().utcOffset(-300).format('LLLL');
