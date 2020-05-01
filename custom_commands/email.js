@@ -276,6 +276,7 @@ subject: subject,
 generateTextFromHTML: true,
 text: text
 };
+}
 
 Transport.sendMail(mailOptions, function(error, response) { 
 if (error) {
@@ -311,7 +312,7 @@ Transport.close();
 //});
 }, 10000); */
 
-}
+//}
 }
 }
 }
