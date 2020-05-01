@@ -1,5 +1,5 @@
 //A module for sending e-mails
-
+//
 var commands;
 var db_table = 'email';
 var db_tables = 'email_draft';
