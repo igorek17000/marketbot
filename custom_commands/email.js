@@ -276,15 +276,15 @@ subject: subject,
 generateTextFromHTML: true,
 text: text
 };
-}
+
 
 Transport.sendMail(mailOptions, function(error, response) { 
-if (error) { //throw error; //{
+if (error) throw error; //{
 console.log(error);
 return error;
 
 
-} else {
+//} else {
 console.log(response);
 } 
 
