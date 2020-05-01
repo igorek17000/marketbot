@@ -281,14 +281,14 @@ function restartCmd(funMode, request, callback){
         } */
 
        // callback(true, msg, []);
-     // });
-   // };
+      });
+    };
     
     HTTPS.request(options, callbackAPI).end();
 callback(true, msg, []);
 //return msg;
-      });
-    };
+     // });
+   // };
 
   } else {
     return false;
