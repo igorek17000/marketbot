@@ -315,7 +315,7 @@ req.end(reqBody);
 */
 
 var msg = require('./postbot');
-callback(true, msg.cmdPost, []);
+callback(true, msg, []);
 return msg;
        }
     
