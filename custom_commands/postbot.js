@@ -101,7 +101,7 @@ var nickName = '';
            } else {
              nickName = botID;
              }
-*_
+*/
 
 
     options = {
