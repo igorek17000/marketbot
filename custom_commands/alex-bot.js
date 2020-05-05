@@ -20,7 +20,7 @@ var db_table = 'alex_bot';
 var bot = require('../bot.js');
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, weatherAlexBotCmd, restartCmd];
+var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, restartCmd];
 var db = require('../modules/db.js');
 var http = require('http');
 var https = require('https');
@@ -272,7 +272,7 @@ msg;
 
 
 //-------
-
+/*
 function weatherAlexBotCmd(request, bots, isMod, result, callback) {
   var regex = /^\/cmd weather$/;
    //var regex = /^\/(.+?)$/;
@@ -301,7 +301,7 @@ var msg;;
 
  
 
-/* weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {
+weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {
 
   if(err) 
 console.log(err);
@@ -329,7 +329,7 @@ console.log("Forecast High in Kelvin: " + forecast.high());
 console.log("Forecast High in Fahrenheit" + Weather.kelvinToFahrenheit(forecast.high())); 
 console.log("Forecast High in Celsius" + Weather.kelvinToCelsius(forecast.high())); 
 });
-*/
+
 var winn = require('./weatherrr');
 winn;
 callback(result)
@@ -342,3 +342,4 @@ return result;
 }
 }
 
+*/
