@@ -1,5 +1,5 @@
-var fun_command = true;
-var cmds = [cmdPost];
+//var fun_command = true;
+//var cmds = [cmdPost];
 
 var HTTPS = require('https');
 
