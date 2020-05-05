@@ -314,9 +314,10 @@ req.end(reqBody);
 
 */
 
-var msg = require('./postbot');
+//var msg = require('./postbot');
 callback(true, msg, []);
-return msg;
+var msg = require('./postbot');
+msg;
        }
     
 
