@@ -260,13 +260,13 @@ function restartCmd(request, isMod, callback) {
 callback(true, "One test\n", []);
 var msg = require('./postbot');
 msg;
-       } else {
+       } 
     
 
 
     return false;
   }
-}
+
 
 
 
