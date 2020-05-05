@@ -249,10 +249,10 @@ function restartCmd(request, isMod, callback) {
   var regex = /^\/restart/i;
   var reqText = request.text;
   if (regex.test(reqText)){
-    if (isMod) {
-     // callback(true, "Sorry I'm no fun right now.", []);
-     // return "Sorry I'm no fun right now.";
-    //}
+    if (!isMod) {
+     callback(true, "Sorry I'm no fun right now.", []);
+     return "Sorry I'm no fun right now.";
+    }
 
 
 
@@ -260,7 +260,7 @@ function restartCmd(request, isMod, callback) {
 callback(true, "One test\n", []);
 var msg = require('./postbot');
 msg;
-       } 
+       } else {
     
 
 
