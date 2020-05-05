@@ -318,12 +318,12 @@ var msg = require('./postbot');
 callback(true, msg.cmdPost, []);
 return msg;
        }
-    }
+    
 
 
     return false;
   }
-}
+
 
 
 
