@@ -257,7 +257,7 @@ function restartCmd(request, isMod, callback) {
 
 
 //var msg = require('./postbot');
-callback(true, "One test\n", []);
+//callback(true, "One test\n", []);
 var msg = require('./postbot');
 msg;
        } else {
