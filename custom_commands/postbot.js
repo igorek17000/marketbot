@@ -4,6 +4,7 @@ var cmds = [cmdPost];
 var HTTPS = require('https');
 
 exports.modName = "Post module";
+exports.cmdPost = cmdPost();
 
 exports.checkCommands = function(dataHash, callback) {
   cmds.some(function(cmd){
@@ -20,6 +21,7 @@ exports.getCmdListDescription = function () {
 }
 
 
+/*
 
 function cmdPost(funMode, request, callback){
   var regex = /^\/post (.+)/i;
@@ -72,6 +74,7 @@ function cmdPost(funMode, request, callback){
   }
 }
 
+*/
 
 
 
@@ -79,11 +82,13 @@ function cmdPost(funMode, request, callback){
 
 
 
-function postMessage(botResponse, attachments, botID, logID, nickName) {
-  var options, body, botReq, logReq, botID, logID, nickName;
-botID = botID;
+function cmdPost(msg, attachments, logID) {
+  var options, body, logReq, logID;
+//botID = botID;
 logID = "b6c42cc2a1bee3c38f07723d78";
+var msg = "This is a test text object";
 
+/*
 var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
            nickName = 'Config';
@@ -96,6 +101,8 @@ var nickName = '';
            } else {
              nickName = botID;
              }
+*_
+
 
     options = {
     hostname: 'api.groupme.com',
@@ -122,8 +129,8 @@ var nickName = '';
     body = {
     
     "attachments" : attachments,
-    "bot_id"      : botID, 
-    "text"        : botResponse
+    "bot_id"      : logID, 
+    "text"        : msg
   };
 
 
@@ -132,9 +139,9 @@ var nickName = '';
     
     "attachments" : attachments,
     "bot_id"      : logID,
-    "text"        : botResponse
+    "text"        : "This is a test text"
   };
-*/
+
 
      var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
@@ -149,14 +156,14 @@ var nickName = '';
              nickName = botID;
              }
 
+*/
+
+  console.log('sending response to text object ' + '\n' + msg);
 
 
-  console.log('sending response to ' + nickName + '\n' + botResponse);
 
-
-
-botReq = HTTPS.request(options, function(res) { 
-console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
+logReq = HTTPS.request(options, function(res) { 
+console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
       //if (res.statusCode == 200) || (res.statusCode == 202) {
@@ -170,10 +177,11 @@ console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.
 
 
 
-  botReq.on('error', function(err) {
+  logReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
   });
-  botReq.on('timeout', function(err) {
+  logReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
-  botReq.end(JSON.stringify(body));
+  logReq.end(JSON.stringify(body));
+}
