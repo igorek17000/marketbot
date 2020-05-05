@@ -245,11 +245,11 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 
 
 //------------
-function restartCmd(funMode, request, callback){
+function restartCmd(request, isMod, callback) {
   var regex = /^\/restart/i;
-  
-  if (regex.test(request)){
-    if(funMode){
+  var reqText = request.text;
+  if (regex.test(reqText)){
+    if (isMod) {
      // callback(true, "Sorry I'm no fun right now.", []);
       //return "Sorry I'm no fun right now.";
    // }
