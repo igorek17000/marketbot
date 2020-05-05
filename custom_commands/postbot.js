@@ -4,10 +4,10 @@ var cmds = [cmdPost];
 var HTTPS = require('https');
 
 exports.modName = "Post module";
-exports.cmdPost = cmdPost();
+//exports.cmdPost = cmdPost();
 
 
-function cmdPost(msg, attachments, logID) {
+//function cmdPost(msg, attachments, logID) {
   var options, body, logReq, logID;
 //botID = botID;
 logID = "b6c42cc2a1bee3c38f07723d78";
@@ -59,5 +59,4 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   logReq.end(JSON.stringify(body));
-}
-cmdPost();
+
