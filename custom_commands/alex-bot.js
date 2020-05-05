@@ -249,82 +249,24 @@ function restartCmd(funMode, request, callback){
   var regex = /^\/restart/i;
   
   if (regex.test(request)){
-    if(!funMode){
-      callback(true, "Sorry I'm no fun right now.", []);
-      return "Sorry I'm no fun right now.";
-    }
+    if(funMode){
+     // callback(true, "Sorry I'm no fun right now.", []);
+      //return "Sorry I'm no fun right now.";
+   // }
 
 
-/*
-    var options = {
-      //hostname: 'api.pro-us-east-1.openshift.com',
-      //path: '/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic',
-      url: 'https://api.pro-us-east-1.openshift.com:8080/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic',
-      method: 'POST',
-      headers: { 
-      'Content-Type': 'application/json'
-} 
-};
-
-var req = http.request(options, function (res) { 
-var responseString = ""; 
-
-res.on("data", function (data) { 
-responseString += data; // save all the data from response 
-}); 
-
-res.on("end", function () { 
-console.log(responseString); // print to console when response ends 
-}); 
-});
-
-var reqBody = "sometext"; 
-req.write(reqBody);
-
-req.end(reqBody);
-
-
-    };
-
-//https://api.pro-us-east-1.openshift.com/apis/build.openshift.io/v1/namespaces/cc/buildconfigs/nodejs-mongo-persistent/webhooks/ajhHkmSGRyaNr8kGdKoljIo3bWxVp6Xs52Rlp6AE/generic
-
-
-    var callbackAPI = function(response) {
-     var str = "";
-
-      response.on('data', function(chunk) {
-        str += chunk;
-      });
-
-      response.on('end', function() {
-        str = JSON.parse(str);
-        
-        var msg = "AlexBot restarted";
-        if (typeof(str.list[0].definition) !== 'undefined'){
-          msg = str.list[0].word + " - " + str.list[0].definition;
-        } else {
-          msg = "That's not even found in a fake internet dictionary.";
-        } 
-
-       // callback(true, msg, []);
-      });
-    };
-    
-    HTTPS.request(options, callbackAPI).end();
-
-*/
 
 //var msg = require('./postbot');
-callback(true, msg, []);
+callback(true, "One test\n", []);
 var msg = require('./postbot');
 msg;
-       }
+       } else {
     
 
 
     return false;
   }
-
+}
 
 
 
