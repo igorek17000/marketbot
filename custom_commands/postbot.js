@@ -25,7 +25,7 @@ var msg = "This is a test text object";
 
     body = {
     
-    "attachments" : attachments,
+    "attachments" : "attachments",
     "bot_id"      : logID, 
     "text"        : msg
   };
