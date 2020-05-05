@@ -251,8 +251,8 @@ function restartCmd(request, isMod, callback) {
   if (regex.test(reqText)){
     if (isMod) {
      // callback(true, "Sorry I'm no fun right now.", []);
-      //return "Sorry I'm no fun right now.";
-   // }
+     // return "Sorry I'm no fun right now.";
+    //}
 
 
 
@@ -266,7 +266,7 @@ msg;
 
     return false;
   }
-
+}
 
 
 
