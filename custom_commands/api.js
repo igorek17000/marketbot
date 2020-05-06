@@ -210,10 +210,10 @@ response.on('end', function () {
 console.log(req.data); 
 console.log(str); // your code here if you want to use the results ! 
 
-var msg = "Getting message\n" + str;
-callback(true, msg, []);
+//var msg = "Getting message\n" + str;
+//callback(true, msg, []);
 
-return msg;
+//return msg;
 
 }); 
 } 
