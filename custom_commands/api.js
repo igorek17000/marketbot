@@ -214,7 +214,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
   };
 
 
-logReq = HTTPS.request(options, callback) { //.end(); // { 
+logReq = HTTPS.request(options, callback)  //.end(); // { 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
