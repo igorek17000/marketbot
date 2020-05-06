@@ -283,7 +283,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
  
   
 
-
+/*
 
   console.log('sending response to text object ');
 
