@@ -177,6 +177,7 @@ post = 'GET';
   var p = "'"
   endpoint = val[2];
   var str = '';
+var data = '';
   str = str += data;
   text = str;
 
