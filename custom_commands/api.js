@@ -242,7 +242,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 //return msg;
 
 }); 
-} 
+//} 
 
   console.log('sending response to text object ');
 
