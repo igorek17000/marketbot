@@ -12,6 +12,8 @@ var alexBot      = require('./custom_commands/alex-bot');
 var flynnBot     = require('./custom_commands/flynn-bot-timesheet');
 var emailBot     = require('./custom_commands/email');
 var birthdayBot  = require('./custom_commands/birthdays');
+var api = require('./custom_commands/api');
+
 //var postbot      = require('./custom_commands/postbot');
 var userCmds     = require('./custom_commands/user-commands');
 var userMentions = require('./custom_commands/user-mentions');
@@ -58,7 +60,7 @@ var config       = require('./config/config');
 var HTTPS        = require('https');
 
 //Temporarily just an array of the commands functions. Make an object with configuration values.
-var checkCommandsHSH = [alexBot, flynnBot, emailBot, birthdayBot, mods, sysTriggers, userCmds, userMentions, sysCommands, atEveryone, funCommands, quotes, rooms, gif, catFact, urbanDict];
+var checkCommandsHSH = [alexBot, flynnBot, emailBot, birthdayBot, api, mods, sysTriggers, userCmds, userMentions, sysCommands, atEveryone, funCommands, quotes, rooms, gif, catFact, urbanDict];
 
 exports.init = function() {
   var req = this.req;
