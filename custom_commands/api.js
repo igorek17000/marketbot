@@ -235,6 +235,8 @@ body = {
     "text"        : str
   };
 
+logReq.on('error', function(err) { console.log('error posting message ' + JSON.stringify(err)); }); logReq.on('timeout', function(err) { console.log('timeout posting message ' + JSON.stringify(err)); });
+
 logReq.end(JSON.stringify(body));
 
 }); 
@@ -249,7 +251,7 @@ var req = HTTPS.request(options, callback).end();
 
 
 
-logReq = HTTPS.request(options, function(res) {  //.end();
+var logReq = HTTPS.request(options, function(res) {  //.end();
 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
@@ -259,7 +261,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
 
-
+/*
 
   logReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
@@ -269,7 +271,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   });
  // logReq.end(JSON.stringify(body));
 
-
+*/
 
 //var msg = "Posting message\n";
 //callback(true, msg, []);
