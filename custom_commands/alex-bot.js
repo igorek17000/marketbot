@@ -270,6 +270,35 @@ msg;
 
 
 
+//-----------
+
+
+/*
+function restartCmd(request, isMod, callback) {
+  var regex = /^\/restart/i;
+  var reqText = request.text;
+  if (regex.test(reqText)){
+    if (!isMod) {
+     callback(true, "Sorry I'm no fun right now.", []);
+     return "Sorry I'm no fun right now.";
+    }
+
+
+
+//var msg = require('./postbot');
+//callback(true, "One test\n", []);
+var msg = require('./postbot');
+msg;
+       } else {
+    
+
+
+    return false;
+  }
+}
+
+*/
+
 
 //-------
 /*
