@@ -209,13 +209,14 @@ logID = "b6c42cc2a1bee3c38f07723d78";
     method: 'GET'
   };
 
-
+/*
     body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID
     //"text"        : text
   };
+*/
 
 callback = function(response) { 
 var str = '';
@@ -225,6 +226,15 @@ str += chunk;
 response.on('end', function () { 
 console.log(req.data); 
 console.log(str); // your code here if you want to use the results ! 
+callback(str);
+
+body = {
+    
+    "attachments" : "attachments",
+    "bot_id"      : logID,
+    "text"        : str
+  };
+
 logReq.end(JSON.stringify(body));
 
 }); 
