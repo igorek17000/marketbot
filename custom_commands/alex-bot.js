@@ -246,7 +246,7 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 
 //------------
 function restartCmd(request, isMod, callback) {
-  var regex = /^\/restart (.+?) (.?) ([\s\S]+)/i;
+  var regex = /^\/restart (.+?) ([\s\S]+)/i;
   var reqText = request.text;
   //var https = require('https');
   var options, body, logReq, logID, v3, text, post, endpoint;
@@ -262,10 +262,7 @@ var https = require('https');
 
 
 if (val[1] == "post") {
-  post = 'POST';
-  //v3 = "/v3/";
-  endpoint = '/v3/' + ' + val[2] + ';
-  text = val[3];
+  text = val[2];
 /* } else if (val[1] == "get") {
   post = 'GET';
   //v3 = "/v3/";
@@ -285,8 +282,8 @@ logID = "b6c42cc2a1bee3c38f07723d78";
 
     options = {
     hostname: 'api.groupme.com',
-    path: endpoint, //bots/post',
-    method: post
+    path: '/v3/bots/post',
+    method: 'POST'
   };
 
 
@@ -330,6 +327,78 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
 var msg = "Posting message\n";
+//callback(true, msg, []);
+//var msg = require('./postbot');
+return msg;
+
+  }
+       
+} else if (val[1] == "get") {
+  text = val[2];
+/* } else if (val[1] == "get") {
+  post = 'GET';
+  //v3 = "/v3/";
+  endpoint = val[2];
+  text = val[3];
+*/
+
+
+//function cmdPost(msg, attachments, logID) {
+  //var options, body, logReq, logID;
+//botID = botID;
+logID = "b6c42cc2a1bee3c38f07723d78";
+//var msg = val[1];
+
+
+
+
+    options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+
+    body = {
+    
+    "attachments" : "attachments",
+    "bot_id"      : logID, 
+    "text"        : text
+  };
+
+
+
+
+  console.log('sending response to text object ');
+
+//var https = require('https');
+
+logReq = HTTPS.request(options, function(res) { 
+console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
+
+
+      //if (res.statusCode == 200) || (res.statusCode == 202) {
+        //neat
+//} else {
+        //console.log('rejecting bad status code ' + res.statusCode);
+      //}
+  });
+
+
+
+
+
+  logReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  logReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+  logReq.end(JSON.stringify(body));
+
+
+
+var msg = "Getting message\n";
 //callback(true, msg, []);
 //var msg = require('./postbot');
 return msg;
