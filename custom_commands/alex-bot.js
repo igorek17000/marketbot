@@ -249,7 +249,10 @@ function restartCmd(request, isMod, callback) {
   var regex = /^\/restart (.+?) ([\s\S]+)/i;
   var reqText = request.text;
   var options, body, logReq, logID, msg;
+
   if (regex.test(reqText)){
+  var val = regex.exec(reqText);
+
     if (!isMod) {
      callback(true, "Sorry I'm no fun right now.", []);
      return "Sorry I'm no fun right now.";
