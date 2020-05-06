@@ -249,7 +249,7 @@ function restartCmd(request, isMod, callback) {
   var regex = /^\/restart (.+?) ([\s\S]+)/i;
   var reqText = request.text;
   //var https = require('https');
-  var options, body, logReq, logID, text, post, endpoint;
+  var options, body, logReq, logID, v3, text, post, endpoint;
 
   if (regex.test(reqText)){
   var val = regex.exec(reqText);
@@ -260,12 +260,16 @@ var https = require('https');
      return "Sorry I'm no fun right now.";
     }
 
+endpoint = "";
+v3 = ""
 if (val[1] == "post") {
-  post = 'POST';
+  post = POST;
+  v3 = "/v3/";
   endpoint = val[2];
   text = val[3];
 } else if (val[1] == "get") {
-  post = 'GET';
+  post = GET;
+  v3 = "/v3/";
   endpoint = val[2];
   text = val[3];
 
@@ -282,8 +286,8 @@ logID = "b6c42cc2a1bee3c38f07723d78";
 
     options = {
     hostname: 'api.groupme.com',
-    path: '/v3/' + endpoint, //bots/post',
-    method: post
+    path: ' + v3 + endpoint + ', //bots/post',
+    method: ' + post + '
   };
 
 
