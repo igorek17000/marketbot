@@ -321,7 +321,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
 var msg = "Posting message\n";
-callback(true, msg, []);
+//callback(true, msg, []);
 //var msg = require('./postbot');
 return msg;
 
