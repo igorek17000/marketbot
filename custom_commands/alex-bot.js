@@ -249,7 +249,7 @@ function restartCmd(request, isMod, callback) {
   var regex = /^\/restart (.+?) ([\s\S]+)/i;
   var reqText = request.text;
   //var https = require('https');
-  var options, body, logReq, logID, msg;
+  var options, body, logReq, logID, text;
 
   if (regex.test(reqText)){
   var val = regex.exec(reqText);
@@ -261,7 +261,7 @@ var https = require('https');
     }
 
 if (val[1] == "text") {
-  msg = val[2];
+  text = val[2];
 
 
 
@@ -285,7 +285,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
     
     "attachments" : "attachments",
     "bot_id"      : logID, 
-    "text"        : msg
+    "text"        : text
   };
 
 
