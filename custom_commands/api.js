@@ -11,8 +11,7 @@ var apiCommands = [restartCmd];
 var db = require('../modules/db.js');
 var http = require('http');
 var HTTPS = require('https');
-var str = '';
-str = str += data;
+
 
 var msg;
 
@@ -168,7 +167,7 @@ var msg = "Posting message\n";
 return msg;
 
   
-var endpoint = "";       
+//var endpoint = "";       
 } else if (val[1] == "get") {
 
 
@@ -182,6 +181,8 @@ str += chunk;
 response.on('end', function () { 
 console.log(req.data); 
 console.log(str); // your code here if you want to use the results ! 
+
+var endpoint = "";
 
 post = 'GET';
   //v3 = "/v3/";
