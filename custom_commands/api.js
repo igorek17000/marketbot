@@ -175,7 +175,7 @@ var endpoint = "";
   //v3 = "/v3/";
   var p = "'"
   endpoint = val[2];
-  text = val[3];
+  text = str;
 
 
 
