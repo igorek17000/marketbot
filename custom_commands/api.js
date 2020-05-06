@@ -214,12 +214,12 @@ logID = "b6c42cc2a1bee3c38f07723d78";
   };
 
 
-logReq = HTTPS.request(options, function(res) { //.end(); // { 
+logReq = HTTPS.request(options, callback).end(JSON.stringify(body)); // { //.end(); // { 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
       
-  });
+ // });
 
 
 
@@ -231,7 +231,8 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   logReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
-  logReq.end(JSON.stringify(body));
+ // logReq.end(JSON.stringify(body));
+logReq;
 
 
 
