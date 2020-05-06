@@ -221,12 +221,12 @@ return msg;
 
 
 
-logReq = HTTPS.request(options, callback) { 
-console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
+logReq = HTTPS.request(options, callback); //.end(); // { 
+//console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
       
-  });
+  //});
 
 
 
