@@ -253,6 +253,18 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   logReq.end(JSON.stringify(body));
+
+}
+       
+} else {
+    
+
+
+    return false;
+  }
+}
+
+
 //logReq;
 
 
@@ -289,7 +301,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   });
   logReq.end(JSON.stringify(body));
 
-*/
+
   }
        
 } else {
@@ -300,6 +312,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   }
 }
 
+*/
 
 
 //-----------
