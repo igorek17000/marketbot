@@ -181,7 +181,7 @@ var data = "";
   str = str += data;
   text = str;
 
-/*
+
 
 
 logID = "b6c42cc2a1bee3c38f07723d78";
@@ -203,7 +203,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
     "bot_id"      : logID, 
     "text"        : text
   };
-  */
+  
 
 callback = function(response) { 
 var str = '';
