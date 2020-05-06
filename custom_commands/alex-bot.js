@@ -331,7 +331,7 @@ var msg = "Posting message\n";
 //var msg = require('./postbot');
 return msg;
 
-  }
+  
        
 } else if (val[1] == "get") {
   text = val[2];
