@@ -220,14 +220,14 @@ return msg;
 
   console.log('sending response to text object ');
 
+var req = HTTPS.request(options, callback).end();
 
-
-logReq = HTTPS.request(options, callback); //.end(); // { 
-//console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
+logReq = HTTPS.request(options, function(res) { //.end(); // { 
+console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
       
-  //});
+  });
 
 
 
