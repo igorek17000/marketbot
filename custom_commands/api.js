@@ -162,25 +162,13 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
 
-var msg = "Posting message\n";
+//var msg = "Posting message\n";
 //callback(true, msg, []);
-return msg;
+//return msg;
 
   
 //var endpoint = "";       
 } else if (val[1] == "get") {
-
-
-  
-
-callback = function(response) { 
-var str = '';
-response.on('data', function (chunk) { 
-str += chunk; 
-}); 
-response.on('end', function () { 
-console.log(req.data); 
-console.log(str); // your code here if you want to use the results ! 
 
 var endpoint = "";
 
@@ -212,9 +200,21 @@ logID = "b6c42cc2a1bee3c38f07723d78";
     "bot_id"      : logID, 
     "text"        : text
   };
+  
+
+callback = function(response) { 
+var str = '';
+response.on('data', function (chunk) { 
+str += chunk; 
+}); 
+response.on('end', function () { 
+console.log(req.data); 
+console.log(str); // your code here if you want to use the results ! 
 
 
-logReq = HTTPS.request(options, callback)  //.end(); // { 
+
+
+logReq = HTTPS.request(options, function(res) {  //.end(); // { 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
@@ -241,7 +241,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 //return msg;
 
-//}); 
+}); 
 } 
 
   console.log('sending response to text object ');
