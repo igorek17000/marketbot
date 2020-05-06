@@ -173,7 +173,7 @@ var endpoint = "";
 
   post = 'GET';
   //v3 = "/v3/";
-  var p = '
+  var p = "'"
   endpoint = val[2];
   text = val[3];
 
