@@ -260,20 +260,18 @@ var https = require('https');
      return "Sorry I'm no fun right now.";
     }
 
-var endpoint = "";
-//v3 = "";
-//var post = "";
+
 if (val[1] == "post") {
   post = 'POST';
   //v3 = "/v3/";
-  endpoint = val[2];
+  endpoint = '/v3/' + ' + val[2] + ';
   text = val[3];
-} else if (val[1] == "get") {
+/* } else if (val[1] == "get") {
   post = 'GET';
   //v3 = "/v3/";
   endpoint = val[2];
   text = val[3];
-
+*/
 
 
 //function cmdPost(msg, attachments, logID) {
@@ -287,7 +285,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
 
     options = {
     hostname: 'api.groupme.com',
-    path: '/v3/' + ' + endpoint + ', //bots/post',
+    path: endpoint, //bots/post',
     method: post
   };
 
