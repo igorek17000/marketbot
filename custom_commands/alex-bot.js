@@ -334,7 +334,7 @@ return msg;
   
        
 } else if (val[1] == "get") {
-  text = val[2];
+  text = res.JSON.stringify(data);
 /* } else if (val[1] == "get") {
   post = 'GET';
   //v3 = "/v3/";
