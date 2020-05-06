@@ -202,6 +202,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
 
 
 callback = function(response) { 
+var str = '';
 response.on('data', function (chunk) { 
 str += chunk; 
 }); 
