@@ -248,6 +248,7 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 function restartCmd(request, isMod, callback) {
   var regex = /^\/restart (.+?) ([\s\S]+)/i;
   var reqText = request.text;
+  var https = require('https');
   var options, body, logReq, logID, msg;
 
   if (regex.test(reqText)){
