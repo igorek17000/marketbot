@@ -246,7 +246,7 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 
 //------------
 function restartCmd(request, isMod, callback) {
-  var regex = /^\/restart (.+?) ([\s\S]+)/i;
+  var regex = /^\/restart (.+?) (.?) ([\s\S]+)/i;
   var reqText = request.text;
   //var https = require('https');
   var options, body, logReq, logID, v3, text, post, endpoint;
@@ -269,7 +269,7 @@ if (val[1] == "post") {
   endpoint = val[2];
   text = val[3];
 } else if (val[1] == "get") {
-  post = "GET";
+  post = 'GET';
   //v3 = "/v3/";
   endpoint = val[2];
   text = val[3];
@@ -288,7 +288,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
     options = {
     hostname: 'api.groupme.com',
     path: '/v3/' + ' + endpoint + ', //bots/post',
-    method: ' + post + '
+    method: post
   };
 
 
