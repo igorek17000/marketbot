@@ -108,11 +108,6 @@ function restartCmd(request, isMod, callback) {
 
 if (val[1] == "post") {
   text = val[2];
-/* } else if (val[1] == "get") {
-  post = 'GET';
-  //v3 = "/v3/";
-  endpoint = val[2];
-  text = val[3];
 
 logID = "b6c42cc2a1bee3c38f07723d78";
 
@@ -135,33 +130,22 @@ logID = "b6c42cc2a1bee3c38f07723d78";
   };
 
 
-callback = function(response) { 
-response.on('data', function (chunk) { 
-str += chunk; 
-}); 
-response.on('end', function () { 
-console.log(req.data); 
-console.log(str); // your code here if you want to use the results ! 
-}); 
-} 
-var req = http.request(options, callback).end();
+
+//var req = http.request(options, callback).end();
 
 
 
 
   console.log('sending response to text object ');
 
-//var https = require('https');
 
-logReq = HTTPS.request(options, function(res) { 
+
+logReq = HTTPS.request(options, function(res) {  //.end();
+
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
-      //if (res.statusCode == 200) || (res.statusCode == 202) {
-        //neat
-//} else {
-        //console.log('rejecting bad status code ' + res.statusCode);
-      //}
+     
   });
 
 
@@ -180,34 +164,32 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 var msg = "Posting message\n";
 //callback(true, msg, []);
-//var msg = require('./postbot');
 return msg;
 
   
-       
+var endpoint = "";       
 } else if (val[1] == "get") {
-  text = res.JSON.stringify(data);
-/* } else if (val[1] == "get") {
+
+
   post = 'GET';
   //v3 = "/v3/";
+  var p = '
   endpoint = val[2];
   text = val[3];
-*/
 
 
-//function cmdPost(msg, attachments, logID) {
-  //var options, body, logReq, logID;
-//botID = botID;
+
+
 logID = "b6c42cc2a1bee3c38f07723d78";
-//var msg = val[1];
+
 
 
 
 
     options = {
     hostname: 'api.groupme.com',
-    path: '/v3/bots/post',
-    method: 'POST'
+    path: '/v3/' + p + endpoint + p, //bots/post',
+    method: post
   };
 
 
@@ -219,21 +201,31 @@ logID = "b6c42cc2a1bee3c38f07723d78";
   };
 
 
+callback = function(response) { 
+response.on('data', function (chunk) { 
+str += chunk; 
+}); 
+response.on('end', function () { 
+console.log(req.data); 
+console.log(str); // your code here if you want to use the results ! 
 
+var msg = "Getting message\n" + str;
+callback(true, msg, []);
+
+return msg;
+
+}); 
+} 
 
   console.log('sending response to text object ');
 
-//var https = require('https');
 
-logReq = HTTPS.request(options, function(res) { 
+
+logReq = HTTPS.request(options, callback) { 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
-      //if (res.statusCode == 200) || (res.statusCode == 202) {
-        //neat
-//} else {
-        //console.log('rejecting bad status code ' + res.statusCode);
-      //}
+      
   });
 
 
@@ -248,12 +240,6 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   });
   logReq.end(JSON.stringify(body));
 
-
-
-var msg = "Getting message\n";
-//callback(true, msg, []);
-//var msg = require('./postbot');
-return msg;
 
   }
        
