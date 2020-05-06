@@ -11,7 +11,8 @@ var apiCommands = [restartCmd];
 var db = require('../modules/db.js');
 var http = require('http');
 var HTTPS = require('https');
-
+var str = '';
+str = str += data;
 
 var msg;
 
