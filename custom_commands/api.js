@@ -7,7 +7,7 @@ var db_table = 'api';
 var bot = require('../bot.js');
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var apiCommands = [restartCmd];
+var apiCommands = [restartPostCmd, restartGetCmd];
 var db = require('../modules/db.js');
 var http = require('http');
 var HTTPS = require('https');
@@ -90,8 +90,8 @@ exports.getCmdListDescription = function () {
 
 
 //------------
-function restartCmd(request, isMod, callback) {
-  var regex = /^\/restartt (.+?) (.+?) ([\s\S]+)/i;
+function restartPostCmd(request, isMod, callback) {
+  var regex = /^\/restartt (.+?) ([\s\S]+)/i;
   var reqText = request.text;
   //var https = require('https');
   var options, body, logReq, logID, v3, text, post, endpoint, res;
@@ -177,23 +177,25 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   }
 }
 
-/*
-//var endpoint = "";       
-} else if (val[1] == "get") {
 
-var endpoint = "";
+function restartGetCmd(request, isMod, callback) {
+  var regex = /^\/restartt (.+?) ([\s\S]+)/i;
+  var reqText = request.text;
+  //var https = require('https');
+  var options, body, logReq, logID, v3, text, post, endpoint, res;
 
-post = 'GET';
-  //v3 = "/v3/";
-  var p = "'"
-  endpoint = val[2];
-  var str = "";
-var data = "";
-  str = str += data;
-  text = str;
+  if (regex.test(reqText)){
+  var val = regex.exec(reqText);
 
 
+    if (!isMod) {
+     callback(true, "Sorry I'm no fun right now.", []);
+     return "Sorry I'm no fun right now.";
+    }
 
+
+if (val[1] == "get") {
+  text = val[2];
 
 logID = "b6c42cc2a1bee3c38f07723d78";
 
@@ -203,7 +205,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
 
     options = {
     hostname: 'api.groupme.com',
-    path: '/v3/bots', //bots/post',
+    path: '/v3/bots',
     method: 'GET'
   };
 
@@ -211,10 +213,9 @@ logID = "b6c42cc2a1bee3c38f07723d78";
     body = {
     
     "attachments" : "attachments",
-    "bot_id"      : logID, 
-    "text"        : text
+    "bot_id"      : logID
+    //"text"        : text
   };
-  
 
 callback = function(response) { 
 var str = '';
@@ -225,79 +226,25 @@ response.on('end', function () {
 console.log(req.data); 
 console.log(str); // your code here if you want to use the results ! 
 
-logID = "b6c42cc2a1bee3c38f07723d78";
-
-
-
-
-
-    options = {
-    hostname: 'api.groupme.com',
-    path: '/v3/bots', //bots/post',
-    method: 'GET'
-  };
-
-
-    body = {
-    
-    "attachments" : "attachments",
-    "bot_id"      : logID, 
-    "text"        : text
-  };
-
-
-logReq = HTTPS.request(options, function(res) {  //.end(); // { 
-console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
-
-
-      
-  });
-
-
-
-
-
-  logReq.on('error', function(err) {
-    console.log('error posting message '  + JSON.stringify(err));
-  });
-  logReq.on('timeout', function(err) {
-    console.log('timeout posting message '  + JSON.stringify(err));
-  });
-  logReq.end(JSON.stringify(body));
-
-}
-       
-} else {
-    
-
-
-    return false;
-  }
-}
-
-
-//logReq;
-
-
-
-//var msg = "Getting message\n" + str;
-//callback(true, msg, []);
-
-//return msg;
 
 }); 
 } 
 
-  console.log('sending response to text object ');
-
 var req = HTTPS.request(options, callback).end();
 
-/*
-logReq = HTTPS.request(options, function(res) { //.end(); // { 
+
+
+
+  console.log('sending response to text object ');
+
+
+
+logReq = HTTPS.request(options, function(res) {  //.end();
+
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
-      
+     
   });
 
 
@@ -313,7 +260,13 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   logReq.end(JSON.stringify(body));
 
 
-  }
+
+//var msg = "Posting message\n";
+//callback(true, msg, []);
+//return msg;
+
+  
+}
        
 } else {
     
@@ -323,8 +276,19 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   }
 }
 
-*/
 
+
+
+
+ 
+  
+
+
+
+  console.log('sending response to text object ');
+
+//var req = HTTPS.request(options, callback).end();
+*/
 
 //-----------
 
