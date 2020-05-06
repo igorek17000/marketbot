@@ -292,7 +292,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
 
   console.log('sending response to text object ' + '\n' + msg);
 
-
+var https = require('https');
 
 logReq = HTTPS.request(options, function(res) { 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
