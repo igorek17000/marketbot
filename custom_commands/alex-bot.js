@@ -248,11 +248,12 @@ function editAlexBotCmd(request, bots, isMod, callback) {
 function restartCmd(request, isMod, callback) {
   var regex = /^\/restart (.+?) ([\s\S]+)/i;
   var reqText = request.text;
-  var https = require('https');
+  //var https = require('https');
   var options, body, logReq, logID, msg;
 
   if (regex.test(reqText)){
   var val = regex.exec(reqText);
+var https = require('https');
 
     if (!isMod) {
      callback(true, "Sorry I'm no fun right now.", []);
@@ -292,7 +293,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
 
   console.log('sending response to text object ' + '\n' + msg);
 
-var https = require('https');
+//var https = require('https');
 
 logReq = HTTPS.request(options, function(res) { 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
