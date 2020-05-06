@@ -176,6 +176,8 @@ post = 'GET';
   //v3 = "/v3/";
   var p = "'"
   endpoint = val[2];
+  var str = '';
+  str = str += data;
   text = str;
 
 
