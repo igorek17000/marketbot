@@ -261,14 +261,15 @@ var https = require('https');
     }
 
 endpoint = "";
-v3 = ""
+v3 = "";
+post = "";
 if (val[1] == "post") {
-  post = POST;
+  post = "POST";
   v3 = "/v3/";
   endpoint = val[2];
   text = val[3];
 } else if (val[1] == "get") {
-  post = GET;
+  post = "GET";
   v3 = "/v3/";
   endpoint = val[2];
   text = val[3];
