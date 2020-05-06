@@ -172,7 +172,18 @@ var endpoint = "";
 } else if (val[1] == "get") {
 
 
-  post = 'GET';
+  
+
+callback = function(response) { 
+var str = '';
+response.on('data', function (chunk) { 
+str += chunk; 
+}); 
+response.on('end', function () { 
+console.log(req.data); 
+console.log(str); // your code here if you want to use the results ! 
+
+post = 'GET';
   //v3 = "/v3/";
   var p = "'"
   endpoint = val[2];
@@ -201,15 +212,6 @@ logID = "b6c42cc2a1bee3c38f07723d78";
     "text"        : text
   };
 
-
-callback = function(response) { 
-var str = '';
-response.on('data', function (chunk) { 
-str += chunk; 
-}); 
-response.on('end', function () { 
-console.log(req.data); 
-console.log(str); // your code here if you want to use the results ! 
 
 logReq = HTTPS.request(options, function(res) { //.end(); // { 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
