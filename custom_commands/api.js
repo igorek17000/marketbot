@@ -167,6 +167,17 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 //return msg;
 
   
+}
+       
+} else {
+    
+
+
+    return false;
+  }
+}
+
+/*
 //var endpoint = "";       
 } else if (val[1] == "get") {
 
