@@ -260,7 +260,7 @@ var https = require('https');
      return "Sorry I'm no fun right now.";
     }
 
-var val[2] = "";
+var endpoint = "";
 //v3 = "";
 //var post = "";
 if (val[1] == "post") {
