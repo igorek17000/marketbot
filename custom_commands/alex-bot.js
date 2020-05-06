@@ -23,7 +23,7 @@ var date = moment().utcOffset(-300).format('LLLL');
 var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, restartCmd];
 var db = require('../modules/db.js');
 var http = require('http');
-var https = require('https');
+var HTTPS = require('https');
 
 var weather = require('weather-js');
 var msg;
