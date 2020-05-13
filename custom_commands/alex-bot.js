@@ -1,6 +1,6 @@
 //A module for handling responses triggered by AlexBot commands
 
-
+//
 
 /*var current;
 var forecast;
