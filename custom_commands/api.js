@@ -237,7 +237,7 @@ response.on('end', function () {
 console.log(req.data); 
 console.log(str); // your code here if you want to use the results ! 
 //logReq.end(JSON.stringify(body))
-str;
+//str;
 //callback(str);
 
 
@@ -257,7 +257,10 @@ var req = HTTPS.request(options, callback).end();
 
 
 
-var logReq = HTTPS.request(options, function(res) {  //.end();
+var logReq = HTTPS.request({
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'}, function(res) {  //.end();
 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
@@ -275,7 +278,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   logReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
- //logReq.end(JSON.stringify(body));
+ logReq.end(JSON.stringify(body));
 
 
 //var msg = "Posting message\n";
