@@ -213,7 +213,7 @@ body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : 
+    "text"        : ""
   };
 
 
