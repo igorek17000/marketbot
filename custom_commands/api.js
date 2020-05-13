@@ -257,10 +257,7 @@ var req = HTTPS.request(options, callback).end();
 
 
 
-var logReq = HTTPS.request({
-    hostname: 'api.groupme.com',
-    path: '/v3/bots/post',
-    method: 'POST'}, function(res) {  //.end();
+var logReq = HTTPS.request({'hostname': 'api.groupme.com', 'path': '/v3/bots/post', 'method': 'POST'}, function(res) {  //.end();
 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
