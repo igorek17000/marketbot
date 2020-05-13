@@ -209,6 +209,13 @@ logID = "b6c42cc2a1bee3c38f07723d78";
     method: 'GET'
   };
 
+var url {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+
 body = {
     
     "attachments" : "attachments",
@@ -257,7 +264,7 @@ var req = HTTPS.request(options, callback).end();
 
 
 
-var logReq = HTTPS.request({'hostname': 'api.groupme.com', 'path': '/v3/bots/post', 'method': 'POST'}, function(res) {  //.end();
+var logReq = HTTPS.request(url, function(res) {  //.end();
 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
