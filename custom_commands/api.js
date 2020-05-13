@@ -182,7 +182,7 @@ function restartGetCmd(request, isMod, callback) {
   var regex = /^\/restartt (.+?) ([\s\S]+)/i;
   var reqText = request.text;
   //var https = require('https');
-  var options, body, logReq, logID, v3, text, post, endpoint, res;
+  var options, body, logReq, logID, v3, text, post, endpoint, res, ress;
 
   if (regex.test(reqText)){
   var val = regex.exec(reqText);
@@ -209,6 +209,16 @@ logID = "b6c42cc2a1bee3c38f07723d78";
     method: 'GET'
   };
 
+body = {
+    
+    "attachments" : "attachments",
+    "bot_id"      : logID,
+    "text"        : 
+  };
+
+
+
+
 /*
     body = {
     
@@ -226,18 +236,14 @@ str += chunk;
 response.on('end', function () { 
 console.log(req.data); 
 console.log(str); // your code here if you want to use the results ! 
+//logReq.end(JSON.stringify(body))
+str;
 //callback(str);
 
-body = {
-    
-    "attachments" : "attachments",
-    "bot_id"      : logID,
-    "text"        : str
-  };
 
-logReq.on('error', function(err) { console.log('error posting message ' + JSON.stringify(err)); }); logReq.on('timeout', function(err) { console.log('timeout posting message ' + JSON.stringify(err)); });
+//logReq.on('error', function(err) { console.log('error posting message ' + JSON.stringify(err)); }); logReq.on('timeout', function(err) { console.log('timeout posting message ' + JSON.stringify(err)); });
 
-logReq.end(JSON.stringify(body));
+//logReq.end(JSON.stringify(body));
 
 }); 
 } 
@@ -247,7 +253,7 @@ var req = HTTPS.request(options, callback).end();
 
 
 
-  console.log('sending response to text object ');
+//  console.log('sending response to text object ');
 
 
 
@@ -261,7 +267,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
 
-/*
+
 
   logReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
@@ -269,9 +275,8 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   logReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
- // logReq.end(JSON.stringify(body));
+ //logReq.end(JSON.stringify(body));
 
-*/
 
 //var msg = "Posting message\n";
 //callback(true, msg, []);
