@@ -209,7 +209,7 @@ logID = "b6c42cc2a1bee3c38f07723d78";
     method: 'GET'
   };
 
-var url {
+var url = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
     method: 'POST'
@@ -231,7 +231,7 @@ body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID
-    //"text"        : text
+    //"text"        : response
   };
 */
 
