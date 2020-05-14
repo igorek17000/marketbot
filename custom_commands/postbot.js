@@ -32,7 +32,7 @@ body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : msg
+    "text"        : "response"
   };
 
 var json = JSON.stringify(body);
@@ -53,7 +53,7 @@ var body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : msg
+    "text"        : "response"
   };
 
 response.on('data', function (chunk) { 
@@ -107,7 +107,7 @@ var req = HTTPS.request(options, callback).end();
     
     "attachments" : "attachments",
     "bot_id"      : logID, 
-    "text"        : msg
+    "text"        : "response"
   };
 
 */
