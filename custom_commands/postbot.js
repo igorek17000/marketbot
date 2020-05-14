@@ -7,6 +7,7 @@ exports.modName = "Post module";
 logID = "b6c42cc2a1bee3c38f07723d78";
 var str = '';
 var response;
+var json = JSON.stringify(body);
 
 var msg = [];
 msg = msg += response;
@@ -61,7 +62,7 @@ console.log(req.data);
 console.log(str); // your code here if you want to use the results ! 
 var logReq = HTTPS.request(url, function(res) { 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
-var json = JSON.stringify(body);
+
       //if (res.statusCode == 200) || (res.statusCode == 202) {
         //neat
 //} else {
@@ -81,7 +82,7 @@ var json = JSON.stringify(body);
   });
 
 
-  var timeo = logReq.end(JSON.stringify(body));
+  var timeo = logReq.end(json);
 
 setTimeout(function () {
 timeo;
