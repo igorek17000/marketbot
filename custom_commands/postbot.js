@@ -10,9 +10,9 @@ var response = [];
 
 
 
-var msg = [];
-msg = msg += response;
-msg : response;
+var msg;
+msg = response;
+msg : msg;
 
 
 options = {
