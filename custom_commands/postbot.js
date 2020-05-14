@@ -12,6 +12,8 @@ var response;
 
 var msg = [];
 msg = msg += response;
+response : response;
+msg : msg;
 
 
 options = {
