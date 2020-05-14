@@ -420,7 +420,7 @@ return msg;
 
 
 function retartCmd(request, isMod, callback) {
-  var regex = /^\/restart/i;
+  var regex = /^\/retart/i;
   var reqText = request.text;
   if (regex.test(reqText)){
     if (!isMod) {
