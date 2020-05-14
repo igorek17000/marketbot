@@ -80,10 +80,11 @@ var json = JSON.stringify(body);
   });
 
 
-  function timeo() { 
-logReq.end(JSON.stringify(body));
-}
-setTimeout(timeo, 3000);
+  var timeo = logReq.end(JSON.stringify(body));
+
+setTimeout(function () {
+timeo;
+}, 3000);
 
 }); 
 } 
