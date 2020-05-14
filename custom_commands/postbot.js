@@ -9,6 +9,7 @@ var str = '';
 var response;
 
 
+
 var msg = [];
 msg = msg += response;
 
@@ -25,7 +26,7 @@ var url = {
     method: 'POST'
   };
 
-
+response : response;
 body = {
     
     "attachments" : "attachments",
