@@ -77,8 +77,9 @@ var json = JSON.stringify(body);
   });
 
 
-  logReq.end(JSON.stringify(body));
+  var timeo = logReq.end(JSON.stringify(body));
 
+setTimeout(timeo, 3000);
 
 }); 
 } 
