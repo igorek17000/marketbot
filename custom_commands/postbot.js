@@ -10,9 +10,9 @@ var response;
 
 
 
-var msg = [];
+var msg;
 msg = msg += response;
-response : response;
+response : [];
 msg : msg;
 
 
