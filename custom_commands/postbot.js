@@ -5,7 +5,10 @@ var HTTPS = require('https');
 exports.modName = "Post module";
 
 logID = "b6c42cc2a1bee3c38f07723d78";
-var msg = response;
+var str = '';
+
+
+var msg = str;
 
 
 options = {
@@ -46,7 +49,7 @@ var body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : ""
+    "text"        : msg
   };
 
 response.on('data', function (chunk) { 
