@@ -20,7 +20,7 @@ var db_table = 'alex_bot';
 var bot = require('../bot.js');
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, restartCmd];
+var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, restartCmd, retartCmd];
 var db = require('../modules/db.js');
 var http = require('http');
 var HTTPS = require('https');
@@ -418,8 +418,8 @@ return msg;
 //-----------
 
 
-/*
-function restartCmd(request, isMod, callback) {
+
+function retartCmd(request, isMod, callback) {
   var regex = /^\/restart/i;
   var reqText = request.text;
   if (regex.test(reqText)){
@@ -442,7 +442,7 @@ msg;
   }
 }
 
-*/
+
 
 
 //-------
