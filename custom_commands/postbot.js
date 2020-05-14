@@ -27,12 +27,12 @@ var url = {
     method: 'POST'
   };
 
-response : response;
+//response : response;
 body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : "response"
+    "text"        : response
   };
 
 var json = JSON.stringify(body);
@@ -53,7 +53,7 @@ var body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : "response"
+    "text"        : response
   };
 
 response.on('data', function (chunk) { 
