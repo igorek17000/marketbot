@@ -32,7 +32,7 @@ body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : response
+    "text"        : msg
   };
 
 var json = JSON.stringify(body);
@@ -53,7 +53,7 @@ var body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : response
+    "text"        : msg
   };
 
 response.on('data', function (chunk) { 
