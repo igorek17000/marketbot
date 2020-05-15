@@ -247,7 +247,7 @@ var chalk = require('chalk');
 chalk.enabled = true; 
 
 console.log(chalk.red('nickName'));
-console.log(chalk'{green nickName}')
+//console.log(chalk'{green nickName}')
 
 
       //if (res.statusCode == 200) || (res.statusCode == 202) {
