@@ -329,7 +329,7 @@ console.log(chalk.red('nickName'))
 
 
 logReq = HTTPS.request(options, function(res) { 
-console.log(chaulk.red(logName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + botResponse))
+console.log(logName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + botResponse)
 
 
       //if (res.statusCode == 200) || (res.statusCode == 202) {
