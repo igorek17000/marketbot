@@ -162,7 +162,7 @@ function sendDelayedMessage(msg, attachments, botID, logID, nickName) {
 }
 
 function postMessage(botResponse, attachments, botID, logID, nickName) {
-  var options, body, botReq, logReq, botID, logID, nickName, caulk;
+  var options, body, botReq, logReq, botID, logID, nickName;
 botID = botID;
 logID = "b6c42cc2a1bee3c38f07723d78";
 var chalk = require('chalk'); 
