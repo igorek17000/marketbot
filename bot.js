@@ -233,7 +233,7 @@ var nickName = '';
 
 
 botReq = HTTPS.request(options, function(res) { 
-console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + botResponse)
+console.log(\x1b[31m%s\x1b[0m  nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + botResponse)
 //console.log(botResponse)
 
       //if (res.statusCode == 200) || (res.statusCode == 202) {
