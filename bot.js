@@ -156,8 +156,6 @@ function sendDelayedMessage(msg, attachments, botID, logID, nickName) {
   setTimeout(function() {
     postMessage(msg, attachments, botID, logID, nickName);
    // logMessage(msg, attachments, logID, logName);
-var chalk = require('chalk'); 
-chalk.enabled = true;
 
   }, config.delay_time);
 }
@@ -246,7 +244,7 @@ botReq = HTTPS.request(options, function(res) {
 var chalk = require('chalk'); 
 chalk.enabled = true; 
 
-console.log(chalk.red('nickName'));
+console.log(chalk.red('%s'), nickName);
 //console.log(chalk'{green nickName}')
 
 
