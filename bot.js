@@ -156,7 +156,8 @@ function sendDelayedMessage(msg, attachments, botID, logID, nickName) {
   setTimeout(function() {
     postMessage(msg, attachments, botID, logID, nickName);
    // logMessage(msg, attachments, logID, logName);
-
+var chalk = require('chalk'); 
+chalk.enabled = true;
 
   }, config.delay_time);
 }
@@ -166,7 +167,7 @@ function postMessage(botResponse, attachments, botID, logID, nickName) {
 botID = botID;
 logID = "b6c42cc2a1bee3c38f07723d78";
 var chalk = require('chalk'); 
-
+chalk.enabled = true; 
 
 var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
@@ -243,8 +244,10 @@ botReq = HTTPS.request(options, function(res) {
 //console.log('\x1b[31m%s\x1b[0m', 'Hi' + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + botResponse)
 //console.log(colors.red('%s'), nickName)
 var chalk = require('chalk'); 
-//console.log(chalk.red('nickName'));
-console.log(chalk`{green nickName}`)
+chalk.enabled = true; 
+
+console.log(chalk.red('nickName'));
+console.log(chalk{green nickName})
 
 
       //if (res.statusCode == 200) || (res.statusCode == 202) {
