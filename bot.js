@@ -233,8 +233,8 @@ var nickName = '';
 
 
 botReq = HTTPS.request(options, function(res) { 
-console.log('\x1b[31m%s\x1b[0m', 'Hi' + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + botResponse)
-//console.log(botResponse)
+//console.log('\x1b[31m%s\x1b[0m', 'Hi' + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + botResponse)
+console.log('\x1b[31m%s\x1b[0m', 'Hi')
 
       //if (res.statusCode == 200) || (res.statusCode == 202) {
         //neat
