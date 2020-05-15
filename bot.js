@@ -38,6 +38,12 @@ var express = require('express');
 var nodemailer = require('nodemailer'); 
 app = express(); 
 var weather = require('weather-js');
+var colors = require('colors/safe');
+
+ 
+
+
+
 /* var db_table = 'rooms';
 
 
