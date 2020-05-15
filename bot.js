@@ -228,13 +228,13 @@ var nickName = '';
 
 
 
-  console.log('sending response to ' + nickName + '\n' + botResponse);
+  //console.log('sending response to ' + nickName + '\n' + botResponse);
 
 
 
 botReq = HTTPS.request(options, function(res) { 
-console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
-
+console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + botResponse)
+//console.log(botResponse)
 
       //if (res.statusCode == 200) || (res.statusCode == 202) {
         //neat
@@ -313,12 +313,12 @@ console.log(nickName + ' Status: ' + res.statusMessage + ' Status code: ' + res.
              logName = logID;
            }
 
-  console.log('sending response to ' + logName + '\n' + botResponse);
+ // console.log('sending response to ' + logName + '\n' + botResponse);
 
 
 
 logReq = HTTPS.request(options, function(res) { 
-console.log(logName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
+console.log(logName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + botResponse)
 
 
       //if (res.statusCode == 200) || (res.statusCode == 202) {
