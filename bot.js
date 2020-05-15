@@ -243,7 +243,7 @@ botReq = HTTPS.request(options, function(res) {
 //console.log('\x1b[31m%s\x1b[0m', 'Hi' + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + botResponse)
 //console.log(colors.red('%s'), nickName)
 var chalk = require('chalk'); 
-console.log(chalk.red('nickName'))
+console.log(chalk.red('nickName'));
 
 
 
