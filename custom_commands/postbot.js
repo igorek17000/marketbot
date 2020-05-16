@@ -6,7 +6,7 @@ exports.modName = "Post module";
 
 logID = "b6c42cc2a1bee3c38f07723d78";
 var str = '';
-var response = "";
+var response;
 
 
 
@@ -65,9 +65,10 @@ console.log(str); // your code here if you want to use the results !
 });
 }
 
-var callbackLog = function(res, logReq) { 
+var callbackLog = function(res) { 
 str = '';
 var json = JSON.stringify(body);
+var response = [];
 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
