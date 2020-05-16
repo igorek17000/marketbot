@@ -10,9 +10,9 @@ var str = '';
 
 
 
-var msg;
+var str;
 //msg = response;
-msg : str;
+str : str;
 
 
 options = {
@@ -32,7 +32,7 @@ body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : msg
+    "text"        : str
   };
 
 var json = JSON.stringify(body);
@@ -53,7 +53,7 @@ var body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : msg
+    "text"        : str
   };
 
 response.on('data', function (chunk) { 
@@ -83,7 +83,7 @@ str += chunk;
   });
   res.on('end', function () {
 logReq.data;
-logReq.str;
+logReq.json;
  
  
 
@@ -117,7 +117,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 } 
 
 
-var logReq = HTTPS.request(url, callbackLog).end(json);
+var logReq = HTTPS.request(url, callbackLog).end();
 
 var req = HTTPS.request(options, callback).end();
 
