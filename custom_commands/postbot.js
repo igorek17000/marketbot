@@ -6,12 +6,12 @@ exports.modName = "Post module";
 
 logID = "b6c42cc2a1bee3c38f07723d78";
 var str = '';
-var response;
+var response = '';
 
-
+var json = JSON.stringify(response);
 
 //var str;
-var message = str;
+var message = json;
 message : message;
 
 
@@ -27,22 +27,22 @@ var url = {
     method: 'POST'
   };
 
-var message = str;
+var message = json;
 message : message;
 body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : message 
+    "text"        : message.name
   };
 
-var json = JSON.stringify(body);
+var json = JSON.stringify(response);
 
 
 
 callback = function(response) { 
 var str = '';
-var message = str;
+var message = json;
 message : message;
 var url = {
     hostname: 'api.groupme.com',
@@ -55,7 +55,7 @@ var body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : message
+    "text"        : message.name
   };
 
 response.on('data', function (chunk) { 
