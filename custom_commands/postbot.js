@@ -61,7 +61,31 @@ str += chunk;
 }); 
 response.on('end', function () { 
 console.log(req.data); 
-console.log(str); // your code here if you want to use the results ! 
+console.log(str); // your code here if you want to use the results !
+
+var callbackLog = function(res) { 
+str = '';
+
+console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
+
+res.on('data', function(chunk) {
+str += chunk;
+ });
+
+
+      res.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  res.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+  res.on('end', function();
+  });
+
+
+ 
+
+/*
 var logReq = HTTPS.request(url, function(res) { 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
@@ -71,6 +95,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
         //console.log('rejecting bad status code ' + res.statusCode);
       //}
   });
+*/
 
 
 
@@ -88,6 +113,9 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 }); 
 } 
+
+
+var logReq = HTTPS.request(url, callbackLog).end(body);
 
 var req = HTTPS.request(options, callback).end();
 
