@@ -6,13 +6,13 @@ exports.modName = "Post module";
 
 logID = "b6c42cc2a1bee3c38f07723d78";
 var str = '';
-//var response = "";
+var response = "";
 
 
 
 //var str;
 //msg = response;
-str : str;
+response : response;
 
 
 options = {
