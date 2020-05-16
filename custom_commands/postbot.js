@@ -27,12 +27,13 @@ var url = {
     method: 'POST'
   };
 
-//response : response;
+var message = {};
+message : response;
 body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : req.response + str
+    "text"        : message 
   };
 
 var json = JSON.stringify(body);
@@ -41,7 +42,8 @@ var json = JSON.stringify(body);
 
 callback = function(response) { 
 var str = '';
-
+var message = {};
+message : response;
 var url = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
@@ -53,7 +55,7 @@ var body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : req.response + str
+    "text"        : message
   };
 
 response.on('data', function (chunk) { 
