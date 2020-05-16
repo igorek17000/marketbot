@@ -11,7 +11,7 @@ var response;
 
 
 //var str;
-var message = str += chunk;
+var message = str;
 message : message;
 
 
@@ -27,7 +27,7 @@ var url = {
     method: 'POST'
   };
 
-var message = str += chunk;
+var message = str;
 message : message;
 body = {
     
@@ -42,7 +42,7 @@ var json = JSON.stringify(body);
 
 callback = function(response) { 
 var str = '';
-var message = str += chunk;
+var message = str;
 message : message;
 var url = {
     hostname: 'api.groupme.com',
