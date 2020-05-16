@@ -77,7 +77,7 @@ console.log(str)
 
 
 
-
+/*
 
 
   logReq.on('error', function(err) {
@@ -86,6 +86,8 @@ console.log(str)
   logReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
+*/
+
   logReq.end(JSON.stringify(body));
 
 
