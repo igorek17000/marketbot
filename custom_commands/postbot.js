@@ -84,8 +84,8 @@ str += chunk;
     console.log('timeout posting message '  + JSON.stringify(err));
   });
 */
-  res.on('end', logReq) {
-//HTTPS.request(url, callbackLog).end();
+  res.end(logReq(json) 
+
 
 
 //logReq;
@@ -120,7 +120,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   
 */
 }); 
-HTTPS.request(url, callbackLog).end(json);
+//HTTPS.request(url, callbackLog).end(json);
       //logReq(json));
 } 
 
