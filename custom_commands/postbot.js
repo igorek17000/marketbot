@@ -83,7 +83,7 @@ str += chunk;
   });
   res.on('end', function () {
 logReq.data;
-logReq.str
+logReq.str;
  
  
 
@@ -117,7 +117,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 } 
 
 
-var logReq = HTTPS.request(url, callbackLog).end(body);
+var logReq = HTTPS.request(url, callbackLog).end(json);
 
 var req = HTTPS.request(options, callback).end();
 
