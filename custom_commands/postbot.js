@@ -84,7 +84,7 @@ str += chunk;
     console.log('timeout posting message '  + JSON.stringify(err));
   });
 */
-  res.on('end', function(res){
+  res.on('end', logReq {
 //HTTPS.request(url, callbackLog).end();
 
 
