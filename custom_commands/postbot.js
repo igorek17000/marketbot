@@ -72,11 +72,11 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
         //console.log('rejecting bad status code ' + res.statusCode);
       //}
   });
-*/
 
 
 
-/*
+
+
 
   logReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
@@ -88,7 +88,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
 
-}
+
 /*
 var callbackLog = function(res) { 
 str = '';
