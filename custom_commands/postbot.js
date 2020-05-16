@@ -10,7 +10,7 @@ var str = '';
 
 
 
-var str;
+//var str;
 //msg = response;
 str : str;
 
@@ -65,7 +65,7 @@ console.log(str); // your code here if you want to use the results !
 });
 }
 
-var callbackLog = function(res) { 
+var callbackLog = function(err, res, logReq) { 
 str = '';
 var json = JSON.stringify(body);
 
