@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
+    "start": "env -i node chalk.js --color"
   },
   "dependencies": {
     "concat": "^1.0.3",
