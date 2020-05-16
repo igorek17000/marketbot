@@ -4,6 +4,9 @@ var fun_mode = true;
 var sysCommands = [dateCmd, weatherCurrentCmd, weatherForecastCmd, funCmd, noFunCmd, idCmd, aboutCmd, eemailCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd];
 var { stdin, stdout } = process;
 //var weather = require('./toronto');
+var chalk = require('chalk'); 
+chalk.enabled = true; 
+
 
 exports.modName = "System Commands";
 
@@ -25,7 +28,7 @@ exports.fun_mode = function(){
   return fun_mode;
 }
 
-exports.getCmdListDescription = function () {
+exports.getmdListDescription = function () {
   return [
     {cmd: "/date", desc: "Current date"},
     {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
