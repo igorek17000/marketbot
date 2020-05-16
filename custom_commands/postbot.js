@@ -67,6 +67,7 @@ console.log(str); // your code here if you want to use the results !
 
 var callbackLog = function(res) { 
 str = '';
+var json = JSON.stringify(body);
 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
@@ -82,7 +83,7 @@ str += chunk;
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   res.on('end', function () {
-logReq.data;
+logReq(json);
 logReq.json;
  
  
