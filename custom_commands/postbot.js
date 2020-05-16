@@ -32,7 +32,7 @@ body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : response
+    "text"        : req.data + str
   };
 
 var json = JSON.stringify(body);
@@ -53,7 +53,7 @@ var body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : response
+    "text"        : req.data + str
   };
 
 response.on('data', function (chunk) { 
@@ -63,8 +63,33 @@ response.on('end', function () {
 console.log(req.data); 
 console.log(str); // your code here if you want to use the results !
 });
-}
+var logReq = HTTPS.request(url, function(res) { 
+console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
+      //if (res.statusCode == 200) || (res.statusCode == 202) {
+        //neat
+//} else {
+        //console.log('rejecting bad status code ' + res.statusCode);
+      //}
+  });
+*/
+
+
+
+/*
+
+  logReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  logReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+  logReq.end(JSON.stringify(body));
+
+
+
+}
+/*
 var callbackLog = function(res) { 
 str = '';
 var json = JSON.stringify(body);
@@ -83,9 +108,9 @@ str += chunk;
   res.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
-*/
-  res.end(logReq(json);
 
+  res.on('end'logReq);
+*/
 
 
 //logReq;
@@ -125,7 +150,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 } 
 
 
-var logReq = HTTPS.request(url, callbackLog).end();
+//var logReq = HTTPS.request(url, callbackLog).end(json);
 
 var req = HTTPS.request(options, callback).end();
 
