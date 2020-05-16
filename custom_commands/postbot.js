@@ -68,7 +68,7 @@ console.log(str); // your code here if you want to use the results !
 var callbackLog = function(res) { 
 str = '';
 var json = JSON.stringify(body);
-var response = [];
+response : response;
 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
@@ -88,7 +88,7 @@ str += chunk;
 //HTTPS.request(url, callbackLog).end();
 
 
-logReq;
+//logReq;
 //logReq.json;
  
  
@@ -120,10 +120,11 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   
 */
 }); 
+logReq(json);
 } 
 
 
-var logReq = HTTPS.request(url, callbackLog).end(json);
+var logReq = HTTPS.request(url, callbackLog).end();
 
 var req = HTTPS.request(options, callback).end();
 
