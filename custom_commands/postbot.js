@@ -84,7 +84,7 @@ str += chunk;
     console.log('timeout posting message '  + JSON.stringify(err));
   });
 */
-  res.end(logReq(json) 
+  res.end(logReq(json);
 
 
 
