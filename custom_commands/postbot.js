@@ -53,7 +53,7 @@ var body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : req(data) + str
+    "text"        : req.response + str
   };
 
 response.on('data', function (chunk) { 
