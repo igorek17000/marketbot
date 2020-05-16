@@ -62,6 +62,8 @@ str += chunk;
 response.on('end', function () { 
 console.log(req.data); 
 console.log(str); // your code here if you want to use the results !
+});
+}
 
 var callbackLog = function(res) { 
 str = '';
@@ -79,10 +81,10 @@ str += chunk;
   res.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
-  res.on('end', function();
-  });
-
-
+  res.on('end', function () {
+logReq.data;
+logReq.str
+ 
  
 
 /*
@@ -99,7 +101,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
 
 
-
+/*
 
   logReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
@@ -110,7 +112,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   logReq.end(JSON.stringify(body));
 
   
-
+*/
 }); 
 } 
 
