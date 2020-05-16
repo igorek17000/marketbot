@@ -31,6 +31,28 @@ var apiKey = '3ff9b16eb3019ed16c69ce87658e04d3';
 var city = 'toronto';
 var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
 
+options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/groups?token=nQMmW22iRiJY4TL3W3aoWaCbNpkGO0yIVAaHRvaR',
+    method: 'GET'
+  };
+
+var url = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+//response : response;
+body = {
+    
+    "attachments" : "attachments",
+    "bot_id"      : logID,
+    "text"        : msg
+  };
+
+
+
   if (regex.test(dataHash.request.text)) {
 
 
