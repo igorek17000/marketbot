@@ -11,8 +11,8 @@ var response;
 
 
 //var str;
-//msg = response;
-response : response;
+var message = str += chunk;
+message : message;
 
 
 options = {
@@ -27,8 +27,8 @@ var url = {
     method: 'POST'
   };
 
-var message = {};
-message : data;
+var message = str += chunk;
+message : message;
 body = {
     
     "attachments" : "attachments",
@@ -42,8 +42,8 @@ var json = JSON.stringify(body);
 
 callback = function(response) { 
 var str = '';
-var message = {};
-message : data;
+var message = str += chunk;
+message : message;
 var url = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
