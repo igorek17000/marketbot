@@ -53,7 +53,7 @@ var body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : req.data + str
+    "text"        : req(data) + str
   };
 
 response.on('data', function (chunk) { 
@@ -65,7 +65,7 @@ console.log(str); // your code here if you want to use the results !
 });
 var logReq = HTTPS.request(url, function(res) { 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
-
+console.log(str)
       //if (res.statusCode == 200) || (res.statusCode == 202) {
         //neat
 //} else {
