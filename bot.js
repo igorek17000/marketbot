@@ -249,7 +249,7 @@ botReq = HTTPS.request(options, function(res) {
 var chalk = require('chalk'); 
 
 var nN = chalk.red;
-console.log(nN(nickName))
+console.log('Hello'.green) //(nickName))
 
 
 //chalk.enabled = true; 
