@@ -65,7 +65,7 @@ console.log(str); // your code here if you want to use the results !
 });
 }
 
-var callbackLog = function(err, res, logReq) { 
+var callbackLog = function(res, logReq) { 
 str = '';
 var json = JSON.stringify(body);
 
@@ -76,12 +76,13 @@ str += chunk;
  });
 
 
-      res.on('error', function(err) {
+    /*  res.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
   });
   res.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
+*/
   res.on('end', function () {
 logReq(json);
 logReq.json;
