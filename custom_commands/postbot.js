@@ -32,7 +32,7 @@ body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : req.data + str
+    "text"        : req.response + str
   };
 
 var json = JSON.stringify(body);
