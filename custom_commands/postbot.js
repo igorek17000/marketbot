@@ -28,7 +28,7 @@ var url = {
   };
 
 var message = {};
-message = response;
+message : data;
 body = {
     
     "attachments" : "attachments",
@@ -43,7 +43,7 @@ var json = JSON.stringify(body);
 callback = function(response) { 
 var str = '';
 var message = {};
-message = response;
+message : data;
 var url = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
