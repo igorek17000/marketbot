@@ -44,7 +44,7 @@ var chalk = require('chalk');
 var chalk = require('chalk'); 
 var error = chalk.bold.red; 
 var warning = chalk.keyword('orange'); 
-var nickName = chalk.red;
+var nN = chalk.red;
 console.log(error('Error!')); 
 console.log(warning('Warning!'));
 
@@ -170,7 +170,8 @@ function postMessage(botResponse, attachments, botID, logID, nickName) {
 botID = botID;
 logID = "b6c42cc2a1bee3c38f07723d78";
 var chalk = require('chalk'); 
-chalk.enabled = true; 
+//chalk.enabled = true; 
+var nN = chalk.red;
 
 var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
@@ -245,8 +246,12 @@ var nickName = '';
 
 botReq = HTTPS.request(options, function(res) { 
 //console.log('\x1b[31m%s\x1b[0m', 'Hi' + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + botResponse)
-console.log(nickName(nickName))
 var chalk = require('chalk'); 
+
+var nN = chalk.red;
+console.log(nN(nickName))
+
+
 //chalk.enabled = true; 
 
 console.log(chalk.red('%s'), nickName);
