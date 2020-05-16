@@ -139,7 +139,7 @@ var req = HTTPS.request(options, callback).end();
 */
 
 
-  console.log('sending response to text object ' + '\n' + msg);
+  console.log('sending response to text object ' + '\n' + str);
 
 
 
