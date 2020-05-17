@@ -185,7 +185,7 @@ logReq.end(JSON.stringify(body))
 */
 
 
-  console.log('sending response to text object ' + '\n' + resultJSON);
+  console.log('sending response to text object ' + '\n' + result);
 
 
 
