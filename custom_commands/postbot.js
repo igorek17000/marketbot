@@ -107,7 +107,13 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   });
 */
 
-  logReq.end(JSON.stringify(body));
+setTimeout(function() { 
+logReq.end(JSON.stringify(body))
+
+
+}, 1000);
+
+  //logReq.end(JSON.stringify(body));
 
 
 
