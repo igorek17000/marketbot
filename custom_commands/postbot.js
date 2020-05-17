@@ -11,9 +11,7 @@ var data;
 var json = JSON.stringify(data);
 
 //var str;
-var message = json;
-message = {}
-message : response;
+var result = [];
 
 
 options = {
@@ -27,40 +25,23 @@ var url = {
     path: '/v3/bots/post',
     method: 'POST'
   };
-/*
-var message = json;
-message : message;
-*/
-var json = JSON.stringify(data);
 
-var message = json;
-message = {}
-message : response;
+var result = [];
 
 
 body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : response
+    "text"        : resultJSON
   };
 
-//var json = JSON.stringify(response);
-var json = JSON.stringify(data);
-var response;
-
-var message = json;
-message = {}
-message : response;
+var result = [];
 
 
 callback = function(response) { 
 var str = '';
-var json = JSON.stringify(data);
-//var response;
-var message = json;
-message = {};
-message : response;
+var result = [];
 
 
 var url = {
@@ -74,7 +55,7 @@ var body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : response
+    "text"        : resultJSON
   };
 
 response.on('data', function (chunk) { 
@@ -154,7 +135,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 var req = HTTPS.request(options, callback).end();
 
 
-var logReq = HTTPS.request(url, function(res) { 
+var logReq = HTTPS.request(url, function(res, resultJSON) { 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 //console.log(str)
       //if (res.statusCode == 200) || (res.statusCode == 202) {
@@ -204,7 +185,7 @@ logReq.end(JSON.stringify(body))
 */
 
 
-  console.log('sending response to text object ' + '\n' + str);
+  console.log('sending response to text object ' + '\n' + resultJSON);
 
 
 
