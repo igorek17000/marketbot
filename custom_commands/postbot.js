@@ -27,7 +27,7 @@ var url = {
     path: '/v3/bots/post',
     method: 'POST'
   };
-\*
+/*
 var message = json;
 message : message;
 */
