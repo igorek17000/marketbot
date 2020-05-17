@@ -31,7 +31,7 @@ var url = {
 var message = json;
 message : message;
 */
-var json = JSON.stringify(response);
+var json = JSON.stringify(data);
 
 var message = json;
 message = {}
@@ -56,7 +56,7 @@ message : response;
 
 callback = function(response) { 
 var str = '';
-var json = JSON.stringify(response);
+var json = JSON.stringify(data);
 //var response;
 var message = json;
 message = {};
