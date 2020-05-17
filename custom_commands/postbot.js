@@ -42,7 +42,7 @@ body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : message
+    "text"        : response
   };
 
 //var json = JSON.stringify(response);
@@ -74,7 +74,7 @@ var body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : response.id
+    "text"        : response
   };
 
 response.on('data', function (chunk) { 
@@ -84,36 +84,6 @@ response.on('end', function () {
 console.log(req.data); 
 console.log(str); // your code here if you want to use the results !
 });
-var logReq = HTTPS.request(url, function(res) { 
-console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
-//console.log(str)
-      //if (res.statusCode == 200) || (res.statusCode == 202) {
-        //neat
-//} else {
-        //console.log('rejecting bad status code ' + res.statusCode);
-      //}
-  });
-
-
-
-/*
-
-
-  logReq.on('error', function(err) {
-    console.log('error posting message '  + JSON.stringify(err));
-  });
-  logReq.on('timeout', function(err) {
-    console.log('timeout posting message '  + JSON.stringify(err));
-  });
-*/
-
-setTimeout(function() { 
-logReq.end(JSON.stringify(body))
-
-
-}, 1000);
-
-  //logReq.end(JSON.stringify(body));
 
 
 
@@ -182,6 +152,39 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 //var logReq = HTTPS.request(url, callbackLog).end(json);
 
 var req = HTTPS.request(options, callback).end();
+
+
+var logReq = HTTPS.request(url, function(res) { 
+console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
+//console.log(str)
+      //if (res.statusCode == 200) || (res.statusCode == 202) {
+        //neat
+//} else {
+        //console.log('rejecting bad status code ' + res.statusCode);
+      //}
+  });
+
+
+
+/*
+
+
+  logReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  logReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+*/
+
+setTimeout(function() { 
+logReq.end(JSON.stringify(body))
+
+
+}, 1000);
+
+  //logReq.end(JSON.stringify(body));
+
 
 /*
     options = {
