@@ -158,11 +158,10 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   });
 */
 
-setTimeout(function() { 
+
 logReq.end(JSON.stringify(body))
 
 
-}, 1000);
 
   //logReq.end(JSON.stringify(body));
 
