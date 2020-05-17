@@ -135,7 +135,7 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 var req = HTTPS.request(options, callback).end();
 
 
-var logReq = HTTPS.request(url, function(res, resultJSON) { 
+var logReq = HTTPS.request(url, function(res, result) { 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 //console.log(str)
       //if (res.statusCode == 200) || (res.statusCode == 202) {
