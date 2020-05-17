@@ -6,13 +6,14 @@ exports.modName = "Post module";
 
 logID = "b6c42cc2a1bee3c38f07723d78";
 var str = '';
-var response = '';
+var response;
 
-var json = JSON.stringify(response);
+var json = JSON.stringify(data);
 
 //var str;
 var message = json;
-message : message;
+message = {}
+message : response;
 
 
 options = {
@@ -26,24 +27,42 @@ var url = {
     path: '/v3/bots/post',
     method: 'POST'
   };
-
+\*
 var message = json;
 message : message;
+*/
+var json = JSON.stringify(response);
+
+var message = json;
+message = {}
+message : response;
+
+
 body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : message.name
+    "text"        : message
   };
 
-var json = JSON.stringify(response);
+//var json = JSON.stringify(response);
+var json = JSON.stringify(data);
+var response;
 
+var message = json;
+message = {}
+message : response;
 
 
 callback = function(response) { 
 var str = '';
+var json = JSON.stringify(response);
+//var response;
 var message = json;
-message : message;
+message = {};
+message : response;
+
+
 var url = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
@@ -55,7 +74,7 @@ var body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : message.name
+    "text"        : message
   };
 
 response.on('data', function (chunk) { 
@@ -67,7 +86,7 @@ console.log(str); // your code here if you want to use the results !
 });
 var logReq = HTTPS.request(url, function(res) { 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
-console.log(str)
+//console.log(str)
       //if (res.statusCode == 200) || (res.statusCode == 202) {
         //neat
 //} else {
