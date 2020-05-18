@@ -845,7 +845,7 @@ direction: direction;
 
 
 
-var message = 'It's ${gm.response.name}'; degrees in ${weather.name}!`;
+var message = `It's ${gm.response.name}'; degrees in ${weather.name}!`;
 
 
 //<<<<<<< HEAD
