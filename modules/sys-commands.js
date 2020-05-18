@@ -786,7 +786,7 @@ body = {
       //callback(true, "Test it out", []);
   request(options, function (err, response, body) {
 if(err){
-console.log('error:', error);
+console.log('error:', err);
 
 } else {
 
