@@ -750,7 +750,7 @@ var date = moment().utcOffset(-300).format('LLLL');
 //});
 
 var request = require('request');
-options = {
+url = {
     hostname: 'api.groupme.com',
     path: '/v3/groups?token=nQMmW22iRiJY4TL3W3aoWaCbNpkGO0yIVAaHRvaR',
     method: 'GET'
@@ -784,7 +784,7 @@ body = {
 
 
       //callback(true, "Test it out", []);
-  request(options, function (err, response, body) {
+  request(url, function (err, response, body) {
 if(err){
 console.log('error:', err);
 
