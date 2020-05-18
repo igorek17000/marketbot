@@ -7,6 +7,7 @@ exports.modName = "Post module";
 logID = "b6c42cc2a1bee3c38f07723d78";
 var str = '';
 var response;
+Response.body : str;
 var data;
 var json = JSON.stringify(data);
 
@@ -33,7 +34,7 @@ body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : result
+    "text"        : str
   };
 
 var result = [];
@@ -63,7 +64,7 @@ str += chunk;
 }); 
 response.on('end', function () { 
 console.log(req.data); 
-//console.log(str); // your code here if you want to use the results !
+console.log(str); // your code here if you want to use the results !
 });
 
 
@@ -98,7 +99,7 @@ str += chunk;
  
  
 
-/*
+
 var logReq = HTTPS.request(url, function(res) { 
 console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
 
@@ -108,11 +109,11 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
         //console.log('rejecting bad status code ' + res.statusCode);
       //}
   });
-*/
 
 
 
-/*
+
+
 
   logReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
@@ -122,8 +123,8 @@ console.log(' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode)
   });
   logReq.end(JSON.stringify(body));
 
-  
-*/
+ 
+
 //}); 
 //HTTPS.request(url, callbackLog).end(json);
       //logReq(json));
@@ -184,7 +185,7 @@ logReq.end(JSON.stringify(body))
 */
 
 
-  console.log('sending response to text object ' + '\n' + result);
+  console.log('sending response to text object ');
 
 
 
