@@ -7,7 +7,7 @@ exports.modName = "Post module";
 logID = "b6c42cc2a1bee3c38f07723d78";
 var str = '';
 var response;
-str = str += chunk;
+str : str;
 Response.body = str;
 var data;
 var json = JSON.stringify(data);
@@ -35,7 +35,7 @@ body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : str
+    "text"        : callback
   };
 
 var result = [];
@@ -57,7 +57,7 @@ var body = {
     
     "attachments" : "attachments",
     "bot_id"      : logID,
-    "text"        : str
+    "text"        : callback
   };
 
 response.on('data', function (chunk) { 
