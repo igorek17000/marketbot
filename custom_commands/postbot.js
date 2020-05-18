@@ -14,7 +14,7 @@ var json = JSON.stringify(data);
 
 //var str;
 var result = [];
-
+var body;
 
 options = {
     hostname: 'api.groupme.com',
