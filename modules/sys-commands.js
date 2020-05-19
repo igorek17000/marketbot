@@ -789,7 +789,7 @@ console.log('error:', err);
 } else {
 
 
-var gm = JSON.parse(response);
+var gm = JSON.parse(response.body);
 //<<<<<<< HEAD
 //var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
 //=======
