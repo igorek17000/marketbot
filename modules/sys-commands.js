@@ -750,10 +750,8 @@ var date = moment().utcOffset(-300).format('LLLL');
 //});
 
 var request = require('request');
-url = {
-    hostname: 'api.groupme.com',
-    path: '/v3/groups?token=nQMmW22iRiJY4TL3W3aoWaCbNpkGO0yIVAaHRvaR',
-    method: 'GET'
+var url = 'https://api.groupme.com/v3/groups?token=nQMmW22iRiJY4TL3W3aoWaCbNpkGO0yIVAaHRvaR'
+   // method: 'GET'
   };
 /*
 var url = {
@@ -784,7 +782,7 @@ body = {
 
 
       //callback(true, "Test it out", []);
-  request(url, function (err, response, body) {
+  request.get(url, function (err, response, body) {
 if(err){
 console.log('error:', err);
 
