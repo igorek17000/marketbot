@@ -844,7 +844,7 @@ direction: direction;
 
 
 var message = `It's ${gm.response.name}'; degrees in ${gm.response.name}!`;
-var name = "name";
+//var name = "name";
 var group_id = "group_id";
 var result = [];
 var msg;
@@ -864,12 +864,12 @@ result.sort(function(a, b) {
       return 0;
   });
 
-  for (name in result) {
+  for (var name in result) {
     //if (!cmdArray[cmd].desc)
      // cmdArray[cmd].desc = "No description provided ... thanks lazy mods";
 
     if (result[name])
-      msg = result[name].name + result[name].group_id; //ownerArr.push(cmdArray[cmd]);
+      msg = result[name] + result[name].group_id; //ownerArr.push(cmdArray[cmd]);
    /* else if (cmdArray[cmd].mod)
       modArr.push(cmdArray[cmd]);
     else
