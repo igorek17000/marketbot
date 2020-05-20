@@ -847,6 +847,7 @@ var message = `It's ${gm.response.name}'; degrees in ${gm.response.name}!`;
 //var name = "name";
 var group_id = "group_id";
 var result = [];
+var msg;
 //for (var name in group_id) {
 //if (group_id.hasOwnProperty(name));
 //result = result({name: name, group_id: group_id[name]});
