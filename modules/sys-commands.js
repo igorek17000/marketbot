@@ -717,6 +717,8 @@ function hiCmd(dataHash, callback) {
 var moment = require('moment');
 var date = moment().utcOffset(-240).format('LLLL');
 var time = moment().utcOffset(-240).hour();
+var group_id = "";
+var result = [];
 var msg;
 
   if (regex.test(dataHash.request.text)) {
@@ -845,7 +847,7 @@ direction: direction;
 
 var message = `It's ${gm.response.name}'; degrees in ${gm.response.name}!`;
 //var name = "name";
-var group_id = "group_id";
+var group_id = "";
 var result = [];
 var msg;
 //for (var name in group_id) {
