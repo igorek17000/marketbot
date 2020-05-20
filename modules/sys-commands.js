@@ -868,14 +868,14 @@ result.sort(function(a, b) {
     //if (!cmdArray[cmd].desc)
      // cmdArray[cmd].desc = "No description provided ... thanks lazy mods";
 
-    if (result[name])
+    //if (result[name])
       msg = result[name] + result[name].group_id; //ownerArr.push(cmdArray[cmd]);
    /* else if (cmdArray[cmd].mod)
       modArr.push(cmdArray[cmd]);
     else
       allArr.push(cmdArray[cmd]);
 */
-  
+  }
 
 //var msg = response.result; // + " name at " + response.body.group_id; // + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees.";
 
