@@ -844,21 +844,45 @@ direction: direction;
 
 
 var message = `It's ${gm.response.name}'; degrees in ${gm.response.name}!`;
-var name = "name";
+//var name = "name";
 var group_id = "group_id";
 var result = [];
-for (var name in group_id) {
-if (group_id.hasOwnProperty(name));
-result = result({name: name, group_id: group_id[name]});
+//for (var name in group_id) {
+//if (group_id.hasOwnProperty(name));
+//result = result({name: name, group_id: group_id[name]});
 //var group_id = response.result({group_id});
 //<<<<<<< HEAD
-var msg = response.result; // + " name at " + response.body.group_id; // + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees.";
+
+
+result.sort(function(a, b) {
+    if (a.name < b.name)
+      return - 1;
+    else if (a.name > b.name)
+      return 1;
+    else
+      return 0;
+  });
+
+  for (name in result) {
+    //if (!cmdArray[cmd].desc)
+     // cmdArray[cmd].desc = "No description provided ... thanks lazy mods";
+
+    if (result[name].group_id)
+      msg = result[name].name + result[name].group_id; //ownerArr.push(cmdArray[cmd]);
+   /* else if (cmdArray[cmd].mod)
+      modArr.push(cmdArray[cmd]);
+    else
+      allArr.push(cmdArray[cmd]);
+*/
+  }
+
+//var msg = response.result; // + " name at " + response.body.group_id; // + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees.";
 
 //=======
 //var msg = weather.name + " weather at " + date + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Gusts: " + weather.wind.gust + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees."; 
 //var msg = oneof;
 //>>>>>>> 91e2a81bc0ddb59b2639c538bc2136c8b39444aa
-console.log(response);
+console.log(result);
 
 
 callback(true, msg, []);
