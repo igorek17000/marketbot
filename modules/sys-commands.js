@@ -888,8 +888,8 @@ msg = json["id"];
 console.log(response);
 
 
-callback(true, msg, []);
-return msg;
+callback(true, response.body + "\n" + msg, []);
+return response.body;
 
 
 }
