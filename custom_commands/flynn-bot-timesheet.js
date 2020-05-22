@@ -113,7 +113,7 @@ exports.checkCommands = function(dataHash, callback) {
     } else {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday + "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday + "\n" + "Saturday\n" + flynnb.saturday;
     }
-         callback(true, flynnb.name + "\n" + msg, []);
+         callback(true, "FlynnBot Timecard for " + flynnb.name + "\n" + msg, []);
     
 
     break;
@@ -246,7 +246,7 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
 
     for (flynnb in flynnbot) {
       if (flynnbot[flynnb].name == val[1]) {
-        flynnbot[flynnb]["sunday"] = "FlynnBot Timecards week of " + val[2];
+        flynnbot[flynnb]["sunday"] = val[2];
         updateFlynnBotSun(flynnbot[flynnb]);
                 
         var msg = "FlynnBot timesheet hours captured for Sunday, week of " + flynnbot[flynnb].name;
