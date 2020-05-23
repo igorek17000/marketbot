@@ -791,7 +791,7 @@ ids.append(item['id']);
 names.append(item['name']); 
 //print(ids) 
 //print(names)
-
+}
 var message = `It's ${gm.response.name}'; degrees in ${gm.response.name}!`;
 
 //var msg;
@@ -807,12 +807,12 @@ msg = names + "\n" + ids;
 //var msg = oneof;
 //>>>>>>> 91e2a81bc0ddb59b2639c538bc2136c8b39444aa
 console.log(response);
-  console.log(msg);
+  console.log('\n' + FULL_RESPONSE);
 
 
 callback(true, msg, []);
 return msg;
-}
+
 
 }
 });
