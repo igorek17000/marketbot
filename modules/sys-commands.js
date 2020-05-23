@@ -781,7 +781,7 @@ console.log('error:', err);
 
 //var message = `It's ${weather.main} degrees in ${weather.name}!`;
 
-var FULL_RESPONSE = response.body.response['name', 'id'];
+var FULL_RESPONSE = response.body.response['name'];
 //response.body +=  response.bodyresponse['{"response":[]}'];  ['response'];
 
 /*
