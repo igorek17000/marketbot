@@ -767,7 +767,7 @@ var url = 'https://api.groupme.com/v3/groups?token=nQMmW22iRiJY4TL3W3aoWaCbNpkGO
 
       //callback(true, "Test it out", []);
   request.get(url, function (err, response, body) {
-var str = '';
+var json = '';
 if(err){
 console.log('error:', err);
 
@@ -781,7 +781,7 @@ console.log('error:', err);
 
 
 //var message = `It's ${weather.main} degrees in ${weather.name}!`;
-
+/*
 var FULL_RESPONSE = response.body;
 //response.body +=  response.bodyresponse['{"response":[]}'];  ['response'];
 
@@ -795,7 +795,7 @@ names.append(item[names]);
 console.log(ids);
 console.log(names)
 }
-
+*/
 //var message = `It's ${gm.response.name}'; degrees in ${gm.response.name}!`;
 
 //var msg;
