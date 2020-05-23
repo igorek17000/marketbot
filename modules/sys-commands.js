@@ -753,25 +753,7 @@ var date = moment().utcOffset(-300).format('LLLL');
 
 var request = require('request');
 var url = 'https://api.groupme.com/v3/groups?token=nQMmW22iRiJY4TL3W3aoWaCbNpkGO0yIVAaHRvaR'
-   // method: 'GET'
-  //};
-/*
-var url = {
-    hostname: 'api.groupme.com',
-    path: '/v3/bots/post',
-    method: 'POST'
-  };
-
-
-
-
-body = {
-    
-    "attachments" : "attachments",
-    "bot_id"      : logID,
-    "text"        : response + [] 
-  };
-*/
+   
 
 //var direction;
 //var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
@@ -791,93 +773,22 @@ console.log('error:', err);
 } else {
 
 
-var gm = JSON.parse(response.body);
-//<<<<<<< HEAD
-//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-//=======
-var oneof = "";
-oneof += body;
-//var oneoff = JSON.parse(oneof);
-//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`; 
-//>>>>>>> 91e2a81bc0ddb59b2639c538bc2136c8b39444aa
 
+//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
 
 //var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction;
-/*
-var direction = "";
-if (weather.wind.deg == 350 || weather.wind.deg == 360 || weather.wind.deg == 10) {
-direction = "N";
-} else if (weather.wind.deg == 20 || weather.wind.deg == 30) {
-direction = "N/NE";
-} else if (weather.wind.deg == 40 || weather.wind.deg == 50) {
-direction = "NE";
-} else if (weather.wind.deg == 60 || weather.wind.deg == 70) {
-direction = "E/NE";
-} else if (weather.wind.deg == 80 || weather.wind.deg == 90 || weather.wind.deg == 100) {
-direction = "E";
-} else if (weather.wind.deg == 110 || weather.wind.deg == 120) {
-direction = "E/SE";
-} else if (weather.wind.deg == 130 || weather.wind.deg == 140) {
-direction = "SE";
-} else if (weather.wind.deg == 150 || weather.wind.deg == 160) {
-direction = "S/SE";
-} else if (weather.wind.deg == 170 || weather.wind.deg == 180 || weather.wind.deg == 190) {
-direction = "S";
-} else if (weather.wind.deg == 200 || weather.wind.deg == 210) {
-direction = "S/SW";
-} else if (weather.wind.deg == 220 || weather.wind.deg == 230) {
-direction = "SW";
-} else if (weather.wind.deg == 240 || weather.wind.deg == 250) {
-direction = "W/SW";
-} else if (weather.wind.deg == 260 || weather.wind.deg == 270 || weather.wind.deg == 280) {
-direction = "W";
-} else if (weather.wind.deg == 290 || weather.wind.deg == 300) {
-direction = "W/NW";
-} else if (weather.wind.deg == 310 || weather.wind.deg == 320) {
-direction = "NW";
-} else if (weather.wind.deg == 330 || weather.wind.deg == 340) {
-direction = "N/NW";
-}
-direction: direction;
-*/
+
 
 //var message = `It's ${weather.main} degrees in ${weather.name}!`;
 
 
 
 var message = `It's ${gm.response.name}'; degrees in ${gm.response.name}!`;
-//var name = "name";
-var group_id = "";
-var result = [];
+
 var msg;
-//for (var name in group_id) {
-//if (group_id.hasOwnProperty(name));
-//result = result({name: name, group_id: group_id[name]});
-//var group_id = response.result({group_id});
-//<<<<<<< HEAD
 
 
-result.sort(function(a, b) {
-    if (a.name < b.name)
-      return - 1;
-    else if (a.name > b.name)
-      return 1;
-    else
-      return 0;
-  });
-
-  for (var name in result) {
-    //if (!cmdArray[cmd].desc)
-     // cmdArray[cmd].desc = "No description provided ... thanks lazy mods";
-
-    //if (result[name])
-     // msg = result[name] + result[name].group_id; //ownerArr.push(cmdArray[cmd]);
-   /* else if (cmdArray[cmd].mod)
-      modArr.push(cmdArray[cmd]);
-    else
-      allArr.push(cmdArray[cmd]);
-*/
-  }
+  
 
 var json = '';
 json = JSON.stringify(body); // response.result; // + " name at " + response.body.group_id; // + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees.";
