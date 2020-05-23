@@ -781,18 +781,18 @@ console.log('error:', err);
 
 //var message = `It's ${weather.main} degrees in ${weather.name}!`;
 
-response = response['response'] 
-var bot_ids = list() 
-var names = list() 
-for item in response: 
-ids.append(item['id']) 
-names.append(item['name']) 
+response = response['response'];
+var ids = list();
+var names = list();
+for (var item in response) { 
+ids.append(item['id']);
+names.append(item['name']); 
 //print(ids) 
 //print(names)
 
 var message = `It's ${gm.response.name}'; degrees in ${gm.response.name}!`;
 
-var msg;
+//var msg;
 
 
   
@@ -805,6 +805,7 @@ msg = names + "\n" + ids;
 //var msg = oneof;
 //>>>>>>> 91e2a81bc0ddb59b2639c538bc2136c8b39444aa
 console.log(response);
+  console.log(msg);
 
 
 callback(true, msg, []);
