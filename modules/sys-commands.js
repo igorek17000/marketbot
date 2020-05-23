@@ -740,7 +740,7 @@ return false;
 //-------
 
 
-function gmCmd(dataHash, callback) {
+function gmCmd(dataHash, list, callback) {
   var regex = /^\/gm$/;
 
 var moment = require('moment');
