@@ -785,7 +785,7 @@ var FULL_RESPONSE = body;
   response = FULL_RESPONSE['response'];
 var ids = list();
 var names = list();
-for (var item in response): 
+for (var item in response) {
 ids.append(item['id']);
 names.append(item['name']); 
 //print(ids) 
