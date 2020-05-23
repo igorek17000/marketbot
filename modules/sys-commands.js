@@ -792,7 +792,7 @@ names.append(item['name']);
 //print(ids) 
 //print(names)
 }
-var message = `It's ${gm.response.name}'; degrees in ${gm.response.name}!`;
+//var message = `It's ${gm.response.name}'; degrees in ${gm.response.name}!`;
 
 //var msg;
 
