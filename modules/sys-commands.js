@@ -781,7 +781,14 @@ console.log('error:', err);
 
 //var message = `It's ${weather.main} degrees in ${weather.name}!`;
 
-
+response = response['response'] 
+var bot_ids = list() 
+var names = list() 
+for item in response: 
+ids.append(item['id']) 
+names.append(item['name']) 
+//print(ids) 
+//print(names)
 
 var message = `It's ${gm.response.name}'; degrees in ${gm.response.name}!`;
 
@@ -792,7 +799,7 @@ var msg;
 
 var json = '';
 json = JSON.stringify(body); // response.result; // + " name at " + response.body.group_id; // + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees.";
-msg = json.len;
+msg = names + "\n" + ids;
 //=======
 //var msg = weather.name + " weather at " + date + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Gusts: " + weather.wind.gust + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees."; 
 //var msg = oneof;
