@@ -781,13 +781,13 @@ console.log('error:', err);
 
 //var message = `It's ${weather.main} degrees in ${weather.name}!`;
 
-var FULL_RESPONSE = response.body.response['name'];
+var FULL_RESPONSE = response.body.response[0].name;
 //response.body +=  response.bodyresponse['{"response":[]}'];  ['response'];
 
 /*
 for (var item in FULL_RESPONSE) {
 var ids = list();
-var names = list();
+var name = "name";
 
 ids.append(item['id']);
 names.append(item['name']); 
