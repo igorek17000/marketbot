@@ -781,10 +781,9 @@ console.log('error:', err);
 
 //var message = `It's ${weather.main} degrees in ${weather.name}!`;
 
-var FULL_RESPONSE = body;
-  response = FULL_RESPONSE['response'];
+var FULL_RESPONSE = response['response'];
 
-for (var item in response) {
+for (var item in FULL_RESPONSE) {
 var ids = list();
 var names = list();
 
