@@ -28,7 +28,7 @@ exports.fun_mode = function(){
   return fun_mode;
 }
 
-exports.getmdListDescription = function () {
+exports.getCmdListDescription = function () {
   return [
     {cmd: "/date", desc: "Current date"},
     {cmd: "/fun", desc: "Enable commands designated as fun commands", mod: true},
