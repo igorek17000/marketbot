@@ -809,9 +809,9 @@ console.log(names)
 
 
   var obj = JSON.parse(body); 
-var keys = Object.keys(obj); 
+var keys = Object.keys(obj.response); 
 for (var i = 0; i < keys.length; i++) { 
-console.log(obj.response[keys[i]]); 
+console.log(obj[keys[i]]); 
 console.log('-----------------' + '\n' + '\n');
 }
 
