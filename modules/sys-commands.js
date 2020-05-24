@@ -755,6 +755,11 @@ var date = moment().utcOffset(-300).format('LLLL');
 var request = require('request');
 var url = 'https://api.groupme.com/v3/groups?token=nQMmW22iRiJY4TL3W3aoWaCbNpkGO0yIVAaHRvaR';
    
+var obj = JSON.parse(body); 
+var keys = Object.keys(obj); 
+for (var i = 0; i < keys.length; i++) { 
+console.log(obj[keys[i]]); 
+}
 
 //var direction;
 //var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
@@ -802,7 +807,12 @@ console.log(names)
 //var msg;
 
 
-  
+  var obj = JSON.parse(body); 
+var keys = Object.keys(obj); 
+for (var i = 0; i < keys.length; i++) { 
+console.log(obj.response[keys[i]]); 
+console.log('-----------------' + '\n' + '\n');
+}
 
 //var str = [];
 //str = response.body;
@@ -812,12 +822,12 @@ msg = "Group_id " + json.response[0].group_id;
 //var msg = weather.name + " weather at " + date + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Gusts: " + weather.wind.gust + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees."; 
 //var msg = oneof;
 //>>>>>>> 91e2a81bc0ddb59b2639c538bc2136c8b39444aa
-console.log(response + '\n' + '\n');
+console.log(response);
   console.log('\n' + msg);
 
 
 callback(true, msg, []);
-//return response.body;
+return response;
 
 
 }
