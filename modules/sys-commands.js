@@ -755,11 +755,12 @@ var date = moment().utcOffset(-300).format('LLLL');
 var request = require('request');
 var url = 'https://api.groupme.com/v3/groups?token=nQMmW22iRiJY4TL3W3aoWaCbNpkGO0yIVAaHRvaR';
    
-var obj = JSON.parse(body); 
+/*var obj = JSON.parse(body); 
 var keys = Object.keys(obj); 
 for (var i = 0; i < keys.length; i++) { 
 console.log(obj[keys[i]]); 
 }
+*/
 
 //var direction;
 //var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
