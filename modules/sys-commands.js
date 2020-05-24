@@ -809,16 +809,16 @@ console.log(names)
 
 
   var obj = JSON.parse(body); 
-var keys = Object.keys(obj); 
+var keys = Object.keys(obj.response); 
 for (var i = 0; i < keys.length; i++) { 
-console.log(obj.response[0[keys[i]]]); 
+console.log(obj[keys[i]]); 
 console.log('-----------------' + '\n' + '\n');
 }
 
 //var str = [];
 //str = response.body;
 var json = JSON.parse(body); // response.result; // + " name at " + response.body.group_id; // + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees.";
-msg =  obj.response[0[keys[i]]]; //"Group_id " + json.response[0].group_id;
+msg =  obj[keys[i]]; //"Group_id " + json.response[0].group_id;
 //=======
 //var msg = weather.name + " weather at " + date + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Gusts: " + weather.wind.gust + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees."; 
 //var msg = oneof;
