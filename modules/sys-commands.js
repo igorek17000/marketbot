@@ -379,7 +379,7 @@ var moment = require('moment');
 //var date = moment().utcOffset(-240).format('LLLL');
 
 
-var date = moment().tz("America/Los_Angeles").format('LLLL');
+var date = moment().tz('America/Los_Angeles').format('LLLL');
 
   if (regex.test(dataHash.request.text)) {
 var toronto = require('./toronto');
