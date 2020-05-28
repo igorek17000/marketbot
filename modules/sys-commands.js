@@ -788,7 +788,7 @@ var result = {
 name : json.res[0].name,
 group_id : json.res[0].group_id,
 id : json.res[0].id
-forEach json.res {
+forEach.json.res {
 i = ++i;
 }
 }
