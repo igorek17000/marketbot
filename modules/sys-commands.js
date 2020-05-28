@@ -784,6 +784,13 @@ console.log('-----------------' + '\n' + '\n');
 var json = JSON.parse(body); // response.result; // + " name at " + response.body.group_id; // + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees.";
 var res = response;
 res = '';
+var = result {
+name : json.res[].name,
+group_id : json.res[].group_id,
+id : json.res[].id
+}
+
+/*
 for (var i in res) { // 
 i = 0; //i <= 4; i++) { 
 if (json.res[1].name) {
@@ -795,7 +802,7 @@ i = 3;
 } else if (json.res[4].name) {
 i = 4;
 }
-
+*/
 msg = "Group Name: " + json.res[i].name + "\n" + "Group_id: " + json.res[i].group_id + "\n" + "\n" + "Group Name 2: " + json.res[i++].name + "\n" + "Group id: " + json.res[i++].group_id; // response.body; //json.keys[i]; //"Group_id " + console.log(response);
   console.log('\n' + msg);
 
