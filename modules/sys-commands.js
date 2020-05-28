@@ -751,26 +751,10 @@ function gmCmd(dataHash, callback) {
 
 var moment = require('moment');
 var date = moment().utcOffset(-300).format('LLLL');
-//var toronto = weather.find({search: 'Toronto, ON', degreeType: 'C'}); //, function(err, result) {
-//if(err) console.log(err);
-//console.log(JSON.stringify(result, null, 2));
-//callback(result);
-//});
 
 var request = require('request');
 var url = 'https://api.groupme.com/v3/groups?token=nQMmW22iRiJY4TL3W3aoWaCbNpkGO0yIVAaHRvaR';
    
-/*var obj = JSON.parse(body); 
-var keys = Object.keys(obj); 
-for (var i = 0; i < keys.length; i++) { 
-console.log(obj[keys[i]]); 
-}
-*/
-
-//var direction;
-//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-
-//var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction;
 
 
 
@@ -779,18 +763,6 @@ console.log(obj[keys[i]]);
 
       //callback(true, "Test it out", []);
   request.get(url, function (err, response, body) {
-var res = response;
-res = '';
-for (var i in res) { // 
-i = 0; //i <= 4; i++) { 
-if (json.res[1].name) {
-i = 1;
-} else if (json.res[2].name) {
-i = 2;
-} else if (json.res[3].name) {
-i = 3;
-} else if (json.res[4].name) {
-i = 4;
 
 if(err){
 console.log('error:', err);
@@ -798,30 +770,6 @@ console.log('error:', err);
 } else {
 
 
-//var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-
-//var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction;
-
-
-//var message = `It's ${weather.main} degrees in ${weather.name}!`;
-/*
-var FULL_RESPONSE = response.body;
-//response.body +=  response.bodyresponse['{"response":[]}'];  ['response'];
-
-
-for (var item in FULL_RESPONSE) {
-var ids = list(item["group_id"]);
-var names = list(item["name"]);
-
-ids.append(item[ids]);
-names.append(item[names]); 
-console.log(ids);
-console.log(names)
-}
-*/
-//var message = `It's ${gm.response.name}'; degrees in ${gm.response.name}!`;
-
-//var msg;
 /*
 
   var obj = JSON.parse(body); 
@@ -831,8 +779,7 @@ console.log(keys[i]);
 console.log('-----------------' + '\n' + '\n');
 
 */
-//var str = [];
-//str = response.body;
+
 
 var json = JSON.parse(body); // response.result; // + " name at " + response.body.group_id; // + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees.";
 var res = response;
@@ -849,12 +796,7 @@ i = 3;
 i = 4;
 }
 
-msg = "Group Name: " + json.res[i].name + "\n" + "Group_id: " + json.res[i].group_id + "\n" + "\n" + "Group Name 2: " + json.res[i++].name + "\n" + "Group id: " + json.res[i++].group_id; // response.body; //json.keys[i]; //"Group_id " + json.response[0].group_id;
-//=======
-//var msg = weather.name + " weather at " + date + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Gusts: " + weather.wind.gust + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees."; 
-//var msg = oneof;
-//>>>>>>> 91e2a81bc0ddb59b2639c538bc2136c8b39444aa
-console.log(response);
+msg = "Group Name: " + json.res[i].name + "\n" + "Group_id: " + json.res[i].group_id + "\n" + "\n" + "Group Name 2: " + json.res[i++].name + "\n" + "Group id: " + json.res[i++].group_id; // response.body; //json.keys[i]; //"Group_id " + console.log(response);
   console.log('\n' + msg);
 
 
