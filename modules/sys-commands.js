@@ -785,9 +785,12 @@ var json = JSON.parse(body); // response.result; // + " name at " + response.bod
 var res = response;
 res = '';
 var result = {
-name : json.res[].name,
-group_id : json.res[].group_id,
-id : json.res[].id
+name : json.res[0].name,
+group_id : json.res[0].group_id,
+id : json.res[0].id
+forEach json.res {
+i = ++i;
+}
 }
 
 /*
@@ -803,7 +806,7 @@ i = 3;
 i = 4;
 }
 */
-msg = "Group Name: " + json.res[i].name + "\n" + "Group_id: " + json.res[i].group_id + "\n" + "\n" + "Group Name 2: " + json.res[i++].name + "\n" + "Group id: " + json.res[i++].group_id; // response.body; //json.keys[i]; //"Group_id " + console.log(response);
+msg = result; // "Group Name: " + json.res[i].name + "\n" + "Group_id: " + json.res[i].group_id + "\n" + "\n" + "Group Name 2: " + json.res[i++].name + "\n" + "Group id: " + json.res[i++].group_id; // response.body; //json.keys[i]; //"Group_id " + console.log(response);
   console.log('\n' + msg);
 
 
