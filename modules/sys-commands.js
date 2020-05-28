@@ -1,4 +1,4 @@
-//
+
 //
 var fun_mode = true;
 var sysCommands = [dateCmd, weatherCurrentCmd, weatherForecastCmd, funCmd, noFunCmd, idCmd, aboutCmd, eemailCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd, gmCmd];
