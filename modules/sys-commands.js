@@ -787,7 +787,7 @@ res = '';
 var i = 0; 
 for (i in result)
 
-i = forEach.json.res[++i);
+i = ++i; //forEach.json.res[++i);
 //i = ++i;
 
 var result = {
