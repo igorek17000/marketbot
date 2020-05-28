@@ -803,7 +803,7 @@ msg = "Group Name: " + json.res[i].name + "\n" + "Group_id: " + json.res[i].grou
 callback(true, msg, []);
 return msg;
 }
-}
+
 }
 
 });
