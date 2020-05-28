@@ -787,8 +787,9 @@ console.log('error:', err);
 
 } else {
 
-for (var i = 0; i <= 5; i++) { 
-
+for (var i = 0; i++) { 
+if (json.response[i <= 4]) {
+i = i + 1;
 //var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
 
 //var msg = "Current weather in " + weather.name + "\n" + "Currently: " + weather.main.temp + " degrees C" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max + " C"+ "\n" + "Low: " + weather.main.temp_min + " C" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: " + weather.wind.deg + direction;
@@ -813,15 +814,15 @@ console.log(names)
 //var message = `It's ${gm.response.name}'; degrees in ${gm.response.name}!`;
 
 //var msg;
-
+/*
 
   var obj = JSON.parse(body); 
 var keys = Object.keys(obj.response); 
-for (var i = 0; i < keys.length; i++) { 
+for (var i = 0; i <= keys.length; i++) { 
 console.log(keys[i]); 
 console.log('-----------------' + '\n' + '\n');
 
-
+*/
 //var str = [];
 //str = response.body;
 var json = JSON.parse(body); // response.result; // + " name at " + response.body.group_id; // + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees.";
@@ -836,6 +837,7 @@ console.log(response);
 
 callback(true, msg, []);
 return msg;
+}
 }
 }
 }
