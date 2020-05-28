@@ -787,7 +787,7 @@ console.log('error:', err);
 
 } else {
 
-for (var i = 0; i++) { 
+for (var i = 0; i <= 4; i++) { 
 if (json.response[i <= 4]) {
 i = i + 1;
 //var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
