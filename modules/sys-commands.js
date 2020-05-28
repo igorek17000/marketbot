@@ -785,7 +785,8 @@ var json = JSON.parse(body); // response.result; // + " name at " + response.bod
 var res = response;
 res = '';
 var i = 0; 
-let (i in result.forEach.json.res; i = ++i);
+let (i in result.forEach.json.res)
+i = ++i;
 //i = ++i;
 
 var result = {
