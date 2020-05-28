@@ -790,11 +790,11 @@ console.log('error:', err);
 for (var i = 0; i <= 4; i++) { 
 if (json.response[1].name) {
 i = 1;
-} else (if json.response[2].name) {
+} else if (json.response[2].name) {
 i = 2;
-} else (if json.response[3].name) {
+} else if (json.response[3].name) {
 i = 3;
-} else (if json.response[4].name) {
+} else if (json.response[4].name) {
 i = 4;
 //var message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
 
