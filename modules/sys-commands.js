@@ -835,6 +835,20 @@ console.log('-----------------' + '\n' + '\n');
 //str = response.body;
 
 var json = JSON.parse(body); // response.result; // + " name at " + response.body.group_id; // + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees.";
+var res = response;
+res = '';
+for (var i in res) { // 
+i = 0; //i <= 4; i++) { 
+if (json.res[1].name) {
+i = 1;
+} else if (json.res[2].name) {
+i = 2;
+} else if (json.res[3].name) {
+i = 3;
+} else if (json.res[4].name) {
+i = 4;
+}
+
 msg = "Group Name: " + json.res[i].name + "\n" + "Group_id: " + json.res[i].group_id + "\n" + "\n" + "Group Name 2: " + json.res[i++].name + "\n" + "Group id: " + json.res[i++].group_id; // response.body; //json.keys[i]; //"Group_id " + json.response[0].group_id;
 //=======
 //var msg = weather.name + " weather at " + date + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Gusts: " + weather.wind.gust + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees."; 
