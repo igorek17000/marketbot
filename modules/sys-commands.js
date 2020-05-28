@@ -785,10 +785,10 @@ var json = JSON.parse(body); // response.result; // + " name at " + response.bod
 var res = response;
 res = '';
 var i = 0; 
-for (i in result(forEach.json.res) {
+for (i in result(forEach.json.res) 
 i = ++i;
 //i = ++i;
-}
+
 var result = {
 name : json.res[i].name,
 group_id : json.res[i].group_id,
