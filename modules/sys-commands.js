@@ -791,9 +791,9 @@ i = ++i; //forEach.json.res[++i);
 //i = ++i;
 
 var result = [
-name : json.res[i].name,
-group_id : json.res[i].group_id,
-id : json.res[i].id
+name = json.res[i].name,
+group_id = json.res[i].group_id,
+id = json.res[i].id
 ]
 
 
