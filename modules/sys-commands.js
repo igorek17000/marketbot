@@ -806,7 +806,7 @@ i = 3;
 i = 4;
 }
 */
-msg = result; // "Group Name: " + json.res[i].name + "\n" + "Group_id: " + json.res[i].group_id + "\n" + "\n" + "Group Name 2: " + json.res[i++].name + "\n" + "Group id: " + json.res[i++].group_id; // response.body; //json.keys[i]; //"Group_id " + console.log(response);
+msg = json.res.result; // "Group Name: " + json.res[i].name + "\n" + "Group_id: " + json.res[i].group_id + "\n" + "\n" + "Group Name 2: " + json.res[i++].name + "\n" + "Group id: " + json.res[i++].group_id; // response.body; //json.keys[i]; //"Group_id " + console.log(response);
   console.log('\n' + msg);
 
 
