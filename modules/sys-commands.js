@@ -787,9 +787,9 @@ var res = response;
 
 
 var result = {
-name : json.res.name,
-group_id : json.res.group_id,
-id : json.res.id
+"name": json.res[0].name,
+"group_id": json.res[0].group_id,
+"id": json.res[0].id
 }
 
 
