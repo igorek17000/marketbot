@@ -783,6 +783,11 @@ console.log('-----------------' + '\n' + '\n');
 
 var json = JSON.parse(body); // response.result; // + " name at " + response.body.group_id; // + "\n" + "Currently: " + weather.main.temp + "° celsius" + "\n" + "Mainly: " + weather.weather[0].description + "\n" + "High: " + weather.main.temp_max +  "° celcius" + "\n" + "Low: " + weather.main.temp_min + "° celsius" + "\n" + "Relative humidity: " + weather.main.humidity + "\n" + "Wind: " + weather.wind.speed + " km/h" + "\n" + "Wind direction: Blowing from the " + direction + " bearing " + weather.wind.deg + "° degrees.";
 var res = response;
+var items = json.res; // only include items with even id's 
+items = items.forEach(function(item){ 
+return (item); 
+}); console.log(items);
+
 //res = '';
 
 
@@ -809,7 +814,7 @@ i = 3;
 i = 4;
 }
 */
-msg = "Group Name: " + json.res[0].name + "\n" + "Group_id: " + json.res[0].group_id + "\n" + "\n" + "Group Name 2: " + json.res[i++].name + "\n" + "Group id: " + json.res[i++].group_id; // response.body; //json.keys[i]; //"Group_id " + console.log(response);
+msg =  "Group Name: " + json.response[0].name + "\n" + "Group_id: " + json.response[0].group_id + "\n" + "\n" // + "Group Name 2: " + json.res[i++].name + "\n" + "Group id: " + json.res[i++].group_id; // response.body; //json.keys[i]; //"Group_id " + console.log(response);
   //console.log('\n' + msg);
 
 
