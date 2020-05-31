@@ -786,11 +786,14 @@ var res = response;
 //res = '';
 
 
-var result = {
+//var result = Object.keys(json.res).forEach(key => { callback(key, result[key]); });
+
+/*
 "name": json.res[0].name,
 "group_id": json.res[0].group_id,
 "id": json.res[0].id
 }
+*/
 
 
 /*
@@ -806,7 +809,7 @@ i = 3;
 i = 4;
 }
 */
-msg = json.res.result; // "Group Name: " + json.res[i].name + "\n" + "Group_id: " + json.res[i].group_id + "\n" + "\n" + "Group Name 2: " + json.res[i++].name + "\n" + "Group id: " + json.res[i++].group_id; // response.body; //json.keys[i]; //"Group_id " + console.log(response);
+msg = "Group Name: " + json.res[0].name + "\n" + "Group_id: " + json.res[0].group_id + "\n" + "\n" + "Group Name 2: " + json.res[i++].name + "\n" + "Group id: " + json.res[i++].group_id; // response.body; //json.keys[i]; //"Group_id " + console.log(response);
   //console.log('\n' + msg);
 
 
