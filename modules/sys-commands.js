@@ -785,7 +785,7 @@ var json = JSON.parse(body); // response.result; // + " name at " + response.bod
 var res = response;
 var items = json.response; // only include items with even id's 
 items = items.forEach(function(item) { 
-return item; 
+return (item.id, item.name, item.group_id); 
 }); 
 //console.log(items);
 
