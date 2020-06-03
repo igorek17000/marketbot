@@ -96,6 +96,9 @@ function cmdUrban(funMode, request, callback){
         }
 
         callback(true, msg, []);
+        console.log(str.list[0].word + " - " + str.list[0].definition);
+
+
       });
     };
     
