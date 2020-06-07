@@ -375,7 +375,7 @@ function dateCmd(dataHash, callback) {
 
 var moment = require('moment');
 
-
+var drt = new dataHash.request.text;
 var date = moment().utcOffset(-240).format('LLLL');
 
 
@@ -383,11 +383,11 @@ var date = moment().utcOffset(-240).format('LLLL');
 
   if (regex.test(dataHash.request.text)) {
 
-let name = prompt("What is your name?");
-let nameConfirmed = confirm("Your name is " + name + ", correct?");
+//let name = prompt("What is your name?");
+//let nameConfirmed = confirm("Your name is " + name + ", correct?");
 
-if (nameConfirmed) {
-alert("Hi " + name);
+if (drt) {
+alert("Hi " + date);
 } else {
 alert("GTFO STRANGER");
 }
