@@ -382,6 +382,16 @@ var date = moment().utcOffset(-240).format('LLLL');
 //var date = moment().tz("America/Toronto").format('LLLL');
 
   if (regex.test(dataHash.request.text)) {
+
+let name = prompt("What is your name?");
+let nameConfirmed = confirm("Your name is " + name + ", correct?");
+
+if (nameConfirmed) {
+alert("Hi " + name);
+} else {
+alert("GTFO STRANGER");
+}
+
 var toronto = require('./toronto');
 toronto;
 
