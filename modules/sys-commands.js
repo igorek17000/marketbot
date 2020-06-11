@@ -375,7 +375,7 @@ function dateCmd(dataHash, callback) {
 
 var moment = require('moment');
 
-var drt = new dataHash.request;
+//var drt = new dataHash.request;
 var date = moment().utcOffset(-240).format('LLLL');
 
 
@@ -386,14 +386,12 @@ var date = moment().utcOffset(-240).format('LLLL');
 //let name = prompt("What is your name?");
 //let nameConfirmed = confirm("Your name is " + name + ", correct?");
 
-if (drt) {
-alert("Hi " + date);
-} else {
-alert("GTFO STRANGER");
-}
 
-var toronto = require('./toronto');
-toronto;
+alert("Hi " + date);
+
+
+//var toronto = require('./toronto');
+//toronto;
 
       callback(true, date);
 
