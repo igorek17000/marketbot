@@ -150,7 +150,7 @@ exports.commands = function() {
   }
 
   var output = commandList.buildHTML(cmdArr, config.bot_name);
-
+  alert(output);
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
 }
