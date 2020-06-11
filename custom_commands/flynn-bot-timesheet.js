@@ -77,8 +77,8 @@ exports.checkCommands = function(dataHash, callback) {
 //continue;
 
      var flynnbReg = new RegExp(flynnb.regex, "i"); 
-    // if (flynnb.regexcurrent) { // == "^\/" + "current" + "$") {
-      //flynnbReg = new RegExp(flynnb.regexcurrent, "i");
+     if (flynnb.regexcurrent) //{ // == "^\/" + "current" + "$") {
+      flynnbReg = new RegExp(flynnb.regexcurrent, "i");
 //}
 
      var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
@@ -86,8 +86,8 @@ exports.checkCommands = function(dataHash, callback) {
       if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
         var val = flynnbReg.exec(dataHash.request.text);
       
-     } else if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
-        var val = flynnbcReg.exec(dataHash.request.text);
+  //   } else if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
+        //var val = flynnbcReg.exec(dataHash.request.text);
    
 
      // if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
