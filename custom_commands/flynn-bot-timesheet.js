@@ -29,43 +29,43 @@ function addFlynnBotToDB(flynnb, callback) {
 }
 
 function updateFlynnBotDesc(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name}, {$set: { "description": flynnb.description}}, callback);
+  db.updateOneDoc(db_table, { "name": flynnb.name }, { $set: { "description": flynnb.description }}, callback);
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
-  db.updateOneDoc(db_table, {"current": flynnb.current}, {$unset: { "current": flynnb.current}}, callback);
+  db.updateOneDoc(db_table, { "current": flynnb.current }, { $unset: { "current": flynnb.current }}, callback);
 }
 
 function updateFlynnBotRegexCurrent(flynnb, callback) {
-  db.updateOneDoc(db_table, {"regexcurrent": flynnb.regexcurrent}, {$unset: { "regexcurrent": flynnb.regexcurrent}}, callback);
+  db.updateOneDoc(db_table, { "regexcurrent": flynnb.regexcurrent }, { $unset: { "regexcurrent": flynnb.regexcurrent }}, callback);
 }
 
 function updateFlynnBotSun(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name} || {"current": flynnb.current}, {$set: { "sunday": flynnb.sunday}}, callback);
+  db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "sunday": flynnb.sunday }}, callback);
 }
 
 function updateFlynnBotMon(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name} || {"current": flynnb.current}, {$set: { "monday": flynnb.monday}}, callback);
+  db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "monday": flynnb.monday }}, callback);
 }
 
 function updateFlynnBotTue(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name} || {"current": flynnb.current}, {$set: { "tuesday": flynnb.tuesday}}, callback);
+  db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "tuesday": flynnb.tuesday }}, callback);
 }
 
 function updateFlynnBotWed(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name} || {"current": flynnb.current}, {$set: { "wednesday": flynnb.wednesday}}, callback);
+  db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "wednesday": flynnb.wednesday }}, callback);
 }
 
 function updateFlynnBotThu(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name} || {"current": flynnb.current}, {$set: { "thursday": flynnb.thursday}}, callback);
+  db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "thursday": flynnb.thursday }}, callback);
 }
 
 function updateFlynnBotFri(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name} || {"current": flynnb.current}, {$set: { "friday": flynnb.friday}}, callback);
+  db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "friday": flynnb.friday }}, callback);
 }
 
 function updateFlynnBotSat(flynnb, callback) {
-  db.updateOneDoc(db_table, {"name": flynnb.name} || {"current": flynnb.current}, {$set: { "saturday": flynnb.saturday}}, callback);
+  db.updateOneDoc(db_table, {"name": flynnb.name} || { "current": flynnb.current }, { $set: { "saturday": flynnb.saturday }}, callback);
 }
 
 
