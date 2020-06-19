@@ -82,7 +82,7 @@ exports.checkCommands = function(dataHash, callback) {
      var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
         
 
-  if (flynnb.regexcurrent) //{ // == "^\/" + "current" + "$") {
+  //if (flynnb.regexcurrent) //{ // == "^\/" + "current" + "$") {
       //flynnbReg = new RegExp(flynnb.regexcurrent, "i");
 //}
 
