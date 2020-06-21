@@ -85,7 +85,7 @@ function pingit() {
 
 function form(req, res) {
 this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.upload(today);
+  this.res.end(today);
 }
 
 function forms(req, res) {
