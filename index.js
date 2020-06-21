@@ -10,7 +10,7 @@ var http, director, bot, router, server, port, db;
 http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
-today       = require('./commands/index.html');
+today       = require('./bot.js');
 
 //image       = require('./2A34A9R.jpg');
 
@@ -22,7 +22,7 @@ router = new director.http.Router({
 get: pingit
 },
 '/test' : {
-get: form,
+get: bot.test,
 post: forms
 },
   '/init' : {
