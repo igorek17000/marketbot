@@ -21,6 +21,10 @@ router = new director.http.Router({
 '/quotes' : {
 get: pingit
 },
+'/test' : {
+get: form,
+post: return
+},
   '/init' : {
     get:  bot.init,
     post: bot.init
@@ -84,4 +88,11 @@ this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.sendfile("/commands/index.html");
 }
 
+function return(req, res) => {
+  var user_name=req.body.user;
+  var password=req.body.password;
+  console.log("User name = "+user_name+", password is "+password);
+ this.res.writeHead(200, {"Content-Type": "text/html"} );
+  this.res.end("yes");
+});
 // -
