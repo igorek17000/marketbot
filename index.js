@@ -11,6 +11,7 @@ http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
 today       = require('./modules/command-list.js');
+
 //image       = require('./2A34A9R.jpg');
 
 router = new director.http.Router({
@@ -77,4 +78,10 @@ function pingit() {
   this.res.writeHead(200);
   this.res.end("The sky's the limit.\nFind what you love to do and embrace it.\nEverything else will fall into place.\nAlexBot quotes");
 }
+
+function form(req, res) => {
+this.res.writeHead(200, {"Content-Type": "text/html"});
+  this.res.sendfile("/commands/index.html");
+}
+
 // -
