@@ -85,7 +85,7 @@ function pingit() {
 
 function form(req, res) {
 this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.sendfile("/commands/index.html");
+  this.res.sendFile("/commands/index.html");
 }
 
 function forms(req, res) {
