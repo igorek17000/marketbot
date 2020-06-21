@@ -10,7 +10,7 @@ var http, director, bot, router, server, port, db;
 http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
-today       = require('./modules/command-list.js');
+today       = require('./commands/index.html');
 
 //image       = require('./2A34A9R.jpg');
 
@@ -85,7 +85,7 @@ function pingit() {
 
 function form(req, res) {
 this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.sendFile("/commands/index.html");
+  this.res.upload(today);
 }
 
 function forms(req, res) {
