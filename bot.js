@@ -13,6 +13,7 @@ var flynnBot     = require('./custom_commands/flynn-bot-timesheet');
 var emailBot     = require('./custom_commands/email');
 var birthdayBot  = require('./custom_commands/birthdays');
 var api = require('./custom_commands/api');
+var test = require('./commands/index.html');
 
 //var postbot      = require('./custom_commands/postbot');
 var userCmds     = require('./custom_commands/user-commands');
@@ -156,6 +157,22 @@ exports.commands = function() {
 }
 
 
+exports.test = function() {
+  
+
+  //console.log('displaying commands at /commands');
+
+  
+
+  var output = test(req, res);
+  
+  this.res.writeHead(200, {"Content-Type": "text/html"});
+  this.res.end(output);
+}
+/*router.get('/',(req, res) => {
+  res.sendfile("index.html");
+});
+*/
 
 function sendDelayedMessage(msg, attachments, botID, logID, nickName) {
   setTimeout(function() {
