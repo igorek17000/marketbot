@@ -83,12 +83,12 @@ function pingit() {
   this.res.end("The sky's the limit.\nFind what you love to do and embrace it.\nEverything else will fall into place.\nAlexBot quotes");
 }
 
-function form(req, res) => {
+function form(req, res) {
 this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.sendfile("/commands/index.html");
 }
 
-function forms(req, res) => {
+function forms(req, res) {
   var user_name=req.body.user;
   var password=req.body.password;
   console.log("User name = "+user_name+", password is "+password);
