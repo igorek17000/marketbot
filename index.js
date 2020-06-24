@@ -22,7 +22,7 @@ router = new director.http.Router({
 get: pingit
 },
 '/test' : {
-get: bot.test,
+get: forms,
 post: forms
 },
   '/init' : {
