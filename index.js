@@ -92,7 +92,7 @@ this.res.writeHead(200, {"Content-Type": "text/html"});
 
 function forms() {
 var req = this.req;
- this.res.sendFile(__dirname+"/views/index.html");
+ //this.res.sendFile(__dirname+"/views/index.html");
  this.res.writeHead(200, {"Content-Type": "text/html"});
 this.res.sendFile(__dirname+"/commands/index.html");
 
