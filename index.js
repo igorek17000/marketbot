@@ -106,14 +106,14 @@ response.sendFile(__dirname + "/commands/index.html");
 
 function forms() {
 http.createServer(function(req, res){ 
-if (req.url === '/') { 
+if (req.url === '/form') { 
 res.writeHead(200, {'Content-Type': 'text/html'}); 
-fs.createReadStream('index.html').pipe(res); 
+fs.createReadStream('./commands/index.html').pipe(res); 
 } else if (ext.test(req.url)) { 
 fs.exists(path.join(__dirname, req.url), function (exists) { 
 if (exists) { 
 res.writeHead(200, {'Content-Type': 'text/html'}); 
-fs.createReadStream('index.html').pipe(res); 
+fs.createReadStream('./commands/index.html').pipe(res); 
 } else { 
 res.writeHead(404, {'Content-Type': 'text/html'}); 
 fs.createReadStream('404.html').pipe(res); 
