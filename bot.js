@@ -13,7 +13,7 @@ var flynnBot     = require('./custom_commands/flynn-bot-timesheet');
 var emailBot     = require('./custom_commands/email');
 var birthdayBot  = require('./custom_commands/birthdays');
 var api = require('./custom_commands/api');
-var testit = require('./commands/index.html');
+//var testit = require('./commands/index.html');
 
 //var postbot      = require('./custom_commands/postbot');
 var userCmds     = require('./custom_commands/user-commands');
@@ -167,10 +167,10 @@ exports.teston = function() {
   console.log("User name = "+user_name+", password is "+password);
 
 
-  var output = testit(user_name);
+ // var output = testit(user_name);
   
   this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(output);
+  this.res.end();
 }
 
 
