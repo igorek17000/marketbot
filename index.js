@@ -23,7 +23,7 @@ get: pingit
 },
 
 '/test' : {
-get: bot.teston
+get: forms
 //post: forms
 },
 
