@@ -86,7 +86,7 @@ function pingit() {
   this.res.end("The sky's the limit.\nFind what you love to do and embrace it.\nEverything else will fall into place.\nAlexBot quotes");
 }
 
-function form() {
+function form(req, res) {
 res.sendFile('./commands/index.html', { root: __dirname }) 
 var firstname = this.req.query.firstname; 
 if (firstname != "") { 
