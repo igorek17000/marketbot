@@ -90,11 +90,11 @@ this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(today);
 }
 
-function forms() {
+function forms(req, res) {
 var req = this.req;
  //this.res.sendFile(__dirname+"/views/index.html");
  this.res.writeHead(200, {"Content-Type": "text/html"});
-this.res.sendFile(__dirname+"/commands/index.html");
+this.res.sendFile(__dirname + "/commands/index.html");
 
   //this.res.end("yes");
 }
