@@ -24,7 +24,8 @@ get: pingit
 },
 
 '/form' : {
-get: form
+get: ping,
+post: forms
 //post: forms
 },
 
@@ -105,7 +106,7 @@ response.sendFile(__dirname + "/commands/index.html");
 */
 
 function forms() {
-http.createServer(function(req, res){ 
+//http.createServer(function(req, res){ 
 if (req.url === '/form') { 
 res.writeHead(200, {'Content-Type': 'text/html'}); 
 fs.createReadStream('./commands/index.html').pipe(res); 
@@ -122,8 +123,8 @@ fs.createReadStream('404.html').pipe(res);
 //} else { 
 // add a RESTful service 
 } 
-}).listen(port, ip);
-}
+})//.listen(port, ip);
+
 }
 /*
 function forms(req, res, function(data)) {
