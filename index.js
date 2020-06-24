@@ -117,12 +117,13 @@ fs.createReadStream('./commands/index.html').pipe(res);
 } else { 
 res.writeHead(404, {'Content-Type': 'text/html'}); 
 fs.createReadStream('404.html').pipe(res); 
-}
+});
 } else { 
 // add a RESTful service 
 } 
 }).listen(port, ip);
-
+}
+}
 /*
 function forms(req, res, function(data)) {
 //var req = this.req;
