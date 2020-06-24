@@ -172,7 +172,7 @@ exports.teston = function() {
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
 }
-*/
+
 
 /*router.get('/',(req, res) => {
   res.sendfile("index.html");
