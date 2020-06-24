@@ -151,12 +151,12 @@ exports.commands = function() {
   }
 
   var output = commandList.buildHTML(cmdArr, config.bot_name);
-  alert(output);
+  alert("Hi");
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
 }
 
-
+/*
 exports.test = function() {
   
 
@@ -169,6 +169,8 @@ exports.test = function() {
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
 }
+*/
+
 /*router.get('/',(req, res) => {
   res.sendfile("index.html");
 });
