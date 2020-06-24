@@ -24,7 +24,7 @@ get: pingit
 },
 
 '/form' : {
-get: forms
+get: form
 //post: forms
 },
 
