@@ -13,7 +13,7 @@ var flynnBot     = require('./custom_commands/flynn-bot-timesheet');
 var emailBot     = require('./custom_commands/email');
 var birthdayBot  = require('./custom_commands/birthdays');
 var api = require('./custom_commands/api');
-//var testit = require('./commands/index.html');
+var testit = require('./commands/index.html');
 
 //var postbot      = require('./custom_commands/postbot');
 var userCmds     = require('./custom_commands/user-commands');
@@ -156,15 +156,18 @@ exports.commands = function() {
   this.res.end(output);
 }
 
-/*
-exports.test = function() {
+
+exports.teston = function() {
   
 
   //console.log('displaying commands at /commands');
+  var req = this.req
+  var user_name=req.body.user;
+  var password=req.body.password;
+  console.log("User name = "+user_name+", password is "+password);
 
-  
 
-  var output = test(req, res);
+  var output = testit(user_name);
   
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
