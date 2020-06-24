@@ -21,10 +21,12 @@ router = new director.http.Router({
 '/quotes' : {
 get: pingit
 },
+/*
 '/test' : {
 get: forms,
 post: forms
 },
+*/
   '/init' : {
     get:  bot.init,
     post: bot.init
