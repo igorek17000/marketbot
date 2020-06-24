@@ -23,8 +23,8 @@ router = new director.http.Router({
 get: pingit
 },
 
-'/test' : {
-get: forms
+'/form' : {
+get: form
 //post: forms
 },
 
@@ -90,6 +90,16 @@ function form() {
 app.get("/", function (request, response){ 
 response.sendFile(__dirname + "/commands/index.html"); 
 });
+
+app.get("/commands/" + "index.html", function (request, response){ 
+var firstname = request.query.firstname; 
+if (firstname != "") { 
+response.send("Your email address is " + firstname + "@gullele.com"); 
+} else { 
+response.send("Please provide us first name"); 
+} 
+});
+}
 
 function forms(req, res, function(data)) {
 //var req = this.req;
