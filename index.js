@@ -85,7 +85,7 @@ function pingit() {
   this.res.writeHead(200);
   this.res.end("The sky's the limit.\nFind what you love to do and embrace it.\nEverything else will fall into place.\nAlexBot quotes");
 }
-
+/*
 function form(req, res, data) {
 res.sendFile('./commands/index.html', { root: __dirname }) 
 var firstname = this.req.query.firstname; 
@@ -96,7 +96,7 @@ this.res.send("Please provide us first name");
 } 
 }
 
-
+*/
 
 
 /*
