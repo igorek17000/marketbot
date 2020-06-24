@@ -102,7 +102,7 @@ this.res.send("Please provide us first name");
 /*
 response.sendFile(__dirname + "/commands/index.html"); 
 });
-
+*/
 
 function forms() {
 http.createServer(function(req, res){ 
@@ -123,7 +123,7 @@ fs.createReadStream('404.html').pipe(res);
 } 
 }).listen(port, ip);
 
-
+/*
 function forms(req, res, function(data)) {
 //var req = this.req;
  //this.res.sendFile(__dirname+"/views/index.html");
