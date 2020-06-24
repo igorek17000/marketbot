@@ -87,7 +87,7 @@ function pingit() {
 }
 
 function form() {
-this.res.sendFile('./commands/index.html', { root: __dirname }) 
+res.sendFile('./commands/index.html', { root: __dirname }) 
 var firstname = this.req.query.firstname; 
 if (firstname != "") { 
 this.res.send("Your email address is " + firstname + "@gullele.com"); 
