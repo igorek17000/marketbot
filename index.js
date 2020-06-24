@@ -87,21 +87,34 @@ function pingit() {
 }
 
 function form() {
-app.get("/", function (request, response){ 
+this.res.sendFile('./commands/index.html', { root: __dirname }) 
+var firstname = this.req.query.firstname; 
+if (firstname != "") { 
+this.res.send("Your email address is " + firstname + "@gullele.com"); 
+} else { 
+this.res.send("Please provide us first name"); 
+} 
+}
+
+
+
+
+/*
 response.sendFile(__dirname + "/commands/index.html"); 
 });
 
-app.get("/commands/" + "index.html", function (request, response){ 
-var firstname = request.query.firstname; 
+
+function forms() {
+//app.get("/commands/" + "index.html", function (req, res){ 
+var firstname = this.req.query.firstname; 
 if (firstname != "") { 
-response.send("Your email address is " + firstname + "@gullele.com"); 
+this.res.send("Your email address is " + firstname + "@gullele.com"); 
 } else { 
-response.send("Please provide us first name"); 
+this.res.send("Please provide us first name"); 
 } 
-});
 }
 
-/*
+
 function forms(req, res, function(data)) {
 //var req = this.req;
  //this.res.sendFile(__dirname+"/views/index.html");
