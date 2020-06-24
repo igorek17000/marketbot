@@ -3,7 +3,8 @@
 var nodemailer = require('nodemailer');
 var moment = require('moment'); 
 var date = moment().utcOffset(-240).format('LLLL');
-
+var app = require('express');
+var path = require('path');
 
 var http, director, bot, router, server, port, db;
 
@@ -85,10 +86,10 @@ function pingit() {
   this.res.end("The sky's the limit.\nFind what you love to do and embrace it.\nEverything else will fall into place.\nAlexBot quotes");
 }
 
-function form(req, res) {
-this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(today);
-}
+function form() {
+app.get("/", function (request, response){ 
+response.sendFile(__dirname + "/commands/index.html"); 
+});
 
 function forms(req, res, function(data)) {
 //var req = this.req;
