@@ -101,6 +101,7 @@ response.send("Please provide us first name");
 });
 }
 
+/*
 function forms(req, res, function(data)) {
 //var req = this.req;
  //this.res.sendFile(__dirname+"/views/index.html");
@@ -109,4 +110,5 @@ this.res.sendFile(__dirname + "/commands/" + "index.html");
 
   //this.res.end("yes");
 }
+*/
 // -
