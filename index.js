@@ -23,7 +23,7 @@ get: pingit
 },
 
 '/test' : {
-get: forms,
+get: bot.teston
 //post: forms
 },
 
@@ -92,9 +92,9 @@ this.res.writeHead(200, {"Content-Type": "text/html"});
 
 function forms() {
 var req = this.req;
-  var user_name=req.body.user;
-  var password=req.body.password;
-  console.log("User name = "+user_name+", password is "+password);
+ // var user_name=req.body.user;
+  //var password=req.body.password;
+ // console.log("User name = "+user_name+", password is "+password);
  this.res.writeHead(200, {"Content-Type": "text/html"} );
   this.res.end("yes");
 }
