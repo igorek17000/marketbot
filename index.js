@@ -24,7 +24,7 @@ get: pingit
 },
 
 '/form' : {
-get: form
+get: forms
 //post: forms
 },
 
@@ -86,7 +86,7 @@ function pingit() {
   this.res.end("The sky's the limit.\nFind what you love to do and embrace it.\nEverything else will fall into place.\nAlexBot quotes");
 }
 
-function form(req, res) {
+function form(req, res, data) {
 res.sendFile('./commands/index.html', { root: __dirname }) 
 var firstname = this.req.query.firstname; 
 if (firstname != "") { 
@@ -105,14 +105,23 @@ response.sendFile(__dirname + "/commands/index.html");
 
 
 function forms() {
-//app.get("/commands/" + "index.html", function (req, res){ 
-var firstname = this.req.query.firstname; 
-if (firstname != "") { 
-this.res.send("Your email address is " + firstname + "@gullele.com"); 
+http.createServer(function(req, res){ 
+if (req.url === '/') { 
+res.writeHead(200, {'Content-Type': 'text/html'}); 
+fs.createReadStream('index.html').pipe(res); 
+} else if (ext.test(req.url)) { 
+fs.exists(path.join(__dirname, req.url), function (exists) { 
+if (exists) { 
+res.writeHead(200, {'Content-Type': 'text/html'}); 
+fs.createReadStream('index.html').pipe(res); 
 } else { 
-this.res.send("Please provide us first name"); 
+res.writeHead(404, {'Content-Type': 'text/html'}); 
+fs.createReadStream('404.html').pipe(res); 
+}); 
+} else { 
+// add a RESTful service 
 } 
-}
+}).listen(port, ip);
 
 
 function forms(req, res, function(data)) {
