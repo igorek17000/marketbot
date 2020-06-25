@@ -69,7 +69,7 @@ data = data.toString().trim();
 if (format.test(data)) {
 callback(data);
 } else {
-stdout.write("It should match: "+ format +"\n");
+stdout.write("It should match: " + format + "\n");
 ask(question, format, callback);
 }
 });
@@ -511,7 +511,7 @@ process.exit();
 });
 
 //var msg = require('./postbot');
-//callback(true, name, []);
+callback(true, name, []);
 var msg = require('./postbot');
 msg;
 
