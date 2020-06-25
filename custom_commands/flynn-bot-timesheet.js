@@ -123,6 +123,7 @@ exports.checkCommands = function(dataHash, callback) {
     break;
     }
   }
+}
 
 
   for (cmd in flynnBotCommands) {
@@ -131,7 +132,7 @@ exports.checkCommands = function(dataHash, callback) {
       return test;
   }
  }
-}
+
 
 exports.botName = "FlynnBot";
 
