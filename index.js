@@ -32,11 +32,11 @@ get: pingit
   },
   '/commands' : {
     get: bot.commands
-    post: bot.commands
+    post: bot.sendDelayedMessage
   },
   '/bot/:botRoom' : {
     get: ping,
-    post: bot.sendDelayedMessage
+    post: bot.respond
   },
   
 });
