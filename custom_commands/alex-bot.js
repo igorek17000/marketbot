@@ -2,7 +2,7 @@
 
 //
 
-var fs = require("fs"); 
+var fs = require('fs'); 
 // modeled on http://st-on-it.blogspot.com/2011/05/how-to-read-user-input-with-nodejs.html 
 function query(text, callback) { 
 'use strict'; 
