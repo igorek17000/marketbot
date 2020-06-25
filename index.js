@@ -31,7 +31,7 @@ get: pingit
     post: bot.init
   },
   '/commands' : {
-    get: bot.commands
+    get: bot.commands,
     post: bot.sendDelayedMessage
   },
   '/bot/:botRoom' : {
