@@ -34,7 +34,7 @@ continueProcessing();
 } 
 } 
 continueProcessing(); 
-} 
+//} 
 if (process.argv.length > 2) { 
 var filename = process.argv[2]; 
 fs.readFile(filename, "ascii", function (err, data) { 
@@ -52,7 +52,7 @@ console.log('Were done now');
 console.error("File name must be supplied on command line."); 
 process.exit(1); 
 }
-
+}
 
 
 /*var current;
