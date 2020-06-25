@@ -487,6 +487,7 @@ function retartCmd(request, isMod, callback) {
 //callback(true, "One test\n", []);
 var msg = require('./postbot');
 msg;
+printLinesWaitForQuestions();
        } else {
     
 
