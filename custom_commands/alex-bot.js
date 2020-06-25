@@ -501,12 +501,6 @@ function retartCmd(request, isMod, callback) {
      return "Sorry I'm no fun right now.";
     }
 
-
-
-//var msg = require('./postbot');
-//callback(true, name, []);
-var msg = require('./postbot');
-msg;
 ask("Name", /.+/, function(name) {
 ask("Email", /^.+@.+$/, function(email) {
 console.log("Your name is: ", name);
@@ -515,6 +509,12 @@ console.log("Your email is:", email);
 process.exit();
 });
 });
+
+//var msg = require('./postbot');
+//callback(true, name, []);
+var msg = require('./postbot');
+msg;
+
        } else {
     
 
