@@ -82,8 +82,8 @@ exports.checkCommands = function(dataHash, callback) {
      var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
         
 
-  //if (flynnb.regexcurrent) //{ // == "^\/" + "current" + "$") {
-      //flynnbReg = new RegExp(flynnb.regexcurrent, "i");
+  if (flynnb.regexcurrent) //{ // == "^\/" + "current" + "$") {
+      var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");
 //}
 
      
@@ -123,7 +123,7 @@ exports.checkCommands = function(dataHash, callback) {
     break;
     }
   }
-
+}
 
 
   for (cmd in flynnBotCommands) {
