@@ -32,8 +32,7 @@ get: pingit
   },
   '/commands' : {
     get: bot.commands,
-    get: bot.postMessage,
-    post: bot.postMessage
+    get: bot.postMessage
   },
   '/bot/:botRoom' : {
     get: ping,
@@ -70,7 +69,7 @@ ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
 server.listen(port, ip, function() { 
 console.log('Server started at ' + date + ' & listening on port ' + port);
-
+server.post('Server');
 
 //console.log((new Date()) + ' Server is listening on port ' + port);
 });
