@@ -78,7 +78,7 @@ exports.checkCommands = function(dataHash, callback) {
 
 
 
-     var flynnbReg = new RegExp(flynnb.regex, "i" || flynnb.regexcurrent, "i"); 
+     var flynnbReg = new RegExp(flynnb.regex, "i") || new RegExp(flynnb.regexcurrent, "i"); 
     // var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
         
 
