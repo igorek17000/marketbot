@@ -81,10 +81,10 @@ exports.checkCommands = function(dataHash, callback) {
      var flynnbReg = new RegExp(flynnb.regex, "i"); //|| (flynnb.regexcurrent, "i"); // || new RegExp(flynnb.regexcurrent, "i"); 
      var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
         
-if (flynnbReg.test(dataHash.request.text) || flynnbcReg.test(dataHash.request.text))
-continue;
-      //if (flynnb.current == "current") 
-      //flynnb.regex = flynnb.regexcurrent; //var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");
+//if (flynnbReg.test(dataHash.request.text) || flynnbcReg.test(dataHash.request.text))
+//continue;
+      if (flynnb.current == "current") 
+      flynnb.regex = flynnb.regex || flynnb.regexcurrent; //var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");
   
      // // if (flynnb.regex(dataHash.request.text))
 
@@ -92,8 +92,8 @@ continue;
       if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
         var val = flynnbReg.exec(dataHash.request.text);
       
-      if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
-        var val = flynnbcReg.exec(dataHash.request.text);
+     // if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
+       // var val = flynnbcReg.exec(dataHash.request.text);
    
 
      // if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
@@ -126,7 +126,7 @@ continue;
     break;
     }
   }
-}
+//}
 
 
   for (cmd in flynnBotCommands) {
