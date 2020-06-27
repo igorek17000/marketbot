@@ -73,8 +73,8 @@ exports.checkCommands = function(dataHash, callback) {
   if (dataHash.isMod) 
     for (flynnb in flynnbot) {
       flynnb = flynnbot[flynnb];
-   //if(trigger.name == 'cc' && dataHash.currentBot.type == 'hp') 
-//continue;
+   if(flynnb.name == 'cc' && dataHash.currentBot.type == 'hp') 
+continue;
 
 
 
