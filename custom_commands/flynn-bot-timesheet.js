@@ -73,8 +73,8 @@ exports.checkCommands = function(dataHash, callback) {
   if (dataHash.isMod) 
     for (flynnb in flynnbot) {
       flynnb = flynnbot[flynnb];
-   if(flynnb.name == 'cc' && dataHash.currentBot.type == 'hp') 
-continue;
+   //if(cmd.name == 'cc' && dataHash.currentBot.type == 'hp') 
+//continue;
 
 
 
@@ -87,10 +87,10 @@ continue;
 
 
      
-      if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
+      if (dataHash.request.text && flynnbReg.test(dataHash.request.text)){ //   flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
         var val = flynnbReg.exec(dataHash.request.text);
       
-      if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
+      if (dataHash.request.text && flynnbcReg.test(dataHash.request.text)){  //flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
         var val = flynnbcReg.exec(dataHash.request.text);
    
 
