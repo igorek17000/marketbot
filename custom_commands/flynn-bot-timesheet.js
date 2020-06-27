@@ -118,7 +118,7 @@ exports.checkCommands = function(dataHash, callback) {
       msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday + "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday + "\n" + "Saturday\n" + flynnb.saturday;
     }
         var intro = "FlynnBot Timecard for " + flynnb.name + "\n";
-         callback(true, intro + msg, []); //"FlynnBot Timecard for " + flynnb.name + "\n" + msg, flynnb.attachments); // []);
+         callback(true, "FlynnBot Timecard for " + flynnb.name + "\n" + msg, []);
     
 
     break;
