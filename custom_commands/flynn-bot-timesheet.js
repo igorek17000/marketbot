@@ -81,10 +81,10 @@ exports.checkCommands = function(dataHash, callback) {
      var flynnbReg = new RegExp(flynnb.regex, "i"); //|| (flynnb.regexcurrent, "i"); // || new RegExp(flynnb.regexcurrent, "i"); 
      var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");  
         
-if (dataHash.request.text == flynnb.regex) || (dataHash.request.text == flynnb.regexcurrent)
+if (dataHash.request.text == flynnb.regex || dataHash.request.text == flynnb.regexcurrent)
 continue;
       //if (flynnb.current == "current") 
-      //flynnb.regex = flynnb.regexcurrent; var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");
+      //flynnb.regex = flynnb.regexcurrent; //var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");
   
      // // if (flynnb.regex(dataHash.request.text))
 
