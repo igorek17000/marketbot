@@ -93,7 +93,39 @@ exports.checkCommands = function(dataHash, callback) {
       if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
         var val = flynnbReg.exec(dataHash.request.text); // || flynnbcReg.exec(dataHash.request.text) ;
       
-      if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
+      //if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
+       //var val = flynnbcReg.exec(dataHash.request.text);
+   
+
+     // if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
+      //  var val = flynnbcReg.exec(dataHash.request.text);
+
+
+
+        var msg = "";
+    if (!flynnb.sunday) {
+      msg = "Please submit hours for Sunday";
+    } else if (!flynnb.monday) {
+      msg = "Sunday\n" + flynnb.sunday;
+    } else if (!flynnb.tuesday) {
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday;
+    } else if (!flynnb.wednesday) {
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday;
+    } else if (!flynnb.thursday) {
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday;
+    } else if (!flynnb.friday) {
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday + "\n" + "Thursday\n" + flynnb.thursday;
+    } else if (!flynnb.saturday){
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday+  "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday;
+    } else {
+      msg = "Sunday\n" + flynnb.sunday + "\n" + "Monday\n" + flynnb.monday + "\n" + "Tuesday\n" + flynnb.tuesday + "\n" + "Wednesday\n" + flynnb.wednesday + "\n" + "Thursday\n" + flynnb.thursday + "\n" + "Friday\n" + flynnb.friday + "\n" + "Saturday\n" + flynnb.saturday;
+    }
+        var intro = "FlynnBot Timecard for " + flynnb.name + "\n";
+         callback(true, "FlynnBot Timecard for " + flynnb.name + "\n" + msg, flynnb.attachments, []); //, []);
+    
+
+    break;
+    } else if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
        var val = flynnbcReg.exec(dataHash.request.text);
    
 
