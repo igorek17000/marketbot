@@ -161,7 +161,7 @@ if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text 
 
     break;
     }
-  
+  }
 
 
 
