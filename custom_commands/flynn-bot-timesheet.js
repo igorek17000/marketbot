@@ -125,10 +125,7 @@ exports.checkCommands = function(dataHash, callback) {
     
 
     break;
-}
-    
-
-if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
+} else if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
        var val = flynnbcReg.exec(dataHash.request.text);
    
 
