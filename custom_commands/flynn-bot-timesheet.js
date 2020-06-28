@@ -89,7 +89,7 @@ exports.checkCommands = function(dataHash, callback) {
 
      // // if (flynnb.regex(dataHash.request.text))
 if (dataHash.request.text == "/current" && flynnbcReg.test(dataHash.request.text)){ //     flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
-     flynnbReg = new RegExp(flynnb.regexcurrent, "i");;
+     flynnbReg = new RegExp(flynnb.regexcurrent, "i");
    
      
       if (dataHash.request.text && flynnbReg.test(dataHash.request.text)){  //      flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbReg.test(dataHash.request.text)){
