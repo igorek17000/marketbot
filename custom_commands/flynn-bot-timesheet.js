@@ -84,8 +84,8 @@ exports.checkCommands = function(dataHash, callback) {
 //if (flynnbReg.test(dataHash.request.text) || flynnbcReg.test(dataHash.request.text))
 //continue;
       if (flynnb.current == "current") {
-      flynnb.regex == flynnb.regex && flynnb.regexcurrent == flynnb.regex; //var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");
-  }
+      flynnb.regex == flynnb.regex || flynnb.regexcurrent == flynnb.regex; //var flynnbcReg = new RegExp(flynnb.regexcurrent, "i");
+  
 
      // // if (flynnb.regex(dataHash.request.text))
 
@@ -127,7 +127,7 @@ exports.checkCommands = function(dataHash, callback) {
     break;
     }
   }
-//}
+}
 
 
   for (cmd in flynnBotCommands) {
