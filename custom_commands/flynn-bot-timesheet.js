@@ -126,7 +126,9 @@ exports.checkCommands = function(dataHash, callback) {
 
     break;
 }
-    } else if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
+    } 
+
+if (flynnb.bots.indexOf(dataHash.currentBot.type) > -1 && dataHash.request.text && flynnbcReg.test(dataHash.request.text)){
        var val = flynnbcReg.exec(dataHash.request.text);
    
 
