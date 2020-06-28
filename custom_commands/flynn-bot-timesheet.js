@@ -33,11 +33,11 @@ function updateFlynnBotDesc(flynnb, callback) {
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
-  db.updateOneDoc(db_table, { "current": flynnb.current }, { $unset: flynnb.current }, callback);
+  db.updateOneDoc(db_table, { "current": flynnb.current }, { $unset: "current": flynnb.current }, callback);
 }
 
 function updateFlynnBotRegexCurrent(flynnb, callback) {
-  db.updateOneDoc(db_table, { "regexcurrent": flynnb.regexcurrent }, { $unset: flynnb.regexcurrent }, callback);
+  db.updateOneDoc(db_table, { "regexcurrent": flynnb.regexcurrent }, { $unset: "regexcurrent": flynnb.regexcurrent }, callback);
 }
 
 function updateFlynnBotSun(flynnb, callback) {
