@@ -27,7 +27,9 @@ function updateDbCurrent(flynnb, updateJson, callback){
 }
 
 function addFlynnBotToDB(flynnb, callback) {
+setTimeout(function() {
   db.addDoc(db_table, flynnb, callback);
+  }, config.delay_update);
 }
 
 function updateFlynnBotDesc(flynnb, callback) {
@@ -35,14 +37,11 @@ function updateFlynnBotDesc(flynnb, callback) {
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
-  db.updateOneDoc(db_table, { "current": flynnb.current, "regexcurrent": flynnb.regexcurrent }, { $set: { "current": date, "regexcurrent": date }}, callback);
+  db.updateOneDoc(db_table, { "current": flynnb.current }, { $set: { "current": date, "regexcurrent": date }}, callback);
 }
 
 function updateFlynnBotRegexCurrent(flynnb, callback) {
-setTimeout(function() {
     db.updateOneDoc(db_table, { "current": flynnb.current }, { $rename: { "current": "lastUpdate", "regexcurrent": "completed" }}, callback);
-
-  }, config.delay_update);
 }
 
 function updateFlynnBotSun(flynnb, callback) {
