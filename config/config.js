@@ -27,6 +27,7 @@ function setConfig(){
 exports.setConfig = setConfig;
 exports.bot_name = 'Alex Bot';
 exports.delay_time = 1000;
+exports.delay_update = 500;
 exports.nameit = function() {
 var nameit = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
