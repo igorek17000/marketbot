@@ -182,14 +182,14 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     }
     
       if (flynnbot[flynnb].current) {
-        updateFlynnBotCurrent(flynnbot[flynnb]);
+        updateFlynnBotRegexCurrent(flynnbot[flynnb]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
 
 
       if (flynnbot[flynnb].current) {
-        updateFlynnBotRegexCurrent(flynnbot[flynnb]);
+        updateFlynnBotCurrent(flynnbot[flynnb]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
