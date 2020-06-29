@@ -6,6 +6,7 @@ var moment = require('moment');
 var date = moment().utcOffset(-300).format('LLLL');
 var flynnBotCommands = [addFlynnBotCmd, describeFlynnBotCmd, sundayFlynnBotCmd, mondayFlynnBotCmd, tuesdayFlynnBotCmd, wednesdayFlynnBotCmd, thursdayFlynnBotCmd, fridayFlynnBotCmd, saturdayFlynnBotCmd];
 var db = require('../modules/db.js');
+var config = require('../config/config.js');
 //var mods = require('../modules/mods');
 
 getAllFlynnbot();
@@ -38,7 +39,10 @@ function updateFlynnBotCurrent(flynnb, callback) {
 }
 
 function updateFlynnBotRegexCurrent(flynnb, callback) {
-  db.updateOneDoc(db_table, { "current": flynnb.current, "regexcurrent": flynnb.regexcurrent }, { $rename: { "current": "lastUpdate", "regexcurrent": "completed" }}, callback);
+setTimeout(function() {
+    db.updateOneDoc(db_table, { "current": flynnb.current }, { $rename: { "current": "lastUpdate", "regexcurrent": "completed" }}, callback);
+
+  }, config.delay_update);
 }
 
 function updateFlynnBotSun(flynnb, callback) {
