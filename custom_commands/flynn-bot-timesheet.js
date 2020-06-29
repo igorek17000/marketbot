@@ -41,7 +41,9 @@ function updateFlynnBotCurrent(flynnb, callback) {
 }
 
 function updateFlynnBotRegexCurrent(flynnb, callback) {
+setTimeout(function() {
     db.updateOneDoc(db_table, { "current": flynnb.current }, { $rename: { "current": "lastUpdate", "regexcurrent": "completed" }}, callback);
+  }, config.delay_rename);
 }
 
 function updateFlynnBotSun(flynnb, callback) {
@@ -182,18 +184,19 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     }
     
       if (flynnbot[flynnb].current) {
+        updateFlynnBotCurrent(flynnbot[flynnb]);
         updateFlynnBotRegexCurrent(flynnbot[flynnb]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
 
-
+/*
       if (flynnbot[flynnb].current) {
         updateFlynnBotCurrent(flynnbot[flynnb]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
-      
+      */
         
       var flynnbHash = {
       name: val[1].toLowerCase(),
