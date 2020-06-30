@@ -37,6 +37,21 @@ function updateFlynnBotDesc(flynnb, callback) {
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
+  db.updateOneDoc(db_table, { flynnc: flynnb.current, flynnr: flynnb.regexcurrent }, { $set: { flynnc: date, flynnr: date }}, callback);
+}
+
+function updateFlynnBotRegexCurrent(flynnb, callback) {
+    db.updateOneDoc(db_table, { flynnc: flynnb.current, flynnr: flynnb.regexcurrent } , { $rename: { "lastUpdate": flynnc.lastUpdate, "completed": flynnr.completed }}, callback);
+
+}
+
+
+
+
+
+
+/*
+function updateFlynnBotCurrent(flynnb, callback) {
   db.updateOneDoc(db_table, { "current": flynnb.current } || { "current": flynnbot[flynnb]["current"] }, { $set: { "current": date, "regexcurrent": date }}, callback);
 }
 
@@ -45,6 +60,7 @@ setTimeout(function() {
     db.updateOneDoc(db_table, { "current": flynnb.current } || { "current": flynnbot[flynnb]["current"] }, { $rename: { "current": "lastUpdate", "regexcurrent": "completed" }}, callback);
   }, config.delay_rename);
 }
+*/
 
 function updateFlynnBotSun(flynnb, callback) {
   db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "sunday": flynnb.sunday }}, callback);
@@ -182,16 +198,16 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
         
       }
     }
-    
-      if (flynnbot[flynnb].current) {
+    for (flynnb in flynnbot) {   
+      if (flynnbot[flynnb].flynnc) {
         updateFlynnBotCurrent(flynnbot[flynnb]);
         
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
 
-
-      if (flynnbot[flynnb].current) {
+for (flynnb in flynnbot) {   
+      if (flynnbot[flynnb].flynnr) {
         updateFlynnBotCurrent(flynnbot[flynnb]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
