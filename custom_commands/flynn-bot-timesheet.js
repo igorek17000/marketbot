@@ -43,8 +43,8 @@ db.updateOneDoc(db_table, { "regexcurrent": flynnb.regexcurrent }, { $set: { "re
 }
 
 function updateFlynnBotRegexCurrent(flynnb, callback) {
-    db.updateOneDoc(db_table, { "current": flynnb.current } , { $rename: { "current": "lastUpdate" }}, callback);
-db.updateOneDoc(db_table, { "regexcurrent": flynnb.regexcurrent } , { $rename: { "regexcurrent": "completed" }}, callback);
+    db.updateOneDoc(db_table, { "current": flynnb.current }, { $rename: { "current": "lastUpdate" }}, callback);
+db.updateOneDoc(db_table, { "regexcurrent": flynnb.regexcurrent }, { $rename: { "regexcurrent": "completed" }}, callback);
 
 }
 
@@ -206,14 +206,14 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
 //flynnbot[flynnb]["current"] = date;
 //flynnbot[flynnb]["regexcurrent"] = date;
         updateFlynnBotCurrent(flynnbot[flynnb]);
-        
+     
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
 
 //for (flynnb in flynnbot) {   
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
-       
+       updateFlynnBotRegexCurrent(flynnbot[flynnb]);
         updateFlynnBotRegexCurrent(flynnbot[flynnb]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
