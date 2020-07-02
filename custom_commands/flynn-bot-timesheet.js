@@ -200,6 +200,8 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     }
     for (flynnb in flynnbot) {   
       if (flynnbot[flynnb].current) {
+flynnbot[flynnb]["current"] = date;
+flynnbot[flynnb]["regexcurrent"] = date;
         updateFlynnBotCurrent(flynnbot[flynnb]);
         
         //var msg = "Current week updated";
@@ -207,7 +209,8 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
         }
 
 //for (flynnb in flynnbot) {   
-      if (flynnbot[flynnb].regexcurrent) {
+      if (flynnbot[flynnb].current) {
+       
         updateFlynnBotRegexCurrent(flynnbot[flynnb]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
