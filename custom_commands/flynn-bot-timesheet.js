@@ -201,8 +201,8 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
         
       }
     }
-    for (flynnb in flynnbot) {   
-      if (flynnbot[flynnb].current == "current") {
+    //for (flynnb in flynnbot) {   
+      if (flynnbot[flynnb].current) {
 flynnbot[flynnb]["current"] = date;
 flynnbot[flynnb]["regexcurrent"] = date;
         updateFlynnBotCurrent(flynnbot[flynnb]);
@@ -238,7 +238,7 @@ flynnbot[flynnb]["regexcurrent"] = date;
     return msg;
   }
 }
-}
+
 
 
 function describeFlynnBotCmd(request, bots, isMod, callback) {
