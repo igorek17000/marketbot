@@ -199,7 +199,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
       }
     }
     for (flynnb in flynnbot) {   
-      if (flynnbot[flynnb].flynnc) {
+      if (flynnbot[flynnb].current) {
         updateFlynnBotCurrent(flynnbot[flynnb]);
         
         //var msg = "Current week updated";
@@ -207,8 +207,8 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
         }
 
 for (flynnb in flynnbot) {   
-      if (flynnbot[flynnb].flynnr) {
-        updateFlynnBotCurrent(flynnbot[flynnb]);
+      if (flynnbot[flynnb].regexcurrent) {
+        updateFlynnBotRegexCurrent(flynnbot[flynnb]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
