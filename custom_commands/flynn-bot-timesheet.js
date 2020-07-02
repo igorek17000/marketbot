@@ -206,7 +206,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
         //callback(true, msg, []);
         }
 
-for (flynnb in flynnbot) {   
+//for (flynnb in flynnbot) {   
       if (flynnbot[flynnb].regexcurrent) {
         updateFlynnBotRegexCurrent(flynnbot[flynnb]);
         //var msg = "Current week updated";
@@ -231,6 +231,7 @@ for (flynnb in flynnbot) {
     callback(true, msg, []);
     return msg;
   }
+}
 }
 
 
