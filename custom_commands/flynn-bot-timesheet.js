@@ -37,7 +37,7 @@ function updateFlynnBotDesc(flynnb, callback) {
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
-  db.updateOneDoc(db_table, { "current": flynnb.current, "regexcurrent": flynnb.regexcurrent }, { $set: { "current": date, "regexcurrent": date }}, callback);
+  db.updateOneDoc(db_table, { "current": flynnb.current, "regexcurrent": flynnb.regexcurrent }, { $set: { "current": flynnb.current, "regexcurrent": flynnb.regexcurrent }}, callback);
 }
 
 function updateFlynnBotRegexCurrent(flynnb, callback) {
