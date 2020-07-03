@@ -222,7 +222,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
        
         //var msg = "Current week updated";
         //callback(true, msg, []);
-        
+        }
 /*
 //for (flynnb in flynnbot) {   
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
@@ -252,7 +252,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     return msg;
   }
 }
-}
+
 
 
 function describeFlynnBotCmd(request, bots, isMod, callback) {
