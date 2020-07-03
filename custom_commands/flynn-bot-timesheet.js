@@ -45,11 +45,11 @@ db.updateOneDoc(db_table, { "regexcurrent": flynnb.regexcurrent }, { $set: { "re
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
-  db.updateOneDoc(db_table, { "current": flynnb.current }, { $rename: { "current": "lastUpdated" }}, callback);
+  db.updateOneDoc(db_table, { "current": flynnb.current }, { $rename: { "regexcurrent": "completed" }}, callback);
 }
 
 function updateFlynnBotRegexCurrent(flynnb, callback) {
-    db.updateOneDoc(db_table, { "regexcurrent": flynnb.regexcurrent }, { $rename: { "regexcurrent": "completed" }}, callback);
+    db.updateOneDoc(db_table, { "regexcurrent": flynnb.regexcurrent }, { $rename: { "current": "lastUpdated" }}, callback);
 
 }
 
