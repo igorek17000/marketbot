@@ -36,15 +36,20 @@ function updateFlynnBotDesc(flynnb, callback) {
   db.updateOneDoc(db_table, { "name": flynnb.name }, { $set: { "description": flynnb.description }}, callback);
 }
 
-function updateFlynnBotCurrent(flynnb, callback) {
+function updateFlynnBotCurrentDate(flynnb, callback) {
   db.updateOneDoc(db_table, { "current": flynnb.current }, { $set: { "current": date}}, callback);
-db.updateOneDoc(db_table, { "regexcurrent": flynnb.regexcurrent }, { $set: { "regexcurrent": date }}, callback);
+}
 
+function updateFlynnBotRegexCurrentDate(flynnb, callback) {
+db.updateOneDoc(db_table, { "regexcurrent": flynnb.regexcurrent }, { $set: { "regexcurrent": date }}, callback);
+}
+
+function updateFlynnBotCurrent(flynnb, callback) {
+  db.updateOneDoc(db_table, { "current": flynnb.current }, { $rename: { "current": "lastUpdated" }}, callback);
 }
 
 function updateFlynnBotRegexCurrent(flynnb, callback) {
     db.updateOneDoc(db_table, { "regexcurrent": flynnb.regexcurrent }, { $rename: { "regexcurrent": "completed" }}, callback);
-db.updateOneDoc(db_table, { "current": flynnb.current }, { $rename: { "current": "lastUpdated" }}, callback);
 
 }
 
@@ -205,7 +210,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 //flynnbot[flynnb]["current"] = date;
 //flynnbot[flynnb]["regexcurrent"] = date;
-        updateFlynnBotCurrent(flynnbot[flynnb]);
+        updateFlynnBotCurrentDate(flynnbot[flynnb]);
      
         //var msg = "Current week updated";
         //callback(true, msg, []);
@@ -213,7 +218,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
 
 //for (flynnb in flynnbot) {   
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
-       updateFlynnBotRegexCurrent(flynnbot[flynnb]);
+       updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
        
         //var msg = "Current week updated";
         //callback(true, msg, []);
