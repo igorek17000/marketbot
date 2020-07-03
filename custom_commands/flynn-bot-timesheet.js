@@ -38,26 +38,26 @@ function updateFlynnBotDesc(flynnb, callback) {
 
 function updateFlynnBotCurrentDate(flynnb, callback) {
 setTimeout(function() {
-  db.updateOneDoc(db_table, { "current": flynnb.current }, { $set: { "current": date}}, callback);
-}, 100);
+  db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "current": date}}, callback);
+}, config.delay_one);
 }
 
 function updateFlynnBotRegexCurrentDate(flynnb, callback) {
 //setTimeout(function() {
-db.updateOneDoc(db_table, { "regexcurrent": flynnb.regexcurrent }, { $set: { "regexcurrent": date }}, callback);
+db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "regexcurrent": date }}, callback);
 //}, 200);
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
 setTimeout(function() {
-  db.updateOneDoc(db_table, { "current": flynnb.current }, { $rename: { "current": "lastUpdate" }}, callback);
-}, 300);
+  db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $rename: { "current": "lastUpdate" }}, callback);
+}, config.delay_three);
 }
 
 function updateFlynnBotRegexCurrent(flynnb, callback) {
 setTimeout(function() {
-    db.updateOneDoc(db_table, { "regexcurrent": flynnb.regexcurrent }, { $rename: { "regexcurrent": "completed" }}, callback);
-}, 200);
+    db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $rename: { "regexcurrent": "completed" }}, callback);
+}, config.delay_two);
 }
 
 
