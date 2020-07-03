@@ -217,11 +217,13 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
-     
+     updateFlynnBotCurrent(flynnbot[flynnb]);
+       updateFlynnBotRegexCurrent(flynnbot[flynnb]);
+       
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
-
+/*
 //for (flynnb in flynnbot) {   
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
        updateFlynnBotCurrent(flynnbot[flynnb]);
@@ -230,7 +232,7 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
-      
+      */
         
       var flynnbHash = {
       name: val[1].toLowerCase(),
