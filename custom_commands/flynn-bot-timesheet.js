@@ -8,6 +8,7 @@ var flynnBotCommands = [addFlynnBotCmd, describeFlynnBotCmd, sundayFlynnBotCmd, 
 var db = require('../modules/db.js');
 var config = require('../config/config.js');
 //var mods = require('../modules/mods');
+var rooms = require('../modules/rooms.js');
 
 getAllFlynnbot();
 exports.modName = "flynnBot";
@@ -216,7 +217,7 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
     
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 
-flynnbot[flynnb]["regexcurrent"] = currentBot.type;
+flynnbot[flynnb]["regexcurrent"] = rooms.getroom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
      updateFlynnBotCurrent(flynnbot[flynnb]);
