@@ -216,7 +216,7 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
     
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 
-flynnbot[flynnb]["regexcurrent"] = request.currentBot;
+flynnbot[flynnb]["regexcurrent"] = currentBot;
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
      updateFlynnBotCurrent(flynnbot[flynnb]);
