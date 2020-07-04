@@ -42,7 +42,7 @@ setTimeout(function() {
 }, config.delay_one);
 }
 
-function updateFlynnBotRegexCurrentDate(flynnb, callback) {
+function updateFlynnBotRegexCurrentDate(request, flynnb, callback) {
 //setTimeout(function() {
 db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "regexcurrent": request.sender_name }}, callback);
 //}, 200);
