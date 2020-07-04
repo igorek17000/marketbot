@@ -44,7 +44,7 @@ setTimeout(function() {
 
 function updateFlynnBotRegexCurrentDate(request, flynnb, callback) {
 //setTimeout(function() {
-db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "regexcurrent": request.sender_name }}, callback);
+db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "regexcurrent": flynnb.regexcurrent }}, callback);
 //}, 200);
 }
 
@@ -215,6 +215,8 @@ function addFlynnBotCmd(request, bots, isMod, callback) {
     }
     
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
+
+flynnbot[flynnb]["regexcurrent"] = request.sender_name;
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
      updateFlynnBotCurrent(flynnbot[flynnb]);
