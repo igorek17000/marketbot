@@ -193,7 +193,7 @@ exports.getCmdListDescription = function () {
   return null;
 }
 
-function addFlynnBotCmd(request, bots, isMod, botRoom, callback) {
+function addFlynnBotCmd(request, bots, isMod, currentBot, botRoom, callback) {
   var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
   var botII, botRoom;
@@ -217,7 +217,7 @@ function addFlynnBotCmd(request, bots, isMod, botRoom, callback) {
     
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 
-flynnbot[flynnb]["regexcurrent"] = rooms.getRoom(bots);
+flynnbot[flynnb]["regexcurrent"] = Object.keys(currentBot);
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
      updateFlynnBotCurrent(flynnbot[flynnb]);
