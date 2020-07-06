@@ -43,9 +43,9 @@ setTimeout(function() {
 }, config.delay_one);
 }
 
-function updateFlynnBotRegexCurrentDate(flynnb, callback) {
+function updateFlynnBotRegexCurrentDate(dataHash, flynnb, callback) {
 //setTimeout(function() {
-db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "regexcurrent": flynnb.regexcurrent }}, callback);
+db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "regexcurrent": dataHash.currentBot }}, callback);   //flynnb.regexcurrent }}, callback);
 //}, 200);
 }
 
@@ -193,7 +193,7 @@ exports.getCmdListDescription = function () {
   return null;
 }
 
-function addFlynnBotCmd(request, bots, isMod, botRoom, callback) {
+function addFlynnBotCmd(dataHash, request, bots, isMod, botRoom, callback) {
   var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
   var botII, botRoom;
@@ -217,7 +217,7 @@ function addFlynnBotCmd(request, bots, isMod, botRoom, callback) {
     
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 
-flynnbot[flynnb]["regexcurrent"] = Object.keys(currentBot);
+flynnbot[flynnb]["regexcurrent"] = dataHash.currentBot;
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
      updateFlynnBotCurrent(flynnbot[flynnb]);
