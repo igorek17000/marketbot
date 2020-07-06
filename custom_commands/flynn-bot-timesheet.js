@@ -215,9 +215,9 @@ function addFlynnBotCmd(request, dataHash, bots, isMod, currentBot, callback) {
         
       }
     }
-    if (flynnbot[flynnb].bots.indexOf(dataHash.currentBot.type) > -1 && (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent)) {
+    if (flynnbot[flynnb].bots.indexOf(dataHash.currentBot) > -1 && (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent)) {
 
-flynnbot[flynnb]["regexcurrent"] = flynnbot[flynnb].bots.name;
+flynnbot[flynnb]["regexcurrent"] = flynnbot[flynnb].bots.indexOf(dataHash.currentBot);
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
      updateFlynnBotCurrent(flynnbot[flynnb]);
