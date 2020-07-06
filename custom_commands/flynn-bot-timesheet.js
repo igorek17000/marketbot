@@ -9,6 +9,7 @@ var db = require('../modules/db.js');
 var config = require('../config/config.js');
 //var mods = require('../modules/mods');
 var rooms = require('../modules/rooms.js');
+var bot = require('../bot.js')
 
 getAllFlynnbot();
 exports.modName = "flynnBot";
@@ -193,7 +194,7 @@ exports.getCmdListDescription = function () {
   return null;
 }
 
-function addFlynnBotCmd(dataHash, request, bots, isMod, botRoom, callback) {
+function addFlynnBotCmd(request, bots, isMod, botRoom, callback) {
   var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
   var botII, botRoom;
@@ -217,7 +218,7 @@ function addFlynnBotCmd(dataHash, request, bots, isMod, botRoom, callback) {
     
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 
-flynnbot[flynnb]["regexcurrent"] = dataHash.currentBot;
+flynnbot[flynnb]["regexcurrent"] = bot.botRoom;
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
      updateFlynnBotCurrent(flynnbot[flynnb]);
