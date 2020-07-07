@@ -217,7 +217,7 @@ function addFlynnBotCmd(request, dataHash, bots, isMod, currentBot, callback) {
     }
     if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 
-flynnbot[flynnb]["regexcurrent"] = currentBot.id;
+flynnbot[flynnb]["regexcurrent"] = rooms.getRoom(room).id;
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
      updateFlynnBotCurrent(flynnbot[flynnb]);
