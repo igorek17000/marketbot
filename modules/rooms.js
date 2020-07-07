@@ -62,7 +62,7 @@ room.id = rooms[path];
 //}exports.getARoom = function() { 
 
 
-  return room;
+  return room.type;
 }
 
 exports.checkCommands = function(dataHash, callback) {
