@@ -217,7 +217,7 @@ function addFlynnBotCmd(request, dataHash, bots, isMod, currentBot, callback) {
     }
     if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 
-flynnbot[flynnb]["regexcurrent"] = dataHash.currentBot;
+flynnbot[flynnb]["regexcurrent"] = Object.keys(currentBot);
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
      updateFlynnBotCurrent(flynnbot[flynnb]);
@@ -243,7 +243,7 @@ flynnbot[flynnb]["regexcurrent"] = dataHash.currentBot;
       regexcurrent: "^\/" + "current" + "$",
       message: val[2],
       description: "Timesheet week of " + val[1],
-      bots: Object.keys(curentBot),
+      bots: Object.keys(bots),
       current: "current",
       date: date
      };
