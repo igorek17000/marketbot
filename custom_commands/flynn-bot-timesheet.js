@@ -200,7 +200,7 @@ function addFlynnBotCmd(request, bots, isMod, botRoom, callback) {
   var botII, botRoom;
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-    currentBot.type = '';
+  
 
     if (!isMod) {
       var msg = request.name + " you have no power here!";
@@ -218,7 +218,7 @@ function addFlynnBotCmd(request, bots, isMod, botRoom, callback) {
     }
     if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 
-flynnbot[flynnb]["regexcurrent"] = botRoom;
+flynnbot[flynnb]["regexcurrent"] = rooms.getRoom(botRoom);
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
      updateFlynnBotCurrent(flynnbot[flynnb]);
