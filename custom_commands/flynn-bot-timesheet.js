@@ -44,7 +44,7 @@ setTimeout(function() {
 }, config.delay_one);
 }
 
-function updateFlynnBotRegexCurrentDate(dataHash, flynnb, callback) {
+function updateFlynnBotRegexCurrentDate(flynnb, callback) {
 //setTimeout(function() {
 db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "regexcurrent": flynnb.regexcurrent }}, callback);   //flynnb.regexcurrent }}, callback);
 //}, 200);
