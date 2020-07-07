@@ -194,7 +194,7 @@ exports.getCmdListDescription = function () {
   return null;
 }
 
-function addFlynnBotCmd(request, bots, isMod, botID, botRoom, callback) {
+function addFlynnBotCmd(request, bots, isMod, botID, callback) {
   var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
   var botII, botRoom;
