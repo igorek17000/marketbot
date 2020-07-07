@@ -13,7 +13,8 @@ var bot = require('../bot.js')
 
 getAllFlynnbot();
 exports.modName = "flynnBot";
-var botName = "FlynnBot";
+
+
 
 function getAllFlynnbot() {
   db.getAllDocuments(db_table, function(res){
@@ -218,7 +219,12 @@ function addFlynnBotCmd(request, bots, isMod, botARoom, callback) {
       }
     }
     if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
-flynnbot[flynnb]["regexcurrent"] = botARoom.type; //botName;
+var botName; //= '';
+
+if (getARoom == '308boonbot') 
+botName = "308BoonBot"; 
+
+flynnbot[flynnb]["regexcurrent"] = botName;
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
      updateFlynnBotCurrent(flynnbot[flynnb]);
