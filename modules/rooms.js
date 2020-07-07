@@ -51,7 +51,17 @@ room.id = rooms[path];
 return room;
 }
 
-exports.getARoom = function() {
+exports.getARoom = function(path) {
+var room = {}; 
+if (rooms[path]) { 
+room.type = path; 
+room.id = rooms[path]; 
+} 
+//if (botID == rooms[res[room].id]) { 
+//botName = rooms[res[room].name]; 
+//}exports.getARoom = function() { 
+
+
   return room;
 }
 
