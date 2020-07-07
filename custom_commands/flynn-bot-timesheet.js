@@ -217,8 +217,8 @@ function addFlynnBotCmd(request, bots, isMod, botRoom, callback) {
       }
     }
     if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
-
-flynnbot[flynnb]["regexcurrent"] = botRoom();
+if (botRoom == "308boonbot") 
+flynnbot[flynnb]["regexcurrent"] = "308boonbot";
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
      updateFlynnBotCurrent(flynnbot[flynnb]);
