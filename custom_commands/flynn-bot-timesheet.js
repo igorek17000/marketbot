@@ -3,7 +3,7 @@
 var flynnbot;
 var db_table = 'flynn_bot_timesheet';
 var moment = require('moment'); 
-var date = moment().utcOffset(-300).format('LLLL');
+var date = moment().utcOffset(-240).format('LLLL');
 var flynnBotCommands = [addFlynnBotCmd, describeFlynnBotCmd, sundayFlynnBotCmd, mondayFlynnBotCmd, tuesdayFlynnBotCmd, wednesdayFlynnBotCmd, thursdayFlynnBotCmd, fridayFlynnBotCmd, saturdayFlynnBotCmd];
 var db = require('../modules/db.js');
 var config = require('../config/config.js');
@@ -13,6 +13,7 @@ var bot = require('../bot.js')
 
 getAllFlynnbot();
 exports.modName = "flynnBot";
+var modName = "FlynnBot";
 
 function getAllFlynnbot() {
   db.getAllDocuments(db_table, function(res){
@@ -217,7 +218,7 @@ function addFlynnBotCmd(request, bots, isMod, botID, callback) {
       }
     }
     if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
-flynnbot[flynnb]["regexcurrent"] = botID;
+flynnbot[flynnb]["regexcurrent"] = modName;
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
      updateFlynnBotCurrent(flynnbot[flynnb]);
