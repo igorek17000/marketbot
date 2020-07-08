@@ -55,7 +55,7 @@ exports.getARoom = function(res) {
 var room = {}; 
 //var res = [];
 //if (rooms[path]) { 
-room.name = rooms[res[room].name];
+room.name = res[room].name;
 room.type = res; 
 room.id = rooms[res]; 
 //} 
@@ -64,7 +64,7 @@ room.id = rooms[res];
 //}exports.getARoom = function() { 
 
 
-  return room;
+  return res;
 }
 
 exports.checkCommands = function(dataHash, callback) {
