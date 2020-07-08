@@ -511,7 +511,7 @@ process.exit();
 });
 
 //var msg = require('./postbot');
-callback(true, name, []);
+//callback(true, name, []);
 var msg = require('./postbot');
 msg;
 
