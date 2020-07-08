@@ -53,9 +53,9 @@ return room;
 
 exports.getARoom = function(res) {
 var room = {}; 
-//var res = [];
+var rooms = [];
 //if (rooms[path]) { 
-room.name = res[room].name;
+room.name = res[room].id;
 room.type = res; 
 room.id = rooms[res]; 
 //} 
