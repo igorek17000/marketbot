@@ -51,13 +51,13 @@ room.id = rooms[path];
 return room;
 }
 
-exports.getARoom = function(path) {
+exports.getARoom = function(res) {
 var room = {}; 
-var res = [];
+//var res = [];
 //if (rooms[path]) { 
 room.name = rooms[res[room].name];
-room.type = path; 
-room.id = rooms[path]; 
+room.type = res; 
+room.id = rooms[res]; 
 //} 
 //if (botID == rooms[res[room].id]) { 
 //botName = rooms[res[room].name]; 
