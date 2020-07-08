@@ -51,14 +51,14 @@ room.id = rooms[path];
 return room;
 }
 
-exports.getARoom = function(path, res, callback) {
+exports.getARoom = function(botRoom, path) {
 var room = {}; 
 var rooms = [];
 //if (rooms[path]) { 
 //room.name = res[room].id;
-room.type = res; 
-room.id = path.room; 
-room.one = rooms[path];
+room.type = path; 
+room.id = botRoom; 
+room.one = path[botRoom];
 //} 
 //if (botID == rooms[res[room].id]) { 
 //botName = rooms[res[room].name]; 
