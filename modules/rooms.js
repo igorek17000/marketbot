@@ -51,20 +51,21 @@ room.id = rooms[path];
 return room;
 }
 
-exports.getARoom = function(res) {
+exports.getARoom = function(path, res, callback) {
 var room = {}; 
 var rooms = [];
 //if (rooms[path]) { 
 //room.name = res[room].id;
 room.type = res; 
-room.id = rooms[res]; 
+room.id = path; 
+room.one = callback;
 //} 
 //if (botID == rooms[res[room].id]) { 
 //botName = rooms[res[room].name]; 
 //}exports.getARoom = function() { 
 
 
-  return res;
+  return room;
 }
 
 exports.checkCommands = function(dataHash, callback) {
