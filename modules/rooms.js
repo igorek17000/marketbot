@@ -115,23 +115,6 @@ function cmdRoomAdd(request, currentBot, owner, callback) {
     callback(true, msg, []);
     return msg;
   }
-
-if (request.user_id == isMod || currentBot.type != 'config')
-      return currentBot.type;
-
-    var roomHash = {
-      name: val[1].toLowerCase(),
-      id: val[2]
-    };
-
-    rooms[val[1]] = val[2];
-    addRoomToDB(roomHash);
-    var msg = val[1] + " room added! Your bot will now respond in in your new room";
-    callback(true, msg, []);
-    return msg;
-  }
-
-
 }
 
 function cmdConfig(request, currentBot, owner, callback) {
