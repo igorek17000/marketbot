@@ -59,7 +59,7 @@ exports.getARoom = function(path, botRoom) {
 var room = {}; 
 path = path;
 var botRoom;
-var 308boonave;
+var '308boonave';
 //var rooms = {};
 //var botRoom = {};
 //if (path) { 
