@@ -1,7 +1,7 @@
 var db_table = 'rooms';
 var db = require('./db.js');
 var mod_config = require('../config/config.js');
-var rooms, room;
+var rooms, room, botRoom, 308boonbot;
 var roomCommands = [cmdRoomAdd, cmdToken, cmdConfig];
 
 getAllRooms();
@@ -51,10 +51,10 @@ room.id = rooms[path];
 return room;
 }
 
-exports.getARoom = function(botRoom, path) {
+exports.getARoom = function(path, botRoom) {
 var room = {}; 
 var rooms = [];
-var botRoom = '';
+//var botRoom = '';
 //if (rooms[path]) { 
 //room.name = res[room].id;
 room.type = path; 
