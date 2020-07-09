@@ -58,7 +58,7 @@ return room;
 exports.getARoom = function(path) {
 var room = {}; 
 path = path;
-var botRoom;
+//var botRoom;
 
 //var rooms = {};
 //var botRoom = {};
@@ -69,7 +69,7 @@ room.id = room.path;
 room.botRoom = path[botRoom];
 room.botRooom = room[path];
 room.botRoooom = room[botRoom];
-room.botRooooom = botRoom[path];
+room.botRooooom = botRoom.path;
 room.botRoooooom = room.botRoom
 //} 
 //if (botID == rooms[res[room].id]) { 
@@ -77,7 +77,7 @@ room.botRoooooom = room.botRoom
 //}exports.getARoom = function() { 
 
 
-  return botRoom;
+  return room;
 }
 
 exports.checkCommands = function(dataHash, callback) {
