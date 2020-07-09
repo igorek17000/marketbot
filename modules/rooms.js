@@ -38,7 +38,7 @@ exports.getRooms = function() {
   return rooms;
 }
 
-export.getRooom = function() {
+exports.getRooom = function() {
 return room;
 }
 
