@@ -3,6 +3,7 @@
 //
 
 var fs = require('fs'); 
+/*
 // modeled on http://st-on-it.blogspot.com/2011/05/how-to-read-user-input-with-nodejs.html 
 function query(text, callback) { 
 'use strict'; 
@@ -74,7 +75,7 @@ ask(question, format, callback);
 }
 });
 }
-
+*/
 /*var current;
 var forecast;
 var weatherData = require('weather-js');
@@ -501,15 +502,11 @@ function retartCmd(request, isMod, callback) {
      return "Sorry I'm no fun right now.";
     }
 
+/*
 ask("Name", /.+/, function(name) {
 ask("Email", /^.+@.+$/, function(email) {
 console.log("Your name is: ", name);
-console.log("Your email is:", email);
-
-process.exit();
-});
-});
-
+*/
 //var msg = require('./postbot');
 //callback(true, name, []);
 var msg = require('./postbot');
