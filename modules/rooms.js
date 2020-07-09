@@ -69,8 +69,8 @@ room.id = room.path;
 room.botRoom = path[botRoom];
 room.botRooom = room[path];
 room.botRoooom = room[botRoom];
-room.botRooooom = botRoom.path;
-room.botRoooooom = room.botRoom
+room.botRooooom = botRoom[path];
+room.botRoooooom = room.botRoom;
 //} 
 //if (botID == rooms[res[room].id]) { 
 //botName = rooms[res[room].name]; 
