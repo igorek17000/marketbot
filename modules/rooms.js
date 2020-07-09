@@ -59,7 +59,7 @@ exports.getARoom = function(path) {
 var room = {}; 
 path = path;
 var botRoom;
-var botRoom[path];
+//var botRoom[path];
 
 //var rooms = {};
 //var botRoom = {};
@@ -70,7 +70,7 @@ room.id = room.path;
 room.botRoom = path[botRoom];
 room.botRooom = room[path];
 room.botRoooom = room[botRoom];
-room.botRooooom = botRoom[bath];
+room.botRooooom = botRoom[path];
 room.botRoooooom = room.botRoom;
 //} 
 //if (botID == rooms[res[room].id]) { 
