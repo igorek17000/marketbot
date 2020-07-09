@@ -54,12 +54,13 @@ return room;
 exports.getARoom = function(botRoom, path) {
 var room = {}; 
 var rooms = [];
+var botRoom = '';
 //if (rooms[path]) { 
 //room.name = res[room].id;
 room.type = path; 
 room.id = botRoom; 
 //room.one = path[botRoom];
-room.one = botRoom[path];
+room.one = path[botRoom];
 
 //} 
 //if (botID == rooms[res[room].id]) { 
