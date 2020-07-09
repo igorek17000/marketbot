@@ -59,7 +59,7 @@ exports.getARoom = function(path, botRoom) {
 var room = {}; 
 path = path;
 var botRoom;
-var "308boonbot";
+
 //var rooms = {};
 //var botRoom = {};
 //if (path) { 
@@ -77,7 +77,7 @@ room.botRoooooom = room.botRoom
 //}exports.getARoom = function() { 
 
 
-  return room;
+  return botRoom;
 }
 
 exports.checkCommands = function(dataHash, callback) {
