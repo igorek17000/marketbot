@@ -38,6 +38,10 @@ exports.getRooms = function() {
   return rooms;
 }
 
+export.getRooom = function() {
+return room;
+}
+
 exports.getRoom = function(path) { 
 var room = {}; 
 path = path.toLowerCase();
@@ -53,15 +57,16 @@ return room;
 
 exports.getARoom = function(path, botRoom) {
 var room = {}; 
-var rooms = [];
-//var botRoom = [];
+var rooms = {};
+var botRoom = {};
 //if (rooms[path]) { 
 //room.name = res[room].id;
 room.type = path; 
-room.id = room[path]; 
+room.id = rooms[path]; 
 //room.one = path[botRoom];
 room.botRoom = path[botRoom];
-
+room.botRooom = room[path];
+room.botRoooom = room[botRoom];
 //} 
 //if (botID == rooms[res[room].id]) { 
 //botName = rooms[res[room].name]; 
