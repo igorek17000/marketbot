@@ -55,7 +55,7 @@ room.id = rooms[path];
 return room;
 }
 
-exports.getARoom = function(path, botRoom) {
+exports.getARoom = function(path) {
 var room = {}; 
 path = path;
 var botRoom;
