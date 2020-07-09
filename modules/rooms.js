@@ -58,7 +58,7 @@ return room;
 exports.getARoom = function(path) {
 var room = {}; 
 path = path;
-//var botRoom;
+var botRoom;
 
 //var rooms = {};
 //var botRoom = {};
