@@ -58,9 +58,9 @@ var rooms = [];
 //if (rooms[path]) { 
 //room.name = res[room].id;
 room.type = path; 
-room.id = botRoom; 
+room.id = room[path]; 
 //room.one = path[botRoom];
-room.one = path[botRoom];
+room.botRoom = path[botRoom];
 
 //} 
 //if (botID == rooms[res[room].id]) { 
