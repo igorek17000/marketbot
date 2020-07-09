@@ -61,7 +61,7 @@ path = path;
 botRoom = botRoom;
 //var rooms = {};
 //var botRoom = {};
-if (path) { 
+//if (path) { 
 //room.name = res[room].id;
 room.type = path; 
 room.id = room.path; 
