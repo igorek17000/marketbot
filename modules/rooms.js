@@ -17,6 +17,9 @@ function getAllRooms(){
   });
 }
 
+function User(path) {
+this.path = path;
+}
 
 
 function addRoomToDB(room, callback){
@@ -55,14 +58,17 @@ room.id = rooms[path];
 return room;
 }
 
-exports.getARoom = function(path) {
+exports.User.prototype.getPath = function() {
+return this.path;
+}
+/*
 var room = {}; 
 var botRoom;
 var this.path = path;
 var this.name = botRoom[path];
 that.path = path
 
-/*
+
 
 //var botRoom[path];
 
@@ -81,11 +87,11 @@ rooms.botRoooooom = botRoom[path]
 //if (botID == rooms[res[room].id]) { 
 //botName = rooms[res[room].name]; 
 //}exports.getARoom = function() { 
-*/
+
 
   return that.path;
 }
-
+*/
 exports.checkCommands = function(dataHash, callback) {
   for (command in roomCommands) {
     var test = roomCommands[command](dataHash.request, dataHash.currentBot, dataHash.owner, callback);
