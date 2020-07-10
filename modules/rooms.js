@@ -62,7 +62,7 @@ exports.getUserPath = function(path) {
 var that = this;
 var botRoom = room;
 var botARoom = botRoom[path];
-that.path = that.botARoom;
+that.path = that.botRoom;
 //if (that.path && that.path == '308boonbot') {
 //that.path = "308boonbot";
 //}
