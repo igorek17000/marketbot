@@ -56,30 +56,32 @@ return room;
 }
 
 exports.getARoom = function(path) {
-var room = path; 
-var rooms = [];
-//path = path;
+var room = botRoom; 
+var rooms = {};
+path = botRoom[path];
 var botRoom;
+var botArr = {
+
 //var botRoom[path];
 
 //var rooms = {};
 //var botRoom = {};
 //if (botRoom[path]) { 
 //room.name = res[room].id;
-rooms.type = path; 
-rooms.id = room.path; 
-rooms.botRoom = path[botRoom];
-rooms.botRooom = room[path];
-rooms.botRoooom = room[botRoom];
-//room.botRooooom = botRoom[room];
-rooms.botRoooooom = room.botRoom;
-//} 
+room.botRoom = path,
+room.id = room.path,
+rooms.botRoom = path[botRoom],
+rooms.botRooom = room[path],
+rooms.botRoooom = room[botRoom],
+room.botRooooom = botRoom[room],
+rooms.botRoooooom = botRoom[path]
+} 
 //if (botID == rooms[res[room].id]) { 
 //botName = rooms[res[room].name]; 
 //}exports.getARoom = function() { 
 
 
-  return room;
+  return botArr;
 }
 
 exports.checkCommands = function(dataHash, callback) {
