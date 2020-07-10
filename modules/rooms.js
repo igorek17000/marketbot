@@ -16,11 +16,11 @@ function getAllRooms(){
     }
   });
 }
-
+/*
 function User(path) {
 this.path = path;
 }
-
+*/
 
 function addRoomToDB(room, callback){
   db.addDoc(db_table, room, callback);
@@ -58,9 +58,13 @@ room.id = rooms[path];
 return room;
 }
 
-exports.User.getPath = function() {
-return this.path;
+exports.getUserPath = function(path) {
+var that = this;
+var botRoom;
+that.path = botRoom[path];
+return that.path;
 }
+
 /*
 var room = {}; 
 var botRoom;
