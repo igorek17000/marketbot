@@ -11,6 +11,7 @@ var config = require('../config/config.js');
 var rooms = require('../modules/rooms.js');
 var bot = require('../bot.js')
 var botName; //= '';
+var that = this;
 
 getAllFlynnbot();
 exports.modName = "flynnBot";
@@ -224,7 +225,7 @@ function addFlynnBotCmd(request, bots, isMod, room, callback) {
 
 
 //if (rooms.getRoom(botRoom).type) //&& botRoom == '308boonbot') { //flynnbot[flynnb].bots.indexOf(getARoom.type) > -1 && botRoom == 'true') {
-botName = rooms.getARoom(); //(botRoom).type; //botRoom; 
+botName = rooms.User.prototype.getPath(); //(botRoom).type; //botRoom; 
 
 flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
