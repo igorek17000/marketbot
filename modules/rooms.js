@@ -3,7 +3,7 @@ var db = require('./db.js');
 var mod_config = require('../config/config.js');
 var rooms, room;
 var roomCommands = [cmdRoomAdd, cmdToken, cmdConfig];
-
+var that = this;
 getAllRooms();
 //getNick();
 exports.modName = "Rooms Control";
@@ -60,7 +60,7 @@ var room = {};
 var botRoom;
 var this.path = path;
 var this.name = botRoom[path];
-
+that.path = path
 
 /*
 
@@ -83,7 +83,7 @@ rooms.botRoooooom = botRoom[path]
 //}exports.getARoom = function() { 
 */
 
-  return this.name;
+  return that.path;
 }
 
 exports.checkCommands = function(dataHash, callback) {
