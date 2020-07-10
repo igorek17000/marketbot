@@ -58,7 +58,7 @@ room.id = rooms[path];
 return room;
 }
 
-exports.User.prototype.getPath = function() {
+exports.User.getPath = function() {
 return this.path;
 }
 /*
