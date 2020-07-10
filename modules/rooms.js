@@ -68,7 +68,7 @@ var botArr = {
 //var botRoom = {};
 //if (botRoom[path]) { 
 //room.name = res[room].id;
-room.botRoom = path,
+room[path] = path,
 room.id = room.path,
 rooms.botRoom = path[botRoom],
 rooms.botRooom = room[path],
