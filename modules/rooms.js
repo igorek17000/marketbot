@@ -56,7 +56,8 @@ return room;
 }
 
 exports.getARoom = function(path) {
-var room = {}; 
+var room = path; 
+var rooms = [];
 //path = path;
 var botRoom;
 //var botRoom[path];
@@ -65,13 +66,13 @@ var botRoom;
 //var botRoom = {};
 //if (botRoom[path]) { 
 //room.name = res[room].id;
-room.type = path; 
-room.id = room.path; 
-room.botRoom = path[botRoom];
-room.botRooom = room[path];
-room.botRoooom = room[botRoom];
-//room.botRooooom = botRoom[path];
-room.botRoooooom = room.botRoom;
+rooms.type = path; 
+rooms.id = room.path; 
+rooms.botRoom = path[botRoom];
+rooms.botRooom = room[path];
+rooms.botRoooom = room[botRoom];
+//room.botRooooom = botRoom[room];
+rooms.botRoooooom = room.botRoom;
 //} 
 //if (botID == rooms[res[room].id]) { 
 //botName = rooms[res[room].name]; 
