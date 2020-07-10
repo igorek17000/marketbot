@@ -61,7 +61,7 @@ return room;
 exports.getUserPath = function(path) {
 var that = this;
 var botRoom, botARoom;
-that.path = botRoom[path];
+that.path = that.botRoom[path];
 //if (that.path && that.path == '308boonbot') {
 //that.path = "308boonbot";
 //}
