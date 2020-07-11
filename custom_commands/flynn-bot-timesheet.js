@@ -223,7 +223,7 @@ function addFlynnBotCmd(request, bots, isMod, botARoom, callback) {
     if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 
 
-if (flynnbot[flynnbot[flynnb].bots[id]) == botID {
+if (flynnbot[flynnbot].bots[id] == botID) {
 botName = flynnbot[flynnb].bots[name];
 
 //if (rooms.getRoom(botRoom).type) //&& botRoom == '308boonbot') { //flynnbot[flynnb].bots.indexOf(getARoom.type) > -1 && botRoom == 'true') {
