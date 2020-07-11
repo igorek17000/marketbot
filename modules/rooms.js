@@ -61,12 +61,12 @@ return room;
 
 exports.getUserPath = function(path) {
 var room = {}; 
-var path = path;
 var botRoom;
-//if (rooms[path]) { 
+if (rooms[path]) { 
+room.name = rooms[res[room].name]
 room.type = path; 
-room.name = bot.botRoom[path]; 
-//} 
+room.id = botRoom[path]; 
+} 
 //if (botID == rooms[res[room].id]) { 
 //botName = rooms[res[room].name]; 
 //}exports.getARoom = function() { 
