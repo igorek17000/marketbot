@@ -26,7 +26,7 @@ var gif          = require('./custom_commands/giphy-api');
 var catFact      = require('./custom_commands/cat-fact');
 var urbanDict    = require('./custom_commands/urban-dictionary');
 
-
+var botRoom;
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
 var nd = new Date().toLocaleString("en-US", {timeZone: "America/Toronto"})
@@ -85,7 +85,7 @@ exports.init = function() {
 
 exports.respond = function(botRoom) {
   var request = JSON.parse(this.req.chunks[0]);
-botRoom;
+
   var dataHash = {
     botRoom:      botRoom,
     request:      request,
