@@ -92,7 +92,7 @@ exports.respond = function(botRoom) {
     currentBot:   rooms.getRoom(botRoom),
     isMod:        mods.isMod(request.user_id),
     bots:         rooms.getRooms(),
-    botARoom:     rooms.getUserPath(botRoom),
+    botARoom:     rooms.getUserPath(),
     funMode:      sysCommands.fun_mode(),
     owner:        config.env().owner
   };
