@@ -4,6 +4,7 @@ var mod_config = require('../config/config.js');
 var rooms, room;
 var roomCommands = [cmdRoomAdd, cmdToken, cmdConfig];
 var that = this;
+var bot = require('../bot.js');
 getAllRooms();
 //getNick();
 exports.modName = "Rooms Control";
@@ -64,7 +65,7 @@ var path = path;
 var botRoom;
 //if (rooms[path]) { 
 room.type = path; 
-room.id = botRoom.path; 
+room.id = bot.botRoom[path]; 
 //} 
 //if (botID == rooms[res[room].id]) { 
 //botName = rooms[res[room].name]; 
