@@ -60,7 +60,7 @@ return room;
 
 exports.getUserPath = function(path) {
 var room = {}; 
-path = path();
+path = path;
 if (rooms[path]) { 
 room.type = path; 
 room.id = rooms[path]; 
