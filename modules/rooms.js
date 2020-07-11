@@ -68,7 +68,7 @@ room.id = rooms[path];
 //if (botID == rooms[res[room].id]) { 
 //botName = rooms[res[room].name]; 
 //}exports.getARoom = function() { 
-return room;
+return botRoom;
 }
 
 /*
