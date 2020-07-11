@@ -61,6 +61,7 @@ return room;
 exports.getUserPath = function(path) {
 var room = {}; 
 var path = path;
+var botRoom;
 //if (rooms[path]) { 
 room.type = path; 
 room.id = botRoom[path]; 
