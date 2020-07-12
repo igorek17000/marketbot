@@ -223,11 +223,11 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
     if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 
 
-//if (flynnbot[flynnb].bots.indexOf(currentBot.type) > -1) {
-//botName = currentBot.type;
+if (flynnbot[flynnb].bots.indexOf(currentBot)) 
+botName = flynnbot[flynnb].bots.name;
 
 //if (rooms.getRoom().room) //&& botRoom == '308boonbot') { //flynnbot[flynnb].bots.indexOf(getARoom.type) > -1 && botRoom == 'true') {
-botName = rooms.getRoom(botRoom); //(botRoom).type; //botRoom; 
+//botName = rooms.getRoom(botRoom); //(botRoom).type; //botRoom; 
 
 flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
