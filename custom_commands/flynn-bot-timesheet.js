@@ -227,7 +227,7 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
 //botName = currentBot.type;
 
 //if (rooms.getRoom().room) //&& botRoom == '308boonbot') { //flynnbot[flynnb].bots.indexOf(getARoom.type) > -1 && botRoom == 'true') {
-botName = rooms.getRoom(); //(botRoom).type; //botRoom; 
+botName = rooms.getRoom(botRoom); //(botRoom).type; //botRoom; 
 
 flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
