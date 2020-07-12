@@ -57,15 +57,15 @@ room.id = rooms[path];
 return room;
 }
 
-exports.getUserPath = function(path) {
+exports.getUserPath = function(path, callback) {
 var room = {}; 
 if (rooms[path]) { 
 //room.name = rooms[path[room].name]
-room.nome = rooms.name; 
-room.id = rooms.id; 
+room.nome = room; 
+room.nomeid = path[room.id]; 
 } 
 
-return room.nome;
+return room;
 }
 
 /*
