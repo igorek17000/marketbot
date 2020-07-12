@@ -223,11 +223,11 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
     if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 
 
-if (flynnbot[flynnb].bots.id == currentBot) {
-botName = flynnbot[flynnb].bots.name;
+//if (flynnbot[flynnb].bots.indexOf(currentBot.type) > -1) {
+//botName = currentBot.type;
 
 //if (rooms.getRoom(botRoom).type) //&& botRoom == '308boonbot') { //flynnbot[flynnb].bots.indexOf(getARoom.type) > -1 && botRoom == 'true') {
-//botName = rooms.User.prototype.getPath(); //(botRoom).type; //botRoom; 
+botName = flynnbot[flynnb].bots.indexOf(currentBot.type); //(botRoom).type; //botRoom; 
 
 flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
@@ -237,7 +237,7 @@ flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //
        
         //var msg = "Current week updated";
         //callback(true, msg, []);
-        }
+       // }
 }
 /*
 //for (flynnb in flynnbot) {   
