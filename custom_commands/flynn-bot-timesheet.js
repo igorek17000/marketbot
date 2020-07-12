@@ -258,8 +258,6 @@ flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //
       description: "Timesheet week of " + val[1],
       bots: Object.keys(bots),
       bot: currentBot,
-      bt: currentBot.room.type,
-      b: currentBot.room.id,
       bb: rooms.getRoom(),
       current: "current",
       date: date
