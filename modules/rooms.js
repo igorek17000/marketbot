@@ -48,18 +48,27 @@ return room;
 
 exports.getRoom = function(path) { 
 var room = {}; 
-path = path || path.toLowerCase();
+path = path.toLowerCase();
 //path.toLowerCase() = 'path';
 if (rooms[path]) { 
 room.type = path; 
 room.id = rooms[path]; 
 } 
-//if (botID == rooms[res[room].id]) { 
-//botName = rooms[res[room].name]; 
-//}exports.getARoom = function() { 
 return room;
 }
 
+exports.getUserPath = function(path) {
+var room = {}; 
+if (rooms[path]) { 
+//room.name = rooms[path[room].name]
+room.nome = rooms.name; 
+room.id = rooms.id; 
+} 
+
+return room.nome;
+}
+
+/*
 exports.getUserPath = function(path, botRoom) {
 var room = {}; 
 var botRoom;
@@ -73,7 +82,7 @@ room.id = rooms[path];
 //}exports.getARoom = function() { 
 return room;
 }
-
+*/
 /*
 var that = this;
 var botRoom = room;
