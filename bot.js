@@ -87,12 +87,12 @@ exports.respond = function(botRoom) {
   var request = JSON.parse(this.req.chunks[0]);
 var botRoom;
   var dataHash = {
-    botRoom:      botRoom,
+    
     request:      request,
     currentBot:   rooms.getRoom(botRoom),
     isMod:        mods.isMod(request.user_id),
     bots:         rooms.getRooms(),
-    botARoom:     rooms.getUserPath(botRoom),
+    botARoom:     rooms.getUserPath(request.group_name),
     funMode:      sysCommands.fun_mode(),
     owner:        config.env().owner
   };
