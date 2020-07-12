@@ -198,10 +198,10 @@ exports.getCmdListDescription = function () {
   return null;
 }
 
-function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
+function addFlynnBotCmd(request, bots, isMod, currentBot, botRoom, callback) {
   var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
-  var botII, botRoom;
+  
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
   
@@ -227,7 +227,7 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
 //botName = currentBot.type;
 
 //if (rooms.getRoom(botRoom).type) //&& botRoom == '308boonbot') { //flynnbot[flynnb].bots.indexOf(getARoom.type) > -1 && botRoom == 'true') {
-botName = flynnbot[flynnb].bots.indexOf(botRoom); //(botRoom).type; //botRoom; 
+botName = botRoom; //(botRoom).type; //botRoom; 
 
 flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
@@ -258,6 +258,9 @@ flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //
       description: "Timesheet week of " + val[1],
       bots: Object.keys(bots),
       bot: currentBot,
+      bt: currentBot.type,
+      b: currentBot.id,
+      bb: botRoom,
       current: "current",
       date: date
      };
