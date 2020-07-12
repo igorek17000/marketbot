@@ -237,7 +237,7 @@ flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //
        
         //var msg = "Current week updated";
         //callback(true, msg, []);
-       // }
+        }
 }
 /*
 //for (flynnb in flynnbot) {   
