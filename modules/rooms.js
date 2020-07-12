@@ -48,7 +48,8 @@ return room;
 
 exports.getRoom = function(path) { 
 var room = {}; 
-path = path.toLowerCase() || path;
+path = path.toLowerCase();
+path.toLowerCase() = 'path'
 if (rooms[path]) { 
 room.type = path; 
 room.id = rooms[path]; 
