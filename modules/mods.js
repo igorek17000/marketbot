@@ -117,11 +117,13 @@ function addModCmd(request, owner, callback) {
 
     var val = regex.exec(request.text);
     val[2] = request.attachments[0].user_ids[0];
+    
     var moment = require('moment'); 
     var date = moment().utcOffset(-300).format('LLLL');
 
 
     if (findMod(val[2])) {
+console.log(mods);
       callback(true, "User already a mod", []);
     } else {
       var newMod = {name: val[1], id: val[2], date: date};
