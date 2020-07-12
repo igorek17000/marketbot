@@ -198,7 +198,7 @@ exports.getCmdListDescription = function () {
   return null;
 }
 
-function addFlynnBotCmd(request, bots, isMod, currentBot, botRoom, callback) {
+function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
   var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
   
@@ -226,8 +226,8 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, botRoom, callback) {
 //if (flynnbot[flynnb].bots.indexOf(currentBot.type) > -1) {
 //botName = currentBot.type;
 
-//if (rooms.getRoom(botRoom).type) //&& botRoom == '308boonbot') { //flynnbot[flynnb].bots.indexOf(getARoom.type) > -1 && botRoom == 'true') {
-botName = botRoom; //(botRoom).type; //botRoom; 
+//if (rooms.getRoom().room) //&& botRoom == '308boonbot') { //flynnbot[flynnb].bots.indexOf(getARoom.type) > -1 && botRoom == 'true') {
+botName = rooms.getRoom().room; //(botRoom).type; //botRoom; 
 
 flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
@@ -258,9 +258,9 @@ flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //
       description: "Timesheet week of " + val[1],
       bots: Object.keys(bots),
       bot: currentBot,
-      bt: currentBot.type,
-      b: currentBot.id,
-      bb: botRoom,
+      bt: currentBot.room.type,
+      b: currentBot.room.id,
+      bb: rooms.getRoom(),
       current: "current",
       date: date
      };
