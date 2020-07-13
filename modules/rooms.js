@@ -64,7 +64,7 @@ path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase();
 if (rooms[path]) { 
 botRoom.type = path; 
 botRoom.id = rooms[path]; 
-botRoom.nome = botRoom[path];
+botRoom.botName = botRoom;
 } 
 return botRoom;
 }
