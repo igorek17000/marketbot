@@ -56,7 +56,7 @@ room.id = rooms[path];
 } 
 return room;
 }
-/*
+
 exports.getUserPath = function(path) {
 var room = {}; 
 if (rooms[path]) { 
@@ -68,7 +68,7 @@ room.botName = rooms[path];
 
 return path;
 }
-*/
+/*
 
 exports.getUserPath = function(path) {
 var room = {}; 
@@ -85,7 +85,7 @@ room.botName = botName;
 //}exports.getARoom = function() { 
 return room;
 }
-
+*/
 /*
 var that = this;
 var botRoom = room;
