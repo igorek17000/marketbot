@@ -177,7 +177,7 @@ if (dataHash.request.text == "/current" && flynnb.regexcurrent == "^/current$") 
 
 
   for (cmd in flynnBotCommands) {
-    var test = flynnBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.currentBot, dataHash.botARoom, dataHash.isMod, callback);
+    var test = flynnBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.currentBot, dataHash.botData, dataHash.isMod, callback);
     if (test)
       return test;
   }
@@ -198,11 +198,12 @@ exports.getCmdListDescription = function () {
   return null;
 }
 
-function addFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callback) {
+function addFlynnBotCmd(request, bots, isMod, currentBot, botData, callback) {
   var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
   var path = path || 'path' || Path || PATH || 'Path' || 'PATH';
   var botName, botRoom;
+  var data = path;
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
   
@@ -225,7 +226,7 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callback) {
 
 
 //if (flynnbot["rooms"].name == rooms.getRoom(room)) { // botRoom == '308boonbot') {
-botName = Object.values(currentBot); //rooms.getUserPath(botRoom);
+botName = Object.values(botData); //rooms.getUserPath(botRoom);
 
 //if (rooms.getRoom().room) //&& botRoom == '308boonbot') { //flynnbot[flynnb].bots.indexOf(getARoom.type) > -1 && botRoom == 'true') {
 //botName = Object.keys(currentBot); //(botRoom).type; //botRoom; 
