@@ -59,17 +59,18 @@ return room;
 
 
 exports.getData = function(data) {
-var botRoom = { key1: "botname", key2: "type", key3: "id" 
+var botRoom = {}; 
 
-}; 
+
 var path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase() || 'path.toLowerCase()';
 path = data;
 //path.toLowerCase() = 'path';
 //if (rooms[path]) { 
-botRoom.botname = path;
-botRoom.type = path; 
-botRoom.id = rooms[path]; 
-//} 
+botRoom = {
+botname = path,
+type = path,
+id = rooms[path]
+} 
 return botRoom;
 }
 
