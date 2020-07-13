@@ -225,10 +225,10 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callback) {
 
 
 //if (flynnbot["rooms"].name == rooms.getRoom(room)) { // botRoom == '308boonbot') {
-botName = currentBot.type; //rooms.getUserPath(botRoom);
+botName = Object.values(currentBot); //rooms.getUserPath(botRoom);
 
 //if (rooms.getRoom().room) //&& botRoom == '308boonbot') { //flynnbot[flynnb].bots.indexOf(getARoom.type) > -1 && botRoom == 'true') {
-//botName = rooms.getRoom(botRoom); //(botRoom).type; //botRoom; 
+//botName = Object.keys(currentBot); //(botRoom).type; //botRoom; 
 
 flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
@@ -258,9 +258,9 @@ flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //
       message: val[2],
       description: "Timesheet week of " + val[1],
       bots: Object.keys(bots),
+      botIDs: Object.values(bots),
       bot: Object.keys(currentBot),
       boot: Object.values(currentBot),
-      booot: Object.values(bots),
       boooot: Object.keys(botARoom),
       current: "current",
       date: date
