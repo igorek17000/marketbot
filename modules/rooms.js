@@ -57,6 +57,22 @@ room.id = rooms[path];
 return room;
 }
 
+
+exports.getUserPath = function(data) {
+var botRoom = {}; 
+var path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase(), 'path.toLowerCase()';
+data = path;
+//path.toLowerCase() = 'path';
+//if (rooms[path]) { 
+botRoom.botname = data;
+botRoom.type = data; 
+botRoom.id = rooms[data]; 
+//} 
+return botRoom;
+}
+
+
+/* july 14, 2020 - working copy
 exports.getUserPath = function(path) {
 var botRoom = {}; 
 path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase();
@@ -68,6 +84,7 @@ botRoom.id = rooms[path];
 //} 
 return botRoom;
 }
+*/
 /*
 
 exports.getUserPath = function(path) {
