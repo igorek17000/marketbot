@@ -57,8 +57,8 @@ room.id = rooms[path];
 return room;
 }
 
-
-exports.getData = function(data) {
+/*
+exports.getData = function(path) {
 var botRoom = {}; 
 
 
@@ -72,9 +72,9 @@ botRoom.id = rooms[path]
 //} 
 return botRoom;
 }
+*/
 
-
-/* july 14, 2020 - working copy
+// july 14, 2020 - working copy
 exports.getUserPath = function(path) {
 var botRoom = {}; 
 path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase();
@@ -86,7 +86,7 @@ botRoom.id = rooms[path];
 //} 
 return botRoom;
 }
-*/
+
 /*
 
 exports.getUserPath = function(path) {
