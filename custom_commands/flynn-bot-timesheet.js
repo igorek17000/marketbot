@@ -230,7 +230,10 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
 //botName = Object.values(currentBot); //rooms.getUserPath(botRoom);
 
 //if (rooms.getRoom().room) //&& botRoom == '308boonbot') { //flynnbot[flynnb].bots.indexOf(getARoom.type) > -1 && botRoom == 'true') {
-botName = Object.values(currentBot); //botName = Object.keys(currentBot); //(botRoom).type; //botRoom; 
+botName = {
+Object.entries(currentBot) = [ ["name": botRoom.botName], ["type": botRoom.type], ["id": botRoom.id] ];
+};
+//Object.values(currentBot); //botName = Object.keys(currentBot); //(botRoom).type; //botRoom; 
 
 flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
