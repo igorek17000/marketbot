@@ -59,7 +59,11 @@ return room;
 
 
 exports.getData = function(data) {
-var botRoom = {}; 
+var botRoom = {
+1: "name",
+2: "type,
+3: "id" 
+}; 
 var path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase() || 'path.toLowerCase()';
 path = data;
 //path.toLowerCase() = 'path';
