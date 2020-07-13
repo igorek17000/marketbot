@@ -1,7 +1,7 @@
 var db_table = 'rooms';
 var db = require('./db.js');
 var mod_config = require('../config/config.js');
-var rooms, room;
+var rooms, room, botRoom;
 var roomCommands = [cmdRoomAdd, cmdToken, cmdConfig];
 var that = this;
 var bot = require('../bot.js');
@@ -56,33 +56,35 @@ room.id = rooms[path];
 } 
 return room;
 }
-
+/*
 exports.getUserPath = function(path, callback) {
 var room = {}; 
 if (rooms[path]) { 
 //room.name = rooms[path[room].name]
-room.nome = room; 
-room.nomeid = path[room.id]; 
+room.type = path; 
+room.botName = botRoom[path]; 
 } 
 
 return room;
 }
+*/
 
-/*
-exports.getUserPath = function(path, botRoom) {
+exports.getUserPath = function(path) {
 var room = {}; 
 var botRoom;
+botName = botRoom[path];
 if (rooms[path]) { 
 //room.name = rooms[path[room].name]
 room.type = path; 
 room.id = rooms[path]; 
+room.botName = botName;
 } 
 //if (botID == rooms[res[room].id]) { 
 //botName = rooms[res[room].name]; 
 //}exports.getARoom = function() { 
 return room;
 }
-*/
+
 /*
 var that = this;
 var botRoom = room;
