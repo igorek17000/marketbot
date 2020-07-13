@@ -58,15 +58,15 @@ return room;
 }
 
 exports.getUserPath = function(path) {
-var room = {}; 
+var botRoom = {}; 
+path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase();
+//path.toLowerCase() = 'path';
 if (rooms[path]) { 
-var string = botRoom[room]
-//room.name = rooms[path[room].name]
-room.type = path; 
-room.botName = string; 
+botRoom.type = path; 
+botRoom.id = rooms[path]; 
+botRoom.nome = botRoom[path];
 } 
-
-return string;
+return botRoom;
 }
 /*
 
