@@ -60,13 +60,13 @@ return room;
 exports.getUserPath = function(path) {
 var room = {}; 
 if (rooms[path]) { 
-path = data[0].name;
+var string = botRoom[room]
 //room.name = rooms[path[room].name]
 room.type = path; 
-room.botName = rooms[path]; 
+room.botName = string; 
 } 
 
-return path;
+return string;
 }
 /*
 
