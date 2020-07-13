@@ -64,9 +64,9 @@ var path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCas
 path = data;
 //path.toLowerCase() = 'path';
 //if (rooms[path]) { 
-botRoom.botname = data;
-botRoom.type = data; 
-botRoom.id = rooms[data]; 
+botRoom.botname = path;
+botRoom.type = path; 
+botRoom.id = rooms[path]; 
 //} 
 return botRoom;
 }
