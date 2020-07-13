@@ -198,7 +198,7 @@ exports.getCmdListDescription = function () {
   return null;
 }
 
-function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
+function addFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callback) {
   var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
   var path = path || 'path' || Path || PATH || 'Path' || 'PATH';
@@ -258,8 +258,9 @@ flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //
       message: val[2],
       description: "Timesheet week of " + val[1],
       bots: Object.keys(bots),
-      bot: currentBot.id,
+      bot: Object.keys(currentBot),
       boot: Object.values(bots),
+      booot: Object.Keys(botARoom),
       current: "current",
       date: date
      };
