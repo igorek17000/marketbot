@@ -83,7 +83,7 @@ if (rooms[path]) {
 botRoom.botname = path;
 botRoom.type = path; 
 botRoom.id = rooms[path]; 
-//} 
+} 
 return botRoom;
 }
 
