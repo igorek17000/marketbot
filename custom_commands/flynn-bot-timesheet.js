@@ -221,7 +221,7 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
         callback(true, msg, []);
         return msg;
         
-      }l
+      }
     }
     if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 
