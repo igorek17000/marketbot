@@ -58,7 +58,7 @@ return room;
 }
 
 
-exports.getUserPath = function(data) {
+exports.getData = function(data) {
 var botRoom = {}; 
 var path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase(), 'path.toLowerCase()';
 data = path;
