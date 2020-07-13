@@ -198,10 +198,11 @@ exports.getCmdListDescription = function () {
   return null;
 }
 
-function addFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callback) {
+function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
   var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
   var path = path || 'path' || Path || PATH || 'Path' || 'PATH';
+  var botName, botRoom;
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
   
@@ -224,7 +225,7 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callback) {
 
 
 //if (flynnbot["rooms"].name == rooms.getRoom(room)) { // botRoom == '308boonbot') {
-botName = rooms.getUserPath();
+botName = rooms.getUserPath(botRoom);
 
 //if (rooms.getRoom().room) //&& botRoom == '308boonbot') { //flynnbot[flynnb].bots.indexOf(getARoom.type) > -1 && botRoom == 'true') {
 //botName = rooms.getRoom(botRoom); //(botRoom).type; //botRoom; 
