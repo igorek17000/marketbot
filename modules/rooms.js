@@ -62,7 +62,8 @@ var botRoom = {};
 path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase();
 //path.toLowerCase() = 'path';
 if (rooms[path]) { 
-botRoom[0].type = path; 
+botRoom.name = path
+botRoom.type = path; 
 botRoom.id = rooms[path]; 
 botRoom.botNome = botRoom[path];
 } 
