@@ -61,7 +61,7 @@ return room;
 exports.getData = function(data) {
 var botRoom = {}; 
 var path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase() || 'path.toLowerCase()';
-data = path;
+path = data;
 //path.toLowerCase() = 'path';
 //if (rooms[path]) { 
 botRoom.botname = data;
