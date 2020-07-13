@@ -260,7 +260,7 @@ flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //
       bots: Object.keys(bots),
       bot: Object.keys(currentBot),
       boot: Object.values(bots),
-      booot: Object.Keys(botARoom),
+      booot: Object.keys(botARoom),
       current: "current",
       date: date
      };
