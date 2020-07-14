@@ -237,8 +237,8 @@ botName = Object.values(currentBot); //rooms.getUserPath(botRoom);
 flynnbot[flynnb]["regexcurrent"] = Object.values(currentBot); //rooms.getUserPath(); //botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
-    // updateFlynnBotCurrent(flynnbot[flynnb]);
-      // updateFlynnBotRegexCurrent(flynnbot[flynnb]);
+        updateFlynnBotCurrent(flynnbot[flynnb]);
+        updateFlynnBotRegexCurrent(flynnbot[flynnb]);
        
         //var msg = "Current week updated";
         //callback(true, msg, []);
