@@ -10,7 +10,7 @@ var config = require('../config/config.js');
 //var mods = require('../modules/mods');
 var rooms = require('../modules/rooms.js');
 var bot = require('../bot.js')
-var botName; //= '';
+var botName, botRoom; //= '';
 var that = this;
 
 getAllFlynnbot();
@@ -232,7 +232,7 @@ botName = Object.values(currentBot); //rooms.getUserPath(botRoom);
 
 //Object.values(currentBot); //botName = Object.keys(currentBot); //(botRoom).type; //botRoom; 
 
-flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //rooms.getARoom();
+flynnbot[flynnb]["regexcurrent"] = Object.keys(currentBot); //rooms.getUserPath(); //botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
      updateFlynnBotCurrent(flynnbot[flynnb]);
