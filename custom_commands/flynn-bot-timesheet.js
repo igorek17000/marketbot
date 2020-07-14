@@ -221,7 +221,9 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
         
       }
     }
-    if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
+    
+
+if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) 
 
 
 //if (flynnbot["rooms"].name == rooms.getRoom(room)) { // botRoom == '308boonbot') {
@@ -232,17 +234,17 @@ botName = Object.values(currentBot); //rooms.getUserPath(botRoom);
 
 //Object.values(currentBot); //botName = Object.keys(currentBot); //(botRoom).type; //botRoom; 
 
-flynnbot[flynnb]["regexcurrent"] = Object.keys(currentBot); //rooms.getUserPath(); //botName; //rooms.getARoom();
+flynnbot[flynnb]["regexcurrent"] = Object.values(currentBot); //rooms.getUserPath(); //botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
-     updateFlynnBotCurrent(flynnbot[flynnb]);
-       updateFlynnBotRegexCurrent(flynnbot[flynnb]);
+    // updateFlynnBotCurrent(flynnbot[flynnb]);
+      // updateFlynnBotRegexCurrent(flynnbot[flynnb]);
        
         //var msg = "Current week updated";
         //callback(true, msg, []);
        // }
-}
-/*
+//}
+
 //for (flynnb in flynnbot) {   
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
        updateFlynnBotCurrent(flynnbot[flynnb]);
@@ -251,7 +253,7 @@ flynnbot[flynnb]["regexcurrent"] = Object.keys(currentBot); //rooms.getUserPath(
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
-      */
+      
         
       var flynnbHash = {
       name: val[1].toLowerCase(),
