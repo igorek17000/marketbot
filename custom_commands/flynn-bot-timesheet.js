@@ -201,8 +201,8 @@ exports.getCmdListDescription = function () {
 function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
   var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
-  var path = path || 'path' || Path || PATH || 'Path' || 'PATH' || path.toLowerCase() || 'path.toLowerCase()';
-  var botName;
+  //var path = path || 'path' || Path || PATH || 'Path' || 'PATH' || path.toLowerCase() || 'path.toLowerCase()';
+  
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
   
