@@ -1,7 +1,7 @@
 var db_table = 'rooms';
 var db = require('./db.js');
 var mod_config = require('../config/config.js');
-var rooms, room, botRoom, botName;
+var rooms;
 var roomCommands = [cmdRoomAdd, cmdToken, cmdConfig];
 var that = this;
 var bot = require('../bot.js');
@@ -81,7 +81,7 @@ var botRoom = {};
 path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase();
 //path.toLowerCase() = 'path';
 if (rooms[path]) { 
-botRoom.botName = path;
+botRoom.botname = path;
 botRoom.type = path; 
 botRoom.id = rooms[path]; 
 } 
