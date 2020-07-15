@@ -10,7 +10,7 @@ var config = require('../config/config.js');
 //var mods = require('../modules/mods');
 var rooms = require('../modules/rooms.js');
 var bot = require('../bot.js')
-var botName, botRoom, path; //= '';
+var botName, path; //= '';
 var that = this;
 
 getAllFlynnbot();
@@ -206,7 +206,7 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
   var path = path || 'path' || Path || PATH || 'Path' || 'PATH' || path.toLowerCase();
-  var botName, botRoom, botARoom;
+  var botName, botARoom;
 
     if (!isMod) {
       var msg = request.name + " you have no power here!";
@@ -235,7 +235,7 @@ botName = Object.values(currentBot); //rooms.getUserPath(botRoom);
 
 //Object.values(currentBot); //botName = Object.keys(currentBot); //(botRoom).type; //botRoom; 
 
-flynnbot[flynnb]["regexcurrent"] = Object.keys(currentBot); //rooms.getUserPath(); //botName; //rooms.getARoom();
+flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
         updateFlynnBotCurrent(flynnbot[flynnb]);
