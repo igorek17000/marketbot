@@ -9,7 +9,7 @@ var db = require('../modules/db.js');
 var config = require('../config/config.js');
 //var mods = require('../modules/mods');
 var rooms = require('../modules/rooms.js');
-var bot = require('../bot.js')
+//var bot = require('../bot.js')
 var botName, path; //= '';
 var that = this;
 
