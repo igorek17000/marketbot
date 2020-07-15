@@ -49,9 +49,9 @@ setTimeout(function() {
 }
 
 function updateFlynnBotRegexCurrentDate(flynnb, callback) {
-//setTimeout(function() {
+setTimeout(function() {
 db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "regexcurrent": flynnb.regexcurrent }}, callback);   //flynnb.regexcurrent }}, callback);
-//}, 200);
+}, config.delay_one);
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
@@ -62,7 +62,7 @@ setTimeout(function() {
 
 function updateFlynnBotRegexCurrent(flynnb, callback) {
 setTimeout(function() {
-    db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $rename: { "regexcurrent": "bot_name" }}, callback);
+    db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $rename: { "regexcurrent": "botName" }}, callback);
 }, config.delay_two);
 }
 
@@ -234,7 +234,7 @@ botName = Object.values(currentBot); //rooms.getUserPath(botRoom);
 
 //Object.values(currentBot); //botName = Object.keys(currentBot); //(botRoom).type; //botRoom; 
 
-flynnbot[flynnb]["regexcurrent"] = Object.values(currentBot); //rooms.getUserPath(); //botName; //rooms.getARoom();
+flynnbot[flynnb]["regexcurrent"] = Object.keys(currentBot); //rooms.getUserPath(); //botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
         updateFlynnBotCurrent(flynnbot[flynnb]);
@@ -264,7 +264,7 @@ flynnbot[flynnb]["regexcurrent"] = Object.values(currentBot); //rooms.getUserPat
       bots: Object.keys(bots),
       botIDs: Object.values(bots),
       //bot: Object.keys(currentBot),
-      room: Object.values(currentBot),
+      room: Object.values(botRoom),
       current: "current",
       date: date
      };
