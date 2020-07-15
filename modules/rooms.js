@@ -42,9 +42,6 @@ exports.getRooms = function() {
   return rooms;
 }
 
-exports.getRooom = function() {
-return room;
-}
 
 exports.getRoom = function(path) { 
 var room = {}; 
@@ -58,12 +55,11 @@ return room;
 }
 
 /*
-exports.getData = function(path) {
+exports.getUserPath = function(path) {
 var botRoom = {}; 
 
 
-var path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase() || 'path.toLowerCase()';
-path = data;
+path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase() || 'path.toLowerCase()';
 //path.toLowerCase() = 'path';
 //if (rooms[path]) { 
 botRoom.botname = path;
@@ -72,7 +68,7 @@ botRoom.id = rooms[path]
 //} 
 return botRoom;
 }
-*/
+/*
 
 // july 14, 2020 - working copy
 exports.getUserPath = function(path) {
@@ -87,7 +83,7 @@ botRoom.id = rooms[path];
 } 
 return botRoom;
 }
-
+*/
 /*
 
 exports.getUserPath = function(path) {
