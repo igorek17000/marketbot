@@ -177,7 +177,7 @@ if (dataHash.request.text == "/current" && flynnb.regexcurrent == "^/current$") 
 
 
   for (cmd in flynnBotCommands) {
-    var test = flynnBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
+    var test = flynnBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, dataHash.currentBot, dataHash.botARoom, callback);
     if (test)
       return test;
   }
