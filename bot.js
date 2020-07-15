@@ -26,7 +26,7 @@ var gif          = require('./custom_commands/giphy-api');
 var catFact      = require('./custom_commands/cat-fact');
 var urbanDict    = require('./custom_commands/urban-dictionary');
 
-var botRoom;
+
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
 var nd = new Date().toLocaleString("en-US", {timeZone: "America/Toronto"})
@@ -92,7 +92,7 @@ exports.respond = function(botRoom) {
     currentBot:   rooms.getRoom(botRoom),
     isMod:        mods.isMod(request.user_id),
     bots:         rooms.getRooms(),
-   // botARoom:     rooms.getUserPath(botRoom),
+    botARoom:     rooms.getUserPath(botRoom),
     funMode:      sysCommands.fun_mode(),
     owner:        config.env().owner
   };
