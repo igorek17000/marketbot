@@ -10,7 +10,7 @@ var config = require('../config/config.js');
 //var mods = require('../modules/mods');
 var rooms = require('../modules/rooms.js');
 var bot = require('../bot.js')
-var botName, botRoom; //= '';
+var botName, botRoom, path; //= '';
 var that = this;
 
 getAllFlynnbot();
@@ -201,8 +201,8 @@ exports.getCmdListDescription = function () {
 function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
   var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
-  //var path = path || 'path' || Path || PATH || 'Path' || 'PATH' || path.toLowerCase() || 'path.toLowerCase()';
-  
+  var path = path || 'path' || Path || PATH || 'Path' || 'PATH' || path.toLowerCase();
+  var botName, botRoom, botARoom;
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
   
@@ -264,7 +264,7 @@ flynnbot[flynnb]["regexcurrent"] = Object.values(currentBot); //rooms.getUserPat
       bots: Object.keys(bots),
       botIDs: Object.values(bots),
       //bot: Object.keys(currentBot),
-      //botRoom: Object.values(currentBot),
+      room: Object.values(currentBot),
       current: "current",
       date: date
      };
