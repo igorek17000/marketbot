@@ -54,7 +54,7 @@ room.id = rooms[path];
 return room;
 }
 
-/*
+
 exports.getUserPath = function(path) {
 var botRoom = {}; 
 
