@@ -177,7 +177,7 @@ if (dataHash.request.text == "/current" && flynnb.regexcurrent == "^/current$") 
 
 
   for (cmd in flynnBotCommands) {
-    var test = flynnBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, dataHash.currentBot, dataHash.botARoom, callback);
+    var test = flynnBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, dataHash.currentBot, callback);
     if (test)
       return test;
   }
@@ -198,15 +198,15 @@ exports.getCmdListDescription = function () {
   return null;
 }
 
-function addFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callback) {
+function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
   var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
  // var path = path || 'path' || Path || PATH || 'Path' || 'PATH' || path.toLowerCase();
-//  var botName, botRoom, botARoom;
+//  var botName, botARoom;
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
   var path = path || 'path' || Path || PATH || 'Path' || 'PATH' || path.toLowerCase();
-  var botName, botARoom;
+  var botName;
 
     if (!isMod) {
       var msg = request.name + " you have no power here!";
@@ -224,7 +224,7 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callback) {
     }
     
 
-if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) 
+if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 
 
 //if (flynnbot["rooms"].name == rooms.getRoom(room)) { // botRoom == '308boonbot') {
@@ -238,14 +238,14 @@ botName = Object.values(currentBot); //rooms.getUserPath(botRoom);
 flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
-        updateFlynnBotCurrent(flynnbot[flynnb]);
-        updateFlynnBotRegexCurrent(flynnbot[flynnb]);
+      //  updateFlynnBotCurrent(flynnbot[flynnb]);
+       // updateFlynnBotRegexCurrent(flynnbot[flynnb]);
        
         //var msg = "Current week updated";
         //callback(true, msg, []);
        // }
-//}
-/*
+}
+
 //for (flynnb in flynnbot) {   
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
        updateFlynnBotCurrent(flynnbot[flynnb]);
@@ -254,7 +254,7 @@ flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
-      */
+      
         
       var flynnbHash = {
       name: val[1].toLowerCase(),
