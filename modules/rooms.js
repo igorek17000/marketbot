@@ -76,12 +76,12 @@ return botRoom;
 
 // july 14, 2020 - working copy
 exports.getUserPath = function(path) {
-var room = {};
+//var room = {};
 var botRoom = {}; 
 path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase();
 //path.toLowerCase() = 'path';
 if (rooms[path]) { 
-botRoom.botname = path;
+//botRoom.botname = path;
 botRoom.type = path; 
 botRoom.id = rooms[path]; 
 } 
