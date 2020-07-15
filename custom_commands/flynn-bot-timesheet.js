@@ -223,7 +223,7 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
     }
     
 
-if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
+if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) 
 
 
 //if (flynnbot["rooms"].name == rooms.getRoom(room)) { // botRoom == '308boonbot') {
@@ -242,7 +242,7 @@ flynnbot[flynnb]["regexcurrent"] = Object.values(currentBot); //rooms.getUserPat
        
         //var msg = "Current week updated";
         //callback(true, msg, []);
-        }
+       // }
 //}
 /*
 //for (flynnb in flynnbot) {   
