@@ -63,7 +63,7 @@ setTimeout(function() {
 function updateFlynnBotRegexCurrent(flynnb, callback) {
 setTimeout(function() {
     db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $rename: { "regexcurrent": "botName" }}, callback);
-}, config.delay_two);
+}, config.delay_three);
 }
 
 
@@ -177,7 +177,7 @@ if (dataHash.request.text == "/current" && flynnb.regexcurrent == "^/current$") 
 
 
   for (cmd in flynnBotCommands) {
-    var test = flynnBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.currentBot, dataHash.isMod, callback);
+    var test = flynnBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
     if (test)
       return test;
   }
@@ -201,11 +201,12 @@ exports.getCmdListDescription = function () {
 function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
   var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
-  var path = path || 'path' || Path || PATH || 'Path' || 'PATH' || path.toLowerCase();
-  var botName, botRoom, botARoom;
+ // var path = path || 'path' || Path || PATH || 'Path' || 'PATH' || path.toLowerCase();
+//  var botName, botRoom, botARoom;
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-  
+  var path = path || 'path' || Path || PATH || 'Path' || 'PATH' || path.toLowerCase();
+  var botName, botRoom, botARoom;
 
     if (!isMod) {
       var msg = request.name + " you have no power here!";
@@ -264,7 +265,7 @@ flynnbot[flynnb]["regexcurrent"] = Object.keys(currentBot); //rooms.getUserPath(
       bots: Object.keys(bots),
       botIDs: Object.values(bots),
       //bot: Object.keys(currentBot),
-      room: Object.values(botRoom),
+      room: Object.values(currentBot),
       current: "current",
       date: date
      };
