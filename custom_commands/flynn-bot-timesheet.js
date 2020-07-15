@@ -62,7 +62,7 @@ setTimeout(function() {
 
 function updateFlynnBotRegexCurrent(flynnb, callback) {
 setTimeout(function() {
-    db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $rename: { "regexcurrent": "botName" }}, callback);
+    db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $rename: { "regexcurrent": "completed" }}, callback);
 }, config.delay_three);
 }
 
