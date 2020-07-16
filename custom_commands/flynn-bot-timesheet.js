@@ -230,7 +230,7 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, callback) {
 
 if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 
-
+let botName = [0 : "type", 1: "id"]
 //if (flynnbot["rooms"].name == rooms.getRoom(room)) { // botRoom == '308boonbot') {
 botName = Object.values(currentBot); //rooms.getUserPath(botRoom);
 
