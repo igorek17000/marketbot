@@ -57,16 +57,20 @@ db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current
 function updateFlynnBotCurrent(flynnb, callback) {
 setTimeout(function() {
   db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $rename: { "current": "lastUpdate" }}, callback);
-}, config.delay_three);
+}, config.delay_two);
 }
 
 function updateFlynnBotRegexCurrent(flynnb, callback) {
 setTimeout(function() {
     db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $rename: { "regexcurrent": "completed" }}, callback);
-}, config.delay_three);
+}, config.delay_two);
 }
 
-
+function updateFlynnBotCompleted(flynnb, callback) {
+setTimeout(function() {
+    db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $rename: { "completed.0": "completed.bot_name" }}, callback);
+}, config.delay_three);
+}
 
 
 
@@ -250,7 +254,7 @@ flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
        updateFlynnBotCurrent(flynnbot[flynnb]);
        updateFlynnBotRegexCurrent(flynnbot[flynnb]);
-       
+       updateFlynnBotCompleted(flynnbot[flynnb])
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
