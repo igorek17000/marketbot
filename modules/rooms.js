@@ -50,7 +50,7 @@ path = path.toLowerCase();
 if (rooms[path]) { 
 room.type = path; 
 room.id = rooms[path]; 
-room[0: "type"] = path;
+room[0].type = path;
 } 
 return room;
 }
