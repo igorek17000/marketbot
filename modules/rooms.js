@@ -15,6 +15,9 @@ function getAllRooms(){
     for (room in res) {
       rooms[res[room].name] = res[room].id;
     }
+for (botRoom in res) {
+rooms[res[botRoom].name] = res[botRoom].id;
+}
   });
 }
 /*
@@ -55,17 +58,20 @@ room[0] = room.type;
 return room;
 }
 
-
 exports.getUserPath = function(path) {
 var botRoom = {}; 
-
+let botRoom = {
+botname: path,
+type: path,
+id: rooms[path]
+}
 
 path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase() || 'path.toLowerCase()';
 //path.toLowerCase() = 'path';
 //if (rooms[path]) { 
-botRoom.botname = path;
-botRoom.type = path;
-botRoom.id = rooms[path]
+//botRoom.botname = path;
+//botRoom.type = path;
+//botRoom.id = rooms[path]
 //} 
 return botRoom;
 }
@@ -147,7 +153,7 @@ rooms.botRoooooom = botRoom[path]
 */
 exports.checkCommands = function(dataHash, callback) {
   for (command in roomCommands) {
-    var test = roomCommands[command](dataHash.request, dataHash.currentBot, dataHash.owner, callback);
+    var test = roomCommands[command](dataHash.request, dataHash.currentBot, dataHash.botARoom, dataHash.owner, callback);
     if (test)
       return test;
   }
