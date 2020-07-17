@@ -79,7 +79,7 @@ var newArrayOfobj =  arrayOfObj.map(({ key1: name, key2: type, key3: id }) => ({
 boRoom['name'] = botRoom.botname;
 boRoom['type'] = botRoom.type; 
 boRoom['id'] = botRoom.id; 
-//alert( ar.length ); // 0 console.log( ar ); /* Array[0] age: 25 city: "Portland" length: 0 name: "Jon" state: "OR" */
+//alert( ar.length ); // 0 console.log( ar ); /* Array[0] age: 25 city: "Portland" length: 0 name: "Jon" state: "OR" 
 
 //} 
 */
