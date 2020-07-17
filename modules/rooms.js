@@ -60,14 +60,14 @@ return room;
 
 exports.getUserPath = function(path) {
 var botRoom = {}; 
-let boRoom = [botRoom.botname: path, botRoom.type: path, botRoom.id: rooms[path]];
+let boRoom = [botname: botRoom.botname, type: botRoom.type, id: botRoom.id];
 
 path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase() || 'path.toLowerCase()';
 //path.toLowerCase() = 'path';
 //if (rooms[path]) { 
-//botRoom.botname = path;
-//botRoom.type = path;
-//botRoom.id = rooms[path]
+botRoom.botname = path;
+botRoom.type = path;
+botRoom.id = rooms[path]
 //} 
 return boRoom;
 }
