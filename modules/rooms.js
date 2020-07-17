@@ -61,9 +61,9 @@ return room;
 exports.getUserPath = function(path) {
 var botRoom = {}; 
 let boRoom = {
-botname: path,
-type: path,
-id: rooms[path]
+botRoom.botname: path,
+botRoom.type: path,
+botRoom.id: rooms[path]
 }
 
 path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase() || 'path.toLowerCase()';
