@@ -60,7 +60,6 @@ return room;
 
 exports.getUserPath = function(path) {
 var botRoom = {};
- 
 
 //botname: botRoom.botname, type: botRoom.type, id: botRoom.id];
 
@@ -69,9 +68,13 @@ path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase() 
 //if (rooms[path]) { 
 botRoom.botname = path;
 botRoom.type = path;
-botRoom.id = rooms[path]
+botRoom.id = rooms[path];
 
-for (boRoom in botRoom) {
+var arrayOfobj = [{key1: botRoom.botname, key2: botRoom.type, key3: botRoom.id}];
+var newArrayOfobj =  arrayOfObj.map(({ key1: name, key2: type, key3: id }) => ({ name, type, id })); 
+ // [{botname: botRoom.botname}, {type: botRoom.type}, {id: botRoom.id}];
+
+/*for (boRoom in botRoom) {
 
 boRoom['name'] = botRoom.botname;
 boRoom['type'] = botRoom.type; 
@@ -79,8 +82,9 @@ boRoom['id'] = botRoom.id;
 //alert( ar.length ); // 0 console.log( ar ); /* Array[0] age: 25 city: "Portland" length: 0 name: "Jon" state: "OR" */
 
 //} 
-return botRoom;
-}
+*/
+return newArrayOfobj;
+//}
 }
 /*
 
