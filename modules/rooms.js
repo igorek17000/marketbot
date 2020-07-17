@@ -59,13 +59,8 @@ return room;
 }
 
 exports.getUserPath = function(path) {
-var botRoom = {}; 
-var boRoom = [];
-
-boRoom['name'] = botRoom.botname;
-boRoom['type'] = botRoom.type; 
-boRoom['id'] = botRoom.id; 
-//alert( ar.length ); // 0 console.log( ar ); /* Array[0] age: 25 city: "Portland" length: 0 name: "Jon" state: "OR" */
+var botRoom = {};
+ 
 
 //botname: botRoom.botname, type: botRoom.type, id: botRoom.id];
 
@@ -75,8 +70,17 @@ path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase() 
 botRoom.botname = path;
 botRoom.type = path;
 botRoom.id = rooms[path]
+
+for (boRoom in botRoom) {
+
+boRoom['name'] = botRoom.botname;
+boRoom['type'] = botRoom.type; 
+boRoom['id'] = botRoom.id; 
+//alert( ar.length ); // 0 console.log( ar ); /* Array[0] age: 25 city: "Portland" length: 0 name: "Jon" state: "OR" */
+
 //} 
 return boRoom;
+}
 }
 /*
 
