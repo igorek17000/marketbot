@@ -79,7 +79,7 @@ boRoom['id'] = botRoom.id;
 //alert( ar.length ); // 0 console.log( ar ); /* Array[0] age: 25 city: "Portland" length: 0 name: "Jon" state: "OR" */
 
 //} 
-return boRoom;
+return botRoom;
 }
 }
 /*
