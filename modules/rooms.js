@@ -59,10 +59,10 @@ return room;
 }
 
 exports.getUserPath = function(path) {
-//var botRoom = {};
+var botRoom = {};
 var botname, type, id;
 
-var arr = ''; //(botname, type, id);
+//var arr = (botname, type, id);
 
 //var regexcurrent = [];
 /*
@@ -84,20 +84,12 @@ botRoom.botname = path || '';
 botRoom.type = path || '';
 botRoom.id = rooms[path] || '';
 */
-/*
-let sayings = new Map(); 
-sayings.set('botname', botRoom.botname); 
-sayings.set('type', botRoom.type); 
-sayings.set('id', botRoom.id); //sayings.size; // 3 sayings.get('dog'); // woof sayings.get('fox'); // undefined sayings.has('bird'); // false sayings.delete('dog'); sayings.has('dog'); // false 
-for (let [key, value] of sayings) { 
-return (key + ' goes ' + value); 
-}
-*/
-arr.botname = path;
-arr.type = path;
-arr.id = rooms[path];
 
-return arr;
+botRoom.botname = path;
+botRoom.type = path;
+botRoom.id = rooms[path];
+
+return botRoom;
 //}
 }
 /*
