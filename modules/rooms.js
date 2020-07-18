@@ -60,15 +60,15 @@ return room;
 
 exports.getUserPath = function(path) {
 var botRoom = {};
-var botname, type, id;
+//var botname, type, id;
 
 //var arr = (botname, type, id);
 
 //var regexcurrent = [];
 
-botname = path;
-type = path;
-id = rooms[path];
+//botname = path;
+//type = path;
+//id = rooms[path];
 
 
 //var array1 = [botRoom[botname], botRoom[type], botRoom[id]];
@@ -79,18 +79,18 @@ id = rooms[path];
 path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase() || 'path.toLowerCase()' || '';
 //path.toLowerCase() = 'path';
 //if (rooms[path]) { 
-/*
+
 botRoom.botname = path || '';
 botRoom.type = path || '';
 botRoom.id = rooms[path] || '';
-*/
+
 
 /*botRoom.botname = path;
 botRoom.type = path;
 botRoom.id = rooms[path];
 */
-var msg = "botname" + = + botname + "\n" + "type" + = + type + "\n" + "id" + = + id + "\n";
-return msg;
+//var msg = "botname" + = + botname + "\n" + "type" + = + type + "\n" + "id" + = + id + "\n";
+return botRoom;
 //}
 }
 /*
