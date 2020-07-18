@@ -92,7 +92,7 @@ return (key + ' goes ' + value);
 }
 */
 
-return botRoom;
+return room;
 //}
 }
 /*
