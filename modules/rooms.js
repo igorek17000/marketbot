@@ -62,7 +62,7 @@ exports.getUserPath = function(path) {
 //var botRoom = {};
 var botname, type, id;
 
-var arr = (botname, type, id);
+var arr = ''; //(botname, type, id);
 
 //var regexcurrent = [];
 /*
@@ -93,9 +93,9 @@ for (let [key, value] of sayings) {
 return (key + ' goes ' + value); 
 }
 */
-botname = path;
-type = path;
-id = rooms[path];
+arr.botname = path;
+arr.type = path;
+arr.id = rooms[path];
 
 return arr;
 //}
