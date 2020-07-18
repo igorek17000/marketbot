@@ -67,8 +67,8 @@ var botname, type, id;
 //var regexcurrent = [];
 
 botname = path;
-botRoom[type] = botRoom.type;
-botRoom[id] = botRoom.id;
+type = path;
+id = rooms[path];
 
 
 //var array1 = [botRoom[botname], botRoom[type], botRoom[id]];
