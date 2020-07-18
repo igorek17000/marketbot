@@ -74,22 +74,13 @@ botRoom.id = rooms[path] || '';
 let sayings = new Map(); 
 sayings.set('botname', botRoom.botname); 
 sayings.set('type', botRoom.type); 
-sayings.set('id', botRoom.id]); //sayings.size; // 3 sayings.get('dog'); // woof sayings.get('fox'); // undefined sayings.has('bird'); // false sayings.delete('dog'); sayings.has('dog'); // false 
+sayings.set('id', botRoom.id); //sayings.size; // 3 sayings.get('dog'); // woof sayings.get('fox'); // undefined sayings.has('bird'); // false sayings.delete('dog'); sayings.has('dog'); // false 
 for (let [key, value] of sayings) { 
 return (key + ' goes ' + value); 
 }
- // [{botname: botRoom.botname}, {type: botRoom.type}, {id: botRoom.id}];
 
-/*for (boRoom in botRoom) {
 
-boRoom['name'] = botRoom.botname;
-boRoom['type'] = botRoom.type; 
-boRoom['id'] = botRoom.id; 
-//alert( ar.length ); // 0 console.log( ar ); /* Array[0] age: 25 city: "Portland" length: 0 name: "Jon" state: "OR" 
-
-//} 
-*/
-return newArray;
+//return newArray;
 //}
 }
 /*
