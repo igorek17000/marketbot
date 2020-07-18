@@ -60,18 +60,24 @@ return room;
 
 exports.getUserPath = function(path) {
 var botRoom = {};
-var array1 = [botRoom[0], botRoom[1], botRoom[2]];
-var newArray =  Array1.map(({elem1: botname, elem2: type, elem3: id}) => ({name, type, id})); 
+var array1 = [botRoom[botname], botRoom[type], botRoom[id]];
+var newArray =  Array1.map(({property_1: botname, elem2: type, elem3: id}) => ({name, type, id})); 
 
 //botname: botRoom.botname, type: botRoom.type, id: botRoom.id];
 
-path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase() || 'path.toLowerCase()';
+path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase() || 'path.toLowerCase()' || '';
 //path.toLowerCase() = 'path';
 //if (rooms[path]) { 
-botRoom.botname = path;
-botRoom.type = path;
-botRoom.id = rooms[path];
-
+botRoom.botname = path || '';
+botRoom.type = path || '';
+botRoom.id = rooms[path] || '';
+let sayings = new Map(); 
+sayings.set('botname', botRoom.botname); 
+sayings.set('type', botRoom.type); 
+sayings.set('id', botRoom.id]); //sayings.size; // 3 sayings.get('dog'); // woof sayings.get('fox'); // undefined sayings.has('bird'); // false sayings.delete('dog'); sayings.has('dog'); // false 
+for (let [key, value] of sayings) { 
+return (key + ' goes ' + value); 
+}
  // [{botname: botRoom.botname}, {type: botRoom.type}, {id: botRoom.id}];
 
 /*for (boRoom in botRoom) {
