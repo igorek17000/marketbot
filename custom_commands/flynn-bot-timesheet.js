@@ -231,7 +231,7 @@ function addFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callback) {
 if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
 
 //if (flynnbot["rooms"].name == rooms.getRoom(room)) { // botRoom == '308boonbot') {
-botName = Object.values(botARoom); //rooms.getUserPath(botRoom);
+botName = Array(botARoom); //rooms.getUserPath(botRoom);
 
 //if (rooms.getRoom().room) //&& botRoom == '308boonbot') { //flynnbot[flynnb].bots.indexOf(getARoom.type) > -1 && botRoom == 'true') {
 //botName = Object.entries(currentBot) = [ ["name": botRoom.botName], ["type": botRoom.type], ["id": botRoom.id] ];
