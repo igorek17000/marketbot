@@ -59,7 +59,7 @@ return room;
 }
 
 exports.getUserPath = function(path) {
-var botRoom = {};
+var botRoom;
 var botname = botRoom.botname;
 var type = botRoom.type;
 var id = botRoom.id;
@@ -92,7 +92,7 @@ return (key + ' goes ' + value);
 }
 */
 
-return room;
+return botRoom;
 //}
 }
 /*
