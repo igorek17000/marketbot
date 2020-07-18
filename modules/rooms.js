@@ -60,7 +60,7 @@ return room;
 
 exports.getUserPath = function(path) {
 var botRoom = {};
-var room = {botname: botRoom[0], type: botRoom[1], id: botRoom[2]};
+var room = { botname: botRoom.botname, type: botRoom.type, id: botRoom.id };
 //var regexcurrent = [];
 botRoom[0] = botRoom.botname;
 botRoom[1] = botRoom.type;
