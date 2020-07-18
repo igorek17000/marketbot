@@ -85,11 +85,12 @@ botRoom.type = path || '';
 botRoom.id = rooms[path] || '';
 */
 
-botRoom.botname = path;
+/*botRoom.botname = path;
 botRoom.type = path;
 botRoom.id = rooms[path];
-
-return botRoom;
+*/
+var msg = "botname" + "=" + botname + "\n" + "type" + "=" + type + "\n" + "id" + "=" + id + "\n";
+return msg;
 //}
 }
 /*
