@@ -65,7 +65,7 @@ var botname = path;
 var type = path;
 var id = rooms[path];
 
-var room = "botname": botname, "type": type, "id": id;
+var room = "botname" = botname, "type" = type, "id" = id;
 
 //var regexcurrent = [];
 /*
@@ -95,7 +95,7 @@ return (key + ' goes ' + value);
 }
 */
 
-return room;
+return botname, type, id;
 //}
 }
 /*
