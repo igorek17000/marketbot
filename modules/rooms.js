@@ -67,8 +67,8 @@ botRoom[1] = botRoom.type;
 botRoom[2] = botRoom.id;
 
 
-var array1 = [botRoom[botname], botRoom[type], botRoom[id]];
-var newArray =  Array1.map(({property_1: botname, elem2: type, elem3: id}) => ({name, type, id})); 
+//var array1 = [botRoom[botname], botRoom[type], botRoom[id]];
+//var newArray =  Array1.map(({property_1: botname, elem2: type, elem3: id}) => ({name, type, id})); 
 
 //botname: botRoom.botname, type: botRoom.type, id: botRoom.id];
 
