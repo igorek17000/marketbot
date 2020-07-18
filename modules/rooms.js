@@ -65,7 +65,7 @@ var botname = path;
 var type = path;
 var id = rooms[path];
 
-var room = { "botname": botname, "type": type, "id": id };
+var arr = [ botname, type, id ];
 
 //var regexcurrent = [];
 /*
@@ -82,9 +82,11 @@ botRoom[id] = botRoom.id;
 path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase() || 'path.toLowerCase()' || '';
 //path.toLowerCase() = 'path';
 //if (rooms[path]) { 
+/*
 botRoom.botname = path || '';
 botRoom.type = path || '';
 botRoom.id = rooms[path] || '';
+*/
 /*
 let sayings = new Map(); 
 sayings.set('botname', botRoom.botname); 
@@ -95,7 +97,7 @@ return (key + ' goes ' + value);
 }
 */
 
-return room;
+return arr;
 //}
 }
 /*
