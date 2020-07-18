@@ -65,11 +65,11 @@ var botname, type, id;
 //var arr = (botname, type, id);
 
 //var regexcurrent = [];
-/*
+
 botname = path;
 botRoom[type] = botRoom.type;
 botRoom[id] = botRoom.id;
-*/
+
 
 //var array1 = [botRoom[botname], botRoom[type], botRoom[id]];
 //var newArray =  Array1.map(({property_1: botname, elem2: type, elem3: id}) => ({name, type, id})); 
