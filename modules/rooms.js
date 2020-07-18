@@ -65,7 +65,7 @@ var botname = path;
 var type = path;
 var id = rooms[path];
 
-var room = [ "botname": botname, "type": type, "id": id ];
+var room = botname, type, id;
 
 //var regexcurrent = [];
 /*
