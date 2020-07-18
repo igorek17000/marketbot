@@ -59,7 +59,7 @@ return room;
 }
 
 exports.getUserPath = function(path) {
-var botRoom = {botname: emp[0], type: emp[1], id:emp[2]};};
+var botRoom = {botname: emp[0], type: emp[1], id:emp[2]};
 let emp = [];
 emp[0] = botRoom.botname;
 emp[1] = botRoom.type;
@@ -87,7 +87,7 @@ return (key + ' goes ' + value);
 }
 */
 
-//return botRoom;
+return botRoom;
 //}
 }
 /*
