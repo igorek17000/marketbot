@@ -89,7 +89,7 @@ botRoom.id = rooms[path] || '';
 botRoom.type = path;
 botRoom.id = rooms[path];
 */
-var msg = "botname" + "=" + botname + "\n" + "type" + "=" + type + "\n" + "id" + "=" + id + "\n";
+var msg = "botname" + = + botname + "\n" + "type" + = + type + "\n" + "id" + = + id + "\n";
 return msg;
 //}
 }
