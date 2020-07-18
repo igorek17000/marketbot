@@ -61,7 +61,7 @@ return room;
 exports.getUserPath = function(path) {
 var botRoom = {};
 var Array = [0, 1, 2];
-var newArray =  Array.map(({key1: 0, key2: 1, key3: 2}) => ({name, type, id})); 
+var newArray =  Array.map(({elem1: 0, elem2: 1, elem3: 2}) => ({name, type, id})); 
 
 //botname: botRoom.botname, type: botRoom.type, id: botRoom.id];
 
