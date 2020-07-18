@@ -84,7 +84,10 @@ botRoom.botname = path || '';
 botRoom.type = path || '';
 botRoom.id = rooms[path] || '';
 
-
+botRoom = {
+boo = path;,
+bee = path;
+}
 /*botRoom.botname = path;
 botRoom.type = path;
 botRoom.id = rooms[path];
