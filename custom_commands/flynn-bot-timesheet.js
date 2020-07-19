@@ -66,12 +66,6 @@ setTimeout(function() {
 }, config.delay_two);
 }
 
-function updateFlynnBotCompleted(flynnb, callback) {
-setTimeout(function() {
-    db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $rename: { "completed": [ { "0": "bot_name" } ] }}, callback);
-}, config.delay_three);
-}
-
 
 
 
