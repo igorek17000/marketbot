@@ -4,6 +4,10 @@ var mod_config = require('../config/config.js');
 var rooms;
 var roomCommands = [cmdRoomAdd, cmdToken, cmdConfig];
 var that = this;
+var moment = require('moment'); 
+var date = moment().utcOffset(-240).format('LLLL');
+
+
 //var bot = require('../bot.js');
 
 
