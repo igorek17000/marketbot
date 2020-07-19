@@ -88,7 +88,7 @@ setTimeout(function() {
 */
 
 function updateFlynnBotSun(flynnb, callback) {
-  db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "sunday": flynnb.sunday }}, callback);
+  db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "sunday": Object.values(flynnb.sunday) }}, callback);
 }
 
 function updateFlynnBotMon(flynnb, callback) {
@@ -343,7 +343,7 @@ function sundayFlynnBotCmd(request, bots, isMod, callback) {
     }
     
 if (flynnbot[flynnb].current == val[1]) {
-        flynnbot[flynnb]["sunday"] = Object.values(val[2]);
+        flynnbot[flynnb]["sunday"] = val[2];
     updateFlynnBotSun(flynnbot[flynnb]); 
 
     var msg = "FlynnBot timesheet hours captured for Sunday, week of " + flynnbot[flynnb].name;
