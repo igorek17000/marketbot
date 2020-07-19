@@ -4,7 +4,7 @@ var mod_config = require('../config/config.js');
 var rooms;
 var roomCommands = [cmdRoomAdd, cmdToken, cmdConfig];
 var that = this;
-var bot = require('../bot.js');
+//var bot = require('../bot.js');
 
 
 
@@ -90,7 +90,7 @@ botRoom.id = rooms[path] || '';
 botRoom = {
 botname: path,
 id: rooms[path],
-mod_date: bot.date
+mod_date: date
 }
 /*botRoom.botname = path;
 botRoom.type = path;
