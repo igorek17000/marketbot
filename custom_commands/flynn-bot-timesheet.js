@@ -62,7 +62,7 @@ setTimeout(function() {
 
 function updateFlynnBotRegexCurrent(flynnb, callback) {
 setTimeout(function() {
-    db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $rename: { "regexcurrent": "completed" }}, callback);
+    db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $rename: { "regexcurrent": "mod_bot" }}, callback);
 }, config.delay_two);
 }
 
@@ -265,10 +265,10 @@ flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //
       regexcurrent: "^\/" + "current" + "$",
       message: val[2],
       description: "Timesheet week of " + val[1],
+      botroom: botARoom,
       bots: Object.keys(bots),
       botIDs: Object.values(bots),
       //bot: Object.keys(currentBot),
-      room: Object.values(currentBot),
       current: "current",
       date: date
      };
