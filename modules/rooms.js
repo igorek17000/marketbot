@@ -4,7 +4,12 @@ var mod_config = require('../config/config.js');
 var rooms;
 var roomCommands = [cmdRoomAdd, cmdToken, cmdConfig];
 var that = this;
-//var bot = require('../bot.js');
+var bot = require('../bot.js');
+var moment = require('moment'); 
+var date = moment().utcOffset(-300).format('LLLL');
+
+
+
 getAllRooms();
 //getNick();
 exports.modName = "Rooms Control";
@@ -86,7 +91,8 @@ botRoom.id = rooms[path] || '';
 
 botRoom = {
 botname: path,
-id: rooms[path]
+id: rooms[path],
+mod_date: date
 }
 /*botRoom.botname = path;
 botRoom.type = path;
