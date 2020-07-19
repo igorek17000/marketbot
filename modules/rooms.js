@@ -5,8 +5,6 @@ var rooms;
 var roomCommands = [cmdRoomAdd, cmdToken, cmdConfig];
 var that = this;
 var bot = require('../bot.js');
-var moment = require('moment'); 
-var date = moment().utcOffset(-300).format('LLLL');
 
 
 
@@ -92,7 +90,7 @@ botRoom.id = rooms[path] || '';
 botRoom = {
 botname: path,
 id: rooms[path],
-mod_date: date
+mod_date: bot.date
 }
 /*botRoom.botname = path;
 botRoom.type = path;
