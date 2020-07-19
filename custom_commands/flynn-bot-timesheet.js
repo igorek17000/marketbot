@@ -247,7 +247,7 @@ flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //
       if (flynnbot[flynnb].current || flynnbot[flynnb].regexcurrent) {
        updateFlynnBotCurrent(flynnbot[flynnb]);
        updateFlynnBotRegexCurrent(flynnbot[flynnb]);
-       updateFlynnBotCompleted(flynnbot[flynnb])
+      // updateFlynnBotCompleted(flynnbot[flynnb])
         //var msg = "Current week updated";
         //callback(true, msg, []);
         }
