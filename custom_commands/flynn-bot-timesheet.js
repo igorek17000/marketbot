@@ -303,7 +303,7 @@ function describeFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callbac
         return msg;
       }
     }
-   
+   }
   
   var msg = val[1] + " doesn't exist";
     callback(true, msg, []);
