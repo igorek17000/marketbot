@@ -296,7 +296,7 @@ function describeFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callbac
         flynnbot[flynnb]["description"] = val[2];
       if (flynnbot[flynnb].description) {
         var des = "description" + ++i;
-        flynnbot[flynnb][des] = val[2];
+        flynnbot[flynnb]["description"] = Array.push(val[2]);
         updateFlynnBotDesc(flynnbot[flynnb]);
         var msg = "FlynnBot timesheet description updated for " + flynnbot[flynnb].name;
 
