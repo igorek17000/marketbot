@@ -44,7 +44,14 @@ function updateFlynnBotDesc(flynnb, callback) {
 
 function updateFlynnBotCurrentDate(flynnb, callback) {
 setTimeout(function() {
-  db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $set: { "current": date}}, callback);
+  db.updateOneDoc(db_table, 
+  { 
+    "name": flynnb.name } || { "current": flynnb.current }, 
+   { 
+     $set: { 
+"current": date
+}
+}, callback);
 }, config.delay_one);
 }
 
