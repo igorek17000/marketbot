@@ -277,7 +277,7 @@ flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //
 
 
 
-function describeFlynnBotCmd(request, bots, isMod, callback) {
+function describeFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callback) {
   var regex = /^\/timesheet describe (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
@@ -291,8 +291,11 @@ function describeFlynnBotCmd(request, bots, isMod, callback) {
     }
 
     for (flynnb in flynnbot) {
+      var i = 0;
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["description"] = val[2];
+      if (flynnbot[flynnb].description) {
+        flynnbot[flynnb]["description" ++i] = val[2];
         updateFlynnBotDesc(flynnbot[flynnb]);
         var msg = "FlynnBot timesheet description updated for " + flynnbot[flynnb].name;
 
