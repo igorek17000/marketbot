@@ -182,7 +182,7 @@ rooms.botRoooooom = botRoom[path]
 */
 exports.checkCommands = function(dataHash, callback) {
   for (command in roomCommands) {
-    var test = roomCommands[command](dataHash.request, dataHash.currentBot, dataHash.botARoom, dataHash.owner, callback);
+    var test = roomCommands[command](dataHash.request, dataHash.currentBot, dataHash.owner, callback);
     if (test)
       return test;
   }
