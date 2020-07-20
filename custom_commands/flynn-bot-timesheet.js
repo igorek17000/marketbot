@@ -311,7 +311,7 @@ function describeFlynnBotCmd(request, bots, isMod, callback) {
 
 
 
-function sundayFlynnBotCmd(request, bots, isMod, callback) {
+function sundayFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callback) {
   var regex = /^\/timesheet sunday (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
