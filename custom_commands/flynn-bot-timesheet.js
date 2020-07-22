@@ -1,4 +1,4 @@
-
+//
 //A module for handling responses triggered by FlynnBot commands
 var flynnbot;
 var db_table = 'flynn_bot_timesheet';
