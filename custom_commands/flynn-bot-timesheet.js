@@ -13,6 +13,30 @@ var rooms = require('../modules/rooms.js');
 var botName, path; //= '';
 var that = this;
 
+var Obj = {              
+
+    arrayOne: [], 
+
+    arrayTwo: [] 
+
+}; 
+
+  
+
+// Array to be inserted 
+
+var arraynew = [val[1]]; 
+
+  
+
+// Push an array to object 
+
+//Obj.arrayOne.push(arraynew);      
+
+  
+
+
+
 getAllFlynnbot();
 exports.modName = "flynnBot";
 
@@ -39,7 +63,7 @@ setTimeout(function() {
 }
 
 function updateFlynnBotDesc(flynnb, callback) {
-  db.updateOneDoc(db_table, { "name": flynnb.name }, { $set: { "description": flynnb.description }}, callback);
+  db.updateOneDoc(db_table, { "name": flynnb.name }, { $push: { "description": { flynnb.description }}}, callback);
 }
 
 function updateFlynnBotCurrentDate(flynnb, callback) {
@@ -315,7 +339,7 @@ function describeFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callbac
       var y = 1;
       var z = x + y
       if (flynnbot[flynnb].name == val[1]) {
-        flynnbot[flynnb]["description"] = val[2];
+        flynnbot[flynnb]["description"] = Obj.arrayOne.push(arraynew); 
       //if (flynnbot[flynnb].description) {
         //var des = val[2];
         //flynnbot[flynnb]["description"] = des;
