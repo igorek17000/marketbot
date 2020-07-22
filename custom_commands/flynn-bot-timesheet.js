@@ -48,9 +48,14 @@ setTimeout(function() {
   { 
     "name": flynnb.name } || { "current": flynnb.current }, 
    { 
-     $set: { 
+    /* $set: { 
 "current": date
 }
+*/
+$push: { 
+array: { 
+$each: [date: "mod_date"], 
+$position: -1
 }, callback);
 }, config.delay_one);
 }
@@ -298,12 +303,14 @@ function describeFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callbac
     }
 
     for (flynnb in flynnbot) {
-      var i; i = 0; ++i;
+      var x = 0; 
+      var y = 1;
+      var z = x + y
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["description"] = val[2];
       if (flynnbot[flynnb].description) {
         var des = val[2];
-        flynnbot[flynnb]["description" + i] = des;
+        flynnbot[flynnb]["description"] = des;
         updateFlynnBotDesc(flynnbot[flynnb]);
         var msg = "FlynnBot timesheet description updated for " + flynnbot[flynnb].name;
 
