@@ -60,7 +60,7 @@ function updateFlynnBotModDate(flynnb, callback) {
 setTimeout(function() {
 db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, 
 { 
-$push: { "current": { "mod_date:" {
+$push: { "mod": { "mod_date": { 
 array: { 
 $each: [date], 
 $position: -1
@@ -257,7 +257,7 @@ botName = botARoom; //rooms.getUserPath(botRoom);
 flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
-        updateFlynnBotModDate(flynnbot[flynnb]);
+        
       //  updateFlynnBotCurrent(flynnbot[flynnb]);
        // updateFlynnBotRegexCurrent(flynnbot[flynnb]);
        
@@ -319,9 +319,10 @@ function describeFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callbac
       var z = x + y
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["description"] = val[2];
-      if (flynnbot[flynnb].description) {
-        var des = val[2];
-        flynnbot[flynnb]["description"] = des;
+      //if (flynnbot[flynnb].description) {
+        //var des = val[2];
+        //flynnbot[flynnb]["description"] = des;
+        updateFlynnBotModDate(flynnbot[flynnb]);
         updateFlynnBotDesc(flynnbot[flynnb]);
         var msg = "FlynnBot timesheet description updated for " + flynnbot[flynnb].name;
 
@@ -329,7 +330,7 @@ function describeFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callbac
         return msg;
       }
     }
-   }
+   //}
   
   var msg = val[1] + " doesn't exist";
     callback(true, msg, []);
