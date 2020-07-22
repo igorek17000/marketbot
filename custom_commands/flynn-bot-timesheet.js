@@ -48,17 +48,27 @@ setTimeout(function() {
   { 
     "name": flynnb.name } || { "current": flynnb.current }, 
    { 
-    /* $set: { 
+     $set: { 
 "current": date
 }
-*/
-$push: { 
-array: { 
-$each: [date: "mod_date"], 
-$position: -1
+
+
 }, callback);
 }, config.delay_one);
 }
+function updateFlynnBotModDate(flynnb, callback) {
+setTimeout(function() {
+db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, 
+{ 
+$push: { "current": { "mod_date:" {
+array: { 
+$each: [date], 
+$position: -1
+}, callback);   //flynnb.regexcurrent }}, callback);
+}, config.delay_one);
+}
+
+
 
 function updateFlynnBotRegexCurrentDate(flynnb, callback) {
 setTimeout(function() {
@@ -247,6 +257,7 @@ botName = botARoom; //rooms.getUserPath(botRoom);
 flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //rooms.getARoom();
         updateFlynnBotCurrentDate(flynnbot[flynnb]);
         updateFlynnBotRegexCurrentDate(flynnbot[flynnb]);
+        updateFlynnBotModDate(flynnbot[flynnb]);
       //  updateFlynnBotCurrent(flynnbot[flynnb]);
        // updateFlynnBotRegexCurrent(flynnbot[flynnb]);
        
