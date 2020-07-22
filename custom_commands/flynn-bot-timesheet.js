@@ -12,7 +12,7 @@ var rooms = require('../modules/rooms.js');
 //var bot = require('../bot.js')
 var botName, path, val; //= '';
 var that = this;
-
+/*
 var Obj = {              
 
     arrayOne: [], 
@@ -34,7 +34,7 @@ var arraynew = [val];
 //Obj.arrayOne.push(arraynew);      
 
   
-
+*/
 
 
 getAllFlynnbot();
