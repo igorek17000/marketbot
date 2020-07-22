@@ -63,7 +63,7 @@ setTimeout(function() {
 }
 
 function updateFlynnBotDesc(flynnb, callback) {
-  db.updateOneDoc(db_table, { "name": flynnb.name }, { $push: { "description": flynnb.description }}, callback);
+  db.updateOneDoc(db_table, { "name": flynnb.name }, { $set: { "description": flynnb.description }}, callback);
 }
 
 function updateFlynnBotCurrentDate(flynnb, callback) {
@@ -77,18 +77,13 @@ setTimeout(function() {
 }}, callback);
 }, config.delay_one);
 }
-/*function updateFlynnBotModDate(flynnb, callback) {
+function updateFlynnBotModDate(flynnb, callback) {
 setTimeout(function() {
 db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, 
-{ 
-$push: { "mod": { "mod_date": { 
-array: { 
-$each: [date], 
-$position: -1
-}}, callback);   //flynnb.regexcurrent }}, callback);
+{ $push: { "mod_date": flynnb.mod_date }}, callback);   //flynnb.regexcurrent }}, callback);
 }, config.delay_one);
 }
-*/
+
 
 
 function updateFlynnBotRegexCurrentDate(flynnb, callback) {
@@ -328,6 +323,25 @@ function describeFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callbac
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
 
+
+
+  
+
+// Array to be inserted 
+
+//var arraynew = [date]; 
+
+  
+
+// Push an array to object 
+
+//Obj.arrayOne.push(arraynew);      
+
+  
+
+
+
+
     if (!isMod) {
       var msg = request.name + " who you trying to kid?";
       callback(true, msg, []);
@@ -340,11 +354,24 @@ function describeFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callbac
       var z = x + y
 */
       if (flynnbot[flynnb].name == val[1]) {
-        flynnbot[flynnb]["description"] = Obj.arrayOne.push(arraynew[2]); 
+var dateObj = {              
+
+    //arrayOne: [], 
+
+   // arrayTwo: [] 
+mod_date: Object.values(date);
+
+}; 
+
+        
+        flynnbot[flynnb]["description"] = val[2]; 
       //if (flynnbot[flynnb].description) {
         //var des = val[2];
-        //flynnbot[flynnb]["description"] = des;
-       // updateFlynnBotModDate(flynnbot[flynnb]);
+        flynnbot[flynnb]["mod_date"] = dateObj;
+
+        flynnbot.push(dateObj);
+        updateFlynnBotModDate(flynnbot[flynnb]);
+        
         updateFlynnBotDesc(flynnbot[flynnb]);
         var msg = "FlynnBot timesheet description updated for " + flynnbot[flynnb].name;
 
