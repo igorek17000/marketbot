@@ -63,7 +63,7 @@ setTimeout(function() {
 }
 
 function updateFlynnBotDesc(flynnb, callback) {
-  db.updateOneDoc(db_table, { "name": flynnb.name }, { $push: { "description":  flynnb.description }}, callback);
+  db.updateOneDoc(db_table, { "name": flynnb.name }, { $push: { "description": flynnb.description }}, callback);
 }
 
 function updateFlynnBotCurrentDate(flynnb, callback) {
