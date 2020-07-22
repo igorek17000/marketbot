@@ -50,10 +50,7 @@ setTimeout(function() {
    { 
      $set: { 
 "current": date
-}
-
-
-}, callback);
+}}, callback);
 }, config.delay_one);
 }
 function updateFlynnBotModDate(flynnb, callback) {
@@ -64,7 +61,7 @@ $push: { "mod": { "mod_date": {
 array: { 
 $each: [date], 
 $position: -1
-}, callback);   //flynnb.regexcurrent }}, callback);
+}}, callback);   //flynnb.regexcurrent }}, callback);
 }, config.delay_one);
 }
 
