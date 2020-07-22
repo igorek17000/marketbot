@@ -353,7 +353,8 @@ function describeFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callbac
       if (flynnbot[flynnb].name == val[1]) {
 var dateObj = {}; 
 dateObj.date = date;
-dateObj.user_name = request.name; //[date, val];
+dateObj.user_name = request.name;
+dateObj.input = reqText; //[date, val];
 
 
 
@@ -364,7 +365,7 @@ dateObj.user_name = request.name; //[date, val];
         
         flynnbot[flynnb]["description"] = val[2]; 
       
-        flynnbot[flynnb]["mod_date"] = botARoom;
+        flynnbot[flynnb]["mod_date"] = dateObj;
 
         
         updateFlynnBotModDate(flynnbot[flynnb]);
