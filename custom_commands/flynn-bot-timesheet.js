@@ -77,7 +77,7 @@ setTimeout(function() {
 }}, callback);
 }, config.delay_one);
 }
-function updateFlynnBotModDate(flynnb, callback) {
+/*function updateFlynnBotModDate(flynnb, callback) {
 setTimeout(function() {
 db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, 
 { 
@@ -88,7 +88,7 @@ $position: -1
 }}, callback);   //flynnb.regexcurrent }}, callback);
 }, config.delay_one);
 }
-
+*/
 
 
 function updateFlynnBotRegexCurrentDate(flynnb, callback) {
@@ -335,15 +335,16 @@ function describeFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callbac
     }
 
     for (flynnb in flynnbot) {
-      var x = 0; 
+     /* var x = 0; 
       var y = 1;
       var z = x + y
+*/
       if (flynnbot[flynnb].name == val[1]) {
         flynnbot[flynnb]["description"] = Obj.arrayOne.push(arraynew); 
       //if (flynnbot[flynnb].description) {
         //var des = val[2];
         //flynnbot[flynnb]["description"] = des;
-        updateFlynnBotModDate(flynnbot[flynnb]);
+       // updateFlynnBotModDate(flynnbot[flynnb]);
         updateFlynnBotDesc(flynnbot[flynnb]);
         var msg = "FlynnBot timesheet description updated for " + flynnbot[flynnb].name;
 
