@@ -87,11 +87,14 @@ path = path || 'path' || Path || 'Path' || PATH || 'PATH' || path.toLowerCase() 
 //path.toLowerCase() = 'path';
 //if (rooms[path]) { 
 
+
 botRoom.botname = path;
 botRoom.type = path;
 botRoom.id = rooms[path];
 
 botRoom = {
+user = request.name,
+cmd = request.text,
 botname: path,
 id: rooms[path],
 mod_date: date
