@@ -362,7 +362,7 @@ var dateObj = date;
    // arrayTwo: [] 
 //mod_date: Object.values(date)
 
-}; 
+
 
         
         flynnbot[flynnb]["description"] = val[2]; 
