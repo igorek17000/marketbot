@@ -10,7 +10,7 @@ var config = require('../config/config.js');
 //var mods = require('../modules/mods');
 var rooms = require('../modules/rooms.js');
 //var bot = require('../bot.js')
-var botName, path; //= '';
+var botName, path, val; //= '';
 var that = this;
 
 var Obj = {              
