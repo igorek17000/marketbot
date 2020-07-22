@@ -364,7 +364,7 @@ dateObj.user_name = request.name; //[date, val];
         
         flynnbot[flynnb]["description"] = val[2]; 
       
-        flynnbot[flynnb]["mod_date"] = dateObj;
+        flynnbot[flynnb]["mod_date"] = botARoom;
 
         
         updateFlynnBotModDate(flynnbot[flynnb]);
