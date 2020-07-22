@@ -359,7 +359,7 @@ var dateObj = {             
     //arrayOne: [], 
 
    // arrayTwo: [] 
-mod_date: Object.values(date);
+mod_date: Object.values(date)
 
 }; 
 
