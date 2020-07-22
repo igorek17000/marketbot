@@ -25,7 +25,7 @@ var Obj = {             
 
 // Array to be inserted 
 
-var arraynew = [val[1]]; 
+var arraynew = [val]; 
 
   
 
@@ -340,7 +340,7 @@ function describeFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callbac
       var z = x + y
 */
       if (flynnbot[flynnb].name == val[1]) {
-        flynnbot[flynnb]["description"] = Obj.arrayOne.push(arraynew); 
+        flynnbot[flynnb]["description"] = Obj.arrayOne.push(arraynew[2]); 
       //if (flynnbot[flynnb].description) {
         //var des = val[2];
         //flynnbot[flynnb]["description"] = des;
