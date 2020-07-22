@@ -93,8 +93,8 @@ botRoom.type = path;
 botRoom.id = rooms[path];
 
 botRoom = {
-user: request.name,
-cmd: request.text,
+user: dataHash.request.name,
+input: dataHash.request.text,
 botname: path,
 id: rooms[path],
 mod_date: date
