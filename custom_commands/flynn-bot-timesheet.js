@@ -354,8 +354,10 @@ function describeFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callbac
       var z = x + y
 */
       if (flynnbot[flynnb].name == val[1]) {
-var dateObj = [date, val];
-var modObj = val;
+var dateObj= {}; //
+dateObj.date = date;
+dateObj.user_name = request.name; [date, val];
+
 
 
     //arrayOne: [], 
