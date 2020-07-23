@@ -93,8 +93,8 @@ botRoom.type = path;
 botRoom.id = rooms[path];
 
 botRoom = {
-botname: path,
-id: rooms[path],
+botName: path,
+botID: rooms[path]
 mod_date: date
 }
 /*botRoom.botname = path;
