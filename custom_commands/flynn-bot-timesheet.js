@@ -356,7 +356,7 @@ var dateObj = {};
 dateObj.req_by = request.name;
 dateObj.botRoom = botARoom; //[date, val];
 dateObj.userReq = request;
-dateObj.modDate = date;
+dateObj.mod_date = date;
 
 
     
