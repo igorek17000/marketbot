@@ -42,29 +42,8 @@ var weather = require('weather-js');
 var colors = require('colors');
 var chalk = require('chalk');
 //chalk.enabled = true; 
-var chalk = require('chalk'); 
-var error = chalk.bold.red; 
-var warning = chalk.keyword('orange'); 
-var nN = chalk.red;
-console.log(error('Error!')); 
-console.log(warning('Warning!'));
+import { Octokit } from "@octokit/core";
 
-/* var db_table = 'rooms';
-
-
-var rooom;
-getAllRooom();
-function getAllRooom(){ //logReq
-db.getAllDocuments(db_table, function(res){ 
-rooom = res; 
-return rooom;
-});
-}
-
-function getAll() { 
-return rooom;
-}
-*/
 
 //load config
 var config       = require('./config/config');
