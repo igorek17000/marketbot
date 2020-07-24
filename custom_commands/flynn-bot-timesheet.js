@@ -291,9 +291,15 @@ flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //
         //callback(true, msg, []);
         }
       
+var created = { 
+      user: request,
+      date: date
+};
+                
         
       var flynnbHash = {
       name: val[1].toLowerCase(),
+      created: created,
       regex: "^\/" + val[1] + "$",
       regexcurrent: "^\/" + "current" + "$",
       message: val[2],
@@ -302,8 +308,8 @@ flynnbot[flynnb]["regexcurrent"] = botName; //rooms.getUserPath(); //botName; //
       bots: Object.keys(bots),
       botIDs: Object.values(bots),
       //bot: Object.keys(currentBot),
-      current: "current",
-      date: date
+      current: "current"
+     
      };
     
     flynnbot.push(flynnbHash);
