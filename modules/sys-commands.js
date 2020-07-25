@@ -2,6 +2,8 @@
 //
 var fun_mode = true;
 var sysCommands = [dateCmd, weatherCurrentCmd, weatherForecastCmd, funCmd, noFunCmd, idCmd, aboutCmd, eemailCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd, gmCmd];
+var exp = require('exp');
+
 var { stdin, stdout } = process;
 //var weather = require('./toronto');
 var chalk = require('chalk'); 
@@ -373,10 +375,11 @@ return false;
 function dateCmd(dataHash, callback) {
   var regex = /^\/date$/;
 
-var moment = require('moment');
+//var moment = require('moment');
 
 //var drt = new dataHash.request;
-var date = moment().utcOffset(-240).format('LLLL');
+var exp = require('exp');
+//var date = moment().utcOffset(-240).format('LLLL');
 
 
 //var date = moment().tz("America/Toronto").format('LLLL');
@@ -386,7 +389,7 @@ var date = moment().utcOffset(-240).format('LLLL');
 //let name = prompt("What is your name?");
 //let nameConfirmed = confirm("Your name is " + name + ", correct?");
 
-
+var msg = exp.date;
 alert("Hi " + date);
 
 
