@@ -260,7 +260,7 @@ var chalk = require('chalk');
 
 
 
-console.log(chalk.red('%s'), nickName);
+console.log('\n' + nickName);
 console.log(date);
 //console.log(nn);
 
