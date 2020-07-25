@@ -2,7 +2,7 @@
 //
 var fun_mode = true;
 var sysCommands = [dateCmd, weatherCurrentCmd, weatherForecastCmd, funCmd, noFunCmd, idCmd, aboutCmd, eemailCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd, gmCmd];
-var exp = require('exp');
+var exp = require('./exp.js');
 
 var { stdin, stdout } = process;
 //var weather = require('./toronto');
