@@ -378,7 +378,7 @@ function dateCmd(dataHash, callback) {
 //var moment = require('moment');
 
 //var drt = new dataHash.request;
-var exp = require('exp');
+var exp = require('./exp.js');
 //var date = moment().utcOffset(-240).format('LLLL');
 
 
