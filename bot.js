@@ -31,8 +31,8 @@ var moment = require('moment-timezone');
 
 moment.tz.setDefault('America/Toronto');
 
-var date = moment().utcOffset(-300).format('LLLL');
-var nd = moment.tz('America/Toronto').format('LLLL');
+//var date = moment().utcOffset(-300).format('LLLL');
+var date = moment.tz('America/Toronto').format('LLLL');
 //var go         = require('./modules/server.js');
 var fs           = require('fs');
 var concat       = require('concat');
@@ -178,9 +178,9 @@ var chalk = require('chalk');
 //chalk.enabled = true; 
 var nN = chalk.red;
 
-var nd = moment.tz('America/Toronto').format('LLLL');
+var date = moment.tz('America/Toronto').format('LLLL');
 
-var nn = moment.tz().format('LLLL');
+//var nn = moment.tz().format('LLLL');
 var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
            nickName = 'Config';
@@ -261,8 +261,8 @@ var chalk = require('chalk');
 
 
 console.log(chalk.red('%s'), nickName);
-console.log(nd);
-console.log(nn);
+console.log(date);
+//console.log(nn);
 
 
 
