@@ -42,7 +42,7 @@ var weather = require('weather-js');
 var colors = require('colors');
 var chalk = require('chalk');
 //chalk.enabled = true; 
-import { Octokit } from "@octokit/core";
+//import { Octokit } from "@octokit/core";
 
 
 //load config
