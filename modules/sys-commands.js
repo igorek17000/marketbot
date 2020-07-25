@@ -396,7 +396,7 @@ alert("Hi " + date);
 //var toronto = require('./toronto');
 //toronto;
 
-      callback(true, date);
+      callback(true, msg);
 
 } else {
 return false;
