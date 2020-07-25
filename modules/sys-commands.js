@@ -390,7 +390,7 @@ var exp = require('./exp.js');
 //let nameConfirmed = confirm("Your name is " + name + ", correct?");
 
 var msg = exp.date;
-alert("Hi " + date);
+
 
 
 //var toronto = require('./toronto');
