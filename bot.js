@@ -27,10 +27,12 @@ var catFact      = require('./custom_commands/cat-fact');
 var urbanDict    = require('./custom_commands/urban-dictionary');
 
 
-var moment = require('moment'); 
-var date = moment().utcOffset(-300).format('LLLL');
-var nd = new Date().toLocaleString("en-US", {timeZone: "America/Toronto"})
+var moment = require('moment-timezone'); 
 
+moment.tz.setDefault("America/Toronto");
+
+var date = moment().utcOffset(-300).format('LLLL');
+var nd = moment.tz().format('LLLL')
 //var go         = require('./modules/server.js');
 var fs           = require('fs');
 var concat       = require('concat');
@@ -256,6 +258,7 @@ var chalk = require('chalk');
 
 
 console.log(chalk.red('%s'), nickName);
+console.log(nd);
 
 
 
