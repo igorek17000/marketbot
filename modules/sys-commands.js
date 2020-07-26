@@ -544,11 +544,11 @@ function nest18Cmd(dataHash, callback) {
 if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
 
-  nes.nest18;  
+  
     callback(true, "Thermostat set to 18 degrees celsius", []);
 
  // var nest18 = require('./modules/nest18');
-//nest18;
+nes.nest18;
 } else {
 callback(true, "Access Denied! Only mods can adjust the temperature", []);
 }
