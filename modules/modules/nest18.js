@@ -18,18 +18,18 @@ generateTextFromHTML: true,
 html: '<b></b>'
 };
 
-function now() {
-Transport.sendMail(mailOptions_1, function(error, response) {
+
+var now = Transport.sendMail(mailOptions_1, function(error, response) {
 
 if (error) {
 console.log(error);
-return error;
+
 } else {
 console.log(response);
-return response;
+
 }
 Transport.close();
 });
-}
 
-exports.now = now();
+
+exports.now = now;
