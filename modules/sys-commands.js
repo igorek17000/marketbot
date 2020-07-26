@@ -3,7 +3,7 @@
 var fun_mode = true;
 var sysCommands = [dateCmd, weatherCurrentCmd, weatherForecastCmd, funCmd, noFunCmd, idCmd, aboutCmd, eemailCmd, helpCmd, hiCmd, listCmd, nest18Cmd, nest19Cmd, nest20Cmd, nest21Cmd, nest22Cmd, nowCmd, gmCmd];
 var exp = require('./exp.js');
-var nes = require('./modules/nest18');
+var nes = require('./modules/nest18.js');
 
 var { stdin, stdout } = process;
 //var weather = require('./toronto');
@@ -548,7 +548,7 @@ if (regex.test(dataHash.request.text)) {
     callback(true, "Thermostat set to 18 degrees celsius", []);
 
  // var nest18 = require('./modules/nest18');
-return msg
+return msg;
 } else {
 callback(true, "Access Denied! Only mods can adjust the temperature", []);
 }
