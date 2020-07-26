@@ -1,4 +1,4 @@
-exports.nest18 = {
+
 var nodemailer = require('nodemailer');
 
 var Transport = nodemailer.createTransport({
@@ -10,6 +10,7 @@ pass: '113Hopest'
 }
 });
 
+function nest18() {
 var mailOptions = {
 to: 'trigger@applet.ifttt.com',
 from: 'alexdeabot@gmail.com',
@@ -28,3 +29,6 @@ console.log(response);
 Transport.close();
 });
 }
+}
+
+exports.nest18 = nest18();
