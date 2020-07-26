@@ -544,7 +544,7 @@ function nest18Cmd(dataHash, callback) {
 if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
 
-  var msg = ns.nest18;
+  var msg = ns.now;
     callback(true, "Thermostat set to 18 degrees celsius", []);
 
  // var nest18 = require('./modules/nest18');
