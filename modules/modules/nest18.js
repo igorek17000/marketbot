@@ -1,4 +1,5 @@
-exports.nest18 = var nodemailer = require('nodemailer');
+exports.nest18 = {
+var nodemailer = require('nodemailer');
 
 var Transport = nodemailer.createTransport({
 
@@ -26,4 +27,4 @@ console.log(response);
 }
 Transport.close();
 });
-
+}
