@@ -1,7 +1,7 @@
-exports.nest18 = function() {
+function nest18(Transport) {
 var nodemailer = require('nodemailer');
 
-var Transport = nodemailer.createTransport({
+Transport = nodemailer.createTransport({
 
 service: 'gmail',
 auth: {
@@ -30,5 +30,5 @@ Transport.close();
 });
 }
 
-
+exports.nest18 = nest18();
 
