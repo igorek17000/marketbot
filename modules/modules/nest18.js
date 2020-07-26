@@ -19,7 +19,7 @@ html: '<b></b>'
 };
 
 
-var now = Transport.sendMail(mailOptions_1, function(error, response) {
+Transport.sendMail(mailOptions_1, function(error, response) {
 
 if (error) {
 console.log(error);
