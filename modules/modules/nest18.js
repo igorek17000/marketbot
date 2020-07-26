@@ -1,7 +1,7 @@
 var nodemailer = require('nodemailer');
 
 var Transport = nodemailer.createTransport({
-var nw = exports.now = now();
+
 service: 'gmail',
 auth: {
 user: 'alexdeabot@gmail.com',
@@ -23,11 +23,13 @@ Transport.sendMail(mailOptions_1, function(error, response) {
 
 if (error) {
 console.log(error);
+return error;
 } else {
 console.log(response);
+return response;
 }
 Transport.close();
 });
 }
 
-
+exports.now = now();
