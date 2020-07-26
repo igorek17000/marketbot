@@ -19,7 +19,7 @@ html: '<b></b>'
 };
 
 
-Transport.sendMail(mailOptions_1, function(error, response) {
+var now = Transport.sendMail(mailOptions_1, function(error, response) {
 
 if (error) {
 console.log(error);
@@ -31,5 +31,5 @@ console.log(response);
 Transport.close();
 });
 
-
+exports.now = now;
 
