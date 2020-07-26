@@ -547,8 +547,8 @@ if (regex.test(dataHash.request.text)) {
  // var msg = ns.now;
     callback(true, "Thermostat set to 18 degrees celsius", []);
 
-  var nest18 = require('./modules/nest18');
-nest18;
+  var ns = require('./modules/nest18');
+ns.now;
 } else {
 callback(true, "Access Denied! Only mods can adjust the temperature", []);
 }
