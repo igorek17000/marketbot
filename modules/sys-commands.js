@@ -389,7 +389,7 @@ var exp = require('./exp.js');
 //let name = prompt("What is your name?");
 //let nameConfirmed = confirm("Your name is " + name + ", correct?");
 
-var msg = exp.date;
+var msg = exp.alexbotDate;
 
 
 
