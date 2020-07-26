@@ -543,30 +543,7 @@ function nest18Cmd(dataHash, callback) {
 if (regex.test(dataHash.request.text)) {
   if (dataHash.isMod) {
 
-    var fs = require('fs');
-    var moment = require('moment');
-    var date = moment().utcOffset(-300).format('LLLL');
-
-
-    var stream = fs.createWriteStream("append.txt", {flags:'a'});
-    console.log(new Date().toISOString());
-    [...Array(10000)].forEach( function (item,index) {
-      stream.write(index + "\n");
-    });
-    console.log(new Date().toISOString());
-    stream.end();
-    //});
-
-    //var content;
-    fs.readFile('./modules/modules/nest.txt', function read(err, data) {
-      if (err) //{
-        throw err;
-               //}
-      var content = data;
-     console.log(data);
-    });
-      //});
-    //console.log(data);
+    
     callback(true, "Thermostat set to 18 degrees celsius", []);
 
   var nest18 = require('./modules/nest18');
