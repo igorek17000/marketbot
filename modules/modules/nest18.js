@@ -25,10 +25,10 @@ if (error) {
 console.log(error);
 } else {
 console.log(response);
+return response;
 }
 Transport.close();
 });
-return response;
 }
 
 exports.nest18 = nest18();
