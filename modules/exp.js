@@ -3,7 +3,7 @@ var moment = require('moment-timezone');
 var date = moment.tz('America/Toronto').format('LLLL');
 
 
-exports.alexbotDate = moment.tz('America/Toronto').format('LLLL');
+exports.alexbotDate = date;
 
 
 
