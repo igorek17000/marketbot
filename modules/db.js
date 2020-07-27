@@ -83,8 +83,9 @@ var cursor = db.collection(collection).find(matchHash).each(function(err, doc){
 var ret = db.collection(collection).insert(doc, function(err, result){
 cursor;
 if (doc != null)
-ret.push(doc);
+cursor.push(doc);
 } else {
+ret;
 callback(result);
 db.close();
 });
