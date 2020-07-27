@@ -76,6 +76,22 @@ exports.addDoc = function(collection, doc, callback) {
   });
 }
 
+
+exports.moveOneDoc = function(collection, matchHash, callback) {
+connect(function(db){
+var cursor = db.collection(collection).find(matchHash);
+var ret = db.collection('test').insert(doc, function(err, result);
+cursor.each(function(err, doc){ 
+if (doc != null)
+ret.push(doc);
+} else {
+callback(result);
+db.close();
+});
+});
+}
+
+
 exports.updateOneDoc = function(collection, findJson, updateJson, callback) {
   connect(function(db){
     var ret = db.collection(collection).updateOne(findJson, updateJson, function(err, result) {
