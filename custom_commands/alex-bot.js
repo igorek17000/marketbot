@@ -213,7 +213,7 @@ exports.getCmdListDescription = function () {
 
 
 function moveAlexBotCmd(request, bots, isMod, callback) {
-  var regex = /^\/alexbot move (.+?);
+  var regex = /^\/alexbot move ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
