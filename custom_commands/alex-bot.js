@@ -140,7 +140,7 @@ function updateAlexBotModDateMessage(alexb, callback) {
 }
 
 function moveOneDoc(alexb, callback) {
-db.moveOneDoc(db_test, {""name": alexb.name}, {$push: alexbot: alexbot}, callback);
+db.moveOneDoc(db_test, {"name": alexb.name}, {$push: alexbot: alexbot}, callback);
 }
 
 
