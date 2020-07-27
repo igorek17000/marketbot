@@ -80,7 +80,7 @@ exports.addDoc = function(collection, doc, callback) {
 exports.moveOneDoc = function(collection, matchHash, callback) {
 connect(function(db){
 var cursor = db.collection(collection).find(matchHash).each(function(err, doc){ 
-var ret = db.collection(collection).insert(doc, function(err, result);
+var ret = db.collection(collection).insert(doc, function(err, result){
 cursor;
 if (doc != null)
 ret.push(doc);
