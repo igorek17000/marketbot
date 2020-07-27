@@ -231,7 +231,7 @@ function moveAlexBotCmd(request, bots, isMod, callback) {
     for (alexb in alexbot) {
       if (alexbot[alexb].name == val[1]) {
   var alexbHash = {};
-var alexbot = {};
+var name, regex, message, date, current, regexcurrent, completed, mod_bot, mod_date, bots, botID;
 alexbHash: alexbot;
 alexbot.push(alexbHash);
 moveOneDoc(alexbHash);
