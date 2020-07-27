@@ -95,7 +95,7 @@ var db_test = 'test';
 var bot = require('../bot.js');
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var alexBotCommands = [addAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, restartCmd, retartCmd];
+var alexBotCommands = [addAlexBotCmd, moveAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, restartCmd, retartCmd];
 var db = require('../modules/db.js');
 var http = require('http');
 var HTTPS = require('https');
@@ -212,6 +212,43 @@ exports.getAll = function() {
 
 exports.getCmdListDescription = function () {
   return null;
+}
+
+
+function moveAlexBotCmd(request, bots, isMod, callback) {
+  var regex = /^\/alexbot move (.+?);
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+
+    if (!isMod) {
+      var msg = request.name + " you have no power here!";
+   
+      callback(true, msg, []);
+      return msg;
+    }
+
+
+    for (alexb in alexbot) {
+      if (alexbot[alexb].name == val[1]) {
+      moveOneDoc(alexbot[alexb]);
+        var msg = val[1] + " copied";
+        callback(true, msg, []);
+        
+        
+        return msg;
+      }
+    }
+
+    
+
+
+    var msg = "AlexBot command not found";
+    callback(true, msg, []);
+    return msg;
+  }
 }
 
 function addAlexBotCmd(request, bots, isMod, callback) {
