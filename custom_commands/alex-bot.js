@@ -140,10 +140,7 @@ function updateAlexBotModDateMessage(alexb, callback) {
 }
 
 function moveOneDoc(alexb, callback) {
-var matchHash = {
-"name": alexb.name
-};
-  db.moveOneDoc(db_test, alexb, callback);
+db.moveOneDoc(db_test, {""name": alexb.name}, {$push: alexbot: alexbot}, callback);
 }
 
 
@@ -233,7 +230,10 @@ function moveAlexBotCmd(request, bots, isMod, callback) {
 
     for (alexb in alexbot) {
       if (alexbot[alexb].name == val[1]) {
-      moveOneDoc(alexbot[alexb]);
+  var alexbHash = alexbot;
+alexbot.push(alexbHash);
+moveOneDoc(alexbHash);
+// moveOneDoc(alexbot[alexb]);
         var msg = val[1] + " copied";
         callback(true, msg, []);
         
