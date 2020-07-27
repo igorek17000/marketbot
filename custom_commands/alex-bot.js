@@ -138,6 +138,14 @@ function updateAlexBotModDateMessage(alexb, callback) {
   db.updateOneDoc(db_table, {"name": alexb.name}, {$push: { "date modified.date": alexb.message}}, callback);
 }
 
+function moveOneDoc(alexb, callback) {
+var matchHash = {}
+  db.moveOneDoc(db_table, {"name": alexb.name}, callback);
+}
+
+
+
+
 exports.checkCommands = function(dataHash, callback) {
   //if (dataHash.isMod)
   for (alexb in alexbot) {
