@@ -77,15 +77,12 @@ exports.addDoc = function(collection, doc, callback) {
 }
 
 
-exports.moveOneDoc = function(collection, matchHash, callback) {
+exports.moveOneDoc = function(collection, doc, callback) {
 connect(function(db){
-var cursor = db.collection(collection).find(matchHash).each(function(err, doc){ 
+//var cursor = db.collection(collection).find(matchHash).each(function(err, doc){ 
 var ret = db.collection(collection).insert(doc, function(err, result){
-cursor;
-if (doc != null)
-cursor.push(doc);
-} else {
-ret;
+//cursor;
+if (callback)
 callback(result);
 db.close();
 });
