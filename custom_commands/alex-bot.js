@@ -91,6 +91,7 @@ forecastArray : weather.weatherItem.null[2];
 
 var alexbot;
 var db_table = 'alex_bot';
+var db_test = 'test';
 var bot = require('../bot.js');
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
@@ -139,8 +140,10 @@ function updateAlexBotModDateMessage(alexb, callback) {
 }
 
 function moveOneDoc(alexb, callback) {
-var matchHash = {}
-  db.moveOneDoc(db_table, {"name": alexb.name}, callback);
+var matchHash = {
+"name": alexb.name
+};
+  db.moveOneDoc(db_test, alexb, callback);
 }
 
 
