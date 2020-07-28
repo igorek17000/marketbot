@@ -232,10 +232,10 @@ function moveAlexBotCmd(request, bots, isMod, callback) {
       if (alexbot[alexb].name == val[1]) {
   var alexbHash = {};
 var name, regex, message, date, current, regexcurrent, completed, mod_bot, mod_date, bots, botID;
-alexbHash.name: alexb.name;
+alexbHash.name = alexb.name;
 name: alexb.name;
 regex: alexb.regex;
-alexbot.push(alexbHash);
+alexbot.push(alexbot[alexb]);
 moveOneDoc(alexbHash);
 // moveOneDoc(alexbot[alexb]);
         var msg = val[1] + " copied";
