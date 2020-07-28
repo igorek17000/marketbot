@@ -236,7 +236,7 @@ alexbHash.name = alexb.name;
 name: alexb.name;
 regex: alexb.regex;
 alexbot.push(alexbot[alexb]);
-moveOneDoc(alexbHash);
+moveOneDoc(alexbot[alexb]);
 // moveOneDoc(alexbot[alexb]);
         var msg = val[1] + " copied";
         callback(true, msg, []);
