@@ -283,17 +283,17 @@ text: text
 
 
 
-console.log(response);
-var msg = "Email sent";
-callback(true, msg, []);
-} 
+//console.log(response);
+//var msg = "Email sent";
+//callback(true, msg, []);
+//} 
 
 Transport.sendMail(mailOptions, function(error, response) { 
 if (error) { // throw error; //{
 console.log(error);
-var msg = "There was an error sending email.";
-callback(true, msg, []);
-return msg;
+//var msg = "There was an error sending email.";
+//callback(true, msg, []);
+//return msg;
 
 
 
@@ -329,7 +329,7 @@ Transport.close();
 }
 }
 }
-
+}
 
 
 
