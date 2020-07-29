@@ -10,6 +10,7 @@ var date = moment().utcOffset(-300).format('LLLL');
 var emailCommands = [addEmailCmd, addSubjectCmd, addBodyCmd, sendEmailCmd];
 var db = require('../modules/db.js');
 
+var config = (require('../config/config.js');
 var fs           = require('fs');
 var concat       = require('concat');
 var cron = require('node-cron'); 
@@ -64,7 +65,11 @@ function updateUndraft(cmd, callback) {
 
 
 function updateSent(cmd, callback) {
+
+setTimeout(function() {
+}, config.delay_one);
   db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "sent"}}, callback);
+}, config.delay_three);
 }
 
 function updateSubject(cmd, callback) {
