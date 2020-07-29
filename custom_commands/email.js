@@ -246,10 +246,10 @@ function sendEmailCmd(request, bots, isMod, callback) {
     var to, subject, text;
 
 
-   for (cmd in commands) {
+  
 if (commands[cmd].status = "draft") {
-       updateSent(commands[cmd]);
- }     
+       
+  
 var Transport = nodemailer.createTransport({
 
 
@@ -300,7 +300,7 @@ console.log(error);
 Transport.close();
 });
 
-
+updateSent(commands[cmd]);
 /* var count = 0; 
 var intervalObject = setInterval(function () { 
 count++; 
