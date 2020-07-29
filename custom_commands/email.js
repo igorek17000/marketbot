@@ -64,7 +64,7 @@ function updateUndraft(cmd, callback) {
 
 
 function updateSent(cmd, callback) {
-  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": cmd.status}}, callback);
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "sent"}}, callback);
 }
 
 function updateSubject(cmd, callback) {
@@ -145,9 +145,12 @@ function addEmailCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-    for (cmd in commands) {   
-      if (commands[cmd].status = "draft") {
+if (commands[cmd].status = "draft") {
         updateUndraft(commands[cmd]);
+
+    for (cmd in commands) {   
+      //if (commands[cmd].status = "draft") {
+        //updateUndraft(commands[cmd]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
         };
@@ -244,7 +247,8 @@ function sendEmailCmd(request, bots, isMod, callback) {
 
 
    for (cmd in commands) {
-
+if (commands[cmd].status = "draft") {
+       updateSent(commands[cmd]);
       
 var Transport = nodemailer.createTransport({
 
@@ -294,7 +298,7 @@ callback(true, msg, []);
 
 Transport.close();
 });
-
+}
 /* var count = 0; 
 var intervalObject = setInterval(function () { 
 count++; 
