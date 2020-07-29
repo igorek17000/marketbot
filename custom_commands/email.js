@@ -249,7 +249,7 @@ function sendEmailCmd(request, bots, isMod, callback) {
    for (cmd in commands) {
 if (commands[cmd].status = "draft") {
        updateSent(commands[cmd]);
-      
+ }     
 var Transport = nodemailer.createTransport({
 
 
@@ -325,7 +325,6 @@ Transport.close();
 //});
 }, 10000); */
 
-}
 }
 }
 }
