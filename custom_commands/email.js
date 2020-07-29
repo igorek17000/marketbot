@@ -282,6 +282,12 @@ text: text
 };
 
 
+
+console.log(response);
+var msg = "Email sent";
+callback(true, msg, []);
+} 
+
 Transport.sendMail(mailOptions, function(error, response) { 
 if (error) { // throw error; //{
 console.log(error);
@@ -290,15 +296,10 @@ callback(true, msg, []);
 return msg;
 
 
-} else {
-console.log(response);
-var msg = "Email sent";
-callback(true, msg, []);
-} 
 
 Transport.close();
 });
-}
+
 /* var count = 0; 
 var intervalObject = setInterval(function () { 
 count++; 
