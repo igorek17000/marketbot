@@ -299,10 +299,7 @@ return msg;
 
 Transport.close();
 });
-}
-}
-}
-}
+
 
 /* var count = 0; 
 var intervalObject = setInterval(function () { 
