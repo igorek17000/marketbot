@@ -60,7 +60,7 @@ function updateDraftt(cmd, callback) {
 }
 
 function updateUndraft(cmd, callback) {
-  db.updateOneDoc(db_table, {"status": cmd.status}, {$unset: { "status": cmd.status}}, callback);
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "archived"}}, callback);
 }
 
 
