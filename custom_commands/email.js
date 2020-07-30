@@ -64,12 +64,18 @@ function updateUndraft(cmd, callback) {
   db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "archived"}}, callback);
 }
 
+function updateFlynnBotCurrent(flynnb, callback) {
+setTimeout(function() {
+  db.updateOneDoc(db_table, { "name": flynnb.name } || { "current": flynnb.current }, { $rename: { "current": "lastUpdate" }}, callback);
+}, config.delay_two);
+}
+
 
 function updateSent(cmd, callback) {
 
 setTimeout(function() {
-}, config.delay_one);
-  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "sent"}}, callback);
+
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "sent" }}, callback);
 }, config.delay_three);
 }
 
