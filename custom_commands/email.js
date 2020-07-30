@@ -6,7 +6,7 @@ var db_tables = 'email_draft';
 var db_tabled = 'email_sent';
 var dateHelper = require('../bot.js');
 var moment = require('moment-timezone'); 
-var date = moment().utcOffset(-300).format('LLLL');
+//var date = moment().utcOffset(-300).format('LLLL');
 
 var emailCommands = [addEmailCmd, addSubjectCmd, addBodyCmd, sendEmailCmd];
 var db = require('../modules/db.js');
@@ -262,10 +262,8 @@ function sendEmailCmd(request, bots, isMod, callback) {
 //  for (cmd in commands) {
 //if (commands[cmd].status = "draft") {
        
-  for (cmd in commands) {
-if (commands[cmd].status == "draft") {
-updateSent(commands[cmd]);
-}
+ // for (cmd in commands) {
+
 
 var Transport = nodemailer.createTransport({
 
@@ -277,8 +275,8 @@ pass: '113Hopest'
 }
 });
 
-//for (cmd in commands) {
-//if (commands[cmd].status == "draft") {
+for (cmd in commands) {
+if (commands[cmd].status == "draft") {
 
 to = commands[cmd]["to"];
 subject = commands[cmd]["subject"];
@@ -320,7 +318,7 @@ Transport.close();
 }
 }
 }
-
+}
 
 
 //*********
