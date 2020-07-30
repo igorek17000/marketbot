@@ -202,6 +202,7 @@ function addSubjectCmd(request, bots, isMod, callback) {
         callback(true, msg, []);
         return msg;
       }
+       return false
     }
    
   
@@ -251,8 +252,8 @@ function sendEmailCmd(request, bots, isMod, callback) {
     var to, subject, text;
 
 
-  
-if (commands[cmd].status = "draft") {
+//  for (cmd in commands) {
+//if (commands[cmd].status = "draft") {
        
   
 var Transport = nodemailer.createTransport({
@@ -265,11 +266,12 @@ pass: '113Hopest'
 }
 });
 
-if (commands[cmd].status == "draft") {
+//for (cmd in commands) {
+//if (commands[cmd].status == "draft") {
 
-to = commands[cmd]["to"],
-subject = commands[cmd]["subject"],
-text = commands[cmd]["body"]
+to = commands[cmd]["to"];
+subject = commands[cmd]["subject"];
+text = commands[cmd]["body"];
 
 //cron.schedule("* * * * *", function(){ 
 //console.log("---------------------"); 
@@ -286,12 +288,13 @@ generateTextFromHTML: true,
 text: text
 };
 
+for (cmd in commands) {
+if (commands[cmd].status == "draft") {
 
+console.log(response);
+var msg = "Email sent";
+callback(true, msg, []);
 
-//console.log(response);
-//var msg = "Email sent";
-//callback(true, msg, []);
-//} 
 
 Transport.sendMail(mailOptions, function(error, response) { 
 if (error) { // throw error; //{
@@ -306,6 +309,17 @@ Transport.close();
 });
 
 updateSent(commands[cmd]);
+
+
+}
+}
+}
+}
+}
+
+//*********
+
+
 /* var count = 0; 
 var intervalObject = setInterval(function () { 
 count++; 
@@ -329,11 +343,3 @@ Transport.close();
 });
 //});
 }, 10000); */
-
-}
-}
-}
-}
-
-
-
