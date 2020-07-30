@@ -10,7 +10,7 @@ var date = moment().utcOffset(-300).format('LLLL');
 var emailCommands = [addEmailCmd, addSubjectCmd, addBodyCmd, sendEmailCmd];
 var db = require('../modules/db.js');
 
-var config = (require('../config/config.js');
+var config = require('../config/config.js');
 var fs           = require('fs');
 var concat       = require('concat');
 var cron = require('node-cron'); 
