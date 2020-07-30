@@ -2,8 +2,8 @@
 //
 var commands;
 var db_table = 'email';
-var db_tables = 'email_draft';
-var db_tabled = 'email_sent';
+var db_email_archived = 'email_archived';
+var db_email_sent = 'email_sent';
 var dateHelper = require('../bot.js');
 var moment = require('moment-timezone'); 
 var date = moment.tz('America/Toronto').format('LLLL');
@@ -87,6 +87,26 @@ function updateBody(cmd, callback) {
   db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "body": cmd.body}}, callback);
 }
 
+function moveSentDoc(alexb, callback) {
+setTimeout(function() {
+db.moveOneDoc(db_email_sent, alexb, callback);
+}, config.delay_two);
+}
+
+function moveArchiveDoc(alexb, callback) {
+setTimeout(function() {
+db.moveOneDoc(db_email_archive, alexb, callback);
+}, config.delay_two);
+}
+
+
+function deleteDoc(alexb, callback){
+  var findJson = { "status": cmd["status"] };
+setTimeout(function() {
+  db.removeOneDoc(db_table, findJson);
+}, config.delay_three);
+}
+
 
 
 exports.checkCommands = function(dataHash, callback) {
@@ -158,7 +178,8 @@ function addEmailCmd(request, bots, isMod, callback) {
     }
 
 if (commands[cmd].status = "draft") {
-        updateUndraft(commands[cmd]);
+        moveArchiveDoc(commands[cmd]);
+        deleteDoc(commands[cmd];
 
     for (cmd in commands) {   
       //if (commands[cmd].status = "draft") {
@@ -299,7 +320,8 @@ text: text
 
 //for (cmd in commands) {
 if (commands[cmd].status == "draft") {
-updateSent(commands[cmd]);
+moveSentDoc(commands[cmd]);
+deleteDoc(commands[cmd]);
 //console.log(response);
 var msg = "Email sent";
 callback(true, msg, []);
