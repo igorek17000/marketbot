@@ -5,7 +5,7 @@ var db_table = 'email';
 var db_tables = 'email_draft';
 var db_tabled = 'email_sent';
 var dateHelper = require('../bot.js');
-var moment = require('moment'); 
+var moment = require('moment-timezone'); 
 var date = moment().utcOffset(-300).format('LLLL');
 
 var emailCommands = [addEmailCmd, addSubjectCmd, addBodyCmd, sendEmailCmd];
