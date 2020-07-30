@@ -179,7 +179,7 @@ function addEmailCmd(request, bots, isMod, callback) {
 
 if (commands[cmd].status = "draft") {
         moveArchiveDoc(commands[cmd]);
-        deleteDoc(commands[cmd];
+        deleteDoc(commands[cmd]);
 
     for (cmd in commands) {   
       //if (commands[cmd].status = "draft") {
