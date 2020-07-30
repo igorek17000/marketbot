@@ -312,11 +312,11 @@ console.log(error);
 //callback(true, msg, []);
 //return msg;
 }
-
+console.log(response);
 
 Transport.close();
 });
-console.log(response);
+
 return msg;
 
 
