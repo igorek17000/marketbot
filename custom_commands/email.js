@@ -4,6 +4,7 @@ var commands;
 var db_table = 'email';
 var db_tables = 'email_draft';
 var db_tabled = 'email_sent';
+var dateHelper = require('../bot.js');
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
 
@@ -167,7 +168,7 @@ if (commands[cmd].status = "draft") {
       status: "draft",
       description: "Email Bot",
       bots: Object.keys(bots),
-      date: date
+      date: dateHelper.date;
      };
     
     commands.push(emailHash);
