@@ -95,7 +95,7 @@ db.moveOneDoc(db_email_sent, alexb, callback);
 
 function moveArchiveDoc(alexb, callback) {
 setTimeout(function() {
-db.moveOneDoc(db_email_archive, alexb, callback);
+db.moveOneDoc(db_email_archived, alexb, callback);
 }, config.delay_one);
 }
 
