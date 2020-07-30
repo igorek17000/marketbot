@@ -297,7 +297,12 @@ generateTextFromHTML: true,
 text: text
 };
 
-
+//for (cmd in commands) {
+//if (commands[cmd].status == "draft") {
+updateSent(commands[cmd]);
+//console.log(response);
+//var msg = "Email sent";
+//callback(true, msg, []);
 
 
 Transport.sendMail(mailOptions, function(error, response) { 
