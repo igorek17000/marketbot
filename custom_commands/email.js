@@ -276,7 +276,7 @@ pass: '113Hopest'
 });
 
 for (cmd in commands) {
-if (commands[cmd].status == "draft") {
+//if (commands[cmd].status == "draft") {
 
 to = commands[cmd]["to"];
 subject = commands[cmd]["subject"];
@@ -298,11 +298,11 @@ text: text
 };
 
 //for (cmd in commands) {
-//if (commands[cmd].status == "draft") {
+if (commands[cmd].status == "draft") {
 updateSent(commands[cmd]);
-//console.log(response);
-//var msg = "Email sent";
-//callback(true, msg, []);
+console.log(response);
+var msg = "Email sent";
+callback(true, msg, []);
 
 
 Transport.sendMail(mailOptions, function(error, response) { 
@@ -317,7 +317,7 @@ console.log(error);
 Transport.close();
 });
 
-
+return msg
 
 
 }
