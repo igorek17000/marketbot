@@ -87,20 +87,20 @@ function updateBody(cmd, callback) {
   db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "body": cmd.body}}, callback);
 }
 
-function moveSentDoc(alexb, callback) {
+function moveSentDoc(cmd, callback) {
 setTimeout(function() {
 db.moveOneDoc(db_email_sent, alexb, callback);
 }, config.delay_one);
 }
 
-function moveArchiveDoc(alexb, callback) {
+function moveArchiveDoc(cmd, callback) {
 setTimeout(function() {
 db.moveOneDoc(db_email_archived, alexb, callback);
 }, config.delay_one);
 }
 
 
-function deleteDoc(alexb, callback){
+function deleteDoc(cmd, callback){
   var findJson = { "status": cmd["status"] };
 setTimeout(function() {
   db.removeOneDoc(db_table, findJson);
