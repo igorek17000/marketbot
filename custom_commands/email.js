@@ -89,13 +89,13 @@ function updateBody(cmd, callback) {
 
 function moveSentDoc(cmd, callback) {
 setTimeout(function() {
-db.moveOneDoc(db_email_sent, alexb, callback);
+db.moveOneDoc(db_email_sent, cmd, callback);
 }, config.delay_one);
 }
 
 function moveArchiveDoc(cmd, callback) {
 setTimeout(function() {
-db.moveOneDoc(db_email_archived, alexb, callback);
+db.moveOneDoc(db_email_archived, cmd, callback);
 }, config.delay_one);
 }
 
