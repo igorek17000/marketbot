@@ -174,7 +174,7 @@ if (commands[cmd].status = "draft") {
       status: "draft",
       description: "Email Bot",
       bots: Object.keys(bots),
-      date: dateHelper.date
+      date: date
      };
     
     commands.push(emailHash);
