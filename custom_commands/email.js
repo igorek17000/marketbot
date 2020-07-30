@@ -309,7 +309,7 @@ console.log(error);
 //var msg = "There was an error sending email.";
 //callback(true, msg, []);
 //return msg;
-
+}
 
 
 Transport.close();
@@ -322,7 +322,7 @@ Transport.close();
 }
 }
 }
-}
+
 
 //*********
 
