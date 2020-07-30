@@ -275,7 +275,7 @@ pass: '113Hopest'
 }
 });
 
-for (cmd in commands) {
+//for (cmd in commands) {
 if (commands[cmd].status == "draft") {
 
 to = commands[cmd]["to"];
