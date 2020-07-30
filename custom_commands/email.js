@@ -76,7 +76,7 @@ function updateSent(cmd, callback) {
 setTimeout(function() {
 
   db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "sent " + date }}, callback);
-}, config.delay_three);
+}, config.delay_one);
 }
 
 function updateSubject(cmd, callback) {
@@ -90,13 +90,13 @@ function updateBody(cmd, callback) {
 function moveSentDoc(alexb, callback) {
 setTimeout(function() {
 db.moveOneDoc(db_email_sent, alexb, callback);
-}, config.delay_two);
+}, config.delay_one);
 }
 
 function moveArchiveDoc(alexb, callback) {
 setTimeout(function() {
 db.moveOneDoc(db_email_archive, alexb, callback);
-}, config.delay_two);
+}, config.delay_one);
 }
 
 
