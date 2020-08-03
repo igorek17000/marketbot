@@ -61,7 +61,7 @@ function updateDraftt(cmd, callback) {
 }
 
 function updateUndraft(cmd, callback) {
-  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "archived"}}, callback);
+  db.updateOneDoc(db_email_archived, {"status": cmd.status}, {$set: { "status": "archived"}}, callback);
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
@@ -75,7 +75,7 @@ function updateSent(cmd, callback) {
 
 setTimeout(function() {
 
-  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "sent " + date }}, callback);
+  db.updateOneDoc(db_email_sent, {"status": cmd.status}, {$set: { "status": "sent " + date }}, callback);
 }, config.delay_one);
 }
 
@@ -184,7 +184,7 @@ if (commands[cmd].status = "draft") {
         moveArchiveDoc(commands[cmd]);
         deleteDoc(commands[cmd]);
       //if (commands[cmd].status = "draft") {
-        //updateUndraft(commands[cmd]);
+        updateUndraft(commands[cmd]);
         //var msg = "Current week updated";
         //callback(true, msg, []);
         };
