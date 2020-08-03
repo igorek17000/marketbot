@@ -31,7 +31,9 @@ function getAllCommands() {
 
 
 function addEmailToDB(cmd, callback) {
+setTimeout(function() {
   db.addDoc(db_table, cmd, callback);
+}, config.delay_four);
 }
 
 function findStatus(status, callback){ 
@@ -61,7 +63,7 @@ function updateDraftt(cmd, callback) {
 }
 
 function updateUndraft(cmd, callback) {
-  db.updateOneDoc(db_email_archived, {"status": cmd.status}, {$set: { "status": "archived"}}, callback);
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "archived"}}, callback);
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
@@ -104,7 +106,7 @@ function deleteDoc(cmd, callback){
   var findJson = { "status": cmd["status"] };
 setTimeout(function() {
   db.removeOneDoc(db_table, findJson);
-}, config.delay_three);
+}, config.delay_two);
 }
 
 
