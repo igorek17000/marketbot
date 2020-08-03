@@ -79,7 +79,7 @@ function updateSent(cmd, callback) {
 
 setTimeout(function() {
 
-  db.updateOneDoc(db_email_sent, {"status": cmd.status}, {$set: { "status": "sent " + date }}, callback);
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "sent " + date }}, callback);
 }, config.delay_one);
 }
 
@@ -184,7 +184,7 @@ function addEmailCmd(request, bots, isMod, callback) {
 
 
     //for (cmd in commands) {   
-if (commands[cmd].status = "draft") {
+if (commands[cmd].status = "draft" || "archived") {
         updateUndraft(commands[cmd]);
         //moveArchiveDoc(commands[cmd]);
         //deleteDoc(commands[cmd]);
