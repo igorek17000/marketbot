@@ -63,9 +63,9 @@ function updateDraftt(cmd, callback) {
 }
 
 function updateUndraft(cmd, callback) {
-setTimeout(function() {
-  db.updateOneDoc(db_email_archived, {"status": cmd.status}, {$set: { "status": "archived"}}, callback);
-}, config.delay_four);
+//setTimeout(function() {
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "archived"}}, callback);
+//}, config.delay_four);
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
@@ -186,8 +186,8 @@ function addEmailCmd(request, bots, isMod, callback) {
     //for (cmd in commands) {   
 if (commands[cmd].status = "draft") {
         updateUndraft(commands[cmd]);
-        moveArchiveDoc(commands[cmd]);
-        deleteDoc(commands[cmd]);
+        //moveArchiveDoc(commands[cmd]);
+        //deleteDoc(commands[cmd]);
       //if (commands[cmd].status = "draft") {
         
         //var msg = "Current week updated";
@@ -195,6 +195,10 @@ if (commands[cmd].status = "draft") {
         }
     //  }
         
+if (commands[cmd].status = "archived") {
+        moveArchiveDoc(commands[cmd]);
+        deleteDoc(commands[cmd]);
+
       var emailHash = {
       name: "Drafted by " + request.name + " on " + date,
       to: val[1],
