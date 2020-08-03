@@ -192,13 +192,13 @@ if (commands[cmd].status = "draft" || "archived") {
         
         //var msg = "Current week updated";
         //callback(true, msg, []);
-     // }
+     }
     //  }
         
 if (commands[cmd].status = "draft" || "archived") {
         moveArchiveDoc(commands[cmd]);
         deleteDoc(commands[cmd]);
-//}
+}
       var emailHash = {
       name: "Drafted by " + request.name + " on " + date,
       to: val[1],
@@ -215,8 +215,7 @@ if (commands[cmd].status = "draft" || "archived") {
     return msg;
     }
   }
-}
-}
+
 
 
 function addSubjectCmd(request, bots, isMod, callback) {
