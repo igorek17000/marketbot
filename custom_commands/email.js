@@ -198,7 +198,7 @@ if (commands[cmd].status = "draft") {
 if (commands[cmd].status = "archived") {
         moveArchiveDoc(commands[cmd]);
         deleteDoc(commands[cmd]);
-
+}
       var emailHash = {
       name: "Drafted by " + request.name + " on " + date,
       to: val[1],
