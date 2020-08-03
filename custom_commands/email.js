@@ -75,7 +75,7 @@ function updateSent(cmd, callback) {
 
 //setTimeout(function() {
 
-  db.updateOneDoc(db_email_sent, {"status": cmd.status}, {$set: { "status": "sent " + date }}, callback);
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "sent " + date }}, callback);
 //}, config.delay_one);
 }
 
