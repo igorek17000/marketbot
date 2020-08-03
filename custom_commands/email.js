@@ -94,13 +94,13 @@ function updateBody(cmd, callback) {
 function moveSentDoc(cmd, callback) {
 setTimeout(function() {
 db.moveOneDoc(db_email_sent, cmd, callback);
-}, config.delay_one);
+}, config.delay_two);
 }
 
 function moveArchiveDoc(cmd, callback) {
 setTimeout(function() {
 db.moveOneDoc(db_email_archived, cmd, callback);
-}, config.delay_one);
+}, config.delay_two);
 }
 
 
@@ -108,7 +108,7 @@ function deleteDoc(cmd, callback){
   var findJson = { "status": cmd["status"] };
 setTimeout(function() {
   db.removeOneDoc(db_table, findJson);
-}, config.delay_two);
+}, config.delay_three);
 }
 
 
