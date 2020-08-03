@@ -105,7 +105,7 @@ db.moveOneDoc(db_email_archived, cmd, callback);
 
 
 function deleteDoc(cmd, callback){
-  var findJson = { "status": cmd.status };
+  var findJson = { "status": commands[cmd].status };
 setTimeout(function() {
   db.removeOneDoc(db_table, findJson);
 }, config.delay_three);
@@ -184,7 +184,7 @@ function addEmailCmd(request, bots, isMod, callback) {
 
 
     //for (cmd in commands) {   
-if (cmd.status = "draft" || "archived") {
+if (commands[cmd].status = "draft" || "archived") {
         updateUndraft(commands[cmd]);
         //moveArchiveDoc(commands[cmd]);
         //deleteDoc(commands[cmd]);
