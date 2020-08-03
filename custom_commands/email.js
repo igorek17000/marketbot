@@ -188,7 +188,7 @@ if (commands[cmd].status = "draft") {
         //var msg = "Current week updated";
         //callback(true, msg, []);
         };
-      //}
+      }
         
       var emailHash = {
       name: "Drafted by " + request.name + " on " + date,
