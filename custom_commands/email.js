@@ -183,16 +183,17 @@ function addEmailCmd(request, bots, isMod, callback) {
 
 
 
-    for (cmd in commands) {   
+    //for (cmd in commands) {   
 if (commands[cmd].status = "draft") {
+        updateUndraft(commands[cmd]);
         moveArchiveDoc(commands[cmd]);
         deleteDoc(commands[cmd]);
       //if (commands[cmd].status = "draft") {
-        updateUndraft(commands[cmd]);
+        
         //var msg = "Current week updated";
         //callback(true, msg, []);
-        };
-      }
+        }
+    //  }
         
       var emailHash = {
       name: "Drafted by " + request.name + " on " + date,
