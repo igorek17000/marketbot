@@ -73,10 +73,10 @@ setTimeout(function() {
 
 function updateSent(cmd, callback) {
 
-setTimeout(function() {
+//setTimeout(function() {
 
   db.updateOneDoc(db_email_sent, {"status": cmd.status}, {$set: { "status": "sent " + date }}, callback);
-}, config.delay_one);
+//}, config.delay_one);
 }
 
 function updateSubject(cmd, callback) {
