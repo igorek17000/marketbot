@@ -177,11 +177,12 @@ function addEmailCmd(request, bots, isMod, callback) {
       return msg;
     }
 
+
+}
+    for (cmd in commands) {   
 if (commands[cmd].status = "draft") {
         moveArchiveDoc(commands[cmd]);
         deleteDoc(commands[cmd]);
-}
-    for (cmd in commands) {   
       //if (commands[cmd].status = "draft") {
         //updateUndraft(commands[cmd]);
         //var msg = "Current week updated";
