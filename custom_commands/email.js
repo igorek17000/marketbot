@@ -64,7 +64,7 @@ function updateDraftt(cmd, callback) {
 
 function updateUndraft(cmd, callback) {
 setTimeout(function() {
-  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "archived"}}, callback);
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "archived" }}, callback);
 }, config.delay_one);
 }
 
@@ -184,7 +184,7 @@ function addEmailCmd(request, bots, isMod, callback) {
 
 
    // for (cmd in commands) {   
-if (commands[cmd].status = "draft" || "archived") {
+if (commands[cmd].status == "draft" || "archived") {
         updateUndraft(commands[cmd]);
         //moveArchiveDoc(commands[cmd]);
         //deleteDoc(commands[cmd]);
