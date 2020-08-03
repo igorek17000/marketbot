@@ -192,13 +192,13 @@ if (commands[cmd].status = "draft") {
         
         //var msg = "Current week updated";
         //callback(true, msg, []);
-        }
+      }
     //  }
         
-if (commands[cmd].status = "archived") {
+if (commands[cmd].status = "draft" || "archived") {
         moveArchiveDoc(commands[cmd]);
         deleteDoc(commands[cmd]);
-}
+//
       var emailHash = {
       name: "Drafted by " + request.name + " on " + date,
       to: val[1],
