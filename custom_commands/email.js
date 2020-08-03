@@ -178,7 +178,7 @@ function addEmailCmd(request, bots, isMod, callback) {
     }
 
 
-}
+
     for (cmd in commands) {   
 if (commands[cmd].status = "draft") {
         moveArchiveDoc(commands[cmd]);
