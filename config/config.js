@@ -31,6 +31,7 @@ exports.delay_update = 500;
 exports.delay_one = 100;
 exports.delay_two = 225;
 exports.delay_three = 350;
+exports.delay_four = 425;
 
 
 exports.nameit = function() {
