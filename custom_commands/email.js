@@ -183,7 +183,7 @@ function addEmailCmd(request, bots, isMod, callback) {
 
 
 
-    //for (cmd in commands) {   
+    for (cmd in commands) {   
 if (commands[cmd].status = "draft" || "archived") {
         updateUndraft(commands[cmd]);
         //moveArchiveDoc(commands[cmd]);
@@ -198,7 +198,8 @@ if (commands[cmd].status = "draft" || "archived") {
 //if (commands[cmd].status = "draft" || "archived") {
         moveArchiveDoc(commands[cmd]);
         deleteDoc(commands[cmd]);
-
+}
+}
       var emailHash = {
       name: "Drafted by " + request.name + " on " + date,
       to: val[1],
@@ -216,7 +217,7 @@ if (commands[cmd].status = "draft" || "archived") {
     }
   }
 
-}
+
 
 
 function addSubjectCmd(request, bots, isMod, callback) {
