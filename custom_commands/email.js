@@ -105,7 +105,7 @@ db.moveOneDoc(db_email_archived, cmd, callback);
 
 
 function deleteDoc(cmd, callback){
-  var findJson = { "status": commands[cmd].status };
+  var findJson = { "status": cmd.status }; //commands[cmd].status };
 setTimeout(function() {
   db.removeOneDoc(db_table, findJson);
 }, config.delay_three);
