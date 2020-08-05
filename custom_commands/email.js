@@ -63,9 +63,9 @@ function updateDraftt(cmd, callback) {
 }
 
 function updateUndraft(cmd, callback) {
-//setTimeout(function() {
-  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "archived" }}, callback);
-//}, config.delay_one);
+setTimeout(function() {
+  db.updateOneDoc(db_email_archived, {"status": cmd.status}, {$set: { "status": "archived" }}, callback);
+}, config.delay_one);
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
@@ -98,9 +98,9 @@ db.moveOneDoc(db_email_sent, cmd, callback);
 }
 
 function moveArchiveDoc(cmd, callback) {
-setTimeout(function() {
+//setTimeout(function() {
 db.moveOneDoc(db_email_archived, cmd, callback);
-}, config.delay_two);
+//}, config.delay_two);
 }
 
 
