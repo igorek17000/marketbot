@@ -196,10 +196,29 @@ if (commands[cmd].status = "draft" || "archived") {
       
         
 //if (commands[cmd].status = "draft" || "archived") {
-        moveArchiveDoc(commands[cmd]);
-        deleteDoc(commands[cmd]);
+      //  moveArchiveDoc(commands[cmd]);
+       // deleteDoc(commands[cmd]);
 }
 }
+
+for (cmd in commands) {   
+if (commands[cmd].status = "draft" || "archived") {
+       moveArchiveDoc(commands[cmd]);
+}
+}
+
+for (cmd in commands) {   
+if (commands[cmd].status = "draft" || "archived") {
+       deleteDoc(commands[cmd]);
+
+}
+}
+
+
+
+//for (cmd in commands) {   
+//if (commands[cmd].status = "draft" || "archived") {
+       
       var emailHash = {
       name: "Drafted by " + request.name + " on " + date,
       to: val[1],
