@@ -63,9 +63,9 @@ function updateDraftt(cmd, callback) {
 }
 
 function updateUndraft(cmd, callback) {
-setTimeout(function() {
+//setTimeout(function() {
   db.updateOneDoc(db_email_archived, {"status": cmd.status}, {$set: { "status": "archived" }}, callback);
-}, config.delay_one);
+//}, config.delay_one);
 }
 
 function updateFlynnBotCurrent(flynnb, callback) {
@@ -203,7 +203,9 @@ if (commands[cmd].status = "draft" || "archived") {
 
 for (cmd in commands) {   
 if (commands[cmd].status = "draft" || "archived") {
-       moveArchiveDoc(commands[cmd]);
+ setTimeout(function() {    
+   moveArchiveDoc(commands[cmd]);
+}, config.delay_one);
 }
 }
 
