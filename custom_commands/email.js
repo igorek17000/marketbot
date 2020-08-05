@@ -141,7 +141,7 @@ exports.checkCommands = function(dataHash, callback) {
     
 
     //break;
-    //}
+    }
   }
 
   for (cmd in emailCommands) {
