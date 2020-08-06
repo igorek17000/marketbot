@@ -209,12 +209,12 @@ if (commands[cmd].status = "draft" || "archived") {
 }
 }
 
-for (cmd in commands) {   
-if (commands[cmd].status = "draft" || "archived") {
-       deleteDoc(commands[cmd]);
+//for (cmd in commands) {   
+//if (commands[cmd].status = "draft" || "archived") {
+      // deleteDoc(commands[cmd]);
 
-}
-}
+//}
+//}
 
 
 
