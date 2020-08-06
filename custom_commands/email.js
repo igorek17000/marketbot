@@ -64,7 +64,7 @@ function updateDraftt(cmd, callback) {
 
 function updateUndraft(cmd, callback) {
 //setTimeout(function() {
-  db.updateOneDoc(db_email_archived, {"status": cmd.status}, {$set: { "status": "archived" }}, callback);
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "status": "archived" }}, callback);
 //}, config.delay_one);
 }
 
