@@ -353,6 +353,7 @@ text: text
 
 //for (cmd in commands) {
 if (commands[cmd].status == "draft") {
+updateSent(commands[cmd]);
 moveSentDoc(commands[cmd]);
 //deleteDoc(commands[cmd]);
 //console.log(response);
