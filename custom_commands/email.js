@@ -92,23 +92,23 @@ function updateBody(cmd, callback) {
 }
 
 function moveSentDoc(cmd, callback) {
-setTimeout(function() {
+//setTimeout(function() {
 db.moveOneDoc(db_email_sent, cmd, callback);
-}, config.delay_two);
+//}, config.delay_two);
 }
 
 function moveArchiveDoc(cmd, callback) {
-setTimeout(function() {
+//setTimeout(function() {
 db.moveOneDoc(db_email_archived, cmd, callback);
-}, config.delay_two);
+//}, config.delay_two);
 }
 
 
 function deleteDoc(cmd, callback){
   var findJson = { "status": cmd["status"] }; //commands[cmd].status };
-setTimeout(function() {
+//setTimeout(function() {
   db.removeOneDoc(db_table, findJson);
-}, config.delay_three);
+//}, config.delay_three);
 }
 
 
@@ -354,7 +354,7 @@ text: text
 //for (cmd in commands) {
 if (commands[cmd].status == "draft") {
 moveSentDoc(commands[cmd]);
-deleteDoc(commands[cmd]);
+//deleteDoc(commands[cmd]);
 //console.log(response);
 var msg = "Email sent";
 callback(true, msg, []);
