@@ -184,7 +184,7 @@ function addEmailCmd(request, bots, isMod, callback) {
 
 
     for (cmd in commands) {   
-if (commands[cmd].status = "draft" || "archived") {
+if (commands[cmd].status = "draft") {
         updateUndraft(commands[cmd]);
         //moveArchiveDoc(commands[cmd]);
         //deleteDoc(commands[cmd]);
@@ -202,7 +202,7 @@ if (commands[cmd].status = "draft" || "archived") {
 }
 
 for (cmd in commands) {   
-if (commands[cmd].status = "draft" || "archived") {
+if (commands[cmd].status = "draft") {
  setTimeout(function() {    
    moveArchiveDoc(commands[cmd]);
 }, config.delay_one);
