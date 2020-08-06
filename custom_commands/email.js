@@ -304,7 +304,7 @@ function addBodyCmd(request, bots, isMod, callback) {
 }
 
 function sendEmailCmd(request, bots, isMod, callback) {
-  var regex = /^\/sendemail$/;
+  var regex = /^\/send$/;
   var reqText = request.text;
   //var to, subject, text;
 
