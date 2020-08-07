@@ -100,7 +100,7 @@ db.moveOneDoc(db_email_sent, cmd, callback);
 function moveArchiveDoc(cmd, callback) {
 setTimeout(function() {
 var findJson = { "status": cmd }; 
-db.moveOneDoc(db_email_archived, cmd, callback);
+db.moveOneDoc(db_email_archived, findJson, callback);
 }, config.delay_one);
 getAllCommands(); 
 }
