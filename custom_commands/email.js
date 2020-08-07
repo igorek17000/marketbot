@@ -175,7 +175,7 @@ exports.getCmdListDescription = function () {
 }
 
 function addEmailCmd(request, bots, isMod, callback) {
-  var regex = /^\/email (.*?$/gm)/i; // ([\s\S]+)/i; //(.*?$/gm)/i;
+  var regex = /^\/email (.*?$)/gmi; // ([\s\S]+)/i; //(.*?$/gm)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
