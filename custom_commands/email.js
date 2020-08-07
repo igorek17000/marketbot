@@ -209,9 +209,9 @@ if (commands[cmd].status = "draft") {
 
 for (cmd in commands) {   
 if (commands[cmd].status = "draft") {
- setTimeout(function() {    
+ //setTimeout(function() {    
    moveArchiveDoc(commands[cmd]);
-}, config.delay_one);
+//}, config.delay_one);
 }
 }
 
