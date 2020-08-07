@@ -92,9 +92,9 @@ function updateBody(cmd, callback) {
 }
 
 function moveSentDoc(cmd, callback) {
-//setTimeout(function() {
+setTimeout(function() {
 db.moveOneDoc(db_email_sent, cmd, callback);
-//}, config.delay_two);
+}, config.delay_two);
 }
 
 function moveArchiveDoc(cmd, callback) {
