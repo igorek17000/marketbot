@@ -120,6 +120,14 @@ getAllCommands();
 });
 }
 
+//*************
+
+function findStats(status, callback){ 
+db.findDocs(db_table, {"status": status}, callback);
+}
+
+
+//*************
 
 exports.checkCommands = function(dataHash, callback) {
  if (dataHash.isMod) 
@@ -189,7 +197,18 @@ function addEmailCmd(request, bots, isMod, callback) {
       return msg;
     }
 
+//*********
+findStats(function(doc){ 
+if (doc.status == "draft"){ 
+//var rnd = Math.floor(Math.random() * docs.length); 
+//var msg = '"' + docs.status + '" - ' + docs[rnd].date; callback(msg); } }); return true; } else { return false; }}
 
+commands.push(doc);
+   moveArchiveDoc(doc);
+
+}
+}
+//*********
 
     for (cmd in commands) {   
 if (commands[cmd].status = "draft") {
@@ -223,6 +242,8 @@ if (commands[cmd].status = "draft") {
 
 //}
 //}
+
+/*
 for (cmd in commands) {   
 if (commands[cmd].status == "draft") {
  //setTimeout(function() {    
@@ -239,7 +260,7 @@ commands.push(emailDraft);
 //}, config.delay_one);
 }
 }
-
+*/
 
 //for (cmd in commands) {   
 //if (commands[cmd].status = "draft" || "archived") {
