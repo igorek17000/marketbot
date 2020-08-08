@@ -223,7 +223,22 @@ if (commands[cmd].status = "draft") {
 
 //}
 //}
-
+for (cmd in commands) {   
+if (commands[cmd].status == "draft") {
+ //setTimeout(function() {    
+var emailDraft = { 
+name: cmd.name, 
+to: cmd.to, 
+status: cmd.draft, 
+description: cmd.description, 
+bots: cmd.bots, 
+date: cmd.date
+};
+commands.push(emailDraft);
+   moveArchiveDoc(emailDraft);
+//}, config.delay_one);
+}
+}
 
 
 //for (cmd in commands) {   
