@@ -309,7 +309,7 @@ function addSubjectCmd(request, bots, isMod, callback) {
         callback(true, msg, []);
         return msg;
       }
-       return false
+      
     }
    
   
