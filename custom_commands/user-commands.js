@@ -1,6 +1,6 @@
 var commands;
 var userCommands = [addCmd, addressCmd, answerCmd, getCmd, describeCmd, editCmd, modCommandCmd, removeCmd];
-//
+
 var db = require('../modules/db.js');
 var db_table = 'user_triggers';
 var moment = require('moment'); 
