@@ -198,6 +198,7 @@ function addEmailCmd(request, bots, isMod, callback) {
     }
 
 //*********
+/*
 findStats(function(doc){ 
 if (doc.status == "draft"){ 
 //var rnd = Math.floor(Math.random() * docs.length); 
@@ -208,10 +209,11 @@ commands.push(doc);
 
 }
 }
+*/
 //*********
 
     for (cmd in commands) {   
-if (commands[cmd].status = "draft") {
+if (commands[cmd].status = "draft") 
         updateUndraft(commands[cmd]);
         //moveArchiveDoc(commands[cmd]);
         //deleteDoc(commands[cmd]);
@@ -225,15 +227,15 @@ if (commands[cmd].status = "draft") {
 //if (commands[cmd].status = "draft" || "archived") {
       //  moveArchiveDoc(commands[cmd]);
        // deleteDoc(commands[cmd]);
-}
+
 }
 
 for (cmd in commands) {   
-if (commands[cmd].status = "draft") {
+if (commands[cmd].status = "archived") 
  //setTimeout(function() {    
    moveArchiveDoc(commands[cmd]);
 //}, config.delay_one);
-}
+
 }
 
 //for (cmd in commands) {   
