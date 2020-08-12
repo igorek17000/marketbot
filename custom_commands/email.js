@@ -113,7 +113,7 @@ function deleteDoc(cmd, callback){
 //}, config.delay_three);
 //}
 setTimeout(function() {
-var findJson = { "status": cmd }; 
+var findJson = { "status": cmd.status }; 
 db.removeOneDoc(db_table, findJson, function(result){ 
 }, config.delay_three);
 getAllCommands(); 
@@ -238,12 +238,12 @@ if (commands[cmd].status = "archived")
 
 }
 
-//for (cmd in commands) {   
-//if (commands[cmd].status = "draft" || "archived") {
-      // deleteDoc(commands[cmd]);
+for (cmd in commands) {   
+if (commands[cmd].status = "archived") 
+       deleteDoc(commands[cmd]);
 
 //}
-//}
+}
 
 /*
 for (cmd in commands) {   
