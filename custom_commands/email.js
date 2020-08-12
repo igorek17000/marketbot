@@ -213,7 +213,7 @@ commands.push(doc);
 //*********
 
     for (cmd in commands) {   
-if (commands[cmd].status = "draft") 
+if (commands[cmd].status = "draft") {
         updateUndraft(commands[cmd]);
         //moveArchiveDoc(commands[cmd]);
         //deleteDoc(commands[cmd]);
@@ -221,7 +221,7 @@ if (commands[cmd].status = "draft")
         
         //var msg = "Current week updated";
         //callback(true, msg, []);
-    // }
+     }
       
         
 //if (commands[cmd].status = "draft" || "archived") {
@@ -231,18 +231,18 @@ if (commands[cmd].status = "draft")
 }
 
 for (cmd in commands) {   
-if (commands[cmd].status = "archived") 
+if (commands[cmd].status = "archived") {
  //setTimeout(function() {    
    moveArchiveDoc(commands[cmd]);
 //}, config.delay_one);
-
+}
 }
 
 for (cmd in commands) {   
-if (commands[cmd].status = "archived") 
+if (commands[cmd].status = "archived") {
        deleteDoc(commands[cmd]);
 
-//}
+}
 }
 
 /*
