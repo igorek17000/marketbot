@@ -84,11 +84,11 @@ function updateSent(cmd, callback) {
 }
 
 function updateSubject(cmd, callback) {
-  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "subject": cmd.subject}}, callback);
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "subject": cmd.subject }}, callback);
 }
 
 function updateBody(cmd, callback) {
-  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "body": cmd.body}}, callback);
+  db.updateOneDoc(db_table, {"status": cmd.status}, {$set: { "body": cmd.body }}, callback);
 }
 
 function moveSentDoc(cmd, callback) {
