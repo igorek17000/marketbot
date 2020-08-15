@@ -283,7 +283,7 @@ var match = val[2].match(regexpSize);
       name: val[1].toLowerCase(), 
       regex: "^\/" + val[1] + "$",
       message: val[2],
-      match: match[1] + match[2],
+      match: match[1],
       bots: Object.keys(bots),
       date: date
     };
@@ -294,7 +294,7 @@ var match = val[2].match(regexpSize);
 
     var msg = "AlexBot command added! Use '/alexbot describe " + val[1] + "' to add a description";
     callback(true, msg, []);
-console.log('Result: ' + ${match[1]} + ${match[2]});
+console.log('Result: ' + ${match[1]});
     return msg;
   }
 }
