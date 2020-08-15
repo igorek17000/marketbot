@@ -257,6 +257,8 @@ function addAlexBotCmd(request, bots, isMod, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
+var regexpSize = /([0-9]+)hrs/;
+var match = reqText.match(regexpSize);
 
 
     if (!isMod) {
