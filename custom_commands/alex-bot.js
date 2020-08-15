@@ -294,7 +294,7 @@ var match = val[2].match(regexpSize);
 
     var msg = "AlexBot command added! Use '/alexbot describe " + val[1] + "' to add a description";
     callback(true, msg, []);
-console.log('Result: ${match[1]} ${match[2]}');
+console.log('Result: ' + ${match[1]} + ${match[2]});
     return msg;
   }
 }
