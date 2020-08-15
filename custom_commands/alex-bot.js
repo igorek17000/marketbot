@@ -257,8 +257,8 @@ function addAlexBotCmd(request, bots, isMod, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-var regexpSize = /([0-9]+)hrs/;
-var match = reqText.match(regexpSize);
+var regexpSize = /([0-9]+)(hrs)/;
+var match = val[2].match(regexpSize);
 
 
     if (!isMod) {
@@ -283,7 +283,7 @@ var match = reqText.match(regexpSize);
       name: val[1].toLowerCase(), 
       regex: "^\/" + val[1] + "$",
       message: val[2],
-      match: match[1],
+      match: match[1] + match[2],
       bots: Object.keys(bots),
       date: date
     };
@@ -294,7 +294,7 @@ var match = reqText.match(regexpSize);
 
     var msg = "AlexBot command added! Use '/alexbot describe " + val[1] + "' to add a description";
     callback(true, msg, []);
-console.log('Result: ${match[1]}');
+console.log('Result: ${match[1]} ${match[2]}');
     return msg;
   }
 }
