@@ -141,7 +141,28 @@ exports.randomDoc = function(collection, callback) {
 
 
 //************
+exports.commandDocs = function(collection, callback) {
+  connect(function(db){
+    var coll = db.collection(collection);
+    cursor = coll.find({});
 
+    coll.count(function(err, count){
+     // var random = Math.floor(Math.random() * count);
+     // cursor.skip(random);
+    //  cursor.limit(1);
+      cursor.each(function(err, docs){
+        if(docs != null){
+          callback(docs);
+          return;
+        }
+      });
+    });
+  });
+}
+
+
+
+//***********
 exports.getAllDocumentsDb = function(collection, callback) {
   connect(function(db){
     var allDocs = db.collection('user_triggers').find({}).toArray(function(err, result) {
