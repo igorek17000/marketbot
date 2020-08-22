@@ -283,7 +283,7 @@ var match = val[2].match(regexpSize);
       name: val[1].toLowerCase(), 
       regex: "^\/" + val[1] + "$",
       message: val[2],
-      match: match[1],
+      match: Object.values(match[1]),
       bots: Object.keys(bots),
       date: date
     };
