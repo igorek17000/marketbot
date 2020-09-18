@@ -235,7 +235,7 @@ exports.getCmdListDescription = function () {
 }
 
 function addFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callback) {
-  var regex = /^\/timesheet add (.+?) ([\s\S]+)/i;
+  var regex = /^\/hrs add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
  // var path = path || 'path' || Path || PATH || 'Path' || 'PATH' || path.toLowerCase();
 //  var botName, botARoom;
@@ -324,7 +324,7 @@ var created = {
 
 
 function describeFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callback) {
-  var regex = /^\/timesheet describe (.+?) ([\s\S]+)/i;
+  var regex = /^\/hrs describe (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -397,7 +397,7 @@ dateObj.mod_Date = date;
 
 
 function sundayFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callback) {
-  var regex = /^\/timesheet sunday (.+?) ([\s\S]+)/i;
+  var regex = /^\/hrs sun (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -438,7 +438,7 @@ if (flynnbot[flynnb].current == val[1]) {
 }
 
 function mondayFlynnBotCmd(request, bots, isMod, callback) {
-  var regex = /^\/timesheet monday (.+?) ([\s\S]+)/i;
+  var regex = /^\/hrs mon (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -479,7 +479,7 @@ if (flynnbot[flynnb].current == val[1]) {
 }
 
 function tuesdayFlynnBotCmd(request, bots, isMod, callback) {
-  var regex = /^\/timesheet tuesday (.+?) ([\s\S]+)/i;
+  var regex = /^\/hrs tue (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -520,7 +520,7 @@ if (flynnbot[flynnb].current == val[1]) {
 }
 
 function wednesdayFlynnBotCmd(request, bots, isMod, callback) {
-  var regex = /^\/timesheet wednesday (.+?) ([\s\S]+)/i;
+  var regex = /^\/hrs wed (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -561,7 +561,7 @@ if (flynnbot[flynnb].current == val[1]) {
 }
 
 function thursdayFlynnBotCmd(request, bots, isMod, callback) {
-  var regex = /^\/timesheet thursday (.+?) ([\s\S]+)/i;
+  var regex = /^\/hrs thu (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -602,7 +602,7 @@ if (flynnbot[flynnb].current == val[1]) {
 }
 
 function fridayFlynnBotCmd(request, bots, isMod, callback) {
-  var regex = /^\/timesheet friday (.+?) ([\s\S]+)/i;
+  var regex = /^\/hrs fri (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
@@ -643,7 +643,7 @@ if (flynnbot[flynnb].current == val[1]) {
 }
 
 function saturdayFlynnBotCmd(request, bots, isMod, callback) {
-  var regex = /^\/timesheet saturday (.+?) ([\s\S]+)/i;
+  var regex = /^\/hrs sat (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
