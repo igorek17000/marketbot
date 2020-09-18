@@ -420,7 +420,7 @@ function sundayFlynnBotCmd(request, bots, isMod, currentBot, botARoom, callback)
         return msg;
       }
     }
-    
+    for (flynnb in flynnbot) { 
 if (flynnbot[flynnb].current == val[1]) {
         flynnbot[flynnb]["sunday"] = val[2];
     updateFlynnBotSun(flynnbot[flynnb]); 
@@ -429,7 +429,7 @@ if (flynnbot[flynnb].current == val[1]) {
     callback(true, msg, []);
     return msg;
 }
-  
+  }
     var msg = "Current week not set";
     callback(true, msg, []);
 
