@@ -4,6 +4,10 @@
 var sysCommands  = require('./modules/sys-commands');
 var db           = require('./modules/db.js');
 var mods         = require('./modules/mods');
+
+
+var countdown  = require('./modules/countdown');
+
 var commandList  = require('./modules/command-list');
 var rooms        = require('./modules/rooms');
 
@@ -99,19 +103,19 @@ exports.respond = function(botRoom) {
 }
   }
 
-/*
-exports.commands = function() {
-  var cmdArr = [];
+
+exports.countdown = function() {
+  //var cmdArr = [];
 
   console.log('displaying commands at /commands');
 
-  for(var lib in checkCommandsHSH){
+ /* for(var lib in checkCommandsHSH){
     var newCmds = checkCommandsHSH[lib].getCmdListDescription();
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
-
-  var output = commandList.buildHTML(cmdArr, config.bot_name, config.nameit);
+*/
+  var output = countdown();
   //var output = cmdArr;
 //var output = checkCommandsHSH[].getCmdListDescription();
  
@@ -120,7 +124,7 @@ exports.commands = function() {
   this.res.end(output);
 //this.res.end(cmdArr);
 }
-*/
+
 
 exports.commands = function() {
   var cmdArr = [];
