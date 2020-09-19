@@ -30,6 +30,11 @@ get: pingit
     get:  bot.init,
     post: bot.init
   },
+
+'/countdown' : { 
+    get: bot.countdown
+ },
+
   '/commands' : {
     get: bot.commands,
     get: bot.postMessage
