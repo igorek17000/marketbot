@@ -36,8 +36,8 @@ get: pingit
  },
 
   '/commands' : {
-    get: bot.commands,
-    get: bot.postMessage
+    get: bot.commands
+   
   },
   '/bot/:botRoom' : {
     get: ping,
