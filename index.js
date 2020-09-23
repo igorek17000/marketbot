@@ -5,6 +5,7 @@ var moment = require('moment');
 var date = moment().utcOffset(-240).format('LLLL');
 var app = require('express');
 var path = require('path');
+var demo = require('./commands/countdown.html');
 
 var http, director, bot, router, server, port, db;
 
@@ -32,7 +33,7 @@ get: pingit
   },
 
 '/countdown' : { 
-    get: bot.countdown
+    get: count
  },
 
   '/commands' : {
@@ -88,6 +89,14 @@ function pingit() {
   this.res.writeHead(200);
   this.res.end("The sky's the limit.\nFind what you love to do and embrace it.\nEverything else will fall into place.\nAlexBot quotes");
 }
+
+function count() {
+  this.res.writeHead(200, {'Content-Type': 'text/html'});
+  this.res.end(demo);
+}
+
+
+
 /*
 function form(req, res, data) {
 res.sendFile('./commands/index.html', { root: __dirname }) 
