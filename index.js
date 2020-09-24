@@ -5,7 +5,7 @@ var moment = require('moment');
 var date = moment().utcOffset(-240).format('LLLL');
 var app = require('express');
 var path = require('path');
-var demo = require('../commands/countdown.html');
+var demo = require('../commands/countdown.js');
 
 var http, director, bot, router, server, port, db;
 
