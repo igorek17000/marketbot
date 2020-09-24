@@ -33,7 +33,7 @@ get: pingit
   },
 
 '/countdown' : { 
-    get: count
+    get: bot.countdown
  },
 
   '/commands' : {
