@@ -6,7 +6,7 @@ var db           = require('./modules/db.js');
 var mods         = require('./modules/mods');
 
 
-var countdown  = require('./modules/countdown');
+var countdowner  = require('./modules/countdown');
 
 var commandList  = require('./modules/command-list');
 var rooms        = require('./modules/rooms');
@@ -115,7 +115,7 @@ exports.countdown = function() {
       cmdArr = cmdArr.concat(newCmds);
   }
 */
-  var output = countdown();
+  var output = countdowner();
   //var output = cmdArr;
 //var output = checkCommandsHSH[].getCmdListDescription();
  
