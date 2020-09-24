@@ -6,7 +6,7 @@ var db           = require('./modules/db.js');
 var mods         = require('./modules/mods');
 
 
-var countdowner  = require('./modules/countdown');
+var countdowner  = require('./commands/countdown');
 
 var commandList  = require('./modules/command-list');
 var rooms        = require('./modules/rooms');
