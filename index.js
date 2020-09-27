@@ -13,6 +13,7 @@ http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
 today       = require('./bot.js');
+var down = require('./modules/countdown-list.js');
 
 //image       = require('./2A34A9R.jpg');
 
@@ -33,7 +34,7 @@ get: pingit
   },
 
 '/countdown' : { 
-    get: bot.countdown
+    get: down
  },
 
   '/commands' : {
