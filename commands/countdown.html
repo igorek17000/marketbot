@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
-<style>
-body, html {
-  height: 100%;
-  margin: 0;
-}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-.bgimg {
-  background-image: url('/w3images/forestbridge.jpg');
+<style>
+
+   
+html {
+  background-image: url('https://www.w3schools.com/w3images/forestbridge.jpg');
   height: 100%;
   background-position: center;
   background-size: cover;
   position: relative;
   color: white;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
   font-size: 25px;
+
+
 }
 
 .topleft {
@@ -25,38 +26,65 @@ body, html {
 
 .bottomleft {
   position: absolute;
-  bottom: 0;
+  top: 500px;
   left: 16px;
 }
 
 .middle {
   position: absolute;
-  top: 50%;
+  top: 250px;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+
 
 hr {
   margin: auto;
   width: 40%;
 }
 </style>
+    
 <body>
 
-<div class="bgimg">
-  <div class="topleft">
-    <p>Logo</p>
-  </div>
-  <div class="middle">
-    <h1>COMING SOON</h1>
-    <hr>
-    <p>35 days left</p>
-  </div>
-  <div class="bottomleft">
+
+    
+  <div class='topleft'>
+    <p>Logo</p></div>
+    <div class='middle'><h2>COMING SOON</h2>
+       <hr></hr>
+      <p id='demo' style='font-size: 30px'></p>
+   </div>
+    <div class='bottomleft'>
     <p>Some text</p>
   </div>
-</div>
 
 </body>
+<script>
+
+    var countDownDate = new Date('sep 30, 2020 15:37:25').getTime();
+
+var countdownfunction = setInterval(function() {
+
+    var now = new Date().getTime();
+  
+    var distance = countDownDate - now;
+  
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
+  + minutes + 'm ' + seconds + 's ';
+  
+   if (distance < 0) {
+    clearInterval(countdownfunction);
+    document.getElementById('demo').innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+
 </html>
