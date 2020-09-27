@@ -91,14 +91,14 @@ function pingit() {
   this.res.end("The sky's the limit.\nFind what you love to do and embrace it.\nEverything else will fall into place.\nAlexBot quotes");
 }
 
-function count() {
+function count(err, req, res) {
 fs.readFile('./commands/countdown.html', function (err, html) { 
 if (err) { 
 throw err; 
 } 
   this.res.writeHead(200, {'Content-Type': 'text/html'});
   this.res.write(html);
-  this.res.end(data);
+  this.res.end();
 });
 }
 
