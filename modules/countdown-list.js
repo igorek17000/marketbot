@@ -28,9 +28,9 @@ function getFileAll(path, callback) {
     callback(data);
   });
 }
-
+*/
 exports.buildHTML = function (bot_name) {
-/*
+
   var modArr   = [];
   var ownerArr = [];
   var allArr   = [];
@@ -79,16 +79,16 @@ exports.buildHTML = function (bot_name) {
     addHTML = addHTML.replace('$$command_desc', ownerArr[cmd].desc);
     ownerBuiltHTML += addHTML;
   }
-*/
+
   var mainBuiltHTML = mainHTML;
-/*  mainBuiltHTML = mainBuiltHTML.replace('$$bot_name', 'Alex Bot');
+  mainBuiltHTML = mainBuiltHTML.replace('$$bot_name', 'Alex Bot');
   mainBuiltHTML = mainBuiltHTML.replace('$$all', allBuiltHTML);
   mainBuiltHTML = mainBuiltHTML.replace('$$mod', modBuiltHTML);
   mainBuiltHTML = mainBuiltHTML.replace('$$owner', ownerBuiltHTML);
-*/
+
   return mainHTML;
 }
-
+*/
 
 
 
