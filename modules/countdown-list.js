@@ -26,6 +26,7 @@ getFileAll('commands/partials/_all.html', function(data) {
 function getFileAll(path, callback) {
   fs.readFile(path, 'utf8', function(err, data){
     callback(data);
+return mainHTML;
   });
 }
 /*
