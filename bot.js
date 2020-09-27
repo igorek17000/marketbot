@@ -115,7 +115,7 @@ exports.countdown = function() {
       cmdArr = cmdArr.concat(newCmds);
   }
 */
-  var output = countdowner.buildHTML(mainHTML);
+  var output = countdowner.buildHTML(data);
   //var output = cmdArr;
 //var output = checkCommandsHSH[].getCmdListDescription();
  
