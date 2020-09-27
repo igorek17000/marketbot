@@ -103,18 +103,18 @@ exports.respond = function(botRoom) {
 }
   }
 
-
+/*
 exports.countdown = function() {
   //var cmdArr = [];
 
   console.log('displaying commands at /commands');
 
- /* for(var lib in checkCommandsHSH){
+  for(var lib in checkCommandsHSH){
     var newCmds = checkCommandsHSH[lib].getCmdListDescription();
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
-*/
+
   var output = countdowner;
   //var output = cmdArr;
 //var output = checkCommandsHSH[].getCmdListDescription();
@@ -124,7 +124,7 @@ exports.countdown = function() {
   this.res.end(output);
 //this.res.end(cmdArr);
 }
-
+*/
 
 exports.commands = function() {
   var cmdArr = [];
