@@ -6,7 +6,7 @@ var date = moment().utcOffset(-240).format('LLLL');
 var app = require('express');
 var path = require('path');
 var demo = require('./commands/countdown.html');
-
+var fs = require('fs');
 var http, director, bot, router, server, port, db;
 
 http        = require('http');
@@ -34,7 +34,7 @@ get: pingit
   },
 
 '/countdown' : { 
-    get: down
+    get: count
  },
 
   '/commands' : {
@@ -92,8 +92,13 @@ function pingit() {
 }
 
 function count() {
+fs.readFile('./commands/countdown.html', function (err, html) { 
+if (err) { 
+throw err; 
+} 
   this.res.writeHead(200, {'Content-Type': 'text/html'});
-  this.res.end(demo);
+  this.res.write(html);
+  this.res.end();
 }
 
 
