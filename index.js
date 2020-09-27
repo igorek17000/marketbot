@@ -100,7 +100,7 @@ throw err;
   this.res.write(html);
   this.res.end();
 }
-
+}
 
 
 /*
