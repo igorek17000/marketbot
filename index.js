@@ -98,7 +98,7 @@ throw err;
 } 
   this.res.writeHead(200, {'Content-Type': 'text/html'});
   this.res.write(html);
-  this.res.end();
+  this.res.end(html);
 });
 }
 
