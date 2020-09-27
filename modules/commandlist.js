@@ -29,7 +29,7 @@ function getFileAll(path, callback) {
   });
 }
 
-exports.buildHTML = function () {
+exports.buildHTML = function (mainHTML) {
 /*
   var modArr   = [];
   var ownerArr = [];
