@@ -6,10 +6,16 @@ var fs = require('fs');
 init();
 
 function init() {
+fs.readFile('commands/countdown.html', function(err, data){
+    callback(data);
+return data;
+  });
+}
+/*
   getFileAll('commands/countdown.html', function(data) {
     mainHTML = data;
   });
- /* 
+ 
 getFileAll('commands/partials/_all.html', function(data) {
     allHTML = data;
   });
@@ -19,17 +25,16 @@ getFileAll('commands/partials/_all.html', function(data) {
   getFileAll('commands/partials/_owner.html', function(data) {
     ownerHTML = data;
   });
-*/
+
 }
 
 //feels pointless, come up with a better way to do this
 function getFileAll(path, callback) {
   fs.readFile(path, 'utf8', function(err, data){
     callback(data);
-return mainHTML;
   });
 }
-/*
+
 exports.buildHTML = function (bot_name) {
 
   var modArr   = [];
