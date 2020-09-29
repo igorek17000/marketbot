@@ -95,7 +95,6 @@ function count() {
   this.res.writeHead(200, {'Content-Type': 'text/html'});
   this.res.render('./commands/countdown.html');
   this.res.end();
-});
 }
 
 
