@@ -34,7 +34,7 @@ get: pingit
   },
 
 '/countdown' : { 
-    get: count
+    post: count
  },
 
   '/commands' : {
