@@ -13,7 +13,7 @@ http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
 today       = require('./bot.js');
-var countdown = require('./countdown.html');
+var countdown;
 
 //image       = require('./2A34A9R.jpg');
 
