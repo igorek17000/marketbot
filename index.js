@@ -13,7 +13,7 @@ http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
 today       = require('./bot.js');
-var countdown;
+//var countdown;
 
 //image       = require('./2A34A9R.jpg');
 
@@ -93,7 +93,7 @@ function pingit() {
 
 function count() {
   this.res.writeHead(200);
-  this.res.render(countdown);
+  this.res.send(countdown);
   //this.res.send();
 }
 
