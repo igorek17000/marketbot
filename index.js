@@ -93,9 +93,8 @@ function pingit() {
 
 function count() {
   this.res.writeHead(200);
-  this.res.render('countdown', function(err, html) {
+  this.res.render('countdown');
   this.res.send(html);
-});
 }
 
 
