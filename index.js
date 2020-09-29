@@ -93,7 +93,7 @@ function pingit() {
 
 function count() {
   this.res.writeHead(200);
-  this.res.send(countdown);
+  this.res.sendFile(path.join(__dirname + "./countdown.html")); 
   //this.res.send();
 }
 
@@ -113,7 +113,7 @@ this.res.send("Please provide us first name");
 
 
 /*
-response.sendFile(__dirname + "/commands/index.html"); 
+response.sendFile(__dirname + "./countdown.html"); 
 });
 
 function forms() {
