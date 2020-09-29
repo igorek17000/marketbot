@@ -92,9 +92,9 @@ function pingit() {
 }
 
 function count() {
-  this.res.writeHead(200, {"Content-Type": "text/html"});
+  this.res.writeHead(200);
   this.res.sendFile(demo);
-  this.res.end(demo);
+  this.res.end();
 }
 
 
