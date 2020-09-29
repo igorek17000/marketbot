@@ -1,4 +1,4 @@
-var mainHTML;
+/*var mainHTML;
 var fs = require('fs');
 //var config = require('../config/config');
 
@@ -11,7 +11,7 @@ fs.readFile('commands/countdown.html', function(err, data){
 return data;
   });
 }
-/*
+
   getFileAll('commands/countdown.html', function(data) {
     mainHTML = data;
   });
