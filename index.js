@@ -93,8 +93,8 @@ function pingit() {
 
 function count() {
   this.res.writeHead(200, {"Content-Type": "text/html"});
-  //this.res.sendFile(path.join(__dirname + "./countdown.html")); 
-  this.res.end(countdown.html);
+  this.res.write(path.join(__dirname + "./countdown.html")); 
+  this.res.end(body);
 }
 
 
