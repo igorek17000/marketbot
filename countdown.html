@@ -63,8 +63,10 @@ hr {
 </body>
 <script>
 
-    var countDownDate = new Date("sep 30, 2020 00:00:01").getTime(); 
-    var alex = new Date("mar 12, 2020 00:00:01").getTime();
+    var countDownDate;
+if (now > new Date("sep 30, 2020 00:00:01").getTime()) {
+    countDownDate = new Date("mar 12, 2020 00:00:01").getTime();
+}
 var ashley = new Date("mar 24, 2020 00:00:01").getTime();
 var lucas = new Date("jun 19, 2020 00:00:01").getTime();
 var tiago = new Date("sep 30, 2020 00:00:01").getTime();
