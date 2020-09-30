@@ -63,11 +63,13 @@ hr {
 </body>
 <script>
 
-    var countDownDate = [new Date('sep 30, 2020 00:00:00'), new Date('oct 22, 2020 00:00:00'), New Date('nov 19, 2020 00:00:00')].getTime();
+    var countDownDate = new Date(countDate).getTime(); //'sep 30, 2020 00:00:00'), new Date('oct 22, 2020 00:00:00'), New Date('nov 19, 2020 00:00:00')].getTime();
 
 var countDate;
 countDate = {
-if (new Date()
+if (new Date().getDate > "sep 28, 2020 00:00:01") {
+countDownDate = "oct 1, 2020 00:00:01";
+}
 
 var countdownfunction = setInterval(function() {
 
