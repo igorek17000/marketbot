@@ -83,8 +83,14 @@ var countdownfunction = setInterval(function() {
    if (distance < 0) {
     clearInterval(countdownfunction);
     document.getElementById('demo').innerHTML = "Happy Birthday Tiago";
+setTimeout(function() { 
+document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
+  + minutes + 'm ' + seconds + 's ';
+}, 86400000);
   }
 }, 1000);
+
+
 </script>
 
 
