@@ -87,7 +87,7 @@ var countdownfunction = setInterval(function() {
   }
 }, 1000);
 */
-if (distance < 0 && distance > -60000) {
+if (distance < 0 && distance < -60000) {
 clearInterval(countdownfunction);
     document.getElementById('demo').innerHTML = "Happy Birthday";
 
