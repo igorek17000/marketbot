@@ -65,7 +65,7 @@ hr {
 </body>
 <script>
 
-    var countDownDate = new Date("oct 2, 2020 18:00:01").getTime();
+    var countDownDate = new Date("oct 2, 2020 18:41:01").getTime();
 var countdownfunction = setInterval(function() {
 
     var now = new Date().getTime();
@@ -82,47 +82,18 @@ var countdownfunction = setInterval(function() {
   
    if (distance < 0) {
 
-    clearInterval(countdownfunction);
+  //  clearInterval(countdownfunction);
     document.getElementById('demo').innerHTML = "Happy Birthday";
 
 }
 }, 1000);
 
- setTimeout(function () {
-setInterval(function countdownfunction() {
+if (distance < -15000) {
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
-}, 15000);
+}
 }, 1000);
 
-/*
-if (distance < 0 && distance < -60000) {
-clearInterval(countdownfunction);
-    document.getElementById('demo').innerHTML = "Happy Birthday";
-
-  }
-}, 1000);
-
-if (distance < -60000) {
-
-    document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
-  + minutes + 'm ' + seconds + 's ';
-}
-
-
-
-setTimeout(function() { 
-countdownfunction;
-    
-  }
-}, 60000);
-
-if (distance < -60000) {
-
-    document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
-  + minutes + 'm ' + seconds + 's ';
-}
-*/
 </script>
 
 
