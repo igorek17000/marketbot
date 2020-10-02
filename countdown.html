@@ -80,12 +80,12 @@ var countdownfunction = setInterval(function() {
   document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
   
-   if (distance < 0) && (distance < -15000) {
+   if (distance < 0 && (distance < -15000)) {
 
     clearInterval(countdownfunction);
     document.getElementById('demo').innerHTML = "Happy Birthday";
 
-setTimeout(() => {
+setTimeout(function() {
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
 
