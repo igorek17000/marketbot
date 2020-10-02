@@ -85,7 +85,7 @@ var countdownfunction = setInterval(function() {
     document.getElementById('demo').innerHTML = "Happy Birthday";
 
 if (distance > -60000) {
-clearInterval(countdownfunction);
+clearInterval();
     document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
   }
