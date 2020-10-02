@@ -81,15 +81,19 @@ var countdownfunction = setInterval(function() {
   + minutes + 'm ' + seconds + 's ';
   
    if (distance < 0) {
+setTimeout(() => 
+document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
+  + minutes + 'm ' + seconds + 's ', 6000);
     clearInterval(countdownfunction);
     document.getElementById('demo').innerHTML = "Happy Birthday";
-
+/*
 setTimeout(function() {
 countdownfunction;
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
 }
 }, 60000);
+*/
 }
 }, 1000);
 
