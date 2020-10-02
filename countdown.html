@@ -81,13 +81,14 @@ var countdownfunction = setInterval(function() {
   + minutes + 'm ' + seconds + 's ';
   
    if (distance = 0) {
-setTimeout((countdownfunction) => {
+
+    clearInterval(countdownfunction);
+    document.getElementById('demo').innerHTML = "Happy Birthday";
+setTimeout((countdownfunction) => 
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
 
 }, 3000);
-    clearInterval(countdownfunction);
-    document.getElementById('demo').innerHTML = "Happy Birthday";
 /*
 setTimeout(function() {
 countdownfunction;
