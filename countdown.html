@@ -84,12 +84,14 @@ var countdownfunction = setInterval(function() {
     clearInterval(countdownfunction);
     document.getElementById('demo').innerHTML = "Happy Birthday";
 
-if (distance < -60000) {
-clearInterval();
+if (distance > -60000) {
+clearInterval(countdownfunction);
     document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
   }
   }
+}, 1000);
+
 }, 1000);
 /*
 if (distance < 0 && distance < -60000) {
