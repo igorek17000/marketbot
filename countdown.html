@@ -85,11 +85,11 @@ var countdownfunction = setInterval(function() {
     clearInterval(countdownfunction);
     document.getElementById('demo').innerHTML = "Happy Birthday";
 
-setTimeout(function() {
+setInterval(countdownfunction() {
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
 
-}, 3000);
+}, 30000);
 /*
 setTimeout(function() {
 countdownfunction;
