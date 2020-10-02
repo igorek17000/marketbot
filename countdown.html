@@ -65,7 +65,7 @@ hr {
 </body>
 <script>
 
-    var countDownDate = new Date("oct 2, 2020 00:29:01").getTime();
+    var countDownDate = new Date("oct 2, 2020 01:20:01").getTime();
 var countdownfunction = setInterval(function() {
 
     var now = new Date().getTime();
@@ -83,7 +83,7 @@ var countdownfunction = setInterval(function() {
    if (distance < 0) {
 setTimeout(countdownfunction() => 
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
-  + minutes + 'm ' + seconds + 's ', 6000);
+  + minutes + 'm ' + seconds + 's ', 3000);
     clearInterval(countdownfunction);
     document.getElementById('demo').innerHTML = "Happy Birthday";
 /*
