@@ -85,14 +85,14 @@ var countdownfunction = setInterval(function() {
     clearInterval(countdownfunction);
     document.getElementById('demo').innerHTML = "Happy Birthday";
 
-} else if (distance < -15000) {
-setInterval(countdownfunction() {
+}
+}, 1000);
+
+ setTimeout(function () {
+setInterval(function countdownfunction() {
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
-}
-//}, 1000);
-
-//}
+}, 15000);
 }, 1000);
 
 /*
