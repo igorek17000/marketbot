@@ -84,7 +84,8 @@ var countdownfunction = setInterval(function() {
 
     clearInterval(countdownfunction);
     document.getElementById('demo').innerHTML = "Happy Birthday";
-setTimeout((countdownfunction) => {
+}
+setTimeout(() => {
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
 
