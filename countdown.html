@@ -81,7 +81,7 @@ var countdownfunction = setInterval(function() {
   + minutes + 'm ' + seconds + 's ';
   
    if (distance < 0) {
-setTimeout(() => 
+setTimeout(countdownfunction() => 
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ', 6000);
     clearInterval(countdownfunction);
