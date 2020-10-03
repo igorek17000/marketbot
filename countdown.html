@@ -64,10 +64,11 @@ hr {
 
 </body>
 <script>
-
-    var countDownDate = new Date("oct 2, 2020 23:03:01").getTime();
-if (new Date("oct 2, 2020 23:10:01").getTime() < new Date().getTime()) {
+var name;
+    var countDownDate = new Date("oct 2, 2020 23:10:01").getTime();
+if (new Date("oct 2, 2020 23:15:01").getTime() < new Date().getTime()) {
 countDownDate = new Date("oct 3, 2020 22:50:01").getTime();
+name = Alex;
 }
 /*
 else if (distance < -600000) {
@@ -95,7 +96,7 @@ var countdownfunction = setInterval(function() {
    if (distance < 0) {
 console.log(now);
   //  clearInterval(countdownfunction);
-    document.getElementById('demo').innerHTML = "Happy Birthday";
+    document.getElementById('demo').innerHTML = name <br> "Happy Birthday";
 
 }
 
