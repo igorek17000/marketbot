@@ -66,7 +66,11 @@ hr {
 <script>
 
     var countDownDate = new Date("mar 12, 2020 21:15:01").getTime();
-
+if (countDownDate < new Date("mar 12, 2020 22:00:00") {
+countDownDate = new Date("oct 2, 2020 21:45:01").getTime();
+} else if (countDownDate > "oct 2, 2020 21:55:01") {
+countDownDate = new Date("oct 22, 2020 00:00:01").getTime();
+}
 var countdownfunction = setInterval(function() {
 
     var now = new Date().getTime();
@@ -80,11 +84,7 @@ var countdownfunction = setInterval(function() {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  if (new Date() < "oct 1, 2020") {
-countDownDate = new Date("oct 2, 2020 21:15:01").getTime();
-} else if (new Date() > "oct 2, 2020") {
-countDownDate = new Date("oct 22, 2020 00:00:01").getTime();
-}
+  
 
   document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
