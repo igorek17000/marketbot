@@ -91,7 +91,7 @@ var countdownfunction = setInterval(function() {
   + minutes + 'm ' + seconds + 's ';
 
 
-  if (new Date("oct 4, 2020 13:30:01").getTime() < new Date().getTime()) {
+  if (new Date("oct 4, 2020 13:30:01").getTime() > new Date().getTime()) {
 document.getElementById('demo').innerHTML = "Happy Birthday " + name;
 }
 /*
