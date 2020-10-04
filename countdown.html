@@ -65,9 +65,9 @@ hr {
 </body>
 <script>
 var name = "AlexBot";
-    var countDownDate = new Date("oct 3, 2020 20:50:01").getTime();
-if (new Date("oct 3, 2020 20:55:01").getTime() < new Date().getTime()) {
-countDownDate = new Date("oct 3, 2020 21:00:01").getTime();
+    var countDownDate = new Date("oct 3, 2020 21:00:01").getTime();
+if (new Date("oct 3, 2020 21:10:01").getTime() > new Date().getTime()) {
+countDownDate = new Date("oct 3, 2020 21:15:01").getTime();
 name = "Alex";
 }
 
@@ -91,11 +91,11 @@ var countdownfunction = setInterval(function() {
   + minutes + 'm ' + seconds + 's ';
 
 
-  if (new Date("oct 3, 2020 20:50:01").getTime() > new Date().getTime()) {
+  if (new Date("oct 3, 2020 21:00:01").getTime() < new Date().getTime()) {
 document.getElementById('demo').innerHTML = "Happy Birthday " + name;
 }
 
-else if (new Date("oct 3, 2020 20:55:01").getTime() < new Date().getTime()) {
+else if (new Date("oct 3, 2020 21:05:01").getTime() < new Date().getTime()) {
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
 }
