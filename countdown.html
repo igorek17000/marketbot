@@ -65,9 +65,9 @@ hr {
 </body>
 <script>
 var name = "AlexBot";
-    var countDownDate = new Date("oct 4, 2020 13:56:01").getTime();
-if (new Date("oct 4, 2020 14:00:01").getTime() < new Date().getTime()) {
-countDownDate = new Date("oct 4, 2020 14:05:01").getTime();
+    var countDownDate = new Date("oct 4, 2020 14:13:01").getTime();
+if (new Date("oct 4, 2020 14:17:01").getTime() < new Date().getTime()) {
+countDownDate = new Date("oct 4, 2020 14:20:01").getTime();
 name = "Alex";
 }
 
@@ -86,10 +86,10 @@ var countdownfunction = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   
-
+/*
   document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
-
+*/
 /*
   if (new Date("oct 4, 2020 13:30:01").getTime() > new Date().getTime()) {
 document.getElementById('demo').innerHTML = "Happy Birthday " + name;
@@ -106,6 +106,11 @@ document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
 
   //  clearInterval(countdownfunction);
     document.getElementById('demo').innerHTML = "Happy Birthday " + name;
+
+} else {
+
+document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
+  + minutes + 'm ' + seconds + 's ';
 
 }
 
