@@ -21,8 +21,8 @@ router = new director.http.Router({
   '/'    : {
     get: ping
   },
-'/quotes' : {
-get: pingit
+'/home' : {
+get: home
 },
 
 
@@ -86,16 +86,19 @@ function ping() {
   this.res.end("I am AlexBot.\n\For a list of commands go to\n\https://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands");
 }
 
-function pingit() {
-  this.res.writeHead(200);
-  this.res.end("The sky's the limit.\nFind what you love to do and embrace it.\nEverything else will fall into place.\nAlexBot quotes");
+function home() {
+  this.res.statusCode = 200; 
+this.res.setHeader('Content-type', 'text/html'); 
+var html = fs.readFileSync(path.join(__dirname + "/countdown.html")); 
+this.res.write(html); 
+this.res.end();
 }
 
 function count() {
   //this.res.writeHead(200); //, {"Content-Type": "text/html"});
 this.res.statusCode = 200; 
 this.res.setHeader('Content-type', 'text/html'); 
-var html = fs.readFileSync(path.join(__dirname + "/countdown.html")); 
+var html = fs.readFileSync(path.join(__dirname + "/views/home.html")); 
 this.res.write(html); 
 
 
