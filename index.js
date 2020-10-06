@@ -86,7 +86,7 @@ function ping() {
   this.res.end("I am AlexBot.\n\For a list of commands go to\n\https://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands");
 }
 
-function home() {
+function count() {
   this.res.statusCode = 200; 
 this.res.setHeader('Content-type', 'text/html'); 
 var html = fs.readFileSync(path.join(__dirname + "/countdown.html")); 
@@ -94,7 +94,7 @@ this.res.write(html);
 this.res.end();
 }
 
-function count() {
+function home() {
   //this.res.writeHead(200); //, {"Content-Type": "text/html"});
 this.res.statusCode = 200; 
 this.res.setHeader('Content-type', 'text/html'); 
