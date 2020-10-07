@@ -26,6 +26,10 @@ get: home
 },
 
 
+'/amaral' : {
+get: amaral
+},
+
 
 
   '/init' : {
@@ -99,6 +103,18 @@ function home() {
 this.res.statusCode = 200; 
 this.res.setHeader('Content-type', 'text/html'); 
 var html = fs.readFileSync(path.join(__dirname + "/views/home.html")); 
+this.res.write(html); 
+
+
+ // this.res.write(fs.readFile(path.join(__dirname + "./countdown.html"))); 
+  this.res.end();
+}
+
+function home() {
+  //this.res.writeHead(200); //, {"Content-Type": "text/html"});
+this.res.statusCode = 200; 
+this.res.setHeader('Content-type', 'text/html'); 
+var html = fs.readFileSync(path.join(__dirname + "/views/amaral.html")); 
 this.res.write(html); 
 
 
