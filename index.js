@@ -93,7 +93,7 @@ function ping() {
 function count() {
   this.res.statusCode = 200; 
 this.res.setHeader('Content-type', 'text/html'); 
-var html = fs.readFileSync(path.join(__dirname + "/countdown.html")); 
+var html = fs.readFileSync(path.join(__dirname + "/views/countdown.html")); 
 this.res.write(html); 
 this.res.end();
 }
