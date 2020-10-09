@@ -135,16 +135,17 @@ document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
 
 
 
-if (distance > -29000) {
+if (distance > -86399000) {
 
   document.getElementById('demo').innerHTML = "Happy Birthday " + name;
-document.getElementById('name').innerHTML = name;
-document.getElementById('dob').innerHTML = dob;
 }
 } else {
 
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
+document.getElementById('name').innerHTML = name;
+document.getElementById('dob').innerHTML = dob;
+
 
 }
 
