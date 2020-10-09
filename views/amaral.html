@@ -60,6 +60,9 @@ hr {
       <hr></hr>
 <h1><br></h1>
       <p id='demo' style='font-size: 40px'></p>
+      <p id='name' style='font-size: 30px'></p>
+      <p id='dob' style='font-size: 30px'></p>
+
    </div>
     <div class='bottomleft'>
     <p>Amaral Family Birthday's</p>
@@ -134,7 +137,8 @@ document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
 if (distance > -29000) {
 
   document.getElementById('demo').innerHTML = "Happy Birthday " + name;
-
+document.getElementById('name').innerHTML = name;
+document.getElementById('dob').innerHTML = dob;
 }
 } else {
 
