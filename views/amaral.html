@@ -58,9 +58,10 @@ hr {
     <div class='middle'><h2>JACOB & JOSHUA'S BIRTHDAY COUNTDOWN</h2>
 <h2>Next Birthday In</h2>
       <hr></hr>
+<h1><br></h1>
       <p id='demo' style='font-size: 40px'></p>
       <p id='name' style='font-size: 30px'></p>
-      <p id='dob' style='font-size: 30px'></p>
+      
 
    </div>
     <div class='bottomleft'>
@@ -142,8 +143,8 @@ if (distance > -86399000) {
 
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
-document.getElementById('name').innerHTML = name;
-document.getElementById('dob').innerHTML = dob;
+document.getElementById('name').innerHTML = name + dob;
+
 
 
 }
