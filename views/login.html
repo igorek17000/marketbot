@@ -4,17 +4,23 @@
 <!-- Include JS File Here --> 
 <script src="/views/login.html"></script> 
 </head> 
+<style>
+.middle { 
+position: absolute; 
+top: 50%; left: 50%; 
+transform: translate(-50%, -50%); 
+text-align: center;
+}
 
 
 <body> 
-<div class="container"> 
+<div class="middle"> 
 <form id="form_id" method="post" name="myform"> 
-<label>User Name :</label> 
+<h2>User Name:</h2> 
 <input type="text" name="username" id="username"/> 
-<label>Password :</label> 
+<h2>Password :</h2> 
 <input type="password" name="password" id="password"/> 
-<input type="button" value="Login" id="submit" onclick="validate()"/> 
-</form> 
+<button onclick="window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/countdown';"> login </button>
 </div> 
 </body> 
 <script>
