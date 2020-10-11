@@ -130,7 +130,6 @@ exports.commands = function() {
   var cmdArr = [];
 
   console.log('displaying commands at /commands');
-window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login';
 
   for(var lib in checkCommandsHSH){
     var newCmds = checkCommandsHSH[lib].getCmdListDescription();
@@ -139,7 +138,8 @@ window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.opens
   }
 
   var output = commandList.buildHTML(cmdArr, config.bot_name);
-  //alert("Hi");
+window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login';
+
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
 
