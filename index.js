@@ -126,7 +126,7 @@ this.res.write(html);
   this.res.end();
 }
 
-functIon login() {
+function login() {
   //this.res.writeHead(200); //, {"Content-Type": "text/html"});
 this.res.statusCode = 200; 
 this.res.setHeader('Content-type', 'text/html'); 
