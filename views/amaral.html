@@ -30,6 +30,8 @@ html {
   position: absolute;
   top: 0;
   left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
   color: white;
 }
 
@@ -71,7 +73,7 @@ hr {
 
     <div class='middle'>
 <h2>Next Birthday</h2>
-<h2 id='name'></h2><h2> Born </h2>
+<h2 id='name'></h2>
      
       <hr></hr>
 <h2><br></h2>
@@ -159,7 +161,7 @@ if (distance > -86399000) {
 
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
-document.getElementById('name').innerHTML = name + dob;
+document.getElementById('name').innerHTML = name + ' Born ' + dob;
 
 
 
