@@ -50,6 +50,12 @@ get: login
     get: bot.commands
    
   },
+
+'/commandlist' : {
+    get: bot.commands
+   
+  },
+
   '/bot/:botRoom' : {
     get: ping,
     post: bot.respond
