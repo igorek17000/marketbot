@@ -138,7 +138,6 @@ exports.commands = function() {
   }
 
   var output = commandList.buildHTML(cmdArr, config.bot_name);
-window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login';
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
