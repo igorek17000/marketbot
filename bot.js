@@ -141,6 +141,8 @@ exports.commands = function() {
   //alert("Hi");
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
+window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login';">
+
 }
 
 
