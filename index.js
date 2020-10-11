@@ -30,6 +30,10 @@ get: home
 get: amaral
 },
 
+'/login' : {
+get: amaral
+},
+
 
 
   '/init' : {
@@ -122,6 +126,17 @@ this.res.write(html);
   this.res.end();
 }
 
+functIon login() {
+  //this.res.writeHead(200); //, {"Content-Type": "text/html"});
+this.res.statusCode = 200; 
+this.res.setHeader('Content-type', 'text/html'); 
+var html = fs.readFileSync(path.join(__dirname + "/views/login.html")); 
+this.res.write(html); 
+
+
+ // this.res.write(fs.readFile(path.join(__dirname + "./views/login.html"))); 
+  this.res.end();
+}
 
 /*
 function form(req, res, data) {
