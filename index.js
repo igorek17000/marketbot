@@ -51,10 +51,6 @@ get: login
    
   },
 
-'/commandlist' : {
-    get: bot.commands
-   
-  },
 
   '/bot/:botRoom' : {
     get: ping,
