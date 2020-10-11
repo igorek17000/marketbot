@@ -25,6 +25,14 @@ html {
   color: black;
 }
 
+
+.topcenter {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  color: white;
+}
+
 .bottomleft {
   position: absolute;
   bottom: 0;
@@ -38,7 +46,7 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: blue;
+  color: white;
 }
 
 
@@ -54,8 +62,13 @@ hr {
 
     
   <div class='topleft'>
-    <p>AmaralBot</p></div>
-    <div class='middle'><h2>JACOB & JOSHUA'S BIRTHDAY COUNTDOWN</h2>
+    <p>AmaralBot</p>
+</div>
+<div class='topcenter'>
+    <h2>JACOB & JOSHUA'S BIRTHDAY COUNTDOWN</h2>
+</div>
+
+    <div class='middle'>
 <h2 id='name'></h2>
      
       <hr></hr>
@@ -144,7 +157,7 @@ if (distance > -86399000) {
 
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
-document.getElementById('name').innerHTML = name + ' ' + dob;
+document.getElementById('name').innerHTML = name + ' Born ' + dob;
 
 
 
