@@ -31,7 +31,7 @@ get: amaral
 },
 
 '/login' : {
-get: amaral
+get: login
 },
 
 
