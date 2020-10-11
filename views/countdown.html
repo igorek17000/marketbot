@@ -145,6 +145,11 @@ document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
 
 //  document.getElementById('demo').innerHTML = "Time's Up!";
 
+if (now > new Date("oct 7, 2020 23:59:59").getTime()) {
+if (now < new Date("oct 22, 2020 23:59:59").getTime()) {
+document.getElementById('demo').innerHTML = "Merry  Christmas!";
+
+
 
    if (distance < 0) {
 
@@ -157,9 +162,6 @@ if (distance > -86399000) {
   document.getElementById('demo').innerHTML = "Happy Birthday " + name;
 
 
-if (now > new Date("oct 7, 2020 23:59:59").getTime()) {
-if (now < new Date("oct 22, 2020 23:59:59").getTime()) {
-document.getElementById('demo').innerHTML = "Merry  Christmas!";
 }
 }
 
