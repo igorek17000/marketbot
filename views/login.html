@@ -1,3 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+-->
+<style>
+
+   
+html {
+  background: black;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 25px;
+
+
+}
+
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  color: white;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  color: white;
+}
+
+.middle {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+hr {
+  margin: auto;
+  width: 40%;
+}
+
+hr2 {
+margin: auto;
+width: 40%;
+}
+
+</style>
+    
+<body>
+
+
+    
+  <div class='topleft'>
+    <p>AlexBot</p></div>
+    <div class='middle'><form id="form_id" method="post" name="myform"> 
+<label>User Name :</label> 
+<input type="text" name="username" id="username"/> 
+<label>Password :</label> <input type="password" name="password" id="password"/> 
+<button onclick="window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/countdown';"> login </button>
+</form> 
+
+
+
+      </div>
+    <div class='bottomleft'>
+    <p>Beta</p>
+  </div>
+
+</body>
+<script>
+function validate(){ 
+var username = document.getElementById("username").value; 
+var password = document.getElementById("password").value; 
+if (username == "username1" && password == "password1"){ 
+
+return true;
+} else{ 
+alert("Invalid username or password"); 
+} 
+return false; 
+}
+</script>
+
+
+</html>
+
+
+
 <html> 
 <head> 
 <title>Javascript Login Form Validation</title> 
@@ -21,10 +117,11 @@ text-align: center;
 <input type="text" name="username" id="username"/> 
 <h2>Password :</h2> 
 <input type="password" name="password" id="password"/> 
-<button onclick="window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/countdown';"> login </button>
 </div> 
 </body> 
+
 <script>
+
 function validate(){ 
 var username = document.getElementById("username").value; 
 var password = document.getElementById("password").value; 
@@ -36,5 +133,6 @@ alert("Invalid username or password");
 return false; 
 }
 </script>
+ 
 
 </html>
