@@ -51,7 +51,7 @@ get: login
  },
 
   '/commands' : {
-    get: login
+    get: bot.commands
    
   },
 
