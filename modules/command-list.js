@@ -6,7 +6,7 @@ var fs = require('fs');
 init();
 
 function init() {
-  getFileAll('commands/commandlist.html', function(data) {
+  getFileAll('commands/command.html', function(data) {
     mainHTML = data;
   });
   getFileAll('commands/partials/_all.html', function(data) {
