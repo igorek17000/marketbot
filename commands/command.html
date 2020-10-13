@@ -52,7 +52,7 @@ html {
 <body>
 
 
-    
+    <div class='clear'>
   <div class='topleft'>
     <p>AlexBot</p>
 </div>
@@ -71,15 +71,25 @@ html {
     <div class='bottomleft'>
     <p>Beta</p>
   </div>
-
+</div>
 </body>
 
 
 <script>
+function clearcontent(elementID) { 
+
+            document.getElementById(elementID).innerHTML = ""; 
+
+        } 
+
+
+
 function validate(){ 
 var username = document.getElementById("username").value; 
 var password = document.getElementById("password").value; 
 if (username == "username1" && password == "password1"){ 
+
+clearcontent('clear');
 
 //window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commandlist';
 
