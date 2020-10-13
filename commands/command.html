@@ -1,62 +1,36 @@
- 
 <!DOCTYPE html>
 <html>
-  <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
--->
-<style>
-
+  <head>
+    <title>$$bot_name Command List</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
    
-html {
-  background-image: url('https://thumbs2.imgbox.com/fa/15/AJwCzW7z_t.jpg');
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 25px;
+      
 
-
-}
-
-.topleft {
-  position: absolute;
-  top: 0;
-  left: 16px;
-  color: white;
-}
-
-.bottomleft {
-  position: absolute;
-  bottom: 0;
-  left: 16px;
-  color: white;
-}
-
-
-
-.middle {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-
-hr {
-  margin: auto;
-  width: 40%;
-}
-
-hr2 {
-margin: auto;
+<style>
+<!-- img {
+display: block;
 width: 40%;
 }
+-->
 
-.command_cont {
+     html {
+
+        font-family: 'Courier New', Courier, monospace;
+      background-image: url('https://thumbs2.imgbox.com/3a/e4/1AXJ4GXS_t.jpg');
+     
+     <!--   background-image: url('https://thumbs2.imgbox.com/86/af/pHh23I3b_t.jpg'); -->
+        background-repeat:no-repeat;
+        
+        background-size: 100% 100%;
+        background-attachment: scroll;
+               
+               
+               
+<!-- </div> -->
+                
+  
+      }
+      .command_cont {
         padding: 10px;
         list-style-type: none;
       }
@@ -129,83 +103,18 @@ font-family: 'Times New Roman', serif;
         clear: both;
       }
       
-</style>
-
-
-    
-<body>
-
-
-    <div class='clear'>
-  <div class='topleft'>
-    <p>AlexBot</p>
-</div>
-    <div class='middle'><h2>Login for a list of commands</h2><br>
-<form id="form_id" method="post" name="myform"> 
-<label>User Name:</label> 
-<input type="text" name="username" id="username"/> 
-<label> Password:</label> <input type="password" name="password" id="password"/><br>
-<input type="button" value="Login" id="submit" onclick="validate()" onclick="clearcontent('clear')"/> 
-
-</form> 
-
-
-
-      </div>
-    <div class='bottomleft'>
-    <p>Beta</p>
-  </div>
-</div>
-</body>
-
-
-<script>
-function clearcontent(elementID) { 
-
-            document.getElementById(elementID).innerHTML = ""; 
-
-        } 
-
-
-
-function validate(){ 
-var username = document.getElementById("username").value; 
-var password = document.getElementById("password").value; 
-if (username == "username1" && password == "password1"){ 
-
-clearcontent('clear');
-
-//window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commandlist';
-
-  <head>
-    <title>$$bot_name Command List</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<style>
-     html {
-
-        font-family: 'Courier New', Courier, monospace;
-        background-image: url('https://thumbs2.imgbox.com/3a/e4/1AXJ4GXS_t.jpg');
-        background-repeat:no-repeat;
-        
-        background-size: 100% 100%;
-        background-attachment: scroll;
-               
-               
-             
-                
-  
-      }
-
-
-
-
-
-
       </style>
-     
 
 </head>
 
+   <!-- <div style='background-image: url(https://thumbs2.imgbox.com/5f/06/L721MqH6_t.jpg');
+     background repeat: no repeat;
+               background-size: 100% 100%;
+               
+               
+               
+</div>
+-->
                 
   
   <body>
@@ -245,22 +154,14 @@ clearcontent('clear');
          <h3>Find what you love to do and embrace it.</h3>     
     <h5>AlexBot quotes</h5>
   </body>
+<!-- </html>-->
 
 <script>
-
   $('.command_name').click(function(){
     var currentDiv = $(this);
     $('.command_name').children('div').hide();
     currentDiv.children('div').fadeIn('slow');
   });
  
-
-} else { 
-alert("Invalid username or password"); 
-} 
-return false; 
-}
 </script>
- </script>
-
-</html>
+  </html>
