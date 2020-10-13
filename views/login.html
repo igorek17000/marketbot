@@ -1,4 +1,3 @@
- 
 <!DOCTYPE html>
 <html>
   <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -7,7 +6,7 @@
 
    
 html {
-  background: black;
+  background-image: url('https://thumbs2.imgbox.com/fa/15/AJwCzW7z_t.jpg');
   height: 100%;
   background-position: center;
   background-size: cover;
@@ -33,17 +32,11 @@ html {
   color: white;
 }
 
-.topmiddle {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+
 
 .middle {
   position: absolute;
-  top: 60%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -70,13 +63,11 @@ width: 40%;
   <div class='topleft'>
     <p>AlexBot</p>
 </div>
-<div class='topmiddle'>
-    <h1>Login for a list of commands</h1>
-</div>
-    <div class='middle'><form id="form_id" method="post" name="myform"> 
-<label>User Name :</label> 
+    <div class='middle'><h2>Login for a list of commands</h2><br>
+<form id="form_id" method="post" name="myform"> 
+<label>User Name:</label> 
 <input type="text" name="username" id="username"/> 
-<label>Password :</label> <input type="password" name="password" id="password"/><br>
+<label> Password:</label> <input type="password" name="password" id="password"/><br>
 <input type="button" value="Login" id="submit" onclick="validate()"/> 
 
 </form> 
