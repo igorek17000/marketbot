@@ -45,72 +45,6 @@ html {
   text-align: center;
 }
 
-</style>
-
-
-    
-<body>
-
-
-    <div class='clear'>
-  <div class='topleft'>
-    <p>AlexBot</p>
-</div>
-    <div class='middle'><h2>Login for a list of commands</h2><br>
-<form id="form_id" method="post" name="myform"> 
-<label>User Name:</label> 
-<input type="text" name="username" id="username"/> 
-<label> Password:</label> <input type="password" name="password" id="password"/><br>
-<input type="button" value="Login" id="submit" onclick="validate()"/> 
-
-</form> 
-
-
-
-      </div>
-    <div class='bottomleft'>
-    <p>Beta</p>
-  </div>
-</div>
-</body>
-
-
-<script>
-function clearcontent(elementID) { 
-
-            document.getElementById(elementID).innerHTML = ""; 
-
-        } 
-
-
-
-function validate(){ 
-var username = document.getElementById("username").value; 
-var password = document.getElementById("password").value; 
-if (username == "username1" && password == "password1"){ 
-
-clearcontent('clear');
-
-//window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commandlist';
-
-  <head>
-    <title>$$bot_name Command List</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<style>
-     html {
-
-        font-family: 'Courier New', Courier, monospace;
-        background-image: url('https://thumbs2.imgbox.com/3a/e4/1AXJ4GXS_t.jpg');
-        background-repeat:no-repeat;
-        
-        background-size: 100% 100%;
-        background-attachment: scroll;
-               
-               
-             
-                
-  
-      }
 
 hr {
   margin: auto;
@@ -195,6 +129,74 @@ font-family: 'Times New Roman', serif;
         clear: both;
       }
       
+</style>
+
+
+    
+<body>
+
+
+    <div class='clear'>
+  <div class='topleft'>
+    <p>AlexBot</p>
+</div>
+    <div class='middle'><h2>Login for a list of commands</h2><br>
+<form id="form_id" method="post" name="myform"> 
+<label>User Name:</label> 
+<input type="text" name="username" id="username"/> 
+<label> Password:</label> <input type="password" name="password" id="password"/><br>
+<input type="button" value="Login" id="submit" onclick="validate()" onclick="clearcontent('clear')"/> 
+
+</form> 
+
+
+
+      </div>
+    <div class='bottomleft'>
+    <p>Beta</p>
+  </div>
+</div>
+</body>
+
+
+<script>
+function clearcontent(elementID) { 
+
+            document.getElementById(elementID).innerHTML = ""; 
+
+        } 
+
+
+
+function validate(){ 
+var username = document.getElementById("username").value; 
+var password = document.getElementById("password").value; 
+if (username == "username1" && password == "password1"){ 
+
+clearcontent('clear');
+
+//window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commandlist';
+
+  <head>
+    <title>$$bot_name Command List</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+     html {
+
+        font-family: 'Courier New', Courier, monospace;
+        background-image: url('https://thumbs2.imgbox.com/3a/e4/1AXJ4GXS_t.jpg');
+        background-repeat:no-repeat;
+        
+        background-size: 100% 100%;
+        background-attachment: scroll;
+               
+               
+             
+                
+  
+      }
+
+
 
 
 
