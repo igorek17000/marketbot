@@ -113,7 +113,7 @@ this.res.write(html);
 this.res.end();
 }
 
-function count() {
+function test() {
   this.res.statusCode = 200; 
 this.res.setHeader('Content-type', 'text/html'); 
 var html = fs.readFileSync(path.join(__dirname + "/views/test.html")); 
