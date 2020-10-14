@@ -416,15 +416,14 @@ document.getElementById('demo').innerHTML = "Merry  Christmas!";
 
 
 if (distance > -86399000) {
-
+window.onload = loop;
   document.getElementById('demo').innerHTML = "Happy Birthday " + name;
 
 
 // once the window loads, we are ready for some fireworks!
-window.onload = loop;
 
-fireworks.push( new Firework( cw / 2, ch, mx, my ) );			
-limiterTick = 0;
+
+
 }
 }
 
