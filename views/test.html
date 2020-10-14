@@ -423,7 +423,8 @@ if (distance > -86399000) {
 // once the window loads, we are ready for some fireworks!
 window.onload = loop;
 
-
+fireworks.push( new Firework( cw / 2, ch, mx, my ) );			
+limiterTick = 0;
 }
 }
 
