@@ -1,3 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style>
+
+
+   
+html {
+  background-image: url('https://thumbs2.imgbox.com/06/9c/32uVbfU8_t.jpg');
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 25px;
+
+
+}
+
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  color: black;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
+
+.middle {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+hr {
+  margin: auto;
+  width: 40%;
+}
+</style>
+    
+<body>
+
+
+    
+  <div class='topleft'>
+    <p>AlexBot</p></div>
+    <div class='middle'><h2>FAMILY BIRTHDAY COUNTDOWN</h2><br><h2>Next Birthday In</h2>
+      
+
+ <hr></hr>
+      <p id='demo' style='font-size: 30px'></p>
+<p id='name' style='font-size: 30px'></p>
+<p id='dob' style='font-size: 30px'></p>
+
+   </div>
+    <div class='bottomleft'>
+    <p>Family Birthday's</p>
+  </div>
+
+</body>
+<script>
+
+var countDownDate = new Date().getTime() + 2000; 
+var name = "TestBot";
+var dob = "October 14, 2020";
+
+
+
+var countdownfunction = setInterval(function() {
+
+    var now = new Date().getTime();
+  
+    var distance = countDownDate - now;
+
+  if (now > new Date("aug 12, 1990 00:00:00").getTime()) {
+countDownDate = new Date("oct 14, 2020 00:10:00").getTime();
+name = "Test";
+dob = "October 14, 2020";
+} 
+
+/*
+if (now > new Date("oct 22, 2020 23:59:59").getTime()) {
+countDownDate = new Date("nov 19, 2020 00:00:00").getTime();
+name = "Cintia";
+dob = "November 19, 1980"
+}
+
+if (now > new Date("nov 19, 2020 23:59:59").getTime()) {
+countDownDate = new Date("dec 11, 2020 00:00:00").getTime();
+name = "Monika";
+dob = "December 11, 1974"
+}
+
+if (now > new Date("dec 11, 2020 23:59:59").getTime()) {
+countDownDate = new Date("dec 25, 2020 00:00:00").getTime();
+name = "Christmas 2020";
+dob = "December 25, 2020"
+}
+*/
+
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  
+/*
+  document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
+  + minutes + 'm ' + seconds + 's ' <br> name;
+*/
+/*
+  if (new Date("oct 4, 2020 13:30:01").getTime() > new Date().getTime()) {
+document.getElementById('demo').innerHTML = "Happy Birthday " + name;
+}
+*/
+/*
+else if (new Date("oct 3, 2020 21:05:01").getTime() < new Date().getTime()) {
+document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
+  + minutes + 'm ' + seconds + 's ';
+}
+*/
+
+
+
+//  document.getElementById('demo').innerHTML = "Time's Up!";
+
+if (now > new Date("dec 25, 2020 00:00:00").getTime()) {
+if (now < new Date("dec 25, 2020 23:59:59").getTime()) {
+document.getElementById('demo').innerHTML = "Merry  Christmas!";
+
+
+
+   if (distance < 0) {
+
+//  document.getElementById('demo').innerHTML = "Time's Up!";
+
+
+
+if (distance > -86399000) {
+
+  document.getElementById('demo').innerHTML = "Happy Birthday " + name;
+
 // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
 // not supported in all browsers though and sometimes needs a prefix, so we need a shim
 window.requestAnimFrame = ( function() {
@@ -274,3 +428,30 @@ canvas.addEventListener( 'mouseup', function( e ) {
 // once the window loads, we are ready for some fireworks!
 window.onload = loop;
 
+
+}
+}
+
+
+}
+} else {
+
+document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
+  + minutes + 'm ' + seconds + 's ';
+document.getElementById('name').innerHTML = name;
+document.getElementById('dob').innerHTML = dob;
+}
+
+
+/*
+if (distance < -240000) {
+document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
+  + minutes + 'm ' + seconds + 's ';
+}
+*/
+}, 1000);
+
+</script>
+
+
+</html>
