@@ -128,12 +128,12 @@ dob = "December 25, 2020"
   
 // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
 // not supported in all browsers though and sometimes needs a prefix, so we need a shim
-window.requestAnimationFrame = ( function() {
+window.requestAnimFrame = ( function() {
 	return window.requestAnimationFrame ||
 				window.webkitRequestAnimationFrame ||
 				window.mozRequestAnimationFrame ||
 				function( callback ) {
-					window.setTimeout( callback, 1000 / 60 );
+					window.requestAnimationFrame( callback, 1000 / 60 );
 				};
 })();
 
@@ -325,7 +325,7 @@ function createParticles( x, y ) {
 // main demo loop
 function loop() {
 	// this function will run endlessly with requestAnimationFrame
-	requestAnimationFrame( loop );
+	requestAnimFrame( loop );
 	
 	// increase the hue to get different colored fireworks over time
 	//hue += 0.5;
