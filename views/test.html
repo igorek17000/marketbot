@@ -41,6 +41,10 @@ html {
   text-align: center;
 }
 
+canvas {
+	cursor: crosshair;
+	display: block;
+}
 
 
 hr {
@@ -51,7 +55,8 @@ hr {
     
 <body>
 
-
+<!-- setup our canvas element -->
+<canvas id="canvas">Canvas is not supported in your browser.</canvas>
     
   <div class='topleft'>
     <p>AlexBot</p></div>
@@ -116,42 +121,6 @@ dob = "December 25, 2020"
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   
-/*
-  document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
-  + minutes + 'm ' + seconds + 's ' <br> name;
-*/
-/*
-  if (new Date("oct 4, 2020 13:30:01").getTime() > new Date().getTime()) {
-document.getElementById('demo').innerHTML = "Happy Birthday " + name;
-}
-*/
-/*
-else if (new Date("oct 3, 2020 21:05:01").getTime() < new Date().getTime()) {
-document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
-  + minutes + 'm ' + seconds + 's ';
-}
-*/
-
-
-
-//  document.getElementById('demo').innerHTML = "Time's Up!";
-
-if (now > new Date("dec 25, 2020 00:00:00").getTime()) {
-if (now < new Date("dec 25, 2020 23:59:59").getTime()) {
-document.getElementById('demo').innerHTML = "Merry  Christmas!";
-
-
-
-   if (distance < 0) {
-
-//  document.getElementById('demo').innerHTML = "Time's Up!";
-
-
-
-if (distance > -86399000) {
-
-  document.getElementById('demo').innerHTML = "Happy Birthday " + name;
-
 // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
 // not supported in all browsers though and sometimes needs a prefix, so we need a shim
 window.requestAnimFrame = ( function() {
@@ -424,6 +393,27 @@ canvas.addEventListener( 'mouseup', function( e ) {
 	e.preventDefault();
 	mousedown = false;
 });
+
+
+
+//  document.getElementById('demo').innerHTML = "Time's Up!";
+
+if (now > new Date("dec 25, 2020 00:00:00").getTime()) {
+if (now < new Date("dec 25, 2020 23:59:59").getTime()) {
+document.getElementById('demo').innerHTML = "Merry  Christmas!";
+
+
+
+   if (distance < 0) {
+
+//  document.getElementById('demo').innerHTML = "Time's Up!";
+
+
+
+if (distance > -86399000) {
+
+  document.getElementById('demo').innerHTML = "Happy Birthday " + name;
+
 
 // once the window loads, we are ready for some fireworks!
 window.onload = loop;
