@@ -384,7 +384,7 @@ var countdownfunction = setInterval(function() {
 
     var now = new Date().getTime();
   
-    var distance = countDownDate - now;
+    var dist = countDownDate - now;
 
   if (now > new Date("aug 12, 1990 00:00:00").getTime()) {
 countDownDate = new Date("oct 15, 2020 02:46:00").getTime();
@@ -411,10 +411,10 @@ dob = "December 25, 2020"
 */
 
 
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  var days = Math.floor(dist / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((dist % (1000 * 60)) / 1000);
 
 
 
@@ -424,13 +424,13 @@ dob = "December 25, 2020"
 
 
 
-   if (distance < 0) {
+   if (dist < 0) {
 
 //  document.getElementById('demo').innerHTML = "Time's Up!";
 
 
 
-if (distance > -86399000) {
+if (dist > -86399000) {
 
  document.getElementById('demo').innerHTML = "Happy Birthday " + name;
 document.getElementById('canvas').window.onload = loop();
