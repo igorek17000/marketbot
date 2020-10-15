@@ -153,43 +153,8 @@ if (distance > -86399000) {
 
   document.getElementById('demo').innerHTML = "Happy Birthday " + name;
 
-
-  
-
-
-
-
-// once the window loads, we are ready for some fireworks!
-
-
-
-
-
-
-}
-} else {
-
-document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
-  + minutes + 'm ' + seconds + 's ';
-document.getElementById('name').innerHTML = name;
-document.getElementById('dob').innerHTML = dob;
-}
-
-
-/*
-if (distance < -240000) {
-document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
-  + minutes + 'm ' + seconds + 's ';
-}
-*/
-}, 1000);
-
-</script>
-
 <body>
-<script>
 
-  
 // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
 // not supported in all browsers though and sometimes needs a prefix, so we need a shim
 window.requestAnimFrame = ( function() {
@@ -462,69 +427,9 @@ canvas.addEventListener( 'mouseup', function( e ) {
 	e.preventDefault();
 	mousedown = false;
 });
-
-var countDownDate = new Date().getTime() + 2000; 
-var name = "TestBot";
-var dob = "October 14, 2020";
-
-
-
-var countdownfunction = setInterval(function() {
-
-    var now = new Date().getTime();
-  
-    var distance = countDownDate - now;
-
-  if (now > new Date("aug 12, 1990 00:00:00").getTime()) {
-countDownDate = new Date("oct 14, 2020 22:06:00").getTime();
-name = "Test";
-dob = "October 14, 2020";
-} 
-
-/*
-if (now > new Date("oct 22, 2020 23:59:59").getTime()) {
-countDownDate = new Date("nov 19, 2020 00:00:00").getTime();
-name = "Cintia";
-dob = "November 19, 1980"
-}
-
-if (now > new Date("nov 19, 2020 23:59:59").getTime()) {
-countDownDate = new Date("dec 11, 2020 00:00:00").getTime();
-name = "Monika";
-dob = "December 11, 1974"
-}
-
-if (now > new Date("dec 11, 2020 23:59:59").getTime()) {
-countDownDate = new Date("dec 25, 2020 00:00:00").getTime();
-name = "Christmas 2020";
-dob = "December 25, 2020"
-}
-*/
-
-
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-
-
-
-//  document.getElementById('demo').innerHTML = "Time's Up!";
-
-
-
-   if (distance < 0) {
-
-//  document.getElementById('demo').innerHTML = "Time's Up!";
-
-
-
-if (distance > -86399000) {
-
- // document.getElementById('canvas').innerHTML = window.onload = loop;
-
 window.onload = loop;
+  
+</body>
   
 
 
@@ -540,10 +445,21 @@ window.onload = loop;
 }
 } else {
 
-document.getElementById('demo').innerHTML ="Test It";
+document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
+  + minutes + 'm ' + seconds + 's ';
+document.getElementById('name').innerHTML = name;
+document.getElementById('dob').innerHTML = dob;
+}
+
+
+/*
+if (distance < -240000) {
+document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
+  + minutes + 'm ' + seconds + 's ';
+}
+*/
 }, 1000);
 
-
 </script>
-</body>
+
 </html>
