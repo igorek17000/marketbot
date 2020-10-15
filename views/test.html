@@ -370,7 +370,7 @@ canvas.addEventListener( 'mouseup', function( e ) {
 });
 //window.onload = loop;
 
-var loop = window.onload;
+//var loop = window.onload;
 
 
 var countDownDate = new Date().getTime() + 2000; 
@@ -432,7 +432,25 @@ dob = "December 25, 2020"
 if (distance > -86399000) {
 
  // document.getElementById('demo').innerHTML = "Happy Birthday " + name;
- loop;
+ 
+// mouse event bindings
+// update the mouse coordinates on mousemove
+canvas.addEventListener( 'mousemove', function( e ) {
+	mx = e.pageX - canvas.offsetLeft;
+	my = e.pageY - canvas.offsetTop;
+});
+
+// toggle mousedown state and prevent canvas from being selected
+canvas.addEventListener( 'mousedown', function( e ) {
+	e.preventDefault();
+	mousedown = true;
+});
+
+canvas.addEventListener( 'mouseup', function( e ) {
+	e.preventDefault();
+	mousedown = false;
+});
+window.onload = loop;
 
 
 // once the window loads, we are ready for some fireworks!
