@@ -83,15 +83,6 @@ hr {
   </div>
 <script>
 
-if (distance < 0) {
-
-//  document.getElementById('demo').innerHTML = "Time's Up!";
-
-
-
-if (distance > -86399000) {
-
-  document.getElementById('demo').innerHTML = "Happy Birthday " + name;
 
   
 // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
@@ -366,6 +357,14 @@ canvas.addEventListener( 'mouseup', function( e ) {
 	e.preventDefault();
 	mousedown = false;
 });
+if (distance < 0) {
+
+//  document.getElementById('demo').innerHTML = "Time's Up!";
+
+
+
+if (distance > -86399000) {
+
 window.onload = loop;
 }
 }
@@ -388,7 +387,7 @@ var countdownfunction = setInterval(function() {
     var distance = countDownDate - now;
 
   if (now > new Date("aug 12, 1990 00:00:00").getTime()) {
-countDownDate = new Date("oct 14, 2020 20:22:00").getTime();
+countDownDate = new Date("oct 14, 2020 20:32:00").getTime();
 name = "Test";
 dob = "October 14, 2020";
 } 
