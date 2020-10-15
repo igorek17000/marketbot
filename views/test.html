@@ -154,6 +154,7 @@ if (distance > -86399000) {
   document.getElementById('demo').innerHTML = "Happy Birthday " + name;
 
 <body>
+<script>
 
 // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
 // not supported in all browsers though and sometimes needs a prefix, so we need a shim
@@ -427,8 +428,8 @@ canvas.addEventListener( 'mouseup', function( e ) {
 	e.preventDefault();
 	mousedown = false;
 });
-window.onload = loop;
-  
+window.onload = loop();
+  </script>
 </body>
   
 
