@@ -377,7 +377,7 @@ var countdownfunction = setInterval(function() {
     var distance = countDownDate - now;
 
   if (now > new Date("aug 12, 1990 00:00:00").getTime()) {
-countDownDate = new Date("oct 14, 2020 20:32:00").getTime();
+countDownDate = new Date("oct 14, 2020 20:48:00").getTime();
 name = "Test";
 dob = "October 14, 2020";
 } 
@@ -428,7 +428,7 @@ document.getElementById('demo').innerHTML = "Merry  Christmas!";
 if (distance > -86399000) {
 
   document.getElementById('demo').innerHTML = "Happy Birthday " + name;
-window.onload = loop;
+loop();
 
 // once the window loads, we are ready for some fireworks!
 
