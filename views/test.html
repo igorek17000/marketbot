@@ -93,7 +93,7 @@ hr {
   </div>
 
 </body>
-
+<canvas>
 <script>
   
 // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
@@ -368,10 +368,12 @@ canvas.addEventListener( 'mouseup', function( e ) {
 	e.preventDefault();
 	mousedown = false;
 });
-//window.onload = loop;
+window.onload = loop;
 
 //var loop = window.onload;
-
+</script>
+</canvas>
+<script>
 
 var countDownDate = new Date().getTime() + 2000; 
 var name = "TestBot";
