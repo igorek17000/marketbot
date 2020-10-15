@@ -29,6 +29,16 @@ body {
 	margin: 0;
 }
 
+.bod {
+
+background-image: url('https://thumbs2.imgbox.com/06/9c/32uVbfU8_t.jpg');
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+	margin: 0;
+}
+
 .topleft {
   position: absolute;
   top: 0;
@@ -65,8 +75,8 @@ hr {
 <body>
 
 <!-- setup our canvas element -->
-<canvas id='canvas' style='cursor: crosshair display: block'></canvas>
-    
+<!--<canvas id='canvas' style='cursor: crosshair display: block'></canvas>-->
+   <div class='bod'></div 
   <div class='topleft'>
     <p>AlexBot</p></div>
     <div class='middle'><h2>FAMILY BIRTHDAY COUNTDOWN</h2><br><h2>Next Birthday In</h2>
@@ -424,6 +434,7 @@ document.getElementById('demo').innerHTML = "Merry  Christmas!";
 if (distance > -86399000) {
 
   document.getElementById('demo').innerHTML = "Happy Birthday " + name;
+document.getElementById('bod').innerHTML = loop();
 
 
 // once the window loads, we are ready for some fireworks!
