@@ -440,7 +440,7 @@ dob = "December 25, 2020"
 if (dist > -86399000) {
 
  document.getElementById('demo').innerHTML = "Happy Birthday " + name;
-document.getElementById('canvas').window.onload = requestAnimationFrame(loop);
+document.getElementById('canvas').window.onload = window.requestAnimFrame(loop);
 		
 //window.onload = loop;
 
