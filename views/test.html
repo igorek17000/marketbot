@@ -119,10 +119,10 @@ var canvas = document.getElementById( 'canvas' ),
 		// starting hue
 		hue = 120,
 		// when launching fireworks with a click, too many get launched at once without a limiter, one launch per 5 loop ticks
-		limiterTotal = 5,
+		limiterTotal = 800; //5,
 		limiterTick = 0,
 		// this will time the auto launches of fireworks, one launch per 80 loop ticks
-		timerTotal = 80,
+		timerTotal = 800,
 		timerTick = 0,
 		mousedown = false,
 		// mouse x coordinate,
@@ -300,7 +300,7 @@ function loop() {
 	hue += 0.5;
   
   // create random color
-  hue= random(0, 360 );
+  hue = random(0, 360 );
 	
 	// normally, clearRect() would be used to clear the canvas
 	// we want to create a trailing effect though
@@ -442,7 +442,7 @@ if (dist > -86399000) {
 
  document.getElementById('demo').innerHTML = "Happy Birthday " + name;
 //document.getElementById('canvas').window.RequestAnimFrame = loop();
-canvas.window.onload = fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
+canvas.window.onload = new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) );
 		
 //window.onload = loop;
 
