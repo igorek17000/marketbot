@@ -122,7 +122,7 @@ var canvas = document.getElementById( 'canvas' ),
 		limiterTotal = 5,
 		limiterTick = 0,
 		// this will time the auto launches of fireworks, one launch per 80 loop ticks
-		timerTotal = 5, // 80,
+		timerTotal = 80,
 		timerTick = 0,
 		mousedown = false,
 		// mouse x coordinate,
@@ -337,11 +337,7 @@ function loop() {
 			fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
 			timerTick = 0;
 		}
-	} 
-
-
-
-else {
+	} else {
 		timerTick++;
 	}
 	
@@ -355,10 +351,7 @@ else {
 			fireworks.push( new Firework( cw / 2, ch, mx, my ) );
 			limiterTick = 0;
 		}
-	} 
-
-
-else {
+	} else {
 		limiterTick++;
 	}
 }
@@ -389,7 +382,7 @@ canvas.addEventListener( 'mouseup', function( e ) {
 </body>
 <script>
 
-var countDownDate = new Date("oct 16, 2020 23:48:00").getTime(); // + 2000; 
+var countDownDate = new Date("oct 17, 2020 00:49:00").getTime(); // + 2000; 
 var name = "TestBot";
 var dob = "October 14, 2020";
 
@@ -449,7 +442,7 @@ if (dist > -86399000) {
 
  document.getElementById('demo').innerHTML = "Happy Birthday " + name;
 //document.getElementById('canvas')
-canvas.window.onload = loop();
+canvas.innerHTML = loop(); //window.onload = loop();
 //window.onload = loop;
 
 
