@@ -344,7 +344,7 @@ function loop() {
 	
 
 
-
+/*
 	// limit the rate at which fireworks get launched when mouse is down
 	if( limiterTick >= limiterTotal ) {
 		//if( mousedown ) {
@@ -356,7 +356,7 @@ function loop() {
 		limiterTick++;
 	}
 }
-
+*/
 /*
 // mouse event bindings
 // update the mouse coordinates on mousemove
@@ -440,7 +440,7 @@ dob = "December 25, 2020"
 if (dist > -86399000) {
 
  document.getElementById('demo').innerHTML = "Happy Birthday " + name;
-document.getElementById('canvas').window.onload = window.requestAnimFrame;
+document.getElementById('canvas').window.onload = loop();
 		
 //window.onload = loop;
 
