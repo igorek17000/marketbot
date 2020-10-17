@@ -323,7 +323,7 @@ function loop() {
 	
 	// loop over each particle, draw it, update it
 	var i = particles.length;
-	while( i = 0; i++ ) {
+	while( i-- ) {
 		particles[ i ].draw();
 		particles[ i ].update( i );
 	}
