@@ -300,7 +300,7 @@ function loop() {
 	hue += 0.5;
   
   // create random color
-  hue = random(0, 360 );
+  hue= random(0, 360 );
 	
 	// normally, clearRect() would be used to clear the canvas
 	// we want to create a trailing effect though
@@ -451,14 +451,14 @@ document.getElementById('canvas').innerHTML = loop();
 //window.onload = loop;
 
 
-}
+//}
 } else {
 
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
 document.getElementById('name').innerHTML = name;
 document.getElementById('dob').innerHTML = dob;
-//}
+}
 
 
 }, 1000);
