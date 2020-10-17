@@ -337,11 +337,15 @@ function loop() {
 			fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
 			timerTick = 0;
 		}
-	} else {
+	} 
+
+/*
+
+else {
 		timerTick++;
 	}
 	
-
+*/
 
 
 	// limit the rate at which fireworks get launched when mouse is down
@@ -351,10 +355,15 @@ function loop() {
 			fireworks.push( new Firework( cw / 2, ch, mx, my ) );
 			limiterTick = 0;
 		}
-	} else {
+	} 
+
+/*
+else {
 		limiterTick++;
 	}
 }
+*/
+
 
 // mouse event bindings
 // update the mouse coordinates on mousemove
@@ -466,7 +475,7 @@ document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
 }
 */
-}, 1000);
+}//, 1000);
 
 </script>
 
