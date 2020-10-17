@@ -1,3 +1,4 @@
+ 
 <!DOCTYPE html>
 <html>
 
@@ -171,7 +172,7 @@ function Firework( sx, sy, tx, ty ) {
 	}
 	this.angle = Math.atan2( ty - sy, tx - sx );
 	this.speed = 2;
-	this.acceleration = 1.05;
+	this.acceleration = 0; // 1.05;
 	this.brightness = random( 50, 70 );
 	// circle target indicator radius
 	this.targetRadius = 1;
@@ -300,7 +301,7 @@ function loop() {
 	hue += 0.5;
   
   // create random color
-  hue= random(0, 360 );
+  hue = random(0, 360 );
 	
 	// normally, clearRect() would be used to clear the canvas
 	// we want to create a trailing effect though
@@ -336,7 +337,6 @@ function loop() {
 			// start the firework at the bottom middle of the screen, then set the random target coordinates, the random y coordinates will be set within the range of the top half of the screen
 			fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
 			timerTick = 0;
-//timerTotal = 80;
 		}
 /*
 	} else {
@@ -345,14 +345,12 @@ function loop() {
 	
 */
 
-
 	// limit the rate at which fireworks get launched when mouse is down
 	if( limiterTick >= limiterTotal ) {
 		//if( mousedown ) {
 			// start the firework at the bottom middle of the screen, then set the current mouse coordinates as the target
 			fireworks.push( new Firework( cw / 2, ch, mx, my ) );
 			limiterTick = 0;
-//limiterTotal = 5;
 		}
 /*
 	} else {
@@ -360,25 +358,21 @@ function loop() {
 	}
 */
 /*
-
 // mouse event bindings
 // update the mouse coordinates on mousemove
 canvas.addEventListener( 'mousemove', function( e ) {
 	mx = e.pageX - canvas.offsetLeft;
 	my = e.pageY - canvas.offsetTop;
 });
-
 // toggle mousedown state and prevent canvas from being selected
 canvas.addEventListener( 'mousedown', function( e ) {
 	e.preventDefault();
 	mousedown = true;
 });
-
 canvas.addEventListener( 'mouseup', function( e ) {
 	e.preventDefault();
 	mousedown = false;
 });
-
 */
 //window.onload = loop;
 
@@ -387,7 +381,7 @@ canvas.addEventListener( 'mouseup', function( e ) {
 </body>
 <script>
 
-var countDownDate = new Date("oct 17, 2020 04:20:00").getTime(); // + 2000; 
+var countDownDate = new Date("oct 17, 2020 02:22:00").getTime(); // + 2000; 
 var name = "TestBot";
 var dob = "October 14, 2020";
 
@@ -450,6 +444,21 @@ document.getElementById('canvas').innerHTML = loop();
 		
 //window.onload = loop;
 
+/*
+if( timerTick >= timerTotal ) {
+			// start the firework at the bottom middle of the screen, then set the random target coordinates, the random y coordinates will be set within the range of the top half of the screen
+			fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
+			timerTick = 0;
+		} else {
+timerTick = 0++;
+}
+*/
+// once the window loads, we are ready for some fireworks!
+
+
+
+
+
 
 }
 } else {
@@ -458,9 +467,15 @@ document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
 document.getElementById('name').innerHTML = name;
 document.getElementById('dob').innerHTML = dob;
-//}
+}
 
 
+/*
+if (distance < -240000) {
+document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
+  + minutes + 'm ' + seconds + 's ';
+}
+*/
 }, 1000);
 
 </script>
