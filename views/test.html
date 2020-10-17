@@ -332,11 +332,11 @@ function loop() {
 	
         // launch fireworks automatically to random coordinates, when the mouse isn't down
 	if( timerTick >= timerTotal ) {
-		if( !mousedown ) {
+		//if( !mousedown ) {
 			// start the firework at the bottom middle of the screen, then set the random target coordinates, the random y coordinates will be set within the range of the top half of the screen
 			fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
 			timerTick = 0;
-		}
+		//}
 	} else {
 		timerTick++;
 	}
@@ -346,17 +346,17 @@ function loop() {
 
 	// limit the rate at which fireworks get launched when mouse is down
 	if( limiterTick >= limiterTotal ) {
-		if( mousedown ) {
+		//if( mousedown ) {
 			// start the firework at the bottom middle of the screen, then set the current mouse coordinates as the target
 			fireworks.push( new Firework( cw / 2, ch, mx, my ) );
 			limiterTick = 0;
-		}
+		//}
 	} else {
 		limiterTick++;
 	}
 }
 
-
+/*
 
 // mouse event bindings
 // update the mouse coordinates on mousemove
@@ -375,6 +375,8 @@ canvas.addEventListener( 'mouseup', function( e ) {
 	e.preventDefault();
 	mousedown = false;
 });
+
+*/
 //window.onload = loop;
 
 //var loop = window.onload;
@@ -382,7 +384,7 @@ canvas.addEventListener( 'mouseup', function( e ) {
 </body>
 <script>
 
-var countDownDate = new Date("oct 17, 2020 01:04:00").getTime(); // + 2000; 
+var countDownDate = new Date("oct 17, 2020 02:22:00").getTime(); // + 2000; 
 var name = "TestBot";
 var dob = "October 14, 2020";
 
@@ -441,7 +443,7 @@ dob = "December 25, 2020"
 if (dist > -86399000) {
 
  document.getElementById('demo').innerHTML = "Happy Birthday " + name;
-document.getElementById('canvas').window.onload = Firework();
+document.getElementById('canvas').window.onload = loop();
 		
 //window.onload = loop;
 
