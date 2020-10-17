@@ -192,7 +192,7 @@ Firework.prototype.update = function( index ) {
 	}
 	
 	// speed up the firework
-	//this.speed *= this.acceleration;
+	this.speed *= this.acceleration;
 	
 	// get the current velocities based on angle and speed
 	var vx = Math.cos( this.angle ) * this.speed,
@@ -443,7 +443,7 @@ dob = "December 25, 2020"
 if (dist > -86399000) {
 
  document.getElementById('demo').innerHTML = "Happy Birthday " + name;
-document.getElementById('canvas').window.onload = loop();
+document.getElementById('canvas').innerHTML = loop();
 		
 //window.onload = loop;
 
