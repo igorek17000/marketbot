@@ -321,14 +321,14 @@ function loop() {
 			// start the firework at the bottom middle of the screen, then set the random target coordinates, the random y coordinates will be set within the range of the top half of the screen
 			fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
 			timerTick = 0;
-window.onload = loop()
+
 timerTotal = 80;
 		//}
 	} else {
 		timerTick++;
 	}
 	
-
+window.onload = loop();
 
 
 	// limit the rate at which fireworks get launched when mouse is down
@@ -427,7 +427,7 @@ dob = "December 25, 2020"
 if (dist > -86399000) {
 
  document.getElementById('demo').innerHTML = "Happy Birthday " + name;
-document.getElementById('canvas') = loop();		
+document.getElementById('canvas').window.onload = loop();		
 //window.onload = loop;
 
 /*
