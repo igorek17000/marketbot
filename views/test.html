@@ -279,7 +279,7 @@ function createParticles( x, y ) {
 function loop() {
 	// this function will run endlessly with requestAnimationFrame
 	
-	
+	requestAnimFrame( loop );
 	// increase the hue to get different colored fireworks over time
 	hue += 0.5;
   
