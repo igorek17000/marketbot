@@ -224,7 +224,7 @@ function Particle( x, y ) {
 	this.angle = random( 0, Math.PI * 2 );
 	this.speed = random( 1, 10 );
 	// friction will slow the particle down
-	this.friction = 1; //0.95;
+	this.friction = 0.95;
 	// gravity will be applied and pull the particle down
 	this.gravity = 1;
 	// set the hue to a random number +-50 of the overall hue variable
@@ -318,8 +318,8 @@ function loop() {
 		//if( !mousedown ) {
 			// start the firework at the bottom middle of the screen, then set the random target coordinates, the random y coordinates will be set within the range of the top half of the screen
 			fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
-			//timerTick = 0;
-//timerTotal = 800;
+			timerTick = 0;
+timerTotal = 80;
 		//}
 	//} else {
 		//timerTick++;
@@ -332,7 +332,7 @@ function loop() {
 	//if( limiterTick >= limiterTotal ) {
 		//if( mousedown ) {
 			// start the firework at the bottom middle of the screen, then set the current mouse coordinates as the target
-			fireworks.push( new Firework( cw / 2, ch, mx, my ) );
+			//fireworks.push( new Firework( cw / 2, ch, mx, my ) );
 			//limiterTick = 0;
 //limiterTotal = 5;
 		//}
