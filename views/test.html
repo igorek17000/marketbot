@@ -224,7 +224,7 @@ function Particle( x, y ) {
 	this.angle = random( 0, Math.PI * 2 );
 	this.speed = random( 1, 10 );
 	// friction will slow the particle down
-	this.friction = 0.95;
+	this.friction = 1; //0.95;
 	// gravity will be applied and pull the particle down
 	this.gravity = 1;
 	// set the hue to a random number +-50 of the overall hue variable
