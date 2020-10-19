@@ -237,7 +237,7 @@ function Particle( x, y ) {
 	// friction will slow the particle down
 	this.friction = 0.95;
 	// gravity will be applied and pull the particle down
-	this.gravity = 2;
+	this.gravity = 1;
 	// set the hue to a random number +-50 of the overall hue variable
 	this.hue = random( hue - 50, hue + 50 );
 	this.brightness = random( 50, 80 );
@@ -291,7 +291,7 @@ function loop() {
 	
 	requestAnimFrame( loop );
 	// increase the hue to get different colored fireworks over time
-	hue += 1;// 0.5;
+	hue += 5;// 0.5;
   
   // create random color
   hue = random(0, 360 );
