@@ -98,7 +98,7 @@ window.requestAnimFrame = ( function() {
 
 // now we will setup our basic variables for the demo
 var canvas = document.getElementById( 'canvas' ),
-		ctx = canvas.getContext( '3d' ),
+		ctx = canvas.getContext( '2d' ),
 		// full screen dimensions
 		cw = window.innerWidth,
 		ch = window.innerHeight,
@@ -498,7 +498,7 @@ dob = "December 25, 2020"
 
 if (dist > -86399000) {
 
- document.getElementById('demo').innerHTML = "Happy Birthday " + name;
+ document.getElementById('demo').innerHTML = "Happy Birthday " + name + test();
 //document.getElementById('canvas').window.onload = loop();		
 document.getElementById('canvas').window.onload = test();
 
