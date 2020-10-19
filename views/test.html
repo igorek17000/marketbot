@@ -154,7 +154,7 @@ function Firework( sx, sy, tx, ty ) {
 	}
 	this.angle = Math.atan2( ty - sy, tx - sx );
 	this.speed = 2;
-	this.acceleration = 0.5; //1; //.05;
+	this.acceleration = 1.05;
 	this.brightness = random( 50, 70 );
 	// circle target indicator radius
 	this.targetRadius = 1;
@@ -176,7 +176,7 @@ Firework.prototype.update = function( index ) {
 	
 	// speed up the firework
 	this.speed; 
-      //  this.acceleration;
+        this.acceleration;
 	
 	// get the current velocities based on angle and speed
 	var vx = Math.cos( this.angle ) * this.speed,
