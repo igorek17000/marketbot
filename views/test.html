@@ -185,7 +185,7 @@ Firework.prototype.update = function( index ) {
 	}
 	
 	// speed up the firework
-	this.speed = 30; 
+	this.speed = 20; 
         this.acceleration = 1.05;
 	
 	// get the current velocities based on angle and speed
@@ -401,9 +401,9 @@ function test() {
    
 			// start the firework at the bottom middle of the screen, then set the random target coordinates, the random y coordinates will be set within the range of the top half of the screen
 			fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
-			testTick = 1;
+			testTick = 2;
 
-testTotal = 20;
+testTotal = 60;
 		//}
 	} else {
 
@@ -534,7 +534,7 @@ document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
 }
 */
-}, 50);
+}, 25);
 
 </script>
 
