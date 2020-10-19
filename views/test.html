@@ -64,9 +64,8 @@ hr {
 <body>
 
 <!-- setup our canvas element -->
-<div class='canvas' style='cursor: crosshair display: block'></canvas>
+<canvas id='canvas' style='cursor: crosshair display: block'></canvas>
    
-</div>
    
   <div class='topleft'>
     <p>AlexBot</p></div>
@@ -183,8 +182,8 @@ Firework.prototype.update = function( index ) {
 	}
 	
 	// speed up the firework
-	this.speed; 
-        this.acceleration;
+	this.speed = 2; 
+        this.acceleration = 1.05;
 	
 	// get the current velocities based on angle and speed
 	var vx = Math.cos( this.angle ) * this.speed,
