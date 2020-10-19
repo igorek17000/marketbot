@@ -185,7 +185,7 @@ Firework.prototype.update = function( index ) {
 	}
 	
 	// speed up the firework
-	this.speed = 20; 
+	this.speed = 30; 
         this.acceleration = 1.05;
 	
 	// get the current velocities based on angle and speed
@@ -403,7 +403,7 @@ function test() {
 			fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
 			testTick = 1;
 
-testTotal = 10;
+testTotal = 20;
 		//}
 	} else {
 
@@ -534,7 +534,7 @@ document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
 }
 */
-}, 100);
+}, 50);
 
 </script>
 
