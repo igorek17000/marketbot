@@ -114,6 +114,9 @@ var canvas = document.getElementById( 'canvas' ),
 		// this will time the auto launches of fireworks, one launch per 80 loop ticks
 		timerTotal = 80,
 		timerTick = 0,
+                testTotal = 80,
+		testTick = 10,
+
 		//mousedown = false,
 		// mouse x coordinate,
 		mx,
@@ -394,36 +397,23 @@ function test() {
 	
 	
         // launch fireworks automatically to random coordinates, when the mouse isn't down
-	//if( timerTick >= timerTotal) {
-      //  if (dist = 1000) {
-		//if( !mousedown ) {
+	if( testTick >= testTotal) {
+   
 			// start the firework at the bottom middle of the screen, then set the random target coordinates, the random y coordinates will be set within the range of the top half of the screen
 			fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
-			//timerTick = 0;
+			testTick = 10;
 
-//timerTotal = 80;
+testTotal = 80;
 		//}
-	//} else {
-//setInterval(function() {
-//fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
-		
-		//timerTick++;
-	//}, 1000);
-	//}
+	} else {
+
+		testTick++;
+	
+	}
 
 
 
-	// limit the rate at which fireworks get launched when mouse is down
-	//if( limiterTick >= limiterTotal ) {
-		//if( mousedown ) {
-			// start the firework at the bottom middle of the screen, then set the current mouse coordinates as the target
-			//fireworks.push( new Firework( cw / 2, ch, mx, my ) );
-			//limiterTick = 0;
-//limiterTotal = 5;
-		//}
-	//} else {
-		//limiterTick++;
-	//}
+	
 }
 
 /*
