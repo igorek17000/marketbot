@@ -69,7 +69,7 @@ hr {
    
   <div class='topleft'>
     <p>AlexBot</p></div>
-<canvas id='top' style='cursor: crosshair display: block'></canvas> 
+<canvas id='top' style='cursor: crosshair display: block x: 0 y:16px'></canvas> 
 
     <div class='middle'><h2>FAMILY BIRTHDAY COUNTDOWN</h2><br><h2>Next Birthday In</h2>
       
@@ -499,7 +499,7 @@ dob = "December 25, 2020"
 
 
 if (dist > -86399000) {
-document.getElementById('top').window.onload = particle();
+document.getElementById('top').innerHTML = particle();
  document.getElementById('demo').innerHTML = "Happy Birthday " + name;
 //document.getElementById('canvas').window.onload = loop();		
 document.getElementById('canvas').window.onload = test();
