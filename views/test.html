@@ -420,31 +420,11 @@ testTotal = 60;
 
 
 
-/*
-// mouse event bindings
-// update the mouse coordinates on mousemove
-canvas.addEventListener( 'mousemove', function( e ) {
-	mx = e.pageX - canvas.offsetLeft;
-	my = e.pageY - canvas.offsetTop;
-});
-// toggle mousedown state and prevent canvas from being selected
-canvas.addEventListener( 'mousedown', function( e ) {
-	e.preventDefault();
-	mousedown = true;
-});
-canvas.addEventListener( 'mouseup', function( e ) {
-	e.preventDefault();
-	mousedown = false;
-});
-*/
-//window.onload = loop;
-
-//var loop = window.onload;
 </script>
 </body>
 <script>
 
-var countDownDate = new Date("oct 19, 2020 15:55:00").getTime(); // + 2000; 
+var countDownDate = new Date("oct 14, 2020 00:00:00").getTime() + 2000; 
 var name = "TestBot";
 var dob = "October 14, 2020";
 
@@ -456,13 +436,13 @@ var countdownfunction = setInterval(function() {
   
     var dist = countDownDate - now;
 
-  /*if (now > new Date("aug 12, 1990 00:00:00").getTime()) {
+  if (now > new Date("aug 12, 1990 00:00:00").getTime()) {
 countDownDate = new Date("oct 16, 2020 02:46:00").getTime();
 name = "Test";
 dob = "October 14, 2020";
 } 
-*/
-/*
+
+
 if (now > new Date("oct 22, 2020 23:59:59").getTime()) {
 countDownDate = new Date("nov 19, 2020 00:00:00").getTime();
 name = "Cintia";
@@ -478,7 +458,7 @@ countDownDate = new Date("dec 25, 2020 00:00:00").getTime();
 name = "Christmas 2020";
 dob = "December 25, 2020"
 }
-*/
+
 
 
   var days = Math.floor(dist / (1000 * 60 * 60 * 24));
@@ -500,21 +480,12 @@ dob = "December 25, 2020"
 
 
 
-if (dist > -86399000) {
+if (dist > -86399999) {
 //document.getElementById('top').window.onload = test();
  document.getElementById('demo').innerHTML = "Happy Birthday " + name;
 //document.getElementById('canvas').window.onload = loop();		
 document.getElementById('canvas').window.onload = test();
 
-/*
-if( timerTick >= timerTotal ) {
-			// start the firework at the bottom middle of the screen, then set the random target coordinates, the random y coordinates will be set within the range of the top half of the screen
-			fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
-			timerTick = 0;
-		} else {
-timerTick = 0++;
-}
-*/
 // once the window loads, we are ready for some fireworks!
 
 
@@ -532,12 +503,6 @@ document.getElementById('dob').innerHTML = dob;
 }
 
 
-/*
-if (distance < -240000) {
-document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
-  + minutes + 'm ' + seconds + 's ';
-}
-*/
 }, 25);
 
 </script>
