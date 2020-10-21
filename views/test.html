@@ -106,7 +106,7 @@ hr {
       <p id='demo' style='font-size: 30px'></p>
 <p id='name' style='font-size: 30px'></p>
 <p id='dob' style='font-size: 30px'></p>
-<a href='#'>Happy Birthday</a>
+<p id='colour' style='font-size: 30px animation-duration: 1200ms animation-name: blink animation-iteration-count: infinite animation-direction: alternate -webkit-animation:blink 1200ms infinite'></p>
    </div>
     <div class='bottomleft'>
     <p>Family Birthday's</p>
@@ -531,7 +531,7 @@ dob = "December 25, 2020"
 
 if (dist > -86399000) {
 //document.getElementById('top').window.onload = test();
- document.getElementById('demo').innerHTML = <a href="#">Happy Birthday</a> + name; // "Happy Birthday " + name;
+ document.getElementById('colour').innerHTML = "Happy Birthday " + name; // <a href="#">Happy Birthday</a> + name; // "Happy Birthday " + name;
 //document.getElementById('canvas').window.onload = loop();		
 document.getElementById('canvas').window.onload = test();
 
