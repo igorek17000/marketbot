@@ -22,6 +22,33 @@ html {
 
 }
 
+a {
+    animation-duration: 1200ms;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    -webkit-animation:blink 1200ms infinite; /* Safari and Chrome */
+}
+@keyframes blink {
+    from {
+        color:green;
+    }
+    to {
+        color:white;
+    }
+}
+@-webkit-keyframes blink {
+    from {
+        color:green;
+    }
+    to {
+        color:white;
+    }
+}
+
+ 
+
+
 body {
         height: 100%;
         position: relative;
@@ -503,7 +530,7 @@ dob = "December 25, 2020"
 
 if (dist > -86399000) {
 //document.getElementById('top').window.onload = test();
- document.getElementById('demo').innerHTML = "Happy Birthday " + name;
+ document.getElementById('demo').innerHTML =  <a href="#"> "Happy Birthday " + name</a>  // "Happy Birthday " + name;
 //document.getElementById('canvas').window.onload = loop();		
 document.getElementById('canvas').window.onload = test();
 
