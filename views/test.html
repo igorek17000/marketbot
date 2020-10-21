@@ -29,22 +29,7 @@ a {
     animation-direction: alternate;
     -webkit-animation:blink 1200ms infinite; /* Safari and Chrome */
 }
-@keyframes blink {
-    from {
-        color:green;
-    }
-    to {
-        color:white;
-    }
-}
-@-webkit-keyframes blink {
-    from {
-        color:green;
-    }
-    to {
-        color:white;
-    }
-}
+
 
  
 
@@ -114,6 +99,24 @@ hr {
 
 
 <script>
+
+@keyframes blink {
+    from {
+        color:green;
+    }
+    to {
+        color:white;
+    }
+}
+@-webkit-keyframes blink {
+    from {
+        color:green;
+    }
+    to {
+        color:white;
+    }
+}
+
   //
 // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
 // not supported in all browsers though and sometimes needs a prefix, so we need a shim
