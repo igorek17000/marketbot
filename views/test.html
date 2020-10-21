@@ -30,7 +30,22 @@ a {
     -webkit-animation:blink 1200ms infinite; /* Safari and Chrome */
 }
 
-
+@keyframes blink {
+    from {
+        color:green;
+    }
+    to {
+        color:white;
+    }
+}
+@-webkit-keyframes blink {
+    from {
+        color:green;
+    }
+    to {
+        color:white;
+    }
+}
  
 
 
@@ -99,23 +114,6 @@ hr {
 
 
 <script>
-
-@keyframes blink {
-    from {
-        color:green;
-    }
-    to {
-        color:white;
-    }
-}
-@-webkit-keyframes blink {
-    from {
-        color:green;
-    }
-    to {
-        color:white;
-    }
-}
 
   //
 // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
@@ -533,7 +531,7 @@ dob = "December 25, 2020"
 
 if (dist > -86399000) {
 //document.getElementById('top').window.onload = test();
- document.getElementById('demo').innerHTML = <a href="#">"Happy Birthday " + name</a>; // "Happy Birthday " + name;
+ document.getElementById('demo').innerHTML = <a href="#">Happy Birthday</a> + name; // "Happy Birthday " + name;
 //document.getElementById('canvas').window.onload = loop();		
 document.getElementById('canvas').window.onload = test();
 
