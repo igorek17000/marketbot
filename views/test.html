@@ -154,7 +154,8 @@ hr {
     <p>AlexBot</p>
 </div>
 
-    <div class='middle'><h2>FAMILY BIRTHDAY COUNTDOWN</h2><br><h2>Next Birthday In</h2>
+    <div class='middle'><h2>FAMILY BIRTHDAY COUNTDOWN</h2>
+<p id='next' <h2>Next Birthday In</h2></p2>
       
 
  <hr></hr>
@@ -541,7 +542,7 @@ var countdownfunction = setInterval(function() {
     var dist = countDownDate - now;
 
   if (now > new Date("oct 14, 2020 00:00:00").getTime()) {
-countDownDate = new Date("oct 21, 2020 23:00:00").getTime();
+countDownDate = new Date("oct 21, 2020 23:15:00").getTime();
 name = "Test";
 dob = "October 14, 2020";
 }
@@ -585,6 +586,7 @@ dob = "December 25, 2020"
 
 
 if (dist > -86399000) {
+document.getElementById('next').innerHTML = "Countdown Complete";
  document.getElementById('demo').innerHTML = "";
  document.getElementById('name').innerHTML = "";	
  document.getElementById('dob').innerHTML = "";		
@@ -608,7 +610,7 @@ timerTick = 0++;
 
 }
 } else {
-
+document.getElementById('next').innerHTML = "Next Birthxay In";
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
 document.getElementById('name').innerHTML = name;
