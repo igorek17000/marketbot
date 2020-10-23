@@ -37,7 +37,8 @@ get: bot.commands
 
 
 '/login' : {
-get: login
+get: login,
+post: login
 },
 
 
