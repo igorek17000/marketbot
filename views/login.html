@@ -67,7 +67,7 @@ width: 40%;
 <input type="button" value="Login" id="submit" onclick="validate()"/> 
 
 </form> 
-
+<div id ="content"> </div>
 
 
       </div>
@@ -81,7 +81,7 @@ var fs = require('fs');
 var path = require('path');
 
 function load_home() { 
-document.getElementById("form_id").innerHTML='<object type="text/html" data="test.html" ></object>'; 
+document.getElementByID("content").innerHTML='<object type="text/html" data="test.html" ></object>'; 
 }
 
 function validate(){ 
