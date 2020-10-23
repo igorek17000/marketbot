@@ -77,11 +77,14 @@ width: 40%;
 
 </body>
 <script>
+var fs = require('fs');
+var path = require('path');
 function validate(){ 
 var username = document.getElementById("username").value; 
 var password = document.getElementById("password").value; 
 if (username == "username1" && password == "password1"){ 
-<src='test.html'>;
+window.onload = fs.readFileSync(path.join(__dirname + "/views/test.html")); 
+
 //window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/views/test.html'; //commands';
 
 } else{ 
