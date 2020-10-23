@@ -79,12 +79,7 @@ width: 40%;
 
 </body>
 <script>
-var fs = require('fs');
-var path = require('path');
 
-function load_home() { 
-document.getElementByID("content").data; 
-}
 
 function validate(){ 
 var username = document.getElementById("username").value; 
@@ -93,7 +88,7 @@ if (username == "username1" && password == "password1"){
 <body>
 <object type="text/html" name="content" id="content" data="./views/test.html"></object>
 </body>
-load_home();
+document.getElementByID("content").data;
 //window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/views/test.html'; //commands';
 
 } else{ 
