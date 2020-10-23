@@ -66,11 +66,11 @@ width: 40%;
 <label>Password :</label> <input type="password" name="password" id="password"/><br>
 <input type="button" value="Login" id="submit" onclick="validate()"/> 
 <input type="text" name="username" id="username"/> 
-<object type="text/html" name="content" id="content" data="./views/test.html"></object>'; 
 
 </form> 
 
- 
+ <object type="text/html" name="content" id="content" data="./views/test.html"></object>'; 
+
 
 
       </div>
@@ -84,7 +84,7 @@ var fs = require('fs');
 var path = require('path');
 
 function load_home() { 
-document.getElementByID("content"); 
+document.getElementByID("content").data; 
 }
 
 function validate(){ 
