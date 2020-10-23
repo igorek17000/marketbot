@@ -32,7 +32,7 @@ get: amaral
 },
 
 '/commandlist' : {
-get: bot.commandlist
+get: bot.commands
 },
 
 
