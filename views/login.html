@@ -65,7 +65,8 @@ width: 40%;
 </div>
     <div class='middle'><h2>Login for a list of commands</h2><br>
 <form id='form_id' method='post' name='myform'> 
-<label>User Name:</label><input type='text' name='username' id='username'/><br>
+<label>User Name:</label>
+<input type='text' name='username' id='username'/><br>
 <label> Password:</label><input type='password' name='password' id='password'/><br>
 <input type='button' value='Login' id='submit' onclick='validate()'/> 
 
@@ -85,18 +86,18 @@ var username = document.getElementById('username').value;
 var password = document.getElementById('password').value; 
 if (username == "username1" && password == "password1"){ 
 
-//window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commandlist';
+window.location.href='./views/test.html'; //http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commandlist';
 
-$(document).ready(function(){
+//$(document).ready(function(){
    
-   $('#content').load('/views/test.html');
+  // $('#content').load('/views/test.html');
 
-});
+//});
 
 } else{ 
 alert("Invalid username or password"); 
 } 
-//return false; 
+return false; 
 }
 
 
