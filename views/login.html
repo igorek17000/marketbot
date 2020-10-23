@@ -64,11 +64,11 @@ width: 40%;
     <p>AlexBot</p>
 </div>
     <div class='middle'><h2>Login for a list of commands</h2><br>
-<form id="form_id" method="post" name="myform"> 
+<form id="myform" method="post" name="myform"> 
 <label>User Name:</label> 
 <input type="text" name="username" id="username"/> 
 <label> Password:</label> <input type="password" name="password" id="password"/><br>
-<input type="button" value="Login" id="submit" onclick="validate()"/> 
+<input type="button" value="Login" id="submit" onclick="validate("myform")"/> 
 
 </form> 
 
