@@ -87,10 +87,22 @@ res.set({
     }); 
 
 return res.redirect('index.html'); 
-}).listen(3000) 
+}).listen(port, ip) 
 
   
+port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
+ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
-  
+//server.listen(port, ip);
 
-console.log("server listening at port 3000"); 
+/*
+server.listen(port, ip, function() { 
+console.log('Server started at ' + date + ' & listening on port ' + port);
+router.post('Server');
+
+//console.log((new Date()) + ' Server is listening on port ' + port);
+});
+
+  */
+
+console.log("server started"); 
