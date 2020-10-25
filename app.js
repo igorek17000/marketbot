@@ -1,8 +1,8 @@
 
 
-var express=require("express"); 
+var express = require('express'); 
 
-var bodyParser=require("body-parser"); 
+var bodyParser = require('body-parser'); 
 
   
 
@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority'); 
 
-var db=mongoose.connection; 
+var db = mongoose.connection; 
 
 db.on('error', console.log.bind(console, "connection error")); 
 
@@ -21,7 +21,7 @@ db.once('open', function(callback){
 
   
 
-var app=express() 
+var app = express() 
 
   
 
@@ -40,11 +40,11 @@ app.post('/sign_up', function(req,res){
 
     var name = req.body.name; 
 
-    var email =req.body.email; 
+    var email = req.body.email; 
 
     var pass = req.body.password; 
 
-    var phone =req.body.phone; 
+    var phone = req.body.phone; 
 
   
 
@@ -52,11 +52,11 @@ app.post('/sign_up', function(req,res){
 
         "name": name, 
 
-        "email":email, 
+        "email": email, 
 
-        "password":pass, 
+        "password": pass, 
 
-        "phone":phone 
+        "phone": phone 
 
     } 
 
