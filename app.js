@@ -43,7 +43,7 @@ var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose'); 
 
-mongoose.connect(connection_string);
+mongoose.connect(connection_string, {useNewUrlParser: true});
 var db = mongoose.connection; 
 
 db.on('error', console.log.bind(console, "connection error")); 
