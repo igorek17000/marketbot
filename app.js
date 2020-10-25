@@ -43,7 +43,7 @@ var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose'); 
 
-mongoose.connect(mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority, {useNewUrlParser: true});
+mongoose.connect('mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority', {useNewUrlParser: true});
 var db = mongoose.connection; 
 
 db.on('error', console.log.bind(console, "connection error")); 
