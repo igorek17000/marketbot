@@ -87,7 +87,7 @@ res.set({
     }); 
 
 return res.redirect('index.html'); 
-}).listen(port, ip) 
+}).listen(port) 
 
   
 var port = process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002;
