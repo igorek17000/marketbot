@@ -7,6 +7,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "concat": "^1.0.3",
     "cron": "^1.7.2",
     "curl": "^0.1.4",
@@ -31,6 +32,7 @@
     "mocha": "^6.2.1",
     "moment": "^2.24.0",
     "mongodb": "^2.2.36",
+    "mongoose": "^5.10.10",
     "node-cron": "^2.0.3",
     "nodemailer": "^6.3.0",
     "nps": "^5.9.12",
