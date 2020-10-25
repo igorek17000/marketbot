@@ -41,7 +41,7 @@ var bodyParser = require('body-parser');
 
   
 
-//var mongoose = require('mongoose'); 
+var mongoose = require('mongoose'); 
 
 mongoose.connect(connection_string);
 var db = mongoose.connection; 
