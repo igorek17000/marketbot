@@ -90,10 +90,10 @@ return res.redirect('index.html');
 }).listen(port, ip) 
 
   
-var port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
+var port = process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002;
 var ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
-//server.listen(port, ip);
+//server.listen(port);
 
 /*
 server.listen(port, ip, function() { 
