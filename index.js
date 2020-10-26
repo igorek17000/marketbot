@@ -185,7 +185,7 @@ db.collection('details').insertOne(data,function(err, collection){
 
   
 
-  
+  /*
 
 app.get('/rend',function(req,res){ 
 res.set({ 
@@ -198,7 +198,7 @@ return res.redirect('index.html');
 });
 
   
-
+*/
   
 
 console.log("server listening at port 8080"); 
@@ -242,13 +242,23 @@ this.res.write(html);
 
 
 function rend() {
+app.get('/rend',function(req, res){ 
+res.set({     
+'Access-control-Allow-Origin': '*',
+'statusCode': 200,
+'content-type': 'text/html'
+   }); 
+return res.redirect('index.html'); 
+});
+
+/*
   this.res.statusCode = 200; 
 this.res.setHeader('Content-type', 'text/html'); 
 var html = fs.readFileSync(path.join(__dirname + "/index.html")); 
 this.res.write(html); 
 this.res.end();
 }
-
+*/
 
 
 function amaral() {
