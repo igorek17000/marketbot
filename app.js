@@ -44,7 +44,7 @@ var express = require('express');
 var bodyParser = require('body-parser'); 
 
   
-//var mongoose = require('mongoose'); 
+var mongoose = require('mongoose'); 
 /*
 //function connect(callback){ 
 //var db = require('mongodb').Db;
