@@ -243,9 +243,9 @@ this.res.write(html);
 
 function rend() {
 app.get('/rend',function(req, res){ 
-this.res.set({     
+this.res.statusCode: 200;
+this.res.setHeader({     
 'Access-control-Allow-Origin': '*',
-'statusCode': 200,
 'content-type': 'text/html'
    }); 
 return this.res.redirect('index.html'); 
