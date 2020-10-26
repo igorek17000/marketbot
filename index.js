@@ -250,7 +250,7 @@ res.set({     
    }); 
 return res.redirect('index.html'); 
 });
-
+}
 /*
   this.res.statusCode = 200; 
 this.res.setHeader('Content-type', 'text/html'); 
