@@ -58,7 +58,7 @@ mongoose.connect('mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongod
 
 //mongoose.connect(connection_string);
 
-var db = mongoose.connection; 
+var db = mongoose.connect; 
 
 db.on('error', console.log.bind(console, "connection error")); 
 
@@ -67,7 +67,17 @@ db.once('open', function(callback){
     console.log("connection succeeded"); 
 });
 
-  
+  /*
+var MongoClient = require('mongodb').MongoClient;
+var uri = "mongodb+srv://alexbot:308boonave@cluster0.esmha.mongodb.net/sampledb?retryWrites=true&w=majority";
+var client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  var collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+*/
 
 var app = express() 
 
@@ -135,9 +145,9 @@ res.set({
     }); 
 
 return res.redirect('index.html'); 
-}).listen(8080) 
-
-var port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002); 
+}).listen(port) 
+var port = 8080 || 3002 || 27017 || 27016 || 27015 || 5858;
+//var port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002); 
 var ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1"; 
 //server.listen(port, ip); 
 //server.listen(port, ip, function() { 
