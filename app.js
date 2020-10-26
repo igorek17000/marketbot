@@ -120,7 +120,7 @@ app.post('/sign_up', function(req,res){
 
     } 
 
-db.addDocs('details').insertOne(data,function(err, collection){ 
+db.addDoc('details').insertOne(data,function(err, collection){ 
 
         if (err) throw err; 
 
