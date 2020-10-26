@@ -26,6 +26,9 @@ router = new director.http.Router({
 get: home
 },
 
+'/rend' : {
+get: rend
+},
 
 '/amaral' : {
 get: amaral
@@ -132,6 +135,15 @@ this.res.write(html);
 
  // this.res.write(fs.readFile(path.join(__dirname + "./countdown.html"))); 
   this.res.end();
+}
+
+
+function rend() {
+  this.res.statusCode = 200; 
+this.res.setHeader('Content-type', 'text/html'); 
+var html = fs.readFileSync(path.join(__dirname + "/index.html")); 
+this.res.write(html); 
+this.res.end();
 }
 
 function amaral() {
