@@ -285,7 +285,7 @@ if (name != this.res.name) {
 
         console.log("Record inserted Successfully"); 
 } else {
-Console.log("Name already exist");
+console.log("Name already exist");
 return false;
            }   
 
