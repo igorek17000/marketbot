@@ -30,6 +30,12 @@ get: home
 get: rend
 },
 
+
+'/signup_success' : {
+post: signup
+},
+
+
 '/amaral' : {
 get: amaral
 },
@@ -245,6 +251,51 @@ function rend() {
   this.res.statusCode = 200; 
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*'); 
 var html = fs.readFileSync(path.join(__dirname + "/index.html")); 
+this.res.write(html); 
+this.res.end();
+}
+
+function signup() {
+var name = req.body.name; 
+
+    var email =req.body.email; 
+
+    var pass = req.body.password; 
+
+    var phone =req.body.phone; 
+
+  
+
+    var data = { 
+
+        "name": name, 
+
+        "email":email, 
+
+        "password":pass, 
+
+        "phone":phone 
+
+    } 
+
+db.collection('details').insertOne(data,function(err, collection){ 
+
+        if (err) throw err; 
+
+        console.log("Record inserted Successfully"); 
+
+              
+
+    }); 
+
+          
+
+    this.res.redirect('signup_success.html'); 
+
+
+  this.res.statusCode = 200; 
+this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*'); 
+var html = fs.readFileSync(path.join(__dirname + "/signup_success.html")); 
 this.res.write(html); 
 this.res.end();
 }
