@@ -11,77 +11,29 @@ var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha
 
 //var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017/sampledb';
 
-//var connection_string = 'mongodb+srv://dstlmike1:308boonave@cluster0-esmha.mongodb.net/test';
-//var connection_string = 'mongodb://0.0.0.0:27017/sampledb';
-//var connection_string = 'mongodb://' + process.env.MONGODB_USER + ":" + process.env.MONGODB_PASSWORD + "@" + process.env.MONGODB_SERVICE_HOST + ':' + process.env.MONGODB_SERVICE_PORT + '/' + process.env.MONGODB_DATABASE;
 
+var express=require("express"); 
 
-//if(process.env.MONGODB_PASSWORD){
-  //connection_string = 'mongodb://' + process.env.MONGODB_USER + ":" +
-  //process.env.MONGODB_PASSWORD + "@" +
-  //process.env.MONGODB_SERVICE_HOST + ':' +
-  //process.env.MONGODB_SERVICE_PORT + '/' +
-  //process.env.MONGODB_DATABASE;
-//}
-
-//var connection_string = mongodb+srv://dstl%5Fmike1%40hotmail%2Ecom:308boonave@cluster0-esmha.mongodb.net/test?retryWrites=true&w=majority
-/*
-if(process.env.MONGODB_PASSWORD){
-  // //connection_string = 'mongodb://dstl%5Fmike1%40hotmail%2Ecom:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority' + process.env.MONGODB_USER + ":" +
-  connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority' + process.env.MONGODB_USER + ":" +
-  process.env.MONGODB_PASSWORD + "@" +
-  process.env.MONGODB_SERVICE_HOST + ':' +
-  process.env.MONGODB_SERVICE_PORT + '/' +
-  process.env.MONGODB_DATABASE;
-}
-*/
-
-//var connection_string = 'mongodb://dstl%5Fmike1%40hotmail%2Ecom:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority'; // + process.env.MONGODB_USER + ":" +
-  
-//mongodb://[<username>:<password>@]hostname0<:port>[,hostname1:<port1>][,hostname2:<port2>][...][,hostnameN:<portN>]
-
-var express = require('express'); 
-
-var bodyParser = require('body-parser'); 
+var bodyParser=require("body-parser"); 
 
   
-//var mongoose = require('mongoose'); 
-/*
-//function connect(callback){ 
-var db = require('./modules/db.js');
-mongoDB.connect(connection_string, function(err, db) { 
-if(err) throw err; 
-callback(db); 
-});
-}
-*/
-//mongoose.connect('mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority');
 
-//mongoose.connect(connection_string);
-//function connect(callback){ 
-var db = require('./modules/db.js');
-//var db = mongoose.connection; //('mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority'); 
+const mongoose = require('mongoose'); 
 
-//db.on('error', console.log.bind(console, "connection error")); 
+mongoose.connect(connection_string); 
 
-//db.on('data', function(callback){ 
+var db=mongoose.connection; 
 
-    //console.log("connection succeeded"); 
-//});
+db.on('error', console.log.bind(console, "connection error")); 
 
-  /*
-var MongoClient = require('mongodb').MongoClient;
-var uri = "mongodb+srv://alexbot:308boonave@cluster0.esmha.mongodb.net/sampledb?retryWrites=true&w=majority";
-var client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  var collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+db.once('open', function(callback){ 
 
-*/
+    console.log("connection succeeded"); 
+}) 
 
-var app = express();
+  
+
+var app=express() 
 
   
 
@@ -100,11 +52,11 @@ app.post('/sign_up', function(req,res){
 
     var name = req.body.name; 
 
-    var email = req.body.email; 
+    var email =req.body.email; 
 
     var pass = req.body.password; 
 
-    var phone = req.body.phone; 
+    var phone =req.body.phone; 
 
   
 
@@ -112,15 +64,15 @@ app.post('/sign_up', function(req,res){
 
         "name": name, 
 
-        "email": email, 
+        "email":email, 
 
-        "password": pass, 
+        "password":pass, 
 
-        "phone": phone 
+        "phone":phone 
 
     } 
 
-db.addDoc('details').insertOne(data,function(err, collection){ 
+db.collection('details').insertOne(data,function(err, collection){ 
 
         if (err) throw err; 
 
@@ -133,7 +85,7 @@ db.addDoc('details').insertOne(data,function(err, collection){
           
 
     return res.redirect('signup_success.html'); 
-})
+}) 
 
   
 
@@ -147,23 +99,8 @@ res.set({
     }); 
 
 return res.redirect('index.html'); 
-});
-var port = 8080 || 3002 || 27017 || 27016 || 27015 || 5858;
-//var port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002); 
-var ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1"; 
-//server.listen(port, ip); 
-//server.listen(port, ip, function() { 
-//console.log('Server started at ' + date + ' & listening on port ' + port); router.post('Server'); //console.log((new Date()) + ' Server is listening on port ' + port); }); 
-//server.listen(port);
+}).listen(3000) 
 
-/*
-server.listen(port, ip, function() { 
-console.log('Server started at ' + date + ' & listening on port ' + port);
-router.post('Server');
+  
 
-//console.log((new Date()) + ' Server is listening on port ' + port);
-});
-
-  */
-
-console.log("server started"); 
+  
