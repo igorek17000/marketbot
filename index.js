@@ -281,7 +281,7 @@ var name = this.req.body.name;
 db.collection('details').insertOne(data,function(err, collection){ 
 
         if (err) throw err; 
-if (!this.res.name != name) {
+if (name != this.res.name) {
 
         console.log("Record inserted Successfully"); 
 } else {
