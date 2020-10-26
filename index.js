@@ -281,10 +281,13 @@ var name = this.req.body.name;
 db.collection('details').insertOne(data,function(err, collection){ 
 
         if (err) throw err; 
+if (!this.res.name != name) {
 
         console.log("Record inserted Successfully"); 
-
-              
+} else {
+Console.log("Name already exist");
+return false;
+           }   
 
     }); 
 
