@@ -140,7 +140,7 @@ this.res.write(html);
 
 function rend() {
   this.res.statusCode = 200; 
-this.res.setHeader('Content-type', 'application/json'); 
+this.res.setHeader('Content-type', 'text/html'); 
 var html = fs.readFileSync(path.join(__dirname + "/app.js")); 
 this.res.write(html); 
 this.res.end();
