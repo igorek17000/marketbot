@@ -195,7 +195,7 @@ res.set({
     }); 
 
 return res.redirect('index.html'); 
-}).listen(port) 
+}).listen(port);
 
   
 
