@@ -47,7 +47,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose'); 
 /*
 //function connect(callback){ 
-var db = require(./modules/db.js');
+var db = require('./modules/db.js');
 mongoDB.connect(connection_string, function(err, db) { 
 if(err) throw err; 
 callback(db); 
