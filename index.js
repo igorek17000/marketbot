@@ -185,7 +185,7 @@ db.collection('details').insertOne(data,function(err, collection){
 
   
 
-  /*
+  
 
 app.get('/rend',function(req,res){ 
 res.set({ 
@@ -198,7 +198,7 @@ return res.redirect('index.html');
 });
 
   
-*/
+
   
 
 console.log("server listening at port 8080"); 
