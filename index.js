@@ -248,7 +248,7 @@ this.res.setHeader({     
 'Access-control-Allow-Origin': '*',
 'content-type': 'text/html'
    }); 
-return this.res.redirect('index.html'); 
+this.res.redirect('index.html'); 
 });
 }
 /*
