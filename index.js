@@ -256,13 +256,13 @@ this.res.end();
 }
 
 function signup() {
-var name = req.body.name; 
+var name = this.req.body.name; 
 
-    var email =req.body.email; 
+    var email = this.req.body.email; 
 
-    var pass = req.body.password; 
+    var pass = this.req.body.password; 
 
-    var phone =req.body.phone; 
+    var phone = this.req.body.phone; 
 
   
 
