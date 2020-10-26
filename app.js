@@ -147,7 +147,7 @@ res.set({
     }); 
 
 return res.redirect('index.html'); 
-}).listen(port) 
+}).listen(port);
 var port = 8080 || 3002 || 27017 || 27016 || 27015 || 5858;
 //var port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002); 
 var ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1"; 
