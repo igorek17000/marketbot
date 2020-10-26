@@ -104,6 +104,109 @@ router.post('Server');
 //console.log((new Date()) + ' Server is listening on port ' + port);
 });
 
+//--------------
+
+
+var express=require("express"); 
+
+var bodyParser=require("body-parser"); 
+
+var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
+
+
+const mongoose = require('mongoose'); 
+
+mongoose.connect(connection_string); 
+
+var db=mongoose.connection; 
+
+db.on('error', console.log.bind(console, "connection error")); 
+
+db.once('open', function(callback){ 
+
+    console.log("connection succeeded"); 
+}) 
+
+  
+
+var app=express() 
+
+  
+
+  
+app.use(bodyParser.json()); 
+
+app.use(express.static('public')); 
+app.use(bodyParser.urlencoded({ 
+
+    extended: true
+})); 
+
+  
+
+app.post('/sign_up', function(req,res){ 
+
+    var name = req.body.name; 
+
+    var email =req.body.email; 
+
+    var pass = req.body.password; 
+
+    var phone =req.body.phone; 
+
+  
+
+    var data = { 
+
+        "name": name, 
+
+        "email":email, 
+
+        "password":pass, 
+
+        "phone":phone 
+
+    } 
+
+db.collection('details').insertOne(data,function(err, collection){ 
+
+        if (err) throw err; 
+
+        console.log("Record inserted Successfully"); 
+
+              
+
+    }); 
+
+          
+
+    return res.redirect('signup_success.html'); 
+}) 
+
+  
+
+  
+
+app.get('/',function(req,res){ 
+res.set({ 
+
+    'Access-control-Allow-Origin': '*'
+
+    }); 
+
+return res.redirect('index.html'); 
+}).listen(8080) 
+
+  
+
+  
+
+console.log("server listening at port 8080"); 
+
+
+
+
+
 function ping() {
   this.res.writeHead(200);
   this.res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
@@ -140,8 +243,8 @@ this.res.write(html);
 
 function rend() {
   this.res.statusCode = 200; 
-this.res.setHeader('Content-type', 'text/json'); 
-var html = fs.readFileSync(path.join(__dirname + "/app.js")); 
+this.res.setHeader('Content-type', 'text/html'); 
+var html = fs.readFileSync(path.join(__dirname + "/index.html")); 
 this.res.write(html); 
 this.res.end();
 }
