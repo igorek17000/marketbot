@@ -144,7 +144,7 @@ app.use(bodyParser.urlencoded({
 
   
 
-app.post('/sign_up', function(req,res){ 
+app.post('/signup_success', function(req,res){ 
 
     var name = req.body.name; 
 
