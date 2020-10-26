@@ -242,23 +242,13 @@ this.res.write(html);
 
 
 function rend() {
-app.get('/rend',function(req, res){ 
-this.res.statusCode = 200;
-this.res.setHeader({     
-'Access-control-Allow-Origin': '*',
-'content-type': 'text/html'
-   }); 
-this.res.redirect('index.html'); 
-});
-}
-/*
   this.res.statusCode = 200; 
-this.res.setHeader('Content-type', 'text/html'); 
+this.res.setHeader({'Content-type' = 'text/html', 'Access-control-Allow-Origin' = '*'}); 
 var html = fs.readFileSync(path.join(__dirname + "/index.html")); 
 this.res.write(html); 
 this.res.end();
 }
-*/
+
 
 
 function amaral() {
