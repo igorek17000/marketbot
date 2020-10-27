@@ -278,18 +278,28 @@ var name = this.req.body.name;
 
     } 
 
+db.collection('details').find().toArray(function(err, docs) { 
+callback(docs);
+if(docs.name == data.name) {
+console.log("Name already exist");
+return err;
+} else {
+
+
 db.collection('details').insertOne(data,function(err, collection){ 
 
         if (err) throw err; 
 //if (data.name = this.res.name) {
-console.log("Name already exist");
+
 //return false;
          //  } else {
         console.log("Record inserted Successfully"); 
-//}
+}
 
 
     }); 
+
+exports.getAllDocuments = function(collection, callback) { mongoDB.connect(connection_string, function(err, db) { if(err) throw err; var allDocs = db.collection(collection).find().toArray(function(err, docs) { callback(docs); //db.close(); }); });}
 
           
 
