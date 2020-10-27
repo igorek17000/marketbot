@@ -282,7 +282,7 @@ db.collection('details').find().toArray(function(err, docs) {
   if (err) throw err; 
 if(docs.name == data.name) {
 console.log("Name already exists");
-
+return;
 } else {
 
 
@@ -299,7 +299,7 @@ db.collection('details').insertOne(data,function(err, collection){
 
     }); 
 
-exports.getAllDocuments = function(collection, callback) { mongoDB.connect(connection_string, function(err, db) { if(err) throw err; var allDocs = db.collection(collection).find().toArray(function(err, docs) { callback(docs); //db.close(); }); });}
+//exports.getAllDocuments = function(collection, callback) { mongoDB.connect(connection_string, function(err, db) { if(err) throw err; var allDocs = db.collection(collection).find().toArray(function(err, docs) { callback(docs); //db.close(); }); });}
 
           
 
