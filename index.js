@@ -291,7 +291,7 @@ var name = this.req.body.name;
    // function findIt(collection, matchHash, callback) {
       
       
-    var cursor = db.collection(collection).find(matchHash);
+    var cursor = db.collection('details').find(matchHash);
     var ret = [];
     cursor.each(function(err, doc){
       if(doc != null)
@@ -301,10 +301,6 @@ var name = this.req.body.name;
     });
   }
     
-
-
-
-
 db.collection('details').insertOne(data,function(err, collection){ 
 
         if (err) throw err; 
@@ -317,6 +313,10 @@ db.collection('details').insertOne(data,function(err, collection){
 
 
     }); 
+
+
+
+
 
 //exports.getAllDocuments = function(collection, callback) { mongoDB.connect(connection_string, function(err, db) { if(err) throw err; var allDocs = db.collection(collection).find().toArray(function(err, docs) { callback(docs); //db.close(); }); });}
 
