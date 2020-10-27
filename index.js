@@ -281,7 +281,7 @@ var name = this.req.body.name;
 db.collection('details').insertOne(data,function(err, collection){ 
 
         if (err) throw err; 
-if (name = this.req.body.name) {
+if (name = this.res.body.name) {
 console.log("Name already exist");
 return false;
            } else {
