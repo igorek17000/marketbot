@@ -113,9 +113,9 @@ router.post('Server');
 //--------------
 
 
-var express=require("express"); 
+var express = require("express"); 
 
-var bodyParser=require("body-parser"); 
+var bodyParser = require("body-parser"); 
 
 var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
 
@@ -124,7 +124,7 @@ var mongoose = require('mongoose');
 
 mongoose.connect(connection_string); 
 
-var db=mongoose.connection; 
+var db = mongoose.connection; 
 
 db.on('error', console.log.bind(console, "connection error")); 
 
@@ -135,7 +135,7 @@ db.once('open', function(callback){
 
   
 
-var app=express() 
+var app = express();
 
   
 
@@ -281,12 +281,12 @@ var name = this.req.body.name;
 db.collection('details').insertOne(data,function(err, collection){ 
 
         if (err) throw err; 
-if (data.name = this.res.name) {
+//if (data.name = this.res.name) {
 console.log("Name already exist");
-return false;
-           } else {
+//return false;
+         //  } else {
         console.log("Record inserted Successfully"); 
-}
+//}
 
 
     }); 
