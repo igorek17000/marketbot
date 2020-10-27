@@ -294,14 +294,11 @@ var name = this.req.body.name;
     var cursor = db.collection('details').find(matchHash);
     var ret = [];
     cursor.each(function(err, doc){
-      if(doc != null)
-        ret.push(doc);
-      else
-        callback(ret);
-    });
-  }
-    
-db.collection('details').insertOne(data,function(err, collection){ 
+      if(doc != null) {
+        console.log("Name already exists"); //ret.push(doc);
+     } else {
+
+ db.collection('details').insertOne(data,function(err, collection){ 
 
         if (err) throw err; 
 //if (data.name = this.res.name) {
@@ -313,6 +310,13 @@ db.collection('details').insertOne(data,function(err, collection){
 
 
     }); 
+
+       // callback(ret);
+
+    });
+  }
+    
+
 
 
 
