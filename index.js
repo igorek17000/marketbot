@@ -277,7 +277,7 @@ var name = this.req.body.name;
         "phone": phone 
 
     } 
-    /*
+    
     
    var matchHash = {
   "name": name,
@@ -287,7 +287,7 @@ var name = this.req.body.name;
   }
 
 
-    function findIt(collection, matchHash, callback) {
+   // function findIt(collection, matchHash, callback) {
       
       
     var cursor = db.collection(collection).find(matchHash);
@@ -300,7 +300,7 @@ var name = this.req.body.name;
     });
   }
     
-*/    
+
 
 
 
