@@ -112,7 +112,7 @@ router.post('Server');
 
 //--------------
 
-
+/*
 var express=require("express"); 
 
 var bodyParser=require("body-parser"); 
@@ -209,7 +209,7 @@ return res.redirect('index.html');
 
 console.log("server listening at port 8080"); 
 
-
+*/
 
 
 
@@ -270,11 +270,11 @@ var name = this.req.body.name;
 
         "name": name, 
 
-        "email":email, 
+        "email": email, 
 
-        "password":pass, 
+        "password": pass, 
 
-        "phone":phone 
+        "phone": phone 
 
     } 
 
