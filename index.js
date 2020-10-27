@@ -139,14 +139,14 @@ var app = express();
 
   
 
-  
-app.use(bodyParser.json()); 
+  
+//app.use(bodyParser.json()); 
 
-app.use(express.static('public')); 
-app.use(bodyParser.urlencoded({ 
+//app.use(express.static('public')); 
+//app.use(bodyParser.urlencoded({ 
 
-    extended: true
-})); 
+   //extended: true
+//})); 
 
   
 /*
@@ -276,14 +276,32 @@ var name = this.req.body.name;
 
         "phone": phone 
 
-    } 
+    } 
+    /*
+    
+   var matchHash = {
+  "name": name,
+  "email": email,
+  "password": pass,
+  "phone": phone
+  }
 
-db.collection('details').find().toArray(function(err, docs) { 
-  if (err) throw err; 
-if(docs.name == data.name) {
-console.log("Name already exists");
-return;
-} else {
+
+    function findIt(collection, matchHash, callback) {
+      
+      
+    var cursor = db.collection(collection).find(matchHash);
+    var ret = [];
+    cursor.each(function(err, doc){
+      if(doc != null)
+        ret.push(doc);
+      else
+        callback(ret);
+    });
+  }
+    
+*/    
+
 
 
 db.collection('details').insertOne(data,function(err, collection){ 
@@ -293,8 +311,8 @@ db.collection('details').insertOne(data,function(err, collection){
 
 //return false;
          //  } else {
-        console.log("Record inserted Successfully"); 
-}
+        console.log("Record inserted Successfully"); 
+//}
 
 
     }); 
