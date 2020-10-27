@@ -279,6 +279,7 @@ var name = this.req.body.name;
     } 
 
 db.collection('details').find().toArray(function(err, docs) { 
+  if (err) throw err; 
 if(docs.name == data.name) {
 console.log("Name already exists");
 
