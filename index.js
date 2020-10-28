@@ -2,7 +2,7 @@
 
 //
 var matchHash;
-matchHash = res;
+matchHash = this.res;
 var nodemailer = require('nodemailer');
 var moment = require('moment'); 
 var date = moment().utcOffset(-240).format('LLLL');
@@ -282,7 +282,7 @@ var name = this.req.body.name;
     } 
     
     
-   matchHash = res; /* {
+   matchHash = this.res; /* {
   "name": name,
   "email": email,
   "password": pass,
