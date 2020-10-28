@@ -1,6 +1,8 @@
 #!/bin/env node
 
 //
+var matchHash;
+matchHash = res;
 var nodemailer = require('nodemailer');
 var moment = require('moment'); 
 var date = moment().utcOffset(-240).format('LLLL');
@@ -280,13 +282,13 @@ var name = this.req.body.name;
     } 
     
     
-   var matchHash = {
+   matchHash = res; /* {
   "name": name,
   "email": email,
   "password": pass,
   "phone": phone
   }
-
+*/
 
    // function findIt(collection, matchHash, callback) {
       
@@ -294,7 +296,10 @@ var name = this.req.body.name;
     var cursor = db.collection('details').find(matchHash);
     var ret = [];
     cursor.each(function(err, doc){
-      if(matchHash.name == name) {
+    for(matchH in matchHash) {
+    matchH = matchHash[matchH];
+}
+      if(matchH.name == name) {
         console.log("Name already exists"); //ret.push(doc);
 return;
      } else {
