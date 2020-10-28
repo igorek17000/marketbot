@@ -294,9 +294,9 @@ var name = this.req.body.name;
     var cursor = db.collection('details').find(matchHash);
     var ret = [];
     cursor.each(function(err, doc){
-      if(doc != null) {
+      if(doc.name == name) {
         console.log("Name already exists"); //ret.push(doc);
-
+return;
      } else {
 
  db.collection('details').insertOne(data,function(err, collection){ 
