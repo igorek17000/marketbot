@@ -1,3 +1,4 @@
+//
 var mongoDB     = require('mongodb').MongoClient;
 var db = require('mongodb').Db
 var bot = require('../bot.js');
