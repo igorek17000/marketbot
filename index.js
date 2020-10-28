@@ -296,10 +296,10 @@ var name = this.req.body.name;
     var cursor = db.collection('details').find(matchHash);
     var ret = [];
     cursor.each(function(err, doc){
-    for(matchH in matchHash) {
-    matchH = matchHash[matchH];
+    for(doc in matchHash) {
+    doc = matchHash[doc];
 }
-      if(matchH.name == name) {
+      if(doc.name == name) {
         console.log("Name already exists"); //ret.push(doc);
 return;
      } else {
