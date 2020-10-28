@@ -1,5 +1,5 @@
 #!/bin/env node
-//
+
 
 var nodemailer = require('nodemailer');
 var moment = require('moment'); 
