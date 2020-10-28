@@ -294,7 +294,7 @@ var name = this.req.body.name;
     var cursor = db.collection('details').find(matchHash);
     var ret = [];
     cursor.each(function(err, doc){
-      if(dataHash.name == name) {
+      if(matchHash.name == name) {
         console.log("Name already exists"); //ret.push(doc);
 return;
      } else {
