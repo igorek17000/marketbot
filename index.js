@@ -300,7 +300,7 @@ var ret = [];
 cursor.each(function(err, doc){
   //if(doc.name = name) {
 //if(doc != null) {
-if(doc[name] != data.name) {
+if(!doc[name] = data.name) {
 //console.log(doc);
       
        // console.log("Name already exists"); //ret.push(doc);
