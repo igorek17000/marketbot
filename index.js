@@ -291,15 +291,14 @@ var name = this.req.body.name;
 */
 
    // function findIt(collection, matchHash, callback) {
-      var name = this.req.params.name; 
-      var value = this.req.params.value; 
+     // var name = this.req.params.name; 
+    //  var value = this.req.params.value; 
 //collection.findOne({[name]:value}, function(err, item) { res.send(item); });
       
-   // var cursor = 
-db.collection('details').findOne({[name]:value}, function(err, item){
-     this.res.send(item);
-});
-  if(item = this.req.body.name) {
+   var cursor = db.collection('details').find({[name]:value}); 
+var ret = []; 
+cursor.each(function(err, doc){
+  if(doc.name = name) {
 
       
         console.log("Name already exists"); //ret.push(doc);
@@ -324,7 +323,7 @@ return;
     //
   });
    } 
-//});
+});
 
 
 
