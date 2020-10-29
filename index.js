@@ -291,8 +291,8 @@ var name = this.req.body.name;
 */
 
    // function findIt(collection, matchHash, callback) {
-      var name = req.params.name; 
-      var value = req.params.value; 
+      var name = this.req.params.name; 
+      var value = this.req.params.value; 
 //collection.findOne({[name]:value}, function(err, item) { res.send(item); });
       
    // var cursor = 
