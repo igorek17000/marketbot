@@ -295,14 +295,14 @@ var name = this.req.body.name;
     //  var value = this.req.params.value; 
 //collection.findOne({[name]:value}, function(err, item) { res.send(item); });
       
-   var cursor = db.collection('details').find({}); 
+   var cursor = db.collection('details').find({data.name}); 
 var ret = []; 
 cursor.each(function(err, doc){
 doc = {};
   //if(doc.name = name) {
 //if(doc != null) {
-if(doc[name] != data.name) {
-//console.log(doc);
+if(doc.name != data.name) {
+console.log(doc);
       
        // console.log("Name already exists"); //ret.push(doc);
 //throw err;
