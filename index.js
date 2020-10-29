@@ -303,7 +303,7 @@ if(doc.name = data.name) {
 console.log(doc);
       
         console.log("Name already exists"); //ret.push(doc);
-throw err;;
+throw err;
 
      } else {
 
