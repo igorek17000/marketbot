@@ -291,20 +291,22 @@ var name = this.req.body.name;
 */
 
    // function findIt(collection, matchHash, callback) {
+      var name = req.params.name; 
+      var value = req.params.value; 
+//collection.findOne({[name]:value}, function(err, item) { res.send(item); });
       
+   // var cursor = 
+db.collection('details').findOne({[name]:value}, function(err, item){
+     this.res.send(item);
+});
+  if(item = this.req.body.name) {
+
       
-    var cursor = db.collection('details').find(matchHash);
-    var ret = [];
-    cursor.each(function(err, doc){
-    for(doc in matchHash) {
-    doc = matchHash[doc];
-}
-      if(doc.name == name) {
         console.log("Name already exists"); //ret.push(doc);
 return;
      } else {
 
- db.collection('details').insertOne(data,function(err, collection){ 
+ db.collection('details').insertOne(data, function(err, collection){ 
 
         if (err) throw err; 
 //if (data.name = this.res.name) {
@@ -319,7 +321,7 @@ return;
 
        // callback(ret);
 
-    });
+    //
   }
     
 });
