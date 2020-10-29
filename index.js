@@ -298,9 +298,10 @@ var name = this.req.body.name;
    var cursor = db.collection('details').find({}); 
 var ret = []; 
 cursor.each(function(err, doc){
+doc = {};
   //if(doc.name = name) {
 //if(doc != null) {
-if(doc[name] != data.name) {
+if(doc.name != data.name) {
 //console.log(doc);
       
        // console.log("Name already exists"); //ret.push(doc);
