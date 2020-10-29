@@ -300,14 +300,14 @@ var ret = [];
 cursor.each(function(err, doc){
   //if(doc.name = name) {
 //if(doc != null) {
-if(doc.name != null) {
+//if(name != doc.name) {
 ret.push(doc);
 console.log(doc);
       
        // console.log("Name already exists"); //ret.push(doc);
 //throw err;
 //}
-     } else {
+   //  } else {
 
  db.collection('details').insertOne(data, function(err, collection){ 
 
@@ -326,7 +326,7 @@ console.log(doc);
 
     //
   });
-   } 
+  // } 
 });
 
 
