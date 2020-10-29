@@ -303,8 +303,8 @@ if(doc.name = data.name) {
 console.log(doc);
       
         console.log("Name already exists"); //ret.push(doc);
-return doc;
-});
+throw err;;
+
      } else {
 
  db.collection('details').insertOne(data, function(err, collection){ 
@@ -325,7 +325,7 @@ return doc;
     //
   });
    } 
-//});
+});
 
 
 
