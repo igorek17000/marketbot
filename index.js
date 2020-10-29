@@ -299,13 +299,13 @@ var name = this.req.body.name;
 var ret = []; 
 cursor.each(function(err, doc){
   //if(doc.name = name) {
-if(doc != null) {
+//if(doc != null) {
 if(doc.name = data.name) {
 console.log(doc);
       
         console.log("Name already exists"); //ret.push(doc);
 throw err;
-}
+//}
      } else {
 
  db.collection('details').insertOne(data, function(err, collection){ 
