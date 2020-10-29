@@ -1,6 +1,6 @@
 #!/bin/env node
 
-//
+
 var matchHash;
 matchHash = this.res;
 var nodemailer = require('nodemailer');
