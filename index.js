@@ -301,7 +301,7 @@ var ret = [];
 cursor.each(function(err, doc){
 var naame = "doc.name";
   //if(doc.name = name) {
-if(doc.name == data.name) {
+if(doc.name == name) {
 //if(name != doc.name) {
 //ret.push(doc);
 console.log(doc.name);
