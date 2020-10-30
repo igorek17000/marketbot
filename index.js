@@ -298,7 +298,7 @@ var name = this.req.body.name;
 
    var cursor = db.collection('details').find({name:name}); 
 var ret = []; 
-cursor.each(function(doc, callback); //err, doc){
+cursor.each(function(doc, callback){ //err, doc){
 doc = {
 "name": name,
 "email": email,
