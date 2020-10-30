@@ -295,11 +295,11 @@ var name = this.req.body.name;
     //  var value = this.req.params.value; 
 //collection.findOne({[name]:value}, function(err, item) { res.send(item); });
       
-   var cursor = db.collection('details').find({"name": name}); 
+   var cursor = db.collection('details').find({}); 
 var ret = []; 
 cursor.each(function(err, doc){
   //if(doc.name = name) {
-//if(doc != null) {
+if(doc.ret.name != data.name) {
 //if(name != doc.name) {
 ret.push(doc);
 console.log(doc);
