@@ -295,21 +295,21 @@ var name = this.req.body.name;
     //  var value = this.req.params.value; 
 //collection.findOne({[name]:value}, function(err, item) { res.send(item); });
     //  var naame = ret.name;
-   var cursor = db.collection('details').find({}); 
+   var cursor = db.collection('details').find({name:name}); 
 var ret = []; 
 cursor.each(function(err, doc){
   //if(doc.name = name) {
-//if(doc.naame == data.name) {
+if(doc.name == data.name) {
 //if(name != doc.name) {
 //ret.push(doc);
-console.log(doc);
-console.log(ret);
-console.log(ret.doc)
+console.log(doc.name);
+//console.log(ret);
+//console.log(ret.doc)
       
        // console.log("Name already exists"); //ret.push(doc);
 //throw err;
 //}
-     /*} else {
+     } /*else {
 
  db.collection('details').insertOne(data, function(err, collection){ 
 
