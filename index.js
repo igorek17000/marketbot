@@ -317,7 +317,7 @@ var name = this.req.param.name; //data.name; //: {name}; //this.req.name;
 if(doc.name = name) {
 //if(name != doc.name) {
 //ret.push(doc);
-//console.log(doc.name);
+console.log(doc.name);
 //console.log(ret);
 //console.log(ret.doc)
       
