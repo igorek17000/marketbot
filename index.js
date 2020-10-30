@@ -296,16 +296,16 @@ var name = this.req.body.name;
 //collection.findOne({[name]:value}, function(err, item) { res.send(item); });
     // var doc = doc;
 
-   var cursor = db.collection('details').find({name:doc{name}}); 
+   var cursor = db.collection('details').find({name:name}); 
 var ret = []; 
 cursor.each(function(err, doc){
-var name = this.req.name; 
+var name = doc: {name}; //this.req.name; 
 
-    var email = this.req.email; 
+    var email = doc: {email}; 
 
-    var pass = this.req.password; 
+    var pass = doc: {password}; 
 
-    var phone = this.req.phone; 
+    var phone = doc: {phone}; 
   //if(doc.name = name) {
 if(doc.name = name) {
 //if(name != doc.name) {
