@@ -296,7 +296,7 @@ var name = this.req.body.name;
 //collection.findOne({[name]:value}, function(err, item) { res.send(item); });
     // var doc = doc;
 
-   var cursor = db.collection('details').find({name:name}); 
+   var cursor = db.collection('details').find({name:doc.name}); 
 var ret = []; 
 cursor.each(function(err, doc){
 var name = this.req.name; 
