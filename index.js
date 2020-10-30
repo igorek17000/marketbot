@@ -298,7 +298,7 @@ var name = this.req.body.name;
 
    var cursor = db.collection('details').find({name:name}); 
 var ret = []; 
-cursor.each(function(err, doc){
+cursor.each(function(doc, callback); //err, doc){
 doc = {
 "name": name,
 "email": email,
@@ -320,10 +320,11 @@ if(doc.name != null) { //name != null) { //doc.name = name) {
 console.log(doc.name);
 //console.log(ret);
 //console.log(ret.doc)
-      
+      callback(true);
+return false;
        // console.log("Name already exists"); //ret.push(doc);
 //throw err;
-//}
+
    } else {
 
  db.collection('details').insertOne(data, function(err, collection){ 
