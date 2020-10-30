@@ -307,7 +307,7 @@ console.log(doc);
        // console.log("Name already exists"); //ret.push(doc);
 //throw err;
 //}
-   //  } else {
+     } else {
 
  db.collection('details').insertOne(data, function(err, collection){ 
 
@@ -326,7 +326,7 @@ console.log(doc);
 
     //
   });
-  // } 
+   } 
 });
 
 
