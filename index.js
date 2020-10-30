@@ -299,15 +299,22 @@ var name = this.req.body.name;
    var cursor = db.collection('details').find({name:name}); 
 var ret = []; 
 cursor.each(function(err, doc){
-var name = doc: {name}; //this.req.name; 
+doc = {
+"name": name,
+"email": email,
+"password": pass,
+"phone": phone
+}
+var name = doc.name; //: {name}; //this.req.name; 
 
-    var email = doc: {email}; 
+    var email = doc.email; //: {email}; 
 
-    var pass = doc: {password}; 
+    var pass = doc.password; //: {password}; 
 
-    var phone = doc: {phone}; 
+    var phone = doc.phone; //: {phone}; 
+
   //if(doc.name = name) {
-if(doc.name = name) {
+if(doc.name = data.name) {
 //if(name != doc.name) {
 //ret.push(doc);
 console.log(doc.name);
