@@ -317,14 +317,14 @@ var name = data.name; //: {name}; //this.req.name;
 if(doc.name = name) {
 //if(name != doc.name) {
 //ret.push(doc);
-//console.log(doc.name);
+console.log(doc.name);
 //console.log(ret);
 //console.log(ret.doc)
       
        // console.log("Name already exists"); //ret.push(doc);
 //throw err;
 //}
-   //  } else {
+   } else {
 
  db.collection('details').insertOne(data, function(err, collection){ 
 
@@ -334,9 +334,9 @@ if(doc.name = name) {
 //return false;
          //  } else {
         console.log("Record inserted Successfully"); 
-});
-} else {
-console.log(doc.name);
+//});
+//} else {
+//console.log(doc.name);
 
 
    // }); 
@@ -344,7 +344,7 @@ console.log(doc.name);
        // callback(ret);
 
     //
- // });
+  });
    } 
 });
 
