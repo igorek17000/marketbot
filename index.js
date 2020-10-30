@@ -314,7 +314,7 @@ var name = data.name; //: {name}; //this.req.name;
     var phone = data.phone; //: {phone}; 
 
   //if(doc.name = name) {
-if(doc.name = name) {
+if(doc.name != null) { //name != null) { //doc.name = name) {
 //if(name != doc.name) {
 //ret.push(doc);
 console.log(doc.name);
