@@ -305,13 +305,13 @@ doc = {
 "password": pass,
 "phone": phone
 }
-var name = doc.name; //: {name}; //this.req.name; 
+var name = data.name; //: {name}; //this.req.name; 
 
-    var email = doc.email; //: {email}; 
+    var email = data.email; //: {email}; 
 
-    var pass = doc.password; //: {password}; 
+    var pass = data.password; //: {password}; 
 
-    var phone = doc.phone; //: {phone}; 
+    var phone = data.phone; //: {phone}; 
 
   //if(doc.name = name) {
 if(doc.name = data.name) {
