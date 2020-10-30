@@ -305,7 +305,7 @@ doc = {
 "password": pass,
 "phone": phone
 }
-var name = data.name; //: {name}; //this.req.name; 
+var name = req.param.name; //data.name; //: {name}; //this.req.name; 
 
     var email = data.email; //: {email}; 
 
