@@ -295,11 +295,17 @@ var name = this.req.body.name;
     //  var value = this.req.params.value; 
 //collection.findOne({[name]:value}, function(err, item) { res.send(item); });
     // var doc = doc;
-var naame = "doc.name";
-   var cursor = db.collection('details').find({name:naame}); 
+
+   var cursor = db.collection('details').find({name:name}); 
 var ret = []; 
 cursor.each(function(err, doc){
-var naame = "doc.name";
+var name = this.req.body.name; 
+
+    var email = this.req.body.email; 
+
+    var pass = this.req.body.password; 
+
+    var phone = this.req.body.phone; 
   //if(doc.name = name) {
 if(doc.name = name) {
 //if(name != doc.name) {
