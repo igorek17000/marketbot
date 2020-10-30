@@ -259,13 +259,13 @@ this.res.end();
 }
 
 function signup() {
-var name = this.req.name; 
+var name = this.req.body.name; 
 
-    var email = this.req.email; 
+    var email = this.req.body.email; 
 
-    var pass = this.req.password; 
+    var pass = this.req.body.password; 
 
-    var phone = this.req.phone; 
+    var phone = this.req.body.phone; 
 
   
 
@@ -299,13 +299,13 @@ var name = this.req.name;
    var cursor = db.collection('details').find({name:name}); 
 var ret = []; 
 cursor.each(function(err, doc){
-var name = this.req.body.name; 
+var name = this.req.name; 
 
-    var email = this.req.body.email; 
+    var email = this.req.email; 
 
-    var pass = this.req.body.password; 
+    var pass = this.req.password; 
 
-    var phone = this.req.body.phone; 
+    var phone = this.req.phone; 
   //if(doc.name = name) {
 if(doc.name = name) {
 //if(name != doc.name) {
