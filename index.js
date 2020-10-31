@@ -299,11 +299,11 @@ var name = this.req.body.name;
    var cursor = db.collection('details').find({name:resName}); 
 var ret = []; 
 var results = cursor; //.each();
-var resName = data.name;
+var resName = name;
 //results.each(function(err, res) {
 if (results.length < 0) { 
 results.each((res, i) => { 
-console.log(res.name); 
+console.log(resName); 
 // Here you could build your html or put the results in some other data structure you want to work with 
 }); 
 } else { 
@@ -312,7 +312,7 @@ db.collection('details').insertOne(data, function(err, collection){
         if (err) 
  throw err; 
 
-console.log(data + "\n User added"); 
+console.log(resName + "\n User added"); 
 });
 }
 
