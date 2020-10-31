@@ -305,9 +305,9 @@ results.each(function(res, doc) {
 //i = 0;
 if (results.doc > 0) { //> 0) {
 
-console.log(doc); 
+console.log(results.doc); 
 // Here you could build your html or put the results in some other data structure you want to work with 
-return doc;
+return results.doc;
 
 } else {
 db.collection('details').insertOne(data, function(err, collection){ 
