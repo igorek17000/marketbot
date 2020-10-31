@@ -296,23 +296,25 @@ var name = this.req.body.name;
 //collection.findOne({[name]:value}, function(err, item) { res.send(item); });
     // var doc = doc;
 
-   var cursor = db.collection('details').find({name:resName}); 
+   var cursor = db.collection('details').find({name:name}); 
 var ret = []; 
 var results = cursor; //.each();
 var resName = name;
 //results.each(function(err, res) {
-if (results.length < 0) { 
 results.each((res, i) => { 
-console.log(resName); 
+});
+if (results.length > 0) { 
+
+console.log(res); 
 // Here you could build your html or put the results in some other data structure you want to work with 
-}); 
+//}); 
 } else { 
 db.collection('details').insertOne(data, function(err, collection){ 
 
         if (err) 
  throw err; 
 
-console.log(resName + "\n User added"); 
+console.log(res + "\n User added"); 
 });
 }
 
