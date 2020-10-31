@@ -299,8 +299,11 @@ var name = this.req.body.name;
    var cursor = db.collection('details').find({ name: resName }); 
 var ret = []; 
 var results = cursor; //.each();
-var resName = name;
-results.each(function(res, doc) {
+var resName = res.name;
+results.each(function(err, res) {
+res = {
+"name": name
+}
 //results.each(); //(res, i) => { 
 //i = 0;
 if (results.doc > 0) { //> 0) {
