@@ -314,7 +314,7 @@ db.collection('details').insertOne(data, function(err, collection){
         if (err) 
  throw err; 
 
-console.log(res + "\n User added"); 
+console.log(data + "\n User added"); 
 });
 }
 
