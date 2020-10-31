@@ -300,8 +300,8 @@ var name = this.req.body.name;
 var ret = []; 
 var results = cursor; //.each();
 var resName = name;
-//results.each(function(err, res) {
-results.each(); //(res, i) => { 
+results.each(function(res) {
+//results.each(); //(res, i) => { 
 //i = 0;
 if (results.length > 0) { //> 0) {
 
