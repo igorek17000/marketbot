@@ -303,7 +303,7 @@ var resName = name;
 //results.each(function(err, res) {
 results.each((res, i) => { 
 //i = 0;
-if (res.length > 0) {
+if (result.length < 0) {
 
 console.log(res); 
 // Here you could build your html or put the results in some other data structure you want to work with 
