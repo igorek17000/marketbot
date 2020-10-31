@@ -314,7 +314,22 @@ var name = data.name; //: {name}; //this.req.name;
     var phone = data.phone; //: {phone}; 
 
   //if(doc.name = name) {
-if(!doc.name) { != null) { //name != null) { //doc.name = name) {
+if(!doc.name) { //!= null) { //name != null) { //doc.name = name) {
+db.collection('details').insertOne(data, function(err, collection){ 
+
+        if (err) 
+ throw err; 
+//if (data.name = this.res.name) {
+
+//return false;
+         //  } else {
+        console.log("Record inserted Successfully"); 
+//callback (true, msg);
+
+});
+   } else {
+
+
 //if(name != doc.name) {
 //ret.push(doc);
 console.log(doc.name + " already exist");
@@ -326,21 +341,10 @@ console.log(doc.name + " already exist");
        // console.log("Name already exists"); //ret.push(doc);
 //throw err;
 
-   } else {
-
 //if(doc.name = null) {
 //var msg = "User added successfully";
 
- db.collection('details').insertOne(data, function(err, collection){ 
-
-        if (err) 
- throw err; 
-//if (data.name = this.res.name) {
-
-//return false;
-         //  } else {
-        console.log("Record inserted Successfully"); 
-//callback (true, msg);
+ 
 //});
 //} else {
 //console.log(doc.name);
@@ -351,9 +355,11 @@ console.log(doc.name + " already exist");
        // callback(ret);
 
     //
-  });
+
+}
+
+  //});
    
-  } 
 });
 
 
