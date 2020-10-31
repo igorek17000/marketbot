@@ -317,24 +317,30 @@ var name = data.name; //: {name}; //this.req.name;
 if(doc.name != null) { //name != null) { //doc.name = name) {
 //if(name != doc.name) {
 //ret.push(doc);
-console.log(doc.name);
+console.log(doc.name + " " + msg);
 //console.log(ret);
 //console.log(ret.doc)
-      callback(true);
-return false;
+var msg = "User already exixt";
+     // callback(true, msg);
+//return msg;
        // console.log("Name already exists"); //ret.push(doc);
 //throw err;
 
-   } else {
+   } 
+
+if(doc.name = null) {
+var msg = "User added successfully";
 
  db.collection('details').insertOne(data, function(err, collection){ 
 
-        if (err) throw err; 
+        if (err) 
+ throw err; 
 //if (data.name = this.res.name) {
 
 //return false;
          //  } else {
         console.log("Record inserted Successfully"); 
+//callback (true, msg);
 //});
 //} else {
 //console.log(doc.name);
