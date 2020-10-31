@@ -300,7 +300,7 @@ var name = this.req.body.name;
 var ret = []; 
 var results = cursor.toArray();
 var resName = data.name;
-results.each(function(err, res) {
+//results.each(function(err, res) {
 if (results.length > 0) { 
 results.each((res, i) => { 
 console.log(res.name); 
@@ -315,7 +315,7 @@ db.collection('details').insertOne(data, function(err, collection){
 console.log(data + "\n User added"); 
 });
 }
-});
+
 /*
 cursor.each(function(err, doc){
 doc = {
