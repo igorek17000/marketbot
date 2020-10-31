@@ -321,15 +321,15 @@ console.log(doc.name + " " + msg);
 //console.log(ret);
 //console.log(ret.doc)
 var msg = "User already exixt";
-     // callback(true, msg);
-//return msg;
+     callback(true, msg);
+return msg;
        // console.log("Name already exists"); //ret.push(doc);
 //throw err;
 
    } else {
 
-if(doc.name = null) {
-var msg = "User added successfully";
+//if(doc.name = null) {
+//var msg = "User added successfully";
 
  db.collection('details').insertOne(data, function(err, collection){ 
 
@@ -352,7 +352,7 @@ var msg = "User added successfully";
 
     //
   });
-   }
+   
   } 
 });
 
