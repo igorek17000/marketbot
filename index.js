@@ -298,7 +298,7 @@ var name = this.req.body.name;
 
    var cursor = db.collection('details').find({name:name}); 
 var ret = []; 
-cursor.each(function(doc, callback){ //err, doc){
+cursor.each(function(err, doc){
 doc = {
 "name": name,
 "email": email,
@@ -314,15 +314,15 @@ var name = data.name; //: {name}; //this.req.name;
     var phone = data.phone; //: {phone}; 
 
   //if(doc.name = name) {
-if(doc.name != null) { //name != null) { //doc.name = name) {
+if(!doc.name) { != null) { //name != null) { //doc.name = name) {
 //if(name != doc.name) {
 //ret.push(doc);
-console.log(doc.name + " " + msg);
+console.log(doc.name + " already exist");
 //console.log(ret);
 //console.log(ret.doc)
-var msg = "User already exixt";
-     callback(true, msg);
-return msg;
+//var msg = "User already exixt";
+     //callback(true, msg);
+//return msg;
        // console.log("Name already exists"); //ret.push(doc);
 //throw err;
 
