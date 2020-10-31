@@ -357,11 +357,11 @@ db.collection('details').insertOne(data, function(err, collection){
 
 
   //});
-   
+   */
 });
 }
 });
-*/
+
 
 
 //exports.getAllDocuments = function(collection, callback) { mongoDB.connect(connection_string, function(err, db) { if(err) throw err; var allDocs = db.collection(collection).find().toArray(function(err, docs) { callback(docs); //db.close(); }); });}
