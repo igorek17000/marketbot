@@ -303,12 +303,12 @@ var resName = name;
 //results.each(function(err, res) {
 results.each((res, i) => { 
 
-if (results.length > 0) 
+if (results.length > 0) {
 
 console.log(res); 
 // Here you could build your html or put the results in some other data structure you want to work with 
-});
-else 
+next;
+} else {
 db.collection('details').insertOne(data, function(err, collection){ 
 
         if (err) 
@@ -360,7 +360,7 @@ db.collection('details').insertOne(data, function(err, collection){
    
 });
 }
-
+});
 */
 
 
