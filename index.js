@@ -301,7 +301,7 @@ var ret = [];
 var results = cursor; //.each();
 var resName = data.name;
 //results.each(function(err, res) {
-if (results.length > 0) { 
+if (results.length < 0) { 
 results.each((res, i) => { 
 console.log(res.name); 
 // Here you could build your html or put the results in some other data structure you want to work with 
