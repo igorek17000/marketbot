@@ -300,14 +300,14 @@ var name = this.req.body.name;
 var ret = []; 
 var results = cursor; //.each();
 var resName = data.name;
-results.each(function(res) {
+results.each(function(res, doc) {
 //results.each(); //(res, i) => { 
 //i = 0;
-if (results > 0) { //> 0) {
+if (results.doc > 0) { //> 0) {
 
-console.log(results); 
+console.log(doc); 
 // Here you could build your html or put the results in some other data structure you want to work with 
-return results;
+return doc;
 
 } else {
 db.collection('details').insertOne(data, function(err, collection){ 
