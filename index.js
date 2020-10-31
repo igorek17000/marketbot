@@ -315,6 +315,7 @@ db.collection('details').insertOne(data, function(err, collection){
 console.log(data + "\n User added"); 
 });
 }
+});
 /*
 cursor.each(function(err, doc){
 doc = {
