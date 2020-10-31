@@ -326,7 +326,7 @@ var msg = "User already exixt";
        // console.log("Name already exists"); //ret.push(doc);
 //throw err;
 
-   } 
+   } else {
 
 if(doc.name = null) {
 var msg = "User added successfully";
@@ -352,7 +352,8 @@ var msg = "User added successfully";
 
     //
   });
-   } 
+   }
+  } 
 });
 
 
