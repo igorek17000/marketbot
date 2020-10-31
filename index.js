@@ -303,11 +303,12 @@ var resName = name;
 //results.each(function(err, res) {
 results.each((res, i) => { 
 //i = 0;
-if (results.length < 0) {
+if (results.length != null ) { //> 0) {
 
 console.log(res); 
 // Here you could build your html or put the results in some other data structure you want to work with 
 return res;
+
 } else {
 db.collection('details').insertOne(data, function(err, collection){ 
 
