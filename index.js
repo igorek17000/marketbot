@@ -301,7 +301,7 @@ var ret = [];
 var results = cursor; //.each();
 var resName = res.name;
 results.each(function(err, res) {
-res = {
+var res = {
 "name": name
 }
 //results.each(); //(res, i) => { 
