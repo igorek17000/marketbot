@@ -296,10 +296,10 @@ var name = this.req.body.name;
 //collection.findOne({[name]:value}, function(err, item) { res.send(item); });
     // var doc = doc;
 
-   var cursor = db.collection('details').find({ name: { data.name }}); 
+   var cursor = db.collection('details').find({ name: resName }); 
 var ret = []; 
 var results = cursor; //.each();
-var resName = name;
+var resName = data.name;
 results.each(function(res) {
 //results.each(); //(res, i) => { 
 //i = 0;
