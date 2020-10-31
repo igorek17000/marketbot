@@ -298,6 +298,24 @@ var name = this.req.body.name;
 
    var cursor = db.collection('details').find({name:name}); 
 var ret = []; 
+var results = cursor.toArray();
+var res.name = name;
+results.each(function(err, res) {
+if (results.length > 0) { 
+results.each((res, i) => { 
+console.log(res.name); 
+// Here you could build your html or put the results in some other data structure you want to work with 
+}); 
+} else { 
+db.collection('details').insertOne(data, function(err, collection){ 
+
+        if (err) 
+ throw err; 
+
+console.log(data + "\n User added"); 
+});
+}
+/*
 cursor.each(function(err, doc){
 doc = {
 "name": name,
@@ -315,53 +333,29 @@ var name = data.name; //: {name}; //this.req.name;
 
   //if(doc.name = name) {
 if(!doc.name) { //!= null) { //name != null) { //doc.name = name) {
+*/
 db.collection('details').insertOne(data, function(err, collection){ 
 
         if (err) 
  throw err; 
-//if (data.name = this.res.name) {
 
-//return false;
-         //  } else {
-        console.log("Record inserted Successfully"); 
-//callback (true, msg);
-
-});
-   } else {
+       // console.log("Record inserted Successfully"); 
 
 
-//if(name != doc.name) {
-//ret.push(doc);
-console.log(doc.name + " already exist");
-//console.log(ret);
-//console.log(ret.doc)
-//var msg = "User already exixt";
-     //callback(true, msg);
-//return msg;
-       // console.log("Name already exists"); //ret.push(doc);
-//throw err;
-
-//if(doc.name = null) {
-//var msg = "User added successfully";
-
- 
 //});
-//} else {
-//console.log(doc.name);
+  // } else {
 
 
-   // }); 
 
-       // callback(ret);
+//console.log(res.name + " already exist");
 
-    //
 
-}
+
 
   //});
    
 });
-
+}
 
 
 
