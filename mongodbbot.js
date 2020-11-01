@@ -208,7 +208,7 @@ res.set({
 
   
 return res.redirect('index.html'); 
-}).listen(8080 || 27017) 
+}).listen() 
   
 
 console.log("server listening at port 8080"); 
