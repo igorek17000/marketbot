@@ -157,13 +157,13 @@ var app = express();
 /*
 app.post('/signup_success', function(req,res){ 
 */
-    var name = this.req.body.name; 
+    var name = this.req.name; //body.name; 
 
-    var email = this.req.body.email; 
+    var email = this.req.email; //body.email; 
 
-    var pass = this.req.body.password; 
+    var pass = this.req.password; //body.password; 
 
-    var phone = this.req.body.phone; 
+    var phone = this.req.phone; //body.phone; 
 
   
 
