@@ -313,10 +313,10 @@ if (name = data.name) {
 //--//--// cursor.each(function(err, doc){
 
 doc = {
-name: "name",
-email: "email",
-password: "pass",
-phone: "phone"
+name: name,
+email: email,
+password: pass,
+phone: phone
 }
 
 var name = data.name; //: {name}; //this.req.name; 
