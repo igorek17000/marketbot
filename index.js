@@ -309,14 +309,14 @@ results.each(function(err, doc) {
 //results.each(); //(res, i) => { 
 //i = 0;
 //if (results.doc > 0) { //> 0) {
-if (name) { // = data.name) {
+if (name = doc.name) { // = data.name) {
 //--//--// cursor.each(function(err, doc){
 
 doc = {
-name: name,
-email: email,
-password: pass,
-phone: phone
+"name": name,
+"email": email,
+"password": pass,
+"phone": phone
 }
 
 var name = data.name; //: {name}; //this.req.name; 
