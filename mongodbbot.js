@@ -26,7 +26,7 @@ today       = require('./bot.js');
 //var countdown;
 
 //image       = require('./2A34A9R.jpg');
-
+/*
 router = new director.http.Router({
   '/'    : {
     get: ping
@@ -106,7 +106,7 @@ server = http.createServer(function (req, res, err) {
 
 
 });
-
+*/
 
 port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
 ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
@@ -122,6 +122,19 @@ router.post('Server');
 
 //--------------
 
+
+/*
+
+function iterateFunc(doc) { 
+console.log(JSON.stringify(doc, null, 4)); 
+} 
+
+function errorFunc(error) { 
+console.log(error); 
+} 
+cursor.forEach(iterateFunc, errorFunc);
+
+*/
 
 
 mongoose.connect(connection_string); 
