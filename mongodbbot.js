@@ -3,15 +3,20 @@
 
 var req = this.req;
 var res = this.res;
-var matchHash;
-matchHash = this.res;
+
+var express = require("express"); 
+var app = require('express');
+var path = require('path');
+var bodyParser = require("body-parser"); 
+var mongoose = require('mongoose'); 
+var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority'; 
+var db = mongoose.connection; 
 var nodemailer = require('nodemailer');
 var moment = require('moment'); 
 var date = moment().utcOffset(-240).format('LLLL');
-var app = require('express');
-var path = require('path');
 //var demo = require('./commands/countdown.html');
 var fs = require('fs');
+var name, email, pass, password, phone;
 var http, director, bot, router, server, port, db;
 
 http        = require('http');
@@ -118,48 +123,28 @@ router.post('Server');
 //--------------
 
 
-var express = require("express"); 
-
-var bodyParser = require("body-parser"); 
-
-var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
-
-
-var mongoose = require('mongoose'); 
 
 mongoose.connect(connection_string); 
-
-var db = mongoose.connection; 
-
 db.on('error', console.log.bind(console, "connection error")); 
-
 db.once('open', function(callback){ 
-
     console.log("connection succeeded"); 
 }) 
 
-  
+app.use(bodyParser.json()); 
 
-var app = express();
+app.use(express.static('public')); 
+app.use(bodyParser.urlencoded({ 
 
-  
-
-  
-//app.use(bodyParser.json()); 
-
-//app.use(express.static('public')); 
-//app.use(bodyParser.urlencoded({ 
-
-   //extended: true
-//})); 
+   extended: true
+})); 
 
   
-/*
+
 app.post('/signup_success', function(req,res){ 
 
     var name = req.body.name; 
 
-    var email =req.body.email; 
+    var email = req.body.email; 
 
     var pass = req.body.password; 
 
@@ -198,7 +183,7 @@ db.collection('details').insertOne(data,function(err, collection){
 
   
 
-app.get('/rend',function(req,res){ 
+app.get('/rend',function(req, res){ 
 res.set({ 
 
     'Access-control-Allow-Origin': '*'
@@ -214,7 +199,7 @@ return res.redirect('index.html');
 
 console.log("server listening at port 8080"); 
 
-*/
+
 
 
 
