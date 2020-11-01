@@ -311,12 +311,14 @@ results.each(function(err, doc) {
 //if (results.doc > 0) { //> 0) {
 if (name = data.name) {
 //--//--// cursor.each(function(err, doc){
+/*
 doc = {
 "name": name,
 "email": email,
 "password": pass,
 "phone": phone
 }
+*/
 var name = data.name; //: {name}; //this.req.name; 
 
     var email = data.email; //: {email}; 
@@ -347,14 +349,14 @@ console.log(data.name + "\n User added");
 /*
 //-------//-----
 //--//--// cursor.each(function(err, doc){
-/*
+
 doc = {
 "name": name,
 "email": email,
 "password": pass,
 "phone": phone
 }
-*/
+
 var name = data.name; //: {name}; //this.req.name; 
 
     var email = data.email; //: {email}; 
