@@ -207,13 +207,14 @@ return res.redirect('index.html');
 });
 
   
-
+return res.redirect('index.html'); 
+}).listen(8080) 
   
 
 console.log("server listening at port 8080"); 
 
 
-
+/*
 
 
 function ping() {
@@ -473,3 +474,4 @@ this.res.sendFile(__dirname + "/commands/" + "index.html");
 }
 */
 // -
+*/
