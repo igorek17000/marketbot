@@ -320,7 +320,7 @@ doc = {
 "password": pass,
 "phone": phone
 }
-/*
+
 var name = doc.name; //: {name}; //this.req.name; 
 
     var email = doc.email; //: {email}; 
@@ -328,7 +328,7 @@ var name = doc.name; //: {name}; //this.req.name;
     var pass = doc.password; //: {password}; 
 
     var phone = doc.phone; //: {phone}; 
-*/
+
   //if(doc.name = name) {
 //--//--// if(!doc.name) { //!= null) { //name != null) { //doc.name = name) {
 //-------//-------
