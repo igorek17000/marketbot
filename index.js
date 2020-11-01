@@ -8,7 +8,7 @@ matchHash = this.res;
 var nodemailer = require('nodemailer');
 var moment = require('moment'); 
 var date = moment().utcOffset(-240).format('LLLL');
-var app = require('express');
+//var app = require('express');
 var path = require('path');
 //var demo = require('./commands/countdown.html');
 var fs = require('fs');
@@ -311,7 +311,7 @@ results.each(function(err, doc) {
 //results.each(); //(res, i) => { 
 //i = 0;
 //if (results.doc > 0) { //> 0) {
-if (doc.name != null) { //> 0) { //= name) { // = data.name) {
+if (name = 1) { //> 0) { //= name) { // = data.name) {
 //--//--// cursor.each(function(err, doc){
 
 doc = {
