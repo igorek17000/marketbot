@@ -152,7 +152,7 @@ app.use(bodyParser.urlencoded({
 
   
 
-app.post('/signup_success', function(req,res){ 
+app.post('/signup_success_2', function(req,res){ 
 
     var name = req.body.name; 
 
@@ -195,7 +195,7 @@ db.collection('details').insertOne(data, function(err, collection){
 
   
 
-app.get('/rend',function(req, res){ 
+app.get('/home_2',function(req, res){ 
 res.set({ 
 
     'Access-control-Allow-Origin': '*'
