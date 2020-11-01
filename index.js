@@ -157,7 +157,7 @@ var app = express();
 /*
 app.post('/signup_success', function(req,res){ 
 */
-    var name = thos.req.body.name; 
+    var name = this.req.body.name; 
 
     var email = this.req.body.email; 
 
