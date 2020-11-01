@@ -310,24 +310,7 @@ results.each(function(err, doc) {
 //i = 0;
 //if (results.doc > 0) { //> 0) {
 if (doc.name = resName) {
-console.log(doc); 
-// Here you could build your html or put the results in some other data structure you want to work with 
-return doc;
-}
-});
-/*
-} else {
-db.collection('details').insertOne(data, function(err, collection){ 
-
-        if (err) 
- throw err; 
-
-console.log(data.name + "\n User added"); 
-
-*/
-
-/*
-cursor.each(function(err, doc){
+//--//--// cursor.each(function(err, doc){
 doc = {
 "name": name,
 "email": email,
@@ -343,7 +326,44 @@ var name = data.name; //: {name}; //this.req.name;
     var phone = data.phone; //: {phone}; 
 
   //if(doc.name = name) {
-if(!doc.name) { //!= null) { //name != null) { //doc.name = name) {
+//--//--// if(!doc.name) { //!= null) { //name != null) { //doc.name = name) {
+//-------//-------
+
+console.log(doc); 
+// Here you could build your html or put the results in some other data structure you want to work with 
+return doc;
+}
+});
+/*
+} else {
+db.collection('details').insertOne(data, function(err, collection){ 
+
+        if (err) 
+ throw err; 
+
+console.log(data.name + "\n User added"); 
+
+*/
+/*
+//-------//-----
+//--//--// cursor.each(function(err, doc){
+doc = {
+"name": name,
+"email": email,
+"password": pass,
+"phone": phone
+}
+var name = data.name; //: {name}; //this.req.name; 
+
+    var email = data.email; //: {email}; 
+
+    var pass = data.password; //: {password}; 
+
+    var phone = data.phone; //: {phone}; 
+
+  //if(doc.name = name) {
+//--//--// if(!doc.name) { //!= null) { //name != null) { //doc.name = name) {
+//-------//-------
 */
 /*
 db.collection('details').insertOne(data, function(err, collection){ 
