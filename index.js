@@ -311,7 +311,7 @@ results.each(function(err, doc) {
 //results.each(); //(res, i) => { 
 //i = 0;
 //if (results.doc > 0) { //> 0) {
-if (name == data.name ) { //> 0) { //= name) { // = data.name) {
+if (data.name = name ) { //> 0) { //= name) { // = data.name) {
 //--//--// cursor.each(function(err, doc){
 
 doc = {
