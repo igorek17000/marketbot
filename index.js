@@ -313,7 +313,7 @@ results.each(function(err, doc) {
 console.log(doc); 
 // Here you could build your html or put the results in some other data structure you want to work with 
 return results.doc;
-
+});
 } else {
 db.collection('details').insertOne(data, function(err, collection){ 
 
