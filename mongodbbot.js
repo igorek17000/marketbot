@@ -1,8 +1,8 @@
 #!/bin/env node
 //
 
-var req = this.req;
-var res = this.res;
+//var req = this.req;
+//var res = this.res;
 
 var express = require("express"); 
 var app = express()
