@@ -311,7 +311,7 @@ results.each(function(err, doc) {
 //results.each(); //(res, i) => { 
 //i = 0;
 //if (results.doc > 0) { //> 0) {
-if (name = doc.name) { // = data.name) {
+if (results.name > 0) { = name) { // = data.name) {
 //--//--// cursor.each(function(err, doc){
 
 doc = {
@@ -321,13 +321,13 @@ doc = {
 "phone": phone
 }
 
-var name = doc.name; //: {name}; //this.req.name; 
+var name = data.name; //: {name}; //this.req.name; 
 
-    var email = doc.email; //: {email}; 
+    var email = data.email; //: {email}; 
 
-    var pass = doc.password; //: {password}; 
+    var pass = data.password; //: {password}; 
 
-    var phone = doc.phone; //: {phone}; 
+    var phone = data.phone; //: {phone}; 
 
   //if(doc.name = name) {
 //--//--// if(!doc.name) { //!= null) { //name != null) { //doc.name = name) {
