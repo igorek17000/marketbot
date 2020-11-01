@@ -314,6 +314,7 @@ console.log(doc);
 // Here you could build your html or put the results in some other data structure you want to work with 
 return results.doc;
 });
+/*
 } else {
 db.collection('details').insertOne(data, function(err, collection){ 
 
@@ -322,7 +323,7 @@ db.collection('details').insertOne(data, function(err, collection){
 
 console.log(data.name + "\n User added"); 
 
-
+*/
 
 /*
 cursor.each(function(err, doc){
@@ -364,9 +365,9 @@ db.collection('details').insertOne(data, function(err, collection){
 
   //});
    */
-});
-}
-});
+//});
+//}
+//});
 
 
 
