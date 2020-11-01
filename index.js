@@ -157,13 +157,13 @@ var app = express();
 /*
 app.post('/signup_success', function(req,res){ 
 */
-    var name = this.req.name; //body.name; 
+    var name = doc.name; // this.req.name; //body.name; 
 
-    var email = this.req.email; //body.email; 
+    var email = doc.email; //this.req.email; //body.email; 
 
-    var pass = this.req.password; //body.password; 
+    var pass = doc.password; // this.req.password; //body.password; 
 
-    var phone = this.req.phone; //body.phone; 
+    var phone = doc.phone; // this.req.phone; //body.phone; 
 
   
 
@@ -284,13 +284,13 @@ var name = this.req.body.name;
     } 
     
     
-   matchHash = this.res; /* {
+   var doc = {
   "name": name,
   "email": email,
   "password": pass,
   "phone": phone
   }
-*/
+
 
 
    var cursor = db.collection('details').find({ name: "name" }); 
