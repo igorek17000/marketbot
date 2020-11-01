@@ -156,7 +156,7 @@ var app = express();
   
 /*
 app.post('/signup_success', function(req,res){ 
-
+*/
     var name = req.body.name; 
 
     var email =req.body.email; 
@@ -178,7 +178,7 @@ app.post('/signup_success', function(req,res){
         "phone":phone 
 
     } 
-
+/*
 db.collection('details').insertOne(data,function(err, collection){ 
 
         if (err) throw err; 
