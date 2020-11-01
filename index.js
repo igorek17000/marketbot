@@ -1,8 +1,8 @@
 #!/bin/env node
 //
 
-var req = this.req;
-var res = this.res;
+//var req = this.req;
+//var res = this.res;
 var matchHash;
 matchHash = this.res;
 var nodemailer = require('nodemailer');
