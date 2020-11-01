@@ -293,7 +293,7 @@ var name = this.req.body.name;
 */
 
 
-   var cursor = db.collection('details').find({ name: "name", email: "email", pass: "password", phone:"phone"}); 
+   var cursor = db.collection('details').find({ name: "name"}, {email: "email"}, {pass: "password"}, {phone:"phone"}}); 
 var ret = []; 
 var results = cursor; //.each();
 /*
@@ -309,7 +309,7 @@ results.each(function(err, doc) {
 //results.each(); //(res, i) => { 
 //i = 0;
 //if (results.doc > 0) { //> 0) {
-if (name == data.name) {
+if (name = data.name) {
 //--//--// cursor.each(function(err, doc){
 doc = {
 "name": name,
