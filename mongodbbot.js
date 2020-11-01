@@ -177,7 +177,7 @@ app.post('/signup_success', function(req,res){
 
     } 
 
-db.collection('details').insertOne(data,function(err, collection){ 
+db.collection('details').insertOne(data, function(err, collection){ 
 
         if (err) throw err; 
 
@@ -203,8 +203,8 @@ res.set({
 
     }); 
 
-return res.redirect('index.html'); 
-});
+//return res.redirect('index.html'); 
+//});
 
   
 return res.redirect('index.html'); 
@@ -286,11 +286,13 @@ var name = this.req.body.name;
    var cursor = db.collection('details').find({name:name}); 
 var ret = []; 
 var results = cursor; //.each();
+*/
 /*
 var res = {
 "name": name
 }
 */
+/*
 var resName = res.name;
 results.each(function(err, callback) {
 var name = this.req.body.name; 
@@ -326,6 +328,7 @@ console.log(results.doc);
 return results.doc;
 
 } else {
+*/
 /*
 db.collection('details').insertOne(data, function(err, collection){ 
 if (!data.name) {
@@ -377,6 +380,7 @@ db.collection('details').insertOne(data, function(err, collection){
 
   //});
    */
+/*
 });
 }
 });
@@ -423,7 +427,7 @@ this.res.write(html);
  // this.res.write(fs.readFile(path.join(__dirname + "./views/login.html"))); 
   this.res.end();
 }
-
+*/
 /*
 function form(req, res, data) {
 res.sendFile('./commands/index.html', { root: __dirname }) 
@@ -474,4 +478,4 @@ this.res.sendFile(__dirname + "/commands/" + "index.html");
 }
 */
 // -
-*/
+
