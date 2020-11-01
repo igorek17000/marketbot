@@ -309,7 +309,7 @@ results.each(function(err, doc) {
 //results.each(); //(res, i) => { 
 //i = 0;
 //if (results.doc > 0) { //> 0) {
-if (name = data.name) {
+if (doc.name) { // = data.name) {
 //--//--// cursor.each(function(err, doc){
 
 doc = {
