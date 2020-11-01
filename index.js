@@ -292,28 +292,25 @@ var name = this.req.body.name;
   }
 */
 
-   // function findIt(collection, matchHash, callback) {
-     // var name = this.req.params.name; 
-    //  var value = this.req.params.value; 
-//collection.findOne({[name]:value}, function(err, item) { res.send(item); });
-    // var doc = doc;
 
    var cursor = db.collection('details').find({ name: resName }); 
 var ret = []; 
 var results = cursor; //.each();
+/*
 var res = {
 "name": name
 }
-var resName = res.name;
-results.each(function(err, res) {
+*/
+var resName = data.name;
+results.each(function(err, doc) {
 //var res = {
 //"name": name
 //}
 //results.each(); //(res, i) => { 
 //i = 0;
-if (results.doc > 0) { //> 0) {
+//if (results.doc > 0) { //> 0) {
 
-console.log(results.doc); 
+console.log(doc); 
 // Here you could build your html or put the results in some other data structure you want to work with 
 return results.doc;
 
