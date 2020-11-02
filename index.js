@@ -295,7 +295,7 @@ var name = this.req.body.name;
 */
 
 
-   var cursor = db.collection('details').find({}); 
+   var cursor = db.collection('details').find({}, name); 
 var ret = []; 
 var results = cursor; //.each();
 var res = null;
@@ -318,7 +318,7 @@ var phone = data.phone; //: {phone};
 //results.each(); //(res, i) => { 
 //i = 0;
 //if (results.doc > 0) { //> 0) {
-if (data["name"]) { //data.name != true) { //res) { //null) { //res.name = data.name) { //docs[name] = data.name) { //null) { //data.name) { //doc.name = name ) { //> 0) { //= name) { // = data.name) {
+if (callback) { //data["name"]) { //data.name != true) { //res) { //null) { //res.name = data.name) { //docs[name] = data.name) { //null) { //data.name) { //doc.name = name ) { //> 0) { //= name) { // = data.name) {
 //--//--// cursor.each(function(err, doc){
 /*
 doc = {
