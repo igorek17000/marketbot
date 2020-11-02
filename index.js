@@ -321,6 +321,9 @@ var phone = data.phone; //: {phone};
 //if (results.doc > 0) { //> 0) {
 if (docs) { // != null) { //docs[name]) { //= null) { // && (data.name == docs[name])) { //callback) { //data["name"]) { //data.name != true) { //res) { //null) { //res.name = data.name) { //docs[name] = data.name) { //null) { //data.name) { //doc.name = name ) { //> 0) { //= name) { // = data.name) {
 //--//--// cursor.each(function(err, doc){
+console.log(docs);
+} else {
+
 db.collection('details').insertOne(data, function(err, collection){ 
 
         if (err) 
@@ -350,7 +353,7 @@ var name = data.name; //: {name}; //this.req.name;
 //--//--// if(!doc.name) { //!= null) { //name != null) { //doc.name = name) {
 //-------//-------
 
-console.log(docs); 
+//console.log(docs); 
 // Here you could build your html or put the results in some other data structure you want to work with 
 //return docs; // res;
 });
