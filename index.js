@@ -304,7 +304,7 @@ var res = {
 }
 */
 var resName = data.name;
-results.each(function(err, doc) {
+results.each(function(err, docs) {
 /*
 var name = data.name; //: {name}; //this.req.name;     
 var email = data.email; //: {email};     
@@ -317,7 +317,7 @@ var phone = data.phone; //: {phone};
 //results.each(); //(res, i) => { 
 //i = 0;
 //if (results.doc > 0) { //> 0) {
-if (this.req.name = doc.name) { //doc.name = name ) { //> 0) { //= name) { // = data.name) {
+if (res.name = data.name) { //doc.name = name ) { //> 0) { //= name) { // = data.name) {
 //--//--// cursor.each(function(err, doc){
 /*
 doc = {
@@ -340,9 +340,9 @@ var name = data.name; //: {name}; //this.req.name;
 //--//--// if(!doc.name) { //!= null) { //name != null) { //doc.name = name) {
 //-------//-------
 
-console.log(doc); 
+console.log(docs); 
 // Here you could build your html or put the results in some other data structure you want to work with 
-return doc;
+return res;
 }
 });
 /*
