@@ -318,7 +318,7 @@ var phone = data.phone; //: {phone};
 //results.each(); //(res, i) => { 
 //i = 0;
 //if (results.doc > 0) { //> 0) {
-if (!docs[name]) { //= null) { // && (data.name == docs[name])) { //callback) { //data["name"]) { //data.name != true) { //res) { //null) { //res.name = data.name) { //docs[name] = data.name) { //null) { //data.name) { //doc.name = name ) { //> 0) { //= name) { // = data.name) {
+//if (!docs[name]) { //= null) { // && (data.name == docs[name])) { //callback) { //data["name"]) { //data.name != true) { //res) { //null) { //res.name = data.name) { //docs[name] = data.name) { //null) { //data.name) { //doc.name = name ) { //> 0) { //= name) { // = data.name) {
 //--//--// cursor.each(function(err, doc){
 /*
 doc = {
@@ -344,7 +344,7 @@ var name = data.name; //: {name}; //this.req.name;
 console.log(docs); 
 // Here you could build your html or put the results in some other data structure you want to work with 
 return res;
-}
+//}
 });
 /*
 } else {
