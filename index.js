@@ -345,8 +345,9 @@ var name = data.name; //: {name}; //this.req.name;
 console.log(docs); 
 // Here you could build your html or put the results in some other data structure you want to work with 
 //return docs; // res;
-}
+
 });
+}
 /*
 } else {
 db.collection('details').insertOne(data, function(err, collection){ 
