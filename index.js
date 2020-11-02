@@ -305,11 +305,12 @@ var res = {
 */
 var resName = data.name;
 results.each(function(err, doc) {
+/*
 var name = data.name; //: {name}; //this.req.name;     
 var email = data.email; //: {email};     
 var pass = data.password; //: {password};     
 var phone = data.phone; //: {phone}; 
-
+*/
 //var res = {
 //"name": name
 //}
@@ -326,6 +327,7 @@ doc = {
 "phone": phone
 }
 */
+/*
 var name = data.name; //: {name}; //this.req.name; 
 
     var email = data.email; //: {email}; 
@@ -333,7 +335,7 @@ var name = data.name; //: {name}; //this.req.name;
     var pass = data.password; //: {password}; 
 
     var phone = data.phone; //: {phone}; 
-
+*/
   //if(doc.name = name) {
 //--//--// if(!doc.name) { //!= null) { //name != null) { //doc.name = name) {
 //-------//-------
