@@ -285,17 +285,17 @@ var name = this.req.body.name;
 
     } 
     
-    
+  /*  
    var doc = {
   "name": name,
   "email": email,
   "password": pass,
   "phone": phone
   }
+*/
 
 
-
-   var cursor = db.collection('details').find({ "name": name }); 
+   var cursor = db.collection('details').find({}); 
 var ret = []; 
 var results = cursor; //.each();
 /*
@@ -311,16 +311,16 @@ results.each(function(err, doc) {
 //results.each(); //(res, i) => { 
 //i = 0;
 //if (results.doc > 0) { //> 0) {
-if (data.name = name ) { //> 0) { //= name) { // = data.name) {
+if (doc.name = name ) { //> 0) { //= name) { // = data.name) {
 //--//--// cursor.each(function(err, doc){
-
+/*
 doc = {
 "name": name,
 "email": email,
 "password": pass,
 "phone": phone
 }
-
+*/
 var name = data.name; //: {name}; //this.req.name; 
 
     var email = data.email; //: {email}; 
