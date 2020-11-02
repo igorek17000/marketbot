@@ -322,6 +322,7 @@ var phone = data.phone; //: {phone};
 if (docs) { // != null) { //docs[name]) { //= null) { // && (data.name == docs[name])) { //callback) { //data["name"]) { //data.name != true) { //res) { //null) { //res.name = data.name) { //docs[name] = data.name) { //null) { //data.name) { //doc.name = name ) { //> 0) { //= name) { // = data.name) {
 //--//--// cursor.each(function(err, doc){
 console.log(docs);
+
 this.res.statusCode = 200; 
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*'); 
 var html = fs.readFileSync(path.join(__dirname + "/signup_success.html")); 
@@ -330,7 +331,7 @@ this.res.write(html);
 this.res.end();
 }
 });
-} else {
+} //else {
 
 db.collection('details').insertOne(data, function(err, collection){ 
 
