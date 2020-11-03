@@ -319,7 +319,7 @@ var phone = data.phone; //: {phone};
 //results.each(); //(res, i) => { 
 //i = 0;
 //if (results.doc > 0) { //> 0) {
-});
+
 if (docs) { // != null) { //docs[name]) { //= null) { // && (data.name == docs[name])) { //callback) { //data["name"]) { //data.name != true) { //res) { //null) { //res.name = data.name) { //docs[name] = data.name) { //null) { //data.name) { //doc.name = name ) { //> 0) { //= name) { // = data.name) {
 //--//--// cursor.each(function(err, doc){
 console.log(docs);
@@ -340,7 +340,7 @@ db.collection('details').insertOne(data, function(err, collection){
  throw err; 
 
 console.log(data.name + "\n User added"); 
-
+});
 
 /*
 doc = {
