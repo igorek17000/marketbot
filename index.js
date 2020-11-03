@@ -333,7 +333,7 @@ this.res.end();
 }
 });
 
-} //else {
+//} //else {
 
 db.collection('details').insertOne(data, function(err, collection){ 
 
