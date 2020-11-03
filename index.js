@@ -330,7 +330,8 @@ var html = fs.readFileSync(path.join(__dirname + "/signup_success.html"));
 this.res.write(html); 
 //this.res.redirect('signup_success.html'); 
 this.res.end();
-
+}
+});
 
 } else {
 
@@ -340,7 +341,6 @@ db.collection('details').insertOne(data, function(err, collection){
  throw err; 
 
 console.log(data.name + "\n User added"); 
-});
 
 /*
 doc = {
