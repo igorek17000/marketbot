@@ -304,9 +304,19 @@ var res = {
 "name": name
 }
 */
+
+function iterateFunc(doc) { 
+console.log(JSON.stringify(doc, null, 4)); 
+} 
+function errorFunc(error) { 
+console.log(error); 
+} 
+results.forEach(iterateFunc, errorFunc);
+
+
 var resName = data.name;
 //if (docs[name]) { 
-results.each(function(err, docs) {
+//--//results.each(function(err, docs) {
 /*
 var name = data.name; //: {name}; //this.req.name;     
 var email = data.email; //: {email};     
@@ -320,10 +330,11 @@ var phone = data.phone; //: {phone};
 //i = 0;
 //if (results.doc > 0) { //> 0) {
 
-if (docs) { // != null) { //docs[name]) { //= null) { // && (data.name == docs[name])) { //callback) { //data["name"]) { //data.name != true) { //res) { //null) { //res.name = data.name) { //docs[name] = data.name) { //null) { //data.name) { //doc.name = name ) { //> 0) { //= name) { // = data.name) {
+//if (docs) { // != null) { //docs[name]) { //= null) { // && (data.name == docs[name])) { //callback) { //data["name"]) { //data.name != true) { //res) { //null) { //res.name = data.name) { //docs[name] = data.name) { //null) { //data.name) { //doc.name = name ) { //> 0) { //= name) { // = data.name) {
 //--//--// cursor.each(function(err, doc){
-console.log(docs);
+//console.log(docs);
 //});
+/*
 this.res.statusCode = 200; 
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*'); 
 var html = fs.readFileSync(path.join(__dirname + "/signup_success.html")); 
@@ -332,7 +343,7 @@ this.res.write(html);
 this.res.end();
 }
 });
-
+*/
 //} //else {
 
 db.collection('details').insertOne(data, function(err, collection){ 
