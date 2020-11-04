@@ -313,6 +313,13 @@ console.log(data.name + "\n User added");
 }
 
 function iterateFunc(doc) {
+var doc = { 
+"name": name, 
+"email": email, 
+"password": pass, 
+"phone": phone 
+}
+
 console.log(JSON.stringify(doc, null, 4)); 
 if (!name) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
 addit();
