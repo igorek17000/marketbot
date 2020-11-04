@@ -322,7 +322,7 @@ function iterateFunc(doc) {
 }
 */
 console.log(JSON.stringify(doc, null, 4)); 
-if (doc != data) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
+if (doc = data) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
 addit();
 } 
 }
