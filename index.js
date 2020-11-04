@@ -313,7 +313,7 @@ console.log(data.name + "\n User added");
 }
 
 function iterateFunc(doc) {
-console.log(JSON.stringify(doc, null, 4)); 
+console.log(JSON.stringify(doc, 4)); //null, 4)); 
 if (!doc) {
 addit();
 } 
