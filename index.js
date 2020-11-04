@@ -313,7 +313,7 @@ console.log(data.name + "\n User added");
 }
 
 function iterateFunc(doc) {
-var doc = { 
+var null = { 
 "name": name, 
 "email": email, 
 "password": pass, 
