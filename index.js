@@ -317,6 +317,7 @@ console.log(JSON.stringify(doc, null, 4));
 if (doc != null) {
 addit();
 } 
+}
 function errorFunc(error) { 
 console.log(error); 
 } 
