@@ -304,9 +304,18 @@ var res = {
 "name": name
 }
 */
+function addit() {
+db.collection('details').insertOne(data, function(err, collection){ 
+        if (err) 
+ throw err; 
+console.log(data.name + "\n User added"); 
+});
+}
 
-function iterateFunc(doc) { 
+function iterateFunc(doc) {
 console.log(JSON.stringify(doc, null, 4)); 
+if (doc != null) {
+addit();
 } 
 function errorFunc(error) { 
 console.log(error); 
@@ -345,14 +354,14 @@ this.res.end();
 });
 */
 //} //else {
-
+/*
 db.collection('details').insertOne(data, function(err, collection){ 
 
         if (err) 
  throw err; 
 
 console.log(data.name + "\n User added"); 
-
+*/
 /*
 doc = {
 "name": name,
@@ -379,7 +388,7 @@ var name = data.name; //: {name}; //this.req.name;
 //return docs; // res;
 //});
 //}
-});
+//});
 
 /*
 } else {
