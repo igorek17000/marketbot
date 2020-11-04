@@ -286,13 +286,14 @@ var name = this.req.body.name;
     } 
     
   
-   var doc = {
+ /*
+  var doc = {
   "name": name,
   "email": email,
   "password": pass,
   "phone": phone
   }
-
+*/
 
 
    var cursor = db.collection('details').find({name}); 
@@ -321,7 +322,7 @@ function iterateFunc(doc) {
 }
 */
 console.log(JSON.stringify(doc, null, 4)); 
-if (!data.name) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
+if (doc != data) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
 addit();
 } 
 }
