@@ -306,7 +306,7 @@ var res = {
 }
 */
 function addit() {
-db.collection('details').insertOne(data, function(err, collection){ 
+db.collection('details').insertOne(data, {"name":unique}, function(err, collection){ 
         if (err) 
  throw err; 
 console.log(data.name + "\n User added"); 
@@ -322,12 +322,11 @@ function iterateFunc(doc) {
 }
 */
 console.log(JSON.stringify(doc, null, 4)); 
-if (name != null) { //.name != data.name) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
-
-console.log(data.name + " already exist");
+if (name !null) { //.name != data.name) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
+addit();
+//console.log(data.name + " already exist");
 
 } 
-addit();
 }
 function errorFunc(error) { 
 console.log(error); 
