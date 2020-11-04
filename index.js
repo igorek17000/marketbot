@@ -322,14 +322,13 @@ function iterateFunc(doc) {
 }
 */
 console.log(JSON.stringify(doc, null, 4)); 
-if (name != -1) { //name != data.name) { //true) { //.name != data.name) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
+if (name != true) { //name != data.name) { //true) { //.name != data.name) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
 //addit();
 console.log(data.name + " already exist");
-}
-} else {
+
 addit();
 }
-
+}
 function errorFunc(error) { 
 console.log(error); 
 } 
