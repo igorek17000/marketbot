@@ -331,7 +331,7 @@ if (doc.name != null) { //name != data.name) { //true) { //.name != data.name) {
 //console.log(data.name + " already exist");
 
 addit();
-//}
+}
 }
 function errorFunc(error) { 
 console.log(error); 
