@@ -307,14 +307,14 @@ var res = {
 }
 */
 function addit() {
-if (doc.name > -1) {
+//if (doc.name > -1) {
 db.collection('details').insertOne(data, function(err, collection){ 
         if (err) 
 throw err; 
 console.log(data.name + "\n User added"); 
 //console.log(result + "\n added"); 
 });
-}
+//}
 }
 
 function iterateFunc(doc) {
@@ -325,8 +325,8 @@ function iterateFunc(doc) {
 "phone": phone 
 }
 */
-console.log(JSON.stringify(doc, null, 4)); 
-//if (results.name != true) { //name != data.name) { //true) { //.name != data.name) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
+console.log(JSON.stringify(doc, 4)); 
+if (doc.name != null) { //name != data.name) { //true) { //.name != data.name) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
 //addit();
 //console.log(data.name + " already exist");
 
