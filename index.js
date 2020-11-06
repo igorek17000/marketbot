@@ -287,14 +287,14 @@ var name = this.req.body.name;
     } 
     
   
- 
+ /*
   var doc = {
   "name": name,
   "email": email,
   "password": pass,
   "phone": phone
   }
-
+*/
 
 
    var cursor = db.collection('details').find({name}); 
@@ -326,7 +326,7 @@ function iterateFunc(doc, callback) {
 }
 */
 console.log(JSON.stringify(doc, null, 4)); 
-if (data.name != doc.name) { //name != data.name) { //true) { //.name != data.name) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
+if (!name) { //data.name != doc.name) { //name != data.name) { //true) { //.name != data.name) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
 //addit();
 //console.log(data.name + " already exist");
 //callback(true);
