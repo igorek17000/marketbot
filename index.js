@@ -308,8 +308,8 @@ var res = {
 */
 function addit() {
 db.collection('details').insertOne(data, function(err, collection){ 
-        if (err) 
- throw err; 
+        if (!err) 
+// throw err; 
 console.log(data.name + "\n User added"); 
 //console.log(result + "\n added"); 
 });
