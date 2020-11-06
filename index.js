@@ -307,7 +307,7 @@ var res = {
 }
 */
 function addit() {
-if (!doc.name) {
+if (doc.name > -1) {
 db.collection('details').insertOne(data, function(err, collection){ 
         if (err) 
 throw err; 
