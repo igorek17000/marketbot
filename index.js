@@ -307,7 +307,7 @@ var res = {
 }
 */
 function additFunc() {
-var one = {"name": 1}, {unique: true};
+var one = {{"name": 1}, {unique: true}};
 //if (cursor < 1) {
 db.collection('details').insertOne(data, one, function(err, collection){ 
         if (err) 
