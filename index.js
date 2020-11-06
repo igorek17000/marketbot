@@ -314,7 +314,7 @@ throw err;
 console.log(data.name + "\n User added"); 
 //console.log(result + "\n added"); 
 });
-//}
+}
 }
 
 function iterateFunc(doc, callback) {
