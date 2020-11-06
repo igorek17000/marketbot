@@ -182,12 +182,13 @@ app.post('/signup_success', function(req,res){
 */
 /*
 db.collection('details').insertOne(data,function(err, collection){ 
+//if (result["name"] != data.name) {
 
         if (err) throw err; 
 
         console.log("Record inserted Successfully"); 
 
-              
+           //   }
 
     }); 
 
@@ -310,7 +311,7 @@ db.collection('details').insertOne(data, function(err, collection){
         if (err) 
  throw err; 
 console.log(data.name + "\n User added"); 
-console.log(collection + "\n added"); 
+console.log(result + "\n added"); 
 });
 }
 
