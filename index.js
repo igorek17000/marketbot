@@ -308,7 +308,7 @@ var res = {
 */
 function additFunc() {
 //if (cursor < 1) {
-db.collection('details').insertOne(data, function(err, collection){ 
+db.collection('details').insertOne(data, {unique: true, function(err, collection){ 
         if (err) 
 throw err; 
 console.log(data.name + "\n User added"); 
