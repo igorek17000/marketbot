@@ -171,12 +171,14 @@ app.post('/signup_success', function(req,res){
     var data = { 
 
         "name": name, 
-
+         unique: true,
+  
         "email":email, 
 
         "password":pass, 
 
-        "phone":phone 
+        "phone":phone,
+        {"name": 1}, {unique: true}
 
     } 
 */
