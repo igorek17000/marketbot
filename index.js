@@ -306,7 +306,7 @@ var res = {
 "name": name
 }
 */
-function addit() {
+function additFunc(doc) {
 //if (doc.name > -1) {
 db.collection('details').insertOne(data, function(err, collection){ 
         if (err) 
@@ -326,13 +326,13 @@ function iterateFunc(doc, callback) {
 }
 */
 console.log(JSON.stringify(doc, null, 4)); 
-if (doc.name) { //name != data.name) { //true) { //.name != data.name) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
+if (doc < 2) { //name != data.name) { //true) { //.name != data.name) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
 //addit();
 //console.log(data.name + " already exist");
-callback(true);
-addit();
-}
-console.log("exit");
+//callback(true);
+additFunc();
+//}
+//console.log("exit");
 }
 function errorFunc(error) { 
 console.log(error); 
