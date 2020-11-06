@@ -317,7 +317,7 @@ console.log(data.name + "\n User added");
 //}
 }
 
-function iterateFunc(doc) {
+function iterateFunc(doc, callback) {
 /*var null = { 
 "name": name, 
 "email": email, 
@@ -325,8 +325,8 @@ function iterateFunc(doc) {
 "phone": phone 
 }
 */
-console.log(JSON.stringify(doc, 4)); 
-if (doc.name != null) { //name != data.name) { //true) { //.name != data.name) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
+console.log(JSON.stringify(doc, null, 4)); 
+if (!callback) { //name != data.name) { //true) { //.name != data.name) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
 //addit();
 //console.log(data.name + " already exist");
 
