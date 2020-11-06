@@ -340,7 +340,7 @@ additFunc();
 function errorFunc(error) { 
 console.log(error); 
 } 
-results.forEach(iterateFunc, errorFunc);
+results.forEach(iterateFunc, additFunc, errorFunc);
 
 
 var resName = data.name;
