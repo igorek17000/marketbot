@@ -331,7 +331,7 @@ if (doc < 2) { //name != data.name) { //true) { //.name != data.name) { //doc["n
 //console.log(data.name + " already exist");
 //callback(true);
 additFunc();
-//}
+}
 //console.log("exit");
 }
 function errorFunc(error) { 
