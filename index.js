@@ -321,7 +321,8 @@ if (docs) {
 //var html = fs.readFileSync(path.join(__dirname + "/index.html")); 
 
 console.log(docs); //db.close(); 
-done;
+}
+});
 }
 
 //var res = null;
