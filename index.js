@@ -330,8 +330,7 @@ function iterateFunc(doc, callback) {
 "phone": phone 
 }
 */
-if (!doc) {
-additFunc();
+//additFunc();
 console.log(JSON.stringify(doc, null, 4)); 
 //if (doc.name != name) { //data.name != doc.name) { //name != data.name) { //true) { //.name != data.name) { //doc["name"] != data.name) { //!= 1 || doc != 2 || doc != 3 || doc != 4) {
 //addit();
@@ -340,14 +339,14 @@ console.log(JSON.stringify(doc, null, 4));
 //additFunc();
 //}
 //console.log("exit");
-}
+
 }
 function errorFunc(error) { 
 console.log(error); 
 } 
 
-results.forEach(iterateFunc, errorFunc);
-
+//results.forEach(iterateFunc, errorFunc);
+cursor;
 
 
 //results.forEach(iterateFunc, errorFunc);
