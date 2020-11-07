@@ -316,7 +316,7 @@ if (!data.name) {
 
 //var one = {{"name": 1}, {unique: true}};
 //if (!collection.name) {
-db.collection('details').insertOne(data, {upsert: true}, function(err, collection){ 
+db.collection('details').insertOne(data, function(err, collection){ 
         if (err) 
 throw err; 
 console.log(data.name + "\n User added"); 
