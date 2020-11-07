@@ -343,7 +343,7 @@ function errorFunc(error) {
 console.log(error); 
 } 
 results.forEach(iterateFunc, errorFunc);
-if (name != data.name) {
+if (!name) {
 addit();
 }
 
