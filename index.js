@@ -302,6 +302,9 @@ var name = this.req.body.name;
    var cursor = db.collection('details').find({name}); 
 var ret = []; 
 var results = cursor; //.each();
+var allDocs = db.collection(collection).find().toArray(function(err, docs) { 
+callback(docs);
+});
 //var res = null;
 /*
 var res = {
@@ -346,7 +349,7 @@ console.log(error);
 } 
 
 //results.forEach(iterateFunc, errorFunc);
-cursor;
+additFunc()
 
 
 //results.forEach(iterateFunc, errorFunc);
