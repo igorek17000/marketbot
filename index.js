@@ -302,9 +302,19 @@ var name = this.req.body.name;
    var cursor = db.collection('details').find({name}); 
 var ret = []; 
 var results = cursor; //.each();
-var allDocs = db.collection('details').find().toArray(function(err, docs) { 
-callback(docs);
+function getAllDocs(collection, callback) { 
+
+
+db.collection('details').find({name}).toArray(function(err, docs) { 
+if(err) throw err; 
+callback(docs); //db.close(); 
+
+if (name != data.name) {
+additFunc();
+}
 });
+}
+
 //var res = null;
 /*
 var res = {
@@ -348,9 +358,8 @@ function errorFunc(error) {
 console.log(error); 
 } 
 
-//results.forEach(iterateFunc, errorFunc);
-additFunc()
-
+//results.forEach(iteresults.forEachFunc);
+getAllDocs();
 
 //results.forEach(iterateFunc, errorFunc);
 //if (!name) {
