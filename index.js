@@ -310,9 +310,6 @@ var res = {
 */
 function additFunc() {
 //results.forEach(iterateFunc, errorFunc);
-results.forEach(iterateFunc, errorFunc);
-if (!iterateFunc) {
-
 
 //var one = {{"name": 1}, {unique: true}};
 //if (!collection.name) {
@@ -322,9 +319,9 @@ throw err;
 console.log(data.name + "\n User added"); 
 //console.log(result + "\n added"); 
 });
+
 }
-}
-additFunc();
+
 function iterateFunc(doc, callback) {
 /*var null = { 
 "name": name, 
@@ -345,6 +342,13 @@ console.log(JSON.stringify(doc, null, 4));
 function errorFunc(error) { 
 console.log(error); 
 } 
+
+results.forEach(iterateFunc, errorFunc) {
+if (data.name != null) {
+additFunc();
+}
+
+
 //results.forEach(iterateFunc, errorFunc);
 //if (!name) {
 //addit();
