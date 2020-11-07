@@ -308,13 +308,14 @@ function getAllDocs() {
 db.collection('details').find({name}).toArray(function(err, docs) { 
 if(err) throw err; 
 if (docs) {
-var html = fs.readFileSync(path.join(__dirname + "/index.html")); 
+rend();
+//var html = fs.readFileSync(path.join(__dirname + "/index.html")); 
 
 console.log(docs); //db.close(); 
 }
 if (docs < 1) {
 additFunc();
-var html = fs.readFileSync(path.join(__dirname + "/signup_success.html")); 
+//var html = fs.readFileSync(path.join(__dirname + "/signup_success.html")); 
 
 }
 });
@@ -507,7 +508,7 @@ db.collection('details').insertOne(data, function(err, collection){
 
   this.res.statusCode = 200; 
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*'); 
-//var html = fs.readFileSync(path.join(__dirname + "/signup_success.html")); 
+var html = fs.readFileSync(path.join(__dirname + "/signup_success.html")); 
 this.res.write(html); 
 //this.res.redirect('signup_success.html'); 
 this.res.end();
