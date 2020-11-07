@@ -289,14 +289,14 @@ var name = this.req.body.name;
     } 
     
   
- 
+ /*
   var collection = {
   "name": name,
   "email": email,
   "password": pass,
   "phone": phone
   }
-
+*/
 
 
    var cursor = db.collection('details').find(); 
