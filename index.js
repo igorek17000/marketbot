@@ -299,7 +299,7 @@ var name = this.req.body.name;
 
 
 
-   var cursor = db.collection('details').find("collection.name"); 
+   var cursor = db.collection('details').find(); 
 var ret = []; 
 var results = cursor; //.each();
 //var res = null;
