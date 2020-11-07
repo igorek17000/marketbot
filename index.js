@@ -299,7 +299,7 @@ var name = this.req.body.name;
 */
 
 
-   var cursor = db.collection('details').find(); 
+   var cursor = db.collection('details').find({name}); 
 var ret = []; 
 var results = cursor; //.each();
 //var res = null;
@@ -310,6 +310,9 @@ var res = {
 */
 function additFunc() {
 //results.forEach(iterateFunc, errorFunc);
+results.forEach(iterateFunc, errorFunc);
+if (!name) {
+
 
 //var one = {{"name": 1}, {unique: true}};
 //if (!collection.name) {
@@ -319,9 +322,9 @@ throw err;
 console.log(data.name + "\n User added"); 
 //console.log(result + "\n added"); 
 });
-//}
 }
-
+}
+additFunc();
 function iterateFunc(doc, callback) {
 /*var null = { 
 "name": name, 
@@ -342,10 +345,10 @@ console.log(JSON.stringify(doc, null, 4));
 function errorFunc(error) { 
 console.log(error); 
 } 
-results.forEach(iterateFunc, errorFunc);
-if (!name) {
-addit();
-}
+//results.forEach(iterateFunc, errorFunc);
+//if (!name) {
+//addit();
+//}
 
 var resName = data.name;
 //if (docs[name]) { 
