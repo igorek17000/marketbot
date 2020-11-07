@@ -335,7 +335,7 @@ console.log(JSON.stringify(doc, null, 4));
 //addit();
 //console.log(data.name + " already exist");
 //callback(true);
-additFunc();
+//additFunc();
 //}
 //console.log("exit");
 }
@@ -343,7 +343,9 @@ function errorFunc(error) {
 console.log(error); 
 } 
 results.forEach(iterateFunc, errorFunc);
-
+if (name != data.name) {
+addit();
+}
 
 var resName = data.name;
 //if (docs[name]) { 
