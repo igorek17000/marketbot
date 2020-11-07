@@ -302,14 +302,14 @@ var name = this.req.body.name;
    var cursor = db.collection('details').find({name}); 
 var ret = []; 
 var results = cursor; //.each();
-function getAllDocs(collection, callback) { 
+function getAllDocs() { 
 
 
 db.collection('details').find({name}).toArray(function(err, docs) { 
 if(err) throw err; 
-callback(docs); //db.close(); 
+console.log(docs); //db.close(); 
 
-if (name != data.name) {
+if (docs[name] != data.name) {
 additFunc();
 }
 });
