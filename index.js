@@ -308,16 +308,16 @@ var res = {
 "name": name
 }
 */
-function additFunc(collection) {
+function additFunc() {
 //var one = {{"name": 1}, {unique: true}};
-if (!collection.name) {
-db.collection('details').insertOne(data, function(err, collection){ 
+//if (!collection.name) {
+db.collection('details').insertOne(data, {upsert: true}, function(err, collection){ 
         if (err) 
 throw err; 
 console.log(data.name + "\n User added"); 
 //console.log(result + "\n added"); 
 });
-}
+//}
 }
 
 function iterateFunc(doc, callback) {
