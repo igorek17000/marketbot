@@ -289,17 +289,17 @@ var name = this.req.body.name;
     } 
     
   
- /*
-  var doc = {
+ 
+  var collection = {
   "name": name,
   "email": email,
   "password": pass,
   "phone": phone
   }
-*/
 
 
-   var cursor = db.collection('details').find({name}); 
+
+   var cursor = db.collection('details').find("collection.name"); 
 var ret = []; 
 var results = cursor; //.each();
 //var res = null;
@@ -308,16 +308,16 @@ var res = {
 "name": name
 }
 */
-function additFunc(doc) {
+function additFunc(collection) {
 //var one = {{"name": 1}, {unique: true}};
-//if (cursor < 1) {
-db.collection('details').insertOne({name:1}, {unique:true}, data, function(err, collection){ 
+if (!collection.name) {
+db.collection('details').insertOne(data, function(err, collection){ 
         if (err) 
 throw err; 
 console.log(data.name + "\n User added"); 
 //console.log(result + "\n added"); 
 });
-//}
+}
 }
 
 function iterateFunc(doc, callback) {
