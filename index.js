@@ -311,7 +311,7 @@ var res = {
 function additFunc() {
 //results.forEach(iterateFunc, errorFunc);
 results.forEach(iterateFunc, errorFunc);
-if (!data.name) {
+if (!iterateFunc) {
 
 
 //var one = {{"name": 1}, {unique: true}};
