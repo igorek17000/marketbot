@@ -309,6 +309,8 @@ var res = {
 }
 */
 function additFunc() {
+//results.forEach(iterateFunc, errorFunc);
+
 //var one = {{"name": 1}, {unique: true}};
 //if (!collection.name) {
 db.collection('details').insertOne(data, {upsert: true}, function(err, collection){ 
@@ -340,7 +342,7 @@ additFunc();
 function errorFunc(error) { 
 console.log(error); 
 } 
-results.forEach(iterateFunc, additFunc, errorFunc);
+results.forEach(iterateFunc, errorFunc);
 
 
 var resName = data.name;
