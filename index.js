@@ -307,18 +307,20 @@ function getAllDocs() {
 
 db.collection('details').find({name}).toArray(function(err, docs) { 
 if(err) throw err; 
-if (docs) {
-rend();
-//var html = fs.readFileSync(path.join(__dirname + "/index.html")); 
 
-console.log(docs); //db.close(); 
-}
 if (docs < 1) {
 additFunc();
 //var html = fs.readFileSync(path.join(__dirname + "/signup_success.html")); 
 
 }
+if (docs) {
+
+//var html = fs.readFileSync(path.join(__dirname + "/index.html")); 
+
+console.log(docs); //db.close(); 
+}
 });
+rend();
 }
 
 //var res = null;
