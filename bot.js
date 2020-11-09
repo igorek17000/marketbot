@@ -265,18 +265,18 @@ console.log(error);
 
 getAllDocs();
 
-/*
+
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
-var html = fs.readFileSync(path.join(__dirname + "/signup_success.html"));
+var html = fs.readFileSync(path.join(__dirname + "/commands_success/command_success.html"));
 //trw();
 this.res.write(html);
 //this.res.redirect('signup_success.html');
 this.res.end(outputSuccess);
-*/
+/*
 this.res.writeHead(200, {"Content-Type": "text/html"}); 
 this.res.end(outputSuccess);
-
+*/
 }
 
 
