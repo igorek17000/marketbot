@@ -9,13 +9,13 @@ function init() {
   getFileAll('commands_success/command_success.html', function(data) {
     mainHTML = data;
   });
-  getFileAll('commands_success/partials/_all.html', function(data) {
+  getFileAll('commands/partials/_all.html', function(data) {
     allHTML = data;
   });
-  getFileAll('commands_success/partials/_mod.html', function(data) {
+  getFileAll('commands/partials/_mod.html', function(data) {
     modHTML = data;
   });
-  getFileAll('commands_success/partials/_owner.html', function(data) {
+  getFileAll('commands/partials/_owner.html', function(data) {
     ownerHTML = data;
   });
 }
