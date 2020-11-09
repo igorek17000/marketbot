@@ -74,7 +74,7 @@ get: test
  },
 
 '/commands_success' : {
-  get: bot.commands_success
+  get: commands_success
 },
 
 '/rend_command' : {
@@ -283,6 +283,138 @@ var html = fs.readFileSync(path.join(__dirname + "/commands_success/index.html")
 this.res.write(html);
 this.res.end();
 }
+
+
+function commands_success() {
+
+
+  var cmdArr = [];
+  //function cmdit() {
+//console.log('displaying commands at /commands');
+
+  for(var lib in checkCommandsHSH){
+    var newCmds = checkCommandsHSH[lib].getCmdListDescription();
+    if (newCmds)
+      cmdArr = cmdArr.concat(newCmds);
+  }
+//}
+  var outputSuccess = commandListSuccess.buildHTML(cmdArr, config.bot_name);
+
+
+var name = this.req.body.name;
+
+    var email = this.req.body.email;
+
+    var pass = this.req.body.password;
+
+    var phone = this.req.body.phone;
+
+  
+
+    var data = {
+
+        "name": name,
+
+        "email": email,
+
+        "password": pass,
+
+        "phone": phone
+
+    }
+
+
+ /*
+  var collection = {
+  "name": name,
+  "email": email,
+  "password": pass,
+  "phone": phone
+  }
+*/
+
+
+   var cursor = db.collection('details').find({name});
+var ret = [];
+var results = cursor; //.each();
+
+//var done = "this.res.statusCode = 200; this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*'); var html = fs.readFileSync(path.join(__dirname + "/index.html")); this.res.write(html); this.res.end();";
+function trw() {
+  var html = fs.readFileSync(path.join(__dirname + "/signup_success.html"));
+
+  this.res.write(html);
+}
+function getAllDocs() {
+
+
+db.collection('details').find({name}).toArray(function(err, docs) {
+if(err) throw err;
+
+if (docs < 1) {
+//additFunc();
+console.log("error");
+throw err;
+//var html = fs.readFileSync(path.join(__dirname + "/signup_success.html"));
+
+}
+if (docs) {
+//cmdit();
+//var html = fs.readFileSync(path.join(__dirname + "/index.html"));
+  console.log('displaying commands at /commands_success');
+//console.log(docs); //db.close();
+}
+});
+}
+
+//var res = null;
+/*
+var res = {
+"name": name
+}
+*/
+function additFunc() {
+//results.forEach(iterateFunc, errorFunc);
+
+//var one = {{"name": 1}, {unique: true}};
+//if (!collection.name) {
+db.collection('details').insertOne(data, function(err, collection){
+        if (err)
+throw err;
+console.log(data.name + "\n User added");
+//console.log(result + "\n added");
+});
+
+}
+
+function iterateFunc(doc, callback) {
+
+console.log(JSON.stringify(doc, null, 4));
+
+
+}
+function errorFunc(error) {
+console.log(error);
+}
+
+getAllDocs();
+
+
+  this.res.statusCode = 200;
+this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
+var html = fs.readFileSync(path.join(__dirname + "/commands_success/command_success.html"));
+//trw();
+this.res.write(html);
+//this.res.redirect('signup_success.html');
+this.res.end(outputSuccess);
+/*
+this.res.writeHead(200, {"Content-Type": "text/html"}); 
+this.res.end(outputSuccess);
+*/
+}
+
+
+
+
 
 function signup() {
 var name = this.req.body.name;
