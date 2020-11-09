@@ -156,15 +156,15 @@ exports.commands_success = function() {
 
 
   var cmdArr = [];
-  function cmdit() {
-  console.log('displaying commands at /commands');
+  //function cmdit() {
+//console.log('displaying commands at /commands');
 
   for(var lib in checkCommandsHSH){
     var newCmds = checkCommandsHSH[lib].getCmdListDescription();
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
-}
+//}
   var outputSuccess = commandListSuccess.buildHTML(cmdArr, config.bot_name);
 
 
@@ -206,7 +206,11 @@ var ret = [];
 var results = cursor; //.each();
 
 //var done = "this.res.statusCode = 200; this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*'); var html = fs.readFileSync(path.join(__dirname + "/index.html")); this.res.write(html); this.res.end();";
+function trw() {
+  var html = fs.readFileSync(path.join(__dirname + "/signup_success.html"));
 
+  this.res.write(html);
+}
 function getAllDocs() {
 
 
@@ -221,10 +225,10 @@ throw err;
 
 }
 if (docs) {
-cmdit();
+//cmdit();
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
-
-console.log(docs); //db.close();
+  console.log('displaying commands at /commands_success');
+//console.log(docs); //db.close();
 }
 });
 }
@@ -264,8 +268,9 @@ getAllDocs();
 
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
-var html = fs.readFileSync(path.join(__dirname + "/signup_success.html"));
-this.res.write(html);
+//-//var html = fs.readFileSync(path.join(__dirname + "/signup_success.html"));
+trw();
+//-//this.res.write(html);
 //this.res.redirect('signup_success.html');
 this.res.end(outputSuccess);
 }
