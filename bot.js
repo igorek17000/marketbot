@@ -9,6 +9,7 @@ var mods         = require('./modules/mods');
 //var countdowner  = require('./modules/countdown-list');
 
 var commandList  = require('./modules/command-list');
+var commandListSuccess  = require('./commands_success/command-list');
 var rooms        = require('./modules/rooms');
 
 //commands with custom actions
@@ -31,7 +32,7 @@ var catFact      = require('./custom_commands/cat-fact');
 var urbanDict    = require('./custom_commands/urban-dictionary');
 
 
-var moment = require('moment-timezone'); 
+var moment = require('moment-timezone');
 
 moment.tz.setDefault('America/Toronto');
 
@@ -40,14 +41,14 @@ var date = moment.tz('America/Toronto').format('LLLL');
 //var go         = require('./modules/server.js');
 var fs           = require('fs');
 var concat       = require('concat');
-var cron = require('node-cron'); 
-var express = require('express'); 
-var nodemailer = require('nodemailer'); 
-app = express(); 
+var cron = require('node-cron');
+var express = require('express');
+var nodemailer = require('nodemailer');
+app = express();
 var weather = require('weather-js');
 var colors = require('colors');
 var chalk = require('chalk');
-//chalk.enabled = true; 
+//chalk.enabled = true;
 //import { Octokit } from "@octokit/core";
 
 
@@ -72,7 +73,7 @@ exports.respond = function(botRoom) {
   var request = JSON.parse(this.req.chunks[0]);
 
   var dataHash = {
-    
+
     request:      request,
     currentBot:   rooms.getRoom(botRoom),
     isMod:        mods.isMod(request.user_id),
@@ -91,10 +92,10 @@ exports.respond = function(botRoom) {
   if (!rooms.getRoom(botRoom).id && botRoom != 'config')
     return;
 
-//if (rooms.getRoom(botRoom) == '282865de8ce30137567238148f') 
+//if (rooms.getRoom(botRoom) == '282865de8ce30137567238148f')
     //logName = botRoom.name;
-   
-  
+
+
 
   for(var lib in checkCommandsHSH) {
     checkCommandsHSH[lib].checkCommands(dataHash, function(check, result, attachments){
@@ -118,7 +119,7 @@ exports.countdown = function() {
   var output = countdowner;
   //var output = cmdArr;
 //var output = checkCommandsHSH[].getCmdListDescription();
- 
+
 //return cmdArr;
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
@@ -145,6 +146,135 @@ exports.commands = function() {
 }
 
 
+
+
+
+
+
+//-----------------
+exports.commands_success = function() {
+
+
+  var cmdArr = [];
+  function cmdit() {
+  console.log('displaying commands at /commands');
+
+  for(var lib in checkCommandsHSH){
+    var newCmds = checkCommandsHSH[lib].getCmdListDescription();
+    if (newCmds)
+      cmdArr = cmdArr.concat(newCmds);
+  }
+}
+  var outputSuccess = commandListSuccess.buildHTML(cmdArr, config.bot_name);
+
+
+var name = this.req.body.name;
+
+    var email = this.req.body.email;
+
+    var pass = this.req.body.password;
+
+    var phone = this.req.body.phone;
+
+  
+
+    var data = {
+
+        "name": name,
+
+        "email": email,
+
+        "password": pass,
+
+        "phone": phone
+
+    }
+
+
+ /*
+  var collection = {
+  "name": name,
+  "email": email,
+  "password": pass,
+  "phone": phone
+  }
+*/
+
+
+   var cursor = db.collection('details').find({name});
+var ret = [];
+var results = cursor; //.each();
+
+//var done = "this.res.statusCode = 200; this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*'); var html = fs.readFileSync(path.join(__dirname + "/index.html")); this.res.write(html); this.res.end();";
+
+function getAllDocs() {
+
+
+db.collection('details').find({name}).toArray(function(err, docs) {
+if(err) throw err;
+
+if (docs < 1) {
+//additFunc();
+console.log("error");
+throw err;
+//var html = fs.readFileSync(path.join(__dirname + "/signup_success.html"));
+
+}
+if (docs) {
+cmdit();
+//var html = fs.readFileSync(path.join(__dirname + "/index.html"));
+
+console.log(docs); //db.close();
+}
+});
+}
+
+//var res = null;
+/*
+var res = {
+"name": name
+}
+*/
+function additFunc() {
+//results.forEach(iterateFunc, errorFunc);
+
+//var one = {{"name": 1}, {unique: true}};
+//if (!collection.name) {
+db.collection('details').insertOne(data, function(err, collection){
+        if (err)
+throw err;
+console.log(data.name + "\n User added");
+//console.log(result + "\n added");
+});
+
+}
+
+function iterateFunc(doc, callback) {
+
+console.log(JSON.stringify(doc, null, 4));
+
+
+}
+function errorFunc(error) {
+console.log(error);
+}
+
+getAllDocs();
+
+
+  this.res.statusCode = 200;
+this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
+var html = fs.readFileSync(path.join(__dirname + "/signup_success.html"));
+this.res.write(html);
+//this.res.redirect('signup_success.html');
+this.res.end(outputSuccess);
+}
+
+
+
+
+//------------------
+
 exports.commandlist = function() {
   var cmdArr = [];
 
@@ -165,7 +295,7 @@ exports.commandlist = function() {
 
 
 exports.teston = function() {
-  
+
 
   //console.log('displaying commands at /commands');
   var req = this.req
@@ -175,7 +305,7 @@ exports.teston = function() {
 
 
  // var output = testit(user_name);
-  
+
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end();
 }
@@ -198,8 +328,8 @@ function postMessage(botResponse, attachments, botID, logID, nickName) {
   var options, body, botReq, logReq, botID, logID, nickName;
 botID = botID;
 logID = "b6c42cc2a1bee3c38f07723d78";
-var chalk = require('chalk'); 
-//chalk.enabled = true; 
+var chalk = require('chalk');
+//chalk.enabled = true;
 var nN = chalk.red;
 
 var date = moment.tz('America/Toronto').format('LLLL');
@@ -241,16 +371,16 @@ var nickName = '';
 
 */
     body = {
-    
+
     "attachments" : attachments,
-    "bot_id"      : botID, 
+    "bot_id"      : botID,
     "text"        : botResponse
   };
 
 
 
 /* body1 = {
-    
+
     "attachments" : attachments,
     "bot_id"      : logID,
     "text"        : botResponse
@@ -276,9 +406,9 @@ var nickName = '';
 
 
 
-botReq = HTTPS.request(options, function(res) { 
+botReq = HTTPS.request(options, function(res) {
 //console.log('\x1b[31m%s\x1b[0m', 'Hi' + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + botResponse)
-var chalk = require('chalk'); 
+var chalk = require('chalk');
 
 
 
@@ -337,16 +467,16 @@ console.log(date);
 
 */
     body = {
-    
+
     "attachments" : attachments,
-    "bot_id"      : logID, 
+    "bot_id"      : logID,
     "text"        : nickName + "\n" + botResponse
   };
 
 
 
 /* body1 = {
-    
+
     "attachments" : attachments,
     "bot_id"      : logID,
     "text"        : nickName + "\n" + botResponse
@@ -371,7 +501,7 @@ console.log(date);
 
 
 
-logReq = HTTPS.request(options, function(res) { 
+logReq = HTTPS.request(options, function(res) {
 console.log(logName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + botResponse)
 
 
@@ -414,7 +544,7 @@ var botName;
 
 for (room in rooom) {
 room = rooom[room];
- 
+
 //var logName = '';
       if (request.currentBot == '308boonbot') { // == 'b6c42cc2a1bee3c38f07723d78') {
            logName = "BoonBot";
@@ -427,7 +557,7 @@ room = rooom[room];
            } else {
              logName = bot_id;
 
-}  
+}
 
   body = {
 
@@ -442,7 +572,7 @@ room = rooom[room];
 
 
 
-logReq = HTTPS.request(options, function(res) { 
+logReq = HTTPS.request(options, function(res) {
 console.log('Status: ' + res.statusMessage + ', Status code: ' + res.statusCode)
       //if (res.statusCode == 200) || (res.statusCode == 202) {
         //neat
