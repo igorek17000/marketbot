@@ -214,11 +214,11 @@ function trw() {
 
   this.res.write(html);
 }
-function getAllDocs() {
-//var matchHash = {
-//name: res[name]
-//}
-db.findDocs(db_table);
+function getAllDocs(matchHash, callback) {
+var matchHash = {
+"name": name
+}
+db.findDocs("details", matchHash);
 //console.log(db_dable);
 
 //db.collection('details').find({name}).toArray(function(err, docs) {
