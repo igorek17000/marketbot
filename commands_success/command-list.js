@@ -22,7 +22,7 @@ function init() {
 
 //feels pointless, come up with a better way to do this
 function getFileAll(path, callback) {
-fs.readFileSync(path.join, 'utf8', function(err, data){ //(__dirname + "/views/amaral.html"));
+fs.readFileSync(path, 'utf8', function(err, data){ //(__dirname + "/views/amaral.html"));
 
 //  fs.readFile(path, 'utf8', function(err, data){
     callback(data);
