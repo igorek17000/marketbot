@@ -232,7 +232,7 @@ if (docs) {
   console.log('displaying commands at /commands_success');
 //console.log(docs); //db.close();
 }
-});
+//});
 }
 
 //var res = null;
