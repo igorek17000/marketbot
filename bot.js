@@ -154,6 +154,7 @@ exports.commands = function() {
 //-----------------
 exports.commands_success = function() {
 
+var db = require('./index.js');
 
   var cmdArr = [];
   //function cmdit() {
