@@ -219,7 +219,7 @@ function getAllDocs() {
 //name: res[name]
 //}
 db.getAllDocuments(db_table);
-console.log(db_dable);
+//console.log(db_dable);
 
 //db.collection('details').find({name}).toArray(function(err, docs) {
 //if(err) throw err;
