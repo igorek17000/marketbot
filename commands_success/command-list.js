@@ -6,16 +6,16 @@ var fs = require('fs');
 init();
 
 function init() {
-  getFileAll(__dirname + 'commands_success/command_success.html', function(data) {
+  getFileAll('commands_success/command_success.html', function(data) {
     mainHTML = data;
   });
-  getFileAll(__dirname + 'commands_success/partials/_all.html', function(data) {
+  getFileAll('commands_success/partials/_all.html', function(data) {
     allHTML = data;
   });
-  getFileAll(__dirname + 'commands_success/partials/_mod.html', function(data) {
+  getFileAll('commands_success/partials/_mod.html', function(data) {
     modHTML = data;
   });
-  getFileAll(__dirname + 'commands_success/partials/_owner.html', function(data) {
+  getFileAll('commands_success/partials/_owner.html', function(data) {
     ownerHTML = data;
   });
 }
