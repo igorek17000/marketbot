@@ -215,10 +215,10 @@ function trw() {
 }
 function getAllDocs() {
 
-db.getAllDocuments()
+db.getAllDocuments();
 //db.collection('details').find({name}).toArray(function(err, docs) {
 //if(err) throw err;
-
+/*
 if (docs < 1) {
 //additFunc();
 console.log("error");
@@ -233,6 +233,7 @@ if (docs) {
 //console.log(docs); //db.close();
 }
 //});
+*/
 }
 
 //var res = null;
