@@ -6,12 +6,21 @@
 var matchHash;
 matchHash = this.res;
 var nodemailer = require('nodemailer');
+var moment = require('moment-timezone'); 
+moment.tz.setDefault('America/Toronto'); 
+//var date = moment().utcOffset(-300).format('LLLL');
+var date = moment().format('LLLL');
+
+
+
+/*
 var moment = require('moment-timezone');
 
 //moment.tz.setDefault('America/Toronto');
 
 //var moment = require('moment');
 var date = moment.tz.setDefault('America/Toronto');
+*/
 //var app = require('express');
 var path = require('path');
 //var demo = require('./commands/countdown.html');
