@@ -37,7 +37,7 @@ var moment = require('moment-timezone');
 //moment.tz.setDefault('America/Toronto');
 
 //var date = moment().utcOffset(-300).format('LLLL');
-var date = moment.tz('America/Toronto'); //.format('LLLL');
+var date = moment.tz.setDefalt('America/Toronto').format('LLLL');
 //var go         = require('./modules/server.js');
 var fs           = require('fs');
 var concat       = require('concat');
