@@ -83,7 +83,7 @@ get: test
  },
 
 '/commands_success' : {
-  post: commands_success
+  post: bot.commands_success
 },
 
 '/rend_command' : {
