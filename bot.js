@@ -215,9 +215,9 @@ function trw() {
   this.res.write(html);
 }
 function getAllDocs() {
-var matchHash = {
-name: res[name]
-}
+//var matchHash = {
+//name: res[name]
+//}
 db.getAllDocuments(db_table);
 console.log(db_dable);
 
