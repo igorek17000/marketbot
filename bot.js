@@ -1,6 +1,7 @@
 /*global init*/
 //
 //load modules
+var db_table = 'details';
 var sysCommands  = require('./modules/sys-commands');
 var db           = require('./modules/db.js');
 var mods         = require('./modules/mods');
@@ -215,7 +216,9 @@ function trw() {
 }
 function getAllDocs() {
 
-db.getAllDocuments('details', name);
+db.getAllDocuments(db_table, function(res) {
+console.log(res);
+});
 //db.collection('details').find({name}).toArray(function(err, docs) {
 //if(err) throw err;
 /*
