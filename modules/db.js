@@ -56,7 +56,7 @@ exports.getAllDocuments = function(collection, callback) {
 exports.getSuccessDocuments = function(collection, callback) {
   mongoDB.connect(connection_string, function(err, db) {
     if(err) throw err;
-    var allDocs = db.collection('details').find({name}).toArray(function(err, docs) {
+    db.collection('details').find({name}).toArray(function(err, docs) {
       callback(docs);
       //db.close();
     });
