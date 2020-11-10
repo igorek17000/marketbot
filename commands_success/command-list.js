@@ -6,23 +6,25 @@ var fs = require('fs');
 init();
 
 function init() {
-  getFileAll('commands_success/command_success.html', function(data) {
+  getFileAll(__dirname + '/commands_success/command_success.html', function(data) {
     mainHTML = data;
   });
-  getFileAll('commands/partials/_all.html', function(data) {
+  getFileAll(__dirname + '/commands_success/partials/_all.html', function(data) {
     allHTML = data;
   });
-  getFileAll('commands/partials/_mod.html', function(data) {
+  getFileAll(__dirname + '/commands_success/partials/_mod.html', function(data) {
     modHTML = data;
   });
-  getFileAll('commands/partials/_owner.html', function(data) {
+  getFileAll(__dirname + '/commands_success/partials/_owner.html', function(data) {
     ownerHTML = data;
   });
 }
 
 //feels pointless, come up with a better way to do this
 function getFileAll(path, callback) {
-  fs.readFile(path, 'utf8', function(err, data){
+fs.readFileSync(path.join, 'utf8', function(err, data){ //(__dirname + "/views/amaral.html"));
+
+//  fs.readFile(path, 'utf8', function(err, data){
     callback(data);
   });
 }
