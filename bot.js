@@ -154,7 +154,7 @@ exports.commands = function() {
 //-----------------
 exports.commands_success = function() {
 
-var db = require('./index.js');
+//var db = require('./index.js');
 
   var cmdArr = [];
   //function cmdit() {
@@ -201,8 +201,9 @@ var name = this.req.body.name;
   }
 */
 
+var cursor = db.getAllDocuments();
 
-   var cursor = db.collection('details').find({name});
+  // var cursor = db.collection('details').find({name});
 var ret = [];
 var results = cursor; //.each();
 
@@ -214,9 +215,9 @@ function trw() {
 }
 function getAllDocs() {
 
-
-db.collection('details').find({name}).toArray(function(err, docs) {
-if(err) throw err;
+db.getAllDocuments()
+//db.collection('details').find({name}).toArray(function(err, docs) {
+//if(err) throw err;
 
 if (docs < 1) {
 //additFunc();
