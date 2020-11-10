@@ -214,11 +214,13 @@ function trw() {
 
   this.res.write(html);
 }
-function getAllDocs() {
-
-db.getAllDocuments(db_table, function(res) {
-console.log(res);
-});
+function getAllDocs(res, callback) {
+var matchHash = {
+name: res[name]
+}
+db.getAllDocuments(db_table, matchHash) {
+console.log(matchHash);
+}
 //db.collection('details').find({name}).toArray(function(err, docs) {
 //if(err) throw err;
 /*
