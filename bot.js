@@ -218,7 +218,7 @@ function getAllDocs(matchHash, callback) {
 var matchHash = {
 "name": name
 }
-db.getSuccessDocuments();
+db.getSuccessDocuments(db_table, matchHash);
 //console.log(db_dable);
 
 //db.collection('details').find({name}).toArray(function(err, docs) {
