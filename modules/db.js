@@ -60,7 +60,7 @@ exports.getSuccessDocuments = function(collection, callback) {
    var ret = db.collection(collection).find().toArray(function(err, docs) {
      if (docs) {
       callback(docs);
-      //db.close();
+      db.close();
        }
     });
   });
