@@ -57,12 +57,33 @@ exports.getSuccessDocuments = function(collection, callback) {
   mongoDB.connect(connection_string, function(err, db) {
 
     if(err) throw err;
+    
+    db.collection('details').find({name}).toArray(function(err, docs) {
+      if(err) throw err; 
+      if (docs < 1) {
+        //additFunc();
+        console.log("error");
+        throw err;
+        //var html = fs.readFileSync(path.join(__dirname + "/signup_success.html")); 
+      }
+      if (docs) {
+        callback(docs);
+        //cmdit();
+        //var html = fs.readFileSync(path.join(__dirname + "/index.html")); 
+        console.log('displaying commands at /commands_success');
+        //console.log(docs); 
+        //db.close();
+      }
+      
+    });
+    /*
    var ret = db.collection(collection).find().toArray(function(err, docs) {
      if (docs) {
       callback(docs);
       db.close();
        }
     });
+    */
   });
 }
 
