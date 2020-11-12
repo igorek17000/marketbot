@@ -202,11 +202,11 @@ var name = this.req.body.name;
   }
 */
 
-var cursor = db.getAllDocuments();
+//var cursor = db.getAllDocuments();
 
   // var cursor = db.collection('details').find({name});
-var ret = [];
-var results = cursor; //.each();
+//var ret = [];
+//var results = cursor; //.each();
 
 //var done = "this.res.statusCode = 200; this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*'); var html = fs.readFileSync(path.join(__dirname + "/index.html")); this.res.write(html); this.res.end();";
 function trw() {
@@ -214,8 +214,8 @@ function trw() {
 
   this.res.write(html);
 }
-function getAllDocs() {
-db.getSuccessDocuments(db_table, function(res) {
+function getIt() {
+db.findDocs(db_table, function(res) {
 var matchHash = res;
 console.log(matchHash);
 });
