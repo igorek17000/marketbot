@@ -217,8 +217,8 @@ function trw() {
 function getAllDocs() {
 db.getSuccessDocuments(db_table, function(res) {
 var matchHash = res;
-console.log(matchHash);
 });
+console.log(matchHash);
 }
 //console.log(db_dable);
 
