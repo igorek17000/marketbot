@@ -271,7 +271,7 @@ function errorFunc(error) {
 console.log(error);
 }
 
-getAllDocs();
+getIt();
 
 /*
   this.res.statusCode = 200;
