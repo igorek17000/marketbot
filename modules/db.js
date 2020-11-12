@@ -69,6 +69,7 @@ exports.getSuccessDocuments = function(collection, matchHash, callback) {
       //}
       if (callback) {
         callback(docs);
+        console.log(docs)
         //cmdit();
         //var html = fs.readFileSync(path.join(__dirname + "/index.html")); 
        // console.log('displaying commands at /commands_success');
