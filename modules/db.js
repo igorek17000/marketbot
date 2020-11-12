@@ -61,17 +61,17 @@ exports.getSuccessDocuments = function(collection, matchHash, callback) {
     var ret = db.collection('details').find(matchHash);
     ret.toArray(function(err, docs) {
      //if(err) throw err; 
-      if (docs < 1) {
+      //if (!callback) {
         //additFunc();
-        console.log("error");
-        throw err;
+       // console.log("error");
+        //throw err;
         //var html = fs.readFileSync(path.join(__dirname + "/signup_success.html")); 
-      }
-      if (docs) {
+      //}
+      if (callback) {
         callback(docs);
         //cmdit();
         //var html = fs.readFileSync(path.join(__dirname + "/index.html")); 
-        console.log('displaying commands at /commands_success');
+       // console.log('displaying commands at /commands_success');
         //console.log(docs); 
         //db.close();
       }
