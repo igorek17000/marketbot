@@ -216,8 +216,10 @@ function trw() {
 }
 function getIt() {
 db.findDocs(db_table, function(res) {
-var matchHash = res;
-console.log(matchHash);
+var matchHash = {
+"name": res[name]
+}
+console.log(res);
 });
 //console.log(db_dable);
 
