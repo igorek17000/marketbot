@@ -214,12 +214,12 @@ function trw() {
 
   this.res.write(html);
 }
-function getIt() {
+function getIt(collection, docs) {
 db.getSuccessDocuments();
 var matchHash = {
 "name": data.name
 }
-console.log(this.req);
+console.log(docs);
 
 //console.log(db_dable);
 
