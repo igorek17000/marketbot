@@ -215,12 +215,12 @@ function trw() {
   this.res.write(html);
 }
 function getIt() {
-db.getSuccessDocuments(db_table, function(res) {
+db.getSuccessDocuments();
 var matchHash = {
-"name": res[name]
+"name": data.name
 }
-console.log(res);
-});
+console.log(matchHash);
+
 //console.log(db_dable);
 
 //db.collection('details').find({name}).toArray(function(err, docs) {
