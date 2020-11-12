@@ -219,7 +219,7 @@ db.getSuccessDocuments();
 var matchHash = {
 "name": data.name
 }
-console.log(this.res);
+console.log(res);
 
 //console.log(db_dable);
 
