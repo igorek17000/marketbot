@@ -214,7 +214,7 @@ function trw() {
 
   this.res.write(html);
 }
-function getIt(collection, docs) {
+function getIt() {
 db.getSuccessDocuments();
 var matchHash = {
 "name": data.name
