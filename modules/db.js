@@ -58,8 +58,9 @@ exports.getSuccessDocuments = function(collection, matchHash, callback) {
 
     if(err) throw err;
     
-    var ret = db.collection('details').find(matchHash);
-    ret.toArray(function(err, docs) {
+  //  var ret = db.collection('details').find(matchHash);
+  //  ret.toArray(function(err, docs) {
+    db.collection('details').find(matchHash).toArray(function(err, docs) {
      //if(err) throw err; 
       //if (!callback) {
         //additFunc();
