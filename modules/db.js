@@ -67,7 +67,7 @@ exports.getSuccessDocuments = function(collection, matchHash, callback) {
         //throw err;
         //var html = fs.readFileSync(path.join(__dirname + "/signup_success.html")); 
       //}
-      if (callback) {
+      if (docs) { //callback) {
         callback(docs);
         console.log(docs)
         //cmdit();
