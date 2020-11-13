@@ -60,7 +60,7 @@ exports.getSuccessDocuments = function(collection, matchHash, callback) {
     
   //  var ret = db.collection('details').find(matchHash);
   //  ret.toArray(function(err, docs) {
-    db.collection('details').find(matchHash).toArray(function(err, docs) {
+    db.collection('details').find(matchHash).forEach(function(err, docs) {
      //if(err) throw err; 
       //if (!callback) {
         //additFunc();
@@ -68,7 +68,7 @@ exports.getSuccessDocuments = function(collection, matchHash, callback) {
         //throw err;
         //var html = fs.readFileSync(path.join(__dirname + "/signup_success.html")); 
       //}
-      if (docs["data.name"]) { // != null) { //callback) {
+      if (docs) { // != null) { //callback) {
         //callback(docs);
         console.log(docs)
         //cmdit();
