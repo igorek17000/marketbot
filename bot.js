@@ -183,6 +183,12 @@ db.getSuccessDocument();
 var matchHash = {
 "name": data.name
 }
+var doc = {
+        "name": data.name,
+        "email": data.email,
+        "password": data.pass,
+        "phone": data.phone
+    }
 }
 
 getIt();
