@@ -153,6 +153,49 @@ exports.commands = function() {
 
 
 //-----------------
+exports.command_success = function() {
+
+  var cmdArr = [];
+
+  for(var lib in checkCommandsHSH){
+    var newCmds = checkCommandsHSH[lib].getCmdListDescription();
+    if (newCmds)
+      cmdArr = cmdArr.concat(newCmds);
+  }
+
+  var outputSuccess = commandListSuccess.buildHTML(cmdArr, config.bot_name);
+
+var name = this.req.body.name;
+    var email = this.req.body.email;
+    var pass = this.req.body.password;
+    var phone = this.req.body.phone;
+
+    var data = {
+        "name": name,
+        "email": email,
+        "password": pass,
+        "phone": phone
+    }
+
+
+function getIt() {
+db.getSuccessDocument();
+var matchHash = {
+"name": data.name
+}
+}
+
+getIt();
+
+this.res.writeHead(200, {"Content-Type": "text/html"}); 
+this.res.end(outputSuccess);
+
+}
+
+
+
+
+//*****
 exports.commands_success = function() {
 
 //var db = require('./index.js');
@@ -216,7 +259,6 @@ function trw() {
 }
 function getIt() {
 db.getSuccessDocuments();
-var name = this.req.body.name;
 var matchHash = {
 "name": data.name
 
@@ -276,6 +318,8 @@ console.log(error);
 }
 
 getIt();
+
+
 
 /*
   this.res.statusCode = 200;
