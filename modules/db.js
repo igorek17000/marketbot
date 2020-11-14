@@ -71,9 +71,9 @@ if(err) throw err;
 if (docs < 1) {
 //additFunc();
 db.collection('details').insertOne(data, function(err, collection){
-        if (err)
-throw err;
-}
+       // if (err)
+//throw err;
+//}
 if (docs) {
 console.log(JSON.stringify(docs, null, 4));
 }
