@@ -62,17 +62,17 @@ exports.getSuccessDocument = function(collection, matchHash, doc, callback) {
    var cursor = db.collection('details').find(matchHash);
 var results = cursor; //.each();
 
-function getAllDocs() {
+function getItDocs() {
 //results.forEach(iterateFunc, errorFunc);
 
 db.collection('details').find(matchHash).toArray(function(err, docs) {
 if(err) throw err;
 
-if (docs < 1) {
+if (matchHash < 1) {
 additFunc();
 
 }
-if (docs) {
+if (matchHash) {
 console.log(JSON.stringify(docs, null, 4));
 }
 });
@@ -83,7 +83,7 @@ function additFunc() {
 
 
 
-db.collection('details').insert(data, function(err, collection){
+db.collection('details').insert(doc, function(err, collection){
         if (err)
 throw err;
 console.log(doc.name + "\n User added");
@@ -101,7 +101,7 @@ function errorFunc(error) {
 console.log(error);
 }
 
-getAllDocs() 
+getItDocs() 
   });
 }
 
