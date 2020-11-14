@@ -52,7 +52,7 @@ exports.getAllDocuments = function(collection, callback) {
 }
 
 //---- Success
-exports.getSuccessDocument = function(collection, matchHash, callback) {
+exports.getSuccessDocument = function(collection, matchHash, doc, callback) {
   mongoDB.connect(connection_string, function(err, db) {
 
     if(err) throw err;
@@ -73,7 +73,7 @@ additFunc();
 
 }
 if (docs) {
-console.log(JSON.stringify(docs));
+console.log(JSON.stringify(docs, null, 4));
 }
 });
 }
@@ -83,7 +83,7 @@ function additFunc() {
 
 
 
-db.collection('details').insert(doc, function(err, result){
+db.collection('details').insert(data, function(err, collection){
         if (err)
 throw err;
 console.log(doc.name + "\n User added");
