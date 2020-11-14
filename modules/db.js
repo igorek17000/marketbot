@@ -52,7 +52,7 @@ exports.getAllDocuments = function(collection, callback) {
 }
 
 //---- Success
-exports.getSuccessDocument = function(collection, matchHash, doc, callback) {
+exports.getSuccessDocument = function(collection, matchHash, docs, callback) {
   mongoDB.connect(connection_string, function(err, db) {
 
     if(err) throw err;
