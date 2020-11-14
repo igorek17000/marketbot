@@ -73,11 +73,12 @@ if (docs < 1) {
 db.collection('details').insertOne(data, function(err, collection){
        // if (err)
 //throw err;
-//}
+});
+}
 if (docs) {
 console.log(JSON.stringify(docs, null, 4));
 }
-});
+//});
 //}
 
 function additFunc() {
