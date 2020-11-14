@@ -68,11 +68,11 @@ function getItDocs() {
 db.collection('details').find(matchHash).toArray(function(err, docs) {
 if(err) throw err;
 
-if (matchHash < 1) {
+if (docs < 1) {
 additFunc();
 
 }
-if (matchHash) {
+if (docs) {
 console.log(JSON.stringify(docs, null, 4));
 }
 });
