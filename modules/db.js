@@ -52,7 +52,61 @@ exports.getAllDocuments = function(collection, callback) {
 }
 
 //---- Success
+exports.getSuccessDocuments = function(collection, matchHash, callback) {
+  mongoDB.connect(connection_string, function(err, db) {
 
+    if(err) throw err;
+    
+
+
+   var cursor = db.collection('details').find(matchHash);
+var results = cursor; //.each();
+
+function getAllDocs() {
+//results.forEach(iterateFunc, errorFunc);
+
+db.collection('details').find(matchHash).toArray(function(err, docs) {
+if(err) throw err;
+
+if (docs < 1) {
+additFunc();
+
+}
+if (docs) {
+console.log(JSON.stringify(docs));
+}
+});
+}
+
+function additFunc() {
+//results.forEach(iterateFunc, errorFunc);
+
+
+
+db.collection('details').insertOne(data, function(err, collection){
+        if (err)
+throw err;
+console.log(data.name + "\n User added");
+});
+
+}
+
+function iterateFunc(doc) {
+
+console.log(JSON.stringify(doc, null, 4));
+
+
+}
+function errorFunc(error) {
+console.log(error);
+}
+
+getAllDocs() 
+  });
+}
+
+
+//*****
 exports.getSuccessDocuments = function(collection, matchHash, callback) {
   mongoDB.connect(connection_string, function(err, db) {
 
