@@ -216,8 +216,10 @@ function trw() {
 }
 function getIt() {
 db.getSuccessDocuments();
+var name = this.req.body.name;
 var matchHash = {
 "name": data.name
+
 }
 //console.log(docs);
 
