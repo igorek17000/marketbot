@@ -95,13 +95,13 @@ console.log(data.name + "\n User added");
 
 }
 
-function iterateFunc() {
+function iterateFunc(doc) {
 results.toArray(function(err, doc) { //, errorFunc);
 
-if (doc < 1) {
+if (!doc) {
 additFunc();
 }
-if (doc) {
+if (doc != null) {
 console.log(JSON.stringify(doc, null, 4));
 }
 });
