@@ -179,9 +179,9 @@ var name = this.req.body.name;
 
 
 //function getIt() {
-db.getSuccessDocument(matchHash);
+db.getSuccessDocument();
 var matchHash = { 
-"name": data.name 
+name: data.name 
 }
 
 /*
