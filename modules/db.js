@@ -110,7 +110,7 @@ function errorFunc(error) {
 console.log(error);
 }
 
-//getIt();
+iterateFunc();
   });
 }
 
