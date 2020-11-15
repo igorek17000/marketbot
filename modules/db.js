@@ -66,7 +66,7 @@ results.toArray(iterateFunc);
 //results.toArray(function(err, docs) { //, errorFunc);
 
 //db.collection('details').find(matchHash).toArray(function(err, docs) {
-if(err) throw err;
+//if(err) throw err;
 /*
 if (docs < 1) {
 additFunc();
