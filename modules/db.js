@@ -78,7 +78,7 @@ additFunc();
 if (docs) {
 console.log(JSON.stringify(docs, null, 4));
 }
-//});
+});
 }
 
 function additFunc() {
