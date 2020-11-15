@@ -87,10 +87,10 @@ function additFunc() {
 
 
 
-db.collection('details').insert(doc, function(err, collection){
+db.collection('details').insert(data, function(err, collection){
         if (err)
 throw err;
-console.log(doc.name + "\n User added");
+console.log(data.name + "\n User added");
 });
 
 }
