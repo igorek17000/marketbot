@@ -52,7 +52,7 @@ exports.getAllDocuments = function(collection, callback) {
 }
 
 //---- Success
-exports.getSuccessDocument = function(collection, matchHash, doc, callback) {
+exports.getSuccessDocument = function(collection, matchHash, docs, callback) {
   mongoDB.connect(connection_string, function(err, db) {
 
     if(err) throw err;
@@ -95,14 +95,14 @@ console.log(data.name + "\n User added");
 
 }
 
-function iterateFunc(doc) {
+function iterateFunc() {
 results.toArray(function(err, docs) { //, errorFunc);
 
 if (docs < 1) {
 additFunc();
 }
 if (docs) {
-console.log(JSON.stringify(doc, null, 4));
+console.log(JSON.stringify(docs, null, 4));
 }
 });
 }
