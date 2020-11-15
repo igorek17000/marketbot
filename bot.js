@@ -181,14 +181,17 @@ var name = this.req.body.name;
 function getIt() {
 db.getSuccessDocument();
 var matchHash = {
-"name": data.name
+"name": name
 }
+
+/*
 var doc = {
         "name": data.name,
         "email": data.email,
         "password": data.pass,
         "phone": data.phone
     }
+*/
 }
 
 getIt();
