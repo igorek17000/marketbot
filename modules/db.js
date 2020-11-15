@@ -61,7 +61,7 @@ exports.getSuccessDocument = function(collection, matchHash, data, callback) {
 
    var cursor = db.collection('details').find(matchHash);
 var results = cursor; //.each();
-results.toArray(iterateFunc);
+//results.toArray(iterateFunc);
 //function getIt() {
 //results.toArray(function(err, docs) { //, errorFunc);
 
@@ -95,14 +95,16 @@ console.log(data.name + "\n User added");
 
 }
 
-function iterateFunc(doc) {
+function iterateFunc() {
+results.toArray(function(err, doc) { //, errorFunc);
+
 if (doc < 1) {
 additFunc();
 }
 if (doc) {
 console.log(JSON.stringify(doc, null, 4));
 }
-
+});
 }
 function errorFunc(error) {
 console.log(error);
