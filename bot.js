@@ -180,19 +180,9 @@ var name = this.req.body.name;
 
 //function getIt() {
 db.getSuccessDocument();
-var name = this.req.body.name;
-    var email = this.req.body.email;
-    var pass = this.req.body.password;
-    var phone = this.req.body.phone;
 
-    var data = {
-        "name": name,
-        "email": email,
-        "password": pass,
-        "phone": phone
-    }
 var matchHash = { 
-name: data.name 
+"name": data.name 
 }
 
 /*
