@@ -102,7 +102,7 @@ if (docs < 1) {
 additFunc();
 }
 if (docs) {
-console.log(JSON.stringify(doc, null, 4));
+console.log(JSON.stringify(docs, null, 4));
 }
 });
 }
