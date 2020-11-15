@@ -178,9 +178,11 @@ var name = this.req.body.name;
     }
 
 
-function getIt() {
-db.getSuccessDocument();
-var matchHash = { name };
+//function getIt() {
+db.getSuccessDocument(matchHash, callback) {
+var matchHash = { 
+"name": data.name 
+}
 
 /*
 var data = {        
@@ -191,8 +193,8 @@ var data = {        
 }
 */
 }
-
-getIt();
+}
+//getIt();
 
 this.res.writeHead(200, {"Content-Type": "text/html"}); 
 this.res.end(outputSuccess);
