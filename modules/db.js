@@ -67,7 +67,7 @@ results.toArray(function(err, docs) { //, errorFunc);
 
 //db.collection('details').find(matchHash).toArray(function(err, docs) {
 if(err) throw err;
-
+});
 if (docs < 1) {
 additFunc();
 //db.collection('details').insertOne(data, function(err, collection){
@@ -78,7 +78,7 @@ additFunc();
 if (docs) {
 console.log(JSON.stringify(docs, null, 4));
 }
-});
+//});
 }
 
 function additFunc() {
