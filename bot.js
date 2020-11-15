@@ -179,7 +179,7 @@ var name = this.req.body.name;
 
 
 //function getIt() {
-db.getSuccessDocument(matchHash, callback);
+db.getSuccessDocument(matchHash);
 var matchHash = { 
 "name": data.name 
 }
