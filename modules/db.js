@@ -80,7 +80,7 @@ console.log(JSON.stringify(docs, null, 4));
 }
 //});
 }
-}
+
 function additFunc() {
 //results.forEach(iterateFunc, errorFunc);
 
@@ -105,7 +105,7 @@ console.log(error);
 }
 
 getIt();
- // });
+  });
 }
 
 
