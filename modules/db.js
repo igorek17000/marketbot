@@ -61,9 +61,9 @@ exports.getSuccessDocument = function(collection, matchHash, docs, callback) {
 
    var cursor = db.collection('details').find(matchHash);
 var results = cursor; //.each();
-
-function getIt() {
-results.toArray(function(err, docs) { //, errorFunc);
+results.toArray(function(err, docs) {
+//function getIt() {
+//results.toArray(function(err, docs) { //, errorFunc);
 
 //db.collection('details').find(matchHash).toArray(function(err, docs) {
 if(err) throw err;
@@ -79,7 +79,7 @@ if (docs) {
 console.log(JSON.stringify(docs, null, 4));
 }
 });
-}
+//}
 
 function additFunc() {
 //results.forEach(iterateFunc, errorFunc);
@@ -104,7 +104,7 @@ function errorFunc(error) {
 console.log(error);
 }
 
-getIt();
+//getIt();
   });
 }
 
