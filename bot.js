@@ -180,9 +180,7 @@ var name = this.req.body.name;
 
 function getIt() {
 db.getSuccessDocument();
-var matchHash = {
-"name": name
-}
+var matchHash = { name };
 
 /*
 var doc = {
