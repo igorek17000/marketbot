@@ -59,7 +59,7 @@ exports.getSuccessDocument = function(collection, name, docs, callback) {
     
 
 
-   var cursor = db.collection('details').find(matchHash);
+   var cursor = db.collection('details').find();
 var results = cursor; //.each();
 //results.toArray(iterateFunc);
 //function getIt() {
