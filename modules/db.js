@@ -96,7 +96,7 @@ console.log(data.name + "\n User added");
 }
 
 function iterateFunc() {
-db.collection('details').find({name: data: { name }}).each(function(err, docs) { //, errorFunc);
+db.collection('details').find({data: name}).each(function(err, docs) { //, errorFunc);
 
 if (docs < 1) {
 additFunc();
