@@ -171,7 +171,6 @@ var name = this.req.body.name;
     var phone = this.req.body.phone;
 
     var data = {
-        "id": _id,
         "name": name,
         "email": email,
         "password": pass,
@@ -183,7 +182,7 @@ var name = this.req.body.name;
 db.getSuccessDocument();
 
 var matchHash = { 
-"name": data.name 
+"name": name 
 }
 
 /*
