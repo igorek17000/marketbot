@@ -97,7 +97,7 @@ console.log(data.name + "\n User added");
 
 function iterateFunc() {
 db.collection('details').find(matchHash).each(function(err, result) { //, errorFunc);
-var docs = res;
+//var docs = res;
 //if (docs["name"] != matchHash) {
 if(!callback) {
 additFunc();
