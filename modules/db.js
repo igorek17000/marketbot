@@ -98,10 +98,10 @@ console.log(data.name + "\n User added");
 function iterateFunc() {
 db.collection('details').find(matchHash).each(function(err, docs) { //, errorFunc);
 
-if (docs.name != null) {
+if (docs.name != data.name) {
 additFunc();
 }
-if (docs.name) {
+if (docs.name = data.name) {
 console.log(JSON.stringify(docs, null, 4));
 }
 });
