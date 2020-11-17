@@ -102,7 +102,7 @@ if (result.name != matchHash.name) { //["name"] != matchHash) {
 //if(!callback) {
 additFunc();
 }
-if (result.name = matchHash.name) { //["name"] = matchHash) {
+if (result.name = matchHash) { //["name"] = matchHash) {
 //callback(result); 
 console.log(JSON.stringify(result, null, 4)); //docs, null, 4));
 }
