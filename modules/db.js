@@ -96,13 +96,15 @@ console.log(data.name + "\n User added");
 }
 
 function iterateFunc() {
-db.collection('details').find(matchHash).each(function(err, docs) { //, errorFunc);
-
-if (docs["name"] != matchHash) {
+db.collection('details').find(matchHash).each(function(err, result) { //, errorFunc);
+var docs = res;
+//if (docs["name"] != matchHash) {
+if(!callback) {
 additFunc();
 }
-if (docs["name"] = matchHash) {
-console.log(JSON.stringify(docs, null, 4));
+if(callback) { //if (docs["name"] = matchHash) {
+callback(result); 
+console.log(JSON.stringify(result, null, 4)); //docs, null, 4));
 }
 });
 }
