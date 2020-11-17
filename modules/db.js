@@ -87,7 +87,7 @@ function additFunc() {
 
 
 
-db.collection('details').insertOne(data, function(err, collection){
+db.collection('details').insert(data, function(err, collection){
         if (err)
 throw err;
 console.log(data.name + "\n User added");
@@ -98,12 +98,12 @@ console.log(data.name + "\n User added");
 function iterateFunc() {
 db.collection('details').find(matchHash).each(function(err, result) { //, errorFunc);
 //var docs = res;
-//if (docs["name"] != matchHash) {
-if(!callback) {
+if (result.name != matchHash.name) { //["name"] != matchHash) {
+//if(!callback) {
 additFunc();
 }
-if(callback) { //if (docs["name"] = matchHash) {
-callback(result); 
+if (result.name = matchHash.name) { //["name"] = matchHash) {
+//callback(result); 
 console.log(JSON.stringify(result, null, 4)); //docs, null, 4));
 }
 });
