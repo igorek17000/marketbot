@@ -302,8 +302,8 @@ function commands_success() {
   //function cmdit() {
 //console.log('displaying commands at /commands');
 
-  for(var lib in checkCommandsHSH){
-    var newCmds = checkCommandsHSH[lib].getCmdListDescription();
+  for(var lib in bot.checkCommandsHSH){
+    var newCmds = bot.checkCommandsHSH[lib].getCmdListDescription();
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
