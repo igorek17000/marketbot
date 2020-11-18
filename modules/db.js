@@ -105,10 +105,11 @@ db.collection('details').find({matchHash}).toArray(function(err, result) { //, e
 if (result) // != null) { //["name"] = matchHash) {
 callback(result); 
 console.log(JSON.stringify(result, null, 4)); //docs, null, 4));
-else 
-additFunc();
+return;
+//additFunc();
 
 });
+additFunc();
 }
 function errorFunc(error) {
 console.log(error);
