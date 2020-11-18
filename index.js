@@ -360,7 +360,7 @@ function getAllDocs() {
 db.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
-if (docs < 1) {
+if (docs[name] == null || docs[name] != name) { //< 1) {
 //additFunc();
 console.log("error");
 throw err;
