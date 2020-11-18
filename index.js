@@ -302,13 +302,13 @@ function commands_success() {
   //function cmdit() {
 //console.log('displaying commands at /commands');
 
-  for(var lib in bot.checkCommandsHSH){
-    var newCmds = bot.checkCommandsHSH[lib].getCmdListDescription();
-    if (newCmds)
-      cmdArr = cmdArr.concat(newCmds);
-  }
+ // for(var lib in bot.checkCommandsHSH){
+ //   var newCmds = bot.checkCommandsHSH[lib].getCmdListDescription();
+  //  if (newCmds)
+    //  cmdArr = cmdArr.concat(newCmds);
+ // }
 //}
-  var outputSuccess = bot.commandListSuccess(cmdArr);
+ // var outputSuccess = bot.commandListSuccess(cmdArr);
 
 
 var name = this.req.body.name;
