@@ -361,9 +361,9 @@ db.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
 if (docs[name] == null || docs[name] != name) { //< 1) {
-//additFunc();
-console.log("error");
-throw err;
+additFunc();
+console.log("User added");
+//throw err;
 //var html = fs.readFileSync(path.join(__dirname + "/signup_success.html"));
 
 }
