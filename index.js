@@ -308,7 +308,7 @@ function commands_success() {
       cmdArr = cmdArr.concat(newCmds);
   }
 //}
-  var outputSuccess = bot.commandListSuccess.buildHTML(cmdArr, config.bot_name);
+  var outputSuccess = bot.commandListSuccess(cmdArr, config.bot_name);
 
 
 var name = this.req.body.name;
