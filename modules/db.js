@@ -57,13 +57,13 @@ exports.getSuccessDocument = function(collection, doc, data, callback) {
 
     if(err) throw err;
     
-var name = this.req.body.name;
+var name = this.req.name;
 
-    var email = this.req.body.email;
+    var email = this.req.email;
 
-    var pass = this.req.body.password;
+    var pass = this.req.password;
 
-    var phone = this.req.body.phone;
+    var phone = this.req.phone;
 
   
 
@@ -116,7 +116,7 @@ console.log(data.name + "\n User added");
 }
 
 function iterateFunc() {
-db.collection('details').find().toArray(function(err, doc) { //, errorFunc);
+db.collection('details').find({name}).toArray(function(err, doc) { //, errorFunc);
 //var docs = res;
 //if (result < 1) { //["name"] != matchHash) {
 //if(!callback) {
