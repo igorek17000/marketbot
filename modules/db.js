@@ -98,13 +98,15 @@ console.log(data.name + "\n User added");
 function iterateFunc() {
 db.collection('details').find(matchHash).toArray(function(err, result) { //, errorFunc);
 //var docs = res;
-if (result < 1) { //["name"] != matchHash) {
+//if (result < 1) { //["name"] != matchHash) {
 //if(!callback) {
-additFunc();
-}
+//additFunc();
+//}
 if (result) { //["name"] = matchHash) {
 //callback(result); 
 console.log(JSON.stringify(result, null, 4)); //docs, null, 4));
+} else {
+additFunc();
 }
 });
 }
