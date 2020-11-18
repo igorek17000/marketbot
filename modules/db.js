@@ -102,12 +102,12 @@ db.collection('details').find({matchHash}).toArray(function(err, result) { //, e
 //if(!callback) {
 //additFunc();
 //}
-if (result != null) { //["name"] = matchHash) {
-//callback(result); 
+if (result) // != null) { //["name"] = matchHash) {
+callback(result); 
 console.log(JSON.stringify(result, null, 4)); //docs, null, 4));
-} else {
+else 
 additFunc();
-}
+
 });
 }
 function errorFunc(error) {
