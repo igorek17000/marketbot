@@ -102,7 +102,7 @@ db.collection('details').find(matchHash).toArray(function(err, result) { //, err
 //if(!callback) {
 //additFunc();
 //}
-if (result) { //["name"] = matchHash) {
+if (result != null) { //["name"] = matchHash) {
 //callback(result); 
 console.log(JSON.stringify(result, null, 4)); //docs, null, 4));
 } else {
