@@ -52,32 +52,12 @@ exports.getAllDocuments = function(collection, callback) {
 }
 
 //---- Success
-exports.getSuccessDocument = function(collection, name, doc, data, callback) {
+exports.getSuccessDocument = function(collection, doc, data, callback) {
   mongoDB.connect(connection_string, function(err, db) {
 
     if(err) throw err;
     
-var name = this.req.name;
 
-    var email = this.req.email;
-
-    var pass = this.req.password;
-
-    var phone = this.req.phone;
-
-  
-
-    var data = {
-
-        "name": name,
-
-        "email": email,
-
-        "password": pass,
-
-        "phone": phone
-
-    }
 
   // var cursor = db.collection('details').find();
 //var results = cursor; //.each();
@@ -116,25 +96,25 @@ console.log(data.name + "\n User added");
 }
 
 function iterateFunc() {
-db.collection('details').find({name}).toArray(function(err, doc) { //, errorFunc);
+db.collection('details').find().toArray(function(err, doc) { //, errorFunc);
 //var docs = res;
 //if (result < 1) { //["name"] != matchHash) {
 //if(!callback) {
 //additFunc();
 //}
-if (doc) { // != null) { //["name"] = matchHash) {
+//if (doc) { // != null) { //["name"] = matchHash) {
 console.log(JSON.stringify(doc, null, 4)); //docs, null, 4));
-}
-if (!doc) {
-additFunc();
-}
+//}
+//if (!doc) {
+//additFunc();
+//}
 });
 //additFunc();
 }
 function errorFunc(error) {
 console.log(error);
 }
-
+if (callback)
 iterateFunc();
   });
 }
