@@ -182,7 +182,7 @@ var name = this.req.body.name;
 db.getSuccessDocument();
 
 var matchHash = { 
-"name": data.name 
+name: data.name 
 }
 
 /*
