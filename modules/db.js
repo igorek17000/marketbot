@@ -103,7 +103,7 @@ db.collection('details').find(name).toArray(function(err, doc) { //, errorFunc);
 //additFunc();
 //}
 if (doc) { // != null) { //["name"] = matchHash) {
-console.log(JSON.stringify(result, null, 4)); //docs, null, 4));
+console.log(JSON.stringify(doc, null, 4)); //docs, null, 4));
 }
 if (!doc) {
 additFunc();
