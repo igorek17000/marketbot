@@ -96,20 +96,20 @@ console.log(data.name + "\n User added");
 }
 
 function iterateFunc() {
-db.collection('details').find({matchHash}).toArray(function(err, result) { //, errorFunc);
+db.collection('details').find(name).toArray(function(err, doc) { //, errorFunc);
 //var docs = res;
 //if (result < 1) { //["name"] != matchHash) {
 //if(!callback) {
 //additFunc();
 //}
-if (callback) // != null) { //["name"] = matchHash) {
-callback(result); 
+if (doc) { // != null) { //["name"] = matchHash) {
 console.log(JSON.stringify(result, null, 4)); //docs, null, 4));
-return;
-//additFunc();
-
-});
+}
+if (!doc) {
 additFunc();
+}
+});
+//additFunc();
 }
 function errorFunc(error) {
 console.log(error);
