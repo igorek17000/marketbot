@@ -52,7 +52,7 @@ exports.getAllDocuments = function(collection, callback) {
 }
 
 //---- Success
-exports.getSuccessDocument = function(collection, matchHash, data, callback) {
+exports.getSuccessDocument = function(collection, doc, data, callback) {
   mongoDB.connect(connection_string, function(err, db) {
 
     if(err) throw err;
@@ -96,7 +96,7 @@ console.log(data.name + "\n User added");
 }
 
 function iterateFunc() {
-db.collection('details').find(name).toArray(function(err, doc) { //, errorFunc);
+db.collection('details').find(data.name).toArray(function(err, doc) { //, errorFunc);
 //var docs = res;
 //if (result < 1) { //["name"] != matchHash) {
 //if(!callback) {
