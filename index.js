@@ -360,9 +360,9 @@ function getAllDocs() {
 db.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
-if (docs[name] != null || docs[name] != data.name) { //< 1) {
+if (!docs) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 additFunc();
-console.log("User added");
+//console.log("User added");
 //throw err;
 //var html = fs.readFileSync(path.join(__dirname + "/signup_success.html"));
 
