@@ -83,6 +83,7 @@ get: test
  },
 
 '/commands_success' : {
+  get: commands_success,
   post: bot.command_success
 },
 
