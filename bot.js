@@ -163,7 +163,7 @@ exports.command_success = function() {
       cmdArr = cmdArr.concat(newCmds);
   }
 
-  var outputSuccess = commandListSuccess.buildHTML(cmdArr, config.bot_name);
+  commandListSuccess.buildHTML(cmdArr, config.bot_name);
 //outputSuccess;
 /*
 var name = this.req.body.name;
