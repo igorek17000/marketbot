@@ -85,7 +85,7 @@ get: test
  },
 
 '/commands_success' : {
-  get: commands_success,
+  get: ccml.buildHTML,
   post: commands_success
 },
 
