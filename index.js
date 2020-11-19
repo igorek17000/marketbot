@@ -85,7 +85,7 @@ get: test
  },
 
 '/commands_success' : {
-//  get: bot.commands,
+  get: commands_success,
   post: commands_success
 },
 
@@ -307,16 +307,16 @@ var fs = require('fs');
 //init();
 
 function init() {
-  getFileAll('./commands_success/command_success.html', function(data) {
+  getFileAll('commands_success/command_success.html', function(data) {
     mainHTML = data;
   });
-  getFileAll('./commands_success/partials/_all.html', function(data) {
+  getFileAll('commands_success/partials/_all.html', function(data) {
     allHTML = data;
   });
-  getFileAll('./commands_success/partials/_mod.html', function(data) {
+  getFileAll('commands_success/partials/_mod.html', function(data) {
     modHTML = data;
   });
-  getFileAll('./commands_success/partials/_owner.html', function(data) {
+  getFileAll('commands_success/partials/_owner.html', function(data) {
     ownerHTML = data;
   });
 }
@@ -466,7 +466,7 @@ console.log(error);
 }
 
 getAllDocs();
-
+bot.commands();
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 var bot_name = "AlexBot";
