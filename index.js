@@ -304,7 +304,7 @@ var fs = require('fs');
 //var config = require('../config/config');
 
 
-init();
+//init();
 
 function init() {
   getFileAll('./commands_success/command_success.html', function(data) {
@@ -428,7 +428,7 @@ var ret = [];
 var results = cursor; //.each();
 
 function getAllDocs() {
-
+init();
 db.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
