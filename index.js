@@ -372,6 +372,7 @@ if (docs) {
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
   console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
+bot.command_success();
 }
 });
 }
