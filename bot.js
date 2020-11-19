@@ -164,7 +164,7 @@ exports.command_success = function() {
   }
 
   var outputSuccess = commandListSuccess.buildHTML(cmdArr, config.bot_name);
-outputSuccess;
+//outputSuccess;
 /*
 var name = this.req.body.name;
     var email = this.req.body.email;
@@ -208,10 +208,10 @@ this.res.write(outputSuccess);
 //this.res.write(html);
 this.res.end();
 */
-/*
+
 this.res.write(200, {"Content-Type": "text/html"}); 
 this.res.end(outputSuccess);
-*/
+
 }
 
 
