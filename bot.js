@@ -197,7 +197,7 @@ var data = {        
 }
 //getIt();
 */
-this.res.writeHead(200, {"Content-Type": "text/html"}); 
+this.res.write(200, {"Content-Type": "text/html"}); 
 this.res.end(outputSuccess);
 
 }
