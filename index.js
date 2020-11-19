@@ -372,7 +372,7 @@ getAllDocs();
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 var html = fs.readFileSync(path.join(__dirname + "/commands_success/command_success.html"));
-var outputSuccess = commandListSuccess.buildHTML(cmdArr, config.bot_name);
+var outputSuccess = commandListSuccess.buildHTML(cmdArr, bot_name);
 this.res.write(outputSuccess);
 //this.res.write(html);
 //this.res.redirect('signup_success.html');
