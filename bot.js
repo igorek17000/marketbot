@@ -164,7 +164,7 @@ exports.command_success = function() {
   }
 
   var outputSuccess = commandListSuccess.buildHTML(cmdArr, config.bot_name);
-
+/*
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
@@ -185,18 +185,18 @@ var matchHash = {
 name: data.name 
 }
 
-/*
+
 var data = {        
 "name": name,        
 "email": email,        
 "password": pass,        
 "phone": phone 
 }
-*/
+
 
 }
 //getIt();
-
+*/
 this.res.writeHead(200, {"Content-Type": "text/html"}); 
 this.res.end(outputSuccess);
 
