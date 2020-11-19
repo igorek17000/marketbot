@@ -408,7 +408,7 @@ var buildHTML = function (cmdArray, bot_name) {
 */
 //}
 
- var output = bot.command_success(); //ccml.buildHTML(cmdArr, bot_name); //buildHTML(cmdArr, bot_name);
+ var output = commandListSuccess.buildHTML(cmdArr, bot_name); //; //ccml.buildHTML(cmdArr, bot_name); //buildHTML(cmdArr, bot_name);
 
 
 var name = this.req.body.name;
