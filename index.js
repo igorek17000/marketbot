@@ -85,7 +85,7 @@ get: test
  },
 
 '/commands_success' : {
-  get: ccml.buildHTML,
+  get: bot.command_success,
   post: commands_success
 },
 
@@ -408,7 +408,7 @@ var buildHTML = function (cmdArray, bot_name) {
 */
 //}
 
- var outputSuccess = ccml.buildHTML(cmdArr, bot_name); //buildHTML(cmdArr, bot_name);
+ var outputSuccess = bot.command_success(outputSuccess); //ccml.buildHTML(cmdArr, bot_name); //buildHTML(cmdArr, bot_name);
 
 
 var name = this.req.body.name;
