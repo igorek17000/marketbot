@@ -371,6 +371,16 @@ getAllDocs();
 
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
+var bot_name = "AlexBot";
+  var cmdArr = [];
+  //function cmdit() {
+//console.log('displaying commands at /commands');
+
+   for(var lib in bot.checkCommandsHSH){
+    var newCmds = bot.checkCommandsHSH[lib].getCmdListDescription();
+    if (newCmds)
+      cmdArr = cmdArr.concat(newCmds);
+  }
 var html = fs.readFileSync(path.join(__dirname + "/commands_success/command_success.html"));
 var outputSuccess = commandListSuccess.buildHTML(cmdArr, bot_name);
 this.res.write(outputSuccess);
