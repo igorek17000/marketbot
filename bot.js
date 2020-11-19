@@ -209,7 +209,7 @@ this.res.write(outputSuccess);
 this.res.end();
 */
 
-this.res.write(200, {"Content-Type": "text/html"}); 
+this.res.write(); //200, {"Content-Type": "text/html"}); 
 this.res.end(outputSuccess);
 
 }
