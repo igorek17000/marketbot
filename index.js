@@ -85,7 +85,7 @@ get: test
  },
 
 '/commands_success' : {
-  get: bot.commands,
+//  get: bot.commands,
   post: commands_success
 },
 
@@ -323,7 +323,7 @@ function init() {
 
 //feels pointless, come up with a better way to do this
 function getFileAll(path, callback) {
-//fs.readFileSync(path, 'utf8', function(err, data){ //(__dirname + "/views/amaral.html"));
+//fs.readFileSync(path.join, 'utf8', function(err, data){ //(__dirname + "/views/amaral.html"));
 
   fs.readFile(path, 'utf8', function(err, data){
     callback(data);
@@ -381,7 +381,7 @@ var buildHTML = function (cmdArray, bot_name) {
   }
 
   var mainBuiltHTML = mainHTML;
- // mainBuiltHTML = mainBuiltHTML.replace('$$bot_name', 'Alex Bot');
+  mainBuiltHTML = mainBuiltHTML.replace('$$bot_name', 'Alex Bot');
   mainBuiltHTML = mainBuiltHTML.replace('$$all', allBuiltHTML);
   mainBuiltHTML = mainBuiltHTML.replace('$$mod', modBuiltHTML);
   mainBuiltHTML = mainBuiltHTML.replace('$$owner', ownerBuiltHTML);
@@ -399,11 +399,13 @@ var buildHTML = function (cmdArray, bot_name) {
   //function cmdit() {
 //console.log('displaying commands at /commands');
 
-   for(var lib in bot.checkCommandsHSH){
+  /*
+ for(var lib in bot.checkCommandsHSH){
     var newCmds = bot.checkCommandsHSH[lib].getCmdListDescription();
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
+*/
 //}
 
  var outputSuccess = buildHTML(cmdArr, bot_name);
@@ -471,12 +473,13 @@ var bot_name = "AlexBot";
   var cmdArr = [];
   //function cmdit() {
 //console.log('displaying commands at /commands');
-
+/*
    for(var lib in bot.checkCommandsHSH){
     var newCmds = bot.checkCommandsHSH[lib].getCmdListDescription();
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
+*/
 var html = fs.readFileSync(path.join(__dirname + "/commands_success/command_success.html"));
 var outputSuccess = buildHTML(cmdArr, bot_name);
 this.res.write(outputSuccess);
