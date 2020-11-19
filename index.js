@@ -10,6 +10,7 @@ var moment = require('moment-timezone');
 moment.tz.setDefault('America/Toronto'); 
 //var date = moment().utcOffset(-300).format('LLLL');
 var date = moment().format('LLLL');
+var commandListSuccess = require('./commands_success/command-list.js'); //commandListSuccess.buildHTML(cmdArr, config.bot_name);
 
 
 
@@ -301,13 +302,13 @@ function commands_success() {
   //function cmdit() {
 //console.log('displaying commands at /commands');
 
- // for(var lib in bot.checkCommandsHSH){
- //   var newCmds = bot.checkCommandsHSH[lib].getCmdListDescription();
-  //  if (newCmds)
-    //  cmdArr = cmdArr.concat(newCmds);
- // }
+   for(var lib in bot.checkCommandsHSH){
+    var newCmds = bot.checkCommandsHSH[lib].getCmdListDescription();
+    if (newCmds)
+      cmdArr = cmdArr.concat(newCmds);
+  }
 //}
- // var outputSuccess = bot.commandListSuccess(cmdArr);
+ var outputSuccess = commandListSuccess.buildHTML(cmdArr, config.bot_name);
 
 
 var name = this.req.body.name;
@@ -369,7 +370,9 @@ getAllDocs();
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 var html = fs.readFileSync(path.join(__dirname + "/commands_success/command_success.html"));
-this.res.write(html);
+var outputSuccess = commandListSuccess.buildHTML(cmdArr, config.bot_name);
+this.res.write(outputSuccess);
+//this.res.write(html);
 //this.res.redirect('signup_success.html');
 this.res.end();
 //this.res.writeHead(200, {"Content-Type": "text/html"}); 
