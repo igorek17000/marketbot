@@ -408,7 +408,7 @@ var buildHTML = function (cmdArray, bot_name) {
 */
 //}
 
- var outputSuccess = bot.command_success(outputSuccess); //ccml.buildHTML(cmdArr, bot_name); //buildHTML(cmdArr, bot_name);
+ var output = bot.command_success().outputSuccess; //ccml.buildHTML(cmdArr, bot_name); //buildHTML(cmdArr, bot_name);
 
 
 var name = this.req.body.name;
@@ -482,7 +482,7 @@ var bot_name = "AlexBot";
 */
 var html = fs.readFileSync(path.join(__dirname + "/commands_success/command_success.html"));
 //var outputSuccess = buildHTML(cmdArr, bot_name);
-this.res.write(outputSuccess);
+this.res.write(output);
 //this.res.write(html);
 //this.res.redirect('signup_success.html');
 this.res.end();
