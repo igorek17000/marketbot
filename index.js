@@ -302,13 +302,14 @@ function commands_success() {
   var cmdArr = [];
   //function cmdit() {
 //console.log('displaying commands at /commands');
-
+/*
    for(var lib in bot.checkCommandsHSH){
     var newCmds = bot.checkCommandsHSH[lib].getCmdListDescription();
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
 //}
+*/
  var outputSuccess = commandListSuccess.buildHTML(cmdArr, config.bot_name);
 
 
