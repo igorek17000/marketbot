@@ -430,7 +430,7 @@ var ret = [];
 var results = cursor; //.each();
 
 function getAllDocs() {
-init();
+//init();
 db.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
