@@ -85,7 +85,7 @@ get: test
  },
 
 '/commands_success' : {
-  get: commands_success,
+  get: bot.commands,
   post: commands_success
 },
 
@@ -388,7 +388,7 @@ this.res.write(outputSuccess);
 //this.res.redirect('signup_success.html');
 this.res.end(outputSuccess);
 //this.res.writeHead(200, {"Content-Type": "text/html"}); 
-//this.res.end(outputSuccess);
+//this.res.end();
 }
 
 
