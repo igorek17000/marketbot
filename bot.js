@@ -164,6 +164,7 @@ exports.command_success = function() {
   }
 
   var outputSuccess = commandListSuccess.buildHTML(cmdArr, config.bot_name);
+outputSuccess;
 /*
 var name = this.req.body.name;
     var email = this.req.body.email;
