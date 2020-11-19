@@ -298,7 +298,7 @@ this.res.end();
 
 
 function commands_success() {
-
+/*
 var mainHTML, allHTML, modHTML, ownerHTML;
 var fs = require('fs');
 //var config = require('../config/config');
@@ -388,7 +388,7 @@ var buildHTML = function (cmdArray, bot_name) {
 
   return mainBuiltHTML;
 }
-
+*/
 
 
 //_______€€€_______
@@ -408,7 +408,7 @@ var buildHTML = function (cmdArray, bot_name) {
 */
 //}
 
- var outputSuccess = buildHTML(cmdArr, bot_name);
+ var outputSuccess = bot.commands(); //buildHTML(cmdArr, bot_name);
 
 
 var name = this.req.body.name;
