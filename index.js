@@ -11,6 +11,7 @@ moment.tz.setDefault('America/Toronto');
 //var date = moment().utcOffset(-300).format('LLLL');
 var date = moment().format('LLLL');
 var commandListSuccess = require('./commands_success/command-list.js'); //commandListSuccess.buildHTML(cmdArr, config.bot_name);
+var config = require('./config/config.js');
 
 
 
