@@ -345,7 +345,7 @@ if (docs) {
 console.log(docs); //db.close();
 }
 });
-bot.command_success();
+//bot.command_success();
 }
 
 
