@@ -11,7 +11,7 @@ moment.tz.setDefault('America/Toronto');
 //var date = moment().utcOffset(-300).format('LLLL');
 var date = moment().format('LLLL');
 var commandListSuccess = require('./commands_success/command-list.js'); //commandListSuccess.buildHTML(cmdArr, config.bot_name);
-var buildHTML = require('./commands_success/command-list.js');
+var ccml = require('./modules/command-list.js');
 
 
 
@@ -408,7 +408,7 @@ var buildHTML = function (cmdArray, bot_name) {
 */
 //}
 
- var outputSuccess = commandListSuccess.buildHTML(cmdArr, bot_name); //buildHTML(cmdArr, bot_name);
+ var outputSuccess = ccml.buildHTML(cmdArr, bot_name); //buildHTML(cmdArr, bot_name);
 
 
 var name = this.req.body.name;
