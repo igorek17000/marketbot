@@ -408,7 +408,7 @@ var buildHTML = function (cmdArray, bot_name) {
 */
 //}
 
- var outputSuccess = bot.commands(); //buildHTML(cmdArr, bot_name);
+ var outputSuccess = bot.commandListSuccess.buildHTML(cmdArr, bot_name); //buildHTML(cmdArr, bot_name);
 
 
 var name = this.req.body.name;
@@ -466,7 +466,7 @@ console.log(error);
 }
 
 getAllDocs();
-bot.commands();
+//bot.commands();
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 var bot_name = "AlexBot";
@@ -481,7 +481,7 @@ var bot_name = "AlexBot";
   }
 */
 var html = fs.readFileSync(path.join(__dirname + "/commands_success/command_success.html"));
-var outputSuccess = buildHTML(cmdArr, bot_name);
+//var outputSuccess = buildHTML(cmdArr, bot_name);
 this.res.write(outputSuccess);
 //this.res.write(html);
 //this.res.redirect('signup_success.html');
