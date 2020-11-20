@@ -106,6 +106,7 @@ font-family: 'Times New Roman', serif;
 </style>
 </head>
 <body>
+<!--
 <div class="container">
 <div class="row">
 <div class="col-md-3">
@@ -115,7 +116,7 @@ font-family: 'Times New Roman', serif;
 
 <div class="col-md-3">
 </div>
-
+-->
   <div class="command_module">
     <h1>AlexBot Commands</h1>
     <!-- <a href="http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/quotes" target="_blank">
@@ -150,19 +151,6 @@ font-family: 'Times New Roman', serif;
      <h4>The sky's the limit.</h4>
        <h3>Find what you love to do and embrace it.</h3>
   <h5>AlexBot quotes</h5>
-<script>
-  $('.command_name').click(function(){
-    var currentDiv = $(this);
-    $('.command_name').children('div').hide();
-    currentDiv.children('div').fadeIn('slow');
-  });
-
-</script>
-
-</div>
-</div>
-
-</body>
 <!--
 <script>
   $('.command_name').click(function(){
@@ -173,4 +161,27 @@ font-family: 'Times New Roman', serif;
 
 </script>
 -->
+<div class="container">
+<div class="row">
+<div class="col-md-3">
+</div>
+<div class="col-md-6 main">
+</div>
+
+<div class="col-md-3">
+</div>
+</div>
+</div>
+
+</body>
+
+<script>
+  $('.command_name').click(function(){
+    var currentDiv = $(this);
+    $('.command_name').children('div').hide();
+    currentDiv.children('div').fadeIn('slow');
+  });
+
+</script>
+
 </html>
