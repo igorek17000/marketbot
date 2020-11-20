@@ -94,7 +94,7 @@ get: test
 },
 
   '/commands' : {
-    get: bot.commands
+    post: bot.commands
 },
 
 
@@ -589,7 +589,7 @@ getAllDocs();
 
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
-var html = fs.readFileSync(path.join(__dirname + "/signup_success.html"));
+var html = fs.readFileSync(path.join(__dirname + "commands/commands.html")); //"/signup_success.html"));
 this.res.write(html);
 //this.res.redirect('signup_success.html');
 this.res.end();
