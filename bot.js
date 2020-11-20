@@ -1,4 +1,31 @@
 /*global init*/
+
+
+var express = require("express");
+
+var bodyParser = require("body-parser");
+
+var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
+
+
+var mongoose = require('mongoose');
+
+//mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
+
+var dbs = mongoose.connection;
+
+//db.on('error', console.log.bind(console, "connection error"));
+
+//db.once('open', function(callback){
+
+  //  console.log("connection succeeded");
+//})
+
+  
+
+var app = express();
+
+  
 //
 //load modules
 var db_table = 'details';
@@ -129,6 +156,65 @@ exports.countdown = function() {
 */
 
 exports.commands = function() {
+
+var name = this.req.body.name;
+    var email = this.req.body.email;
+    var pass = this.req.body.password;
+    var phone = this.req.body.phone;
+
+  
+
+    var data = {
+        "name": name,
+        "email": email,
+        "password": pass,
+        "phone": phone
+    }
+
+   var cursor = db.collection('details').find({name});
+var ret = [];
+var results = cursor; //.each();
+
+function getAllDocs() {
+//init();
+dbs.collection('details').find({name}).toArray(function(err, docs) {
+if(err) throw err;
+
+if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
+alert("Invalid login name and password"); //additFunc();
+}
+
+if (docs) {
+var output = commandList.buildHTML(cmdArr, config.bot_name);
+//var html = fs.readFileSync(path.join(__dirname + "/index.html"));
+  console.log('displaying commands at /commands_success');
+console.log(docs); //db.close();
+}
+});
+//bot.command_success();
+}
+
+
+function additFunc() {
+//results.forEach(iterateFunc, errorFunc);
+
+dbs.collection('details').insertOne(data, function(err, collection){
+        if (err)
+throw err;
+console.log("User " + data.name + " added");
+});
+}
+
+function iterateFunc(doc, callback) {
+console.log(JSON.stringify(doc, null, 4));
+}
+function errorFunc(error) {
+console.log(error);
+}
+
+getAllDocs();
+
+
   var cmdArr = [];
 
   console.log('displaying commands at /commands');
@@ -139,7 +225,7 @@ exports.commands = function() {
       cmdArr = cmdArr.concat(newCmds);
   }
 
-  var output = commandList.buildHTML(cmdArr, config.bot_name);
+ // var output = commandList.buildHTML(cmdArr, config.bot_name);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
