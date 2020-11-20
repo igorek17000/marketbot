@@ -171,9 +171,9 @@ var name = this.req.body.name;
         "phone": phone
     }
 
-   var cursor = db.collection('details').find({name});
-var ret = [];
-var results = cursor; //.each();
+  // var cursor = db.collection('details').find({name});
+//var ret = [];
+//var results = cursor; //.each();
 
 function getAllDocs() {
 //init();
