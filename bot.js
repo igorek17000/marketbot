@@ -186,6 +186,7 @@ alert("Invalid login name and password"); //additFunc();
 }
 
 if (docs) {
+/*
 var cmdArr = []; 
 console.log('displaying commands at /commands'); 
 for(var lib in checkCommandsHSH){ 
@@ -194,12 +195,12 @@ if (newCmds)
 cmdArr = cmdArr.concat(newCmds); 
 } 
 var output = commandList.buildHTML(cmdArr, config.bot_name);
-
+*/
 //output = "commandList.buildHTML(cmdArr, config.bot_name)";
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
  // console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
-
+out();
 }
 });
 //bot.command_success();
@@ -225,7 +226,7 @@ console.log(error);
 
 getAllDocs();
 
-/*
+function out() {
   var cmdArr = [];
 
   console.log('displaying commands at /commands');
@@ -235,8 +236,9 @@ getAllDocs();
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
+}
 
- */
+ 
  var output = commandList.buildHTML(cmdArr, config.bot_name);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
