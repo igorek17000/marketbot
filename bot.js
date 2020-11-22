@@ -182,7 +182,7 @@ dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
-catch err;
+errorFunc();
 //var output = "";
 //return output; //"Invalid login name and password"; //additFunc();
 }
@@ -230,6 +230,26 @@ console.log(error);
 getAllDocs();
 
 //function end() {
+if (errorFunc()) {
+
+var cmdArr = [];
+
+  console.log('displaying commands at /commands');
+
+  for(var lib in checkCommandsHSH){
+    var newCmds = checkCommandsHSH[lib].getCmdListDescription();
+    if (newCmds)
+      cmdArr = cmdArr.concat(newCmds);
+  }
+
+
+ 
+ var output = commandList.buildHTML(cmdArr, config.bot_name);
+//this.res.statusCode = 200;
+//this.res.contentType = "text/html";
+  this.res.writeHead(200, {"Content-Type": "text/html"});
+  this.res.end("The End");
+}
 
   var cmdArr = [];
 
