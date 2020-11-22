@@ -245,7 +245,7 @@ function end() {
 //this.res.statusCode = 200;
 //this.res.contentType = "text/html";
  // this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(output);
+  this.res.end();
 }
 }
 
