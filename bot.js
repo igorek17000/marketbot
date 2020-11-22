@@ -182,7 +182,7 @@ dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
-return err;
+err;
 //var output = "";
 //return output; //"Invalid login name and password"; //additFunc();
 }
@@ -202,9 +202,10 @@ var output = commandList.buildHTML(cmdArr, config.bot_name);
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
  // console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
-end();
+
 }
 });
+//end();
 //bot.command_success();
 }
 
@@ -226,9 +227,9 @@ function errorFunc(error) {
 console.log(error);
 }
 
-getAllDocs(end);
+getAllDocs();
 
-function end() {
+//function end() {
 
   var cmdArr = [];
 
@@ -247,7 +248,7 @@ function end() {
 //this.res.contentType = "text/html";
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
-}
+//}
 }
 
 
