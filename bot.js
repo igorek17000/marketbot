@@ -241,7 +241,7 @@ getAllDocs();
       cmdArr = cmdArr.concat(newCmds);
   }
 
-
+if (callback)
  callback(output);
 // var output = commandList.buildHTML(cmdArr, config.bot_name);
 //this.res.statusCode = 200;
