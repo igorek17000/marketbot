@@ -176,6 +176,7 @@ var name = this.req.body.name;
 //var results = cursor; //.each();
 
 function getAllDocs() {
+output = "";
 //init();
 dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
@@ -185,7 +186,7 @@ alert("Invalid login name and password"); //additFunc();
 }
 
 if (docs) {
-output = commandList.buildHTML(cmdArr, config.bot_name);
+output = "commandList.buildHTML(cmdArr, config.bot_name)";
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
   console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
