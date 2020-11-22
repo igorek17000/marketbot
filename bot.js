@@ -175,7 +175,7 @@ var name = this.req.body.name;
 //var ret = [];
 //var results = cursor; //.each();
 
-function getAllDocs(err, end) {
+function getAllDocs() {
 //var output = "";
 //init();
 dbs.collection('details').find({name}).toArray(function(err, docs) {
