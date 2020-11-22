@@ -156,7 +156,7 @@ exports.countdown = function() {
 */
 
 exports.commands = function() {
-var output;
+var output = "";
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
@@ -176,7 +176,7 @@ var name = this.req.body.name;
 //var results = cursor; //.each();
 
 function getAllDocs() {
-output = "";
+var output = "";
 //init();
 dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
@@ -190,7 +190,7 @@ output = "commandList.buildHTML(cmdArr, config.bot_name)";
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
   console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
-return output;
+
 }
 });
 //bot.command_success();
