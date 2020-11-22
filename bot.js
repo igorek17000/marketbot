@@ -156,7 +156,7 @@ exports.countdown = function() {
 */
 
 exports.commands = function() {
-
+var output;
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
@@ -185,10 +185,11 @@ alert("Invalid login name and password"); //additFunc();
 }
 
 if (docs) {
-var output = commandList.buildHTML(cmdArr, config.bot_name);
+output = commandList.buildHTML(cmdArr, config.bot_name);
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
   console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
+return output;
 }
 });
 //bot.command_success();
