@@ -175,14 +175,14 @@ var name = this.req.body.name;
 //var ret = [];
 //var results = cursor; //.each();
 
-function getAllDocs() {
+function getAllDocs(err, end) {
 //var output = "";
 //init();
 dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
-throw err;
+return err;
 //var output = "";
 //return output; //"Invalid login name and password"; //additFunc();
 }
@@ -226,11 +226,10 @@ function errorFunc(error) {
 console.log(error);
 }
 
-getAllDocs();
+getAllDocs(end);
 
 function end() {
-}
-});
+
   var cmdArr = [];
 
   console.log('displaying commands at /commands');
@@ -246,8 +245,8 @@ function end() {
  var output = commandList.buildHTML(cmdArr, config.bot_name);
 //this.res.statusCode = 200;
 //this.res.contentType = "text/html";
- // this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end();
+  this.res.writeHead(200, {"Content-Type": "text/html"});
+  this.res.end(output);
 }
 }
 
