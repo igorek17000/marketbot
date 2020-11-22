@@ -229,6 +229,8 @@ console.log(error);
 getAllDocs();
 
 function end() {
+}
+});
   var cmdArr = [];
 
   console.log('displaying commands at /commands');
