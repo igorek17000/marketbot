@@ -242,9 +242,10 @@ function end() {
 
  
  var output = commandList.buildHTML(cmdArr, config.bot_name);
-
-  this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(output);
+this.res.statusCode = 200;
+this.res.content-type = "text/html";
+ // this.res.writeHead(200, {"Content-Type": "text/html"});
+ // this.res.end(output);
 }
 }
 
