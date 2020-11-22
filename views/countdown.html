@@ -113,8 +113,8 @@ hr {
 </div>
 
     <div class='middle'><h2>FAMILY BIRTHDAY COUNTDOWN</h2>
-<h2 id='next'>Next Birthday In></h2>
-      
+<h2 id='next'></h2> <!-- Next Birthday In></h2> -->
+      <h2 id='complete'></h2>
 
  <hr></hr>
       <p id='demo' style='font-size: 30px'></p>
@@ -503,6 +503,9 @@ var countdownfunction = setInterval(function() {
 countDownDate = new Date("oct 22, 2020 00:00:00").getTime();name = "Vov&oacute";
 name = "Vov&oacute";
 dob = "October 22, 1950";
+next = "Next Birthday in";
+complete = "Countdown complete!";
+colour = "Happy Birthday ";
 
 }
 
@@ -511,16 +514,28 @@ if (now > new Date("oct 22, 2020 23:59:59").getTime()) {
 countDownDate = new Date("nov 19, 2020 00:00:00").getTime();
 name = "Titia Cintia";
 dob = "November 19, 1980"
+next = "Next Birthday in";
+complete = "Countdown complete!";
+colour = "Happy Birthday ";
+
 }
 if (now > new Date("nov 19, 2020 23:59:59").getTime()) {
 countDownDate = new Date("dec 11, 2020 00:00:00").getTime();
 name = "Titia Monika";
-dob = "December 11, 1974"
+dob = "December 11, 1974";
+next = "Next Birthday in";
+complete = "Countdown complete!";
+colour = "Happy Birthday ";
+
 }
 if (now > new Date("dec 11, 2020 23:59:59").getTime()) {
 countDownDate = new Date("dec 25, 2020 00:00:00").getTime();
 name = "Christmas 2020";
-dob = "December 25, 2020"
+dob = "December 25, 2020";
+next = "Next Christmas in";
+complete = "Countdown complete!";
+colour = "Merry ";
+
 }
 
 
@@ -545,11 +560,14 @@ dob = "December 25, 2020"
 
 
 if (dist > -86400000) {
-document.getElementById('next').innerHTML = "Countdown Complete";
+
+document.getElementById('complete').innerHTML = complete; //"Countdown Complete";
+
+document.getElementById('next').innerHTML = next; //"Countdown Complete";
  document.getElementById('demo').innerHTML = "";
  document.getElementById('name').innerHTML = "";	
  document.getElementById('dob').innerHTML = "";		
- document.getElementById('colour').innerHTML = "Happy Birthday " + name; 
+ document.getElementById('colour').innerHTML = colour + name; // "Happy Birthday " + name; 
  document.getElementById('canvas').window.onload = test();
 /*
 if( timerTick >= timerTotal ) {
@@ -569,7 +587,7 @@ timerTick = 0++;
 
 }
 } else {
-document.getElementById('next').innerHTML = "Next Birthday In";
+document.getElementById('next').innerHTML = next; //"Next Birthday In";
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
 document.getElementById('name').innerHTML = name;
