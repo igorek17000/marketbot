@@ -182,7 +182,8 @@ dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
-return("Invalid login name and password"); //additFunc();
+var output = "";
+return output; //"Invalid login name and password"; //additFunc();
 }
 
 if (docs) {
