@@ -204,10 +204,10 @@ var output = commandList.buildHTML(cmdArr, config.bot_name);
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
  // console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
-callback(output);
+console.log(output); //callback(output);
 }
 });
-return output;
+//return output;
 //bot.command_success();
 }
 
@@ -241,8 +241,8 @@ getAllDocs();
       cmdArr = cmdArr.concat(newCmds);
   }
 
-if (callback)
- callback(output);
+//if (callback)
+// callback(output);
 // var output = commandList.buildHTML(cmdArr, config.bot_name);
 //this.res.statusCode = 200;
 //this.res.contentType = "text/html";
