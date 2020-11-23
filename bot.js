@@ -159,7 +159,7 @@ exports.countdown = function() {
 */
 
 exports.commands = function() {
-var output;
+var output = '';
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
@@ -186,7 +186,7 @@ if(err) throw err;
 
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 output = 'The End!';
-return output;
+output;
 //var output = "";
 //return output; //"Invalid login name and password"; //additFunc();
 }
@@ -208,7 +208,7 @@ output = 'commandList.buildHTML(cmdArr, config.bot_name)';
  // console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
 //console.log(output); //
-return output;
+output;
 }
 });
 var cmdArr = [];
@@ -220,7 +220,7 @@ var cmdArr = [];
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
-return output;
+output;
 }
 
 
