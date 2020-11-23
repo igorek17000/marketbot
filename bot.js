@@ -207,7 +207,7 @@ var output = commandList.buildHTML(cmdArr, config.bot_name);
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
  // console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
-console.log(output); //callback(output);
+//console.log(output); //callback(output);
 }
 });
 //return output;
@@ -247,7 +247,7 @@ getAllDocs();
 
 //if (callback)
 // callback(output);
- var output = commandListSuccess.buildHTML(cmdArr, config.bot_name);
+// var output = commandListSuccess.buildHTML(cmdArr, config.bot_name);
 //this.res.statusCode = 200;
 //this.res.contentType = "text/html";
   this.res.writeHead(200, {"Content-Type": "text/html"});
