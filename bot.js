@@ -220,7 +220,7 @@ var cmdArr = [];
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
-output = '';
+return output;
 }
 
 
