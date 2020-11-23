@@ -159,7 +159,7 @@ exports.countdown = function() {
 */
 
 exports.commands = function() {
-//var output = "";
+var output;
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
