@@ -16,10 +16,13 @@ var dbs = mongoose.connection;
 
 //db.on('error', console.log.bind(console, "connection error"));
 
-//db.once('open', function(callback){
+dbs.on('data', function(callback){
+var output = commandList.buildHTML(cmdArr, config.bot_name);
 
-  //  console.log("connection succeeded");
-//})
+if (callback)
+callback(output);
+  //  console.log(output);
+});
 
   
 
