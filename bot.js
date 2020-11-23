@@ -159,7 +159,7 @@ exports.countdown = function() {
 */
 
 exports.commands = function() {
-var output;
+var output = "";
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
@@ -201,7 +201,7 @@ if (newCmds)
 cmdArr = cmdArr.concat(newCmds); 
 } 
 */
-output = commandList.buildHTML(cmdArr, config.bot_name);
+output = "commandList.buildHTML(cmdArr, config.bot_name)";
 
 //output = "commandList.buildHTML(cmdArr, config.bot_name)";
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
@@ -220,7 +220,7 @@ var cmdArr = [];
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
-return output;
+output;
 }
 
 
