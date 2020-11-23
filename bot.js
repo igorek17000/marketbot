@@ -178,7 +178,7 @@ var name = this.req.body.name;
 //var ret = [];
 //var results = cursor; //.each();
 
-function getAllDocs(callback) {
+function getAllDocs() {
 //var output = "";
 //init();
 dbs.collection('details').find({name}).toArray(function(err, docs) {
@@ -186,7 +186,7 @@ if(err) throw err;
 
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 output = "The End!";
-callback(output);
+return output;
 //var output = "";
 //return output; //"Invalid login name and password"; //additFunc();
 }
@@ -208,7 +208,7 @@ output = commandList.buildHTML(cmdArr, config.bot_name);
  // console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
 //console.log(output); //
-callback(output);
+return output;
 }
 });
 //return output;
