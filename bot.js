@@ -211,9 +211,16 @@ console.log(docs); //db.close();
 return output;
 }
 });
-//return output;
-//bot.command_success();
-output;
+var cmdArr = [];
+
+  console.log('displaying commands at /commands');
+
+  for(var lib in checkCommandsHSH){
+    var newCmds = checkCommandsHSH[lib].getCmdListDescription();
+    if (newCmds)
+      cmdArr = cmdArr.concat(newCmds);
+  }
+return output;
 }
 
 
@@ -235,7 +242,7 @@ console.log(error);
 }
 
 getAllDocs();
-
+/*
   var cmdArr = [];
 
   console.log('displaying commands at /commands');
@@ -245,7 +252,7 @@ getAllDocs();
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
-
+*/
 //if (callback)
 // callback(output);
 // var output = commandListSuccess.buildHTML(cmdArr, config.bot_name);
