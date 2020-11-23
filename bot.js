@@ -183,7 +183,7 @@ if(err) throw err;
 
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 var output = "The End!";
-callback(output);
+//callback(output);
 //var output = "";
 //return output; //"Invalid login name and password"; //additFunc();
 }
@@ -209,6 +209,7 @@ console.log(output); //callback(output);
 });
 //return output;
 //bot.command_success();
+output;
 }
 
 
