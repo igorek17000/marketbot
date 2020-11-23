@@ -185,8 +185,8 @@ dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
-var output = "The End!";
-//callback(output);
+output = "The End!";
+callback(output);
 //var output = "";
 //return output; //"Invalid login name and password"; //additFunc();
 }
@@ -201,13 +201,14 @@ if (newCmds)
 cmdArr = cmdArr.concat(newCmds); 
 } 
 */
-var output = commandList.buildHTML(cmdArr, config.bot_name);
+output = commandList.buildHTML(cmdArr, config.bot_name);
 
 //output = "commandList.buildHTML(cmdArr, config.bot_name)";
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
  // console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
-//console.log(output); //callback(output);
+//console.log(output); //
+callback(output);
 }
 });
 //return output;
