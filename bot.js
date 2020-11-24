@@ -213,8 +213,12 @@ cmdArr = cmdArr.concat(newCmds);
 console.log(docs); //db.close();
 //console.log(output); //
 //page();
+var output = "commandList.buildHTML(cmdArr, config.bot_name);";
+
 dbs.close();
-var cmdArr = [];
+this.res.write(output);
+this.res.end();
+/*var cmdArr = [];
 
   console.log('displaying commands at /commands');
 
@@ -223,10 +227,12 @@ var cmdArr = [];
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
+
 var output = commandList.buildHTML(cmdArr, config.bot_name);
 
 this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
+*/
 }
 });
 /*
@@ -262,7 +268,7 @@ console.log(error);
 }
 
 getAllDocs();
-function page() {
+
   var cmdArr = [];
 
   console.log('displaying commands at /commands');
@@ -279,13 +285,14 @@ var output = commandList.buildHTML(cmdArr, config.bot_name);
 callback(output);
 });
 }
+*/
 //if (callback)
 // callback(output);
 // var output = commandListSuccess.buildHTML(cmdArr, config.bot_name);
 //this.res.statusCode = 200;
 //this.res.contentType = "text/html";
- // this.res.writeHead(200, {"Content-Type": "text/html"});
-  //this.res.end(output);
+  this.res.writeHead(200, {"Content-Type": "text/html"});
+  this.res.end(output);
 //}
 }
 
