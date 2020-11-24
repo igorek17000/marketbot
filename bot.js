@@ -267,7 +267,7 @@ callback(output);
 //this.res.statusCode = 200;
 //this.res.contentType = "text/html";
   this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.send(output);
+  this.res.end(output);
 //}
 }
 
