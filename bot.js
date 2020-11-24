@@ -208,7 +208,7 @@ output = 'commandList.buildHTML(cmdArr, config.bot_name)';
  // console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
 //console.log(output); //
-output;
+page();
 }
 });
 var cmdArr = [];
@@ -242,7 +242,7 @@ console.log(error);
 }
 
 getAllDocs();
-/*
+function page() {
   var cmdArr = [];
 
   console.log('displaying commands at /commands');
@@ -252,7 +252,13 @@ getAllDocs();
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
-*/
+//var output = commandListSuccess.buildHTML(cmdArr, config.bot_name);
+this.res.on('end', function(res) {
+var output = commandList.buildHTML(cmdArr, config.bot_name);
+
+callback(output);
+});
+}
 //if (callback)
 // callback(output);
 // var output = commandListSuccess.buildHTML(cmdArr, config.bot_name);
