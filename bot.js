@@ -186,7 +186,7 @@ if(err) throw err;
 
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 output = 'The End!';
-output;
+this.res.send(output);
 //var output = "";
 //return output; //"Invalid login name and password"; //additFunc();
 }
@@ -202,15 +202,16 @@ cmdArr = cmdArr.concat(newCmds);
 } 
 */
 output = 'commandList.buildHTML(cmdArr, config.bot_name)';
-
+this.res.send(output);
 //output = "commandList.buildHTML(cmdArr, config.bot_name)";
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
  // console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
 //console.log(output); //
-page();
+//page();
 }
 });
+/*
 var cmdArr = [];
 
   console.log('displaying commands at /commands');
@@ -221,6 +222,7 @@ var cmdArr = [];
       cmdArr = cmdArr.concat(newCmds);
   }
 output;
+*/
 }
 
 
@@ -265,7 +267,7 @@ callback(output);
 //this.res.statusCode = 200;
 //this.res.contentType = "text/html";
   this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(output);
+  this.res.send(output);
 //}
 }
 
