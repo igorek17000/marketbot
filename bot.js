@@ -179,12 +179,13 @@ var name = this.req.body.name;
 //var ret = [];
 //var results = cursor; //.each();
 
-//function getAllDocs(req, res) {
+function getAllDocs() {
 //var output = "";
 //init();
 dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 //var output = docs;
+/*
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 dbs.close();
 //this.res.writeHead(200, {"Content-Type": "text/html"});
@@ -194,17 +195,9 @@ dbs.close();
 //var output = "";
 //return output; //"Invalid login name and password"; //additFunc();
 }
-
-if (docs) {
-/*
-var cmdArr = []; 
-console.log('displaying commands at /commands'); 
-for(var lib in checkCommandsHSH){ 
-var newCmds = checkCommandsHSH[lib].getCmdListDescription(); 
-if (newCmds) 
-cmdArr = cmdArr.concat(newCmds); 
-} 
 */
+if (docs) {
+
 //output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 //this.res.send(output);
 //output = "commandList.buildHTML(cmdArr, config.bot_name)";
@@ -218,23 +211,9 @@ console.log(docs); //db.close();
 //dbs.close();
 
 
-/*var cmdArr = [];
 
-  console.log('displaying commands at /commands');
-
-  for(var lib in checkCommandsHSH){
-    var newCmds = checkCommandsHSH[lib].getCmdListDescription();
-    if (newCmds)
-      cmdArr = cmdArr.concat(newCmds);
-  }
-
-var output = commandList.buildHTML(cmdArr, config.bot_name);
-
-this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(output);
-*/
 }
-dbs.close();
+
 var cmdArr = []; 
 console.log('displaying commands at /commands'); 
 for(var lib in checkCommandsHSH){ 
@@ -244,22 +223,12 @@ cmdArr = cmdArr.concat(newCmds);
 } 
 var output = commandList.buildHTML(cmdArr, config.bot_name);
 
-this.res.write(output);
-this.res.end();
+//this.res.write(output);
+//this.res.end();
 });
-/*
-var cmdArr = [];
-
-  console.log('displaying commands at /commands');
-
-  for(var lib in checkCommandsHSH){
-    var newCmds = checkCommandsHSH[lib].getCmdListDescription();
-    if (newCmds)
-      cmdArr = cmdArr.concat(newCmds);
-  }
-output;
-*/
-////}
+this.res.write(commandList.buildHTML();
+this.res.end();
+}
 
 
 function additFunc() {
