@@ -226,7 +226,7 @@ var output = commandList.buildHTML(cmdArr, config.bot_name);
 //this.res.write(output);
 //this.res.end();
 });
-this.res.write(commandList.buildHTML();
+this.res.write(commandList.buildHTML());
 this.res.end();
 }
 
