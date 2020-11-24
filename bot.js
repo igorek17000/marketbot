@@ -165,7 +165,8 @@ var output = '';
 var out = docs;
 if(out) {
 output = 'commandList.buildHTML(cmdArr, config.bot_name)';
-} else {
+} 
+if (out < 1) {
 output = 'The End';
 }
 
