@@ -184,7 +184,7 @@ var name = this.req.body.name;
 //init();
 dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
-
+var output = docs;
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 dbs.close();
 this.res.writeHead(200, {"Content-Type": "text/html"});
@@ -224,9 +224,9 @@ var newCmds = checkCommandsHSH[lib].getCmdListDescription();
 if (newCmds) 
 cmdArr = cmdArr.concat(newCmds); 
 } 
-var output = commandList.buildHTML(cmdArr, config.bot_name);
+//var output = commandList.buildHTML(cmdArr, config.bot_name);
 
-this.res.write(docs);
+this.res.write(output);
 this.res.end();
 /*var cmdArr = [];
 
