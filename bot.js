@@ -248,7 +248,7 @@ function errorFunc(error) {
 console.log(error);
 }
 
-//getAllDocs();
+getAllDocs();
 
   var cmdArr = [];
 
