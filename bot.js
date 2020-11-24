@@ -160,8 +160,7 @@ exports.countdown = function() {
 */
 
 exports.commands = function() {
-var docs;
-var output = '';
+var docs, out;
 var out = docs;
 if(out) {
 output = 'commandList.buildHTML(cmdArr, config.bot_name)';
