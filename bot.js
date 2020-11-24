@@ -220,7 +220,7 @@ console.log(docs); //db.close();
 
 
 }
-
+/*
 var cmdArr = []; 
 console.log('displaying commands at /commands'); 
 for(var lib in checkCommandsHSH){ 
@@ -230,6 +230,7 @@ cmdArr = cmdArr.concat(newCmds);
 } 
 var output = commandList.buildHTML(cmdArr, config.bot_name);
 return output;
+*/
 //this.res.write(output);
 //this.res.end();
 });
