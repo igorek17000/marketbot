@@ -278,6 +278,7 @@ getAllDocs();
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
+/*
 //var output = commandListSuccess.buildHTML(cmdArr, config.bot_name);
 this.res.on('end', function(res) {
 var output = commandList.buildHTML(cmdArr, config.bot_name);
