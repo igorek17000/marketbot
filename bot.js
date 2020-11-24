@@ -160,7 +160,14 @@ exports.countdown = function() {
 */
 
 exports.commands = function() {
-var output;
+var output = '';
+var docs = [];
+if(docs) {
+output = commandList.buildHTML(cmdArr, config.bot_name);
+} else {
+output = 'The End';
+}
+
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
@@ -226,7 +233,7 @@ return output;
 //this.res.write(output);
 //this.res.end();
 });
-output;
+//output;
 //this.res.writeHead(200, {"Content-Type": "text/html"}); 
 //this.res.end(output);
 }
