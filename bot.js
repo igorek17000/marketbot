@@ -179,7 +179,7 @@ var name = this.req.body.name;
 //var ret = [];
 //var results = cursor; //.each();
 
-function getAllDocs() {
+//function getAllDocs(req, res) {
 //var output = "";
 //init();
 dbs.collection('details').find({name}).toArray(function(err, docs) {
@@ -257,7 +257,7 @@ var cmdArr = [];
   }
 output;
 */
-}
+////}
 
 
 function additFunc() {
@@ -277,7 +277,7 @@ function errorFunc(error) {
 console.log(error);
 }
 
-getAllDocs();
+//getAllDocs();
 
   var cmdArr = [];
 
