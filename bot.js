@@ -186,8 +186,11 @@ dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
-output = 'The End!';
-this.res.send(output);
+dbs.close();
+this.res.writeHead(200, {"Content-Type": "text/html"});
+  this.res.end('The End');
+//output = 'The End!';
+//this.res.send(output);
 //var output = "";
 //return output; //"Invalid login name and password"; //additFunc();
 }
@@ -202,16 +205,30 @@ if (newCmds)
 cmdArr = cmdArr.concat(newCmds); 
 } 
 */
-output = 'commandList.buildHTML(cmdArr, config.bot_name)';
-this.res.send(output);
+//output = 'commandList.buildHTML(cmdArr, config.bot_name)';
+//this.res.send(output);
 //output = "commandList.buildHTML(cmdArr, config.bot_name)";
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
  // console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
 //console.log(output); //
 //page();
+dbs.close();
+var cmdArr = [];
+
+  console.log('displaying commands at /commands');
+
+  for(var lib in checkCommandsHSH){
+    var newCmds = checkCommandsHSH[lib].getCmdListDescription();
+    if (newCmds)
+      cmdArr = cmdArr.concat(newCmds);
+  }
+var output = commandList.buildHTML(cmdArr, config.bot_name);
+
+this.res.writeHead(200, {"Content-Type": "text/html"});
+  this.res.end(output);
 }
-});
+//});
 /*
 var cmdArr = [];
 
@@ -267,8 +284,8 @@ callback(output);
 // var output = commandListSuccess.buildHTML(cmdArr, config.bot_name);
 //this.res.statusCode = 200;
 //this.res.contentType = "text/html";
-  this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(output);
+ // this.res.writeHead(200, {"Content-Type": "text/html"});
+  //this.res.end(output);
 //}
 }
 
