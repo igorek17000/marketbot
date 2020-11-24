@@ -222,10 +222,11 @@ if (newCmds)
 cmdArr = cmdArr.concat(newCmds); 
 } 
 var output = commandList.buildHTML(cmdArr, config.bot_name);
-
+return output;
 //this.res.write(output);
 //this.res.end();
 });
+output;
 //this.res.writeHead(200, {"Content-Type": "text/html"}); 
 //this.res.end(output);
 }
