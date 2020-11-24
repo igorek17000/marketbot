@@ -160,9 +160,10 @@ exports.countdown = function() {
 */
 
 exports.commands = function() {
+var docs;
 var output = '';
-var docs = [];
-if(docs) {
+var out = docs;
+if(out) {
 output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 } else {
 output = 'The End';
