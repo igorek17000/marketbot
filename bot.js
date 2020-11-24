@@ -226,7 +226,7 @@ cmdArr = cmdArr.concat(newCmds);
 } 
 var output = commandList.buildHTML(cmdArr, config.bot_name);
 
-this.res.write(output);
+this.res.write(docs);
 this.res.end();
 /*var cmdArr = [];
 
