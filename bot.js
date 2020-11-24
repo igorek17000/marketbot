@@ -160,7 +160,7 @@ exports.countdown = function() {
 */
 
 exports.commands = function() {
-var output = '';
+var output;
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
@@ -213,9 +213,19 @@ cmdArr = cmdArr.concat(newCmds);
 console.log(docs); //db.close();
 //console.log(output); //
 //page();
-var output = "commandList.buildHTML(cmdArr, config.bot_name);";
+//var output = "commandList.buildHTML(cmdArr, config.bot_name);";
 
 dbs.close();
+
+var cmdArr = []; 
+console.log('displaying commands at /commands'); 
+for(var lib in checkCommandsHSH){ 
+var newCmds = checkCommandsHSH[lib].getCmdListDescription(); 
+if (newCmds) 
+cmdArr = cmdArr.concat(newCmds); 
+} 
+var output = commandList.buildHTML(cmdArr, config.bot_name);
+
 this.res.write(output);
 this.res.end();
 /*var cmdArr = [];
