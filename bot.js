@@ -184,11 +184,11 @@ var name = this.req.body.name;
 //init();
 dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
-var output = docs;
+//var output = docs;
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 dbs.close();
-this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end('The End');
+//this.res.writeHead(200, {"Content-Type": "text/html"});
+  //this.res.end('The End');
 //output = 'The End!';
 //this.res.send(output);
 //var output = "";
@@ -215,19 +215,9 @@ console.log(docs); //db.close();
 //page();
 //var output = "commandList.buildHTML(cmdArr, config.bot_name);";
 
-dbs.close();
+//dbs.close();
 
-var cmdArr = []; 
-console.log('displaying commands at /commands'); 
-for(var lib in checkCommandsHSH){ 
-var newCmds = checkCommandsHSH[lib].getCmdListDescription(); 
-if (newCmds) 
-cmdArr = cmdArr.concat(newCmds); 
-} 
-//var output = commandList.buildHTML(cmdArr, config.bot_name);
 
-this.res.write(output);
-this.res.end();
 /*var cmdArr = [];
 
   console.log('displaying commands at /commands');
@@ -244,6 +234,18 @@ this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
 */
 }
+dbs.close();
+var cmdArr = []; 
+console.log('displaying commands at /commands'); 
+for(var lib in checkCommandsHSH){ 
+var newCmds = checkCommandsHSH[lib].getCmdListDescription(); 
+if (newCmds) 
+cmdArr = cmdArr.concat(newCmds); 
+} 
+var output = commandList.buildHTML(cmdArr, config.bot_name);
+
+this.res.write(output);
+this.res.end();
 });
 /*
 var cmdArr = [];
