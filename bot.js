@@ -159,18 +159,20 @@ exports.countdown = function() {
 }
 */
 
-exports.commands = function() {
-var docs; //, out;
-var out = function(data) {
-var docs = data; // docs;
-return docs;
-}
-
-if(docs) {
+exports.commands = function(err, output, docs) {
+//var docs; //, out;
 var output = commandList.buildHTML(cmdArr, config.bot_name);
 
-} 
-if (docs < 1) {
+var out = docs; // function(data) {
+//var docs = data; // docs;
+//return docs;
+//}
+
+if(docs) {
+output = commandList.buildHTML(cmdArr, config.bot_name);
+
+} else {
+//if (docs < 1) {
 var output = 'The End';
 }
 
