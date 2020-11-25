@@ -160,7 +160,7 @@ exports.countdown = function() {
 */
 
 exports.commands = function() {
-//var docs = [0]; //, out;
+var docs; //, out;
 var out = function(data) {
 var docs = data; // docs;
 return docs;
