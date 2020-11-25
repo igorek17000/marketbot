@@ -160,13 +160,13 @@ exports.countdown = function() {
 */
 
 exports.commands = function() {
-var docs, out;
-var out = docs;
-if(out) {
-output = 'commandList.buildHTML(cmdArr, config.bot_name)';
+//var docs = [{}]; //, out;
+//var out = docs;
+if(docs) {
+var output = commandList.buildHTML(cmdArr, config.bot_name);
 } 
-if (out < 1) {
-output = 'The End';
+if (docs < 1) {
+var output = 'The End';
 }
 
 var name = this.req.body.name;
