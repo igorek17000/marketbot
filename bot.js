@@ -159,9 +159,9 @@ exports.countdown = function() {
 }
 */
 
-exports.commands = function(err, output, docs) {
+exports.commands = function(output) {
 //var docs; //, out;
-var output = commandList.buildHTML(cmdArr, config.bot_name);
+//var output = commandList.buildHTML(cmdArr, config.bot_name);
 
 var out = docs; // function(data) {
 //var docs = data; // docs;
@@ -173,7 +173,7 @@ output = commandList.buildHTML(cmdArr, config.bot_name);
 
 } else {
 //if (docs < 1) {
-var output = 'The End';
+output = 'The End';
 }
 
 var name = this.req.body.name;
