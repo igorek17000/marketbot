@@ -200,11 +200,11 @@ function getAllDocs() {
 //var output;
 //var output = "";
 //init();
-dbs.collection('details').find({name}).toArray(function(err, docs) {
+dbs.collection('details').find({name}).forEach(function(err, doc) {
 if(err) throw err;
 //var output = docs;
 
-if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
+if (doc < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 additFunc();
 //this.res.writeHead(200, {"Content-Type": "text/html"});
   //this.res.end('The End');
@@ -214,23 +214,23 @@ additFunc();
 //return output; //"Invalid login name and password"; //additFunc();
 }
 
-if (docs) {
+if (doc) {
 
 //output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 //this.res.send(output);
 //output = output.good; //commandList.buildHTML(cmdArr, config.bot_name);
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
  // console.log('displaying commands at /commands_success');
-console.log(docs); //db.close();
-console.log(this.req);
-console.log(this.res);
+console.log(doc); //db.close();
+console.log(doc.output);
+console.log(req, res);
 //console.log(output); //
 //page();
 //var output = "commandList.buildHTML(cmdArr, config.bot_name);";
 
 //dbs.close();
 output = data.output;
-this.res.json(JSON.stringify(docs));
+this.res.json(JSON.stringify(doc));
 
 
 }
@@ -297,7 +297,7 @@ callback(output);
 //this.res.statusCode = 200;
 //this.res.contentType = "text/html";
   this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(name);
+  this.res.end(data.output);
 //}
 }
 
