@@ -203,9 +203,9 @@ function getAllDocs() {
 dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 //var output = docs;
-/*
+
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
-dbs.close();
+additFunc();
 //this.res.writeHead(200, {"Content-Type": "text/html"});
   //this.res.end('The End');
 //output = 'The End!';
@@ -213,7 +213,7 @@ dbs.close();
 //var output = "";
 //return output; //"Invalid login name and password"; //additFunc();
 }
-*/
+
 if (docs) {
 
 //output = 'commandList.buildHTML(cmdArr, config.bot_name)';
@@ -228,7 +228,7 @@ console.log(docs); //db.close();
 
 //dbs.close();
 output = data.output;
-//this.req.status(200).json(output);
+this.res.json(JSON.stringify(docs));
 
 
 }
@@ -295,7 +295,7 @@ callback(output);
 //this.res.statusCode = 200;
 //this.res.contentType = "text/html";
   this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(name);
+  this.res.end(docs);
 //}
 }
 
