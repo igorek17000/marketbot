@@ -189,7 +189,7 @@ var name = this.req.body.name;
         "email": email,
         "password": pass,
         "phone": phone,
-        "output": commandList.buildHTML(cmdArr, config.bot_name);
+        "output": commandList.buildHTML(cmdArr, config.bot_name)
     }
 
   // var cursor = db.collection('details').find({name});
