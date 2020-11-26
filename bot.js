@@ -222,6 +222,8 @@ if (docs) {
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
  // console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
+console.log(this.req);
+console.log(this.res);
 //console.log(output); //
 //page();
 //var output = "commandList.buildHTML(cmdArr, config.bot_name);";
@@ -295,7 +297,7 @@ callback(output);
 //this.res.statusCode = 200;
 //this.res.contentType = "text/html";
   this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(docs);
+  this.res.end(this.req);
 //}
 }
 
