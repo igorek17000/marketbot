@@ -189,7 +189,7 @@ var name = this.req.body.name;
         "email": email,
         "password": pass,
         "phone": phone,
-        "output": "commandList.buildHTML(cmdArr, config.bot_name)"
+        "output": commandList.buildHTML(cmdArr, config.bot_name);
     }
 
   // var cursor = db.collection('details').find({name});
@@ -200,11 +200,11 @@ function getAllDocs() {
 //var output;
 //var output = "";
 //init();
-dbs.collection('details').find({name}).forEach(function(err, doc) {
+dbs.collection('details').find({name}).forEach(function(err, docs) {
 if(err) throw err;
 //var output = docs;
 
-if (doc < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
+if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 additFunc();
 //this.res.writeHead(200, {"Content-Type": "text/html"});
   //this.res.end('The End');
@@ -214,14 +214,14 @@ additFunc();
 //return output; //"Invalid login name and password"; //additFunc();
 }
 
-if (doc) {
+if (docs) {
 
 //output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 //this.res.send(output);
 //output = output.good; //commandList.buildHTML(cmdArr, config.bot_name);
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
  // console.log('displaying commands at /commands_success');
-console.log(doc); //db.close();
+console.log(docs); //db.close();
 //console.log(doc.output);
 //console.log(req, res);
 //console.log(output); //
@@ -230,7 +230,7 @@ console.log(doc); //db.close();
 
 //dbs.close();
 output = data.output;
-this.res.json(JSON.stringify(doc));
+this.res.json(JSON.stringify(docs));
 
 
 }
