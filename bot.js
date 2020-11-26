@@ -271,7 +271,7 @@ function errorFunc(error) {
 console.log(error);
 }
 
-await getAllDocs();
+getAllDocs();
 
   var cmdArr = [];
 
