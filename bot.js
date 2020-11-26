@@ -200,7 +200,7 @@ function getAllDocs() {
 //var output;
 //var output = "";
 //init();
-dbs.collection('details').find({name}).forEach(function(err, docs) {
+dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 //var output = docs;
 
