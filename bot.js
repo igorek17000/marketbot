@@ -161,8 +161,9 @@ exports.countdown = function() {
 
 exports.commands = function() {
 //var docs; //, out;
-var output = commandList.buildHTML(cmdArr, config.bot_name);
-
+var output = {}; //= commandList.buildHTML(cmdArr, config.bot_name);
+output.good = commandList.buildHTML(cmdArr, config.bot_name);
+output.bad = 'The End!';
 //var out = docs; // function(data) {
 //var docs = data; // docs;
 //return docs;
@@ -216,7 +217,7 @@ if (docs) {
 
 //output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 //this.res.send(output);
-output = commandList.buildHTML(cmdArr, config.bot_name);
+output = output.good; //commandList.buildHTML(cmdArr, config.bot_name);
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
  // console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
