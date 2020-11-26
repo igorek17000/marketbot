@@ -189,7 +189,7 @@ var name = this.req.body.name;
         "email": email,
         "password": pass,
         "phone": phone,
-        "output": "commandList.buildHTML(cmdArr, config.bot_name);"
+        "output": "commandList.buildHTML(cmdArr, config.bot_name)"
     }
 
   // var cursor = db.collection('details').find({name});
@@ -222,8 +222,8 @@ if (doc) {
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
  // console.log('displaying commands at /commands_success');
 console.log(doc); //db.close();
-console.log(doc.output);
-console.log(req, res);
+//console.log(doc.output);
+//console.log(req, res);
 //console.log(output); //
 //page();
 //var output = "commandList.buildHTML(cmdArr, config.bot_name);";
