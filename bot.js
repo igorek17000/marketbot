@@ -161,7 +161,7 @@ exports.countdown = function() {
 
 exports.commands = function() {
 //var docs; //, out;
-//var output = commandList.buildHTML(cmdArr, config.bot_name);
+var output = commandList.buildHTML(cmdArr, config.bot_name);
 
 //var out = docs; // function(data) {
 //var docs = data; // docs;
@@ -195,7 +195,7 @@ var name = this.req.body.name;
 //var results = cursor; //.each();
 
 function getAllDocs() {
-var output;
+//var output;
 //var output = "";
 //init();
 dbs.collection('details').find({name}).toArray(function(err, docs) {
