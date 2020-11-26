@@ -170,7 +170,7 @@ exports.commands = function() {
 //}
 /*
 if(docs) {
-output = commandList.buildHTML(cmdArr, config.bot_name);
+output = commandList.buildHTML(cmdArr, config.bot_name)
 
 } else {
 //if (docs < 1) {
