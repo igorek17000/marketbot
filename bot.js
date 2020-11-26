@@ -181,7 +181,7 @@ var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
-    var output;
+    //var out = this.req.output;
   
 
     var data = {
@@ -228,7 +228,7 @@ console.log(docs); //db.close();
 
 //dbs.close();
 output = data.output;
-//this.res.status(200).json(output);
+//this.req.status(200).json(output);
 
 
 }
@@ -295,7 +295,7 @@ callback(output);
 //this.res.statusCode = 200;
 //this.res.contentType = "text/html";
   this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(output);
+  this.res.end(name);
 //}
 }
 
