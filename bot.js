@@ -160,7 +160,7 @@ exports.countdown = function() {
 */
 
 exports.commands = function() {
-//var docs; //, out;
+var docs = docs[0] ; //, out;
 //var output = {}; //= commandList.buildHTML(cmdArr, config.bot_name);
 //output.good = commandList.buildHTML(cmdArr, config.bot_name);
 //output.bad = 'The End!';
@@ -192,9 +192,9 @@ var name = this.req.body.name;
         "output": out
     }
 
-  // var cursor = db.collection('details').find({name});
+  // var cursor = dbs.collection('details').find({name});
 //var ret = [];
-//var results = cursor; //.each();
+//var results = cursor.toArray(function(err, docs) { //; //.each();
 
 function getAllDocs() {
 //var output;
@@ -208,7 +208,7 @@ if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 additFunc();
 //this.res.writeHead(200, {"Content-Type": "text/html"});
   //this.res.end('The End');
-//output = 'The End!';
+var output = 'The End!';
 //this.res.send(output);
 //var output = "";
 //return output; //"Invalid login name and password"; //additFunc();
@@ -218,7 +218,7 @@ if (docs) {
 
 //output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 //this.res.send(output);
-//output = output.good; //commandList.buildHTML(cmdArr, config.bot_name);
+var output = commandList.buildHTML(cmdArr, config.bot_name);
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
  // console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
@@ -229,8 +229,8 @@ console.log(docs); //db.close();
 //var output = "commandList.buildHTML(cmdArr, config.bot_name);";
 
 //dbs.close();
-output = data.output;
-this.res.json(JSON.stringify(docs[{name}]));
+//output = data.output;
+//this.res.json(JSON.stringify(docs[{name}]));
 
 
 }
@@ -271,7 +271,7 @@ function errorFunc(error) {
 console.log(error);
 }
 
-getAllDocs();
+await getAllDocs();
 
   var cmdArr = [];
 
@@ -297,7 +297,7 @@ callback(output);
 //this.res.statusCode = 200;
 //this.res.contentType = "text/html";
   this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(data.output);
+  this.res.end(output);
 //}
 }
 
