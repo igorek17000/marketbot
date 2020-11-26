@@ -230,7 +230,7 @@ console.log(docs); //db.close();
 
 //dbs.close();
 output = data.output;
-this.res.json(JSON.stringify(docs));
+this.res.json(JSON.stringify(name));
 
 
 }
