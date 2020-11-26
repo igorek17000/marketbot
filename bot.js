@@ -218,7 +218,7 @@ if (docs) {
 
 //output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 //this.res.send(output);
-output = output.good; //commandList.buildHTML(cmdArr, config.bot_name);
+//output = output.good; //commandList.buildHTML(cmdArr, config.bot_name);
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
  // console.log('displaying commands at /commands_success');
 console.log(docs); //db.close();
