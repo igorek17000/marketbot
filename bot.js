@@ -228,7 +228,7 @@ console.log(docs); //db.close();
 
 //dbs.close();
 output = data.output;
-res.status(200).json(output);
+this.res.status(200).json(output);
 
 
 }
