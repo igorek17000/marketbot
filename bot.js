@@ -163,7 +163,7 @@ exports.commands = function(output, docs) {
 //var docs; //, out;
 //var output = commandList.buildHTML(cmdArr, config.bot_name);
 
-/var out = docs; // function(data) {
+//var out = docs; // function(data) {
 //var docs = data; // docs;
 //return docs;
 //}
