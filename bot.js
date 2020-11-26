@@ -161,9 +161,9 @@ exports.countdown = function() {
 
 exports.commands = function() {
 //var docs; //, out;
-var output = {}; //= commandList.buildHTML(cmdArr, config.bot_name);
-output.good = commandList.buildHTML(cmdArr, config.bot_name);
-output.bad = 'The End!';
+//var output = {}; //= commandList.buildHTML(cmdArr, config.bot_name);
+//output.good = commandList.buildHTML(cmdArr, config.bot_name);
+//output.bad = 'The End!';
 //var out = docs; // function(data) {
 //var docs = data; // docs;
 //return docs;
@@ -181,14 +181,15 @@ var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
-
+    var output;
   
 
     var data = {
         "name": name,
         "email": email,
         "password": pass,
-        "phone": phone
+        "phone": phone,
+        "output": "commandList.buildHTML(cmdArr, config.bot_name);"
     }
 
   // var cursor = db.collection('details').find({name});
@@ -226,6 +227,7 @@ console.log(docs); //db.close();
 //var output = "commandList.buildHTML(cmdArr, config.bot_name);";
 
 //dbs.close();
+output = data.output;
 res.status(200).json(output);
 
 
