@@ -380,7 +380,7 @@ console.log(error);
 
 getAllDocs();
 
-*/
+
   var cmdArr = [];
 
   console.log('displaying commands at /commands');
