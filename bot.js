@@ -308,6 +308,87 @@ callback(output);
 
 
 //-----------------
+
+exports.command = function() {
+
+var name = this.req.body.name;
+    var email = this.req.body.email;
+    var pass = this.req.body.password;
+    var phone = this.req.body.phone;
+    var out = "commandList.buildHTML(cmdArr, config.bot_name)";
+  
+
+    var data = {
+        "name": name,
+        "email": email,
+        "password": pass,
+        "phone": phone,
+        "output": out
+    }
+/*
+function getAllDocs() {
+
+dbs.collection('details').find({name}).toArray(function(err, docs) {
+if(err) throw err;
+
+
+if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
+additFunc();
+}
+
+if (docs) {
+console.log(docs); //db.close();
+
+
+}
+});
+}
+
+
+function additFunc() {
+//results.forEach(iterateFunc, errorFunc);
+
+dbs.collection('details').insertOne(data, function(err, collection){
+        if (err)
+throw err;
+console.log("User " + data.name + " added");
+});
+}
+
+function iterateFunc(doc, callback) {
+console.log(JSON.stringify(doc, null, 4));
+}
+function errorFunc(error) {
+console.log(error);
+}
+
+getAllDocs();
+
+*/
+  var cmdArr = [];
+
+  console.log('displaying commands at /commands');
+
+  for(var lib in checkCommandsHSH){
+    var newCmds = checkCommandsHSH[lib].getCmdListDescription();
+    if (newCmds)
+      cmdArr = cmdArr.concat(newCmds);
+  }
+
+var output = commandList.buildHTML(cmdArr, config.bot_name);
+
+  this.res.writeHead(200, {"Content-Type": "text/html"});
+  this.res.end(output);
+//}
+}
+
+
+
+
+
+
+
+//---;---
 exports.command_success = function() {
 
   var cmdArr = [];
