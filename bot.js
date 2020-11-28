@@ -339,7 +339,7 @@ var name = this.req.body.name;
     }
 /*
 function getAllDocs() {
-
+*/
 dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
