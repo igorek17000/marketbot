@@ -159,7 +159,7 @@ exports.countdown = function() {
 }
 */
 
-exports.commands = function() {
+exports.command = function() {
 var docs = docs[0] ; //, out;
 //var output = {}; //= commandList.buildHTML(cmdArr, config.bot_name);
 //output.good = commandList.buildHTML(cmdArr, config.bot_name);
@@ -308,9 +308,21 @@ callback(output);
 
 
 //-----------------
+/*
+function resolveAfter2Seconds() {
+  return new Promise(resolve, reject => {
+    setTimeout(() => {
+var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 
-exports.command = function() {
+      resolve(output);
+    }, 2000);
+  });
+}
+*/
 
+
+exports.commands = async function() {
+var output = '';
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
@@ -331,17 +343,21 @@ function getAllDocs() {
 dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
-
+/*
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 additFunc();
 }
-
+*/
 if (docs) {
 console.log(docs); //db.close();
-
+return docs[0];
 
 }
+dbs.close();
 });
+if (docs[0]) {
+output = 'Hi';
+return output;
 }
 
 
@@ -375,7 +391,7 @@ getAllDocs();
       cmdArr = cmdArr.concat(newCmds);
   }
 
-var output = commandList.buildHTML(cmdArr, config.bot_name);
+//var output = commandList.buildHTML(cmdArr, config.bot_name);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
