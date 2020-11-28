@@ -355,7 +355,7 @@ return docs[0];
 }
 dbs.close();
 });
-if (docs[0]) {
+//if (docs[0]) {
 output = 'Hi';
 return output;
 }
@@ -378,7 +378,7 @@ function errorFunc(error) {
 console.log(error);
 }
 
-getAllDocs();
+//getAllDocs();
 
 
   var cmdArr = [];
