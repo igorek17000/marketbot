@@ -358,7 +358,7 @@ dbs.close();
 //if (docs[0]) {
 output = 'Hi';
 return output;
-}
+
 
 
 function additFunc() {
