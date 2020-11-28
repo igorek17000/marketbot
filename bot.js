@@ -353,7 +353,7 @@ console.log(docs); //db.close();
 return docs[0];
 
 }
-dbs.close();
+
 });
 //if (docs[0]) {
 output = 'Hi';
