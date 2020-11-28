@@ -350,7 +350,7 @@ additFunc();
 */
 if (docs) {
 console.log(docs); //db.close();
-return docs[0];
+return docs;
 
 }
 
