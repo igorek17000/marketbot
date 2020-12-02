@@ -321,8 +321,9 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 */
 
 
-exports.commands = async function() {
-var output = '';
+exports.commands = function() {
+var output = commandList.buildHTML(cmdArr, config.bot_name);
+var docs, data;
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
@@ -335,12 +336,16 @@ var name = this.req.body.name;
         "email": email,
         "password": pass,
         "phone": phone,
-        "output": out
+        "output": output
     }
 /*
 function getAllDocs() {
 */
-dbs.collection('details').find({name}).toArray(function(err, docs) {
+var findit = dbs.collection('details').find({name});
+var dta = findit.toArray(function(err, callback) {
+//docs = data;
+
+//dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
 /*
@@ -348,16 +353,17 @@ if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 additFunc();
 }
 */
-if (docs) {
-console.log(docs); //db.close();
-return docs;
-
+dta;
+if (callback && callback[0].name != name) {
+console.log('Not Found'); //db.close();
+//return docs;
 }
-
+console.log(callback);
 });
+//console.log(docs);
 //if (docs[0]) {
-output = 'Hi';
-return output;
+output = data.output; //'Hi';
+return callback;
 
 
 
