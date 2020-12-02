@@ -359,7 +359,9 @@ if (!callback[{name}]) { //&& !callback[0].name) {
 console.log('Not Found'); //db.close();
 //return docs;
 }
+if (callback) {
 console.log(callback);
+}
 });
 //console.log(docs);
 //if (docs[0]) {
