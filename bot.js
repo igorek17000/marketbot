@@ -322,8 +322,8 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 
 
 exports.commands = function() {
-var output = '';
-output = 'commandList.buildHTML(cmdArr, config.bot_name);';
+//var output = '';
+var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 var docs, data;
 var name = this.req.body.name;
     var email = this.req.body.email;
@@ -389,6 +389,7 @@ console.log(error);
 
 
   var cmdArr = [];
+var cmdArray = [];
 
   console.log('displaying commands at /commands');
 
