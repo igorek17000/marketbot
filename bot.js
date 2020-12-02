@@ -364,7 +364,7 @@ console.log(callback);
 //console.log(docs);
 //if (docs[0]) {
 output = data.output; //'Hi';
-return callback;
+//return callback;
 
 
 
