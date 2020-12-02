@@ -329,7 +329,7 @@ var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
-    var out = output; //"commandList.buildHTML(cmdArr, config.bot_name)";
+   // var out = output; //"commandList.buildHTML(cmdArr, config.bot_name)";
   
 
     var data = {
@@ -337,7 +337,7 @@ var name = this.req.body.name;
         "email": email,
         "password": pass,
         "phone": phone,
-        "output": out
+       // "output": out
     }
 /*
 function getAllDocs() {
@@ -363,7 +363,7 @@ console.log(callback);
 });
 //console.log(docs);
 //if (docs[0]) {
-output = data.output; //'Hi';
+//output = data.output; //'Hi';
 //return callback;
 
 
