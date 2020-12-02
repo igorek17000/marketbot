@@ -323,7 +323,7 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 
 exports.commands = function() {
 //var output = '';
-var output = commandList.buildHTML(cmdArr, config.bot_name);
+//var output = commandList.buildHTML(cmdArr, config.bot_name);
 var docs, data;
 var name = this.req.body.name;
     var email = this.req.body.email;
@@ -399,7 +399,7 @@ var cmdArray = [];
       cmdArr = cmdArr.concat(newCmds);
   }
 
-//var output = commandList.buildHTML(cmdArr, config.bot_name);
+var output = commandList.buildHTML(cmdArr, config.bot_name);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
