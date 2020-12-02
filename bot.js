@@ -322,6 +322,21 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 
 
 exports.commands = function() {
+var cmdArr = [];
+var cmdArray = [];
+
+  console.log('displaying commands at /commands');
+
+  for(var lib in checkCommandsHSH){
+    var newCmds = checkCommandsHSH[lib].getCmdListDescription();
+    if (newCmds)
+      cmdArr = cmdArr.concat(newCmds);
+  }
+
+var output = commandList.buildHTML(cmdArr, config.bot_name);
+
+
+
 //var output = '';
 //var output = commandList.buildHTML(cmdArr, config.bot_name);
 var docs, data;
@@ -329,7 +344,7 @@ var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
-   // var out = output; //"commandList.buildHTML(cmdArr, config.bot_name)";
+    var out = output; //"commandList.buildHTML(cmdArr, config.bot_name)";
   
 
     var data = {
@@ -337,7 +352,7 @@ var name = this.req.body.name;
         "email": email,
         "password": pass,
         "phone": phone,
-       // "output": out
+        "output": out
     }
 /*
 function getAllDocs() {
@@ -359,13 +374,13 @@ if (!callback[{name}]) { //&& !callback[0].name) {
 console.log('Not Found'); //db.close();
 //return docs;
 }
-if (callback) {
+if (callback[{name}]) {
 console.log(callback);
 }
 });
 //console.log(docs);
 //if (docs[0]) {
-//output = data.output; //'Hi';
+output = data.output; //'Hi';
 //return callback;
 
 
@@ -389,7 +404,7 @@ console.log(error);
 
 //getAllDocs();
 
-
+/*
   var cmdArr = [];
 var cmdArray = [];
 
@@ -402,7 +417,7 @@ var cmdArray = [];
   }
 
 var output = commandList.buildHTML(cmdArr, config.bot_name);
-
+*/
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
 //}
