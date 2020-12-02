@@ -374,7 +374,7 @@ if (!callback[{name}]) { //&& !callback[0].name) {
 console.log('Not Found'); //db.close();
 //return docs;
 }
-if (callback[{name}]) {
+if (callback && callback[{'name': name}]) {
 console.log(callback);
 }
 });
