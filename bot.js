@@ -355,7 +355,7 @@ additFunc();
 }
 */
 dta;
-if (!callback) { //&& !callback[0].name) {
+if (!callback[{name}]) { //&& !callback[0].name) {
 console.log('Not Found'); //db.close();
 //return docs;
 }
