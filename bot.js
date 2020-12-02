@@ -323,7 +323,7 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 
 exports.commands = function() {
 var output = '';
-output = 'commandList.buildHTML(cmdArr, config.bot_name)';
+output = 'commandList.buildHTML(cmdArr, config.bot_name);';
 var docs, data;
 var name = this.req.body.name;
     var email = this.req.body.email;
