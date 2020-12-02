@@ -94,7 +94,7 @@ get: test
 },
 
   '/commands' : {
-    get: bot.commqnds,
+    get: bot.commands,
     post: bot.commands
 },
 
