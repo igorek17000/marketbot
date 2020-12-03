@@ -420,7 +420,7 @@ var cmdArray = [];
 console.log(this.req);
 var output = commandList.buildHTML(cmdArr, config.bot_name);
 */
-console.log(req);
+console.log(this.req);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
