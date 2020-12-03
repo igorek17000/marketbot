@@ -16,8 +16,8 @@ var dbs = mongoose.connection;
 
 //db.on('error', console.log.bind(console, "connection error"));
 
-dbs.on('data', function(res){
-output = res; // commandList.buildHTML(cmdArr, config.bot_name);
+dbs.on('data', function(data){
+output = data; // commandList.buildHTML(cmdArr, config.bot_name);
 return output;
 /*
 }
@@ -338,7 +338,7 @@ var cmdArray = [];
   }
 
 //var 
-output = res; //commandList.buildHTML(cmdArr, config.bot_name);
+output = data; //commandList.buildHTML(cmdArr, config.bot_name);
 
 
 
@@ -387,7 +387,7 @@ console.log(data);
 });
 //console.log(docs);
 //if (docs[0]) {
-output = res; // data.output; //'Hi';
+output = data; // data.output; //'Hi';
 return output;
 
 
