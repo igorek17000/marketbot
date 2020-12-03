@@ -372,9 +372,11 @@ additFunc();
 dta;
 if (callback < 1) { //!callback[{name}]) { //&& !callback[0].name) {
 console.log('Not Found'); //db.close();
+additFunc();
 //return docs;
 }
-if (callback > 0) { //&& callback[{name}] == name) {
+if (callback) { 
+push.callback();//&& callback[{name}] == name) {
 console.log(callback);
 }
 });
