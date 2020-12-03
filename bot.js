@@ -417,7 +417,7 @@ var cmdArray = [];
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
-console.log(this.req);
+console.log(this.res);
 var output = commandList.buildHTML(cmdArr, config.bot_name);
 */
 console.log(this.req);
