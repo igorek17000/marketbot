@@ -19,11 +19,13 @@ var dbs = mongoose.connection;
 dbs.on('data', function(res){
 output = res; // commandList.buildHTML(cmdArr, config.bot_name);
 return output;
+/*
 }
 
 if (callback)
 callback(output);
   //  console.log(output);
+*/
 });
 
   
