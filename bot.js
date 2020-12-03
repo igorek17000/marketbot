@@ -376,7 +376,7 @@ additFunc();
 //return docs;
 }
 if (callback) { 
-push.callback();//&& callback[{name}] == name) {
+//push.callback();//&& callback[{name}] == name) {
 console.log(callback);
 }
 });
