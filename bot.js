@@ -1,6 +1,6 @@
 /*global init*/
 //
-
+var output;
 var express = require("express");
 
 var bodyParser = require("body-parser");
@@ -16,8 +16,10 @@ var dbs = mongoose.connection;
 
 //db.on('error', console.log.bind(console, "connection error"));
 
-dbs.on('data', function(callback){
-var output = commandList.buildHTML(cmdArr, config.bot_name);
+dbs.on('data', function(res){
+output = res; // commandList.buildHTML(cmdArr, config.bot_name);
+return output;
+}
 
 if (callback)
 callback(output);
@@ -333,7 +335,8 @@ var cmdArray = [];
       cmdArr = cmdArr.concat(newCmds);
   }
 
-var output = commandList.buildHTML(cmdArr, config.bot_name);
+//var 
+output = res; //commandList.buildHTML(cmdArr, config.bot_name);
 
 
 
@@ -358,7 +361,7 @@ var name = this.req.body.name;
 function getAllDocs() {
 */
 var findit = dbs.collection('details').find({name});
-var dta = findit.toArray(function(err, callback) {
+var dta = findit.toArray(function(err, data) {
 //docs = data;
 
 //dbs.collection('details').find({name}).toArray(function(err, docs) {
@@ -366,24 +369,24 @@ if(err) throw err;
 
 /*
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
-additFunc();
+additF
 }
 */
 dta;
-if (callback < 1) { //!callback[{name}]) { //&& !callback[0].name) {
+if (data < 1) { //!callback[{name}]) { //&& !callback[0].name) {
 console.log('Not Found'); //db.close();
-additFunc();
+//additFunc();
 //return docs;
 }
-if (callback) { 
+if (data) { 
 //push.callback();//&& callback[{name}] == name) {
-console.log(callback);
+console.log(data);
 }
 });
 //console.log(docs);
 //if (docs[0]) {
-output = data.output; //'Hi';
-//return callback;
+output = res; // data.output; //'Hi';
+return output;
 
 
 
@@ -420,7 +423,7 @@ var cmdArray = [];
 console.log(this.res);
 var output = commandList.buildHTML(cmdArr, config.bot_name);
 */
-console.log(this.req);
+console.log(output);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
