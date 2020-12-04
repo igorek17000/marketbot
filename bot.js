@@ -349,7 +349,7 @@ var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
-    var out = output; //"commandList.buildHTML(cmdArr, config.bot_name)";
+    var out = "commandList.buildHTML(cmdArr, config.bot_name)";
   
 
     var data = {
@@ -377,7 +377,7 @@ additF
 dta;
 if (data < 1) { //!callback[{name}]) { //&& !callback[0].name) {
 console.log('Not Found'); //db.close();
-//additFunc();
+additFunc();
 //return docs;
 }
 if (data) { 
