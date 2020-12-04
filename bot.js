@@ -38,7 +38,7 @@ function getAllAlexbotoutput() {
 db.getSuccessDocument(db_table, {"name": alexname.name, callback}); //getAllDocuments(db_table, function(res){ 
 alexbotoutput = callback; 
 //return alexbotoutput
-});
+//});
 }
 /*
 for (alexname in modulesoutput) { 
