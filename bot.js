@@ -338,7 +338,7 @@ var cmdArray = [];
   }
 
 //var 
-output = data; //commandList.buildHTML(cmdArr, config.bot_name);
+var output = data; //commandList.buildHTML(cmdArr, config.bot_name);
 
 
 
