@@ -34,7 +34,7 @@ callback(output);
 
 var app = express();
 
-function getAllAlexbotoutput() { 
+function getAllAlexbotoutput(alexname, callback) { 
 db.getSuccessDocument(db_table, {"name": alexname.name, callback}); //getAllDocuments(db_table, function(res){ 
 alexbotoutput = callback; 
 //return alexbotoutput
