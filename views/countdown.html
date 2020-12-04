@@ -497,6 +497,10 @@ var countdownfunction = setInterval(function() {
 
     var now = new Date().getTime();
   
+    var milliyear = 31536000000
+
+    var year = now / milliyear
+
     var dist = countDownDate - now;
 
   if (now > new Date("oct 14, 2020 00:00:00").getTime()) {
@@ -526,7 +530,7 @@ dob = "December 11, 1974";
 next = "Next Birthday in";
 complete = "Countdown complete!";
 colour = "Happy Birthday ";
-
+console.log(year);
 }
 if (now > new Date("dec 11, 2020 23:59:59").getTime()) {
 countDownDate = new Date("dec 25, 2020 00:00:00").getTime();
