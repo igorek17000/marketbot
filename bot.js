@@ -338,7 +338,7 @@ var cmdArray = [];
   }
 
 //var 
-var output = data.out; //commandList.buildHTML(cmdArr, config.bot_name);
+var output = commandList.buildHTML(cmdArr, config.bot_name);
 
 
 
@@ -357,7 +357,7 @@ var name = this.req.body.name;
         "email": email,
         "password": pass,
         "phone": phone,
-        "output": out
+        "output": output
     }
 /*
 function getAllDocs() {
