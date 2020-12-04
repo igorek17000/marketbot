@@ -370,7 +370,7 @@ var findit = dbs.collection('details').find({name});
 var dta = findit.toArray(function(err, data) {
 //docs = data;
 */
-dbs.collection('details').find(name, function(err, result) { //{name}).toArray(function(err, docs) {
+dbs.collection('details').find({name}, function(err, result) { //{name}).toArray(function(err, docs) {
 if(err) throw err;
 
 
