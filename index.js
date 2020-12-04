@@ -95,7 +95,7 @@ get: test
 
   '/commands' : {
     get: bot.commands,
-    post: bot.commands
+   // post: bot.commands
 },
 
 
