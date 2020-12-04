@@ -52,70 +52,16 @@ exports.getAllDocuments = function(collection, callback) {
 }
 
 //---- Success
-exports.getSuccessDocument = function(collection, doc, data, callback) {
-  mongoDB.connect(connection_string, function(err, db) {
-
-    if(err) throw err;
-    
-
-
-  // var cursor = db.collection('details').find();
-//var results = cursor; //.each();
-//results.toArray(iterateFunc);
-//function getIt() {
-//results.toArray(function(err, docs) { //, errorFunc);
-
-//db.collection('details').find(matchHash).toArray(function(err, docs) {
-//if(err) throw err;
-/*
-if (docs < 1) {
-additFunc();
-//db.collection('details').insertOne(data, function(err, collection){
-       // if (err)
-//throw err;
-//});
-}
-if (docs) {
-console.log(JSON.stringify(doc, null, 4));
-}
-*/
-//});
-//}
-
-function additFunc() {
-//results.forEach(iterateFunc, errorFunc);
-
-
-
-db.collection('details').insert(data, function(err, collection){
-        if (err)
-throw err;
-console.log(data.name + "\n User added");
-});
-
-}
-
-function iterateFunc() {
-db.collection('details').find(matchHash).toArray(function(err, doc) { //, errorFunc);
-//var docs = res;
-//if (result < 1) { //["name"] != matchHash) {
-//if(!callback) {
-//additFunc();
-//}
-//if (doc) { // != null) { //["name"] = matchHash) {
-console.log(JSON.stringify(doc, null, 4)); //docs, null, 4));
-//}
-//if (!doc) {
-//additFunc();
-//}
-});
-//additFunc();
-}
-function errorFunc(error) {
-console.log(error);
-}
-if (callback)
-iterateFunc();
+exports.getSuccessDocument = function(collection, name, callback) {
+  connect(function(db){
+    var cursor = db.collection(collection).find({name});
+    var ret = [];
+    cursor.each(function(err, doc){
+      if(doc != null)
+        console.log('not found');
+      else
+        callback(doc);
+    });
   });
 }
 
