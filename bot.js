@@ -326,6 +326,7 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 
 
 exports.commands = function() {
+/*
 var cmdArr = [];
 var cmdArray = [];
 
@@ -359,21 +360,24 @@ var name = this.req.body.name;
         "phone": phone,
         "output": output
     }
+*/
 /*
 function getAllDocs() {
 */
+/*
 var findit = dbs.collection('details').find({name});
 var dta = findit.toArray(function(err, data) {
 //docs = data;
 
 //dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
-
+*/
 /*
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 additF
 }
 */
+/*
 dta;
 if (data < 1) { //!callback[{name}]) { //&& !callback[0].name) {
 console.log('Not Found'); //db.close();
@@ -411,7 +415,7 @@ console.log(error);
 
 //getAllDocs();
 
-/*
+*/
   var cmdArr = [];
 var cmdArray = [];
 
@@ -421,10 +425,10 @@ var cmdArray = [];
     var newCmds = checkCommandsHSH[lib].getCmdListDescription();
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
-  }
+ 
 console.log(this.res);
 var output = commandList.buildHTML(cmdArr, config.bot_name);
-*/
+
 console.log(output);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
