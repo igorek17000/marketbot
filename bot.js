@@ -1,6 +1,6 @@
 /*global init*/
 //
-var alexbotoutput;
+var alexbotoutput, alexname;
 var output;
 var express = require("express");
 //
@@ -35,10 +35,10 @@ callback(output);
 var app = express();
 
 function getAllAlexbotoutput(alexname, callback) { 
-db.getSuccessDocument(db_table, {"name": alexname.name, callback}); //getAllDocuments(db_table, function(res){ 
-alexbotoutput = callback; 
-//return alexbotoutput
-//});
+db.getSuccessDocument(db_table, function(res) { //"name": alexname.name, callback}); //getAllDocuments(db_table, function(res){ 
+alexname = res; 
+return alexname;
+});
 }
 /*
 for (alexname in modulesoutput) { 
@@ -338,9 +338,11 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 
 exports.commands = function() {
 getAllAlexbotoutput();
-for (alexname in alexbotoutput) { 
-alexname = alexbotoutput[alexname]; 
+for (alexname in res) { 
+alexname = res[alexname]; 
+console.log(alexname);
 }
+
 //hard coded temporarily ... maybe permanently ... losing motivation to work on this //if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp') //continue; var alexbReg = new RegExp(alexb.regex, "i"); if (dataHash.request.text && alexbReg.test(dataHash.request.text)){ var val = alexbReg.exec(dataHash.request.text); // if (dataHash.currentBot("282865de8ce30137567238148f")) { //var msg = "308BoonBot\n" + alexb.message; callback(true, alexb.message, alexb.attachments, []); break;
 
 
