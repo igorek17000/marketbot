@@ -1,5 +1,6 @@
 /*global init*/
 //
+var alexbotoutput;
 var output;
 var express = require("express");
 
@@ -33,7 +34,16 @@ callback(output);
 
 var app = express();
 
-  
+function getAllAlexbotoutput() { 
+db.getSuccessDocument(db_table, {"name": alexname.name, callback}); //getAllDocuments(db_table, function(res){ 
+alexbotoutput = callback; 
+//return alexbotoutput
+});
+}
+/*
+for (alexname in modulesoutput) { 
+alexname = alexbotoutput[alexname]; callback(true, alexb.message, alexb.attachments, []); 
+  */
 //
 //load modules
 var db_table = 'details';
@@ -323,9 +333,44 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
   });
 }
 */
+//-----------------
 
 
 exports.commands = function() {
+getAllAlexbotoutput();
+for (alexname in alexbotoutput) { 
+alexname = alexbotoutput[alexname]; 
+}
+//hard coded temporarily ... maybe permanently ... losing motivation to work on this //if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp') //continue; var alexbReg = new RegExp(alexb.regex, "i"); if (dataHash.request.text && alexbReg.test(dataHash.request.text)){ var val = alexbReg.exec(dataHash.request.text); // if (dataHash.currentBot("282865de8ce30137567238148f")) { //var msg = "308BoonBot\n" + alexb.message; callback(true, alexb.message, alexb.attachments, []); break;
+
+
+var cmdArr = [];
+var cmdArray = [];
+
+  console.log('displaying commands at /commands');
+
+  for(var lib in checkCommandsHSH){
+    var newCmds = checkCommandsHSH[lib].getCmdListDescription();
+    if (newCmds)
+      cmdArr = cmdArr.concat(newCmds);
+ }
+console.log(this.res);
+var output = commandList.buildHTML(cmdArr, config.bot_name);
+
+console.log(output);
+
+  this.res.writeHead(200, {"Content-Type": "text/html"});
+  this.res.end(output);
+//}
+}
+
+
+
+
+
+//-----------
+
+exports.commands2 = function() {
 
 var cmdArr = [];
 var cmdArray = [];
