@@ -425,7 +425,7 @@ var cmdArray = [];
     var newCmds = checkCommandsHSH[lib].getCmdListDescription();
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
- 
+ }
 console.log(this.res);
 var output = commandList.buildHTML(cmdArr, config.bot_name);
 
