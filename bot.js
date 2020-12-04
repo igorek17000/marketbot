@@ -326,7 +326,7 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 
 
 exports.commands = function() {
-/*
+
 var cmdArr = [];
 var cmdArray = [];
 
@@ -342,15 +342,16 @@ var cmdArray = [];
 var output = commandList.buildHTML(cmdArr, config.bot_name);
 
 
-
+/*
 //var output = '';
 //var output = commandList.buildHTML(cmdArr, config.bot_name);
 var docs, data;
+*/
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
-    var out = "commandList.buildHTML(cmdArr, config.bot_name)";
+    var out = commandList.buildHTML(cmdArr, config.bot_name);
   
 
     var data = {
@@ -358,9 +359,9 @@ var name = this.req.body.name;
         "email": email,
         "password": pass,
         "phone": phone,
-        "output": output
+        "output": out
     }
-*/
+
 /*
 function getAllDocs() {
 */
@@ -368,15 +369,20 @@ function getAllDocs() {
 var findit = dbs.collection('details').find({name});
 var dta = findit.toArray(function(err, data) {
 //docs = data;
-
-//dbs.collection('details').find({name}).toArray(function(err, docs) {
+*/
+dbs.collection('details').find(name, function(err, result) { //{name}).toArray(function(err, docs) {
 if(err) throw err;
-*/
-/*
-if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
-additF
+
+
+if (result < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
+additFunc()
 }
-*/
+if(result.name) {
+console.log(result);
+} 
+});
+
+
 /*
 dta;
 if (data < 1) { //!callback[{name}]) { //&& !callback[0].name) {
@@ -394,7 +400,7 @@ console.log(data);
 output = data; // data.output; //'Hi';
 //return output;
 
-
+*/
 
 function additFunc() {
 //results.forEach(iterateFunc, errorFunc);
@@ -405,7 +411,7 @@ throw err;
 console.log("User " + data.name + " added");
 });
 }
-
+/*
 function iterateFunc(doc, callback) {
 console.log(JSON.stringify(doc, null, 4));
 }
