@@ -4,7 +4,17 @@ var alexbotoutput, alexname;
 var output;
 
 function getTheDocs(output) {
-var name, email, pass, phone, out, data;
+var name, email, pass, phone, out;
+
+    var data = {
+        "name": name,
+        "email": email,
+        "password": pass,
+        "phone": phone,
+        "output": out
+    }
+
+
 function additFunc() {//results.forEach(iterateFunc, errorFunc); 
 dbs.collection('details').insertOne(data, function(err, collection){       
  if (err)throw err;
