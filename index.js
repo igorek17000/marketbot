@@ -94,8 +94,8 @@ get: test
 },
 
   '/commands' : {
-   post: bot.getTheDocs,
-    get: bot.commands
+  // post: bot.getTheDocs,
+    post: bot.commands
 },
 
 
