@@ -52,6 +52,8 @@ console.log(docs);
 
 });
 //console.log(output);
+this.res.write(output); //writeHead(200, {"Content-Type": "text/html"});
+  this.res.end();
 }
 
 
