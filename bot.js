@@ -2,7 +2,7 @@
 //
 var alexbotoutput, alexname;
 var output;
-
+exports.getTheDocs = getTheDocs(output);
 function getTheDocs(output) {
 //var name, email, pass, phone, out;
 var name = this.req.body.name;
@@ -51,7 +51,7 @@ console.log(docs);
 }
 
 });
-console.log(output);
+//console.log(output);
 }
 
 
