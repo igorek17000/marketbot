@@ -2,6 +2,8 @@
 //
 var alexbotoutput, alexname;
 var output;
+
+function getTheDocs(output) {
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
@@ -17,7 +19,6 @@ var name = this.req.body.name;
         "output": out
     }
 
-function getTheDocs(output) {
 var cmdArr = []; 
 for(var lib in checkCommandsHSH){ 
 var newCmds = checkCommandsHSH[lib].getCmdListDescription(); 
