@@ -11,7 +11,7 @@ function getTheDocs() {
     var phone = req.body.phone;
     var out = commandList.buildHTML(cmdArr, config.bot_name);
   
-
+*/
     var data = {
         "name": name,
         "email": email,
@@ -20,9 +20,9 @@ function getTheDocs() {
         "output": out
     }
 
-*/
-//function additFunc() {//results.forEach(iterateFunc, errorFunc); 
-var itadd = dbs.collection('details').insertOne(data, function(err, collection){       
+
+function additFunc() {//results.forEach(iterateFunc, errorFunc); 
+dbs.collection('details').insertOne(data, function(err, collection){       
  if (err)throw err;
 console.log("User " + data.name + " added");
 });
@@ -40,7 +40,7 @@ var commandList  = require('./modules/command-list');
 var it = dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 if (docs < 1) { 
-itadd;
+additFunc();
 output = 'The End';
 }
 
