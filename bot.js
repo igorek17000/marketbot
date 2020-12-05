@@ -435,7 +435,7 @@ var cmdarray = [];
  }
 
 //var output; //= commandList.buildHTML(cmdArr, config.bot_name);
-getTheDocs();
+getTheDocs(it);
 //console.log(output);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
