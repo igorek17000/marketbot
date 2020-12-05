@@ -3,7 +3,7 @@
 var alexbotoutput, alexname;
 var output;
 exports.getTheDocs = getTheDocs;
-function getTheDocs() {
+function getTheDocs(name, email, pass, phone, out, data) {
 //var name, email, pass, phone, out;
 /*var name = req.body.name;
     var email = req.body.email;
