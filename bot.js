@@ -26,7 +26,7 @@ dbs.collection('details').insertOne(data, function(err, collection){      
  if (err)throw err;
 console.log("User " + data.name + " added");
 });
-//}
+}
 
 var cmdarray = []
 var cmdArr = []; 
