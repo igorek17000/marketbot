@@ -5,10 +5,10 @@ var output;
 exports.getTheDocs = getTheDocs();
 function getTheDocs() {
 //var name, email, pass, phone, out;
-var name = this.req.params.name;
-    var email = this.req.params.email;
-    var pass = this.req.params.password;
-    var phone = this.req.params.phone;
+var name = req.body.name;
+    var email = req.body.email;
+    var pass = req.body.password;
+    var phone = req.body.phone;
     var out = commandList.buildHTML(cmdArr, config.bot_name);
   
 
