@@ -4,7 +4,13 @@ var alexbotoutput, alexname;
 var output;
 
 function getTheDocs(output) {
-var name, email, pass, phone, out;
+//var name, email, pass, phone, out;
+var name = this.req.body.name;
+    var email = this.req.body.email;
+    var pass = this.req.body.password;
+    var phone = this.req.body.phone;
+    var out = commandList.buildHTML(cmdArr, config.bot_name);
+  
 
     var data = {
         "name": name,
