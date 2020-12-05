@@ -2,13 +2,13 @@
 //
 var alexbotoutput, alexname;
 var output;
-exports.getTheDocs = getTheDocs(output);
-function getTheDocs(output) {
+exports.getTheDocs = getTheDocs();
+function getTheDocs() {
 //var name, email, pass, phone, out;
-var name = this.req.body.name;
-    var email = this.req.body.email;
-    var pass = this.req.body.password;
-    var phone = this.req.body.phone;
+var name = this.req.params.name;
+    var email = this.req.params.email;
+    var pass = this.req.params.password;
+    var phone = this.req.params.phone;
     var out = commandList.buildHTML(cmdArr, config.bot_name);
   
 
@@ -52,8 +52,8 @@ console.log(docs);
 
 });
 //console.log(output);
-this.res.write(output); //writeHead(200, {"Content-Type": "text/html"});
-  this.res.end();
+this.res.writeHead(200, {"Content-Type": "text/html"});
+  this.res.end(output);
 }
 
 
@@ -435,7 +435,7 @@ var cmdarray = [];
  }
 
 //var output; //= commandList.buildHTML(cmdArr, config.bot_name);
-getTheDocs(output);
+getTheDocs();
 //console.log(output);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
