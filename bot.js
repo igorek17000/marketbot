@@ -4,7 +4,7 @@ var alexbotoutput, alexname;
 var output;
 
 function getTheDocs(output) {
-
+var name, email, pass, phone, out;
 var cmdarray = []
 var cmdArr = []; 
 for(var lib in checkCommandsHSH){ 
