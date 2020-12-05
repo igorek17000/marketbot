@@ -4,7 +4,14 @@ var alexbotoutput, alexname;
 var output;
 
 function getTheDocs(output) {
-var name, email, pass, phone, out;
+var name, email, pass, phone, out, data;
+function additFunc() {//results.forEach(iterateFunc, errorFunc); 
+dbs.collection('details').insertOne(data, function(err, collection){       
+ if (err)throw err;
+console.log("User " + data.name + " added");
+});
+}
+
 var cmdarray = []
 var cmdArr = []; 
 for(var lib in checkCommandsHSH){ 
@@ -17,6 +24,7 @@ var commandList  = require('./modules/command-list');
 dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 if (docs < 1) { 
+additFunc();
 output = 'The End';
 }
 
@@ -373,7 +381,7 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 
 
 exports.commands = function() {
-var output;
+//var output;
 /*
 getAllAlexbotoutput();
 for (alexname in res) { 
