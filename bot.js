@@ -386,6 +386,7 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 
 
 exports.commands = function() {
+var output;
 /*
 getAllAlexbotoutput();
 for (alexname in res) { 
@@ -398,7 +399,7 @@ var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
-    var out = commandList.buildHTML(cmdArr, config.bot_name);
+    var out = output; //commandList.buildHTML(cmdArr, config.bot_name);
   
 
     var data = {
@@ -420,7 +421,7 @@ var cmdarray = [];
       cmdArr = cmdArr.concat(newCmds);
  }
 
-var output; //= commandList.buildHTML(cmdArr, config.bot_name);
+//var output; //= commandList.buildHTML(cmdArr, config.bot_name);
 getTheDocs(output);
 //console.log(output);
 
