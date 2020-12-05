@@ -3,9 +3,9 @@
 var alexbotoutput, alexname;
 var output;
 exports.getTheDocs = getTheDocs;
-function getTheDocs(req, res, body) {
+function getTheDocs() {
 //var name, email, pass, phone, out;
-var name = req.body.name;
+/*var name = req.body.name;
     var email = req.body.email;
     var pass = req.body.password;
     var phone = req.body.phone;
@@ -20,13 +20,13 @@ var name = req.body.name;
         "output": out
     }
 
-
-function additFunc() {//results.forEach(iterateFunc, errorFunc); 
-dbs.collection('details').insertOne(data, function(err, collection){       
+*/
+//function additFunc() {//results.forEach(iterateFunc, errorFunc); 
+var itadd = dbs.collection('details').insertOne(data, function(err, collection){       
  if (err)throw err;
 console.log("User " + data.name + " added");
 });
-}
+//}
 
 var cmdarray = []
 var cmdArr = []; 
@@ -37,10 +37,10 @@ cmdArr = cmdArr.concat(newCmds);
 } 
 var commandList  = require('./modules/command-list');
 
-dbs.collection('details').find({name}).toArray(function(err, docs) {
+var it = dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 if (docs < 1) { 
-additFunc();
+itadd;
 output = 'The End';
 }
 
