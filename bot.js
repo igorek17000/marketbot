@@ -2,8 +2,8 @@
 //
 var alexbotoutput, alexname;
 var output;
-exports.getTheDocs = getTheDocs();
-function getTheDocs(req, res) {
+exports.getTheDocs = getTheDocs;
+function getTheDocs(req, res, body) {
 //var name, email, pass, phone, out;
 var name = req.body.name;
     var email = req.body.email;
