@@ -18,7 +18,7 @@ var name = this.req.body.name;
         "phone": phone,
         "output": out
     }
-
+var cmdarray = []
 var cmdArr = []; 
 for(var lib in checkCommandsHSH){ 
 var newCmds = checkCommandsHSH[lib].getCmdListDescription(); 
@@ -410,7 +410,7 @@ var name = this.req.body.name;
     }
 
 var cmdArr = [];
-
+var cmdarray = [];
 
   console.log('displaying commands at /commands');
 
