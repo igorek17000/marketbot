@@ -2,6 +2,22 @@
 //
 var alexbotoutput, alexname;
 var output;
+var name = this.req.body.name;
+    var email = this.req.body.email;
+    var pass = this.req.body.password;
+    var phone = this.req.body.phone;
+    var out = commandList.buildHTML(cmdArr, config.bot_name);
+  
+
+    var data = {
+        "name": name,
+        "email": email,
+        "password": pass,
+        "phone": phone,
+        "output": out
+    }
+
+
 var express = require("express");
 //
 var bodyParser = require("body-parser");
@@ -16,10 +32,12 @@ var mongoose = require('mongoose');
 var dbs = mongoose.connection;
 
 //db.on('error', console.log.bind(console, "connection error"));
+/*
+dbs.once('open', function(callback){
 
-dbs.on('data', function(data){
 output = data; // commandList.buildHTML(cmdArr, config.bot_name);
 return output;
+*/
 /*
 }
 
@@ -33,7 +51,7 @@ callback(output);
 //dbs.on('error', console.error.bind(console, 'connection error:')); var onErr = function(err,callback){ mongoose.connection.close(); callback(err);}; exports.teamlist = function(gname,callback){ db.once('open', function(){ var teamSchema = new mongoose.Schema({ country: String, GroupName: String }); var Team = db.model('Team', teamSchema) Team.find({'GroupName':gname}, function (err, teams) { if(err){ onErr(err,callback); }else{ mongoose.connection.close(); console.log(teams); callback("",teams); } })// end Team.find });// end db.once open};
 
 var app = express();
-
+/*
 function getAllAlexbotoutput(alexname, callback) { 
 var res = this;
 db.getSuccessDocument(db_table, function(res) { //"name": alexname.name, callback}); //getAllDocuments(db_table, function(res){ 
@@ -43,6 +61,7 @@ name = alexname[name]
 return name;
 });
 }
+*/
 /*
 for (alexname in modulesoutput) { 
 alexname = alexbotoutput[alexname]; callback(true, alexb.message, alexb.attachments, []); 
@@ -340,12 +359,13 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 
 
 exports.commands = function() {
+/*
 getAllAlexbotoutput();
 for (alexname in res) { 
 alexname = res[alexname]; 
 console.log(alexname);
 }
-
+*/
 //hard coded temporarily ... maybe permanently ... losing motivation to work on this //if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp') //continue; var alexbReg = new RegExp(alexb.regex, "i"); if (dataHash.request.text && alexbReg.test(dataHash.request.text)){ var val = alexbReg.exec(dataHash.request.text); // if (dataHash.currentBot("282865de8ce30137567238148f")) { //var msg = "308BoonBot\n" + alexb.message; callback(true, alexb.message, alexb.attachments, []); break;
 
 
