@@ -17,6 +17,32 @@ var name = this.req.body.name;
         "output": out
     }
 
+function getTheDocs(output) {
+var cmdArr = []; 
+for(var lib in checkCommandsHSH){ 
+var newCmds = checkCommandsHSH[lib].getCmdListDescription(); 
+if (newCmds) 
+cmdArr = cmdArr.concat(newCmds); 
+} 
+var commandList  = require('./modules/command-list');
+
+dbs.collection('details').find({name}).toArray(function(err, docs) {
+if(err) throw err;
+if (docs < 1) { 
+output = 'The End';
+}
+
+if (docs) {
+output = commandList.buildHTML(cmdArr, config.bot_name);
+console.log(docs);
+
+}
+
+});
+console.log(output);
+}
+
+
 
 var express = require("express");
 //
@@ -367,10 +393,23 @@ console.log(alexname);
 }
 */
 //hard coded temporarily ... maybe permanently ... losing motivation to work on this //if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp') //continue; var alexbReg = new RegExp(alexb.regex, "i"); if (dataHash.request.text && alexbReg.test(dataHash.request.text)){ var val = alexbReg.exec(dataHash.request.text); // if (dataHash.currentBot("282865de8ce30137567238148f")) { //var msg = "308BoonBot\n" + alexb.message; callback(true, alexb.message, alexb.attachments, []); break;
+var name = this.req.body.name;
+    var email = this.req.body.email;
+    var pass = this.req.body.password;
+    var phone = this.req.body.phone;
+    var out = commandList.buildHTML(cmdArr, config.bot_name);
+  
 
+    var data = {
+        "name": name,
+        "email": email,
+        "password": pass,
+        "phone": phone,
+        "output": out
+    }
 
 var cmdArr = [];
-var cmdArray = [];
+
 
   console.log('displaying commands at /commands');
 
@@ -379,10 +418,10 @@ var cmdArray = [];
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
  }
-console.log(this.res);
-var output = commandList.buildHTML(cmdArr, config.bot_name);
 
-console.log(output);
+var output; //= commandList.buildHTML(cmdArr, config.bot_name);
+getTheDocs(output);
+//console.log(output);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
