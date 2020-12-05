@@ -5,11 +5,11 @@ var output;
 exports.getTheDocs = getTheDocs(output);
 function getTheDocs(output) {
 //var name, email, pass, phone, out;
-var name = name; //this.req.body.name;
-    var email = email; //this.req.body.email;
-    var pass = pass; //this.req.body.password;
-    var phone = phone; //this.req.body.phone;
-    var out = out; //commandList.buildHTML(cmdArr, config.bot_name);
+var name = this.req.body.name;
+    var email = this.req.body.email;
+    var pass = this.req.body.password;
+    var phone = this.req.body.phone;
+    var out = commandList.buildHTML(cmdArr, config.bot_name);
   
 
     var data = {
