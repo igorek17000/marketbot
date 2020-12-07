@@ -412,7 +412,7 @@ for (alexname in res) {
 alexname = res[alexname]; 
 console.log(alexname);
 }
-
+*/
 //hard coded temporarily ... maybe permanently ... losing motivation to work on this //if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp') //continue; var alexbReg = new RegExp(alexb.regex, "i"); if (dataHash.request.text && alexbReg.test(dataHash.request.text)){ var val = alexbReg.exec(dataHash.request.text); // if (dataHash.currentBot("282865de8ce30137567238148f")) { //var msg = "308BoonBot\n" + alexb.message; callback(true, alexb.message, alexb.attachments, []); break;
 var name = this.req.body.name;
     var email = this.req.body.email;
@@ -428,7 +428,7 @@ var name = this.req.body.name;
         "phone": phone,
         "output": out
     }
-*/
+
 var cmdArr = [];
 var cmdarray = [];
 
@@ -440,7 +440,7 @@ var cmdarray = [];
       cmdArr = cmdArr.concat(newCmds);
  }
 
-//var output; //= commandList.buildHTML(cmdArr, config.bot_name);
+var output = commandList.buildHTML(cmdArr, config.bot_name);
 //getTheDocs;
 //console.log(output);
 
