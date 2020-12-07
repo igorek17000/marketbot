@@ -52,7 +52,7 @@ get: rend
 
 
 '/signup_success' : {
-post: signup
+get: signup
 },
 
 
