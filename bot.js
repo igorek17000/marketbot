@@ -5,6 +5,7 @@ var output;
 exports.getTheDocs = getTheDocs;
 function getTheDocs() { //name, email, pass, phone, out, data) {
 //var name, email, pass, phone, out;
+/*
     var name = name; // req.body.name;
     var email = email; //req.body.email;
     var pass = pass; //req.body.password;
@@ -19,7 +20,7 @@ function getTheDocs() { //name, email, pass, phone, out, data) {
         "phone": phone,
         "output": out
     }
-
+*/
 
 function additFunc() {//results.forEach(iterateFunc, errorFunc); 
 dbs.collection('details').insertOne(data, function(err, collection){       
