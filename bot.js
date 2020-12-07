@@ -512,7 +512,7 @@ console.log(docs);
 } 
 });
 
-
+}
 /*
 dta;
 if (data < 1) { //!callback[{name}]) { //&& !callback[0].name) {
