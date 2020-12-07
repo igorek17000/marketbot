@@ -601,13 +601,13 @@ var cmdarray = [];
       cmdArr = cmdArr.concat(newCmds);
  }
 
-var output = bot.commandList.buildHTML(cmdArr, bot.config.bot_name);
+//var output = bot.commandList.buildHTML(cmdArr, bot.config.bot_name);
 
 
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 //var html = fs.readFileSync(path.join(__dirname + "/commands_success/command_success.html")); //"/signup_success.html"));
-var html = output; //bot.commands();
+var html = bot.output; //bot.commands();
 this.res.write(html);
 //this.res.redirect('signup_success.html');
 this.res.end();
