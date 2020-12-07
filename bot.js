@@ -404,7 +404,7 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 //-----------------
 
 
-exports.commands2 = function() {
+exports.commands = function() {
 //var output;
 /*
 getAllAlexbotoutput();
@@ -412,7 +412,7 @@ for (alexname in res) {
 alexname = res[alexname]; 
 console.log(alexname);
 }
-*/
+
 //hard coded temporarily ... maybe permanently ... losing motivation to work on this //if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp') //continue; var alexbReg = new RegExp(alexb.regex, "i"); if (dataHash.request.text && alexbReg.test(dataHash.request.text)){ var val = alexbReg.exec(dataHash.request.text); // if (dataHash.currentBot("282865de8ce30137567238148f")) { //var msg = "308BoonBot\n" + alexb.message; callback(true, alexb.message, alexb.attachments, []); break;
 var name = this.req.body.name;
     var email = this.req.body.email;
@@ -428,7 +428,7 @@ var name = this.req.body.name;
         "phone": phone,
         "output": out
     }
-
+*/
 var cmdArr = [];
 var cmdarray = [];
 
@@ -441,7 +441,7 @@ var cmdarray = [];
  }
 
 //var output; //= commandList.buildHTML(cmdArr, config.bot_name);
-getTheDocs;
+//getTheDocs;
 //console.log(output);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
@@ -455,7 +455,7 @@ getTheDocs;
 
 //-----------
 
-exports.commands = function() {
+exports.commands2 = function() {
 /*
 var cmdArr = [];
 var cmdArray = [];
