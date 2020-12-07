@@ -37,7 +37,7 @@ cmdArr = cmdArr.concat(newCmds);
 } 
 var commandList  = require('./modules/command-list');
 
-dbs.collection('details').find({data.name}).toArray(function(err, docs) {
+dbs.collection('details').find(data.name).toArray(function(err, docs) {
 if(err) throw err;
 if (docs < 1) { 
 additFunc();
