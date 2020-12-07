@@ -404,7 +404,7 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 //-----------------
 
 
-exports.commands = function() {
+exports.commands2 = function() {
 //var output;
 /*
 getAllAlexbotoutput();
@@ -455,8 +455,8 @@ getTheDocs;
 
 //-----------
 
-exports.commands2 = function() {
-
+exports.commands = function() {
+/*
 var cmdArr = [];
 var cmdArray = [];
 
@@ -467,7 +467,7 @@ var cmdArray = [];
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
   }
-
+*/
 //var 
 var output = commandList.buildHTML(cmdArr, config.bot_name);
 
@@ -492,9 +492,9 @@ var name = this.req.body.name;
         "output": out
     }
 
-/*
+
 function getAllDocs() {
-*/
+
 /*
 var findit = dbs.collection('details').find({name});
 var dta = findit.toArray(function(err, data) {
@@ -517,7 +517,11 @@ console.log(docs);
 dta;
 if (data < 1) { //!callback[{name}]) { //&& !callback[0].name) {
 console.log('Not Found'); //db.close();
-additFunc();
+dbs.collection('details').insertOne(data, function(err, collection){
+        if (err)
+throw err;
+console.log("User " + data.name + " added");
+});
 //return docs;
 }
 if (data) { 
@@ -549,7 +553,7 @@ function errorFunc(error) {
 console.log(error);
 }
 
-//getAllDocs();
+getAllDocs();
 
 */
   var cmdArr = [];
