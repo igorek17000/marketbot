@@ -3,15 +3,15 @@
 var alexbotoutput, alexname;
 var output;
 exports.getTheDocs = getTheDocs;
-function getTheDocs(name, email, pass, phone, out, data) {
+function getTheDocs() { //name, email, pass, phone, out, data) {
 //var name, email, pass, phone, out;
-/*var name = req.body.name;
-    var email = req.body.email;
-    var pass = req.body.password;
-    var phone = req.body.phone;
-    var out = commandList.buildHTML(cmdArr, config.bot_name);
+    var name = name; // req.body.name;
+    var email = email; //req.body.email;
+    var pass = pass; //req.body.password;
+    var phone = phone; // req.body.phone;
+    var out = out; //commandList.buildHTML(cmdArr, config.bot_name);
   
-*/
+
     var data = {
         "name": name,
         "email": email,
