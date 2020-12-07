@@ -497,6 +497,9 @@ this.res.end();
 
 
 function signup() {
+
+
+
 var name = this.req.body.name;
 
     var email = this.req.body.email;
@@ -587,12 +590,24 @@ console.log(error);
 }
 
 getAllDocs();
+var cmdArr = [];
+var cmdarray = [];
+
+  console.log('displaying commands at /commands');
+
+  for(var lib in bot.checkCommandsHSH){
+    var newCmds = bot.checkCommandsHSH[lib].getCmdListDescription();
+    if (newCmds)
+      cmdArr = cmdArr.concat(newCmds);
+ }
+
+var output = bot.commandList.buildHTML(cmdArr, bot.config.bot_name);
 
 
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 //var html = fs.readFileSync(path.join(__dirname + "/commands_success/command_success.html")); //"/signup_success.html"));
-var html = bot.commands();
+var html = output; //bot.commands();
 this.res.write(html);
 //this.res.redirect('signup_success.html');
 this.res.end();
