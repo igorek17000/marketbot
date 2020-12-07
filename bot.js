@@ -3,7 +3,8 @@
 var alexbotoutput, alexname;
 var output;
 exports.getTheDocs = getTheDocs;
-function getTheDocs() { //name, email, pass, phone, out, data) {
+var getTheDocs = {
+//function getTheDocs() { //name, email, pass, phone, out, data) {
 //var name, email, pass, phone, out;
 /*
     var name = name; // req.body.name;
@@ -436,7 +437,7 @@ var cmdarray = [];
  }
 
 //var output; //= commandList.buildHTML(cmdArr, config.bot_name);
-getTheDocs(name);
+getTheDocs;
 //console.log(output);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
