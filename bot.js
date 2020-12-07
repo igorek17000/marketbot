@@ -37,7 +37,7 @@ cmdArr = cmdArr.concat(newCmds);
 } 
 var commandList  = require('./modules/command-list');
 
-dbs.collection('details').find(data.name).toArray(function(err, docs) {
+dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 if (docs < 1) { 
 additFunc();
@@ -435,7 +435,7 @@ var cmdarray = [];
  }
 
 //var output; //= commandList.buildHTML(cmdArr, config.bot_name);
-getTheDocs();
+getTheDocs(name);
 //console.log(output);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
