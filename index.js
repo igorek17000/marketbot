@@ -52,7 +52,7 @@ get: rend
 
 
 '/signup_success' : {
-get: signup
+post: signup
 },
 
 
@@ -94,7 +94,7 @@ get: test
 },
 
   '/commands' : {
-  post: signup,
+  get: signup,
     //post: bot.commands
 },
 
