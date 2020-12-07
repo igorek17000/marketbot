@@ -2,7 +2,7 @@
 //
 var alexbotoutput, alexname;
 var output;
-exports.getTheDocs = getTheDocs;
+//exports.getTheDocs = getTheDocs;
 /*
 var getTheDocs = {
 //function getTheDocs() { //name, email, pass, phone, out, data) {
