@@ -3,10 +3,11 @@
 var alexbotoutput, alexname;
 var output;
 exports.getTheDocs = getTheDocs;
+/*
 var getTheDocs = {
 //function getTheDocs() { //name, email, pass, phone, out, data) {
 //var name, email, pass, phone, out;
-/*
+
     var name = name; // req.body.name;
     var email = email; //req.body.email;
     var pass = pass; //req.body.password;
@@ -21,16 +22,15 @@ var getTheDocs = {
         "phone": phone,
         "output": out
     }
-*/
-/*
+
 var additFunc = { //results.forEach(iterateFunc, errorFunc); 
 dbs.collection('details').insertOne(data, function(err, collection){       
  if (err)throw err;
 console.log("User " + data.name + " added");
 });
 }
-*/
-/*
+
+
 var cmdarray = []
 var cmdArr = []; 
 for(var lib in checkCommandsHSH){ 
@@ -39,7 +39,7 @@ if (newCmds)
 cmdArr = cmdArr.concat(newCmds); 
 } 
 var commandList  = require('./modules/command-list');
-*/
+
 dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 if (docs < 1) { 
@@ -62,7 +62,7 @@ console.log(docs);
  // this.res.end(output);
 }
 
-
+*/
 
 var express = require("express");
 //
