@@ -1,7 +1,7 @@
 /*global init*/
 //
 var alexbotoutput, alexname;
-var output = commandList.buildHTML(cmdArr, config.bot_name);
+//var output = commandList.buildHTML(cmdArr, config.bot_name);
 //exports.getTheDocs = getTheDocs;
 /*
 var getTheDocs = {
