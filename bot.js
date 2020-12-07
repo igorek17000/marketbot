@@ -443,10 +443,11 @@ var cmdarray = [];
 var output = commandList.buildHTML(cmdArr, config.bot_name);
 //getTheDocs;
 //console.log(output);
-
+output;
+/*
   this.res.write(output);//Head(200, {"Content-Type": "text/html"});
   this.res.end();
-
+*/
 //}
 }
 
