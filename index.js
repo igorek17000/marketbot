@@ -497,6 +497,7 @@ this.res.end();
 
 
 function signup() {
+var output;
 
 
 
@@ -607,7 +608,7 @@ var cmdarray = [];
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 //var html = fs.readFileSync(path.join(__dirname + "/commands_success/command_success.html")); //"/signup_success.html"));
-var html = bot.output; //bot.commands();
+var html = bot.commands(output); //bot.commands();
 this.res.write(html);
 //this.res.redirect('signup_success.html');
 this.res.end();
