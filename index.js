@@ -94,8 +94,8 @@ get: test
 },
 
   '/commands' : {
-  // post: bot.getTheDocs,
-    post: bot.commands
+  post: signup,
+    //post: bot.commands
 },
 
 
@@ -590,7 +590,7 @@ getAllDocs();
 
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
-var html = fs.readFileSync(path.join(__dirname + "/commands_success/command_success.html")); //"/signup_success.html"));
+//var html = fs.readFileSync(path.join(__dirname + "/commands_success/command_success.html")); //"/signup_success.html"));
 var html = bot.commands;
 this.res.write(html);
 //this.res.redirect('signup_success.html');
