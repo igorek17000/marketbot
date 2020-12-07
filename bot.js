@@ -30,7 +30,7 @@ console.log("User " + data.name + " added");
 });
 }
 */
-
+/*
 var cmdarray = []
 var cmdArr = []; 
 for(var lib in checkCommandsHSH){ 
@@ -39,7 +39,7 @@ if (newCmds)
 cmdArr = cmdArr.concat(newCmds); 
 } 
 var commandList  = require('./modules/command-list');
-
+*/
 dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 if (docs < 1) { 
