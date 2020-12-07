@@ -22,13 +22,14 @@ var getTheDocs = {
         "output": out
     }
 */
-
+/*
 var additFunc = { //results.forEach(iterateFunc, errorFunc); 
 dbs.collection('details').insertOne(data, function(err, collection){       
  if (err)throw err;
 console.log("User " + data.name + " added");
 });
 }
+*/
 
 var cmdarray = []
 var cmdArr = []; 
@@ -42,7 +43,10 @@ var commandList  = require('./modules/command-list');
 dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 if (docs < 1) { 
-additFunc;
+dbs.collection('details').insertOne(data, function(err, collection){       
+ if (err)throw err;
+console.log("User " + data.name + " added");
+});
 output = 'The End';
 }
 
