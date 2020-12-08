@@ -443,7 +443,7 @@ ret.push(docs);
 });
 someModel.find({'name': name}, function(err, someModel) { 
 var output;
-if (err), return err;
+if (err) return err;
 output = someModel
 return output;
 });
