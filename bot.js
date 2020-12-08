@@ -94,7 +94,7 @@ var SomeModelSchema = new Schema({
 name: String,   
 email: String,
 pass: String,
-phone: Number
+phone: String
  }); 
 // Compile model from schema 
 var SomeModel = mongoose.model('SomeModel', SomeModelSchema );
@@ -440,6 +440,12 @@ ret.push(docs);
 
 
 } 
+});
+someModel.find({'name': name}, function(err, someModel) { 
+var output;
+if (err), return err;
+output = someModel
+return output;
 });
 
 
