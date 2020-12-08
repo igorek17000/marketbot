@@ -427,7 +427,7 @@ if(docs) {
 console.log(docs);
 } 
 });
-dbs.close();
+
 
 var cmdArr = [];
 var cmdarray = [];
