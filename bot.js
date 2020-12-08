@@ -489,7 +489,7 @@ var Customer = mongoose.model('Customer', customerSchema);
 var docs = await Customer.find(data.name); 
 console.log(docs); 
 }
-run();
+//run();
 
 /*
 SomeModel.find({name}, function(err, someModel) { 
