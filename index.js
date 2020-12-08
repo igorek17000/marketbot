@@ -95,8 +95,8 @@ get: test
 
   '/commands' : {
 //  get: signup,
-post: signup
-   // post: bot.commands
+//post: signup
+   post: bot.commands
 },
 
 
