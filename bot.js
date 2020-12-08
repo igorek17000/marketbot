@@ -387,7 +387,7 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 
 exports.commands = function() {
 var docs = [];
-var ret = dbs.collection('details').find({name});
+var ret = dbs.collection('details').find({name}).exec();
 mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //hard coded temporarily ... maybe permanently ... losing motivation to work on this //if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp') //continue; var alexbReg = new RegExp(alexb.regex, "i"); if (dataHash.request.text && alexbReg.test(dataHash.request.text)){ var val = alexbReg.exec(dataHash.request.text); // if (dataHash.currentBot("282865de8ce30137567238148f")) { //var msg = "308BoonBot\n" + alexb.message; callback(true, alexb.message, alexb.attachments, []); break;
@@ -417,7 +417,7 @@ console.log("User " + data.name + " added");
 });
 }
 //mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
-dbs.collection('details').find({name}).toArray(function(err, docs, callback) {
+dbs.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
 
@@ -426,7 +426,9 @@ additFunc()
 }
 if(docs) {
 console.log(docs);
-callback(docs);
+ret.push(docs);
+
+
 
 } 
 });
