@@ -497,13 +497,13 @@ console.log(err);
 } // do something with user 
 var output = user;
 return output;
-//});
+});
 //var output = commandList.buildHTML(cmdArr, config.bot_name);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
 
-});
+
 }
 
 
