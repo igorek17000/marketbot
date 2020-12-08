@@ -470,12 +470,13 @@ additFunc()
 }
 if(docs) {
 console.log(docs);
-ret.push(docs);
+//ret.push(docs);
 
 
 
 } 
 });
+/*
 SomeModel.find({name}, function(err, someModel) { 
 var output;
 if (err) return err;
@@ -483,7 +484,7 @@ output = SomeModel;
 return output;
 });
 
-
+*/
 var cmdArr = [];
 var cmdarray = [];
 
