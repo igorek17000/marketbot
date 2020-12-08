@@ -82,20 +82,7 @@ dbs.on('error', console.log.bind(console, "connection error"));
 
 dbs.once('open', function(callback){
 
-var name = this.req.body.name;
-    var email = this.req.body.email;
-    var pass = this.req.body.password;
-    var phone = this.req.body.phone;
-   // var out = out; //commandList.buildHTML(cmdArr, config.bot_name);
-  
-
-    var data = {
-        "name": name,
-        "email": email,
-        "password": pass,
-        "phone": phone
-        //"output": out
-    } 
+ 
 if (callback)
 callback(docs);
 
