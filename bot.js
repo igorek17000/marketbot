@@ -102,37 +102,10 @@ callback(docs);
     console.log("connection succeeded");
 })
 
-output = data; // commandList.buildHTML(cmdArr, config.bot_name);
-return output;
-*/
-/*
-}
-
-if (callback)
-callback(output);
-  //  console.log(output);
-*/
-//});
-
-  
-//dbs.on('error', console.error.bind(console, 'connection error:')); var onErr = function(err,callback){ mongoose.connection.close(); callback(err);}; exports.teamlist = function(gname,callback){ db.once('open', function(){ var teamSchema = new mongoose.Schema({ country: String, GroupName: String }); var Team = db.model('Team', teamSchema) Team.find({'GroupName':gname}, function (err, teams) { if(err){ onErr(err,callback); }else{ mongoose.connection.close(); console.log(teams); callback("",teams); } })// end Team.find });// end db.once open};
 
 var app = express();
-/*
-function getAllAlexbotoutput(alexname, callback) { 
-var res = this;
-db.getSuccessDocument(db_table, function(res) { //"name": alexname.name, callback}); //getAllDocuments(db_table, function(res){ 
-alexname = res; 
-for(name in alexname) {
-name = alexname[name]
-return name;
-});
-}
-*/
-/*
-for (alexname in modulesoutput) { 
-alexname = alexbotoutput[alexname]; callback(true, alexb.message, alexb.attachments, []); 
-  */
+
+
 //
 //load modules
 var db_table = 'details';
@@ -461,7 +434,7 @@ if(err) throw err;
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 additFunc()
 }
-if(docs.name) {
+if(docs) {
 console.log(docs);
 } 
 });
