@@ -77,9 +77,30 @@ var mongoose = require('mongoose');
 
 var dbs = mongoose.connection;
 
-//db.on('error', console.log.bind(console, "connection error"));
-/*
+
+dbs.on('error', console.log.bind(console, "connection error"));
+
 dbs.once('open', function(callback){
+
+var name = this.req.body.name;
+    var email = this.req.body.email;
+    var pass = this.req.body.password;
+    var phone = this.req.body.phone;
+   // var out = out; //commandList.buildHTML(cmdArr, config.bot_name);
+  
+
+    var data = {
+        "name": name,
+        "email": email,
+        "password": pass,
+        "phone": phone
+        //"output": out
+    } 
+if (callback)
+callback(docs);
+
+    console.log("connection succeeded");
+})
 
 output = data; // commandList.buildHTML(cmdArr, config.bot_name);
 return output;
@@ -405,30 +426,46 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 
 
 exports.commands = function() {
-//var output;
-/*
-getAllAlexbotoutput();
-for (alexname in res) { 
-alexname = res[alexname]; 
-console.log(alexname);
-}
 
 //hard coded temporarily ... maybe permanently ... losing motivation to work on this //if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp') //continue; var alexbReg = new RegExp(alexb.regex, "i"); if (dataHash.request.text && alexbReg.test(dataHash.request.text)){ var val = alexbReg.exec(dataHash.request.text); // if (dataHash.currentBot("282865de8ce30137567238148f")) { //var msg = "308BoonBot\n" + alexb.message; callback(true, alexb.message, alexb.attachments, []); break;
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
-    var out = output; //commandList.buildHTML(cmdArr, config.bot_name);
+    //var out = output; //commandList.buildHTML(cmdArr, config.bot_name);
   
 
     var data = {
         "name": name,
         "email": email,
         "password": pass,
-        "phone": phone,
-        "output": out
+        "phone": phone
+       // /_"output": out
     }
-*/
+
+
+function additFunc() {
+//results.forEach(iterateFunc, errorFunc);
+
+dbs.collection('details').insertOne(data, function(err, collection){
+        if (err)
+throw err;
+console.log("User " + data.name + " added");
+});
+
+mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
+dbs.collection('details').find({name}, function(err, docs) { //{name}).toArray(function(err, docs) {
+if(err) throw err;
+
+
+if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
+additFunc()
+}
+if(docs.name) {
+console.log(docs);
+} 
+});
+dbs.close();
 var cmdArr = [];
 var cmdarray = [];
 
@@ -441,13 +478,10 @@ var cmdarray = [];
  }
 
 var output = commandList.buildHTML(cmdArr, config.bot_name);
-//getTheDocs;
-//console.log(output);
-output;
-/*
-  this.res.write(output);//Head(200, {"Content-Type": "text/html"});
-  this.res.end();
-*/
+
+  this.res.writeHead(200, {"Content-Type": "text/html"});
+  this.res.end(output);
+
 //}
 }
 
