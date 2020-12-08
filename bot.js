@@ -528,7 +528,7 @@ var output = commandList.buildHTML(cmdArr, config.bot_name);
 
 }
 
-});
+
 
 
 
