@@ -429,8 +429,8 @@ if (err) {
 console.log(err); 
 } // do something with user 
 var output = user;
-return(output);
-});
+return output;
+//});
 
 
 
@@ -498,12 +498,12 @@ var cmdarray = [];
       cmdArr = cmdArr.concat(newCmds);
  }
 
-var output = commandList.buildHTML(cmdArr, config.bot_name);
+//var output = commandList.buildHTML(cmdArr, config.bot_name);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
 
-//}
+});
 }
 
 
