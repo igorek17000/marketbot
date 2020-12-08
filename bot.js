@@ -455,7 +455,7 @@ ret.push(docs);
 someModel.find({'name': name}, function(err, someModel) { 
 var output;
 if (err) return err;
-output = someModel
+output = someModel;
 return output;
 });
 
