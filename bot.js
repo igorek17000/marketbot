@@ -481,7 +481,7 @@ run().catch(error => console.log(error.stack));
 async function run() { 
 await mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
 //await mongoose.connection.dropDatabase(); 
-var customerSchema = new mongoose.Schema({ name: name, email: email, pass: pass, phone: phone }); 
+var customerSchema = new mongoose.Schema({ name: string, email: string, pass: string, phone: string }); 
 var Customer = mongoose.model('Customer', customerSchema); 
 //await Customer.create({ name: 'A', age: 30, email: 'a@foo.bar' }); 
 //await Customer.create({ name: 'B', age: 28, email: 'b@foo.bar' }); 
