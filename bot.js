@@ -429,7 +429,7 @@ if (err) {
 console.log(err); 
 } // do something with user 
 var output = user;
-callback(output);
+return(output);
 });
 
 
