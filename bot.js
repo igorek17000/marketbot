@@ -414,7 +414,7 @@ var SomeModel = mongoose.model('SomeModel', SomeModelSchema );
 
 function retrieveUser(name, callback) { 
 
-dbs.collection('details').find({name: name}, function(err, users) { 
+dbs.collection('details').find({name}, function(err, users) { 
 if (err) { 
 callback(err, null); 
 } else { 
@@ -476,7 +476,7 @@ ret.push(docs);
 
 } 
 });
-SomeModel.find({'name': name}, function(err, someModel) { 
+SomeModel.find({name}, function(err, someModel) { 
 var output;
 if (err) return err;
 output = SomeModel;
