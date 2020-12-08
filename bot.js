@@ -481,6 +481,11 @@ return output;
 });
 
 */
+
+retrieveUser(name, function(err, user) { 
+if (err) { 
+console.log(err); 
+} // do something with user 
 var cmdArr = [];
 var cmdarray = [];
 
@@ -491,13 +496,9 @@ var cmdarray = [];
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
  }
-retrieveUser(name, function(err, user) { 
-if (err) { 
-console.log(err); 
-} // do something with user 
 var output = user;
-return output;
-});
+
+
 //var output = commandList.buildHTML(cmdArr, config.bot_name);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
@@ -506,7 +507,7 @@ return output;
 
 }
 
-
+});
 
 
 
