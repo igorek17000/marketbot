@@ -425,7 +425,7 @@ dbs.collection('details').insertOne(data, function(err, collection){
 throw err;
 console.log("User " + data.name + " added");
 });
-
+}
 mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
 dbs.collection('details').find({name}, function(err, docs) { //{name}).toArray(function(err, docs) {
 if(err) throw err;
