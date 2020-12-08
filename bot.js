@@ -398,7 +398,7 @@ exports.commands = function() {
 var docs = [];
 var ret = dbs.collection('details').find({name});
 mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
-
+/*
 var Schema = mongoose.Schema; 
 var SomeModelSchema = new Schema({ 
 name: String,   
@@ -409,7 +409,7 @@ phone: String
 // Compile model from schema 
 var SomeModel = mongoose.model('SomeModel', SomeModelSchema );
 
-
+*/
 
 
 function retrieveUser(name, callback) { 
