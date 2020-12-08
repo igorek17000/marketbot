@@ -419,6 +419,7 @@ if (err) {
 callback(err, null); 
 } else { 
 callback(null, users[0]); 
+console.log(users[0]);
 } 
 }); 
 };
@@ -428,6 +429,7 @@ if (err) {
 console.log(err); 
 } // do something with user 
 var output = user;
+callback(output);
 });
 
 
