@@ -395,9 +395,9 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 
 
 exports.commands = function() {
-var docs = [];
+//var docs = [];
 var ret = dbs.collection('details').find({name});
-mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
+//mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
 /*
 var Schema = mongoose.Schema; 
 var SomeModelSchema = new Schema({ 
@@ -472,6 +472,25 @@ console.log(docs);
 
 } 
 });
+
+/*
+const mongoose = require('mongoose'); 
+run().catch(error => console.log(error.stack)); 
+*/
+
+async function run() { 
+await mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
+//await mongoose.connection.dropDatabase(); 
+var customerSchema = new mongoose.Schema({ name: String, email: String, pass: String, phone: String }); 
+var Customer = mongoose.model('Customer', customerSchema); 
+//await Customer.create({ name: 'A', age: 30, email: 'a@foo.bar' }); 
+//await Customer.create({ name: 'B', age: 28, email: 'b@foo.bar' }); 
+// Find all customers 
+var docs = await Customer.find(data.name); 
+console.log(docs); 
+}
+run();
+
 /*
 SomeModel.find({name}, function(err, someModel) { 
 var output;
@@ -481,11 +500,13 @@ return output;
 });
 
 */
-
+/*
 retrieveUser(name, function(err, user) { 
 if (err) { 
 console.log(err); 
 } // do something with user 
+*/
+
 var cmdArr = [];
 var cmdarray = [];
 
@@ -496,10 +517,10 @@ var cmdarray = [];
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
  }
-var output = user;
+//var output = user;
 
 
-//var output = commandList.buildHTML(cmdArr, config.bot_name);
+var output = commandList.buildHTML(cmdArr, config.bot_name);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
