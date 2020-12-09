@@ -1,68 +1,5 @@
 /*global init*/
 //
-var alexbotoutput, alexname;
-//var output = commandList.buildHTML(cmdArr, config.bot_name);
-//exports.getTheDocs = getTheDocs;
-/*
-var getTheDocs = {
-//function getTheDocs() { //name, email, pass, phone, out, data) {
-//var name, email, pass, phone, out;
-
-    var name = name; // req.body.name;
-    var email = email; //req.body.email;
-    var pass = pass; //req.body.password;
-    var phone = phone; // req.body.phone;
-    var out = out; //commandList.buildHTML(cmdArr, config.bot_name);
-  
-
-    var data = {
-        "name": name,
-        "email": email,
-        "password": pass,
-        "phone": phone,
-        "output": out
-    }
-
-var additFunc = { //results.forEach(iterateFunc, errorFunc); 
-dbs.collection('details').insertOne(data, function(err, collection){       
- if (err)throw err;
-console.log("User " + data.name + " added");
-});
-}
-
-
-var cmdarray = []
-var cmdArr = []; 
-for(var lib in checkCommandsHSH){ 
-var newCmds = checkCommandsHSH[lib].getCmdListDescription(); 
-if (newCmds) 
-cmdArr = cmdArr.concat(newCmds); 
-} 
-var commandList  = require('./modules/command-list');
-
-dbs.collection('details').find({name}).toArray(function(err, docs) {
-if(err) throw err;
-if (docs < 1) { 
-dbs.collection('details').insertOne(data, function(err, collection){       
- if (err)throw err;
-console.log("User " + data.name + " added");
-});
-output = 'The End';
-}
-
-if (docs) {
-output = commandList.buildHTML(cmdArr, config.bot_name);
-console.log(docs);
-
-}
-
-});
-//console.log(output);
-//this.res.writeHead(200, {"Content-Type": "text/html"});
- // this.res.end(output);
-}
-
-*/
 
 var express = require("express");
 //
@@ -446,7 +383,7 @@ var name = this.req.body.name;
        // /_"output": out
     }
 
-
+/*
 function additFunc() {
 //results.forEach(iterateFunc, errorFunc);
 
@@ -472,6 +409,7 @@ console.log(docs);
 
 } 
 });
+*/
 //const mongoose = require('mongoose'); run().catch(error => console.log(error.stack)); async function run() { await mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true }); // Clear the database every time. This is for the sake of example only, // don't do this in prod :) await mongoose.connection.dropDatabase(); const customerSchema = new mongoose.Schema({ name: String, age: Number, email: String }); const Customer = mongoose.model('Customer', customerSchema); await Customer.create({ name: 'A', age: 30, email: 'a@foo.bar' }); await Customer.create({ name: 'B', age: 28, email: 'b@foo.bar' }); // Find all customers const docs = await Customer.find(); console.log(docs); }
 
 var mongoose = require('mongoose'); 
