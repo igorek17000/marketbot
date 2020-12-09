@@ -369,7 +369,7 @@ var output = commandList.buildHTML(cmdArr, config.bot_name);
 
 var outage = await Customer.find({name}); 
 if (outage < 1) {
-output = 'Try again';
+output = "Try again";
 }
 
 
