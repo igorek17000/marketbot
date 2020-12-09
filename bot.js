@@ -422,7 +422,7 @@ console.log(docs);
 var mongoose = require('mongoose'); 
 run().catch(error => console.log(error.stack)); 
 
-var  = await Customer.find({name}); 
+//var  = await Customer.find({name}); 
 async function run() { 
 //await mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
 //await mongoose.connection.dropDatabase(); 
@@ -432,9 +432,9 @@ async function run() {
 //await Customer.create({ name: 'B', age: 28, email: 'b@foo.bar' }); 
 // Find all customers 
 var docs = await Customer.find({name}); 
-if (docs < 1) {
-await Customer.create({ name: name, email: email, pass: pass, phone: phone, output: output }); 
-}
+//if (docs < 1) {
+//await Customer.create({ name: name, email: email, pass: pass, phone: phone, output: output }); 
+//}
 console.log(docs); 
 }
 //run();
@@ -469,7 +469,7 @@ var cmdarray = [];
 
 //global.output = output;
 //var output = commandList.buildHTML(cmdArr, config.bot_name);
-
+outage;
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
 
