@@ -430,7 +430,7 @@ async function run() {
 var docs = await Customer.find({name}); 
 if (docs < 1) {
 await Customer.create({ name: name, email: email, pass: pass, phone: phone, output: output }); 
-
+}
 console.log(docs); 
 }
 //run();
