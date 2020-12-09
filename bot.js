@@ -20,6 +20,7 @@ dbs.on('error', console.log.bind(console, "connection error"));
 dbs.once('open', async function(callback){
 global.customerSchema = new mongoose.Schema({ name: String, email: String, pass: String, phone: String }); 
 global.Customer = mongoose.model('Customer', customerSchema, 'details'); 
+global.docs = await Customer.find({name}); 
 
  /*
 if (callback)
@@ -426,7 +427,7 @@ async function run() {
 //await Customer.create({ name: 'A', age: 30, email: 'a@foo.bar' }); 
 //await Customer.create({ name: 'B', age: 28, email: 'b@foo.bar' }); 
 // Find all customers 
-global.docs = await Customer.find({name}); 
+var docs = await Customer.find({name}); 
 console.log(docs); 
 }
 //run();
