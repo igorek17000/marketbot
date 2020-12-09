@@ -18,7 +18,7 @@ var dbs = mongoose.connection;
 dbs.on('error', console.log.bind(console, "connection error"));
 
 dbs.once('open', async function(callback){
-global.customerSchema = new mongoose.Schema({ name: String, email: String, pass: String, phone: String }); 
+global.customerSchema = new mongoose.Schema({ name: String, email: String, pass: String, phone: String, output: String }); 
 global.Customer = mongoose.model('Customer', customerSchema, 'details'); 
 //global.docs = await Customer.find(datta.name); 
 
@@ -382,8 +382,8 @@ global.datta = output;
         "name": name,
         "email": email,
         "password": pass,
-        "phone": phone
-       // /_"output": out
+        "phone": phone,
+        "output": output
     }
 
 /*
@@ -428,6 +428,9 @@ async function run() {
 //await Customer.create({ name: 'B', age: 28, email: 'b@foo.bar' }); 
 // Find all customers 
 var docs = await Customer.find({name}); 
+if (docs < 1) {
+await Customer.create({ name: name, email: email, pass: pass, phone: phone, output: output }); 
+
 console.log(docs); 
 }
 //run();
@@ -464,7 +467,7 @@ global.output = output;
 var output = commandList.buildHTML(cmdArr, config.bot_name);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(datta);
+  this.res.end(output);
 
 
 }
