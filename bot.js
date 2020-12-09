@@ -376,7 +376,7 @@ var name = this.req.body.name;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
     //var out = output; //commandList.buildHTML(cmdArr, config.bot_name);
-  var datta = data;
+  var datta = output;
 global.datta = datta;
     var data = {
         "name": name,
@@ -460,7 +460,7 @@ var cmdarray = [];
  }
 //var output = user;
 
-
+global.output = output;
 var output = commandList.buildHTML(cmdArr, config.bot_name);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
