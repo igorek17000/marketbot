@@ -17,7 +17,9 @@ var dbs = mongoose.connection;
 
 dbs.on('error', console.log.bind(console, "connection error"));
 
-dbs.once('open', function(callback){
+dbs.once('open', async function(callback){
+var customerSchema = new mongoose.Schema({ name: String, email: String, pass: String, phone: String }); 
+var Customer = mongoose.model('Customer', customerSchema, 'details'); 
 
  /*
 if (callback)
@@ -417,10 +419,10 @@ run().catch(error => console.log(error.stack));
 
 
 async function run() { 
-await mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
+//await mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
 //await mongoose.connection.dropDatabase(); 
-var customerSchema = new mongoose.Schema({ name: String, email: String, pass: String, phone: String }); 
-var Customer = mongoose.model('Customer', customerSchema, 'details'); 
+//var customerSchema = new mongoose.Schema({ name: String, email: String, pass: String, phone: String }); 
+//var Customer = mongoose.model('Customer', customerSchema, 'details'); 
 //await Customer.create({ name: 'A', age: 30, email: 'a@foo.bar' }); 
 //await Customer.create({ name: 'B', age: 28, email: 'b@foo.bar' }); 
 // Find all customers 
