@@ -82,10 +82,10 @@ dbs.on('error', console.log.bind(console, "connection error"));
 
 dbs.once('open', function(callback){
 
- 
+ /*
 if (callback)
 callback(docs);
-
+*/
     console.log("connection succeeded");
 })
 /*
