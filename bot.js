@@ -334,7 +334,7 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 //-----------------
 
 
-exports.commands = function() {
+exports.commands = async function() {
 //var docs = [];
 var ret = dbs.collection('details').find({name});
 //mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -364,9 +364,13 @@ console.log(users[0]);
 }); 
 };
 
+global.output = output;
+var output = commandList.buildHTML(cmdArr, config.bot_name);
 
-
-
+var outage = await Customer.find({name}); 
+if (outage < 1) {
+output = 'Try again';
+}
 
 
 
@@ -418,7 +422,7 @@ console.log(docs);
 var mongoose = require('mongoose'); 
 run().catch(error => console.log(error.stack)); 
 
-
+var  = await Customer.find({name}); 
 async function run() { 
 //await mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
 //await mongoose.connection.dropDatabase(); 
@@ -463,8 +467,8 @@ var cmdarray = [];
  }
 //var output = user;
 
-global.output = output;
-var output = commandList.buildHTML(cmdArr, config.bot_name);
+//global.output = output;
+//var output = commandList.buildHTML(cmdArr, config.bot_name);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
