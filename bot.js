@@ -377,7 +377,7 @@ var name = this.req.body.name;
     var phone = this.req.body.phone;
     //var out = output; //commandList.buildHTML(cmdArr, config.bot_name);
   var datta = output;
-global.datta = datta;
+global.datta = output;
     var data = {
         "name": name,
         "email": email,
