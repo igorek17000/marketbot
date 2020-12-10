@@ -364,8 +364,8 @@ console.log(users[0]);
 }); 
 };
 
-global.output = output;
-var output = commandList.buildHTML(cmdArr, config.bot_name);
+//global.output = output;
+//var output = commandList.buildHTML(cmdArr, config.bot_name);
 //var ooutput = ''
 //var outage = await Customer.find({name}); 
 //if (outage < 1) 
@@ -469,8 +469,8 @@ var cmdarray = [];
  }
 //var output = user;
 
-//global.output = output;
-//var output = commandList.buildHTML(cmdArr, config.bot_name);
+global.output = output;
+var output = commandList.buildHTML(cmdArr, config.bot_name);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
