@@ -369,8 +369,8 @@ var output = commandList.buildHTML(cmdArr, config.bot_name);
 
 var outage = await Customer.find({name}); 
 if (outage < 1) 
-outage = "Try again";
-
+output = "Try again";
+outage;
 
 
 
@@ -472,7 +472,7 @@ var cmdarray = [];
 //var output = commandList.buildHTML(cmdArr, config.bot_name);
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(outage);
+  this.res.end(output);
 
 
 }
