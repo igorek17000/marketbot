@@ -469,9 +469,9 @@ var cmdarray = [];
 
 //global.output = output;
 //var output = commandList.buildHTML(cmdArr, config.bot_name);
-outage;
+
   this.res.writeHead(200, {"Content-Type": "text/html"});
-  this.res.end(output);
+  this.res.end(outage);
 
 
 }
