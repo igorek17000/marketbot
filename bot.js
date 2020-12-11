@@ -337,6 +337,105 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 
 
 exports.commands = async function() {
+
+
+var mainHTML, allHTML, modHTML, ownerHTML;
+var fs = require('fs');
+//var config = require('../config/config');
+
+
+init();
+
+function init() {
+  getFileAll('commands/command.html', function(data) {
+    mainHTML = data;
+  });
+  getFileAll('commands/partials/_all.html', function(data) {
+    allHTML = data;
+  });
+  getFileAll('commands/partials/_mod.html', function(data) {
+    modHTML = data;
+  });
+  getFileAll('commands/partials/_owner.html', function(data) {
+    ownerHTML = data;
+  });
+}
+
+//feels pointless, come up with a better way to do this
+function getFileAll(path, callback) {
+  fs.readFile(path, 'utf8', function(err, data){
+    callback(data);
+  });
+}
+
+exports.buildHTML = function (cmdArray, bot_name) {
+  var modArr   = [];
+  var ownerArr = [];
+  var allArr   = [];
+  //bot_name     = config.bot_name;
+
+  cmdArray.sort(function(a, b) {
+    if (a.cmd < b.cmd)
+      return - 1;
+    else if (a.cmd > b.cmd)
+      return 1;
+    else
+      return 0;
+  });
+
+  for (cmd in cmdArray) {
+    if (!cmdArray[cmd].desc)
+      cmdArray[cmd].desc = "No description provided ... thanks lazy mods";
+
+    if (cmdArray[cmd].owner)
+      ownerArr.push(cmdArray[cmd]);
+    else if (cmdArray[cmd].mod)
+      modArr.push(cmdArray[cmd]);
+    else
+      allArr.push(cmdArray[cmd]);
+  }
+
+  //put this repetitive code in a function ... you're better than this
+  var allBuiltHTML   = '';
+  var modBuiltHTML   = '';
+  var ownerBuiltHTML = '';
+
+  for (cmd in allArr) {
+    var addHTML = allHTML.replace('$$command_name', allArr[cmd].cmd);
+    addHTML = addHTML.replace('$$command_desc', allArr[cmd].desc);
+    allBuiltHTML += addHTML;
+  }
+
+  for (cmd in modArr) {
+    var addHTML = modHTML.replace('$$command_name', modArr[cmd].cmd);
+    addHTML = addHTML.replace('$$command_desc', modArr[cmd].desc);
+    modBuiltHTML += addHTML;
+  }
+
+  for (cmd in ownerArr) {
+    var addHTML = ownerHTML.replace('$$command_name', ownerArr[cmd].cmd);
+    addHTML = addHTML.replace('$$command_desc', ownerArr[cmd].desc);
+    ownerBuiltHTML += addHTML;
+  }
+
+  var mainBuiltHTML = mainHTML;
+  mainBuiltHTML = mainBuiltHTML.replace('$$bot_name', 'Alex Bot');
+  mainBuiltHTML = mainBuiltHTML.replace('$$all', allBuiltHTML);
+  mainBuiltHTML = mainBuiltHTML.replace('$$mod', modBuiltHTML);
+  mainBuiltHTML = mainBuiltHTML.replace('$$owner', ownerBuiltHTML);
+
+  return mainBuiltHTML;
+}
+
+
+
+
+
+
+
+
+
+
 //var docs = [];
 var ret = dbs.collection('details').find({name});
 //mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -424,7 +523,7 @@ console.log(docs);
 //const mongoose = require('mongoose'); run().catch(error => console.log(error.stack)); async function run() { await mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true }); // Clear the database every time. This is for the sake of example only, // don't do this in prod :) await mongoose.connection.dropDatabase(); const customerSchema = new mongoose.Schema({ name: String, age: Number, email: String }); const Customer = mongoose.model('Customer', customerSchema); await Customer.create({ name: 'A', age: 30, email: 'a@foo.bar' }); await Customer.create({ name: 'B', age: 28, email: 'b@foo.bar' }); // Find all customers const docs = await Customer.find(); console.log(docs); }
 
 var mongoose = require('mongoose'); 
-run().catch(error => console.log(error.stack)); 
+var runtest = await run(docs).catch(error => console.log(error.stack)); 
 //var doc = await run().catch(error => console.log(error.stack)); 
 
 //var  = await Customer.find({name}); 
@@ -470,10 +569,15 @@ var cmdarray = [];
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
  }
-//var output = user;
-
+var output;
+if (runtest) {
 global.output = output;
 var output = commandList.buildHTML(cmdArr, config.bot_name);
+} else {
+global.output = output;
+var output = "Try again";
+}
+return output;
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
