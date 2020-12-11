@@ -524,6 +524,8 @@ console.log(docs);
 
 var mongoose = require('mongoose'); 
 var runtest = await run(docs).catch(error => console.log(error.stack)); 
+var docs = await Customer.find({name}); 
+
 //var doc = await run().catch(error => console.log(error.stack)); 
 
 //var  = await Customer.find({name}); 
