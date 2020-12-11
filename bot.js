@@ -524,7 +524,7 @@ console.log(docs);
 
 var mongoose = require('mongoose'); 
 var runtest = await run(docs).catch(error => console.log(error.stack)); 
-var docs = await Customer.find({name}); 
+var docs = Customer.find({name}); 
 
 //var doc = await run().catch(error => console.log(error.stack)); 
 
@@ -572,12 +572,13 @@ var cmdarray = [];
       cmdArr = cmdArr.concat(newCmds);
  }
 var output;
-if (runtest) {
+
+if (docs) {
 global.output = output;
-var output = commandList.buildHTML(cmdArr, config.bot_name);
+output = commandList.buildHTML(cmdArr, config.bot_name);
 } else {
 global.output = output;
-var output = "Try again";
+output = "Try again";
 }
 return output;
 
