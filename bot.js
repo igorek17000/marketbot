@@ -575,7 +575,7 @@ var output;
 
 if (docs) {
 global.output = output;
-output = commandList.buildHTML(cmdArr, config.bot_name);
+output = buildHTML(cmdArr, config.bot_name);
 } else {
 global.output = output;
 output = "Try again";
