@@ -573,12 +573,17 @@ var cmdarray = [];
  }
 var output;
 docs;
-if (docs) {
-global.output = output;
-output = buildHTML(cmdArr, config.bot_name);
-} else {
+if (docs < 1) {
 global.output = output;
 output = "Try again";
+
+} else {
+
+global.output = output;
+output = buildHTML(cmdArr, config.bot_name);
+//} else {
+//global.output = output;
+//output = "Try again";
 }
 //return output;
 
