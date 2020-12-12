@@ -574,8 +574,8 @@ var cmdarray = [];
 var output;
 docs;
 if (docs < 1) {
-global.output = output;
-output = "Try again";
+global.output = "Try again";
+//output = "Try again";
 
 } else {
 
