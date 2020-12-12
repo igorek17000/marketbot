@@ -8,26 +8,28 @@
 <style>
 
 
-   
-html {
+  html {
 
   height: 100%;
+  background-position: center;
+  background-size: cover;
   position: relative;
   color: white;
   font-family: 'Courier New', Courier, monospace;
   font-size: 25px;
-
-
 }
 
-bg {
+.bg {
+
 
   background-image: url('https://thumbs2.imgbox.com/d8/d5/deyL9MC4_t.jpg');
   height: 100%;
   background-position: center;
   background-size: cover;
   position: relative;
-
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 25px;
 
 }
 
@@ -115,7 +117,8 @@ hr {
 
 <!-- setup our canvas element -->
 <canvas id='canvas' style='cursor: crosshair display: block'></canvas>
-   <bg></bg>
+   <div class='bg'>
+</div>
    
   <div class='topleft'>
     <p>AlexBot</p>
