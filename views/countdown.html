@@ -112,7 +112,7 @@ hr {
     <p>AlexBot</p>
 </div>
 
-    <div class='middle'><h2>FAMILY BIRTHDAY COUNTDOWN</h2>
+    <div class='middle'><h2 Id='event'></h2><!--<h2>FAMILY BIRTHDAY COUNTDOWN</h2>-->
 <h2 id='next'></h2> <!-- Next Birthday In></h2> -->
       <h2 id='complete'></h2>
 
@@ -121,6 +121,8 @@ hr {
 <p id='name' style='font-size: 30px'></p>
 <p id='dob' style='font-size: 30px'></p>
 <a id='colour'></a>
+<!--<p id='event' style='font-size: 50px'></p>-->
+
    </div>
     <div class='bottomleft'>
     <p>Family Birthday's</p>
@@ -510,7 +512,7 @@ dob = "October 22, 1950";
 next = "Next Birthday in";
 complete = "Countdown complete!";
 colour = "Happy Birthday ";
-
+event = "FAMILY BIRTHDAY COUNTDOWN";
 }
 
 
@@ -521,6 +523,7 @@ dob = "November 19, 1980"
 next = "Next Birthday in";
 complete = "Countdown complete!";
 colour = "Happy Birthday ";
+event = "FAMILY BIRTHDAY COUNTDOWN";
 
 }
 if (now > new Date("nov 19, 2020 23:59:59").getTime()) {
@@ -530,6 +533,7 @@ dob = "December 11, 1974";
 next = "Next Birthday in";
 complete = "Countdown complete!";
 colour = "Happy Birthday ";
+event = "FAMILY BIRTHDAY COUNTDOWN";
 //console.log(year);
 }
 if (now > new Date("dec 11, 2020 23:59:59").getTime()) {
@@ -539,6 +543,7 @@ dob = "December 25, 2020";
 next = "Next Christmas in";
 complete = "Countdown complete!";
 colour = "Merry ";
+event = "FAMILY CHRISTMAS COUNTDOWN";
 
 }
 
@@ -564,7 +569,7 @@ colour = "Merry ";
 
 
 if (dist > -86400000) {
-
+document.getElementById('event').innerHTML = event;
 document.getElementById('complete').innerHTML = complete; //"Countdown Complete";
 
 document.getElementById('next').innerHTML = ""; //"Countdown Complete";
@@ -591,6 +596,7 @@ timerTick = 0++;
 
 }
 } else {
+ddocument.getElementById'event').innerHTML = event; 
 document.getElementById('next').innerHTML = next; //"Next Birthday In";
 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
