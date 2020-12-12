@@ -368,7 +368,7 @@ function getFileAll(path, callback) {
   });
 }
 
-exports.buildHTML = function (cmdArray, bot_name) {
+function buildHTML(cmdArray, bot_name) {
   var modArr   = [];
   var ownerArr = [];
   var allArr   = [];
@@ -524,7 +524,7 @@ console.log(docs);
 
 var mongoose = require('mongoose'); 
 var runtest = await run(docs).catch(error => console.log(error.stack)); 
-var docs = Customer.find({name}); 
+var docs = Customer.find({name}).exec(); 
 
 //var doc = await run().catch(error => console.log(error.stack)); 
 
