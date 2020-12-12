@@ -572,7 +572,7 @@ var cmdarray = [];
       cmdArr = cmdArr.concat(newCmds);
  }
 var output;
-
+docs;
 if (docs) {
 global.output = output;
 output = buildHTML(cmdArr, config.bot_name);
@@ -580,7 +580,7 @@ output = buildHTML(cmdArr, config.bot_name);
 global.output = output;
 output = "Try again";
 }
-return output;
+//return output;
 
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
