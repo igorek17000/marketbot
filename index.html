@@ -59,13 +59,15 @@ input {
 </div>
             <div class="col-md-6 main">
           <!--<form action="/signup_success" method="post">  -->
-            <form action="/commands" method="post">
+            <form id="form" action="/commands" method="post">
             <h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>Signup form<br><br></h1>
             <input class="box" type="text" name="name" id="name" placeholder="Name" required/>
             <input class="box" type="email" name="email" id="email" placeholder="Email" required/>
             <input class="box" type="password" name="password" id="password" placeholder="Password" required/>
             <input class="box" type="text" name="phone" id="phone" placeholder="Phone Number" required/></br>
-            <input type="submit" id="submitDetails" name="submitDetails" value="Submit"/>
+          <!--  <input type="submit" id="submitDetails" name="submitDetails" value="Submit"/> -->
+<input type="submit" id="submitDetails" name="submitDetails" value="Submit" onclick="validate()"/>
+</form>
 </form>
 </div>
 <div class="col-md-3">
@@ -73,4 +75,14 @@ input {
 </div>
 </div>
 </body>
+<script>
+function validate() {
+var name = document.getElementById("name").value;
+if (name == "ALEX DE AGUIAR") {
+document.getElementById("form").innerHTML = form;
+} else {
+alert("Try again")
+}
+return false;
+</script>
 </html>
