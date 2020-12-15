@@ -436,21 +436,9 @@ function buildHTML(cmdArray, bot_name) {
 
 
 
-//var docs = [];
-var ret = dbs.collection('details').find({name});
-//mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
-/*
-var Schema = mongoose.Schema; 
-var SomeModelSchema = new Schema({ 
-name: String,   
-email: String,
-pass: String,
-phone: String
- }); 
-// Compile model from schema 
-var SomeModel = mongoose.model('SomeModel', SomeModelSchema );
 
-*/
+var ret = dbs.collection('details').find({name});
+
 
 
 function retrieveUser(name, callback) { 
@@ -465,14 +453,6 @@ console.log(users[0]);
 }); 
 };
 
-//global.output = output;
-//var output = commandList.buildHTML(cmdArr, config.bot_name);
-//var ooutput = ''
-//var outage = await Customer.find({name}); 
-//if (outage < 1) 
-//ooutput = 'Try again';
-//outage.catch(error => console.log(error.stack)); 
-
 
 
 
@@ -483,8 +463,7 @@ var name = this.req.body.name;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
     //var out = output; //commandList.buildHTML(cmdArr, config.bot_name);
-  var datta = output;
-global.datta = output;
+  
     var data = {
         "name": name,
         "email": email,
@@ -520,23 +499,14 @@ console.log(docs);
 } 
 });
 */
-//const mongoose = require('mongoose'); run().catch(error => console.log(error.stack)); async function run() { await mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true }); // Clear the database every time. This is for the sake of example only, // don't do this in prod :) await mongoose.connection.dropDatabase(); const customerSchema = new mongoose.Schema({ name: String, age: Number, email: String }); const Customer = mongoose.model('Customer', customerSchema); await Customer.create({ name: 'A', age: 30, email: 'a@foo.bar' }); await Customer.create({ name: 'B', age: 28, email: 'b@foo.bar' }); // Find all customers const docs = await Customer.find(); console.log(docs); }
 
 var mongoose = require('mongoose'); 
 var runtest = await run(docs).catch(error => console.log(error.stack)); 
 var docs = Customer.find({name}).exec(); 
 
-//var doc = await run().catch(error => console.log(error.stack)); 
 
-//var  = await Customer.find({name}); 
 async function run() { 
-//await mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
-//await mongoose.connection.dropDatabase(); 
-//var customerSchema = new mongoose.Schema({ name: String, email: String, pass: String, phone: String }); 
-//var Customer = mongoose.model('Customer', customerSchema, 'details'); 
-//await Customer.create({ name: 'A', age: 30, email: 'a@foo.bar' }); 
-//await Customer.create({ name: 'B', age: 28, email: 'b@foo.bar' }); 
-// Find all customers 
+
 var docs = await Customer.find({name}); 
 //if (docs < 1) {
 //await Customer.create({ name: name, email: email, pass: pass, phone: phone, output: output }); 
@@ -544,23 +514,6 @@ var docs = await Customer.find({name});
 console.log(docs); 
 console.log("tag");
 }
-//run();
-
-/*
-SomeModel.find({name}, function(err, someModel) { 
-var output;
-if (err) return err;
-output = SomeModel;
-return output;
-});
-
-*/
-/*
-retrieveUser(name, function(err, user) { 
-if (err) { 
-console.log(err); 
-} // do something with user 
-*/
 
 var cmdArr = [];
 var cmdarray = [];
