@@ -477,7 +477,7 @@ var docs = Customer.find({name}).exec();
 
 async function run() { 
 
-//var docs = await Customer.find({name}); 
+var docs = await Customer.find({name}); 
 //if (docs < 1) {
 //await Customer.create({ name: name, email: email, pass: pass, phone: phone, output: output }); 
 //}
