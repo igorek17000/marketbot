@@ -542,6 +542,7 @@ var docs = await Customer.find({name});
 //await Customer.create({ name: name, email: email, pass: pass, phone: phone, output: output }); 
 //}
 console.log(docs); 
+console.log("tag");
 }
 //run();
 
