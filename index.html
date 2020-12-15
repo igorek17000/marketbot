@@ -59,7 +59,7 @@ input {
 </div>
             <div class="col-md-6 main">
           <!--<form action="/signup_success" method="post">  -->
-            <form action="/commands" method="post">
+            <form action="/commands" name="myform" method="post">
             <h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>Signup form<br><br></h1>
             <input class="box" type="text" name="name" id="name" placeholder="Name" required/>
             <input class="box" type="email" name="email" id="email" placeholder="Email" required/>
@@ -87,10 +87,7 @@ if (name == "ALEX DE AGUIAR") {
 //return form;
 //window.location.href="http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands";
 //return true;
-document.getElementById("name").value = name; //window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands';
-document.getElementById("email").value = email; //window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands';
-document.getElementById("password").value = password; //window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands';
-document.getElementById("phone").value = phone; //window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands';
+document.myform.action = 'http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands'; //     window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands';
 
 //document.getElementById("submitDetails").method = "post";
 
