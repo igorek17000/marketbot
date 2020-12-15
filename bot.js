@@ -571,21 +571,8 @@ var cmdarray = [];
     if (newCmds)
       cmdArr = cmdArr.concat(newCmds);
  }
-var output;
-//docs;
-if (docs < 1) {
-global.output = "Try again";
-//output = "Try again";
 
-} else {
-
-global.output = buildHTML(cmdArr, config.bot_name);
-//} else {
-//global.output = output;
-//output = "Try again";
-}
-//return output;
-await docs;
+var output = buildHTML(cmdArr, config.bot_name);
   this.res.writeHead(200, {"Content-Type": "text/html"});
   this.res.end(output);
 
