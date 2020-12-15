@@ -428,13 +428,63 @@ function buildHTML(cmdArray, bot_name) {
 }
 
 
+
+
+
+
+
+
+
+
+//var docs = [];
+var ret = dbs.collection('details').find({name});
+//mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
+/*
+var Schema = mongoose.Schema; 
+var SomeModelSchema = new Schema({ 
+name: String,   
+email: String,
+pass: String,
+phone: String
+ }); 
+// Compile model from schema 
+var SomeModel = mongoose.model('SomeModel', SomeModelSchema );
+
+*/
+
+
+function retrieveUser(name, callback) { 
+
+dbs.collection('details').find({name}, function(err, users) { 
+if (err) { 
+callback(err, null); 
+} else { 
+callback(null, users[0]); 
+console.log(users[0]);
+} 
+}); 
+};
+
+//global.output = output;
+//var output = commandList.buildHTML(cmdArr, config.bot_name);
+//var ooutput = ''
+//var outage = await Customer.find({name}); 
+//if (outage < 1) 
+//ooutput = 'Try again';
+//outage.catch(error => console.log(error.stack)); 
+
+
+
+
+
 //hard coded temporarily ... maybe permanently ... losing motivation to work on this //if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp') //continue; var alexbReg = new RegExp(alexb.regex, "i"); if (dataHash.request.text && alexbReg.test(dataHash.request.text)){ var val = alexbReg.exec(dataHash.request.text); // if (dataHash.currentBot("282865de8ce30137567238148f")) { //var msg = "308BoonBot\n" + alexb.message; callback(true, alexb.message, alexb.attachments, []); break;
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
     //var out = output; //commandList.buildHTML(cmdArr, config.bot_name);
-  
+  var datta = output;
+global.datta = output;
     var data = {
         "name": name,
         "email": email,
@@ -463,6 +513,7 @@ additFunc()
 }
 if(docs) {
 console.log(docs);
+//ret.push(docs);
 
 
 
@@ -475,8 +526,17 @@ var mongoose = require('mongoose');
 var runtest = await run(docs).catch(error => console.log(error.stack)); 
 var docs = Customer.find({name}).exec(); 
 
-async function run() { 
+//var doc = await run().catch(error => console.log(error.stack)); 
 
+//var  = await Customer.find({name}); 
+async function run() { 
+//await mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
+//await mongoose.connection.dropDatabase(); 
+//var customerSchema = new mongoose.Schema({ name: String, email: String, pass: String, phone: String }); 
+//var Customer = mongoose.model('Customer', customerSchema, 'details'); 
+//await Customer.create({ name: 'A', age: 30, email: 'a@foo.bar' }); 
+//await Customer.create({ name: 'B', age: 28, email: 'b@foo.bar' }); 
+// Find all customers 
 var docs = await Customer.find({name}); 
 //if (docs < 1) {
 //await Customer.create({ name: name, email: email, pass: pass, phone: phone, output: output }); 
@@ -484,6 +544,23 @@ var docs = await Customer.find({name});
 console.log(docs); 
 console.log("tag");
 }
+//run();
+
+/*
+SomeModel.find({name}, function(err, someModel) { 
+var output;
+if (err) return err;
+output = SomeModel;
+return output;
+});
+
+*/
+/*
+retrieveUser(name, function(err, user) { 
+if (err) { 
+console.log(err); 
+} // do something with user 
+*/
 
 var cmdArr = [];
 var cmdarray = [];
