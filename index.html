@@ -78,8 +78,8 @@ input {
 
 <script>
 
-var customerSchema = new mongoose.Schema({ name: String, email: String, pass: String, phone: String, output: String }); 
-var Customer = mongoose.model('Customer', customerSchema, 'details'); 
+//var customerSchema = new mongoose.Schema({ name: String, email: String, pass: String, phone: String, output: String }); 
+//var Customer = mongoose.model('Customer', customerSchema, 'details'); 
 
 var express = require("express");
 //var bodyParser = require("body-parser"); 
@@ -152,9 +152,9 @@ var email = document.getElementById("email").value;
 var password = document.getElementById("password").value;
 var phone = document.getElementById("phone").value;
 var docs = await Customer.find({name}).exec(); 
-
-
-
+var mongoose = require('mongoose'); 
+var customerSchema = new mongoose.Schema({ name: String, email: String, pass: String, phone: String, output: String }); 
+var Customer = mongoose.model('Customer', customerSchema, 'details'); 
 
 if (name == docs) { //== name) { //"ALEX DE AGUIAR") {
 
