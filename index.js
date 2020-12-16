@@ -47,8 +47,8 @@ get: home
 },
 
 '/rend' : {
-get: rend,
-get: clicks
+get: rend
+//get: clicks
 //console.log(req.body);
 },
 
