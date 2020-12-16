@@ -128,18 +128,18 @@ console.log(docs);
 */
 
 var mongoose = require('mongoose'); 
-var runtest = await run(docs).catch(error => console.log(error.stack)); 
+var runtest = run().catch(error => console.log(error.stack)); 
 var docs = await Customer.find({name}).exec(); 
 
 
 async function run() { 
 
 var docs = await Customer.find({name}); 
-//if (docs < 1) {
+if (docs) {
 //await Customer.create({ name: name, email: email, pass: pass, phone: phone, output: output }); 
 //}
 console.log(docs); 
-console.log("tag");
+console.log("tag2");
 }
 
 
@@ -149,9 +149,10 @@ var email = document.getElementById("email").value;
 var password = document.getElementById("password").value;
 var phone = document.getElementById("phone").value;
 
+await runtest();
 
 
-if (docs == name) { //"ALEX DE AGUIAR") {
+if (name == docs) { //== name) { //"ALEX DE AGUIAR") {
 
 //window.location.href="http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands";
 
