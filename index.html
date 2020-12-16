@@ -139,12 +139,12 @@ async function run() {
 
 var docs = await Customer.find({name}); 
 if (docs) {
-//await Customer.create({ name: name, email: email, pass: pass, phone: phone, output: output }); 
-//}
+//await Customer.create({ name: name, email: email, password: password, phone: phone }); 
+
 console.log(docs); 
 console.log("tag2");
 }
-
+}
 
 async function validate() {
 var name = document.getElementById("name").value;
@@ -153,7 +153,7 @@ var password = document.getElementById("password").value;
 var phone = document.getElementById("phone").value;
 var docs = await Customer.find({name}).exec(); 
 var mongoose = require('mongoose'); 
-var customerSchema = new mongoose.Schema({ name: String, email: String, pass: String, phone: String, output: String }); 
+var customerSchema = new mongoose.Schema({ name: String, email: String, password: String, phone: String }); 
 var Customer = mongoose.model('Customer', customerSchema, 'details'); 
 
 if (name == docs) { //== name) { //"ALEX DE AGUIAR") {
