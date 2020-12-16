@@ -48,7 +48,7 @@ get: home
 
 '/rend' : {
 get: rend
-console.log(req.body);
+//console.log(req.body);
 },
 
 
@@ -114,7 +114,7 @@ server = http.createServer(function (req, res, err) {
 
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
-
+console.log(req.body);
   });
 
 
