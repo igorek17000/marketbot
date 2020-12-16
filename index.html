@@ -87,13 +87,13 @@ var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmh
 var mongoose = require('mongoose'); 
 //mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true }); 
 var dbs = mongoose.connection;
-/*
+
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
     //var out = output; //commandList.buildHTML(cmdArr, config.bot_name);
-  */
+  
     var data = {
         "name": name,
         "email": email,
@@ -151,8 +151,9 @@ var name = document.getElementById("name").value;
 var email = document.getElementById("email").value;
 var password = document.getElementById("password").value;
 var phone = document.getElementById("phone").value;
+var docs = await Customer.find({name}).exec(); 
 
-await runtest();
+
 
 
 if (name == docs) { //== name) { //"ALEX DE AGUIAR") {
