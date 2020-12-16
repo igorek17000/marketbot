@@ -302,7 +302,7 @@ if (err) return console.log(err);
 return result.json;
 this.res.send(result);
 });
-this.res.write(result[name]);
+this.res.write();
 this.res.end(); 
 //});
 }
