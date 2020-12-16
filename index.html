@@ -130,11 +130,11 @@ console.log(docs);
 });
 */
 
-var mongoose = require('mongoose'); 
-var runtest = run().catch(error => console.log(error.stack)); 
-var docs = await Customer.find({name}).exec(); 
+//var mongoose = require('mongoose'); 
+//var runtest = run().catch(error => console.log(error.stack)); 
+//var docs = await Customer.find({name}).exec(); 
 
-
+/*
 async function run() { 
 
 var docs = await Customer.find({name}); 
@@ -145,18 +145,21 @@ console.log(docs);
 console.log("tag2");
 }
 }
-
+*/
 async function validate() {
 var name = document.getElementById("name").value;
 var email = document.getElementById("email").value;
 var password = document.getElementById("password").value;
 var phone = document.getElementById("phone").value;
-var docs = await Customer.find({name}).exec(); 
+//var docs = await Customer.find({name}).exec(); 
 var mongoose = require('mongoose'); 
 var customerSchema = new mongoose.Schema({ name: String, email: String, password: String, phone: String }); 
 var Customer = mongoose.model('Customer', customerSchema, 'details'); 
-
-if (name == docs) { //== name) { //"ALEX DE AGUIAR") {
+var dbs = mongoose.connection;
+var docs = dbs.collection('details').find({name}).toArray(function(err, docs) {
+docs;
+if(err) throw err;
+if (docs == name) { //== docs) { //== name) { //"ALEX DE AGUIAR") {
 
 //window.location.href="http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands";
 
