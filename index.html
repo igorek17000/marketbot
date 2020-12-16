@@ -129,7 +129,7 @@ console.log(docs);
 
 var mongoose = require('mongoose'); 
 var runtest = await run(docs).catch(error => console.log(error.stack)); 
-var docs = Customer.find({name}).exec(); 
+var docs = await Customer.find({name}).exec(); 
 
 
 async function run() { 
@@ -143,7 +143,7 @@ console.log("tag");
 }
 
 
-function validate() {
+async function validate() {
 var name = document.getElementById("name").value;
 var email = document.getElementById("email").value;
 var password = document.getElementById("password").value;
@@ -151,7 +151,7 @@ var phone = document.getElementById("phone").value;
 
 
 
-if (docs[name] == name) { //"ALEX DE AGUIAR") {
+if (docs == name) { //"ALEX DE AGUIAR") {
 
 //window.location.href="http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands";
 
