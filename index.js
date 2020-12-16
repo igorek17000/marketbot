@@ -47,7 +47,8 @@ get: home
 },
 
 '/rend' : {
-get: rend
+get: rend,
+get: clicks
 //console.log(req.body);
 },
 
@@ -270,6 +271,8 @@ this.res.write(html);
 this.res.end();
 }
 
+
+
 function home() {
   //this.res.writeHead(200); //, {"Content-Type": "text/html"});
 this.res.statusCode = 200;
@@ -289,6 +292,19 @@ this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '
 var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 this.res.write(html);
 this.res.end();
+}
+
+function clicks() {
+this.res.statusCode = 200;
+this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
+db.collection('details').find({name}).toArray((err, result) => { 
+if (err) return console.log(err); 
+return result.json;
+this.res.send(result);
+});
+this.res.write();
+this.res.end(); 
+//});
 }
 
 function rend_command() {
