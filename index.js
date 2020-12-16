@@ -48,6 +48,7 @@ get: home
 
 '/rend' : {
 get: rend
+console.log(req.body);
 },
 
 
