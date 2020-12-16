@@ -297,12 +297,12 @@ this.res.end();
 function clicks() {
 this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
-db.collection('details').find().toArray((err, result) => { 
+db.collection('details').find({}).toArray((err, result) => { 
 if (err) return console.log(err); 
 return result.json;
 this.res.send(result);
 });
-//this.res.write();
+this.res.write(result[name]);
 this.res.end(); 
 //});
 }
