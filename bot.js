@@ -503,12 +503,12 @@ console.log(docs);
 
 var mongoose = require('mongoose'); 
 //var runtest = await run(docs).catch(error => console.log(error.stack)); 
-var docs = dbs.Customer.find({name}).exec(); 
+var docs = Customer.find({name}).exec(); 
 //var users = Customer.find({name}, function(err, docs) { //); 
 
 
 async function run() { 
-dbs.Customer.find({}, function(err, docs) {
+Customer.find({}, function(err, docs) {
 if (err) throw err;
 else res.render('index', {Customer: docs});
 });
