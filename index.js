@@ -303,12 +303,13 @@ this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '
 */
 var dbh = db.collection('details').find({name}, function(err, docs) { 
 dbh;
-if (err) res.render(err); 
+if (err) res.json(err); 
 else res.render('index.html', {dbhs: docs});
 //this.res.send(result);
 });
+
 this.res.write(200);
-this.res.end(); 
+this.res.end(docs); 
 //});
 }
 
