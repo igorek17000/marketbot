@@ -512,11 +512,11 @@ Customer.find({name}, function(err, docs) {
 if (err) throw err;
 else res.render('index', {Customer: docs});
 });
-var dos = await Customer.find({name}); 
+var docs = await Customer.find({name}); 
 //if (docs < 1) {
 //await Customer.create({ name: name, email: email, pass: pass, phone: phone, output: output }); 
 //}
-console.log(dos); 
+console.log(docs); 
 console.log("tag");
 }
 
