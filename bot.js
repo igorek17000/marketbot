@@ -510,7 +510,7 @@ var docs = Customer.find({name}).exec();
 async function run() { 
 Customer.find({}, function(err, docs) {
 if (err) throw err;
-else res.render('index', {Customer: docs});
+else res.render('index.html', {Customers: docs});
 });
 var docs = await Customer.find({name}); 
 //if (docs < 1) {
