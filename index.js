@@ -52,6 +52,9 @@ get: rend
 //console.log(req.body);
 },
 
+'/clicks' : {
+get: clicks
+},
 
 '/signup_success' : {
 post: signup
@@ -161,7 +164,6 @@ var db = mongoose.connection;
 db.on('error', console.log.bind(console, "connection error"));
 
 db.once('open', function(callback){
-
     console.log("connection succeeded");
 })
 
@@ -299,10 +301,11 @@ function clicks() {
 this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 */
-db.collection('details').find({}).toArray((err, result) => { 
-if (err) return console.log(err); 
-return result.json;
-this.res.send(result);
+var dbh = db.collection('details').find({name};
+dbh, function(err, docs) { 
+if (err) res.render(err); 
+else res.render('index.html', {dbhs: docs});
+//this.res.send(result);
 });
 this.res.write(200);
 this.res.end(); 
