@@ -303,18 +303,19 @@ this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '
 */
 var dbh = db.collection('details').find({}, function(err, docs) { 
 dbh;
-if (err) this.res.statusCode(400);
+if (err) this.res.statusCode: 400;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 
 
 if (docs) {
-this.res.render('index.html', {dbhs: docs});
+this.res.post('/rend', {dbhs: docs});
 console.log(docs);//this.res.send(result);
 }
 });
+var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 
-this.res.write(200);
-this.res.end(docs); 
+this.res.write(html);
+this.res.end(); 
 //});
 }
 
