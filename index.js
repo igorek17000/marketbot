@@ -53,7 +53,7 @@ get: rend
 },
 
 '/clicks' : {
-get: clicks
+post: clicks
 },
 
 '/signup_success' : {
@@ -303,7 +303,7 @@ this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '
 */
 var dbh = db.collection('details').find({}, function(err, docs) { 
 dbh;
-if (err) this.res.statusCode: 400;
+if (err) return this.res.statusCode;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 
 
