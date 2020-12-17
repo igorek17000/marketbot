@@ -301,7 +301,7 @@ function clicks() {
 this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 */
-var dbh = db.collection('details').find({name};
+var dbh = db.collection('details').find({name}
 dbh, function(err, docs) { 
 if (err) res.render(err); 
 else res.render('index.html', {dbhs: docs});
