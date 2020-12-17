@@ -479,6 +479,7 @@ function additFunc() {
 dbs.collection('details').insertOne(data, function(err, collection){
         if (err)
 throw err;
+
 console.log("User " + data.name + " added");
 });
 }
@@ -502,16 +503,20 @@ console.log(docs);
 
 var mongoose = require('mongoose'); 
 var runtest = await run(docs).catch(error => console.log(error.stack)); 
-var docs = Customer.find({name}).exec(); 
+var do = Customer.find({name}).exec(); 
+var users = Customer.find({name}, function(err, docs) { //); 
 
 
 async function run() { 
-
-var docs = await Customer.find({name}); 
+Customer.find({name}, function(err, docs) {
+if (err) throw err;
+else res.render('index', {Customer: docs});
+});
+var dos = await Customer.find({name}); 
 //if (docs < 1) {
 //await Customer.create({ name: name, email: email, pass: pass, phone: phone, output: output }); 
 //}
-console.log(docs); 
+console.log(dos); 
 console.log("tag");
 }
 
