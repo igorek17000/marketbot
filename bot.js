@@ -502,7 +502,7 @@ console.log(docs);
 */
 
 var mongoose = require('mongoose'); 
-var runtest = await run(docs).catch(error => console.log(error.stack)); 
+//var runtest = await run(docs).catch(error => console.log(error.stack)); 
 //var do = Customer.find({name}).exec(); 
 //var users = Customer.find({name}, function(err, docs) { //); 
 
