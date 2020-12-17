@@ -306,8 +306,10 @@ dbh;
 if (err) this.res.writeHead(err.status, {"Content-Type": "text/plain"});
     this.res.end(err.message);
 
-else this.res.render('index.html', {dbhs: docs});
+if (docs) {
+this.res.render('index.html', {dbhs: docs});
 console.log(docs);//this.res.send(result);
+}
 });
 
 this.res.write(200);
