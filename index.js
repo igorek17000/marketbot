@@ -303,8 +303,9 @@ this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '
 */
 var dbh = db.collection('details').find({}, function(err, docs) { 
 dbh;
-if (err) this.res.writeHead(400, {"Content-Type": "text/plain"});
-    this.res.end(err.message);
+if (err) this.res.statusCode = 400;
+this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
+
 
 if (docs) {
 this.res.render('index.html', {dbhs: docs});
