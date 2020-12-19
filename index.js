@@ -303,7 +303,7 @@ this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '
 */
 var dbh = db.collection('details').find({}, function(err, docs) { 
 dbh;
-if (err) return this.statusCode;
+if (err) console.log(err);;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 
 
