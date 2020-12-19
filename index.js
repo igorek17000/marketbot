@@ -301,6 +301,7 @@ function clicks() {
 this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 */
+var dbhs;
 var dbh = db.collection('details').find({}, function(err, docs) { 
 dbh;
 if (err) console.log(err);
@@ -308,8 +309,8 @@ if (err) console.log(err);
 
 
 if (docs) {
-this.res.post('/rend', {dbhs: docs});
-console.log(docs);//this.res.send(result);
+this.res.read({dbhs: docs});
+console.log(dbhs);//this.res.send(result);
 }
 });
 var html = fs.readFileSync(path.join(__dirname + "/index.html"));
