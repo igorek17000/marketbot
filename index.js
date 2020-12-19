@@ -302,12 +302,12 @@ this.res.end();
 }
 
 function clicks() {
-/*
+
 this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
-*/
+
 var dbhs;
-var dbh = db.collection('details').find({}, function(err, docs) { 
+db.collection('details').find({}, function(err, docs) { 
 dbh;
 var dbhs = docs;
 if (err) console.log(err);
@@ -315,7 +315,7 @@ if (err) console.log(err);
 
 
 if (docs) {
-res.read(dbhs);
+this.res.read(dbhs);
 console.log(dbhs);//this.res.send(result);
 }
 });
