@@ -311,7 +311,7 @@ db.collection('details').find({name}).toArray(function(err, docs) { // callback)
 if (err) throw err;
 console.log(docs);
 });
-this.res.write("Hi");
+//this.res.write("Hi");
 
  /*  var email = this.req.body.email;
     var pass = this.req.body.password;
@@ -339,6 +339,7 @@ console.log(ret);
 }
 */
 var html = fs.readFileSync(path.join(__dirname + "/index.html"));
+this.res.write("Hi");
 this.res.write(html);
 this.res.end(); 
 //});
