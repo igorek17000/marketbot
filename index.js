@@ -315,7 +315,7 @@ if (err) console.log(err);
 
 
 if (docs) {
-this.res.read(dbhs);
+res.read(dbhs);
 console.log(dbhs);//this.res.send(result);
 }
 });
