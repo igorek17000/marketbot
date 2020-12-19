@@ -328,7 +328,7 @@ console.log(dbhs[{name}]);//this.res.send(result);
 if (name) {
 console.log(ret);
 }
-var html = this.res[IncomingMessage]; //fs.readFileSync(path.join(__dirname + "/index.html"));
+var html = this.res.ret.IncomingMessage; //fs.readFileSync(path.join(__dirname + "/index.html"));
 this.res.write(html);
 this.res.end(); 
 //});
