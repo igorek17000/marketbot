@@ -311,7 +311,7 @@ db.collection('details').find({name}).toArray(function(err, docs) { // callback)
 if (err) throw err;
 console.log(docs);
 });
-this.res.write(msg);
+this.res.write("Hi");
 
  /*  var email = this.req.body.email;
     var pass = this.req.body.password;
