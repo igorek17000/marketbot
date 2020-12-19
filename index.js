@@ -305,7 +305,7 @@ function clicks() {
 var ret = [];
 var docs = [];
 var msg = docs[{name}];
-db.collection('details').find({'ALEX DE AGUIAR'}).toArray(function(err, docs) { // callback) { if (docs || callback) { callback(ret[docs].name); } });
+db.collection('details').find('ALEX DE AGUIAR').toArray(function(err, docs) { // callback) { if (docs || callback) { callback(ret[docs].name); } });
 if (err) throw err;
 console.log(docs);
 });
