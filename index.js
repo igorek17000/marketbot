@@ -331,11 +331,12 @@ this.res.read(dbhs[{name}]);
 console.log(dbhs[{name}]);//this.res.send(result);
 }
 });
-*/
+
 if (name) {
 console.log(ret);
 }
-var html = this.res[name]; //fs.readFileSync(path.join(__dirname + "/index.html"));
+*/
+var html = msg; //this.res[name]; //fs.readFileSync(path.join(__dirname + "/index.html"));
 this.res.write(msg);
 this.res.end(); 
 //});
