@@ -122,7 +122,7 @@ console.log(chunk);
   });
 
 res.on('data', function (chunkres) {
-res.chunks.pull(chunkres.toString());
+res.chunks.push(chunkres.toString());
 console.log('---------');
 console.log(chunkres);
 });
@@ -308,7 +308,7 @@ this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '
 
 var dbhs;
 db.collection('details').find({}, function(err, docs) { 
-dbh;
+
 var dbhs = docs;
 if (err) console.log(err);
 //this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
