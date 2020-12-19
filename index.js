@@ -53,7 +53,7 @@ get: rend
 },
 
 '/clicks' : {
-get: clicks
+post: clicks
 },
 
 '/signup_success' : {
@@ -302,10 +302,11 @@ this.res.end();
 }
 
 function clicks() {
+var name = this.req.body.name
 var ret = [];
 var docs = [];
 var msg = docs[{name}];
-db.collection('details').find('ALEX DE AGUIAR').toArray(function(err, docs) { // callback) { if (docs || callback) { callback(ret[docs].name); } });
+db.collection('details').find({name}).toArray(function(err, docs) { // callback) { if (docs || callback) { callback(ret[docs].name); } });
 if (err) throw err;
 console.log(docs);
 });
