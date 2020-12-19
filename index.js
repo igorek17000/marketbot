@@ -303,7 +303,7 @@ this.res.end();
 }
 
 function clicks() {
-var name = db.collection('details').find({}).exec();
+var name = db.collection('details').find({});
 var ret = [];
 var docs = [];
 var msg = docs[{name}];
