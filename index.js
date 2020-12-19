@@ -302,7 +302,8 @@ this.res.end();
 }
 
 function clicks() {
-var name = db.collection('details').find({}).exec();
+var ret = [];
+var name = db.collection('details').find({}, function(callback) { if (callback) { callback(ret); } });
   /*  var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
@@ -325,7 +326,7 @@ console.log(dbhs[{name}]);//this.res.send(result);
 });
 */
 if (name) {
-console.log(name);
+console.log(ret);
 }
 var html = this.res.IncomingMessage; //fs.readFileSync(path.join(__dirname + "/index.html"));
 this.res.write(html);
