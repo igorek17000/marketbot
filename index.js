@@ -303,8 +303,15 @@ this.res.end();
 
 function clicks() {
 var ret = [];
-db.collection('details').find({'ALEX DE AGUIAR'}).toArray(function(docs, callback) { if (docs || callback) { callback(ret[docs].name); } });
-  /*  var email = this.req.body.email;
+var docs = [];
+var msg = docs[{name}];
+db.collection('details').find({'ALEX DE AGUIAR'}).toArray(function(err, docs) { // callback) { if (docs || callback) { callback(ret[docs].name); } });
+if (err) throw err;
+console.log(docs);
+});
+this.res.read(msg);
+
+ /*  var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
 */
@@ -329,7 +336,7 @@ if (name) {
 console.log(ret);
 }
 var html = this.res[name]; //fs.readFileSync(path.join(__dirname + "/index.html"));
-this.res.write(ret[docs].name);
+this.res.write(msg);
 this.res.end(); 
 //});
 }
