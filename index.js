@@ -303,7 +303,7 @@ this.res.end();
 }
 
 function clicks() {
-var name = db.collection('details').find({});
+var name = this.req.body.name; //db.collection('details').find({});
 var ret = [];
 var docs = [];
 var msg = docs[{name}];
@@ -318,7 +318,7 @@ console.log(docs);
     var phone = this.req.body.phone;
 */
 this.res.statusCode = 200;
-this.res.setHeader('content-type', 'text/plain', 'Access-control-Allow-Origin', '*');
+this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 /*
 var dbhs;
 db.collection('details').find({}, function(err, docs) { 
