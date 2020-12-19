@@ -118,9 +118,14 @@ server = http.createServer(function (req, res, err) {
 
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
-console.log(req.body);
+console.log(chunk);
   });
 
+res.on('data', function (chunkres) {
+res.chunks.pull(chunkres.toString());
+console.log('---------');
+console.log(chunkres);
+});
 
 
   router.dispatch(req, res, function(err) {
