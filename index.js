@@ -337,8 +337,8 @@ if (name) {
 console.log(ret);
 }
 */
-var html = msg; //this.res[name]; //fs.readFileSync(path.join(__dirname + "/index.html"));
-this.res.write(msg);
+var html = fs.readFileSync(path.join(__dirname + "/index.html"));
+this.res.write(html);
 this.res.end(); 
 //});
 }
