@@ -302,7 +302,7 @@ this.res.end();
 }
 
 function clicks() {
-var name = this.req.body.name
+var name = db.collection('details').find({}).exec();
 var ret = [];
 var docs = [];
 var msg = docs[{name}];
