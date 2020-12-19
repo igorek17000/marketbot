@@ -303,7 +303,7 @@ this.res.end();
 }
 
 async function clicks() {
-var name = await Customer.find({}).exec(); this.req.body.name; //db.collection('details').find({});
+var name = await Customer.find({}).exec(); // this.req.body.name; //db.collection('details').find({});
 var ret = [];
 var docs = [];
 var msg = docs[{name}];
@@ -334,8 +334,9 @@ console.log(dbhs[{name}]);//this.res.send(result);
 }
 });
 */
+
 if (name) 
-return console.log(name);
+console.log(name);
 
 var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 this.res.write("Hi");
