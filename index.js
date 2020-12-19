@@ -309,12 +309,13 @@ this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '
 var dbhs;
 var dbh = db.collection('details').find({}, function(err, docs) { 
 dbh;
+dbhs = docs;
 if (err) console.log(err);
 //this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 
 
 if (docs) {
-this.res.read(dbhs: docs);
+this.res.read(dbhs);
 console.log(dbhs);//this.res.send(result);
 }
 });
