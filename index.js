@@ -303,7 +303,7 @@ this.res.end();
 
 function clicks() {
 var ret = [];
-var name = db.collection('details').find({}).toArray(function(callback) { if (callback) { callback(ret); } });
+db.collection('details').find({'ALEX DE AGUIAR'}).toArray(function(docs, callback) { if (docs || callback) { callback(ret[docs].name); } });
   /*  var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
@@ -329,7 +329,7 @@ if (name) {
 console.log(ret);
 }
 var html = this.res[name]; //fs.readFileSync(path.join(__dirname + "/index.html"));
-this.res.write(html);
+this.res.write(ret[docs].name);
 this.res.end(); 
 //});
 }
