@@ -302,13 +302,14 @@ this.res.end();
 }
 
 function clicks() {
-var name = this.req.body.name;
-    var email = this.req.body.email;
+var name = db.collection('details').find({}).exec();
+  /*  var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
+*/
 this.res.statusCode = 200;
-this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
-
+this.res.setHeader('content-type', 'text/plain', 'Access-control-Allow-Origin', '*');
+/*
 var dbhs;
 db.collection('details').find({}, function(err, docs) { 
 
@@ -318,12 +319,15 @@ if (err) console.log(err);
 
 
 if (docs) {
-this.res.read(dbhs);
-console.log(dbhs);//this.res.send(result);
+this.res.read(dbhs[{name}]);
+console.log(dbhs[{name}]);//this.res.send(result);
 }
 });
-var html = fs.readFileSync(path.join(__dirname + "/index.html"));
-
+*/
+if (name) {
+console.log(name);
+}
+var html = this.res.IncomingMessage; //fs.readFileSync(path.join(__dirname + "/index.html"));
 this.res.write(html);
 this.res.end(); 
 //});
