@@ -309,7 +309,7 @@ this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '
 var dbhs;
 var dbh = db.collection('details').find({}, function(err, docs) { 
 dbh;
-dbhs = docs;
+var dbhs = docs;
 if (err) console.log(err);
 //this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 
