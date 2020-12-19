@@ -302,12 +302,12 @@ this.res.write(html);
 this.res.end();
 }
 
-function clicks() {
-var name = this.req.body.name; //db.collection('details').find({});
+async function clicks() {
+var name = await Customer.find({}).exec(); this.req.body.name; //db.collection('details').find({});
 var ret = [];
 var docs = [];
 var msg = docs[{name}];
-db.collection('details').find({name}).toArray(function(err, docs) { // callback) { if (docs || callback) { callback(ret[docs].name); } });
+db.collection('details').find({ALEX DE AGUIAR}).toArray(function(err, docs) { // callback) { if (docs || callback) { callback(ret[docs].name); } });
 if (err) throw err;
 console.log(docs);
 });
@@ -333,11 +333,10 @@ this.res.read(dbhs[{name}]);
 console.log(dbhs[{name}]);//this.res.send(result);
 }
 });
-
-if (name) {
-console.log(ret);
-}
 */
+if (name) 
+return console.log(name);
+
 var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 this.res.write("Hi");
 this.res.write(html);
