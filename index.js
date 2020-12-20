@@ -303,20 +303,46 @@ this.res.end();
 }
 
 async function clicks() {
-var name = await Customer.find({}).exec(); // this.req.body.name; //db.collection('details').find({});
+var name = this.req.body.name;
+    var email = this.req.body.email;
+    var pass = this.req.body.password;
+    var phone = this.req.body.phone;
+
 var ret = [];
 var docs = [];
 var msg = docs[{name}];
-db.collection('details').find({ALEX DE AGUIAR}).toArray(function(err, docs) { // callback) { if (docs || callback) { callback(ret[docs].name); } });
+
+function getAllDocs(data) {
+docs = data;
+//init();
+db.collection('details').find({name}).toArray(function(err, docs) {
+if(err) throw err;
+
+/*
+if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
+//additFunc();
+}
+*/
+if (docs) {
+//var html = fs.readFileSync(path.join(__dirname + "/index.html"));
+  console.log('Docs found');
+console.log(docs); //db.close();
+}
+});
+//bot.command_success();
+}
+
+/*db.collection('details').find({ALEX DE AGUIAR}).toArray(function(err, docs) { // callback) { if (docs || callback) { callback(ret[docs].name); } });
 if (err) throw err;
 console.log(docs);
 });
 //this.res.write("Hi");
-
+*/
  /*  var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
 */
+getAllDocs(docs);
 this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 /*
