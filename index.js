@@ -119,7 +119,7 @@ server = http.createServer(function (req, res, err) {
 
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
-console.log(chunk);
+console.log(req);
   });
 
 res.on('data', function (chunkres) {
