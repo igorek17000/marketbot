@@ -303,19 +303,20 @@ this.res.end();
 }
 
 async function clicks() {
+/*
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
-
+*/
 var ret = [];
-var docs = [];
+var docs = {};
 var msg = docs[{name}];
 
-function getAllDocs(data) {
-docs = data;
+function getAllDocs() {
+//docs = data;
 //init();
-db.collection('details').find({name}).toArray(function(err, docs) {
+db.collection('details').find(docs).forEach(function(err, doc) {
 if(err) throw err;
 
 /*
@@ -323,10 +324,10 @@ if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 //additFunc();
 }
 */
-if (docs) {
+if (doc) {
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
   console.log('Docs found');
-console.log(docs); //db.close();
+console.log(doc); //db.close();
 }
 });
 //bot.command_success();
@@ -342,7 +343,7 @@ console.log(docs);
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
 */
-getAllDocs(docs);
+getAllDocs();
 this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 /*
