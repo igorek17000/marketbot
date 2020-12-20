@@ -318,7 +318,7 @@ var name = this.req.body.name;
 */
 var ret = [];
 var docs = {};
-var msg = docs[{name}];
+//var msg = docs[{name}];
 
 function getAllDocs() {
 //docs = data;
