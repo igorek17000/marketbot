@@ -53,7 +53,7 @@ get: rend
 },
 
 '/clicks' : {
-get: clicks,
+//get: clicks,
 post: clicks
 },
 
@@ -311,12 +311,12 @@ this.res.end();
 }
 
 async function clicks() {
-/*
+
 var name = this.req.body.name;
     var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
-*/
+
 //var ret = [];
 //var docs = {};
 //var msg = docs[{name}];
@@ -324,7 +324,7 @@ var name = this.req.body.name;
 function getAllDocs() {
 //docs = data;
 //init();
-db.collection('details').find({}).toArray(function(err, docs) {
+db.collection('details').find({name}).toArray(function(err, docs) {
 if(err) throw err;
 
 /*
