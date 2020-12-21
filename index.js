@@ -312,7 +312,7 @@ this.res.end();
 
 async function clicks() {
 var docs = [];
-var name = await getAllDo(docs[name]).catch(error => console.log(error.stack)); 
+//var name = await getAllDo(docs[name]).catch(error => console.log(error.stack)); 
  //this.req.body.name;
   /*
   var email = this.req.body.email;
@@ -324,7 +324,7 @@ var name = await getAllDo(docs[name]).catch(error => console.log(error.stack));
 //var msg = docs[{name}];
 
 async function getAllDo(docs) {
-docs = data;
+var docs = docs[name];
 //init();
 db.collection('details').find({}).toArray(function(err, docs) {
 if(err) throw err;
@@ -378,7 +378,7 @@ console.log(name);
 */
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 this.res.write("Hi");
-this.res.write(docs[{}]);
+this.res.write(docs);
 this.res.end(); 
 //});
 }
