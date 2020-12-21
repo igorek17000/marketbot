@@ -323,8 +323,8 @@ var name = await getAllDo(docs[name]).catch(error => console.log(error.stack));
 //var docs = {};
 //var msg = docs[{name}];
 
-async function getAllDo() {
-//docs = data;
+async function getAllDo(function(data) {
+docs = data;
 //init();
 db.collection('details').find({}).toArray(function(err, docs) {
 if(err) throw err;
@@ -341,6 +341,7 @@ console.log(docs); //db.close();
 }
 });
 //bot.command_success();
+return docs;
 }
 
 /*db.collection('details').find({ALEX DE AGUIAR}).toArray(function(err, docs) { // callback) { if (docs || callback) { callback(ret[docs].name); } });
@@ -377,7 +378,7 @@ console.log(name);
 */
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 this.res.write("Hi");
-this.res.write(name);
+this.res.write(docs[{}]);
 this.res.end(); 
 //});
 }
