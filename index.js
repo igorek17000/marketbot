@@ -311,7 +311,11 @@ this.res.end();
 }
 
 async function clicks() {
-var docs = {};
+var docs;
+var i;
+for (var i in docs) {
+i = 0; i++;
+}
 //var name = await getAllDo(docs[name]).catch(error => console.log(error.stack)); 
  //this.req.body.name;
   /*
@@ -328,17 +332,18 @@ var docs;
 //init();
 db.collection('details').find({}).toArray(function(err, docs) {
 if(err) throw err;
-
+docs = docs[i];
+global.docs = docs;
 /*
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 //additFunc();
 }
 */
-if (docs) {
+//if (docs) {
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
   console.log('Docs found');
 console.log(docs); //db.close();
-}
+//}
 });
 //bot.command_success();
 return docs;
