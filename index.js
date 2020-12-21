@@ -312,7 +312,7 @@ this.res.end();
 
 async function clicks() {
 
-var name = await getAllDo().catch(error => console.log(error.stack)); 
+var name = await getAllDo(docs[name]).catch(error => console.log(error.stack)); 
  //this.req.body.name;
   /*
   var email = this.req.body.email;
