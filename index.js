@@ -311,7 +311,7 @@ this.res.end();
 }
 
 async function clicks() {
-
+var docs = [];
 var name = await getAllDo(docs[name]).catch(error => console.log(error.stack)); 
  //this.req.body.name;
   /*
