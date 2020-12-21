@@ -324,7 +324,7 @@ var name = this.req.body.name;
 function getAllDocs() {
 //docs = data;
 //init();
-db.collection('details').find({}).forEach(function(err, docs) {
+db.collection('details').find().forEach(function(err, docs) {
 if(err) throw err;
 
 /*
