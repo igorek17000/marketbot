@@ -378,7 +378,7 @@ console.log(name);
 */
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 this.res.write("Hi");
-this.res.write(docs);
+this.res.write(docs[{}]);
 this.res.end(); 
 //});
 }
