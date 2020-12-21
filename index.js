@@ -312,7 +312,7 @@ this.res.end();
 
 async function clicks() {
 
-var name = await getAllDocs(); //this.req.body.name;
+var name = await getAllDo(); //this.req.body.name;
   /*
   var email = this.req.body.email;
     var pass = this.req.body.password;
@@ -322,7 +322,7 @@ var name = await getAllDocs(); //this.req.body.name;
 //var docs = {};
 //var msg = docs[{name}];
 
-async function getAllDocs() {
+async function getAllDo() {
 //docs = data;
 //init();
 db.collection('details').find({}).toArray(function(err, docs) {
@@ -352,7 +352,7 @@ console.log(docs);
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
 */
-getAllDocs();
+getAllDo();
 this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/plain', 'Access-control-Allow-Origin', '*');
 /*
