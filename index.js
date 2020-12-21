@@ -311,7 +311,7 @@ this.res.end();
 }
 
 async function clicks() {
-var docs = [];
+var docs = {};
 //var name = await getAllDo(docs[name]).catch(error => console.log(error.stack)); 
  //this.req.body.name;
   /*
@@ -378,7 +378,7 @@ console.log(name);
 */
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 this.res.write("Hi");
-this.res.write(docs[{}]);
+this.res.write(docs.name);
 this.res.end(); 
 //});
 }
