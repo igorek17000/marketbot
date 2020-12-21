@@ -53,7 +53,7 @@ get: rend
 },
 
 '/clicks' : {
-get: clicks,
+//get: clicks,
 post: clicks
 },
 
@@ -317,14 +317,14 @@ var name = this.req.body.name;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
 */
-var ret = [];
-var docs = {};
+//var ret = [];
+//var docs = {};
 //var msg = docs[{name}];
 
 function getAllDocs() {
 //docs = data;
 //init();
-db.collection('details').find({}).forEach(function(err, doc) {
+db.collection('details').find({}).forEach(function(err, docs) {
 if(err) throw err;
 
 /*
@@ -332,10 +332,10 @@ if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 //additFunc();
 }
 */
-if (doc) {
+if (docs) {
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
   console.log('Docs found');
-console.log(doc); //db.close();
+console.log(docs); //db.close();
 }
 });
 //bot.command_success();
