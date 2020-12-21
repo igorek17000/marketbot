@@ -323,7 +323,7 @@ var docs = {};
 function getAllDocs() {
 //docs = data;
 //init();
-db.collection('details').find(docs).forEach(function(err, doc) {
+db.collection('details').find({}).forEach(function(err, doc) {
 if(err) throw err;
 
 /*
