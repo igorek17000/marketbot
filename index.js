@@ -53,8 +53,8 @@ get: rend
 },
 
 '/clicks' : {
-get: clicks
-//post: clicks
+get: clicks,
+post: clicks
 },
 
 '/signup_success' : {
