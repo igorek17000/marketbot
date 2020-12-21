@@ -324,7 +324,7 @@ var docs = [];
 //var msg = docs[{name}];
 
 async function getAllDo(docs) {
-var docs = docs[name];
+var docs = docs[];
 //init();
 db.collection('details').find({}).toArray(function(err, docs) {
 if(err) throw err;
