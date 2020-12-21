@@ -312,19 +312,20 @@ this.res.end();
 
 async function clicks() {
 
-var name = this.req.body.name;
-    var email = this.req.body.email;
+var name = await getAllDocs(); //this.req.body.name;
+  /*
+  var email = this.req.body.email;
     var pass = this.req.body.password;
     var phone = this.req.body.phone;
-
+*/
 //var ret = [];
 //var docs = {};
 //var msg = docs[{name}];
 
-function getAllDocs() {
+async function getAllDocs() {
 //docs = data;
 //init();
-db.collection('details').find({name}).toArray(function(err, docs) {
+db.collection('details').find({}).toArray(function(err, docs) {
 if(err) throw err;
 
 /*
@@ -353,7 +354,7 @@ console.log(docs);
 */
 getAllDocs();
 this.res.statusCode = 200;
-this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
+this.res.setHeader('content-type', 'text/plain', 'Access-control-Allow-Origin', '*');
 /*
 var dbhs;
 db.collection('details').find({}, function(err, docs) { 
@@ -384,7 +385,7 @@ function rend_command() {
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 var html = fs.readFileSync(path.join(__dirname + "/commands_success/index.html"));
-this.res.write(html);
+this.res.write(name);
 this.res.end();
 }
 
