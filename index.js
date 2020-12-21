@@ -374,7 +374,7 @@ console.log(dbhs[{name}]);//this.res.send(result);
 if (name) 
 console.log(name);
 */
-var html = fs.readFileSync(path.join(__dirname + "/index.html"));
+//var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 this.res.write("Hi");
 this.res.write(name);
 this.res.end(); 
