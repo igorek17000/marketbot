@@ -131,12 +131,13 @@ console.log(chunkres);
 */
 
   router.dispatch(req, res, function(err) {
+/*
 res.on('data', function(res) {
 //res.chunks.push(chunkres.toString());
 console.log('---------');
 console.log(res);
 });
-
+*/
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
 
