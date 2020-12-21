@@ -332,7 +332,7 @@ var docs;
 //init();
 db.collection('details').find({}).toArray(function(err, docs) {
 if(err) throw err;
-docs = docs[i];
+//docs = docs[i];
 global.docs = docs;
 /*
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
