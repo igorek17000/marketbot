@@ -376,7 +376,7 @@ console.log(name);
 */
 var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 this.res.write("Hi");
-this.res.write(html);
+this.res.write(name);
 this.res.end(); 
 //});
 }
@@ -385,7 +385,7 @@ function rend_command() {
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 var html = fs.readFileSync(path.join(__dirname + "/commands_success/index.html"));
-this.res.write(name);
+this.res.write(html);
 this.res.end();
 }
 
