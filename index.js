@@ -312,7 +312,8 @@ this.res.end();
 
 async function clicks() {
 
-var name = await getAllDo(); //this.req.body.name;
+var name = await getAllDo().catch(error => console.log(error.stack)); 
+ //this.req.body.name;
   /*
   var email = this.req.body.email;
     var pass = this.req.body.password;
