@@ -323,7 +323,7 @@ var name = await getAllDo(docs[name]).catch(error => console.log(error.stack));
 //var docs = {};
 //var msg = docs[{name}];
 
-async function getAllDo(function(data) {
+async function getAllDo(docs) {
 docs = data;
 //init();
 db.collection('details').find({}).toArray(function(err, docs) {
