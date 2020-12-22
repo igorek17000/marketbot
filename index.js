@@ -202,7 +202,7 @@ console.log('App Listening');
 
 app.get('/hi', function(req, res) {
 res.send('Hello');
-}
+});
 
 /*
 app.post('/signup_success', function(req,res){
