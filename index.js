@@ -198,7 +198,7 @@ app.use(bodyParser.urlencoded({
 
 app.listen(port, ip, function() {
 console.log('App Listening');
-}
+});
 
 app.get('/hi', function(req, res) {
 res.send('Hello');
