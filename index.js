@@ -36,7 +36,7 @@ today       = require('./bot.js');
 //var countdown;
 
 //image       = require('./2A34A9R.jpg');
-*/
+/*
 router = new director.http.Router({
   '/'    : {
     get: ping
