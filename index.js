@@ -36,7 +36,7 @@ today       = require('./bot.js');
 //var countdown;
 
 //image       = require('./2A34A9R.jpg');
-
+/*
 router = new director.http.Router({
   '/'    : {
     get: ping
@@ -146,7 +146,7 @@ console.log(res);
 
 });
 
-
+*/
 port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
 ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
