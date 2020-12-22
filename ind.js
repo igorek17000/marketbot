@@ -34,5 +34,11 @@ var app = express();
 //}));
 
 
-app.post('/', function(req, res){
+app.get('/', function(req, res){
   }
+
+
+var port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
+var ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1"; //server.listen(port, ip); 
+app.listen(port, ip, function() {
+console.log('Server started at ' + date + ' & listening on port ' + port);
