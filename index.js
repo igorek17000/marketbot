@@ -190,7 +190,7 @@ var app = express();
 
 app.use(bodyParser.json());
 
-app.use(express.static('public'));
+//app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
 
    extended: true
