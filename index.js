@@ -36,7 +36,7 @@ today       = require('./bot.js');
 //var countdown;
 
 //image       = require('./2A34A9R.jpg');
-
+*/
 router = new director.http.Router({
   '/'    : {
     get: ping
@@ -121,14 +121,14 @@ server = http.createServer(function (req, res, err) {
     req.chunks.push(chunk.toString());
 console.log(chunk);
   });
-
+*/
 /*
 res.on('data', function (chunkres) {
 res.chunks.push(chunkres.toString());
 console.log('---------');
 console.log(chunkres);
 });
-*/
+
 
  router.dispatch(req, res, function(err) {
 /*
@@ -138,7 +138,7 @@ console.log('---------');
 console.log(res);
 });
 */
-
+/*
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
 
@@ -146,11 +146,11 @@ console.log(res);
 
 
 });
-
+*/
 
 port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
 ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
-
+/*
 //server.listen(port, ip);
 
 server.listen(port, ip, function() {
@@ -159,7 +159,7 @@ console.log('Server started at ' + date + ' & listening on port ' + port);
 
 //console.log((new Date()) + ' Server is listening on port ' + port);
 });
-
+*/
 //--------------
 
 
@@ -204,7 +204,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/', function(req, res) {
-res.send('Hello');
+res.writeHead(200); 
+res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");}
+//res.send('Hello');
 });
 
 /*
