@@ -209,6 +209,17 @@ res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-per
 //res.send('Hello');
 });
 
+app.get('/countdown', function(req, res) {
+//res.writeHead(200); 
+res.setHeader('Content-type', 'text/html');
+var html = fs.readFileSync(path.join(__dirname + "/views/countdown.html"));
+//this.res.write(html);
+//this.res.end();
+
+res.send(html);
+//res.send('Hello');
+});
+
 /*
 app.post('/signup_success', function(req,res){
 
