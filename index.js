@@ -189,6 +189,12 @@ var app = express();
   
 
 
+
+
+app.listen(port, ip, function() {
+console.log('App Listening');
+});
+
 app.use(bodyParser.json());
 
 //app.use(express.static('public'));
@@ -196,10 +202,6 @@ app.use(bodyParser.urlencoded({
 
    extended: true
 }));
-
-app.listen(port, ip, function() {
-console.log('App Listening');
-});
 
 app.get('/hi', function(req, res) {
 res.send('Hello');
