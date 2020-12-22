@@ -36,7 +36,7 @@ today       = require('./bot.js');
 //var countdown;
 
 //image       = require('./2A34A9R.jpg');
-/*
+
 router = new director.http.Router({
   '/'    : {
     get: ping
@@ -130,7 +130,7 @@ console.log(chunkres);
 });
 */
 
- //------ router.dispatch(req, res, function(err) {
+ router.dispatch(req, res, function(err) {
 /*
 res.on('data', function(res) {
 //res.chunks.push(chunkres.toString());
@@ -138,7 +138,7 @@ console.log('---------');
 console.log(res);
 });
 */
-/*
+
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
 
@@ -147,18 +147,18 @@ console.log(res);
 
 });
 
-*/
+
 port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
 ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
 //server.listen(port, ip);
 
-//server.listen(port, ip, function() {
-//console.log('Server started at ' + date + ' & listening on port ' + port);
+server.listen(port, ip, function() {
+console.log('Server started at ' + date + ' & listening on port ' + port);
 //router.post('Server');
 
 //console.log((new Date()) + ' Server is listening on port ' + port);
-//});
+});
 
 //--------------
 
