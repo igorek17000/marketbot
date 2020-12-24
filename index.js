@@ -221,7 +221,8 @@ res.send(html);
 });
 
 app.route('/tester') 
-.get((req, res) => getLoginPage(req, res)) 
+.get((req, res) => getLoginPage(req, res, next))
+next(); 
 .post((req, res) => doLogin(req, res)) 
 
 doLogin = (req, res) => { 
