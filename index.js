@@ -220,6 +220,21 @@ res.send(html);
 //res.send('Hello');
 });
 
+app.route('/tester') 
+.get((req, res) => getLoginPage(req, res)) 
+.post((req, res) => doLogin(req, res)) 
+
+doLogin = (req, res) => { 
+res.send('doLogin'); 
+} 
+
+getLoginPage = (req, res) => { 
+res.send('getLoginPage'); 
+} 
+
+
+
+
 /*
 app.post('/signup_success', function(req,res){
 
