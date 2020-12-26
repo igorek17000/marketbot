@@ -225,17 +225,18 @@ app.route('/tester')
 .post((req, res) => doLogin(req, res)) 
 
 doLogin = (req, res) => { 
-res.send('doLogin'); 
+bot.respond;
+//res.send('doLogin'); 
 } 
 
 getLoginPage = (req, res) => { 
 //res.send('getLoginPage'); 
+res.writeHead(200);
 res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 
 }
 
-res.redirect('/countdown'); 
-} 
+
 
 
 
