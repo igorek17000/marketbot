@@ -197,11 +197,19 @@ console.log('App Listening');
 
 app.use(bodyParser.json());
 
-//app.use(express.static('public'));
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
 
    extended: true
 }));
+
+app.on('data', function(chunck) {
+req.chunks = []; 
+//req.on('data', function (chunk) { 
+req.chunks.push(chunk.toString());
+console.log(chunk); 
+}));
+
 
 app.get('/', function(req, res) {
 //res.writeHead(200); 
@@ -225,7 +233,7 @@ app.route('/tester')
 .post((req, res) => doLogin(req, res)) 
 
 doLogin = (req, res) => { 
-bot.respond;
+bot.respond();
 //res.send('doLogin'); 
 } 
 
