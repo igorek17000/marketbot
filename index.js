@@ -240,14 +240,14 @@ res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-per
 
 app.get('/init', function(req, res) {
 //res.writeHead(200); 
-bot.init;
+bot.init();
 res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 });
 
 app.post('/init', function(req, res) {
 //res.writeHead(200); 
-bot.init;
+bot.init();
 res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 });
@@ -259,7 +259,7 @@ res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-per
 });
 
 app.post('/bot/:botRoom', function(req, res) {
-bot.respond; //res.writeHead(200); 
+bot.respond(); //res.writeHead(200); 
 res.end(); //"I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 });
