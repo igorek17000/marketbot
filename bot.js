@@ -116,7 +116,7 @@ exports.init = function() {
 
 
 exports.respond = function(botRoom) {
-  var request = JSON.parse(this.req.chunks[0]);
+  var request = JSON.parse(req.chunks[0]);
 
   var dataHash = {
 
@@ -129,8 +129,8 @@ exports.respond = function(botRoom) {
     owner:        config.env().owner
   };
 
-  this.res.writeHead(200);
-  this.res.end();
+  res.writeHead(200);
+  res.end();
 
  // if (dataHash.request.sender_type == 'bot') return;
   dataHash.request.text = dataHash.request.text.trim();
