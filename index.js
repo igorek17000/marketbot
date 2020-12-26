@@ -230,7 +230,8 @@ res.send('doLogin');
 } 
 
 getLoginPage = (req, res) => { 
-res.send('getLoginPage'); 
+//res.send('getLoginPage'); 
+res.redirect('/countdown'); 
 } 
 
 
