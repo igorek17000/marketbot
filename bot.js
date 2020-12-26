@@ -108,8 +108,8 @@ var checkCommandsHSH = [alexBot, flynnBot, emailBot, birthdayBot, api, mods, sys
 exports.init = function() {
   var req = this.req;
   init.initPage(req, function(body){
-    res.writeHead(200, {"Content-Type": "text/html"});
-    res.end(body);
+    this.res.writeHead(200, {"Content-Type": "text/html"});
+    this.res.end(body);
   });
 }
 
@@ -129,8 +129,8 @@ exports.respond = function(botRoom) {
     owner:        config.env().owner
   };
 
-  res.writeHead(200);
-  res.end();
+  this.res.writeHead(200);
+  this.res.end();
 
  // if (dataHash.request.sender_type == 'bot') return;
   dataHash.request.text = dataHash.request.text.trim();
@@ -532,8 +532,8 @@ var cmdarray = [];
  }
 
 var output = buildHTML(cmdArr, config.bot_name);
-  res.writeHead(200, {"Content-Type": "text/html"});
-  res.end(output);
+  this.res.writeHead(200, {"Content-Type": "text/html"});
+  this.res.end(output);
 
 
 }
