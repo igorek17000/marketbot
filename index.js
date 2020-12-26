@@ -186,7 +186,14 @@ db.once('open', function(callback){
 
 var app = express();
 
-  
+  app.on('data', function(chunk) {
+req.chunks = []; 
+//req.on('data', function(chunck) {
+
+//req.on('data', function (chunk) { 
+req.chunks.push(chunk.toString());
+console.log(chunk); 
+});
 
 
 
@@ -202,7 +209,7 @@ app.use(bodyParser.urlencoded({
 
    extended: true
 }));
-
+/*
 app.on('data', function(chunk) {
 req.chunks = []; 
 //req.on('data', function(chunck) {
@@ -211,7 +218,7 @@ req.chunks = [];
 req.chunks.push(chunk.toString());
 console.log(chunk); 
 });
-
+*/
 
 app.get('/', function(req, res) {
 //res.writeHead(200); 
