@@ -203,9 +203,9 @@ app.use(bodyParser.urlencoded({
    extended: true
 }));
 
-app.on('data', function(req, res) {
+app.on('data', function(chunk) {
 req.chunks = []; 
-req.on('data', function(chunck) {
+//req.on('data', function(chunck) {
 
 //req.on('data', function (chunk) { 
 req.chunks.push(chunk.toString());
