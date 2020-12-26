@@ -148,6 +148,15 @@ console.log(res);
 });
 */
 
+http.createServer(function (req, res) {
+  req.chunks = [];
+  res.chunks = [];
+
+  req.on('data', function (chunk) {
+    req.chunks.push(chunk.toString());
+console.log(chunk.toString());
+  });
+});
 port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
 ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 /*
