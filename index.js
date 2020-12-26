@@ -203,12 +203,14 @@ app.use(bodyParser.urlencoded({
    extended: true
 }));
 
-app.on('data', function(chunck) {
+app.on('data', function(req, res) {
 req.chunks = []; 
+req.on('data', function(chunck) {
+
 //req.on('data', function (chunk) { 
 req.chunks.push(chunk.toString());
 console.log(chunk); 
-}));
+});
 
 
 app.get('/', function(req, res) {
