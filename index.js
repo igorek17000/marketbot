@@ -259,14 +259,15 @@ res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-pers
 });
 
 app.post('/bot/:botRoom', function(req, res) {
-req.chunks = [];
+/*req.chunks = [];
   res.chunks = [];
 
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
 console.log(chunk.toString());
   });
-bot.respond(botRoom); //res.writeHead(200); 
+*/
+bot.respond(); //res.writeHead(200); 
 //res.end(); //"I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 });
