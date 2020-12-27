@@ -116,7 +116,7 @@ exports.init = function() {
 
 
 exports.respond = function(botRoom) {
-var botRoom = rooms.getRoom(botRoom);
+var botRoom = rooms.getRoomPath(botRoom);
 var chuncks = [];
   var request = JSON.parse(req.chunks.push(botRoom));
 
