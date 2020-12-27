@@ -1,6 +1,6 @@
 #!/bin/env node
 
-var req.chuncks = [];
+chuncks = [];
 //var req = this.req;
 //var res = this.res;
 var matchHash;
@@ -239,20 +239,20 @@ res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-pers
 
 
 app.get('/init', function(req, res) {
-var body = {};
+//var body = {};
 //res.writeHead(200); 
-bot.init(body);
-res.writeHead(200);
-res.end(body); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
+bot.init();
+//res.writeHead(200);
+//res.end(body); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 });
 
 app.post('/init', function(req, res) {
-var body = {};
+//var body = {};
 //res.writeHead(200); 
-bot.init(body);
-res.writeHead(200);
-res.end(body); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
+bot.init();
+//res.writeHead(200);
+//res.end(body); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 });
 
