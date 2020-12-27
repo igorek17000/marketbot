@@ -118,7 +118,7 @@ exports.init = function() {
 exports.respond = function(botRoom) {
 var botRoom = rooms.getUserPath(botRoom);
 var chuncks = [];
-  var request = JSON.parse(req.chunks.push(botRoom));
+  var request = JSON.parse(this.req.chunks.push(botRoom));
 
   var dataHash = {
 
