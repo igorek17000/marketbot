@@ -148,7 +148,7 @@ console.log(res);
 });
 */
 /*
-http.createServer(function (req, res) {
+http.createServer(appfunction (req, res) {
   req.chunks = [];
   res.chunks = [];
 
@@ -206,14 +206,15 @@ console.log(chunk);
 });
 
 */
-http.createServer(function (req, res) { 
+http.createServer(app) { 
+var req = this.req;
 req.chunks = []; 
-res.chunks = []; 
+//res.chunks = []; 
 req.on('data', function (chunk) { 
 req.chunks.push(chunk.toString());
 //console.log(chunk.toString()); 
 });
-});
+}).listen(port);
 
 app.listen(port, function() {
 console.log('App Listening');
