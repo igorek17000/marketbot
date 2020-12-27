@@ -239,20 +239,25 @@ res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-pers
 
 
 app.get('/init', function(req, res) {
+var body = {};
 //res.writeHead(200); 
-bot.init();
-//res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
+bot.init(body);
+res.writeHead(200);
+res.end(body); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 });
 
 app.post('/init', function(req, res) {
+var body = {};
 //res.writeHead(200); 
-bot.init();
-//res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
+bot.init(body);
+res.writeHead(200);
+res.end(body); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 });
 
 app.get('/bot/:botRoom', function(req, res) {
+/*
 req.chunks = [];
  
 
@@ -260,21 +265,23 @@ req.chunks = [];
     req.chunks.push(chunk.toString());
 //console.log(chunk.toString());
   });
-
+*/
 res.writeHead(200); 
 res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 });
 
 app.post('/bot/:botRoom', function(req, res) {
-/*req.chunks = [];
-  res.chunks = [];
+/*
+chunks = [];
+ // res.chunks = [];
 
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
 console.log(chunk.toString());
   });
 */
+
 bot.respond(); //res.writeHead(200); 
 //res.end(); //"I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
