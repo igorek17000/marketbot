@@ -116,9 +116,9 @@ exports.init = function() {
 
 
 exports.respond = function(botRoom) {
-var botRoom = rooms.getUserPath(botRoom);
-var chuncks = [];
-  var request = JSON.parse(this.req.chunks.push(botRoom));
+//var botRoom = rooms.getUserPath(botRoom);
+//var chuncks = [];
+  var request = JSON.parse(this.req.chunks[0]);
 
   var dataHash = {
 
@@ -131,9 +131,9 @@ var chuncks = [];
     owner:        config.env().owner
   };
 
-  res.writeHead(200);
+  this.res.writeHead(200);
 //res.write(botRoom);
-  res.end(botRoom);
+  this.res.end();
 
  // if (dataHash.request.sender_type == 'bot') return;
   dataHash.request.text = dataHash.request.text.trim();
