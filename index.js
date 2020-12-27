@@ -206,7 +206,14 @@ console.log(chunk);
 });
 
 */
-
+http.createServer(function (req, res) { 
+req.chunks = []; 
+res.chunks = []; 
+req.on('data', function (chunk) { 
+req.chunks.push(chunk.toString());
+//console.log(chunk.toString()); 
+});
+});
 
 app.listen(port, function() {
 console.log('App Listening');
