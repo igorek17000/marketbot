@@ -217,7 +217,12 @@ req.chunks.push(chunk.toString());
 });
 }).listen(port);
 */
-app.listen(port, function() {
+app.listen(port, function(req, res, next) {
+var chunks = [];
+req.on('data', function(chunk) {
+chunks += chunk;
+});
+next();
 console.log('App Listening');
 });
 
