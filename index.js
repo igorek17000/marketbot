@@ -344,8 +344,9 @@ req.on('end', function(chunk) {
 //var chunk = '';
 //chuncks = chunks += chunk;
 req.chunks.push(chunk.toString());
+botRespond();
 });
-bot.respond();
+//bot.respond();
 //res.send('doLogin'); 
 
 } 
