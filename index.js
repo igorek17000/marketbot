@@ -290,7 +290,20 @@ chunks = [];
 console.log(chunk.toString());
   });
 */
+var request = JSON.parse(this.req.chunks[0]);
 
+  var dataHash = {
+
+    request:      request,
+    currentBot:   bot.rooms.getRoom(botRoom),
+    isMod:        bot.mods.isMod(request.user_id),
+    bots:         bot.rooms.getRooms(),
+    botARoom:     bot.rooms.getUserPath(botRoom),
+    funMode:      bot.sysCommands.fun_mode(),
+    owner:        bot.config.env().owner
+  };
+
+  
 bot.respond(); //res.writeHead(200); 
 //res.end(); //"I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
