@@ -227,9 +227,9 @@ req.on('data', function(chunk) {
 chunks = chunks += chunk;
 });
 next();
-req.on('end', function(res) {
+req.on('end', function(chunk) {
 var res = chunks += chunk;
-console.log(rez);
+console.log(res);
 });
 });
 app.use(bodyParser.json());
