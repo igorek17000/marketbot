@@ -229,7 +229,7 @@ var res = chunks += chunk;
 req.on('data', function(chunk) {
 chunks = chunks += chunk;
 });
-req.end();
+//req.end();
 next();
 req.on('end', function(chunk) {
 var chunk = '';
