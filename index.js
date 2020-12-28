@@ -338,6 +338,12 @@ app.route('/bot/:botRoom')
 .post((req, res) => doLogin(req, res)) 
 
 doLogin = (req, res) => { 
+req.chunks = [];
+  res.chunks = [];
+
+  req.on('data', function (chunk) {
+    req.chunks.push(chunk.toString());
+});
 bot.respond();
 //res.send('doLogin'); 
 } 
