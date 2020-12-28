@@ -344,6 +344,7 @@ req.on('end', function(chunk) {
 chuncks = chunks += chunk;
 bot.respond();
 //res.send('doLogin'); 
+});
 } 
 
 getLoginPage = (req, res) => { 
