@@ -254,6 +254,7 @@ console.log(res + ' ' + i);
 
 });
 console.log(req.body);
+next();
 });
 app.use(bodyParser.json());
 
