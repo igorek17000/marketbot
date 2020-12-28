@@ -233,7 +233,7 @@ req.on('end', function(chunk) {
 var chunk = '';
 var res = chunks += chunk;
 console.log(res);
-botRespond(res);
+bot.botRespond(res);
 });
 });
 app.use(bodyParser.json());
