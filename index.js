@@ -353,16 +353,21 @@ res.send(html);
 app.route('/bot/:botRoom') 
 .get((req, res) => getLoginPage(req, res))
 .post((req, res) => doLogin(req, res)) 
+var chuncks = [];
+var chunk = '';
+var res = chunks += chunk;
 
 doLogin = (req, res) => { 
-chunks = [];
-req.on('data', function(chunk) {
-//var chunk = '';
-//chuncks = chunks += chunk;
+//chunks = [];
+
+req.on('end', function(chunk) {
+var chunks = [];
+var chunk = '';
+var res = chunks += chunk;
 chunks.push(chunk.toString());
-//bot.botRespond();
+bot.Respond(res);
 });
-bot.respond();
+//bot.respond(res);
 //res.send('doLogin'); 
 
 } 
