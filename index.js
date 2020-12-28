@@ -240,7 +240,7 @@ var o = i++;
 //i = i++
 if (o != 0) {
 o = o + 1; //i++;
-
+}
 
 //i = i++;
 
@@ -248,7 +248,7 @@ o = o + 1; //i++;
 //var res = chunks += chunk;
 console.log(res + ' ' + o);
 //bot.botRespond();
-}
+
 });
 });
 app.use(bodyParser.json());
