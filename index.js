@@ -226,7 +226,7 @@ var chunks = [];
 var chunk = '';
 req.on('data', function(chunk) {
 chunks = chunks += chunk;
-next
+next();
 });
 
 req.on('end', function(chunk) {
