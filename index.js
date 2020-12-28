@@ -224,12 +224,14 @@ console.log('App Listening');
 app.use(function(req, res, next) {
 var chunks = [];
 req.on('data', function(chunk) {
-var dattta = chunks += chunk;
+chunks = chunks += chunk;
 });
 next();
-console.log(dattta);
+req.on('end', function(res) {
+var res = chunks += chunk;
+console.log(rez);
 });
-
+});
 app.use(bodyParser.json());
 
 app.use(express.static('public'));
