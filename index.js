@@ -339,12 +339,15 @@ app.route('/bot/:botRoom')
 .post((req, res) => doLogin(req, res)) 
 
 doLogin = (req, res) => { 
+req.chunks = [];
 req.on('end', function(chunk) {
 //var chunk = '';
-chuncks = chunks += chunk;
+//chuncks = chunks += chunk;
+req.chunks.push(chunk.toString());
+});
 bot.respond();
 //res.send('doLogin'); 
-});
+
 } 
 
 getLoginPage = (req, res) => { 
