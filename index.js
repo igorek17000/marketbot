@@ -238,7 +238,7 @@ i = i + 1
 
 
 var res = chunks += chunk;
-console.log(res(i));
+console.log(res + ' ' + i);
 //bot.botRespond();
 });
 });
