@@ -224,12 +224,13 @@ console.log('App Listening');
 app.use(function(req, res, next) {
 var chunks = [];
 req.on('data', function(chunk) {
-chunks = chunks += chunk;
+chunks += chunk;
 });
-next();
+
 req.on('end', function(chunk) {
-var res = chunks += chunk;
+var res = chunk;
 console.log(res);
+next();
 });
 });
 app.use(bodyParser.json());
