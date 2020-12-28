@@ -231,8 +231,14 @@ chunks = chunks += chunk;
 next();
 req.on('end', function(chunk) {
 var chunk = '';
+var o = 0; 
+var a = 1;
+var i = o + a;
+i = i + 1
+
+
 var res = chunks += chunk;
-console.log(res);
+console.log(res(i));
 //bot.botRespond();
 });
 });
