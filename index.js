@@ -264,7 +264,7 @@ bot.init();
 //res.end(body); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 });
-/*
+
 app.get('/bot/:botRoom', function(req, res) {
 
 req.chunks = [];
