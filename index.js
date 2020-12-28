@@ -253,7 +253,7 @@ console.log(res + ' ' + i);
 //bot.botRespond();
 
 });
-console.log(req.body);
+console.log(req.chunks[0]);
 next();
 });
 app.use(bodyParser.json());
