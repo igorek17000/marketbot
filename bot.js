@@ -53,7 +53,7 @@ var mods         = require('./modules/mods');
 
 
 //var countdowner  = require('./modules/countdown-list');
-
+var chuncks = [];
 var commandList  = require('./modules/command-list');
 var commandListSuccess  = require('./commands_success/command-list');
 var rooms        = require('./modules/rooms');
@@ -118,7 +118,7 @@ exports.init = function() {
 exports.respond = function(botRoom) {
 //var botRoom = rooms.getUserPath(botRoom);
 //var chuncks = [];
-  var request = JSON.parse(this.req.body[0]);
+  var request = JSON.parse(this.req.chuncks[0]);
 
   var dataHash = {
 
