@@ -234,7 +234,7 @@ var chunk = '';
 //var o = 0; 
 //var a = 1;
 //var i = o + a;
-for (var i = 0; i = i++);
+for (var i = 0; i = i++)
 if (i != 0) {
 i = i++;
 }
