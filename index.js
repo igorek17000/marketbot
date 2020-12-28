@@ -195,6 +195,7 @@ db.once('open', function(callback){
   
 
 var app = express();
+var chuncks = [];
 /*
   app.on('data', function(chunk) {
 req.chunks = []; 
