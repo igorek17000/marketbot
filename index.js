@@ -274,7 +274,7 @@ req.chunks = [];
     req.chunks.push(chunk.toString());
 //console.log(chunk.toString());
   });
-*/
+
 res.writeHead(200); 
 res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
@@ -289,7 +289,7 @@ chunks = [];
     req.chunks.push(chunk.toString());
 console.log(chunk.toString());
   });
-*/
+
 var request = JSON.parse(this.req.chunks[0]);
 
   var dataHash = {
