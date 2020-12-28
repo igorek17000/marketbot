@@ -238,7 +238,7 @@ var res = chunks += chunk;
 //var a = 1;
 //var i = o + a;
 var i = 0; 
-i = i++;
+//i = i++;
 //var o = i++;
 //i = i++
 //if (o != 0) {
@@ -249,11 +249,11 @@ i = i++;
 
 
 //var res = chunks += chunk;
-console.log(res + ' ' + i);
+console.log(res + ' ' + i++);
 //bot.botRespond();
 
 });
-console.log(this.res);
+console.log(res);
 next();
 });
 app.use(bodyParser.json());
