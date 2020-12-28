@@ -233,7 +233,7 @@ req.on('end', function(chunk) {
 var chunk = '';
 var res = chunks += chunk;
 console.log(res);
-bot.botRespond(res);
+//bot.botRespond();
 });
 });
 app.use(bodyParser.json());
@@ -345,7 +345,7 @@ req.on('end', function(chunk) {
 //var chunk = '';
 //chuncks = chunks += chunk;
 req.chunks.push(chunk.toString());
-botRespond();
+bot.botRespond();
 });
 //bot.respond();
 //res.send('doLogin'); 
