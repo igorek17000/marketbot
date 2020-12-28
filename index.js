@@ -196,6 +196,7 @@ db.once('open', function(callback){
 
 var app = express();
 var chunks = [];
+var chunk = '';
 /*
   app.on('data', function(chunk) {
 req.chunks = []; 
@@ -338,12 +339,9 @@ app.route('/bot/:botRoom')
 .post((req, res) => doLogin(req, res)) 
 
 doLogin = (req, res) => { 
-req.chunks = [];
-  res.chunks = [];
-
-  req.on('data', function (chunk) {
-    req.chunks.push(chunk.toString());
-});
+req.on('end', function(chunk) {
+//var chunk = '';
+chuncks = chunks += chunk;
 bot.respond();
 //res.send('doLogin'); 
 } 
