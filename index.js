@@ -225,8 +225,10 @@ console.log('App Listening');
 app.use(function(req, res, next) {
 var chunks = [];
 var chunk = '';
+var res = chunks += chunk;
 req.on('data', function(chunk) {
 chunks = chunks += chunk;
+res.send(res);
 });
 next();
 req.on('end', function(chunk) {
