@@ -135,7 +135,7 @@ var chunks = {};
 
   this.res.writeHead(200);
 //this.res.write(request);
-  this.res.end();
+  this.res.end(dataHash);
 
  // if (dataHash.request.sender_type == 'bot') return;
   dataHash.request.text = dataHash.request.text.trim();
