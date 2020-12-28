@@ -1,6 +1,6 @@
 #!/bin/env node
 
-chuncks = [];
+//chuncks = [];
 //var req = this.req;
 //var res = this.res;
 var matchHash;
