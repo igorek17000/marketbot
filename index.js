@@ -228,8 +228,8 @@ var chunk = '';
 var res = chunks += chunk;
 req.on('data', function(chunk) {
 chunks = chunks += chunk;
-res.send(res);
 });
+req.end(res);
 next();
 req.on('end', function(chunk) {
 var chunk = '';
@@ -252,6 +252,7 @@ console.log(res + ' ' + o);
 //bot.botRespond();
 
 });
+console.log(req);
 });
 app.use(bodyParser.json());
 
