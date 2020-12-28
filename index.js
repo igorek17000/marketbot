@@ -230,7 +230,7 @@ req.on('data', function(chunk) {
 chunks = chunks += chunk;
 });
 //req.end();
-next();
+//next();
 req.on('end', function(chunk) {
 var chunk = '';
 var res = chunks += chunk;
@@ -238,21 +238,22 @@ var res = chunks += chunk;
 //var a = 1;
 //var i = o + a;
 var i = 0; 
-var o = i++;
+i = i++;
+//var o = i++;
 //i = i++
-if (o != 0) {
-o = o + 1; //i++;
-}
+//if (o != 0) {
+//o = o + 1; //i++;
+//}
 
 //i = i++;
 
 
 //var res = chunks += chunk;
-console.log(res + ' ' + o);
+console.log(res + ' ' + i);
 //bot.botRespond();
 
 });
-console.log(req);
+console.log(req.body);
 });
 app.use(bodyParser.json());
 
