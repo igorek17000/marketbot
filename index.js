@@ -231,20 +231,24 @@ chunks = chunks += chunk;
 next();
 req.on('end', function(chunk) {
 var chunk = '';
+var res = chunks += chunk;
 //var o = 0; 
 //var a = 1;
 //var i = o + a;
-for (var i = 0; i = i++)
-if (i != 0) {
-i = i++;
-}
-}
+var i = 0; 
+var o = i++;
+//i = i++
+if (o != 0) {
+o = o + 1; //i++;
+
+
 //i = i++;
 
 
-var res = chunks += chunk;
-console.log(res + ' ' + i++);
+//var res = chunks += chunk;
+console.log(res + ' ' + o);
 //bot.botRespond();
+}
 });
 });
 app.use(bodyParser.json());
