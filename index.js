@@ -340,14 +340,14 @@ app.route('/bot/:botRoom')
 .post((req, res) => doLogin(req, res)) 
 
 doLogin = (req, res) => { 
-req.chunks = [];
+chunks = [];
 req.on('end', function(chunk) {
 //var chunk = '';
 //chuncks = chunks += chunk;
-req.chunks.push(chunk.toString());
+chunks.push(chunk.toString());
 //bot.botRespond();
 });
-bot.respond(botRoom);
+bot.respond();
 //res.send('doLogin'); 
 
 } 
