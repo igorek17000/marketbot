@@ -234,12 +234,16 @@ var chunk = '';
 //var o = 0; 
 //var a = 1;
 //var i = o + a;
-var i = 0;
+for (var i = 0) {
+if (i != 0) {
 i = i++;
+}
+}
+//i = i++;
 
 
 var res = chunks += chunk;
-console.log(res + ' ' + i);
+console.log(res + ' ' + i++);
 //bot.botRespond();
 });
 });
@@ -348,7 +352,7 @@ app.route('/bot/:botRoom')
 
 doLogin = (req, res) => { 
 chunks = [];
-req.on('end', function(chunk) {
+req.on('data', function(chunk) {
 //var chunk = '';
 //chuncks = chunks += chunk;
 chunks.push(chunk.toString());
