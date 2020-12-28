@@ -217,13 +217,17 @@ req.chunks.push(chunk.toString());
 });
 }).listen(port);
 */
-app.listen(port, function(req, res, next) {
+app.listen(port, function() {
+console.log('App Listening');
+});
+
+app.use(function(req, res, next) {
 var chunks = [];
 req.on('data', function(chunk) {
-chunks += chunk;
+var dattta = chunks += chunk;
 });
 next();
-console.log('App Listening');
+console.log(dattta);
 });
 
 app.use(bodyParser.json());
