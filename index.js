@@ -231,10 +231,11 @@ chunks = chunks += chunk;
 next();
 req.on('end', function(chunk) {
 var chunk = '';
-var o = 0; 
-var a = 1;
-var i = o + a;
-i = i + 1
+//var o = 0; 
+//var a = 1;
+//var i = o + a;
+var i = 0;
+i = i++;
 
 
 var res = chunks += chunk;
