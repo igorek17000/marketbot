@@ -237,7 +237,7 @@ var res = chunks += chunk;
 //var o = 0; 
 //var a = 1;
 //var i = o + a;
-var i = 1++; 
+var i = 1; 
 //i = i++;
 //var o = i++;
 //i = i++
