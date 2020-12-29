@@ -222,7 +222,7 @@ app.listen(port, function() {
 console.log('App Listening');
 });
 
-app.use(function(req, res, next) {
+app.use('/bot/:botRoom', function(req, res, next) {
 var chunks = [];
 var chunk = '';
 var res = chunks += chunk;
@@ -354,7 +354,7 @@ var html = fs.readFileSync(path.join(__dirname + "/views/countdown.html"));
 res.send(html);
 //res.send('Hello');
 });
-
+/*
 app.route('/bot/:botRoom') 
 .get((req, res) => getLoginPage(req, res))
 .post((req, res) => doLogin(req, res)) 
@@ -390,7 +390,7 @@ res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-pers
 
 }
 
-
+*/
 
 
 /*
