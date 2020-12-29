@@ -237,7 +237,7 @@ var res = chunks += chunk;
 //var o = 0; 
 //var a = 1;
 //var i = o + a;
-var i = 0; 
+var i = 1++; 
 //i = i++;
 //var o = i++;
 //i = i++
@@ -249,7 +249,7 @@ var i = 0;
 
 
 //var res = chunks += chunk;
-console.log(res + ' ' + i++);
+console.log(res + ' ' + i);
 //bot.botRespond();
 
 });
