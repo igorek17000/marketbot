@@ -194,7 +194,15 @@ db.once('open', function(callback){
 
   
 
-var app = express();
+var app = express(function(req, res) {
+  req.chunks = [];
+  res.chunks = [];
+
+  req.on('data', function (chunk) {
+    req.chunks.push(chunk.toString());
+//console.log(chunk);
+  });// 
+});
 var chunks = [];
 var chunk = '';
 /*
@@ -223,6 +231,7 @@ console.log('App Listening');
 });
 
 app.use('/bot/:botRoom', function(req, res, next) {
+/*
 var chunks = [];
 req.chunks = [];
 var chunk = '';
@@ -231,6 +240,7 @@ req.on('data', function(chunk) {
 chunks = chunks += chunk;
 req.chunks.push(chunk.toString());
 });
+*/
 //req.end();
 //next();
 req.on('end', function(chunk) {
