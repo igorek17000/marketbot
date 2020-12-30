@@ -122,7 +122,7 @@ chunks = chunks += chunk;
 req.chunks.push(chunk.toString());
 });
 });
-var request = this.req[chunk];
+var request = this.req;
 
   var dataHash = {
 
