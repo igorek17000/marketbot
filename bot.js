@@ -134,7 +134,7 @@ exports.respond = function(botRoom) {
   };
 
   this.res.writeHead(200);
-  this.res.write(request);
+  //this.res.write(request);
   this.res.end();
 
  // if (dataHash.request.sender_type == 'bot') return;
