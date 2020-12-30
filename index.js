@@ -229,7 +229,7 @@ req.chunks.push(chunk.toString());
 app.listen(port, function() {
 console.log('App Listening');
 });
-
+/*
 app.use('/bot/:botRoom', function(req, res, next) {
 /*
 var chunks = [];
@@ -268,6 +268,7 @@ console.log(res + ' ' + i);
 console.log(res);
 next();
 });
+*/
 app.use(bodyParser.json());
 
 app.use(express.static('public'));
@@ -311,9 +312,9 @@ bot.init();
 //res.end(body); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 });
-/*
-app.get('/bot/:botRoom', function(req, res) {
 
+app.get('/bot/:botRoom', function(req, res) {
+/*
 req.chunks = [];
  
 
@@ -321,7 +322,7 @@ req.chunks = [];
     req.chunks.push(chunk.toString());
 //console.log(chunk.toString());
   });
-
+*/
 res.writeHead(200); 
 res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
@@ -350,12 +351,12 @@ var request = JSON.parse(this.req.chunks[0]);
     owner:        bot.config.env().owner
   };
 
-  
+  */
 bot.respond(); //res.writeHead(200); 
 //res.end(); //"I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 });
-*/
+
 app.get('/countdown', function(req, res) {
 //res.writeHead(200); 
 res.setHeader('Content-type', 'text/html');
