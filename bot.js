@@ -120,7 +120,7 @@ exports.respond = function(req, res, botRoom) {
 //var botRoom = [];
 //var chunk = '';
 //chunks = chunks += chunk;
-  var request = JSON.parse(this.req[0]);
+  var request = JSON.parse(this.req);
 
   var dataHash = {
 
