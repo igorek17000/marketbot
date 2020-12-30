@@ -120,6 +120,16 @@ exports.respond = function(req, res, botRoom) {
 var chunks = [];
 //var chunk = '';
 //chunks = chunks += chunk;
+var chunks = [];
+req.chunks = [];
+var chunk = '';
+//var res = chunks += chunk;
+req.on('data', function(chunk) {
+chunks = chunks += chunk;
+req.chunks.push(chunk.toString());
+});
+
+
   var request = this.req.chunks[0];
 
   var dataHash = {
