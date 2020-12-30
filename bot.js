@@ -121,8 +121,8 @@ req.on('data', function(chunk) {
 chunks = chunks += chunk;
 req.chunks.push(chunk.toString());
 });
-});
-var request = this.req.chunk;
+//});
+var request = this.req(chunks);
 
   var dataHash = {
 
@@ -138,7 +138,7 @@ var request = this.req.chunk;
   //res.writeHead(200);
   //this.res.write(request);
   res.send();
-
+});
 
 /*
 
