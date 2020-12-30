@@ -116,13 +116,13 @@ exports.init = function() {
 exports.respond = function(botRoom) {
 var chunks = [];
 var chunk = '';
-app.get('/bot/:botRoom', function(req, res) {
+app.post('/bot/:botRoom', function(req, res) {
 req.on('data', function(chunk) {
 chunks = chunks += chunk;
 req.chunks.push(chunk.toString());
 });
 });
-var request = this.req.dataHash;
+var request = this.req.chunk;
 
   var dataHash = {
 
