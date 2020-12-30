@@ -228,6 +228,7 @@ var chunk = '';
 var res = chunks += chunk;
 req.on('data', function(chunk) {
 chunks = chunks += chunk;
+chunks.push(chunk);
 });
 //req.end();
 //next();
