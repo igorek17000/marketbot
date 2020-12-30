@@ -330,7 +330,7 @@ res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-pers
 
 app.post('/bot/:botRoom', function(req, res) {
 
-req.chunks = [];
+//req.chunks = [];
  // res.chunks = [];
 /*
   req.on('data', function (chunk) {
@@ -360,7 +360,7 @@ req.chunks.push(chunk.toString());
 }); //res.send('Hello');
 */
 res.writeHead(200);
-res.write(chunk);
+//res.write(chunk);
 res.end();
 //});
 });
