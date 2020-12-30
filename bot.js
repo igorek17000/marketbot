@@ -117,6 +117,7 @@ exports.init = function() {
 
 exports.respond = function(req, res, botRoom) {
 //var botRoom = rooms.getUserPath(botRoom);
+var req = this.req;
 var chunks = [];
 //var chunk = '';
 //chunks = chunks += chunk;
