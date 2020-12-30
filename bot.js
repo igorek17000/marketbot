@@ -120,7 +120,7 @@ exports.respond = function(botRoom) {
 var chunks = [];
 //var chunk = '';
 //chunks = chunks += chunk;
-  var request = JSON.parse(this.req.chunks[0]);
+  var request = JSON.parse(this.req.chunks);
 
   var dataHash = {
 
