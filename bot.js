@@ -133,7 +133,7 @@ res.chunks.push(chunk.toString());
 });
 
 
-  var request = this.res.chunks[0];
+  var request = this.res.chunks;
 
   var dataHash = {
 
