@@ -240,7 +240,7 @@ req.on('data', function(chunk) {
 chunks = chunks += chunk;
 req.chunks.push(chunk.toString());
 });
-*/
+
 //req.end();
 //next();
 req.on('end', function(chunk) {
