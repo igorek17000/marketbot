@@ -115,12 +115,12 @@ exports.init = function() {
 
 
 
-exports.respond = function(req, function(botRoom) {
+exports.respond = function(botRoom) {
 //var botRoom = rooms.getUserPath(botRoom);
-//var chunks = [];
+var chunks = [];
 //var chunk = '';
 //chunks = chunks += chunk;
-  var request = JSON.parse(req.chunks[0]);
+  var request = JSON.parse(this.req.chunks[0]);
 
   var dataHash = {
 
@@ -153,7 +153,7 @@ exports.respond = function(req, function(botRoom) {
       if (check) sendDelayedMessage(result, attachments, rooms.getRoom(botRoom).id);
     });
 }
-  });
+  }
 
 /*
 exports.countdown = function() {
