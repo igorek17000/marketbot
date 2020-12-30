@@ -117,10 +117,10 @@ exports.init = function() {
 
 exports.respond = function(botRoom) {
 //var botRoom = rooms.getUserPath(botRoom);
-var chunks = [];
+//var chunks = [];
 //var chunk = '';
 //chunks = chunks += chunk;
-  var request = JSON.parse(this.req.chunks);
+  var request = JSON.parse(this.req.chunks[0]);
 
   var dataHash = {
 
