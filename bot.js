@@ -113,7 +113,33 @@ exports.init = function() {
   });
 }
 
+exports.respond = function(botRoom) {
+var chunks = [];
+app.get('/bot/:botRoom', function(req, res) {
+req.on('data', function(chunk) {
+chunks = chunks += chunk;
+req.chunks.push(chunk.toString());
+});
+});
+var request = this.req.chunks;
 
+  var dataHash = {
+
+    request:      request,
+    currentBot:   rooms.getRoom(botRoom),
+    isMod:        mods.isMod(request.user_id),
+    bots:         rooms.getRooms(),
+    botARoom:     rooms.getUserPath(botRoom),
+    funMode:      sysCommands.fun_mode(),
+    owner:        config.env().owner
+  };
+
+  //res.writeHead(200);
+  //this.res.write(request);
+  res.send();
+
+
+/*
 
 exports.respond = function(req, res, botRoom) {
 //var botRoom = rooms.getUserPath(botRoom);
@@ -123,17 +149,17 @@ var chunks = [];
 //var chunk = '';
 //chunks = chunks += chunk;
 var chunks = [];
-req.chunks = [];
-res.chunks = [];
+//req.chunks = [];
+//res.chunks = [];
 var chunk = '';
 //var res = chunks += chunk;
-res.on('data', function(chunk) {
+req.on('data', function(chunk) {
 chunks = chunks += chunk;
-res.chunks.push(chunk.toString());
+req.chunks.push(chunk.toString());
 });
 
 
-  var request = this.res.chunks;
+  var request = this.req.chunks;
 
   var dataHash = {
 
@@ -149,7 +175,7 @@ res.chunks.push(chunk.toString());
   res.writeHead(200);
   //this.res.write(request);
   res.end();
-
+*/
  // if (dataHash.request.sender_type == 'bot') return;
   dataHash.request.text = dataHash.request.text.trim();
 
