@@ -120,7 +120,7 @@ exports.respond = function(botRoom) {
 //var chunks = [];
 //var chunk = '';
 //chunks = chunks += chunk;
-  var request = JSON.parse(this.req.chunks[0]);
+  var request = JSON.parse(req.chunks[0]);
 
   var dataHash = {
 
@@ -133,9 +133,9 @@ exports.respond = function(botRoom) {
     owner:        config.env().owner
   };
 
-  this.res.writeHead(200);
+  res.writeHead(200);
   //this.res.write(request);
-  this.res.end();
+  res.end();
 
  // if (dataHash.request.sender_type == 'bot') return;
   dataHash.request.text = dataHash.request.text.trim();
