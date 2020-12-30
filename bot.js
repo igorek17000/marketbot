@@ -118,16 +118,18 @@ exports.init = function() {
 exports.respond = function(req, res, botRoom) {
 //var botRoom = rooms.getUserPath(botRoom);
 var req = this.req;
+var res = this.res;
 var chunks = [];
 //var chunk = '';
 //chunks = chunks += chunk;
 var chunks = [];
 req.chunks = [];
+res.chunks = [];
 var chunk = '';
 //var res = chunks += chunk;
-req.on('data', function(chunk) {
+res.on('data', function(chunk) {
 chunks = chunks += chunk;
-req.chunks.push(chunk.toString());
+res.chunks.push(chunk.toString());
 });
 
 
