@@ -115,7 +115,7 @@ exports.init = function() {
 
 exports.respond = function(botRoom) {
 var chunks = [];
-var chunk = {};
+var chunk = '';
 app.get('/bot/:botRoom', function(req, res) {
 req.on('data', function(chunk) {
 chunks = chunks += chunk;
