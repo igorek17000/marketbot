@@ -224,11 +224,12 @@ console.log('App Listening');
 
 app.use('/bot/:botRoom', function(req, res, next) {
 var chunks = [];
+var req.chunks = [];
 var chunk = '';
 var res = chunks += chunk;
 req.on('data', function(chunk) {
 chunks = chunks += chunk;
-chunks.push(chunk);
+req.chunks.push(chunk.toString());
 });
 //req.end();
 //next();
