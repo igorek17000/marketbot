@@ -360,7 +360,7 @@ res.writeHead(200);
 res.write(chunk);
 res.end();
 });
-
+});
 app.get('/countdown', function(req, res) {
 //res.writeHead(200); 
 res.setHeader('Content-type', 'text/html');
