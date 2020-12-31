@@ -116,17 +116,18 @@ exports.init = function() {
 exports.respond = function(botRoom) {
 var req = this.req;
 var chunks = [];
-/*
 var chunk = '';
-app.post('/bot/:botRoom', function(req, res) {
-req.on('data', function(chunk) {
-chunks = chunks += chunk;
-req.chunks.push(chunk.toString());
+var res = chunks += chunk;
+var request = JSON.stringify(req.res[0]); 
+//app.post('/bot/:botRoom', function(req, res) {
+//req.on('data', function(chunk) {
+//chunks = chunks += chunk;
+//res.send(chunk.toString());
 });
 //});
 */
 
-var request = JSON.stringify(req.chunks[0]); 
+//var request = JSON.stringify(req.chunks[0]); 
 
 //var request = bodyParser.json(this.req.chunks); //chunk
 /*
@@ -165,7 +166,7 @@ console.log(chunk.toString());
   //this.res.writeHead(200);
 //this.res.write(request);
   //this.res.write(request);
-  res.send(request);
+  res.send(res);
 //});
 
 /*
