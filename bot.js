@@ -114,6 +114,7 @@ exports.init = function() {
 }
 
 exports.respond = function(botRoom) {
+/*
 var chunks = [];
 var chunk = '';
 app.post('/bot/:botRoom', function(req, res) {
@@ -122,7 +123,29 @@ chunks = chunks += chunk;
 req.chunks.push(chunk.toString());
 });
 //});
-var request = this.req;
+*/
+var request =  this.req.params[0]; //chunk
+/*
+var http = require('http'); 
+http.post({ 
+options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bot/:botRoom',
+    method: 'POST'
+  };
+
+hostname: 'localhost', 
+port: 11000, 
+path: '/', 
+agent: false 
+}).on('response', (response) => { 
+response.on('data', (chunk) => { 
+// Do your processing on the chunk here 
+console.log(chunk.toString()); 
+}); 
+});
+*/
+
 
   var dataHash = {
 
@@ -135,9 +158,9 @@ var request = this.req;
     owner:        config.env().owner
   };
 
-  //res.writeHead(200);
+  this.res.writeHead(200);
   //this.res.write(request);
-  res.send();
+  this.res.send();
 });
 
 /*
