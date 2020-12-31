@@ -162,7 +162,7 @@ console.log(chunk.toString());
     owner:        config.env().owner
   };
 
-  this.res.writeHead(200);
+  //this.res.writeHead(200);
 this.res.write(request);
   //this.res.write(request);
   this.res.end();
