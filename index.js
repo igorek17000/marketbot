@@ -194,7 +194,9 @@ db.once('open', function(callback){
 
   
 
-var app = express(function(req, res) {
+var app = express(); 
+/*
+function(req, res) {
   req.chunks = [];
   res.chunks = [];
 
@@ -203,6 +205,7 @@ var app = express(function(req, res) {
 //console.log(chunk);
   });// 
 });
+*/
 var chunks = [];
 var chunk = '';
 /*
