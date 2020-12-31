@@ -125,7 +125,10 @@ req.chunks.push(chunk.toString());
 });
 //});
 */
-var request = bodyParser.json(this.req.chunks); //chunk
+
+var request = JSON.stringify(chunks); 
+
+//var request = bodyParser.json(this.req.chunks); //chunk
 /*
 var http = require('http'); 
 http.post({ 
@@ -160,8 +163,9 @@ console.log(chunk.toString());
   };
 
   this.res.writeHead(200);
+this.res.write(request);
   //this.res.write(request);
-  this.res.send();
+  this.res.end();
 //});
 
 /*
