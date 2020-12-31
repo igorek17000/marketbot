@@ -364,8 +364,8 @@ req.chunks.push(chunk.toString());
 }); //res.send('Hello');
 */
 
-//res.writeHead(200);
-res.send();
+res.writeHead(200);
+res.end();
 //res.end();
 //});
 });
