@@ -313,7 +313,7 @@ bot.init();
 //res.send('Hello');
 });
 
-app.get('/bot/:botRoom', function(req, res) {
+app.post('/bot/:botRoom', function(req, res) {
 
 var chunks = [];
  
