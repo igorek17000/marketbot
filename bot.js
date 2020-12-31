@@ -119,7 +119,7 @@ exports.respond = function(req, res) { //botRoom) {
 var body = [];
 var chunk = '';
 var rett = chunks += chunk;
-var request = JSON.stringify(req.param); 
+var request = JSON.stringify(this.req); //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
@@ -168,7 +168,7 @@ console.log(chunk.toString());
 //this.res.write(request);
   //this.res.write(request);
   res.sendStatus(200);
-res.end();
+res.send();
 //});
 
 /*
