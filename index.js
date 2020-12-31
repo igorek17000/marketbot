@@ -317,7 +317,7 @@ app.get('/bot/:botRoom', function(req, res) {
 
 var chunks = [];
  
-
+/*
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
 //console.log(chunk.toString());
