@@ -113,12 +113,12 @@ exports.init = function() {
   });
 }
 
-exports.respond = function(botRoom) {
-var req = this.req;
+exports.respond = function(req, res, botRoom) {
+//var req = this.req;
 var chunks = [];
 var chunk = '';
-var res = chunks += chunk;
-var request = JSON.stringify(req.res[0]); 
+var rett = chunks += chunk;
+var request = JSON.stringify(req); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
@@ -166,7 +166,7 @@ console.log(chunk.toString());
   //this.res.writeHead(200);
 //this.res.write(request);
   //this.res.write(request);
-  res.send(res);
+  res.send(req);
 //});
 
 /*
