@@ -114,8 +114,9 @@ exports.init = function() {
 }
 
 exports.respond = function(botRoom) {
-/*
+
 var chunks = [];
+/*
 var chunk = '';
 app.post('/bot/:botRoom', function(req, res) {
 req.on('data', function(chunk) {
@@ -124,7 +125,7 @@ req.chunks.push(chunk.toString());
 });
 //});
 */
-var request =  this.req.params[0]; //chunk
+var request = bodyParser.json(this.req.chunks); //chunk
 /*
 var http = require('http'); 
 http.post({ 
