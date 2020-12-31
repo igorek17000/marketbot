@@ -126,7 +126,7 @@ req.chunks.push(chunk.toString());
 //});
 */
 
-var request = JSON.stringify(chunks); 
+var request = JSON.stringify(req.chunks[0]); 
 
 //var request = bodyParser.json(this.req.chunks); //chunk
 /*
@@ -163,9 +163,9 @@ console.log(chunk.toString());
   };
 
   //this.res.writeHead(200);
-this.res.write(request);
+//this.res.write(request);
   //this.res.write(request);
-  this.res.end();
+  res.send(request);
 //});
 
 /*
