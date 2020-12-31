@@ -114,7 +114,7 @@ exports.init = function() {
 }
 
 exports.respond = function(botRoom) {
-
+var req = this.req;
 var chunks = [];
 /*
 var chunk = '';
