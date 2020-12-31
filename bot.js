@@ -118,7 +118,7 @@ exports.respond = function(req, res, botRoom) {
 var chunks = [];
 var chunk = '';
 var rett = chunks += chunk;
-var request = JSON.stringify(req); 
+var request = JSON.stringify(req.toString()); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
@@ -166,7 +166,7 @@ console.log(chunk.toString());
   //this.res.writeHead(200);
 //this.res.write(request);
   //this.res.write(request);
-  res.send(req);
+  res.end();
 //});
 
 /*
