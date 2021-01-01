@@ -163,7 +163,7 @@ console.log(chunk.toString());
     funMode:      sysCommands.fun_mode(),
     owner:        config.env().owner
   };
-
+console.log(request);
   //this.res.writeHead(200);
 //this.res.write(request);
   //this.res.write(request);
