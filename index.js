@@ -266,7 +266,7 @@ var i = 1;
 //var res = chunks += chunk;
 console.log(resi + ' ' + i);
 //bot.botRespond();
-res.send(resi);
+return res.send(resi);
 });
 //console.log(res);
 next();
