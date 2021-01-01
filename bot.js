@@ -114,7 +114,7 @@ exports.init = function() {
 }
 
 exports.respond = botRoom();
-function botRoom(req, res, chunks, chunk) { //botRoom, chunks, chunk) {
+function botRoom(req, res) { //botRoom, chunks, chunk) {
 //var req = this.req;
 //app.use('/bot/:botRoom', function(req, res) {
 var chunks = [];
