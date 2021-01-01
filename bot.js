@@ -120,7 +120,7 @@ var IncomingMessage = IncomingMessage;
 //app.use('/bot/:botRoom', function(req, res) {
 var chunks = [];
 var chunk = '';
-req.chunks = IncomingMessage;
+req.chunks = []; // IncomingMessage;
 //chunks = chunks += chunk;
 
 
