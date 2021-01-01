@@ -248,7 +248,7 @@ req.chunks.push(chunk.toString());
 //next();
 req.on('end', function(chunk) {
 var chunk = '';
-var res = chunks += chunk;
+var resi = chunks += chunk;
 //var o = 0; 
 //var a = 1;
 //var i = o + a;
