@@ -145,7 +145,7 @@ console.log(resi + ' ' + i);
 //console.log(res);
 
 
-var request = this.req.chunk; //req.param); 
+var request = this.req; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
