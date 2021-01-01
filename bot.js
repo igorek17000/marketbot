@@ -114,7 +114,7 @@ exports.init = function() {
 }
 
 exports.respond = botRoom();
-function botRoom(req, res, botRoom) { //botRoom, chunks, chunk) {
+function botRoom(req, res, chunks, chunk) { //botRoom, chunks, chunk) {
 //var req = this.req;
 //app.use('/bot/:botRoom', function(req, res) {
 var chunks = [];
@@ -123,7 +123,7 @@ var chunk = '';
 
 
 
-var request = req.chunks += chunk; //req.param); 
+var request = req[chunks += chunk]; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
