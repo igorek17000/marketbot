@@ -262,7 +262,7 @@ var i = 1;
 
 //i = i++;
 
-
+req.chunks.push(chunk.toString());
 //var res = chunks += chunk;
 console.log(resi + ' ' + i);
 //bot.botRespond();
