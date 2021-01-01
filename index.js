@@ -232,9 +232,9 @@ req.chunks.push(chunk.toString());
 app.listen(port, function() {
 console.log('App Listening');
 });
-/*
+
 app.use('/bot/:botRoom', function(req, res, next) {
-/*
+
 var chunks = [];
 req.chunks = [];
 var chunk = '';
@@ -270,8 +270,9 @@ console.log(res + ' ' + i);
 });
 console.log(res);
 next();
+res.send(res);
 });
-*/
+
 app.use(bodyParser.json());
 
 app.use(express.static('public'));
