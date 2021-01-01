@@ -249,7 +249,7 @@ req.on('data', function(chunk) {
 req.on('end', function(chunk) {
 var chunk = '';
 var resi = chunks += chunk;
-var request = this.request; // chunks += chunk;
+var request = this.req; // chunks += chunk;
 //var o = 0; 
 //var a = 1;
 //var i = o + a;
