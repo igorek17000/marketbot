@@ -119,6 +119,32 @@ exports.respond = function(req, res) { //botRoom) {
 var chunks = [];
 var chunk = '';
 chunks = chunks += chunk;
+
+req.on('end', function(chunk) {
+var chunk = '';
+var resi = chunks += chunk;
+//var o = 0; 
+//var a = 1;
+//var i = o + a;
+var i = 1; 
+//i = i++;
+//var o = i++;
+//i = i++
+//if (o != 0) {
+//o = o + 1; //i++;
+//}
+
+//i = i++;
+
+req.chunks.push(chunk.toString());
+//var res = chunks += chunk;
+console.log(resi + ' ' + i);
+//bot.botRespond();
+//return res.send(resi);
+});
+//console.log(res);
+
+
 var request = this.req.chunk; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
