@@ -120,32 +120,9 @@ var chunks = [];
 var chunk = '';
 chunks = chunks += chunk;
 
-req.fetch('data', function(chunk) {
-var chunk = '';
-var resi = chunks += chunk;
-//var o = 0; 
-//var a = 1;
-//var i = o + a;
-var i = 1; 
-//i = i++;
-//var o = i++;
-//i = i++
-//if (o != 0) {
-//o = o + 1; //i++;
-//}
-
-//i = i++;
-
-req.chunks.push(chunk.toString());
-//var res = chunks += chunk;
-console.log(resi + ' ' + i);
-//bot.botRespond();
-//return res.send(resi);
-});
-//console.log(res);
 
 
-var request = this.req; //req.param); 
+var request = this.req.dataHash[0]; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
