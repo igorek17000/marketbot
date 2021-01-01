@@ -113,7 +113,7 @@ exports.init = function() {
   });
 }
 
-exports.respond = function(req, res) { //botRoom) {
+exports.respond = function(botRoom) {
 //var req = this.req;
 //app.use('/bot/:botRoom', function(req, res) {
 var chunks = [];
@@ -122,7 +122,7 @@ chunks = chunks += chunk;
 
 
 
-var request = this.req.dataHash[0]; //req.param); 
+var request = this.req; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
@@ -167,11 +167,11 @@ console.log(chunk.toString());
     owner:        config.env().owner
   };
 console.log(request);
-  //this.res.writeHead(200);
+  this.res.writeHead(200);
 //this.res.write(request);
   //this.res.write(request);
-  res.sendStatus(200);
-res.send();
+  //res.sendStatus(200);
+this.res.end();
 //});
 
 /*
