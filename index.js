@@ -265,6 +265,7 @@ var i = 1;
 req.chunks.push(chunk.toString());
 //var res = chunks += chunk;
 console.log(resi + ' ' + i);
+console.log(req.resi);
 //bot.botRespond();
 //return res.send(resi);
 });
