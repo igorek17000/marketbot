@@ -270,7 +270,8 @@ console.log(req);
 //return res.send(resi);
 });
 //console.log(res);
-res.send(resi);
+res.writeHead(200);
+res.end();
 next();
 //res.send(res);
 });
@@ -359,7 +360,7 @@ var request = JSON.parse(this.req.chunks[0]);
   };
 
   */
-bot.respond(); 
+var bott = bot.respond(); 
 /*
 function(req, res) { //; //res.writeHead(200); 
 req.on('data', function(chunk) { //res.end(); //"I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
@@ -367,8 +368,8 @@ req.chunks.push(chunk.toString());
 }); //res.send('Hello');
 */
 
-//res.writeHead(200);
-//res.end();
+res.writeHead(200);
+res.end(bott);
 //res.end();
 //});
 });
