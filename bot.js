@@ -120,12 +120,12 @@ var IncomingMessage;
 //app.use('/bot/:botRoom', function(req, res) {
 var chunks = [];
 var chunk = '';
-req.chunks = IncomingMessage;
+req.chunks = chunks;
 //chunks = chunks += chunk;
 
 
 
-var request = req.chunks.chunks; //req.param); 
+var request = req.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
