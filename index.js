@@ -234,7 +234,7 @@ console.log('App Listening');
 });
 
 app.use('/bot/:botRoom', function(req, res, next) {
-
+var request = chunks += chunk;
 var chunks = [];
 req.chunks = [];
 var chunk = '';
@@ -249,6 +249,7 @@ req.chunks.push(chunk.toString());
 req.on('end', function(chunk) {
 var chunk = '';
 var resi = chunks += chunk;
+var request = chunks += chunk;
 //var o = 0; 
 //var a = 1;
 //var i = o + a;
