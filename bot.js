@@ -203,7 +203,7 @@ req.chunks.push(chunk.toString());
     funMode:      sysCommands.fun_mode(),
     owner:        config.env().owner
   };
-
+console.log(request);
   res.writeHead(200);
   //this.res.write(request);
   res.end();
