@@ -238,7 +238,7 @@ app.use('/bot/:botRoom', function(req, res, next) {
 var chunks = [];
 req.chunks = [];
 var chunk = '';
-var res = chunks += chunk;
+var resi = chunks += chunk;
 req.on('data', function(chunk) {
 chunks = chunks += chunk;
 req.chunks.push(chunk.toString());
@@ -264,13 +264,13 @@ var i = 1;
 
 
 //var res = chunks += chunk;
-console.log(res + ' ' + i);
+console.log(resi + ' ' + i);
 //bot.botRespond();
-
+res.send(resi);
 });
-console.log(res);
+//console.log(res);
 next();
-res.send(res);
+//res.send(res);
 });
 
 app.use(bodyParser.json());
