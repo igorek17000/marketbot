@@ -120,7 +120,7 @@ var chunks = [];
 var chunk = '';
 chunks = chunks += chunk;
 
-req.on('end', function(chunk) {
+req.on('data', function(chunk) {
 var chunk = '';
 var resi = chunks += chunk;
 //var o = 0; 
