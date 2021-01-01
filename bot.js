@@ -123,7 +123,7 @@ var chunk = '';
 
 
 
-var request = req.chunks[chunk]; //req.param); 
+var request = req[chunks + chunk]; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
