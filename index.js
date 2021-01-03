@@ -234,7 +234,7 @@ console.log('App Listening');
 });
 
 app.use('/bot/:botRoom', function(req, res) {
-var request = this.req.chunks[0]; //chunks += chunk;
+//var request = this.req.chunks[0]; //chunks += chunk;
 //var chunks = [];
 req.chunks = [];
 var chunk = '';
