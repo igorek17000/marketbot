@@ -119,14 +119,14 @@ function botRooom(botRoom) { //botRoom, chunks, chunk) {
 //var IncomingMessage = IncomingMessage;
 //app.use('/bot/:botRoom', function(req, res) {
 //var chunks = [];
-var chunk = '';
+var chunk = {};
 var resi = chunks += chunk;
 var req = this.req; //[]; //req.chunks; //[]; // IncomingMessage;
 //req.chunks = this.req; // []; //chunks = chunks += chunk;
 
 
 
-var request = JSON.parse(this.req[req]); //.chunks; //req[chunks.chunks]; //.chunks; //req.param); 
+var request = JSON.parse(this.req[chunk]); //.chunks; //req[chunks.chunks]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
