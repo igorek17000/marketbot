@@ -272,9 +272,10 @@ var resi = chunks += chunk;
 //var res = chunks += chunk;
 console.log(resi);
 console.log(req.chunks);
-bot.botRespond();
+bot.respond();
 //return res.send(resi);
 });
+
 //console.log(res);
 //res.writeHead(200);
 //res.end();
