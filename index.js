@@ -347,7 +347,7 @@ app.get('/bot/:botRoom', function(req, res) {
 //---res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 res.status(200);
 res.end();
-//---});
+});
 
 app.post('/bot/:botRoom', function(req, res) {
 
