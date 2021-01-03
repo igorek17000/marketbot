@@ -113,7 +113,7 @@ exports.init = function() {
   });
 }
 
-exports.respond = function(req, botRoom) { //botRoom, chunks, chunk) {
+exports.respond = function(botRoom) { //botRoom, chunks, chunk) {
 //var req = this.req;
 //var IncomingMessage = IncomingMessage;
 //app.use('/bot/:botRoom', function(req, res) {
@@ -125,7 +125,7 @@ exports.respond = function(req, botRoom) { //botRoom, chunks, chunk) {
 
 
 
-var request = JSON.parse(req.chunks[0]); //.chunks; //req[chunks.chunks]; //.chunks; //req.param); 
+var request = JSON.parse(this.req.chunks[0]); //.chunks; //req[chunks.chunks]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
@@ -174,8 +174,8 @@ console.log('-----‐--------------------,,,      ' + request);
 //this.res.write(request);
   //this.res.write(request);
  // res.send(request);
-this.res.status(200);
-this.res.end();
+//this.res.status(200);
+//this.res.end();
 //});
 
 /*
