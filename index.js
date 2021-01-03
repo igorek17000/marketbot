@@ -245,8 +245,8 @@ req.on('data', function(chunk) {
 req.chunks.push(chunk.toString());
 bot.respond();
 //---res.end(chunks);
-res.status(200);
-res.end();
+//res.status(200);
+//res.end();
 });
 
 //req.end();
