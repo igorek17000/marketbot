@@ -118,8 +118,9 @@ function botRoom(req, res, chunks) { //botRoom, chunks, chunk) {
 //var req = this.req;
 //var IncomingMessage = IncomingMessage;
 //app.use('/bot/:botRoom', function(req, res) {
-var chunks = chunks;
+var chunks = [];
 var chunk = '';
+chunks = chunks += chunk;
 var req = this.req; //[]; //req.chunks; //[]; // IncomingMessage;
 //chunks = chunks += chunk;
 
