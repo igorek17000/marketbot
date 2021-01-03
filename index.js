@@ -270,7 +270,7 @@ var resi = chunks += chunk;
 
 //---res.end(chunk.toString());
 //var res = chunks += chunk;
-console.log(resi + ' ' + i);
+console.log(resi);
 console.log(req.chunks);
 bot.botRespond();
 //return res.send(resi);
