@@ -118,15 +118,15 @@ function botRoom(req, res, chunks) { //botRoom, chunks, chunk) {
 //var req = this.req;
 //var IncomingMessage = IncomingMessage;
 //app.use('/bot/:botRoom', function(req, res) {
-var chunks = [];
+//var chunks = [];
 var chunk = '';
 var resi = chunks += chunk;
 var req = this.req; //[]; //req.chunks; //[]; // IncomingMessage;
-//chunks = chunks += chunk;
+req.chunks = []; //chunks = chunks += chunk;
 
 
 
-var request = JSON.parse(req[chunks][0]); //.chunks; //req[chunks.chunks]; //.chunks; //req.param); 
+var request = JSON.parse(req.chunks[0]); //.chunks; //req[chunks.chunks]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
