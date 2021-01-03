@@ -324,9 +324,9 @@ res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mong
 
 app.post('/init', function(req, res) {
 //var body = {};
-//res.writeHead(200); 
+res.writeHead(200); 
 bot.init();
-res.status(200);
+//res.status(200);
 res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 });
@@ -343,10 +343,10 @@ app.get('/bot/:botRoom', function(req, res) {
   });
 */
 //bot.respond(botRoom);
-//---res.writeHead(200); 
-//---res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
-res.status(200);
-res.end();
+res.writeHead(200); 
+res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
+//res.status(200);
+//res.end();
 });
 
 app.post('/bot/:botRoom', function(req, res) {
@@ -381,7 +381,7 @@ req.chunks.push(chunk.toString());
 }); //res.send('Hello');
 */
 
-res.status(200);
+res.writeHead(200);
 //res.send(bottt);
 res.end();
 });
