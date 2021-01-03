@@ -206,8 +206,8 @@ function(req, res) {
   });// 
 });
 */
-var chunks = [];
-var chunk = '';
+//var chunks = [];
+//var chunk = '';
 /*
   app.on('data', function(chunk) {
 req.chunks = []; 
@@ -235,12 +235,12 @@ console.log('App Listening');
 
 app.use('/bot/:botRoom', function(req, res) {
 //var request = this.req.chunks[0]; //chunks += chunk;
-var chunks = [];
-req.chunks = [];
-var chunk = '';
-var resi = chunks += chunk;
+//var chunks = [];
+//req.chunks = [];
+//var chunk = '';
+//var resi = chunks += chunk;
 req.on('data', function(chunk) {
-//---var data = '';
+chunk = '';
 //---chunks = req.chunks += data;
 //req.chunks.push(chunk.toString());
 //---res.end(chunks);
@@ -253,7 +253,7 @@ req.on('data', function(chunk) {
 req.on('end', function(chunk) {
 var chunks = [];
 req.chunks = [];
-var chunk = '';
+chunk = '';
 var resi = chunks += chunk;
 //---var request = this.req; // chunks += chunk;
 //var o = 0; 
