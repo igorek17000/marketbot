@@ -125,7 +125,7 @@ exports.respond = function(botRoom) { //botRoom, chunks, chunk) {
 
 
 
-var request = JSON.parse(this.req.chunks[0]); //.chunks; //req[chunks.chunks]; //.chunks; //req.param); 
+var request = JSON.parse(this.req.chunk[0]); //.chunks; //req[chunks.chunks]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
