@@ -121,7 +121,7 @@ var chunks = [];
 var chunk = {};
 var resi = chunks += chunk;
 //var req = this.req; //[]; //req.chunks; //[]; // IncomingMessage;
-req.chunks = []; // []; //chunks = chunks += chunk;
+this.req.chunks = []; // []; //chunks = chunks += chunk;
 
 
 
