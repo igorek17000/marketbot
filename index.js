@@ -235,14 +235,14 @@ console.log('App Listening');
 
 app.use('/bot/:botRoom', function(req, res) {
 //var request = this.req.chunks[0]; //chunks += chunk;
-var chunks = [];
+//var chunks = [];
 req.chunks = [];
 //var chunk = '';
 //var resi = chunks += chunk;
 req.on('data', function(chunk) {
 //chunk = '';
-chunks = chunks += chunk;
-//req.chunks.push(chunk.toString());
+//chunks = chunks += chunk;
+req.chunks.push(chunk.toString());
 //---res.end(chunks);
 //res.status(200);
 //res.end(chunk);
@@ -253,7 +253,7 @@ chunks = chunks += chunk;
 req.on('end', function(chunk) {
 //var chunks = [];
 //req.chunks = [];
-chunk = '';
+//chunk = '';
 var resi = chunk; //chunks += chunk;
 //---var request = this.req; // chunks += chunk;
 //var o = 0; 
