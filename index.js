@@ -245,7 +245,7 @@ req.on('data', function(chunk) {
 //req.chunks.push(chunk.toString());
 //---res.end(chunks);
 res.status(200);
-res.end();
+res.end(chunk);
 });
 
 //req.end();
@@ -273,10 +273,10 @@ var resi = chunks += chunk;
 //var res = chunks += chunk;
 console.log(resi);
 console.log(req.chunks);
-bot.respond();
+//bot.respond();
 //return res.send(resi);
 });
-
+bot.respond();
 //console.log(res);
 //res.writeHead(200);
 //res.end();
