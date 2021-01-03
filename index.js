@@ -363,7 +363,7 @@ var request = JSON.parse(this.req.chunks[0]);
   };
 
   */
-bot.respond(); 
+bot.respond(dataHash); 
 /*
 function(req, res) { //; //res.writeHead(200); 
 req.on('data', function(chunk) { //res.end(); //"I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
