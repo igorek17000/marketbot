@@ -243,7 +243,7 @@ req.on('data', function(chunk) {
 //chunk = '';
 //chunks = chunks += chunk;
 req.chunks.push(chunk.toString());
-bot.respond();
+//bot.respond();
 //---res.end(chunks);
 //res.status(200);
 //res.end();
