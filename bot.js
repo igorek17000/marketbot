@@ -117,7 +117,7 @@ exports.respond = function(botRoom) { //botRoom, chunks, chunk) {
 //var req = this.req;
 //var IncomingMessage = IncomingMessage;
 //app.use('/bot/:botRoom', function(req, res) {
-//var chunks = [];
+var chunks = [];
 var chunk = {};
 var resi = chunks += chunk;
 var req = this.req; //[]; //req.chunks; //[]; // IncomingMessage;
@@ -125,7 +125,7 @@ var req = this.req; //[]; //req.chunks; //[]; // IncomingMessage;
 
 
 
-var request = this.req; //.chunks; //req[chunks.chunks]; //.chunks; //req.param); 
+var request = req.chunks[0];; //.chunks; //req[chunks.chunks]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
