@@ -372,7 +372,7 @@ var request = JSON.parse(this.req.chunks[0]);
   };
 
   */
-bot.respond(); 
+var bottt = bot.respond(); 
 /*
 function(req, res) { //; //res.writeHead(200); 
 req.on('data', function(chunk) { //res.end(); //"I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
@@ -380,8 +380,8 @@ req.chunks.push(chunk.toString());
 }); //res.send('Hello');
 */
 
-res.status(200);
-res.end(request);
+//res.status(200);
+res.send(bottt);
 //res.send();
 });
 //---});
