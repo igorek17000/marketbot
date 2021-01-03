@@ -113,7 +113,7 @@ exports.init = function() {
   });
 }
 
-exports.respond = botRoom(botRoom);
+exports.respond = botRooom(botRoom);
 function botRooom() { //botRoom, chunks, chunk) {
 //var req = this.req;
 //var IncomingMessage = IncomingMessage;
