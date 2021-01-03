@@ -120,12 +120,12 @@ exports.respond = function(botRoom) { //botRoom, chunks, chunk) {
 var chunks = [];
 var chunk = {};
 var resi = chunks += chunk;
-var req = this.req; //[]; //req.chunks; //[]; // IncomingMessage;
-//req.chunks = this.req; // []; //chunks = chunks += chunk;
+//var req = this.req; //[]; //req.chunks; //[]; // IncomingMessage;
+req.chunks = []; // []; //chunks = chunks += chunk;
 
 
 
-var request = req += chunks[0]; //.chunks; //req[chunks.chunks]; //.chunks; //req.param); 
+var request = this.req.chunks[0]; //.chunks; //req[chunks.chunks]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
@@ -174,8 +174,8 @@ console.log('-----‐--------------------,,,      ' + request);
 //this.res.write(request);
   //this.res.write(request);
  // res.send(request);
-res.status(200);
-res.end();
+this.res.status(200);
+this.res.end();
 //});
 
 /*
