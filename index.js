@@ -233,7 +233,7 @@ app.listen(port, function() {
 console.log('App Listening');
 });
 
-app.use(function(req, res, next) { //'/bot/:botRoom', function(req, res) {
+app.use('/bot/:botRoom', function(req, res, next) { //'/bot/:botRoom', function(req, res) {
 //var request = this.req.chunks[0]; //chunks += chunk;
 //var chunks = [];
 req.chunks = [];
