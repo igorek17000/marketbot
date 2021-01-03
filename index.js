@@ -339,7 +339,7 @@ res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-pers
 //res.send('Hello');
 });
 
-app.post('/bot/:botRoom', function(req, res) {
+app.post('/bot/:botRoom', function(req, res, dataHash) {
 
 //req.chunks = [];
  // res.chunks = [];
