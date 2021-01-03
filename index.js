@@ -324,8 +324,9 @@ res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mong
 
 app.post('/init', function(req, res) {
 //var body = {};
-res.writeHead(200); 
 bot.init();
+res.writeHead(200); 
+//bot.init();
 //res.status(200);
 res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
