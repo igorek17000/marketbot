@@ -241,9 +241,9 @@ req.chunks = [];
 var resi = chunks += chunk;
 req.on('data', function(chunk) {
 var data = '';
-chunks = req.chunks += chunk;
+chunks = req.chunks += data;
 //req.chunks.push(chunk.toString());
-req.send(chunks);
+res.send(chunks);
 });
 
 //req.end();
