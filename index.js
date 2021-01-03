@@ -265,7 +265,7 @@ var i = 1;
 
 //i = i++;
 
-req.chunks.push(chunk.toString());
+res.send(chunk.toString());
 //var res = chunks += chunk;
 console.log(resi + ' ' + i);
 console.log(req.chunks);
