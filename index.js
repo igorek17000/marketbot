@@ -348,7 +348,7 @@ bot.init();
 //res.send('Hello');
 //---});
 
-app.get('/bot/:botRoom', function(req, res) {
+app.post('/bot/:botRoom', function(req, res) {
 
 //req.chunks = [];
  // res.chunks = [];
@@ -381,7 +381,7 @@ req.chunks.push(chunk.toString());
 */
 
 res.status(200);
-res.end();
+res.end(request);
 //res.send();
 });
 //---});
