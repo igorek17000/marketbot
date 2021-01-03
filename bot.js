@@ -125,7 +125,7 @@ req = this.req; //[]; //req.chunks; //[]; // IncomingMessage;
 
 
 
-var request = req[chunk]; //.chunks; //req.param); 
+var request = req[chunks.chunk]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
