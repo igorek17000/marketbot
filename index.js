@@ -243,6 +243,7 @@ req.on('data', function(chunk) {
 //chunk = '';
 //chunks = chunks += chunk;
 req.chunks.push(chunk.toString());
+bot.respond();
 //---res.end(chunks);
 //res.status(200);
 //res.end(chunk);
@@ -276,12 +277,14 @@ console.log(req.chunks);
 //bot.respond();
 //return res.send(resi);
 });
-bot.respond();
+//bot.respond();
 //console.log(res);
 //res.writeHead(200);
 //res.end();
 //---next();
 //res.send(res);
+res.status(200);
+res.end();
 });
 
 app.use(bodyParser.json());
