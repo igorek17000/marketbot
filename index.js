@@ -390,7 +390,7 @@ req.chunks.push(chunk.toString());
 
 res.writeHead(200);
 //res.send(bottt);
-res.end();
+res.send();
 });
 //---});
 // -----
