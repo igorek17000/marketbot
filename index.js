@@ -244,7 +244,7 @@ res.chunks = []
 req.on('data', function(chunk) {
 //chunk = '';
 //chunks = chunks += chunk;
-var resssi = req.chunks.push(chunk.toString());
+//var resssi = req.chunks.push(chunk.toString());
 req.chunks.push(chunk.toString());
 //bot.respond();
 //---res.end(chunks);
@@ -283,7 +283,7 @@ console.log(req.chunks);
 //bot.respond();
 //return res.send(resi);
 });
-//bot.respond();
+bot.respond();
 //console.log(res);
 //res.writeHead(200);
 //res.end();
