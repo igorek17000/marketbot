@@ -257,7 +257,7 @@ req.on('end', function(chunk) {
 //req.chunks = [];
 //chunk = '';
 var resi = req.chunks + ' 1'; //chunks += chunk;
-global.ressi = req.chunks;
+global.ressi = res.chunks;
 //---var request = this.req; // chunks += chunk;
 //var o = 0; 
 //var a = 1;
@@ -275,7 +275,7 @@ global.ressi = req.chunks;
 //---res.end(chunk.toString());
 //var res = chunks += chunk;
 console.log(resi);
-console.log(res + ' ++++++++++'); //ressi['text']);
+console.log(ressi); // + ' ++++++++++'); //ressi['text']);
 console.log(req.chunks);
 
 //bot.respond();
