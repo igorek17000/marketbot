@@ -232,7 +232,8 @@ req.chunks.push(chunk.toString());
 app.listen(port, function() {
 console.log('App Listening');
 });
-app.all('/', function(req, res, ) { 
+
+app.use('/', function(req, res, ) { 
 //app.use('/bot/:botRoom', function(req, res, ) { //'/bot/:botRoom', function(req, res) {
 //var request = this.req.chunks[0]; //chunks += chunk;
 //var chunks = [];
