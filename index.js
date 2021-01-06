@@ -273,7 +273,9 @@ var resi = req.chunks + ' 1'; //chunks += chunk;
 //---res.end(chunk.toString());
 //var res = chunks += chunk;
 console.log(resi);
+console.log(resi.text);
 console.log(req.chunks);
+
 //bot.respond();
 //return res.send(resi);
 });
