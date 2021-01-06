@@ -184,7 +184,7 @@ var mongoose = require('mongoose');
 
 mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
 
-//var db = mongoose.connection;
+var db = require('./modules/db.js'); // mongoose.connection;
 /*
 db.on('error', console.log.bind(console, "connection error"));
 
