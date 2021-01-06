@@ -282,7 +282,7 @@ console.log(req.chunks);
 //bot.respond();
 //return res.send(resi);
 });
-bot.respond();
+//bot.respond();
 //console.log(res);
 //res.writeHead(200);
 //res.end();
