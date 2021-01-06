@@ -275,7 +275,7 @@ global.ressi = req.chunks;
 //---res.end(chunk.toString());
 //var res = chunks += chunk;
 console.log(resi);
-console.log(ressi['text']);
+console.log(res + ' ++++++++++'); //ressi['text']);
 console.log(req.chunks);
 
 //bot.respond();
