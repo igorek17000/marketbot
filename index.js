@@ -257,7 +257,7 @@ req.on('end', function(chunk) {
 //req.chunks = [];
 //chunk = '';
 var resi = req.chunks + ' 1'; //chunks += chunk;
-global.ressi = res[req.chunks];
+global.ressi = thus.res;
 //---var request = this.req; // chunks += chunk;
 //var o = 0; 
 //var a = 1;
