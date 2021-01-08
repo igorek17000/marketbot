@@ -283,7 +283,7 @@ console.log(ressi); // + ' ++++++++++'); //ressi['text']);
 //bot.respond();
 //return res.send(resi);
 });
-//bot.respond();
+bot.respond();
 //console.log(res);
 res.writeHead(200);
 res.end();
@@ -339,7 +339,7 @@ res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mong
 });
 
 
-app.get('/bot/:botRoom', function(req, res) {
+//----app.get('/bot/:botRoom', function(req, res) {
 
 //---var chunks = [];
  
@@ -349,14 +349,14 @@ app.get('/bot/:botRoom', function(req, res) {
 //console.log(chunk.toString());
   });
 */
-bot.respond();
-res.status = 200; 
-res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
+//----bot.respond();
+//---res.status = 200; 
+//----res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.status(200);
 //res.end();
-});
+//----});
 
-app.post('/bot/:botRoom', function(req, res) {
+//----app.post('/bot/:botRoom', function(req, res) {
 
 //req.chunks = [];
  // res.chunks = [];
@@ -380,7 +380,7 @@ var request = JSON.parse(this.req.chunks[0]);
   };
 
   */
-bot.respond(); 
+//----bot.respond(); 
 /*
 function(req, res) { //; //res.writeHead(200); 
 req.on('data', function(chunk) { //res.end(); //"I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
@@ -388,10 +388,10 @@ req.chunks.push(chunk.toString());
 }); //res.send('Hello');
 */
 
-res.writeHead(200);
+//----res.writeHead(200);
 //res.send(bottt);
-res.send();
-});
+//----res.send();
+//----});
 //---});
 // -----
 
