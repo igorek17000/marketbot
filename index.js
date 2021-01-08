@@ -242,7 +242,7 @@ res.chunks = []
 //var chunk = '';
 //var resi = chunks += chunk;
 req.on('data', function(chunk) {
-global.res[chunk] = chunk; // = '';
+global.chunks = chunk.toString(); // = '';
 //chunks = chunks += chunk;
 //var resssi = req.chunks.push(chunk.toString());
 req.chunks.push(chunk.toString());
@@ -259,7 +259,7 @@ req.on('end', function(chunk) {
 //req.chunks = [];
 //chunk = '';
 var resi = req.chunks + ' 1'; //chunks += chunk;
-global.ressi = '++++++++++ ' + res[chunk] + ' 11111¹¹1111111';
+global.ressi = '++++++++++ ' + chunks + ' 11111¹¹1111111';
 //---var request = this.req; // chunks += chunk;
 //var o = 0; 
 //var a = 1;
