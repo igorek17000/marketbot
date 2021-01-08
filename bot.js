@@ -113,7 +113,7 @@ exports.init = function() {
   });
 }
 
-exports.respond = function(botRoom) { //botRoom, chunks, chunk) {
+exports.respond = function(req, botRoom) { //botRoom, chunks, chunk) {
 //var req = this.req;
 //var IncomingMessage = IncomingMessage;
 //app.use('/bot/:botRoom', function(req, res) {
@@ -125,7 +125,7 @@ exports.respond = function(botRoom) { //botRoom, chunks, chunk) {
 
 
 
-var request = chunkit; //this.req[chunkit]; //req[chunks.chunks]; //.chunks; //req.param); 
+var request = req.chunkit; //this.req[chunkit]; //req[chunks.chunks]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
