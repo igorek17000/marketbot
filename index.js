@@ -238,7 +238,7 @@ app.use('/bot/:botRoom', function(req, res) {
 //var request = this.req.chunks[0]; //chunks += chunk;
 //var chunks = [];
 req.chunks = [];
-global.req.chunckit = req.chunks;
+var global.req.chunckit = req.chunks;
 res.chunks = []
 //var chunk = '';
 //var resi = chunks += chunk;
