@@ -349,7 +349,7 @@ app.get('/bot/:botRoom', function(req, res) {
 //console.log(chunk.toString());
   });
 */
-//bot.respond(botRoom);
+bot.respond();
 res.status = 200; 
 res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.status(200);
