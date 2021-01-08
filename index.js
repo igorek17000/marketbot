@@ -237,16 +237,19 @@ var myBotRoom = function(req, res, next) {
 bot.botRoom();
 next();
 }
+app.use(function(req, res, next) {
+bot.botRoom();
+next();
+});
 
-
-
+/*
 app.use('/bot/:botRoom', function(req, res) { 
 //app.use('/bot/:botRoom', function(req, res, ) { //'/bot/:botRoom', function(req, res) {
 //var request = this.req.chunks[0]; //chunks += chunk;
 //var chunks = [];
 req.chunks = [];
-req.chunkit = [];
-res.chunks = []
+//req.chunkit = [];
+//res.chunks = []
 //var chunk = '';
 //var resi = chunks += chunk;
 req.on('data', function(chunk) {
@@ -254,7 +257,7 @@ req.on('data', function(chunk) {
 //chunks = chunks += chunk;
 //var resssi = req.chunks.push(chunk.toString());
 req.chunks.push(chunk.toString());
-req.chunkit.push(chunk.toString());
+//req.chunkit.push(chunk.toString());
 //bot.respond();
 //---res.end(chunks);
 //res.status(200);
@@ -268,9 +271,9 @@ req.on('end', function(chunk) {
 //req.chunks = [];
 //chunk = '';
 var resi = req.chunks + ' 1'; //chunks += chunk;
-global.ressi = resi;
+var ressi = resi;
 
-global.chunkit = req.chunkit;
+//global.chunkit = req.chunkit;
 //---var request = this.req; // chunks += chunk;
 //var o = 0; 
 //var a = 1;
@@ -290,7 +293,7 @@ global.chunkit = req.chunkit;
 console.log(resi);
 console.log(ressi); // + ' ++++++++++'); //ressi['text']);
 //console.log(chunkit);
-console.log(chunkit);
+//console.log(chunkit);
 
 //bot.respond();
 //return res.send(resi);
@@ -304,7 +307,7 @@ console.log(chunkit);
 //res.status(200);
 //res.end();
 });
-
+*/
 app.use(bodyParser.json());
 
 app.use(express.static('public'));
@@ -350,8 +353,8 @@ res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mong
 //res.send('Hello');
 });
 app.get('/bot/:botRoom', function(req, res) {
-//res.writeHead(200);
-res.send("Hi");
+res.writeHead(200);
+res.end("Hi");
 });
 app.post('/bot/:botRoom', myBotRoom, function(req, res) {
 finish();
