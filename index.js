@@ -233,6 +233,13 @@ app.listen(port, function() {
 console.log('App Listening');
 });
 
+var myBotRoom = function(req, res, next) {
+bot.botRoom();
+next();
+});
+
+
+
 app.use('/bot/:botRoom', function(req, res) { 
 //app.use('/bot/:botRoom', function(req, res, ) { //'/bot/:botRoom', function(req, res) {
 //var request = this.req.chunks[0]; //chunks += chunk;
@@ -288,7 +295,7 @@ console.log(chunkit);
 //bot.respond();
 //return res.send(resi);
 });
-bot.respond();
+//bot.respond();
 //console.log(res);
 res.writeHead(200);
 res.end();
@@ -343,6 +350,9 @@ res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mong
 //res.send('Hello');
 });
 
+app.get('/bot/:botRoom, myBotRoom, function(req, res) {
+finish();
+});
 
 //----app.get('/bot/:botRoom', function(req, res) {
 
