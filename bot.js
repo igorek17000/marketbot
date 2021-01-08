@@ -125,7 +125,7 @@ exports.respond = function(botRoom) { //botRoom, chunks, chunk) {
 
 
 
-var request = this.req.chunks[chunks]; //req[chunks.chunks]; //.chunks; //req.param); 
+var request = this.req; //req[chunks.chunks]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
@@ -170,7 +170,7 @@ console.log(chunk.toString());
     owner:        config.env().owner
   };
 console.log('-------------------------');
-this.res.writeHead(200);
+this.res.writeHead(200, {"Content-Type": "text/plain"});
 //this.res.write(request);
   //this.res.write(request);
  // res.send(request);
