@@ -350,7 +350,7 @@ res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mong
 //res.send('Hello');
 });
 
-app.get('/bot/:botRoom, myBotRoom, function(req, res) {
+app.get('/bot/:botRoom', myBotRoom, function(req, res) {
 finish();
 });
 
