@@ -234,7 +234,7 @@ console.log('App Listening');
 });
 
 var myBotRoom = function(req, res, next) {
-bot.botRoom();
+bot.respond();
 next();
 }
 app.use(function(req, res, next) {
