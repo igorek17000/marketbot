@@ -238,7 +238,11 @@ bot.botRoom();
 next();
 }
 app.use(function(req, res, next) {
-bot.botRoom();
+req.chunks = []; //
+req.on('data', function(chunk) {
+req.chunks.push(chunk.toString());
+});
+//bot.botRoom();
 next();
 });
 
