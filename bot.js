@@ -113,7 +113,7 @@ exports.init = function() {
   });
 }
 
-exports.respond = function(req, botRoom) { //botRoom, chunks, chunk) {
+exports.respond = function(botRoom) { //botRoom, chunks, chunk) {
 //var req = this.req;
 //var IncomingMessage = IncomingMessage;
 //app.use('/bot/:botRoom', function(req, res) {
@@ -125,7 +125,7 @@ exports.respond = function(req, botRoom) { //botRoom, chunks, chunk) {
 
 
 
-var request = this.req.chunkit; //this.req[chunkit]; //req[chunks.chunks]; //.chunks; //req.param); 
+var request = this.req; //this.req[chunkit]; //req[chunks.chunks]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
@@ -170,7 +170,7 @@ console.log(chunk.toString());
     owner:        config.env().owner
   };
 console.log('-------------------------');
-this.res.writeHead(200, {"Content-Type": "text/plain"});
+this.res.writeHead(200);
 //this.res.write(request);
   //this.res.write(request);
  // res.send(request);
