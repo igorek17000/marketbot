@@ -238,7 +238,7 @@ app.use('/bot/:botRoom', function(req, res) {
 //var request = this.req.chunks[0]; //chunks += chunk;
 //var chunks = [];
 req.chunks = [];
-global.req.chunckit = [];
+global.req.chunckit = req.chunks;
 res.chunks = []
 //var chunk = '';
 //var resi = chunks += chunk;
@@ -261,7 +261,7 @@ req.on('end', function(chunk) {
 //req.chunks = [];
 //chunk = '';
 var resi = req.chunks + ' 1'; //chunks += chunk;
-global.chunkit = global.req.chunkit;
+global.req.chunkit = req.chunkit;
 //---var request = this.req; // chunks += chunk;
 //var o = 0; 
 //var a = 1;
@@ -281,7 +281,7 @@ global.chunkit = global.req.chunkit;
 console.log(resi);
 console.log(ressi); // + ' ++++++++++'); //ressi['text']);
 //console.log(req.chunks);
-console.log(global.req.chunkit);
+console.log(req.chunkit);
 
 //bot.respond();
 //return res.send(resi);
