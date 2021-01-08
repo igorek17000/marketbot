@@ -261,6 +261,8 @@ req.on('end', function(chunk) {
 //req.chunks = [];
 //chunk = '';
 var resi = req.chunks + ' 1'; //chunks += chunk;
+global.ressi = resi;
+
 global.chunkit = req.chunkit;
 //---var request = this.req; // chunks += chunk;
 //var o = 0; 
