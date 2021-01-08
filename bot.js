@@ -175,7 +175,7 @@ console.log('-------------------------');
   //this.res.write(request);
  // res.send(request);
 //this.res.send.status(200);
-this.res.send(200);
+this.res.end();
 //});
 
 /*
