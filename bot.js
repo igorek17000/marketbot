@@ -125,7 +125,7 @@ exports.respond = function(botRoom) { //botRoom, chunks, chunk) {
 
 
 
-var request = this.req.chunkit; //this.req[chunkit]; //req[chunks.chunks]; //.chunks; //req.param); 
+var request = this.global.req.chunkit; //this.req[chunkit]; //req[chunks.chunks]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
