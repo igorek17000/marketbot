@@ -259,7 +259,7 @@ req.on('end', function(chunk) {
 //req.chunks = [];
 //chunk = '';
 var resi = req.chunks + ' 1'; //chunks += chunk;
-global.ressi = '++++++++++ ' + this.res + ' 11111¹¹1111111';
+global.ressi = '++++++++++ ' + res + ' 11111¹¹1111111';
 //---var request = this.req; // chunks += chunk;
 //var o = 0; 
 //var a = 1;
