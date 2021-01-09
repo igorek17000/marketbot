@@ -360,7 +360,7 @@ app.get('/bot/:botRoom', function(req, res) {
 res.writeHead(200);
 res.end("Hi");
 });
-app.post('/bot/:botRoom', myBotRoom {
+app.post('/bot/:botRoom', myBotRoom);
 finish();
 });
 
