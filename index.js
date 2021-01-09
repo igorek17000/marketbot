@@ -357,11 +357,13 @@ res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mong
 //res.send('Hello');
 });
 app.get('/bot/:botRoom', function(req, res) {
-res.writeHead(200);
-res.end("Hi");
+//res.writeHead(200);
+res.send(req.params);
 });
-app.post('/bot/:botRoom', myBotRoom, function(req, res) {
-finish();
+app.post('/bot/:botRoom', function(req, res) { //myBotRoom, function(req, res) {
+bot.respond();
+res.send(req.params);
+//finish();
 });
 
 //----app.get('/bot/:botRoom', function(req, res) {
