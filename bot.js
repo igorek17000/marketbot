@@ -123,7 +123,7 @@ exports.respond = function(botRoom) { //botRoom, chunks, chunk) {
 var req = this.req; //[]; //req.chunks; //[]; // IncomingMessage;
 //this.req.chunks = []; // []; //chunks = chunks += chunk;
 //req.chunks = []; 
-req.on('data', function(chunk) {
+req.get('data', function(chunk) {
 req.chunks = [];
 req.chunks.push(chunk.toString());
 });
