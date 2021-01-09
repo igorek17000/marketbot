@@ -122,13 +122,13 @@ exports.respond = function(botRoom) { //botRoom, chunks, chunk) {
 //var resi = chunks += chunk;
 var req = this.req; //[]; //req.chunks; //[]; // IncomingMessage;
 //this.req.chunks = []; // []; //chunks = chunks += chunk;
-req.chunks == []; 
+req.chunks = []; 
 req.on('data', function(chunk) {
 req.chunks.push(chunk.toString());
 });
 
 
-var request = JSON.parse(req.chunks[0]); //this.req[chunkit]; //req[chunks.chunks]; //.chunks; //req.param); 
+var request = JSON.parse(this.req += chunks[0]); //this.req[chunkit]; //req[chunks.chunks]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
