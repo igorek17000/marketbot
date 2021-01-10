@@ -124,8 +124,8 @@ server = http.createServer(function (req, res, err) {
 console.log(chunk);
   });
 */
-http.createServer(app).listen(80); 
-https.createServer(options, app).listen(443);
+http.createServer(app).listen(8080); 
+//https.createServer(options, app).listen(443);
 /*
   req.chunks = [];
   res.chunks = [];
