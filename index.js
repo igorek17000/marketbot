@@ -122,6 +122,7 @@ server = http.createServer(function (req, res, err) {
 console.log(chunk);
   });
 */
+server = require('http').createServer(app);
 /*
 res.on('data', function (chunkres) {
 res.chunks.push(chunkres.toString());
@@ -229,7 +230,7 @@ req.chunks.push(chunk.toString());
 });
 }).listen(port);
 */
-app.listen(port, function() {
+server.listen(port, function() {
 console.log('App Listening');
 });
 
