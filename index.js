@@ -115,7 +115,7 @@ get: test
 
 });
 /*
-server = http.createServer(function (req, res, err) {
+server = http.createServer(function (req, res) {
   req.chunks = [];
   res.chunks = [];
 
