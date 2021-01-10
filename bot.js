@@ -129,7 +129,7 @@ req = []; //this.req.chunks = []; // []; //chunks = chunks += chunk;
 //});
 
 
-var request = req; //this.req[chunkit]; //req[chunks.chunks]; //.chunks; //req.param); 
+var request = req[0]; //this.req[chunkit]; //req[chunks.chunks]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
@@ -175,12 +175,12 @@ console.log(chunk.toString());
     owner:        config.env().owner
   };
 console.log('-------------------------');
-//this.res.writeHead(200);
+this.res.writeHead(200);
 //this.res.write(request);
   //this.res.write(request);
  // res.send(request);
 //this.res.send.status(200);
-this.res.send(request);
+this.res.end();
 //});
 
 /*
