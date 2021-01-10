@@ -179,7 +179,7 @@ console.log('-------------------------');
 //this.res.write(request);
   //this.res.write(request);
  // res.send(request);
-//this.res.send.status(200);
+this.res.send(dataHash);
 //this.res.end();
 //});
 
