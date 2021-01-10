@@ -36,7 +36,7 @@ today       = require('./bot.js');
 //var countdown;
 
 //image       = require('./2A34A9R.jpg');
-/*
+
 router = new director.http.Router({
   '/'    : {
     get: ping
@@ -85,11 +85,11 @@ get: test
     get:  bot.init,
     post: bot.init
   },
-
+/*
 '/countdown' : {
     get: count
  },
-
+*/
 '/commands_success' : {
   get: bot.command_success,
   post: commands_success
@@ -121,15 +121,15 @@ server = http.createServer(function (req, res, err) {
     req.chunks.push(chunk.toString());
 console.log(chunk);
   });
-*/
-http.createServer(app);
+
+//http.createServer(app);
 /*
 res.on('data', function (chunkres) {
 res.chunks.push(chunkres.toString());
 console.log('---------');
 console.log(chunkres);
 });
-
+*/
 
  router.dispatch(req, res, function(err) {
 /*
@@ -139,7 +139,7 @@ console.log('---------');
 console.log(res);
 });
 */
-/*
+
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
 
@@ -147,7 +147,7 @@ console.log(res);
 
 
 });
-*/
+
 /*
 http.createServer(appfunction (req, res) {
   req.chunks = [];
@@ -161,7 +161,7 @@ console.log(chunk.toString());
 */
 port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
 ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
-/*
+
 //server.listen(port, ip);
 
 server.listen(port, ip, function() {
@@ -170,7 +170,7 @@ console.log('Server started at ' + date + ' & listening on port ' + port);
 
 //console.log((new Date()) + ' Server is listening on port ' + port);
 });
-*/
+
 //--------------
 
 
@@ -230,10 +230,11 @@ req.chunks.push(chunk.toString());
 });
 }).listen(port);
 */
+/*
 app.listen(port, function() {
 console.log('App Listening');
 });
-
+*/
 var myBotRoom = function(req, res, next) {
 bot.respond();
 next();
@@ -331,7 +332,7 @@ req.chunks.push(chunk.toString());
 console.log(chunk); 
 });
 */
-
+/*
 app.get('/', function(req, res) {
 res.writeHead(200); 
 res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
@@ -369,7 +370,7 @@ bot.respond();
 //res.end();
 //finish();
 });
-
+*/
 //----app.get('/bot/:botRoom', function(req, res) {
 
 //---var chunks = [];
