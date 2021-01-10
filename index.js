@@ -238,9 +238,9 @@ bot.respond();
 next();
 }
 app.use(function(req, res, next) {
-req.chunks = []; //
+req.chunks = {}; //
 req.on('data', function(chunk) {
-req.chunks.push(chunk);
+req.chunks.push(chunk.toString());
 });
 //bot.botRoom();
 next();
