@@ -122,7 +122,7 @@ server = http.createServer(function (req, res, err) {
 console.log(chunk);
   });
 */
-server = require('http').createServer(app);
+server = http.createServer(app);
 /*
 res.on('data', function (chunkres) {
 res.chunks.push(chunkres.toString());
@@ -238,6 +238,7 @@ var myBotRoom = function(req, res, next) {
 bot.respond();
 next();
 }
+/*
 app.use(function(req, res, next) {
 req.chunks = []; //
 req.on('data', function(chunk) {
@@ -246,7 +247,7 @@ req.chunks.push(chunk);
 //bot.botRoom();
 next();
 });
-
+*/
 /*
 app.use('/bot/:botRoom', function(req, res) { 
 //app.use('/bot/:botRoom', function(req, res, ) { //'/bot/:botRoom', function(req, res) {
