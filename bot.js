@@ -129,7 +129,7 @@ var req = this.req; //[]; //req.chunks; //[]; // IncomingMessage;
 //});
 
 
-var request = req; //this.req[chunkit]; //req[chunks.chunks]; //.chunks; //req.param); 
+var request = req[{0}]; //this.req[chunkit]; //req[chunks.chunks]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
