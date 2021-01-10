@@ -128,8 +128,8 @@ exports.respond = function(botRoom) { //botRoom, chunks, chunk) {
 //req.chunks.push(chunk.toString());
 //});
 
-
-var request = JSON.parse(this.req.chunks[0]); //this.req[this]; //this.req[chunkit]; //req[chunks.chunks]; //.chunks; //req.param); 
+var request = this.req;
+//var request = JSON.parse(this.req.chunks[0]); //this.req[this]; //this.req[chunkit]; //req[chunks.chunks]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
 //chunks = chunks += chunk;
