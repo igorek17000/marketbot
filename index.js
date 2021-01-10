@@ -196,7 +196,6 @@ db.once('open', function(callback){
   */
 
 var app = express(port); //.listen(port, function() {
-});
 
 /*
 function(req, res) {
