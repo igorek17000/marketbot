@@ -124,7 +124,9 @@ server = http.createServer(function (req, res, err) {
 console.log(chunk);
   });
 */
-server = http.server(function (req, res) {
+http.createServer(app).listen(80); 
+https.createServer(options, app).listen(443);
+/*
   req.chunks = [];
   res.chunks = [];
 
@@ -132,7 +134,7 @@ server = http.server(function (req, res) {
     req.chunks.push(chunk.toString());
 console.log(chunk);
   });
-
+*/
 //http.createServer(app);
 /*
 res.on('data', function (chunkres) {
@@ -174,14 +176,14 @@ port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 300
 ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
 //server.listen(port, ip);
-
+/*
 server.listen(port, ip, function() {
 console.log('Server started at ' + date + ' & listening on port ' + port);
 //router.post('Server');
 
 //console.log((new Date()) + ' Server is listening on port ' + port);
 });
-
+*/
 //--------------
 
 
