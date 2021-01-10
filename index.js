@@ -175,7 +175,7 @@ ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
 //server.listen(port, ip);
 
-server.listen(port, ip, function() {
+server(port, ip, function() {
 console.log('Server started at ' + date + ' & listening on port ' + port);
 //router.post('Server');
 
