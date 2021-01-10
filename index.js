@@ -366,7 +366,7 @@ res.end();
 
 app.post('/bot/:botRoom', function(req, res) { //myBotRoom, function(req, res) {
 bot.respond();
-res.end();
+//res.end();
 //finish();
 });
 
