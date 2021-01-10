@@ -168,7 +168,7 @@ console.log(chunk.toString());
     request:      request,
     currentBot:   rooms.getRoom(botRoom),
     isMod:        mods.isMod(request.user_id),
-    user_id:      mods.isMod(request.id),
+   // user_id:      mods.isMod(request.id),
     bots:         rooms.getRooms(),
     botARoom:     rooms.getUserPath(botRoom),
     funMode:      sysCommands.fun_mode(),
