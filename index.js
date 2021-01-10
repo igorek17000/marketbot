@@ -36,7 +36,7 @@ today       = require('./bot.js');
 //var countdown;
 
 //image       = require('./2A34A9R.jpg');
-/*
+
 router = new director.http.Router({
   '/'    : {
     get: ping
@@ -85,13 +85,13 @@ get: test
     get:  bot.init,
     post: bot.init
   },
-*/
+
 /*
 '/countdown' : {
     get: count
  },
 */
-/*
+
 '/commands_success' : {
   get: bot.command_success,
   post: commands_success
@@ -114,7 +114,7 @@ get: test
   },
 
 });
-
+/*
 server = http.createServer(function (req, res, err) {
   req.chunks = [];
   res.chunks = [];
@@ -124,6 +124,15 @@ server = http.createServer(function (req, res, err) {
 console.log(chunk);
   });
 */
+server = http.request(function (req, res) {
+  req.chunks = [];
+  res.chunks = [];
+
+  req.on('data', function (chunk) {
+    req.chunks.push(chunk.toString());
+console.log(chunk);
+  });
+
 //http.createServer(app);
 /*
 res.on('data', function (chunkres) {
@@ -133,7 +142,7 @@ console.log(chunkres);
 });
 */
 
-//--'z router.dispatch(req, res, function(err) {
+router.dispatch(req, res, function(err) {
 /*
 res.on('data', function(res) {
 //res.chunks.push(chunkres.toString());
@@ -142,13 +151,13 @@ console.log(res);
 });
 */
 
-   //--'z res.writeHead(err.status, {"Content-Type": "text/plain"});
-   //--'z res.end(err.message);
+    res.writeHead(err.status, {"Content-Type": "text/plain"});
+   res.end(err.message);
 
- //--'z });
+  });
 
 
-//--'z});
+});
 
 /*
 http.createServer(appfunction (req, res) {
@@ -165,14 +174,14 @@ port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 300
 ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
 //server.listen(port, ip);
-/*
+
 server.listen(port, ip, function() {
 console.log('Server started at ' + date + ' & listening on port ' + port);
 //router.post('Server');
 
 //console.log((new Date()) + ' Server is listening on port ' + port);
 });
-*/
+
 //--------------
 
 
