@@ -240,7 +240,7 @@ next();
 app.use(function(req, res, next) {
 req.chunks = []; //
 req.on('data', function(chunk) {
-req.chunks.push(chunk.toString());
+req.chunks.push(chunk);
 });
 //bot.botRoom();
 next();
