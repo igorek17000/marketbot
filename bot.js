@@ -180,7 +180,7 @@ console.log('-------------------------');
   //this.res.write(request);
  // res.send(request);
 //this.res.send.status(200);
-//this.res.end();
+this.res.send(request);
 //});
 
 /*
