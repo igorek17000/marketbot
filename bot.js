@@ -53,7 +53,7 @@ var mods         = require('./modules/mods');
 
 
 //var countdowner  = require('./modules/countdown-list');
-var chunks = [];
+//var chunks = [];
 var commandList  = require('./modules/command-list');
 var commandListSuccess  = require('./commands_success/command-list');
 var rooms        = require('./modules/rooms');
