@@ -195,9 +195,8 @@ db.once('open', function(callback){
 
   */
 
-var app = express().listen(port, function() {
-console.log(path);
-});
+var app = express();
+app.listen(port);
 /*
 function(req, res) {
   req.chunks = [];
