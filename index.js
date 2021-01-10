@@ -124,7 +124,14 @@ server = http.createServer(function (req, res, err) {
 console.log(chunk);
   });
 */
-http.createServer(app).listen(8080); 
+http.createServer(function (req, res, err) {
+  req.chunks = [];
+  res.chunks = [];
+
+  req.on('data', function (chunk) {
+    req.chunks.push(chunk.toString());
+console.log(chunk);
+  });
 //https.createServer(options, app).listen(443);
 /*
   req.chunks = [];
@@ -159,7 +166,7 @@ console.log(res);
   });
 
 
-//});
+});
 
 /*
 http.createServer(appfunction (req, res) {
