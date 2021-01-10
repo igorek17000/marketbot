@@ -358,13 +358,15 @@ res.writeHead(200);
 res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 });
+
 app.get('/bot/:botRoom', function(req, res) {
-//res.writeHead(200);
-res.send(req.params);
+res.writeHead(200);
+res.end();
 });
+
 app.post('/bot/:botRoom', function(req, res) { //myBotRoom, function(req, res) {
 bot.respond();
-res.send(req.params);
+res.end();
 //finish();
 });
 
