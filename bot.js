@@ -41,7 +41,7 @@ phone: String
 // Compile model from schema 
 var SomeModel = mongoose.model('SomeModel', SomeModelSchema );
 */
-var app = express();
+//var app = express();
 
 
 //
