@@ -355,7 +355,7 @@ req.chunks.push(chunk.toString());
 console.log(chunk); 
 });
 */
-
+/*
 app.get('/', function(req, res) {
 res.writeHead(200); 
 res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
@@ -393,7 +393,7 @@ bot.respond();
 res.send(req.params.botRoom);
 //finish();
 });
-
+*/
 //----app.get('/bot/:botRoom', function(req, res) {
 
 //---var chunks = [];
