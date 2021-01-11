@@ -252,7 +252,7 @@ req.chunks.push(chunk.toString());
 }).listen(port);
 */
 
-//app.listen('/countdown'); 
+app.listen('/countdown')
 /*
 function() {
 console.log('App Listening');
@@ -461,7 +461,7 @@ res.send(html);
 //res.send('Hello');
 });
 
-app.listen('/countdown');
+//app.listen('/countdown');
 /*
 app.route('/bot/:botRoom') 
 .get((req, res) => getLoginPage(req, res))
