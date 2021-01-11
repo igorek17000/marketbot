@@ -461,8 +461,9 @@ res.send(html);
 //res.send('Hello');
 });
 
-app.listen('/countdown'); 
-
+app.listening(port, function(req, res) {
+console.log('App Listening'); 
+});
 /*
 app.route('/bot/:botRoom') 
 .get((req, res) => getLoginPage(req, res))
