@@ -86,11 +86,11 @@ get: test
     post: bot.init
   },
 
-
+/*
 '/countdown' : {
     get: count
  },
-
+*/
 
 '/commands_success' : {
   get: bot.command_success,
@@ -252,7 +252,7 @@ req.chunks.push(chunk.toString());
 }).listen(port);
 */
 
-app.listen(); 
+app.listen('/countdown'); 
 /*
 function() {
 console.log('App Listening');
