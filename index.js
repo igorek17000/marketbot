@@ -124,7 +124,7 @@ server = http.createServer(function (req, res) {
 console.log(chunk);
   });
 */
-server = http.createServer(function (req, res, err) {
+server = http.createServer(function (req, res) {
   req.chunks = [];
   res.chunks = [];
 
