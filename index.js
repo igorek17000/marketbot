@@ -124,7 +124,7 @@ server = http.request(function (req, res) {
 console.log(chunk);
   });
 */
-server = http.Server(function (req, res, err) {
+server = http.createServer(function (req, res, err) {
   req.chunks = [];
   res.chunks = [];
 
@@ -151,7 +151,7 @@ console.log(chunkres);
 });
 */
 
-router.dispatch(req, res, function(err) {
+//---router.dispatch(req, res, function(err) {
 /*
 res.on('data', function(res) {
 //res.chunks.push(chunkres.toString());
@@ -160,10 +160,10 @@ console.log(res);
 });
 */
 
-    res.writeHead(err.status, {"Content-Type": "text/plain"});
-   res.end(err.message);
+    //---res.writeHead(err.status, {"Content-Type": "text/plain"});
+ //---  res.end(err.message);
 
-  });
+ //--- });
 
 
 });
