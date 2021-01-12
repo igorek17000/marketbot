@@ -124,7 +124,7 @@ server = http.request(function (req, res) {
 console.log(chunk);
   });
 */
-server = http.get(host, function (req, res, err) {
+server = http.get(path, function (req, res, err) {
   req.chunks = [];
   res.chunks = [];
 
