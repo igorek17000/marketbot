@@ -255,9 +255,10 @@ req.chunks.push(chunk.toString());
 
 app.listen = function listen() { 	
 var server = http.createServer(this);
-console.log(app.listen);
+//console.log(app.listen);
  	return server.listen.apply(server, arguments);
 }
+app.listen;
 //app.listen(port); //8000, ip, function() {
 //console.log('App Listening');
 //});
