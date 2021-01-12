@@ -27,7 +27,7 @@ var date = moment.tz.setDefault('America/Toronto');
 var path = require('path');
 //var demo = require('./commands/countdown.html');
 var fs = require('fs');
-var http, director, bot, router, server, port, db;
+var http, director, bot, router, server, port, ip, db;
 
 http        = require('http');
 director    = require('director');
