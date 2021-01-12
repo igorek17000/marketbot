@@ -252,7 +252,7 @@ req.chunks.push(chunk.toString());
 }).listen(port);
 */
 
-app.use(port, function() {
+app.listen('/', function() {
 console.log('App Listening');
 });
 
