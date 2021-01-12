@@ -252,9 +252,9 @@ req.chunks.push(chunk.toString());
 }).listen(port);
 */
 
-app.listen(8000, ip, function() {
-console.log('App Listening');
-});
+app.listen(/countdown); //8000, ip, function() {
+//console.log('App Listening');
+//});
 
 var myBotRoom = function(req, res, next) {
 bot.respond();
