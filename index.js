@@ -115,7 +115,7 @@ get: test
 
 });
 /*
-server = http.request(function (req, res) {
+server = http.router(function (req, res) {
   req.chunks = [];
   res.chunks = [];
 
@@ -124,7 +124,7 @@ server = http.request(function (req, res) {
 console.log(chunk);
   });
 */
-server = http.request(path, function (req, res, err) {
+server = http.router(function (req, res, err) {
   req.chunks = [];
   res.chunks = [];
 
