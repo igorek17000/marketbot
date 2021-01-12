@@ -361,7 +361,7 @@ res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-pers
 });
 
 
-
+/*
 app.get('/init', function(req, res) {
 //var body = {};
 //res.writeHead(200); 
@@ -391,7 +391,7 @@ bot.respond();
 res.send(req.params.botRoom);
 //finish();
 });
-
+*/
 //----app.get('/bot/:botRoom', function(req, res) {
 
 //---var chunks = [];
