@@ -124,7 +124,7 @@ server = http.request(function (req, res) {
 console.log(chunk);
   });
 */
-server = http.get(path, 8080, ip, function (req, res, err) {
+server = http.get(host, function (req, res, err) {
   req.chunks = [];
   res.chunks = [];
 
@@ -184,12 +184,12 @@ ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
 //server.listen(port, ip);
 
-server.listen; //(port, ip, function() {
-//console.log('Server started at ' + date + ' & listening on port ' + port);
+server.listen(port, ip, function() {
+console.log('Server started at ' + date + ' & listening on port ' + port);
 //router.post('Server');
 
 //console.log((new Date()) + ' Server is listening on port ' + port);
-//});
+});
 
 //--------------
 
