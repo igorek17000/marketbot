@@ -275,7 +275,7 @@ router.dispatch(req, res, function(err) {
 //console.log(app.listen);
  	return server.listen.apply(server, arguments);
 }
-app.listen(port, function() {
+app.listen(port, ip, function() {
 console.log('Server started at ' + date + ' & listening on port ' + port);
 });
 //app.listen(port); //8000, ip, function() {
