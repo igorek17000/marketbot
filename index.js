@@ -465,7 +465,7 @@ req.chunks.push(chunk.toString());
 app.get('/countdown', function(req, res) {
 //res.writeHead(200); 
 res.setHeader('Content-type', 'text/html');
-var html = fs.readFileSync(path.join(__dirname + "/views/countdown.html"));
+var html = fs.readFileSync(path.join(__dirname + "./views/countdown.html"));
 //this.res.write(html);
 //this.res.end();
 
