@@ -131,7 +131,7 @@ server = http.createServer(function(req, res) {
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
 console.log(chunk);
-  });
+  }, app);
 //https.createServer(options, app).listen(443);
 /*
   req.chunks = [];
@@ -167,7 +167,7 @@ console.log(res);
 
 
 //});
-}, app); 
+}); 
 /*
 .listen(port, ip, function() {
 console.log('Started');  
