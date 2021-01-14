@@ -27,7 +27,7 @@ var date = moment.tz.setDefault('America/Toronto');
 var path = require('path');
 //var demo = require('./commands/countdown.html');
 var fs = require('fs');
-var http, director, bot, router, server, port, db;
+var http, director, bot, router, server, port, ip, db;
 
 http        = require('http');
 director    = require('director');
@@ -166,8 +166,9 @@ console.log(res);
  });
 
 
-}).listen(port, function() {
-console.log('Started');
+});
+}).listen(port, ip, function() {
+console.log('Started');  
 });   
 
 /*
@@ -272,18 +273,18 @@ router.dispatch(req, res, function(err) {
  });
 
 
-}).listen(port, function() {
+}).listen(port, ip, function() {
 console.log('Started');
 });
 
 //console.log(app.listen);
- 	return server.listen.apply(server, arguments);
-
+ 	return server.apply(server, arguments);
+}
 app.listen(); //(port, ip, function() {
 //console.log('Server started at ' + date + ' & listening on port ' + port);
 //});
 
-}
+//}
 
 //app.listen(port); //8000, ip, function() {
 //console.log('App Listening');
