@@ -86,11 +86,11 @@ get: test
     post: bot.init
   },
 
-
+/*
 '/countdown' : {
     get: count
  },
-
+*/
 
 '/commands_success' : {
   get: bot.command_success,
@@ -462,7 +462,7 @@ req.chunks.push(chunk.toString());
 //---});
 // -----
 
-app.get('/countdown', function(req, res) {
+app.listen('/countdown', function(req, res) {
 //res.writeHead(200); 
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/countdown.html"));
