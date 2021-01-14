@@ -473,12 +473,12 @@ res.send(html);
 //res.send('Hello');
 });
 
-
+/*
 app.listen(port, function() {
 console.log('Started ' + port); //(port, ip, function() {
 //console.log('Server started at ' + date + ' & listening on port ' + port);
 });
-
+*/
 //app.listen('/countdown');
 /*
 app.route('/bot/:botRoom') 
