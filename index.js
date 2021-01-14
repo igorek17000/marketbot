@@ -495,7 +495,7 @@ res.send(html);
 });
 
 
-server.listen(port, ip, function() {
+app.listen(port, function() {
 console.log('Started ' + port); //(port, ip, function() {
 //console.log('Server started at ' + date + ' & listening on port ' + port);
 });
