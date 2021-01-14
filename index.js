@@ -462,7 +462,7 @@ req.chunks.push(chunk.toString());
 //---});
 // -----
 
-app.use('/countdown', count, function(req, res) {
+app.get('/countdown', function(req, res) {
 //res.writeHead(200); 
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/countdown.html"));
