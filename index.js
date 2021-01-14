@@ -281,10 +281,7 @@ console.log('Started');
 //console.log(app.listen);
  	return server.listen.apply(server, arguments);
 }
-app.listen(port, function() {
-console.log('Started'); //(port, ip, function() {
-//console.log('Server started at ' + date + ' & listening on port ' + port);
-});
+
 
 //}
 
@@ -493,6 +490,12 @@ var html = fs.readFileSync(path.join(__dirname + "/views/countdown.html"));
 
 res.send(html);
 //res.send('Hello');
+});
+
+
+app.listen(port, function() {
+console.log('Started'); //(port, ip, function() {
+//console.log('Server started at ' + date + ' & listening on port ' + port);
 });
 
 //app.listen('/countdown');
