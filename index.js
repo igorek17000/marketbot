@@ -166,7 +166,7 @@ console.log(res);
  });
 
 
-});
+//});
 }).listen(port, ip, function() {
 console.log('Started');  
 });   
