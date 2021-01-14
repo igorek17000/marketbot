@@ -259,28 +259,7 @@ req.chunks.push(chunk.toString());
 
 
 app.listen = function listen() { 	
-var server = http.createServer(function(req, res) {
-  req.chunks = [];
-
-  req.on('data', function (chunk) {
-    req.chunks.push(chunk.toString());
-console.log(chunk);
-  });
-router.dispatch(req, res, function(err) {
-
-
-    res.writeHead(err.status, {"Content-Type": "text/plain"});
-  res.end(err.message);
-
- });
-
-
-}); 
-/*.listen(port, ip, function() {
-console.log('Started');
-});
-*/
-//console.log(app.listen);
+var server = http.createServer(app);
  	return server.listen.apply(server, arguments);
 }
 
