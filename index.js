@@ -272,7 +272,7 @@ router.dispatch(req, res, function(err) {
  });
 
 
-}).listen(port, ip, function) {
+}).listen(port, ip, function() {
 console.log('Started');
 });
 
