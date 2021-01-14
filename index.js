@@ -273,16 +273,18 @@ router.dispatch(req, res, function(err) {
  });
 
 
-}).listen(port, ip, function() {
+}); 
+/*.listen(port, ip, function() {
 console.log('Started');
 });
-
+*/
 //console.log(app.listen);
  	return server.listen.apply(server, arguments);
 }
-app.listen(); //(port, ip, function() {
+app.listen(port, function() {
+console.log('Started'); //(port, ip, function() {
 //console.log('Server started at ' + date + ' & listening on port ' + port);
-//});
+});
 
 //}
 
