@@ -166,7 +166,9 @@ console.log(res);
  });
 
 
-});
+}).listen(port, ip, function) {
+console.log('Started');
+});   
 
 /*
 http.createServer(appfunction (req, res) {
@@ -270,14 +272,17 @@ router.dispatch(req, res, function(err) {
  });
 
 
+}).listen(port, ip, function) {
+console.log('Started');
 });
 
 //console.log(app.listen);
  	return server.listen.apply(server, arguments);
 
-app.listen(port, ip, function() {
-console.log('Server started at ' + date + ' & listening on port ' + port);
-});
+app.listen; //(port, ip, function() {
+//console.log('Server started at ' + date + ' & listening on port ' + port);
+//});
+
 }
 
 //app.listen(port); //8000, ip, function() {
