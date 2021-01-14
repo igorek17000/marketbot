@@ -183,14 +183,14 @@ port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 300
 ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
 //server.listen(port, ip);
-
+/*
 server.listen(port, ip, function() {
 console.log('Server started at ' + date + ' & listening on port ' + port);
 //router.post('Server');
 
 //console.log((new Date()) + ' Server is listening on port ' + port);
 });
-
+*/
 //--------------
 
 
@@ -254,11 +254,28 @@ req.chunks.push(chunk.toString());
 
 
 app.listen = function listen() { 	
-var server = http.createServer(this);
+var server = http.createServer(function(req, res) {
+  req.chunks = [];
+
+  req.on('data', function (chunk) {
+    req.chunks.push(chunk.toString());
+console.log(chunk);
+  });
+router.dispatch(req, res, function(err) {
+
+
+    res.writeHead(err.status, {"Content-Type": "text/plain"});
+  res.end(err.message);
+
+ });
+
+
+});
+
 //console.log(app.listen);
  	return server.listen.apply(server, arguments);
 }
-app.listen;
+app.listen(8080);
 //app.listen(port); //8000, ip, function() {
 //console.log('App Listening');
 //});
