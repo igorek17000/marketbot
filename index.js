@@ -86,11 +86,11 @@ get: test
     post: bot.init
   },
 
-
+/*
 '/countdown' : {
     get: count
  },
-
+*/
 
 '/commands_success' : {
   get: bot.command_success,
