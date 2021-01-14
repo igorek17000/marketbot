@@ -166,7 +166,7 @@ console.log(res);
  });
 
 
-}).listen(port, ip, function() {
+}).listen(port, function() {
 console.log('Started');
 });   
 
@@ -272,7 +272,7 @@ router.dispatch(req, res, function(err) {
  });
 
 
-}).listen(port, ip, function() {
+}).listen(port, function() {
 console.log('Started');
 });
 
