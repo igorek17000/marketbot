@@ -114,8 +114,10 @@ get: test
   },
 
 });
-/*
-server = http.router(function (req, res) {
+
+http.Server(app).listen(port); 
+/* 
+{
   req.chunks = [];
   res.chunks = [];
 
