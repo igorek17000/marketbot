@@ -115,7 +115,7 @@ get: test
 
 });
 
-http.Server(app).listen(port); 
+//http.Server(app).listen(port); 
 /* 
 {
   req.chunks = [];
@@ -477,7 +477,7 @@ res.send(html);
 });
 
 
-app.listen(function() {
+app.listen('/countdown', function() {
 console.log('Started ' + port); //(port, ip, function() {
 //console.log('Server started at ' + date + ' & listening on port ' + port);
 });
