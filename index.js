@@ -171,7 +171,7 @@ console.log(res);
 
 
 //});
-}, app); 
+}); 
 /*
 .listen(port, ip, function() {
 console.log('Started');  
