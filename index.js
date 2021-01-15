@@ -115,7 +115,7 @@ get: test
 
 });
 
-http.Server(app).listen('/countdown'); 
+http.Server(app).listen(); 
 /* 
 {
   req.chunks = [];
