@@ -53,7 +53,7 @@ get: rend
 },
 
 '/clicks' : {
-get: clicks
+post: clicks
 //post: clicks
 },
 
