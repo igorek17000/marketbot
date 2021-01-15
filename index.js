@@ -222,7 +222,7 @@ db.once('open', function(callback){
 
   */
 
-let app = server; //express(); //.listen(port, function() {
+let app = http.Server(app); //express(); //.listen(port, function() {
 
 /*
 function(req, res) {
