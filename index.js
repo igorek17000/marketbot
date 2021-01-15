@@ -53,7 +53,7 @@ get: rend
 },
 
 '/clicks' : {
-post: clicks
+get: clicks
 //post: clicks
 },
 
@@ -638,12 +638,14 @@ this.res.end();
 }
 
 async function clicks() {
-
-var docs = await db.collection('details').find({}).toArray(function(err, docs) {
-if(err) throw err;
-});
 var out = "";
 var output = out += docs;
+var docs = await db.collection('details').find({}).toArray(function(err, docs) {
+if(err) throw err;
+var out = "";
+var output = out += docs;
+});
+
 
 //var docs = "";
 var i;
@@ -665,6 +667,8 @@ async function getAllDo(docs) {
 
 var docs = await db.collection('details').find({}).toArray(function(err, docs) {
 if(err) throw err;
+var out = "";
+var output = out += docs;
 });
 var out = "";
 var output = out += docs;
