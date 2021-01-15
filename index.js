@@ -222,7 +222,7 @@ db.once('open', function(callback){
 
   */
 
-var app = express(); //.listen(port, function() {
+let app = server; //express(); //.listen(port, function() {
 
 /*
 function(req, res) {
@@ -477,7 +477,7 @@ res.send(html);
 });
 
 
-app.Server('/countdown', function() {
+app.listen('/countdown', function() {
 console.log('Started ' + port); //(port, ip, function() {
 //console.log('Server started at ' + date + ' & listening on port ' + port);
 });
