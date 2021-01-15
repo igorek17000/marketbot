@@ -638,7 +638,11 @@ this.res.end();
 }
 
 async function clicks() {
-var docs = "";
+var docs = db.collection('details').find({}).forEach(function(err, docs) {
+if(err) throw err;
+});
+
+//var docs = "";
 var i;
 for (var i in docs) {
 i = 0; i++;
@@ -655,7 +659,9 @@ i = 0; i++;
 //var msg = docs[{name}];
 
 async function getAllDo(docs) {
-var docs = "";
+var docs = db.collection('details').find({}).forEach(function(err, docs) {
+if(err) throw err;
+});
 //init();
 db.collection('details').find({}).toArray(function(err, docs) {
 if(err) throw err;
