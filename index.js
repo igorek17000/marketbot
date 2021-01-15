@@ -639,7 +639,7 @@ this.res.end();
 
 async function clicks() {
 
-var docs = return db.collection('details').find({}).toArray(function(err, docs) {
+var docs = await db.collection('details').find({}).toArray(function(err, docs) {
 if(err) throw err;
 });
 var out = "";
@@ -663,7 +663,7 @@ i = 0; i++;
 
 async function getAllDo(docs) {
 
-var docs = return db.collection('details').find({}).toArray(function(err, docs) {
+var docs = await db.collection('details').find({}).toArray(function(err, docs) {
 if(err) throw err;
 });
 var out = "";
