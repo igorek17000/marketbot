@@ -638,9 +638,12 @@ this.res.end();
 }
 
 async function clicks() {
+
 var docs = db.collection('details').find({}).forEach(function(err, docs) {
 if(err) throw err;
 });
+var out = "";
+var output = out += docs;
 
 //var docs = "";
 var i;
@@ -659,14 +662,18 @@ i = 0; i++;
 //var msg = docs[{name}];
 
 async function getAllDo(docs) {
+
 var docs = db.collection('details').find({}).forEach(function(err, docs) {
 if(err) throw err;
 });
+var out = "";
+var output = out += docs;
+
 //init();
 db.collection('details').find({}).toArray(function(err, docs) {
 if(err) throw err;
 //docs = docs[i];
-docs = {};
+
 /*
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 //additFunc();
@@ -716,7 +723,7 @@ console.log(name);
 */
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 this.res.write("Hi");
-this.res.write(docs);
+this.res.write(output);
 this.res.end(); 
 //});
 }
