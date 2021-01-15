@@ -477,7 +477,7 @@ res.send(html);
 });
 
 
-app.listen('http://alex-cc.b9ad.pro-us-east-1.openshiftapps.com' + '/countdown', function() {
+app.listen(80, function() {
 console.log('Started ' + port); //(port, ip, function() {
 //console.log('Server started at ' + date + ' & listening on port ' + port);
 });
