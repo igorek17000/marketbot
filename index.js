@@ -477,7 +477,7 @@ res.send(html);
 });
 
 
-app.listen(path + '/countdown', function() {
+app.listen(path, function() {
 console.log('Started ' + port); //(port, ip, function() {
 //console.log('Server started at ' + date + ' & listening on port ' + port);
 });
