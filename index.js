@@ -660,7 +660,7 @@ var docs = "";
 db.collection('details').find({}).toArray(function(err, docs) {
 if(err) throw err;
 //docs = docs[i];
-global.docs = docs;
+docs = {};
 /*
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
 //additFunc();
