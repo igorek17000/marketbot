@@ -477,10 +477,10 @@ res.send(html);
 });
 
 
-app.listen(path.join(__dirname, function()) {
+app.listen(path.join(__dirname, function() {
 console.log('Started ' + port); //(port, ip, function() {
 //console.log('Server started at ' + date + ' & listening on port ' + port);
-});
+}));
 
 //app.listen('/countdown');
 /*
