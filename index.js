@@ -261,7 +261,7 @@ req.chunks.push(chunk.toString());
 
 
 app.listen = function listen() { 	
-var server = http.createServer(this);
+var server = http.createServer(app);
  	return server.listen.apply(server, arguments);
 }
 
@@ -476,13 +476,13 @@ res.send(html);
 //res.send('Hello');
 });
 
-/*
+
 app.listen('/countdown', function() {
 console.log('Started ' + port); //(port, ip, function() {
 //console.log('Server started at ' + date + ' & listening on port ' + port);
 });
-*/
-app.listen('/countdown');
+
+//app.listen('/countdown');
 /*
 app.route('/bot/:botRoom') 
 .get((req, res) => getLoginPage(req, res))
