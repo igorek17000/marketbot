@@ -133,7 +133,7 @@ server = http.Server(function(req, res) {
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
 console.log(chunk);
-  }, app);
+  });
 //https.createServer(options, app).listen(443);
 /*
   req.chunks = [];
@@ -152,7 +152,9 @@ console.log('---------');
 console.log(chunkres);
 });
 */
-
+if(req.url === '/countdown') {
+app(req, res);
+} else {
 router.dispatch(req, res, function(err) {
 /*
 res.on('data', function(res) {
@@ -169,7 +171,7 @@ console.log(res);
 
 
 //});
-}); 
+}, app); 
 /*
 .listen(port, ip, function() {
 console.log('Started');  
@@ -476,12 +478,12 @@ res.send(html);
 //res.send('Hello');
 });
 
-
-app.listen(function() {
+/*
+app.listen(port, function() {
 console.log('Started ' + port); //(port, ip, function() {
 //console.log('Server started at ' + date + ' & listening on port ' + port);
 });
-
+*/
 //app.listen('/countdown');
 /*
 app.route('/bot/:botRoom') 
