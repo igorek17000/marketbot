@@ -115,7 +115,7 @@ get: test
 
 });
 
-http.Server(app); 
+//http.Server(app); 
 /* 
 {
   req.chunks = [];
