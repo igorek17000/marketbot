@@ -115,7 +115,7 @@ get: test
 
 });
 
-//http.Server(app).listen(); 
+http.Server(app); 
 /* 
 {
   req.chunks = [];
@@ -482,7 +482,7 @@ console.log('Started ' + port); //(port, ip, function() {
 //console.log('Server started at ' + date + ' & listening on port ' + port);
 });
 */
-app.listen('/countdown');
+//app.listen('/countdown');
 /*
 app.route('/bot/:botRoom') 
 .get((req, res) => getLoginPage(req, res))
