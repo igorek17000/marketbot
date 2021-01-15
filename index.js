@@ -464,7 +464,7 @@ req.chunks.push(chunk.toString());
 //---});
 // -----
 
-app.listen('/countdown', function() {
+app.get('/countdown', function(req, res, err) {
 //res.writeHead(200); 
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/countdown.html"));
@@ -476,12 +476,12 @@ res.send(html);
 //res.send('Hello');
 });
 
-/*
+
 app.listen('/countdown', function() {
 console.log('Started ' + port); //(port, ip, function() {
 //console.log('Server started at ' + date + ' & listening on port ' + port);
 });
-*/
+
 //app.listen('/countdown');
 /*
 app.route('/bot/:botRoom') 
