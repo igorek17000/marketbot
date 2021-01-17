@@ -38,7 +38,7 @@ input {
     padding: 12px 20px;
     margin: 8px 0;
     border: none;
-   
+    border-bottom: 2px solid #767474;
 }
     input[type=submit] {
     font-family: 'Courier New', Courier;
@@ -149,6 +149,10 @@ console.log("tag2");
 */
 function validate() {
 var name = document.getElementById("name").value;
+var password = document.getElementById("password").value;
+
+
+
 /*
 var email = document.getElementById("email").value;
 var password = document.getElementById("password").value;
@@ -159,7 +163,7 @@ var docs = await Customer.find({name}).exec();
 
 //window.location.href="http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands";
 */
-if (name != 'ALEX DE AGUIAR') {
+if (name != 'ALEX DE AGUIAR' && password != 'true') {
 
 alert("Invalid credentials, try again");
 } else {
