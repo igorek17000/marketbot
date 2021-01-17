@@ -152,9 +152,29 @@ console.log('---------');
 console.log(chunkres);
 });
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if (req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/login' || req.url === '/bot/:botRoom') {
+
+
+/*
 if(req.url === '/countdown') {
 app(req, res);
 } else {
+*/
 router.dispatch(req, res, function(err) {
 /*
 res.on('data', function(res) {
@@ -169,6 +189,8 @@ console.log(res);
 
  });
 
+} else {
+app(req, res);
 }
 //});
 }); 
