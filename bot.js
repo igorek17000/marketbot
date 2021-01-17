@@ -424,7 +424,7 @@ var output = 'commandList.buildHTML(cmdArr, config.bot_name)';
 //-----------------
 
 
-exports.commands = async function() {
+exports.commands2020 = async function() {
 
 
 var mainHTML, allHTML, modHTML, ownerHTML;
@@ -632,7 +632,7 @@ var output = buildHTML(cmdArr, config.bot_name);
 
 //-----------
 
-exports.commands2 = function() {
+exports.commands = function() {
 /*
 var cmdArr = [];
 var cmdArray = [];
@@ -682,10 +682,12 @@ if(err) throw err;
 
 
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
-additFunc()
+console.log('Not Authorized'); //additFunc()
+throw err;
 }
-if(docs.name) {
+if(docs) {
 console.log(docs);
+return true;
 } 
 });
 
@@ -729,10 +731,10 @@ console.log(JSON.stringify(doc, null, 4));
 function errorFunc(error) {
 console.log(error);
 }
-
+*/
 getAllDocs();
 
-*/
+
   var cmdArr = [];
 var cmdArray = [];
 
