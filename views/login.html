@@ -60,7 +60,7 @@ width: 40%;
     
   <div class='topleft'>
     <p>AlexBot</p></div>
-    <div class='middle'><form id="form_id" method="post" name="myform"> 
+    <div class='middle'><form id="myform" name="myform"> 
 <label>User Name :</label> 
 <input type="text" name="username" id="username"/> 
 <label>Password :</label> <input type="password" name="password" id="password"/><br>
@@ -83,9 +83,10 @@ width: 40%;
 function validate(){ 
 var username = document.getElementById("username").value; 
 var password = document.getElementById("password").value; 
-if (username == "username1" && password == "password1"){ 
+if (username == "ALEX DE AGUOAR" && password == "true"){ 
 
-//document.getElementByID("content");
+document.myform.action = '/commands';
+document.myform.method = 'post';
 window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/signup_success'; //commands';
 
 } else{ 
