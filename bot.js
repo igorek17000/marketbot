@@ -632,7 +632,7 @@ var output = buildHTML(cmdArr, config.bot_name);
 
 //-----------
 
-exports.commands-debug2021 = function() {
+exports.commands_de2021 = function() {
 /*
 var cmdArr = [];
 var cmdArray = [];
