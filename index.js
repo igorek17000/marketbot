@@ -512,6 +512,20 @@ res.send(html);
 //res.send('Hello');
 });
 
+app.get('/home', function(req, res) {
+//res.writeHead(200); 
+res.setHeader('Content-type', 'text/html');
+var html = fs.readFileSync(path.join(__dirname + "/views/home.html"));
+
+//this.res.write(html);
+//this.res.end();
+
+res.send(html);
+//res.send('Hello');
+});
+
+
+
 /*
 app.listen(port, function() {
 console.log('Started ' + port); //(port, ip, function() {
