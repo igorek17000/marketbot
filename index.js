@@ -769,7 +769,7 @@ this.res.end();
 function rend_command() {
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
-var html = fs.readFileSync(path.join(__dirname + "/index.html"; //"/commands_success/index.html"));
+var html = fs.readFileSync(path.join(__dirname + "/index.html"); //"/commands_success/index.html"));
 this.res.write(html);
 this.res.end();
 }
