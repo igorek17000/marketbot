@@ -47,7 +47,7 @@ get: home
 },
 
 '/login' : {
-get: rend
+get: login
 //get: clicks
 //console.log(req.body);
 },
@@ -72,7 +72,7 @@ get: bot.commands
 
 
 '/rend' : {
-get: login,
+get: rend,
 //post: login
 },
 
@@ -677,7 +677,7 @@ this.res.write(html);
 }
 
 
-function rend() {
+function login() {
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
 var html = fs.readFileSync(path.join(__dirname + "/index.html"));
@@ -1118,7 +1118,7 @@ this.res.write(html);
   this.res.end();
 }
 
-function login() {
+function rend() {
   //this.res.writeHead(200); //, {"Content-Type": "text/html"});
 this.res.statusCode = 200;
 this.res.setHeader('Content-type', 'text/html');
