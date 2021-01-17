@@ -261,8 +261,8 @@ exports.countdown = function() {
 }
 */
 
-exports.command = function() {
-var docs = docs[0] ; //, out;
+exports.commands = function() {
+//var docs = docs[0] ; //, out;
 //var output = {}; //= commandList.buildHTML(cmdArr, config.bot_name);
 //output.good = commandList.buildHTML(cmdArr, config.bot_name);
 //output.bad = 'The End!';
@@ -307,7 +307,7 @@ if(err) throw err;
 //var output = docs;
 
 if (docs < 1) { //docs[name] != null || docs[name] != data.name) { //< 1) {
-additFunc();
+throw err; //additFunc();
 //this.res.writeHead(200, {"Content-Type": "text/html"});
   //this.res.end('The End');
 var output = 'The End!';
@@ -395,7 +395,7 @@ callback(output);
 */
 //if (callback)
 // callback(output);
-// var output = commandListSuccess.buildHTML(cmdArr, config.bot_name);
+var output = commandList.buildHTML(cmdArr, config.bot_name);
 //this.res.statusCode = 200;
 //this.res.contentType = "text/html";
   this.res.writeHead(200, {"Content-Type": "text/html"});
@@ -632,7 +632,7 @@ var output = buildHTML(cmdArr, config.bot_name);
 
 //-----------
 
-exports.commands = function() {
+exports.commands-debug2021 = function() {
 /*
 var cmdArr = [];
 var cmdArray = [];
