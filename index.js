@@ -46,7 +46,7 @@ router = new director.http.Router({
 get: home
 },
 
-'/rend' : {
+'/login' : {
 get: rend
 //get: clicks
 //console.log(req.body);
@@ -71,7 +71,7 @@ get: bot.commands
 },
 
 
-'/login' : {
+'/rend' : {
 get: login,
 //post: login
 },
