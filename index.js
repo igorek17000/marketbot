@@ -525,7 +525,11 @@ res.send(html);
 });
 
 
-
+app.get('/mongodb', function(req, res) {
+res.writeHead(200); 
+res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
+//res.send('Hello');
+});
 /*
 app.listen(port, function() {
 console.log('Started ' + port); //(port, ip, function() {
