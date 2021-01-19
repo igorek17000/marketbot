@@ -1,5 +1,5 @@
- 
- 
+
+
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +8,7 @@
 <style>
 
 
-   
+
 html {
   background-image: url('https://thumbs2.imgbox.com/6d/62/WAKyZZwC_t.jpg');
   height: 100%;
@@ -45,7 +45,7 @@ a {
     }
 
 }
- 
+
 @-webkit-keyframes blink {
 0% {
         color:green;
@@ -62,7 +62,7 @@ a {
 }
 
 body {
-        
+
         size: 100%;
         height: 100%;
         position: fixed;
@@ -96,27 +96,27 @@ canvas {
   cursor: crosshair;
   display: block;
 }
-   
+
 
 hr {
   margin: auto;
   width: 40%;
 }
 </style>
-    
+
 <body>
 
 <!-- setup our canvas element -->
 <canvas id='canvas'></canvas>
-   
-   
+
+
   <div class='topleft'>
     <p>AlexBot</p>
 </div>
 
     <div class='middle'><h2>FAMILY BIRTHDAY COUNTDOWN</h2>
 <h2 id='next'>Next Birthday In></h2>
-      
+
 
  <hr></hr>
       <p id='demo' style='font-size: 30px'></p>
@@ -131,7 +131,7 @@ hr {
 
 <script>
 
-  
+
 // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
 // not supported in all browsers though and sometimes needs a prefix, so we need a shim
 window.requestAnimFrame = ( function() {
@@ -169,13 +169,13 @@ var canvas = document.getElementById( 'canvas' ),
 		mx,
 		// mouse y coordinate
 		my;
-		
+
 // set canvas dimensions
 canvas.width = cw;
 canvas.height = ch;
 
 // now we are going to setup our function placeholders for the entire demo
-
+//
 // get a random number within a range
 function random( min, max ) {
 	return Math.random() * ( max - min ) + min;
@@ -223,24 +223,24 @@ Firework.prototype.update = function( index ) {
 	this.coordinates.pop();
 	// add current coordinates to the start of the array
 	this.coordinates.unshift( [ this.x, this.y ] );
-	
+
 	// cycle the circle target indicator radius
 	if( this.targetRadius < 8 ) {
 		this.targetRadius += 0.3;
 	} else {
 		this.targetRadius = 1;
 	}
-	
+
 	// speed up the firework
-	this.speed = 10; 
+	this.speed = 10;
         this.acceleration = 1.05;
-	
+
 	// get the current velocities based on angle and speed
 	var vx = Math.cos( this.angle ) * this.speed,
 			vy = Math.sin( this.angle ) * this.speed;
 	// how far will the firework have traveled with velocities applied?
 	this.distanceTraveled = calculateDistance( this.sx, this.sy, this.x + vx, this.y + vy );
-	
+
 	// if the distance traveled, including velocities, is greater than the initial distance to the target, then the target has been reached
 	if( this.distanceTraveled >= this.distanceToTarget ) {
 		createParticles( this.tx, this.ty );
@@ -261,7 +261,7 @@ Firework.prototype.draw = function() {
 	ctx.lineTo( this.x, this.y );
 	ctx.strokeStyle = 'hsl(' + hue + ', 100%, ' + this.brightness + '%)';
 	ctx.stroke();
-	
+
 	ctx.beginPath();
 	// draw the target for this firework with a pulsing circle
 	ctx.arc( this.tx, this.ty, this.targetRadius, 0, Math.PI * 2 );
@@ -306,7 +306,7 @@ Particle.prototype.update = function( index ) {
 	this.y += Math.sin( this.angle ) * this.speed + this.gravity;
 	// fade out the particle
 	this.alpha -= this.decay;
-	
+
 	// remove the particle once the alpha is low enough, based on the passed in index
 	if( this.alpha <= this.decay ) {
 		particles.splice( index, 1 );
@@ -335,14 +335,14 @@ function createParticles( x, y ) {
 // main demo loop
 function loop() {
 	// this function will run endlessly with requestAnimationFrame
-	
+
 	requestAnimFrame( loop );
 	// increase the hue to get different colored fireworks over time
 	hue += 5;// 0.5;
-  
+
   // create random color
   hue = random(0, 360 );
-	
+
 	// normally, clearRect() would be used to clear the canvas
 	// we want to create a trailing effect though
 	// setting the composite operation to destination-out will allow us to clear the canvas at a specific opacity, rather than wiping it entirely
@@ -353,14 +353,14 @@ function loop() {
 	// change the composite operation back to our main mode
 	// lighter creates bright highlight points as the fireworks and particles overlap each other
 	ctx.globalCompositeOperation = 'lighter';
-	
+
 	// loop over each firework, draw it, update it
 	var i = fireworks.length;
 	while( i-- ) {
 		fireworks[ i ].draw();
 		fireworks[ i ].update( i );
 	}
-	
+
 	// loop over each particle, draw it, update it
 	var i = particles.length;
 	while( i-- ) {
@@ -369,8 +369,8 @@ function loop() {
 	}
 
 
-	
-	
+
+
         // launch fireworks automatically to random coordinates, when the mouse isn't down
 	if( timerTick >= timerTotal) {
       //  if (dist = 1000) {
@@ -384,7 +384,7 @@ timerTotal = 80;
 	} else {
 //setInterval(function() {
 //fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
-		
+
 		timerTick++;
 	//}, 1000);
 	}
@@ -407,14 +407,14 @@ timerTotal = 80;
 
 function test() {
 	// this function will run endlessly with requestAnimationFrame
-	
-	
+
+
 	// increase the hue to get different colored fireworks over time
 	hue += 5;// 0.5;
-  
+
   // create random color
   hue = random(0, 360 );
-	
+
 	// normally, clearRect() would be used to clear the canvas
 	// we want to create a trailing effect though
 	// setting the composite operation to destination-out will allow us to clear the canvas at a specific opacity, rather than wiping it entirely
@@ -425,14 +425,14 @@ function test() {
 	// change the composite operation back to our main mode
 	// lighter creates bright highlight points as the fireworks and particles overlap each other
 	ctx.globalCompositeOperation = 'lighter';
-	
+
 	// loop over each firework, draw it, update it
 	var i = fireworks.length;
 	while( i-- ) {
 		fireworks[ i ].draw();
 		fireworks[ i ].update( i );
 	}
-	
+
 	// loop over each particle, draw it, update it
 	var i = particles.length;
 	while( i-- ) {
@@ -441,11 +441,11 @@ function test() {
 	}
 
 
-	
-	
+
+
         // launch fireworks automatically to random coordinates, when the mouse isn't down
 	if( testTick >= testTotal) {
-   
+
 			// start the firework at the bottom middle of the screen, then set the random target coordinates, the random y coordinates will be set within the range of the top half of the screen
 			fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
 			testTick = 2;
@@ -455,12 +455,12 @@ testTotal = 30;
 	} else {
 
 		testTick++;
-	
+
 	}
 
 
 
-	
+
 }
 
 
@@ -489,7 +489,7 @@ canvas.addEventListener( 'mouseup', function( e ) {
 </body>
 <script>
 
-var countDownDate = new Date("oct 14, 2020 00:00:00").getTime() + 2000; 
+var countDownDate = new Date("oct 14, 2020 00:00:00").getTime() + 2000;
 var name = "TestBot";
 var dob = "October 14, 2020";
 
@@ -498,7 +498,7 @@ var dob = "October 14, 2020";
 var countdownfunction = setInterval(function() {
 
     var now = new Date().getTime();
-  
+
     var dist = countDownDate - now;
 
   if (now > new Date("oct 14, 2020 00:00:00").getTime()) {
@@ -548,9 +548,9 @@ dob = "December 25, 2020"
 if (dist > -86399000) {
 document.getElementById('next').innerHTML = "Countdown Complete";
  document.getElementById('demo').innerHTML = "";
- document.getElementById('name').innerHTML = "";	
- document.getElementById('dob').innerHTML = "";		
- document.getElementById('colour').innerHTML = "Happy Birthday " + name; 
+ document.getElementById('name').innerHTML = "";
+ document.getElementById('dob').innerHTML = "";
+ document.getElementById('colour').innerHTML = "Happy Birthday " + name;
  document.getElementById('canvas').window.onload = test();
 /*
 if( timerTick >= timerTotal ) {
