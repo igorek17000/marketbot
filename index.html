@@ -199,7 +199,7 @@ var docs = await Customer.find({name}).exec();
 
 //window.location.href="http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands";
 */
-if (name != process.env.MONGODB_USER || password != process.env.MONGODB_PASSWORD) {
+if (name != env.MONGODB_USER || password != env.MONGODB_PASSWORD) {
 
 alert("Invalid credentials, try again");
 } else {
