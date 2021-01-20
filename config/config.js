@@ -32,8 +32,8 @@ exports.delay_one = 100;
 exports.delay_two = 225;
 exports.delay_three = 350;
 exports.delay_four = 425;
-export.username = 'alexbot';
-export.userpassword = '308boonave';
+exports.username = 'alexbot';
+exports.userpassword = '308boonave';
 
 
 exports.nameit = function() {
