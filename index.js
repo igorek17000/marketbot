@@ -682,7 +682,7 @@ this.res.write(html);
 
 
 function login() {
-var username = confif.username;
+var username = config.username;
 var userpassword = config.userpassword
   this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/html', 'Access-control-Allow-Origin', '*');
