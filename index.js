@@ -525,6 +525,28 @@ res.send(html);
 });
 
 
+
+var routes = require('./routes/imagefile');
+
+// connect to mongodb with default port (27017)
+//mongoose.connect('mongodb://localhost/imagespath');
+
+app.use(routes);
+
+// URL : http://localhost:8000/images/
+// To get all the images/files ids stored in MongoDB
+app.get('/images', (req, res) => {
+
+    // http://mongoosejs.com/docs/api.html#model_Model.create
+    routes.getImages((err, docs) => {
+        if (err) {
+            throw err;
+        }
+        res.json(docs.map(doc => doc['_id']));
+    });
+});
+
+
 app.get('/mongodb', function(req, res) {
 res.writeHead(200); 
 res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
