@@ -40,7 +40,7 @@ router.addImage = function(image, callback) {
 
 }
 
-router.get('/', function(req, res, next) {
+router.get('/images', function(req, res, next) {
 
     res.render('index.ejs');
 
@@ -54,7 +54,7 @@ var storage = multer.memoryStorage()
 
 var upload = multer({ storage: storage })
 
-router.post('/', upload.any(), function(req, res) {
+router.post('/images', upload.any(), function(req, res) {
 
     var image = {};
 
