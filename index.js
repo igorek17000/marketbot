@@ -116,7 +116,7 @@ get: test
 });
 
 
-http.createServer(app);
+///http.createServer(app);
 
 /*
 http.createServer(function (req, res) {
@@ -136,7 +136,7 @@ console.log('started');
 
 
 
-server = http.Server(function(req, res) {
+server = http.createServer(function(req, res) {
 
 //if (req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/login' || req.url === '/bot/:botRoom' || req.url === '/rend') {
 
