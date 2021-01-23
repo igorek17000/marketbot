@@ -141,7 +141,8 @@ console.log(chunk);
 
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
-console.log(chunk);
+
+console.log(date + '\n' + chunk.toString());
   });
 */
 //http.createServer(app);
