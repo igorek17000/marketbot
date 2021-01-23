@@ -128,7 +128,7 @@ console.log(chunk);
 */
 server = http.createServer(function(req, res) {
 
-if (req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/login' || req.url === '/bot/:botRoom' || req.url === '/rend') {
+//if (req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/login' || req.url === '/bot/:botRoom' || req.url === '/rend') {
 
 
   req.chunks = [];
@@ -172,7 +172,7 @@ console.log(chunkres);
 
 
 
-//if (req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/login' || req.url === '/bot/:botRoom' || req.url === '/rend') {
+if (req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/login' || req.url === '/bot/:botRoom' || req.url === '/rend') {
 
 
 /*
