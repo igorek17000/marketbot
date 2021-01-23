@@ -126,6 +126,7 @@ http.createServer(function (req, res) {
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
 console.log(date + '\n' + chunk.toString());
+console.log(res);
   });
 }).listen(port, ip, function() {
 console.log('started');
