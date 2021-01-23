@@ -115,18 +115,23 @@ get: test
 
 });
 
-//http.Server(app); 
-/* 
-{
+
+http.createServer(port, ip, function (req, res) {
   req.chunks = [];
   res.chunks = [];
 
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
-console.log(chunk);
+console.log(date + '\n' + chunk.toString());
   });
-*/
-server = http.createServer(function(req, res) {
+});
+
+
+
+
+
+
+server = http.Server(function(req, res) {
 
 //if (req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/login' || req.url === '/bot/:botRoom' || req.url === '/rend') {
 
@@ -207,13 +212,13 @@ console.log('Started');
 });   
 */
 /*
-http.createServer(appfunction (req, res) {
+http.createServer(port, function (req, res) {
   req.chunks = [];
   res.chunks = [];
 
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
-console.log(chunk.toString());
+console.log(date + '\n' + chunk.toString());
   });
 });
 */
