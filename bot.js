@@ -222,7 +222,7 @@ console.log(request);
 */
  // if (dataHash.request.sender_type == 'bot') return;
   dataHash.request.text = dataHash.request.text.trim();
-if (dataHash.request.sender_id == '685') dataHash.request.avatar_url = 'https://i.groupme.com/110x110.png.131fccb0a1730131dc1922000a2d16e3.avatar';
+if (dataHash.request.sender_id == '685') dataHash.request.avatar_url = 'https://i.groupme.com/290x174.jpeg.531a4c83d04f4cafae67b323a4fd6418';
   if (!rooms.getRoom(botRoom).id && botRoom != 'config')
     return;
 
