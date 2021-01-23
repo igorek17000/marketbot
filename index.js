@@ -182,14 +182,14 @@ console.log(chunkres);
 
 
 
-if (req.url !== '/' || req.url !== '/init' || req.url !== '/commands' || req.url !== '/login' || req.url !== '/bot/:botRoom' || req.url !== '/rend') {
+if (req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/login' || req.url === '/bot/:botRoom' || req.url === '/rend') {
 
 
-
+/*
 //if(req.url === '/countdown') {
 app(req, res);
 } else {
-
+*/
 router.dispatch(req, res, function(err) {
 /*
 res.on('data', function(res) {
@@ -203,11 +203,11 @@ console.log(res);
   res.end(err.message);
 
  });
-/*
+
 
 } else {
 app(req, res);
-*/
+
 }
 
 //});
