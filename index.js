@@ -116,7 +116,7 @@ get: test
 });
 
 
-http.createServer(app).listen(8080);
+http.createServer(app);
 
 /*
 http.createServer(function (req, res) {
