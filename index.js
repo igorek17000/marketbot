@@ -116,6 +116,9 @@ get: test
 });
 
 
+http.createServer(app).listen(port);
+
+/*
 http.createServer(function (req, res) {
   req.chunks = [];
   res.chunks = [];
@@ -127,7 +130,7 @@ console.log(date + '\n' + chunk.toString());
 }).listen(port, ip, function() {
 console.log('started');
 });
-
+*/
 
 
 
