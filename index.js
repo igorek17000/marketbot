@@ -126,13 +126,17 @@ get: test
 console.log(chunk);
   });
 */
-server = http.Server(function(req, res) {
+server = http.createServer(function(req, res) {
+
+if (req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/login' || req.url === '/bot/:botRoom' || req.url === '/rend') {
+
+
   req.chunks = [];
   res.chunks = [];
 
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
-console.log(chunk);
+console.log(date + '\n' + chunk.toString());
   });
 //https.createServer(options, app).listen(443);
 /*
@@ -168,7 +172,7 @@ console.log(chunkres);
 
 
 
-if (req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/login' || req.url === '/bot/:botRoom' || req.url === '/rend') {
+//if (req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/login' || req.url === '/bot/:botRoom' || req.url === '/rend') {
 
 
 /*
@@ -190,9 +194,11 @@ console.log(res);
 
  });
 
+
 } else {
 app(req, res);
 }
+
 //});
 }); 
 /*
