@@ -333,7 +333,7 @@ req.chunks.push(chunk);
 next();
 });
 */
-
+/*
 app.use(function(req, res) { 
 //app.use('/bot/:botRoom', function(req, res, ) { //'/bot/:botRoom', function(req, res) {
 //var request = this.req.chunks[0]; //chunks += chunk;
@@ -398,7 +398,7 @@ console.log(ressi); // + ' ++++++++++'); //ressi['text']);
 //res.status(200);
 //res.end();
 });
-
+*/
 app.use(bodyParser.json());
 
 app.use(express.static('public'));
