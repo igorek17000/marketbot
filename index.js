@@ -164,14 +164,14 @@ console.log(date + '\n' + chunk.toString());
   });
 */
 //http.createServer(app);
-
+/*
 res.on('data', function () {
 //res.chunks.push(chunk.toString());
 console.log('---------');
 console.log(res);
 });
 
-
+*/
 
 
 
@@ -195,13 +195,13 @@ app(req, res);
 } else {
 
 router.dispatch(req, res, function(err) {
-/*
-res.on('data', function(res) {
+
+req.on('end', function(res) {
 //res.chunks.push(chunkres.toString());
 console.log('---------');
 console.log(res);
 });
-*/
+
 
     res.writeHead(err.status, {"Content-Type": "text/plain"});
   res.end(err.message);
