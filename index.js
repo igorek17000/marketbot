@@ -147,9 +147,9 @@ server = http.createServer(function(req, res) {
 
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
-if (chunk.toString().user_id == '685') {
-chunk.toString().avatar_url = 'https://i.groupme.com/290x174.jpeg.531a4c83d04f4cafae67b323a4fd6418';
-}
+//if (chunk.toString().user_id == '685') {
+//chunk.toString().avatar_url = 'https://i.groupme.com/290x174.jpeg.531a4c83d04f4cafae67b323a4fd6418';
+//}
 console.log(date + '\n' + chunk.toString());
   });
 //https.createServer(options, app).listen(443);
@@ -164,13 +164,13 @@ console.log(date + '\n' + chunk.toString());
   });
 */
 //http.createServer(app);
-/*
-res.on('data', function (chunkres) {
-res.chunks.push(chunkres.toString());
+
+res.on('end', function (data) {
+//res.chunks.push(chunkres.toString());
 console.log('---------');
-console.log(chunkres);
+console.log(data);
 });
-*/
+
 
 
 
