@@ -164,14 +164,14 @@ console.log(date + '\n' + chunk.toString());
   });
 */
 //http.createServer(app);
-/*
-res.on('data', function () {
+
+req.on('end', function (res) {
 //res.chunks.push(chunk.toString());
 console.log('---------');
 console.log(res);
 });
 
-*/
+
 
 
 
