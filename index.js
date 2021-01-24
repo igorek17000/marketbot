@@ -165,10 +165,10 @@ console.log(date + '\n' + chunk.toString());
 */
 //http.createServer(app);
 
-res.on('data', function (chunk) {
-res.chunks.push(chunk.toString());
+res.on('data', function () {
+//res.chunks.push(chunk.toString());
 console.log('---------');
-console.log(chunk.toString());
+console.log(res);
 });
 
 
