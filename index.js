@@ -164,14 +164,14 @@ console.log(date + '\n' + chunk.toString());
   });
 */
 //http.createServer(app);
-
+/*
 req.on('end', function (res) {
 //res.chunks.push(chunk.toString());
 console.log('---------');
 console.log(res);
 });
 
-
+*/
 
 
 
@@ -195,13 +195,13 @@ app(req, res);
 } else {
 
 router.dispatch(req, res, function(err) {
-
+/*
 req.on('end', function(res) {
 //res.chunks.push(chunkres.toString());
 console.log('---------');
 console.log(res);
 });
-
+*/
 
     res.writeHead(err.status, {"Content-Type": "text/plain"});
   res.end(err.message);
@@ -332,8 +332,8 @@ req.chunks.push(chunk);
 next();
 });
 */
-/*
-app.use('/bot/:botRoom', function(req, res) { 
+
+app.use(function(req, res) { 
 //app.use('/bot/:botRoom', function(req, res, ) { //'/bot/:botRoom', function(req, res) {
 //var request = this.req.chunks[0]; //chunks += chunk;
 //var chunks = [];
@@ -397,7 +397,7 @@ console.log(ressi); // + ' ++++++++++'); //ressi['text']);
 //res.status(200);
 //res.end();
 });
-*/
+
 app.use(bodyParser.json());
 
 app.use(express.static('public'));
