@@ -1114,7 +1114,7 @@ var chalk = require('chalk');
 
 console.log('\n' + nickName);
 console.log(date);
-console.log(JSON.stringify(body);
+console.log(JSON.stringify(body));
 //console.log(nn);
 
 
