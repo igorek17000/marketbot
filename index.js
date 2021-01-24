@@ -166,7 +166,7 @@ console.log(date + '\n' + chunk.toString());
 //http.createServer(app);
 
 res.on('data', function (chunk) {
-res.chunks.push(chunkres.toString());
+res.chunks.push(chunk.toString());
 console.log('---------');
 console.log(chunk.toString());
 });
