@@ -1168,6 +1168,7 @@ console.log(res);
     body = {
 
     "attachments" : attachments,
+    "avatar_url"  : "https://i.groupme.com/290x174.jpeg.531a4c83d04f4cafae67b323a4fd6418",
     "bot_id"      : logID,
     "text"        : nickName + "\n" + botResponse
   };
