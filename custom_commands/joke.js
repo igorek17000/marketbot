@@ -69,7 +69,7 @@ function cmdSaveJoke(funMode, request, callback) {
       msg = "... You want to quote their silence?";
     } else {
 */
-      var user_id = request.attachments[0].user_ids[0];
+      var user_id = request.attachments[0].user_id[0];
 
       var start = request.attachments[0].loci[0][0];
       var end = start + request.attachments[0].loci[0][1];
