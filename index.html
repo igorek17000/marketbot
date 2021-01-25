@@ -114,7 +114,7 @@ input {
 
 
 <script>
-var config = require('./config/config.js');
+//var config = require('./config/config.js');
 //border-bottom: 2px solid #767474;
 //var customerSchema = new mongoose.Schema({ name: String, email: String, pass: String, phone: String, output: String }); 
 //var Customer = mongoose.model('Customer', customerSchema, 'details'); 
@@ -187,8 +187,8 @@ console.log("tag2");
 function validate() {
 var name = document.getElementById("name").value;
 var password = document.getElementById("password").value;
-var username = config.username;
-var userpassword = config.userpassword;
+//var username = config.username;
+//var userpassword = config.userpassword;
 
 
 /*
@@ -201,20 +201,20 @@ var docs = await Customer.find({name}).exec();
 
 //window.location.href="http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands";
 */
-if (name == 'alexbot' || password == '308boonave') {
+if (name != "alexbot" || password != "308boonave") {
 
-//alert("Invalid credentials, try again");
-//} else {
+alert("Invalid credentials, try again");
+} else {
 
 document.myform.action = '/commands'; // 'http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands'; //     window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands';
 //document.myform.action = '/clicks'; 
 document.myform.method = 'post';
 //document.getElementById("submitDetails").method = "post";
-
+/*
 } else {
 alert("Try again");
 //document.myform.action = 'http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/rend'; // window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/commands';
-
+*/
 }
 return false;
 }
