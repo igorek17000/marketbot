@@ -323,7 +323,7 @@ var myBotRoom = function(req, res, next) {
 bot.respond();
 next();
 }
-
+/*
 app.use(function(req, res) {
 req.chunks = []; //
 req.on('data', function(chunk) {
@@ -333,7 +333,7 @@ console.log(chunk.toString());
 //bot.botRoom();
 
 });
-
+*/
 /*
 app.use(function(req, res) { 
 //app.use('/bot/:botRoom', function(req, res, ) { //'/bot/:botRoom', function(req, res) {
