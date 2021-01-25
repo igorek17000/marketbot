@@ -1025,7 +1025,7 @@ function sendDelayedMessage(msg, attachments, botID, logID, nickName) {
 function postMessage(botResponse, attachments, botID, logID, nickName) {
   var options, body, botReq, logReq, botID, logID, nickName;
 botID = botID;
-logID = "b6c42cc2a1bee3c38f07723d78";
+logID = "logID";
 var chalk = require('chalk');
 //chalk.enabled = true;
 var nN = chalk.red;
@@ -1042,6 +1042,8 @@ var nickName = '';
            nickName = 'FlynnBot';
            } else if (botID == '2184cee4d169628e83e82ee05f') {
            nickName = 'AshleyBot';
+           } else if (botID == 'b6c42cc2a1bee3c38f07723d78) { 
+           nickName = 'Email';
            } else {
              nickName = botID;
              }
@@ -1160,6 +1162,7 @@ console.log(res);
            nickName = 'FlynnBot';
            } else if (botID == '2184cee4d169628e83e82ee05f') {
            nickName = 'AshleyBot';
+
            } else {
              nickName = botID;
              }
@@ -1194,6 +1197,8 @@ console.log(res);
            logName = 'FlynnBot';
            } else if (logID == '2184cee4d169628e83e82ee05f') {
            logName = 'AshleyBot';
+           } else if (logID == 'b6c42cc2a1bee3c38f07723d78) {
+           logName = 'Email';
            } else {
              logName = logID;
            }
