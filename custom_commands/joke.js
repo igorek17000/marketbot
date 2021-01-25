@@ -57,8 +57,9 @@ function cmdSaveJoke(funMode, request, callback) {
     
     var val = regex.exec(request.text);
     var msg = "";
+
+    if (request.attachments[0].user_ids) {
 /*
-    if (!request.attachments[0].user_ids) {
       msg = "You have to @user for the person you're trying to quote.";
     } else if (!request.attachments[0].loci[0][1] == 12) {
       msg = "Please @the person you're quoting before their message. EX: /quote save @user this is their quote";
@@ -96,7 +97,7 @@ function cmdSaveJoke(funMode, request, callback) {
 
       saveJoke(jokeHash);
       msg = "Joke saved!";
-  //  }
+    }
     callback(msg);
     return msg;
   } else {
