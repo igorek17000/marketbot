@@ -1042,7 +1042,7 @@ var nickName = '';
            nickName = 'FlynnBot';
            } else if (botID == '2184cee4d169628e83e82ee05f') {
            nickName = 'AshleyBot';
-           } else if (botID == 'b6c42cc2a1bee3c38f07723d78) { 
+           } else if (botID == 'b6c42cc2a1bee3c38f07723d78') { 
            nickName = 'Email';
            } else {
              nickName = botID;
@@ -1197,7 +1197,7 @@ console.log(res);
            logName = 'FlynnBot';
            } else if (logID == '2184cee4d169628e83e82ee05f') {
            logName = 'AshleyBot';
-           } else if (logID == 'b6c42cc2a1bee3c38f07723d78) {
+           } else if (logID == 'b6c42cc2a1bee3c38f07723d78') {
            logName = 'Email';
            } else {
              logName = logID;
