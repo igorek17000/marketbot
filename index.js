@@ -524,6 +524,18 @@ res.send(html);
 //res.send('Hello');
 });
 
+app.get('/login', function(req, res) {
+//res.writeHead(200); 
+res.setHeader('Content-type', 'text/html');
+var html = fs.readFileSync(path.join(__dirname + "/index.html"));
+
+//this.res.write(html);
+//this.res.end();
+
+res.send(html);
+//res.send('Hello');
+});
+
 app.get('/amaral', function(req, res) {
 //res.writeHead(200); 
 res.setHeader('Content-type', 'text/html');
