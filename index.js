@@ -191,7 +191,7 @@ console.log(res);
 
 
 
-if(req.url === '/countdown') {
+if(req.url === '/countdown' || req.url === '/login' || req.url === '/amaral') {
 app(req, res);
 } else {
 
