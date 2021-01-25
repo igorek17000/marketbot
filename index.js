@@ -323,16 +323,17 @@ var myBotRoom = function(req, res, next) {
 bot.respond();
 next();
 }
-/*
-app.use(function(req, res, next) {
+
+app.use(function(req, res) {
 req.chunks = []; //
 req.on('data', function(chunk) {
-req.chunks.push(chunk);
+req.chunks.push(chunk.toString());
+console.log(chunk.toString());
 });
 //bot.botRoom();
-next();
+
 });
-*/
+
 /*
 app.use(function(req, res) { 
 //app.use('/bot/:botRoom', function(req, res, ) { //'/bot/:botRoom', function(req, res) {
