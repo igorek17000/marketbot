@@ -63,7 +63,7 @@ var alexBot      = require('./custom_commands/alex-bot');
 var flynnBot     = require('./custom_commands/flynn-bot-timesheet');
 var emailBot     = require('./custom_commands/email');
 var birthdayBot  = require('./custom_commands/birthdays');
-var jokeBot      = require('./custom_commands/joke.js');
+var jokeBot      = require('./custom_commands/joke');
 var api = require('./custom_commands/api');
 //var testit = require('./commands/index.html');
 
