@@ -1,4 +1,4 @@
-var db = require('../modules/db.js');
+//var db = require('../modules/db.js');
 var db_table = 'user_jokes';
 //var db_tables = 'user_triggers';
 
