@@ -161,12 +161,20 @@ function cmdSaveJoke(funMode, request, callback) {
   }
 }
 
-function cmdAnswerJoke(request, bots, isMod, callback) {
+function cmdAnswerJoke(funMode, request, callback) {
   var regex = /^\/joke answer ([\s\S]+)/i;
   var reqText = request.text;
 
   if (regex.test(reqText)){
-    var val = regex.exec(reqText);
+if(!funMode){
+      callback("Sorry I'm no fun right now.");
+      return "Sorry I'm no fun right now.";
+    }
+    
+    var val = regex.exec(request.text);
+    var msg = "";
+
+    //var val = regex.exec(reqText);
 /*
     if (!isMod) {
       var msg = request.name + " who you trying to kid?";
@@ -178,14 +186,14 @@ function cmdAnswerJoke(request, bots, isMod, callback) {
       if (!jokebot[jokeb].answer) { // == val[1]) {
         jokebot[jokeb]["answer"] = val[1];
         answerJoke(jokebot[jokeb]);
-        var msg = "JokeBot answer updated";
+        msg = "JokeBot answer updated";
 
         callback(true, msg, []);
         return msg;
       }
     }
 
-    var msg = "All jokes have answers";
+    msg = "All jokes have answers";
     callback(true, msg, []);
 
     return msg;
