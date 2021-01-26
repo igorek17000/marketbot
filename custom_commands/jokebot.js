@@ -35,11 +35,11 @@ function updateJokeBotDesc(jokeb, callback) {
 }
 
 function updateJokeBotInDB(jokeb, callback) {
-  db.updateOneDoc(db_table, {"name": jokeb.name}, {$set: { "message": jokeb.message}}, callback);
+  db.updateOneDoc(db_table, {"name": jokeb.name}, {$set: { "joke": jokeb.joke}}, callback);
 }
 
 function updateJokeBotAnswer(jokeb, callback) {
-  db.updateOneDoc(db_table, {"name": jokeb.name}, {$push: { "date modified": date}}, callback);
+  db.updateOneDoc(db_table, {"name": jokeb.name}, {$set: { "answer": jokeb.answer}}, callback);
 }
 
 function updateJokeBotModDateMessage(jokeb, callback) {
@@ -60,7 +60,10 @@ exports.checkCommands = function(dataHash, callback) {
       var jokebReg = new RegExp(jokeb.regex, "i");
     if (dataHash.request.text && jokebReg.test(dataHash.request.text)){
       var val = jokebReg.exec(dataHash.request.text);
-      callback(true, jokeb.message, jokeb.attachments, []);
+      callback(true, jokeb.joke, jokeb.attachments, []);
+setTimeout(() => { 
+callback(true, jokeb.answer, jokeb.attachments, []); 
+}, 10000); //callback(msg); });
       break;
    // }
   }
@@ -134,8 +137,6 @@ function addJokeBotCmd(request, bots, isMod, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-var regexpSize = /([0-9]+)(hrs)/;
-var match = val[2].match(regexpSize);
 
 
     if (!isMod) {
@@ -159,8 +160,9 @@ var match = val[2].match(regexpSize);
     var jokebHash = {
       name: val[1].toLowerCase(),
       regex: "^\/" + val[1] + "$",
-      message: val[2],
-      match: Object.values(match[1]),
+      joke: val[2],
+      answer: "Pending Answer,
+      description: "Pending Description",
       bots: Object.keys(bots),
       date: date
     };
@@ -169,11 +171,45 @@ var match = val[2].match(regexpSize);
     addJokeBotToDB(jokebHash);
 
 
-    var msg = "JokeBot command added! Use '/joke describe " + val[1] + "' to add a description";
+    var msg = "Joke added! Use '/joke answer " + val[1] + "' to add an answer to this joke";
     callback(true, msg, []);
     return msg;
   }
 }
+
+function answerJokeBotCmd(request, bots, isMod, callback) {
+  var regex = /^\/joke answer (.+?) ([\s\S]+)/i;
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = request.name + " who you trying to kid?";
+      callback(true, msg, []);
+      return msg;
+    }
+
+    for (jokeb in jokebot) {
+      if (jokebot[jokeb].name == val[1]) {
+        jokebot[jokeb]["answer"] = val[2];
+        updateJokeBotAnswer(jokebot[jokeb]);
+        var msg = val[1] + " Joke answer updated! Use '/joke describe " + val[1] + "' to add a description";
+
+        callback(true, msg, []);
+        return msg;
+      }
+    }
+
+    var msg = val[1] + " doesn't exist";
+    callback(true, msg, []);
+
+    return msg;
+  }
+}
+
+
+
 
 function describeJokeBotCmd(request, bots, isMod, callback) {
   var regex = /^\/joke describe (.+?) ([\s\S]+)/i;
