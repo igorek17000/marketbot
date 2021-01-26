@@ -47,7 +47,7 @@ exports.checkCommands = function(dataHash, callback) {
   //if (dataHash.isMod)
   for (var jokeb in jokebot) {
     jokeb = jokebot[jokeb];
-};
+}
     //hard coded temporarily ... maybe permanently ... losing motivation to work on this
     //if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp')
       //continue;
