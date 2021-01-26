@@ -94,6 +94,7 @@ function cmdSaveJoke(funMode, request, callback) {
         user_id: user_id,
         //user_name: user_name,
         joke: val[1], //joke,
+        answer: "hi",
         date: date
       }
 
@@ -140,7 +141,9 @@ function cmdRandomJoke(funMode, request, callback) {
       return "Sorry I'm no fun right now.";
     }
     getOneRandomJoke(function(docs){
-      var msg = docs.joke;
+      var msg = docs.joke + answer;
+var answer = setTimeout(() => { 
+docs.answer }, 10000);
       callback(msg);
     });
     return true;
