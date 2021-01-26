@@ -93,7 +93,7 @@ function cmdSaveJoke(funMode, request, callback) {
         name: name,
         user_id: user_id,
         //user_name: user_name,
-        joke: val[3], //joke,
+        joke: val[1], //joke,
         date: date
       }
 
