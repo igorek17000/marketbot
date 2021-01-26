@@ -3,128 +3,35 @@
 //
 
 var fs = require('fs'); 
-/*
-// modeled on http://st-on-it.blogspot.com/2011/05/how-to-read-user-input-with-nodejs.html 
-function query(text, callback) { 
-'use strict'; 
-process.stdin.resume(); 
-process.stdout.write("Please clarify what was meant by: " + text); 
-process.stdin.once("data", function (data) { 
-callback(data.toString().trim()); 
-}); 
-} 
-function printLinesWaitForQuestions(lines, someCallbackFunction) { 
-'use strict'; 
-function continueProcessing() { 
-if (lines.length) { 
-printNextLine(lines.pop()); 
-} else { 
-someCallbackFunction(); 
-} 
-} 
-function printNextLine(line) { 
-if (/\?$/.test(line)) { // ask user for clarification 
-query(line, function (response) { 
-console.log(response); 
-process.stdin.pause(); 
-continueProcessing(); 
-}); 
-} else { 
-console.log(line); 
-continueProcessing(); 
-} 
-} 
-continueProcessing(); 
-//} 
-if (process.argv.length > 2) { 
-var filename = process.argv[2]; 
-fs.readFile(filename, "ascii", function (err, data) { 
-'use strict'; 
-if (err) { 
-console.error("" + err); 
-process.exit(1); 
-} 
-var lines = data.split("\n"); 
-printLinesWaitForQuestions(lines, function () { 
-console.log('Were done now'); 
-}); 
-}); 
-} else { 
-console.error("File name must be supplied on command line."); 
-process.exit(1); 
-}
-}
-
-
-
-
-function ask(question, format, callback) {
-var stdin = process.stdin, stdout = process.stdout;
-
-stdin.resume();
-stdout.write(question + ": ");
-
-stdin.once('data', function(data) {
-data = data.toString().trim();
-
-if (format.test(data)) {
-callback(data);
-} else {
-stdout.write("It should match: " + format + "\n");
-ask(question, format, callback);
-}
-});
-}
-*/
-/*var current;
-var forecast;
-var weatherData = require('weather-js');
-
-var itemArray; //= weather.weatherItem;
-var currentArray; //= weather.weatherItem.current;
-var forecastArray; //= weather.weatherItem.forecast;
-itemArray : weather.weatherItem;
-currentArray : weather.weatherItem.null[1];
-forecastArray : weather.weatherItem.null[2];
-*/
-
-
-var alexbot;
-var db_table = 'alex_bot';
+var jokebot;
+var db_table = 'joke_bot';
 var db_test = 'test';
 var bot = require('../bot.js');
 var moment = require('moment'); 
 var date = moment().utcOffset(-300).format('LLLL');
-var alexBotCommands = [addAlexBotCmd, moveAlexBotCmd, describeAlexBotCmd, editAlexBotCmd, restartCmd, retartCmd];
+var jokeBotCommands = [addJokeBotCmd, describeAlexBotCmd, editAlexBotCmd, answerAlexBotCmd]; // retartCmd];
 var db = require('../modules/db.js');
 var http = require('http');
 var HTTPS = require('https');
 
-var weather = require('weather-js');
 var msg;
 
-function current(err, result) { 
-weather.find({search: 'M6E4A3, ON', degreeType: 'C'}, function(err, result) {
-var result = [];
-return result
-});
-}
 
-getAllAlexbot();
-exports.modName = "AlexBot";
+getAllJokebot();
+exports.modName = "JokeBot";
 
-function getAllAlexbot() {
+function getAllJokebot() {
   db.getAllDocuments(db_table, function(res){
-    alexbot = res;
+    jokebot = res;
   });
 }
 
-function addAlexBotToDB(alexb, callback) {
-  db.addDoc(db_table, alexb, callback);
+function addJokeBotToDB(jokeb, callback) {
+  db.addDoc(db_table, jokeb, callback);
 }
 
-function updateAlexBotDesc(alexb, callback) {
-  db.updateOneDoc(db_table, {"name": alexb.name}, {$set: { "description": alexb.description}}, callback);
+function updateJokeBotDesc(jokeb, callback) {
+  db.updateOneDoc(db_table, {"name": jokeb.name}, {$set: { "description": jokeb.description}}, callback);
 }
 
 function updateAlexBotMessage(alexb, callback) {
