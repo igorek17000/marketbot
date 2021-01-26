@@ -74,9 +74,9 @@ function cmdSaveJoke(funMode, request, callback) {
 
     //  var start = request.attachments[0].loci[0][0];
     //  var end = start + request.attachments[0].loci[0][1];
-      var user_name = request.user_name; //text.substring(start, end);
+      var name = request.name; //text.substring(start, end);
       //var name = request.text.substring(end, request.text.length);
-      var joke = val[3]; // request.text.substring(end, request.text.length);
+      var joke; = val[3]; // request.text.substring(end, request.text.length);
       //var description = request.text.substring(end, request.text.length);
       //var message = request.text.substring(end, request.text.length);
      // joke = joke.trim();
@@ -90,9 +90,10 @@ function cmdSaveJoke(funMode, request, callback) {
       //var day = date.getDate();
       //date = day + "-" + month + "-" + year;
       var jokeHash = {
+        name: name,
         user_id: user_id,
-        user_name: user_name,
-        joke: joke,
+        //user_name: user_name,
+        joke: val[3], //joke,
         date: date
       }
 
