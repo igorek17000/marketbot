@@ -64,7 +64,7 @@ exports.checkCommands = function(dataHash, callback) {
 
   for (var cmd in cmds) { //jokeBotCommands) {
   var test = cmds[cmd](dataHash.funMode, dataHash.request, function(msg){
-     callBack(true, msg, []);
+     callback(true, msg, []);
 });
 //  var test = cmds[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
     if (test)
