@@ -51,7 +51,9 @@ db.moveOneDoc(db_test, jokeb, callback);
 }
 
 
-
+function getOneRandomJoke(callback){
+  db.randomDoc(db_table, callback);
+}
 
 exports.checkCommands = function(dataHash, callback) {
 
@@ -280,3 +282,24 @@ function editJokeBotCmd(request, bots, isMod, callback) {
 
 
 //------------
+function cmdRandomJoke(funMode, request, callback) {
+  var regex = /^\/joke$/i;
+
+  if (regex.test(request.text)){
+    if(!funMode){
+      callback("Sorry I'm no fun right now.");
+      return "Sorry I'm no fun right now.";
+    }
+    getOneRandomJoke(function(docs){
+      var msg = docs.joke;
+var answer = docs.answer; 
+callback(msg);
+setTimeout(() => { 
+callback(answer); }, 10000);
+      //callback(msg);
+    });
+    return true;
+  } else {
+    return false;
+  }
+}
