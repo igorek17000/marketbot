@@ -1,4 +1,4 @@
-//var db = require('../modules/db.js');
+var db = require('../modules/db.js');
 var db_table = 'user_jokes';
 //var db_tables = 'user_triggers';
 
@@ -76,7 +76,7 @@ function cmdSaveJoke(funMode, request, callback) {
     //  var end = start + request.attachments[0].loci[0][1];
       var name = request.name; //text.substring(start, end);
       //var name = request.text.substring(end, request.text.length);
-      var joke; //= val[3]; // request.text.substring(end, request.text.length);
+      var joke, answer; //= val[3]; // request.text.substring(end, request.text.length);
       //var description = request.text.substring(end, request.text.length);
       //var message = request.text.substring(end, request.text.length);
      // joke = joke.trim();
