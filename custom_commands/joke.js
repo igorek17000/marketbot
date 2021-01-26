@@ -45,11 +45,13 @@ function getRandomJokes(callback){
 
 exports.checkCommands = function(dataHash, callback) {
   //if (dataHash.isMod)
-  for (jokeb in jokebot) {
+  for (var jokeb in jokebot) {
     jokeb = jokebot[jokeb];
+};
     //hard coded temporarily ... maybe permanently ... losing motivation to work on this
     //if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp')
       //continue;
+/*
     var jokebReg = new RegExp(jokeb.regex, "i");
     if (dataHash.request.text && jokebReg.test(dataHash.request.text)){
       var val = jokebReg.exec(dataHash.request.text);
@@ -72,9 +74,9 @@ exports.checkCommands = function(dataHash, callback) {
   }
 }
 
+*/
 
-/*
-exports.checkCommands = function(dataHash, callBack){
+//exports.checkCommands = function(dataHash, callBack){
   for (var cmd in cmds) {
     var test = cmds[cmd](dataHash.funMode, dataHash.request, function(msg){
       callBack(true, msg, []);
@@ -84,7 +86,7 @@ exports.checkCommands = function(dataHash, callBack){
       return test;
   }
 }
-*/
+
 exports.getCmdListDescription = function () {
   var cmdArr = [
     {cmd: "/joke add 'quote text'", desc: "Add a joke to database", fun: true},
