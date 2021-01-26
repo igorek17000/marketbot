@@ -183,7 +183,7 @@ if(!funMode){
     }
 */
     for (jokeb in jokebot) {
-      if (!jokebot[jokeb].answer) { // == val[1]) {
+      if (jokebot[jokeb].answer != true) { // == val[1]) {
         jokebot[jokeb]["answer"] = val[1];
         answerJoke(jokebot[jokeb]);
         msg = "JokeBot answer updated";
