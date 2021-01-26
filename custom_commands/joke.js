@@ -58,7 +58,8 @@ function cmdSaveJoke(funMode, request, callback) {
     var val = regex.exec(request.text);
     var msg = "";
 
-   // if (request.attachments[0].user_ids) {
+   // if (
+//request.attachments[0].user_ids; //) {
 /*
       msg = "You have to @user for the person you're trying to quote.";
     } else if (!request.attachments[0].loci[0][1] == 12) {
@@ -69,16 +70,16 @@ function cmdSaveJoke(funMode, request, callback) {
       msg = "... You want to quote their silence?";
     } else {
 */
-      var user_id = request.attachments[0].user_id[0];
+      var user_id = request.user_id; //attachments[0].user_id[0];
 
-      var start = request.attachments[0].loci[0][0];
-      var end = start + request.attachments[0].loci[0][1];
-      var user_name = request.text.substring(start, end);
+    //  var start = request.attachments[0].loci[0][0];
+    //  var end = start + request.attachments[0].loci[0][1];
+      var user_name = request.user_name; //text.substring(start, end);
       //var name = request.text.substring(end, request.text.length);
-      var joke = request.text.substring(end, request.text.length);
+      var joke = val[3]; // request.text.substring(end, request.text.length);
       //var description = request.text.substring(end, request.text.length);
       //var message = request.text.substring(end, request.text.length);
-      joke = joke.trim();
+     // joke = joke.trim();
 
       var moment = require('moment'); 
       var date = moment().utcOffset(-300).format('LLLL');
