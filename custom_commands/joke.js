@@ -4,6 +4,23 @@ var db_table = 'user_jokes';
 
 var cmds = [cmdSaveJoke, cmdRandomJoke]; //, cmdRandomUserJoke]; //cmdRandomQuotes, cmdRandomUserQuote];
 
+getAllJokebot();
+exports.modName = "JokeBot";
+
+function getAllJokebot() {
+  db.getAllDocuments(db_table, function(res){
+    jokebot = res;
+  });
+}
+/*
+function addAlexBotToDB(alexb, callback) {
+  db.addDoc(db_table, alexb, callback);
+}
+*/
+function updateJokeBotDesc(jokeb, callback) {
+  db.updateOneDoc(db_table, {"answer": jokeb.answer}, {$set: { "answer": jokeb.answer}}, callback);
+}
+
 function saveJoke(jokeHash, callback){
   db.addDoc(db_table, jokeHash, callback);
 }
@@ -25,6 +42,38 @@ function getRandomJokes(callback){
 }
 
 
+
+exports.checkCommands = function(dataHash, callback) {
+  //if (dataHash.isMod)
+  for (jokeb in jokebot) {
+    jokeb = jokebot[jokeb];
+    //hard coded temporarily ... maybe permanently ... losing motivation to work on this
+    //if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp')
+      //continue;
+    var jokebReg = new RegExp(jokeb.regex, "i");
+    if (dataHash.request.text && jokebReg.test(dataHash.request.text)){
+      var val = jokebReg.exec(dataHash.request.text);
+   // if (dataHash.currentBot("282865de8ce30137567238148f")) {
+      //var msg = "308BoonBot\n" + alexb.message;
+      callback(true, jokeb.answer, jokeb.attachments, []);
+      break;
+   // }
+  }
+}
+
+
+  for (var cmd in cmds) { //jokeBotCommands) {
+  var test = cmds[cmd](dataHash.funMode, dataHash.request, function(msg){
+     callBack(true, msg, []);
+});
+//  var test = cmds[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
+    if (test)
+      return test;
+  }
+}
+
+
+/*
 exports.checkCommands = function(dataHash, callBack){
   for (var cmd in cmds) {
     var test = cmds[cmd](dataHash.funMode, dataHash.request, function(msg){
@@ -35,7 +84,7 @@ exports.checkCommands = function(dataHash, callBack){
       return test;
   }
 }
-
+*/
 exports.getCmdListDescription = function () {
   var cmdArr = [
     {cmd: "/joke add 'quote text'", desc: "Add a joke to database", fun: true},
@@ -107,9 +156,41 @@ function cmdSaveJoke(funMode, request, callback) {
     return false;
   }
 }
+
+function cmdDescribeJoke(request, bots, isMod, callback) {
+  var regex = /^\/joke answer ([\s\S]+)/i;
+  var reqText = request.text;
+
+  if (regex.test(reqText)){
+    var val = regex.exec(reqText);
+
+    if (!isMod) {
+      var msg = request.name + " who you trying to kid?";
+      callback(true, msg, []);
+      return msg;
+    }
+
+    for (jokeb in jokebot) {
+      if (!jokebot[jokeb].answer) { // == val[1]) {
+        jokebot[jokeb]["answer"] = val[1];
+        updateJokeBotDesc(jokebot[jokeb]);
+        var msg = "JokeBot answer updated";
+
+        callback(true, msg, []);
+        return msg;
+      }
+    }
+
+    var msg = "All jokes have answers";
+    callback(true, msg, []);
+
+    return msg;
+  }
+}
+
 /*
 function cmdRandomUserJoke(funMode, request, callback) {
-  var regex = /^\/joke (.+)/i;
+  var regex = /^\/joke describe/i;
 
   if (regex.test(request.text)){
     if(!funMode){
