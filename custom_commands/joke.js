@@ -2,7 +2,7 @@ var db = require('../modules/db.js');
 var db_table = 'user_jokes';
 //var db_tables = 'user_triggers';
 
-var cmds = [cmdSaveJoke, cmdRandomJoke]; //, cmdRandomUserJoke]; //cmdRandomQuotes, cmdRandomUserQuote];
+var cmds = [cmdSaveJoke, cmdRandomJoke, cmdAnswerJoke]; //, cmdRandomUserJoke]; //cmdRandomQuotes, cmdRandomUserQuote];
 
 getAllJokebot();
 exports.modName = "JokeBot";
@@ -157,7 +157,7 @@ function cmdSaveJoke(funMode, request, callback) {
   }
 }
 
-function cmdDescribeJoke(request, bots, isMod, callback) {
+function cmdAnswerJoke(request, bots, isMod, callback) {
   var regex = /^\/joke answer ([\s\S]+)/i;
   var reqText = request.text;
 
