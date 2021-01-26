@@ -34,12 +34,12 @@ function updateJokeBotDesc(jokeb, callback) {
   db.updateOneDoc(db_table, {"name": jokeb.name}, {$set: { "description": jokeb.description}}, callback);
 }
 
-function updateAlexBotMessage(alexb, callback) {
-  db.updateOneDoc(db_table, {"name": alexb.name}, {$set: { "message": alexb.message}}, callback);
+function updateJokeBotInDB(jokeb, callback) {
+  db.updateOneDoc(db_table, {"name": jokeb.name}, {$set: { "message": jokeb.message}}, callback);
 }
 
-function updateAlexBotModDate(alexb, callback) {
-  db.updateOneDoc(db_table, {"name": alexb.name}, {$push: { "date modified": date}}, callback);
+function updateJokeBotAnswer(jokeb, callback) {
+  db.updateOneDoc(db_table, {"name": jokeb.name}, {$push: { "date modified": date}}, callback);
 }
 
 function updateAlexBotModDateMessage(alexb, callback) {
@@ -55,25 +55,25 @@ db.moveOneDoc(db_test, alexb, callback);
 
 exports.checkCommands = function(dataHash, callback) {
   //if (dataHash.isMod)
-  for (alexb in alexbot) {
-    alexb = alexbot[alexb];
+  for (jokeb in jokebot) {
+    jokeb = jokebot[jokeb];
     //hard coded temporarily ... maybe permanently ... losing motivation to work on this
     //if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp')
       //continue;
-    var alexbReg = new RegExp(alexb.regex, "i");
-    if (dataHash.request.text && alexbReg.test(dataHash.request.text)){
-      var val = alexbReg.exec(dataHash.request.text);
+    var jokebReg = new RegExp(jokeb.regex, "i");
+    if (dataHash.request.text && jokebReg.test(dataHash.request.text)){
+      var val = jokebReg.exec(dataHash.request.text);
    // if (dataHash.currentBot("282865de8ce30137567238148f")) {
       //var msg = "308BoonBot\n" + alexb.message;
-      callback(true, alexb.message, alexb.attachments, []);
+      callback(true, jokeb.message, jokeb.attachments, []);
       break;
    // }
   }
 }
 
 
-  for (cmd in alexBotCommands) {
-    var test = alexBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
+  for (cmd in jokeBotCommands) {
+    var test = jokeBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
     if (test)
       return test;
   }
@@ -107,11 +107,11 @@ exports.checkCommands = function(dataHash, callback) {
 
 
 exports.setAll = function(alexbHash) {
-  alexbot = alexbHash;
+  jokebot = jokebHash;
 }
 
 exports.getAll = function() {
-  return alexbot;
+  return jokebot;
 }
 
 exports.getCmdListDescription = function () {
