@@ -143,7 +143,7 @@ function cmdSaveJoke(funMode, request, callback) {
         user_id: user_id,
         //user_name: user_name,
         joke: val[1], //joke,
-        answer: "hi",
+       // answer: "hi",
         date: date
       }
 
