@@ -73,11 +73,9 @@ callback(true, jokeb.answer, jokeb.attachments, []);
 
 
   for (cmd in jokeBotCommands) {
-    var test = jokeBotCommands[cmd](dataHash.funMode, dataHash.request, dataHash.bots, dataHash.isMod, callback);
-   callback(true, jokeb.joke, jokeb.attachments, []); 
-setTimeout(() => { 
-callback(true, jokeb.answer, jokeb.attachments, []); 
-}, 10000);
+    var test = jokeBotCommands[cmd](dataHash.funMode, dataHash.request, function(msg){ //dataHash.bots, dataHash.isMod, callback);
+   callback(true, msg, []); 
+});
    if (test)
       return test;
   }
@@ -295,15 +293,15 @@ function cmdRandomJoke(funMode, request, callback) {
       return "Sorry I'm no fun right now.";
     }
     getOneRandomJoke(function(docs){
-      var jokeb.joke = docs.joke;
-var jokeb.answer = docs.answer; 
+      var msg = docs.joke;
+var answer = docs.answer; 
 callback(msg);
-/*
+
 setTimeout(() => { 
 callback(answer); }, 10000);
       //callback(msg);
     });
-*/
+
     return true;
   } else {
     return false;
