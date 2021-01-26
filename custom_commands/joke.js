@@ -79,7 +79,7 @@ exports.checkCommands = function(dataHash, callback) {
 //exports.checkCommands = function(dataHash, callBack){
   for (var cmd in cmds) {
     var test = cmds[cmd](dataHash.funMode, dataHash.request, function(msg){
-      callBack(true, msg, []);
+      callback(true, msg, []);
     });
 
     if (test)
