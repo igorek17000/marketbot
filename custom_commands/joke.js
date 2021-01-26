@@ -17,7 +17,7 @@ function addAlexBotToDB(alexb, callback) {
   db.addDoc(db_table, alexb, callback);
 }
 */
-function updateJokeBotDesc(jokeb, callback) {
+function answerJoke(jokeb, callback) {
   db.updateOneDoc(db_table, {"answer": jokeb.answer}, {$set: { "answer": jokeb.answer}}, callback);
 }
 
@@ -47,6 +47,7 @@ exports.checkCommands = function(dataHash, callback) {
   //if (dataHash.isMod)
   for (var jokeb in jokebot) {
     jokeb = jokebot[jokeb];
+break;
 }
     //hard coded temporarily ... maybe permanently ... losing motivation to work on this
     //if(alexb.name == 'cc' && dataHash.currentBot.type == 'hp')
@@ -165,17 +166,17 @@ function cmdAnswerJoke(request, bots, isMod, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-
+/*
     if (!isMod) {
       var msg = request.name + " who you trying to kid?";
       callback(true, msg, []);
       return msg;
     }
-
+*/
     for (jokeb in jokebot) {
       if (!jokebot[jokeb].answer) { // == val[1]) {
         jokebot[jokeb]["answer"] = val[1];
-        updateJokeBotDesc(jokebot[jokeb]);
+        answerJoke(jokebot[jokeb]);
         var msg = "JokeBot answer updated";
 
         callback(true, msg, []);
