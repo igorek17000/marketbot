@@ -1026,7 +1026,7 @@ function sendDelayedMessage(msg, attachments, botID, logID, nickName) {
 function postMessage(botResponse, attachments, botID, logID, nickName) {
   var options, body, botReq, logReq, botID, logID, nickName;
 botID = botID;
-logID = "logID";
+logID = logID;
 var chalk = require('chalk');
 //chalk.enabled = true;
 var nN = chalk.red;
@@ -1116,9 +1116,9 @@ var chalk = require('chalk');
 
 
 
-console.log('\n' + nickName);
-console.log(date);
-console.log(res);
+console.log(date + '\n' + nickName);
+//console.log(date);
+//console.log(res);
 //console.log(nn);
 
 
