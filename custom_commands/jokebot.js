@@ -161,7 +161,7 @@ function addJokeBotCmd(request, bots, isMod, callback) {
       name: val[1].toLowerCase(),
       regex: "^\/" + val[1] + "$",
       joke: val[2],
-      answer: "Pending Answer,
+      answer: "Pending Answer",
       description: "Pending Description",
       bots: Object.keys(bots),
       date: date
