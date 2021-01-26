@@ -73,8 +73,10 @@ callback(true, jokeb.answer, jokeb.attachments, []);
 
 
   for (cmd in jokeBotCommands) {
-    var test = jokeBotCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
-    if (test)
+    var test = jokeBotCommands[cmd](dataHash.funMode, dataHash.request, dataHash.bots, dataHash.isMod, function(msg){ //callback);
+   callback(true, msg, []); 
+});
+   if (test)
       return test;
   }
 }
