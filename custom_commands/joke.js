@@ -1,6 +1,6 @@
 var db = require('../modules/db.js');
 var db_table = 'user_jokes';
-var jokeBot;
+var jokebot;
 //var db_tables = 'user_triggers';
 
 var cmds = [cmdSaveJoke, cmdRandomJoke, cmdAnswerJoke]; //, cmdRandomUserJoke]; //cmdRandomQuotes, cmdRandomUserQuote];
