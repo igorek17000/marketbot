@@ -150,7 +150,7 @@ server = http.createServer(function(req, res) {
 //if (chunk.toString().user_id == '685') {
 //chunk.toString().avatar_url = 'https://i.groupme.com/290x174.jpeg.531a4c83d04f4cafae67b323a4fd6418';
 //}
-console.log(date + '\n' + chunk.toString());
+//console.log(date + '\n' + chunk.toString());
 //console.log(req);
   });
 //https.createServer(options, app).listen(443);
