@@ -96,7 +96,7 @@ exports.getCmdListDescription = function () {
 }
 
 
-function moveJokeBotCmd(request, bots, isMod, callback) {
+function moveJokeBotCmd(funMode, request, bots, isMod, callback) {
   var regex = /^\/jokebot move ([\s\S]+)/i;
   var reqText = request.text;
 
@@ -135,7 +135,7 @@ moveOneDoc(jokebot[jokeb]);
   }
 }
 
-function addJokeBotCmd(request, bots, isMod, callback) {
+function addJokeBotCmd(funMode, request, bots, isMod, callback) {
   var regex = /^\/joke add (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
@@ -181,7 +181,7 @@ function addJokeBotCmd(request, bots, isMod, callback) {
   }
 }
 
-function answerJokeBotCmd(request, bots, isMod, callback) {
+function answerJokeBotCmd(funMode, request, bots, isMod, callback) {
   var regex = /^\/joke answer (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
@@ -216,7 +216,7 @@ function answerJokeBotCmd(request, bots, isMod, callback) {
 
 
 
-function describeJokeBotCmd(request, bots, isMod, callback) {
+function describeJokeBotCmd(funMode, request, bots, isMod, callback) {
   var regex = /^\/joke describe (.+?) ([\s\S]+)/i;
   var reqText = request.text;
 
@@ -247,7 +247,7 @@ function describeJokeBotCmd(request, bots, isMod, callback) {
   }
 }
 
-function editJokeBotCmd(request, bots, isMod, callback) {
+function editJokeBotCmd(funMode, request, bots, isMod, callback) {
   var regex = /^\- (.+?) ([\s\S]+)/i;
 
   var reqText = request.text;
@@ -285,7 +285,7 @@ function editJokeBotCmd(request, bots, isMod, callback) {
 
 
 //------------
-function cmdRandomJoke(funMode, request, callback) {
+function cmdRandomJoke(funMode, request, bots, isMod, callback) {
   var regex = /^\/joke$/i;
 
   if (regex.test(request.text)){
