@@ -1023,10 +1023,10 @@ function sendDelayedMessage(msg, attachments, botID, logID, nickName) {
   }, config.delay_time);
 }
 
-function postMessage(botResponse, attachments, botID, logID, nickName) {
-  var options, body, botReq, logReq, botID, logID, nickName;
-botID = botID;
-logID = logID;
+function postMessage(botResponse, attachments, botID, logID, nickName, logName) {
+  var options, body, botReq, logReq, botID, logID, nickName, logName;
+//botID = botID;
+//logID = logID;
 var chalk = require('chalk');
 //chalk.enabled = true;
 var nN = chalk.red;
@@ -1088,6 +1088,7 @@ var nickName = '';
     "text"        : botResponse
   };
 */
+/*
 
      var nickName = '';
       if (botID == 'b6c42cc2a1bee3c38f07723d78') {
@@ -1103,7 +1104,7 @@ var nickName = '';
              }
 
 
-
+*/
   //console.log('sending response to ' + nickName + '\n' + botResponse);
 
 
@@ -1116,7 +1117,7 @@ var chalk = require('chalk');
 
 
 
-console.log(date + '\n' + nickName);
+console.log(date + '\n' + nickName + '\n' + botResponse);
 //console.log(date);
 //console.log(res);
 //console.log(nn);
@@ -1173,9 +1174,9 @@ console.log(date + '\n' + nickName);
     body = {
 
     "attachments" : attachments,
-    "avatar_url"  : "https://i.groupme.com/290x174.jpeg.531a4c83d04f4cafae67b323a4fd6418",
+ //   "avatar_url"  : "https://i.groupme.com/290x174.jpeg.531a4c83d04f4cafae67b323a4fd6418",
     "bot_id"      : logID,
-    "text"        : nickName + "\n" + botResponse
+    "text"        : date + "\n" + logName + "\n" + botResponse;
   };
 
 
