@@ -103,14 +103,14 @@ function moveJokeBotCmd(request, bots, isMod, callback) {
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
 
-
+/*
     if (!isMod) {
       var msg = request.name + " you have no power here!";
 
       callback(true, msg, []);
       return msg;
     }
-
+*/
 
     for (jokeb in jokebot) {
       if (jokebot[jokeb].name == val[1]) {
@@ -142,14 +142,14 @@ function addJokeBotCmd(request, bots, isMod, callback) {
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
 
-
+/*
     if (!isMod) {
       var msg = request.name + " you have no power here!";
 
       callback(true, msg, []);
       return msg;
     }
-
+*/
 
     for (jokeb in jokebot) {
       if (jokebot[jokeb].name == val[1]) {
@@ -188,12 +188,13 @@ function answerJokeBotCmd(request, bots, isMod, callback) {
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
 
+/*
     if (!isMod) {
       var msg = request.name + " who you trying to kid?";
       callback(true, msg, []);
       return msg;
     }
-
+*/
     for (jokeb in jokebot) {
       if (jokebot[jokeb].name == val[1]) {
         jokebot[jokeb]["answer"] = val[2];
@@ -221,13 +222,13 @@ function describeJokeBotCmd(request, bots, isMod, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-
+/*
     if (!isMod) {
       var msg = request.name + " who you trying to kid?";
       callback(true, msg, []);
       return msg;
     }
-
+*/
     for (jokeb in jokebot) {
       if (jokebot[jokeb].name == val[1]) {
         jokebot[jokeb]["description"] = val[2];
@@ -253,13 +254,13 @@ function editJokeBotCmd(request, bots, isMod, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-
+/*
     if (!isMod) {
       var msg = "You don't have permission to edit commands"
       callback(true, msg, []);
       return msg;
     }
-
+*/
 
     for (jokeb in jokebot) {
       if (jokebot[jokeb].name == "308boonave") {
@@ -288,6 +289,7 @@ function cmdRandomJoke(funMode, request, callback) {
   var regex = /^\/joke$/i;
 
   if (regex.test(request.text)){
+var val = regex.exec(request.text);
     if(!funMode){
       callback("Sorry I'm no fun right now.");
       return "Sorry I'm no fun right now.";
