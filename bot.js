@@ -1190,7 +1190,7 @@ console.log(date + '\n' + nickName + '\n' + botResponse);
 */
 
 
-    var logName ='';
+    var logName = '';
       if (logID == 'b6c42cc2a1bee3c38f07723d78') {
            logName = 'Config';
            } else if (logID == '282865de8ce30137567238148f') {
@@ -1202,7 +1202,7 @@ console.log(date + '\n' + nickName + '\n' + botResponse);
            } else if (logID == 'b6c42cc2a1bee3c38f07723d78') {
            logName = 'Email';
            } else {
-             logName = logID;
+             logName = '';
            }
 
  // console.log('sending response to ' + logName + '\n' + botResponse);
