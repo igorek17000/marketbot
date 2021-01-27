@@ -73,9 +73,9 @@ callback(true, jokeb.answer, jokeb.attachments, []);
 
 
   for (cmd in jokeBotCommands) {
-    var test = jokeBotCommands[cmd](dataHash.funMode, dataHash.request, function(msg){ //dataHash.bots, dataHash.isMod, callback);
-   callback(true, msg, []); 
-});
+    var test = jokeBotCommands[cmd](dataHash.funMode, dataHash.request, dataHash.bots, dataHash.isMod, callback);
+  // callback(true, msg, []); 
+//});
    if (test)
       return test;
   }
@@ -291,20 +291,22 @@ function cmdRandomJoke(funMode, request, callback) {
   if (regex.test(request.text)){
 var val = regex.exec(request.text);
     if(!funMode){
-      callback("Sorry I'm no fun right now.");
-      return "Sorry I'm no fun right now.";
+var msg = "Sorry I'm no fun right now.";
+      callback(true, msg, []); //"Sorry I'm no fun right now.");
+      return msg; //"Sorry I'm no fun right now.";
     }
     getOneRandomJoke(function(docs){
       var msg = docs.joke;
 var answer = docs.answer; 
-callback(msg);
+callback(true, msg, []);
 
 setTimeout(() => { 
-callback(answer); }, 10000);
+callback(true, answer, []); 
+}, 10000);
       //callback(msg);
     });
 
-    return true;
+   // return true;
   } else {
     return false;
   }
