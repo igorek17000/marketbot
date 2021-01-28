@@ -180,7 +180,7 @@ exports.randomDoc = function(collection, callback) {
     cursor = coll.find({});
 
     coll.count(function(err, count){
-      var random = Math.floor(Math.random() * count + 3);
+      var random = Math.floor(Math.random() * 25);
       cursor.skip(random);
       cursor.limit(1);
       cursor.each(function(err, doc){
