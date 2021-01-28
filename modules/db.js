@@ -182,6 +182,7 @@ exports.randomDoc = function(collection, callback) {
     coll.count(function(err, count){
       var random = Math.floor(Math.random() * count);
       //cursor.skip(random);
+      cursor.random;
       cursor.limit(1);
       cursor.each(function(err, doc){
         if(doc != null){
