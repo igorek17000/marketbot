@@ -408,6 +408,11 @@ app.use(bodyParser.urlencoded({
 
    extended: true
 }));
+
+app.set('views', path.join(__dirname, 'views')); 
+app.engine('html', require('ejs').renderFile); 
+app.set('view engine', 'html');
+
 /*
 app.on('data', function(chunk) {
 req.chunks = []; 
@@ -538,7 +543,7 @@ var name = req.name;
 dbt.collection('joke_bot').find({name}, function(err, Customer) { 
 if (err) throw err; 
 // object of all the users 
-res.render('./index.html', {Customer:Customer}); 
+res.render('index', {Customer:Customer}); 
 });
 //res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/index.html"));
