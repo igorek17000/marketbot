@@ -551,7 +551,7 @@ var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
 //this.res.write(html);
 //this.res.end();
 
-res.send(html);
+//res.send(html);
 //res.send('Hello');
 });
 
