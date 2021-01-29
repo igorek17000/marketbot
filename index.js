@@ -543,7 +543,7 @@ var name = req.name;
 dbt.collection('joke_bot').find({name}, function(err, Customer) { 
 if (err) throw err; 
 // object of all the users 
-res.render('index', {Customer:Customer}); 
+res.render('views/index', {Customer:Customer}); 
 });
 //res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/index.html"));
