@@ -536,7 +536,7 @@ var name = req.name;
 dbt.collection('joke_bot').find({name}, function(err, Customer) { 
 if (err) throw err; 
 // object of all the users 
-res.render(html, {Customer:Customer}); 
+res.render('./index.html', {Customer:Customer}); 
 });
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/index.html"));
