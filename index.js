@@ -527,6 +527,8 @@ res.send(html);
 
 app.get('/login', function(req, res, next) {
 //res.writeHead(200); 
+res.setHeader('Content-type', 'text/html');
+
 var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 
 var name = req.name;
@@ -536,9 +538,9 @@ var name = req.name;
 dbt.collection('joke_bot').find({name}, function(err, Customer) { 
 if (err) throw err; 
 // object of all the users 
-res.render('./index.html', {Customer:Customer}); 
+res.render('/index', {Customer:Customer}); 
 });
-res.setHeader('Content-type', 'text/html');
+//res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 
 //this.res.write(html);
