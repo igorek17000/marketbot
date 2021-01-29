@@ -259,15 +259,16 @@ var mongoose = require('mongoose');
 
 mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
 
-var db = mongoose.connection;
-/*
-db.on('error', console.log.bind(console, "connection error"));
+var dbt = mongoose.connection;
 
-db.once('open', function(callback){
-    console.log("connection succeeded");
+dbt.once('open', async function(callback){
+global.customerSchema = new mongoose.Schema({ name: String, pass: String }); 
+global.Customer = mongoose.model('Customer', customerSchema, 'joke_bot'); 
+//global.docs = Customer.find({name}, function(err, doc)); //var doc = docs.;//global.docs = docs; /*if (callback)callback(docs);*/    
+console.log("connection succeeded");
 })
 
-  */
+  
 var app = express();
 //app = http.Server(app); //express(); //.listen(port, function() {
 
@@ -524,8 +525,19 @@ res.send(html);
 //res.send('Hello');
 });
 
-app.get('/login', function(req, res) {
+app.get('/login', function(req, res, next) {
 //res.writeHead(200); 
+var html = fs.readFileSync(path.join(__dirname + "/index.html"));
+
+var name = this.req.body.name;
+
+ var pass = this.req.body.password;
+
+dbt.find({}, function(err, Customer) { 
+if (err) throw err; 
+// object of all the users 
+res.render(html, {Customer:Customer}); 
+});
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 
