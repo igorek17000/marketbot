@@ -532,7 +532,7 @@ res.send(html);
 
 app.get('/login', function(req, res, next) {
 //res.writeHead(200); 
-res.setHeader('Content-type', 'text/html');
+//res.setHeader('Content-type', 'text/html');
 
 var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
 
