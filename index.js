@@ -533,7 +533,7 @@ var name = req.name;
 
  var password = req.password;
 
-dbt.find({}, function(err, Customer) { 
+dbt.collection('joke_bot').find({name}, function(err, Customer) { 
 if (err) throw err; 
 // object of all the users 
 res.render(html, {Customer:Customer}); 
