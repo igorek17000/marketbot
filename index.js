@@ -527,7 +527,7 @@ res.send(html);
 
 app.get('/login', function(req, res, next) {
 //res.writeHead(200); 
-var html = fs.readFileSync(path.join(__dirname + "/index"));
+var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 
 var name = req.name;
 
