@@ -265,8 +265,8 @@ dbt.once('open', async function(callback){
 global.customerSchema = new mongoose.Schema({ name: String, pass: String }); 
 global.Customer = mongoose.model('Customer', customerSchema, 'joke_bot'); 
 //global.docs = Customer.find({name}, function(err, doc)); //var doc = docs.;//global.docs = docs; /*if (callback)callback(docs);*/    
-console.log("connection succeeded");
-})
+//console.log("connection succeeded");
+//})
 */
   
 var app = express();
