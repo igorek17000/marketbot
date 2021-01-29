@@ -531,7 +531,7 @@ var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 
 var name = this.req.body.name;
 
- var pass = this.req.body.password;
+ var password = this.req.body.password;
 
 dbt.find({}, function(err, Customer) { 
 if (err) throw err; 
