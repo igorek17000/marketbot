@@ -529,9 +529,9 @@ app.get('/login', function(req, res, next) {
 //res.writeHead(200); 
 var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 
-var name = this.req.body.name;
+var name = req.name;
 
- var password = this.req.body.password;
+ var password = req.password;
 
 dbt.find({}, function(err, Customer) { 
 if (err) throw err; 
