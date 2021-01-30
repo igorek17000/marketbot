@@ -409,9 +409,9 @@ app.use(bodyParser.urlencoded({
    extended: true
 }));
 
-app.set('views', path.join(__dirname, 'views')); 
-app.engine('html', require('ejs').renderFile); 
-app.set('view engine', 'html');
+//app.set('views', path.join(__dirname, 'views')); 
+//app.engine('html', require('ejs').renderFile); 
+app.set('view engine', 'ejs');
 
 /*
 app.on('data', function(chunk) {
@@ -530,30 +530,41 @@ res.send(html);
 //res.send('Hello');
 });
 
-app.get('/login', function(req, res, next) {
+app.get('/login', function(req, res) {
 //res.writeHead(200); 
 //res.setHeader('Content-type', 'text/html');
 
-var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
+//var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
 
-var name = req.name;
+//var name = req.name;
 
- var password = req.password;
+// var password = req.password;
 
-dbt.collection('joke_bot').find({name}, function(err, Customer) { 
-if (err) throw err; 
+//dbt.collection('joke_bot').find({name}, function(err, Customer) { 
+//if (err) throw err; 
 // object of all the users 
-res.render(index, {Customer: Customer}); 
+res.render("/views/index", {Customer: null}); 
 });
 //res.setHeader('Content-type', 'text/html');
-var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
+//var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
 
 //this.res.write(html);
 //this.res.end();
 
 //res.send(html);
 //res.send('Hello');
+//});
+
+app.get('/getdetails', function(req, res) {
+Customer.find({}, function(err, allDetails) {
+if (err) {
+console.log(err);
+} else {
+res.render('index', { details: allDetails });
+}
 });
+});
+
 
 app.get('/amaral', function(req, res) {
 //res.writeHead(200); 
