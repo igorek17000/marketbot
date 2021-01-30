@@ -258,12 +258,14 @@ var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmh
 var mongoose = require('mongoose');
 
 mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
+var customerSchema = new mongoose.Schema({ name: String, password: String }); 
+var Customer = mongoose.model('Customer', customerSchema, 'joke_bot'); 
 
 var dbt = mongoose.connection;
 /*
 dbt.once('open', async function(callback){
-global.customerSchema = new mongoose.Schema({ name: String, pass: String }); 
-global.Customer = mongoose.model('Customer', customerSchema, 'joke_bot'); 
+var customerSchema = new mongoose.Schema({ name: String, pass: String }); 
+var Customer = mongoose.model('Customer', customerSchema, 'joke_bot'); 
 //global.docs = Customer.find({name}, function(err, doc)); //var doc = docs.;//global.docs = docs; /*if (callback)callback(docs);
 //console.log("connection succeeded");
 //})
