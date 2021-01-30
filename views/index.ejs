@@ -87,6 +87,26 @@ input {
 <div class='topleft'>
     <p>AlexBot</p>
 </div>
+<div> <a href="/getdetails">Get Details</a> 
+</div> 
+<hr> 
+<% if(details!=null) { %> 
+<table> 
+<tr> 
+<th>name</th> 
+<th>answer </th> 
+<th>description</th> 
+
+</tr> 
+<% details.forEach(function(item){ %> 
+<tr> 
+<td><%= item.name%></td> 
+<td><%= item.answer %></td> 
+<td><%= item.description%></td> 
+</tr> 
+<% }) %> 
+</table> 
+<% } %>
 
           <!--<form action="/signup_success" method="post">  -->
             <form name="myform">
