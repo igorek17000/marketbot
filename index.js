@@ -534,7 +534,7 @@ app.get('/login', function(req, res, next) {
 //res.writeHead(200); 
 //res.setHeader('Content-type', 'text/html');
 
-var html = fs.readFileSync(path.join(__dirname + "/views/index"));
+var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
 
 var name = req.name;
 
@@ -546,7 +546,7 @@ if (err) throw err;
 res.render(index, {Customer: Customer}); 
 });
 //res.setHeader('Content-type', 'text/html');
-var html = fs.readFileSync(path.join(__dirname + "/views/index"));
+var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
 
 //this.res.write(html);
 //this.res.end();
