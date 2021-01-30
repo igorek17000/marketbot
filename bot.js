@@ -10,7 +10,7 @@ var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmh
 
 var mongoose = require('mongoose');
 
-mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
+//mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //var dbs = mongoose.connection;
 
