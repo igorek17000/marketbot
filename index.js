@@ -558,7 +558,7 @@ res.render("index", {details: null});
 //});
 
 app.get('/getdetails', function(req, res) {
-dbt.Customer.find({}, function(err, allDetails) {
+Customer.find({}, function(err, allDetails) {
 if (err) {
 console.log(err);
 } else {
