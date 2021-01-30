@@ -18,8 +18,8 @@ var dbs = mongoose.connection;
 dbs.on('error', console.log.bind(console, "connection error"));
 
 dbs.once('open', async function(callback){
-global.customerSchema = new mongoose.Schema({ name: String, email: String, pass: String, phone: String, output: String }); 
-global.Customer = mongoose.model('Customer', customerSchema, 'details'); 
+global.customerSchema = new mongoose.Schema({ name: String, password: String }); 
+global.Customer = mongoose.model('Customer', customerSchema, 'joke_bot'); 
 //global.docs = Customer.find({name}, function(err, doc)); 
 //var doc = docs.;
 //global.docs = docs;
