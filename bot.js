@@ -28,8 +28,8 @@ global.Customer = mongoose.model('Customer', customerSchema, 'joke_bot');
 if (callback)
 callback(docs);
 */
-    console.log("connection succeeded");
-})
+  //__  console.log("connection succeeded");
+//__})
 */
 /*
 var Schema = mongoose.Schema; 
