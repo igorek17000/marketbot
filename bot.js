@@ -30,7 +30,7 @@ callback(docs);
 */
   //__  console.log("connection succeeded");
 //__})
-*/
+//*/
 /*
 var Schema = mongoose.Schema; 
 var SomeModelSchema = new Schema({ 
