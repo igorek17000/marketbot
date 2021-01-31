@@ -187,7 +187,7 @@ console.log(res);
 
 
 
-//if (req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/login' || req.url === '/bot/:botRoom' || req.url === '/bots/:botRoom' || req.url === '/rend') {
+//if (req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/login' req.url === '/Jokes' || req.url === '/bot/:botRoom' || req.url === '/bots/:botRoom' || req.url === '/rend') {
 
 
 
@@ -532,7 +532,7 @@ res.send(html);
 //res.send('Hello');
 });
 
-app.get('/login', function(req, res) {
+app.get('/jokes', function(req, res) {
 //res.writeHead(200); 
 //res.setHeader('Content-type', 'text/html');
 
@@ -565,6 +565,18 @@ console.log(err);
 res.render('index', { details: allDetails });
 }
 });
+});
+
+app.get('/login', function(req, res) {
+//res.writeHead(200); 
+res.setHeader('Content-type', 'text/html');
+var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
+
+//this.res.write(html);
+//this.res.end();
+
+res.send(html);
+//res.send('Hello');
 });
 
 
