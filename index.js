@@ -557,7 +557,7 @@ res.render("index.ejs", {details: null});
 //res.send('Hello');
 //});
 
-app.get('/getdetails', function(req, res) {
+app.post('/getdetails', function(req, res) {
 Customer.find({}, function(err, allDetails) {
 if (err) {
 console.log(err);
