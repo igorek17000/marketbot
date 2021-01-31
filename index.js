@@ -191,7 +191,7 @@ console.log(res);
 
 
 
-if(req.url === '/countdown' || req.url === '/login' || req.url === '/getdetails' || req.url === '/amaral') {
+if(req.url === '/countdown' || req.url === '/login' || req.url === '/getdetails' req.url === '/jokes' || req.url === '/amaral') {
 app(req, res);
 } else {
 
