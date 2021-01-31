@@ -258,7 +258,7 @@ var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmh
 var mongoose = require('mongoose');
 
 mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
-var customerSchema = new mongoose.Schema({ name: String, answer: String, joke: String, description: String, password: String }); 
+var customerSchema = new mongoose.Schema({ name: String, answer: String, joke: String, regex: String, description: String, password: String }); 
 var Customer = mongoose.model('Customer', customerSchema, 'joke_bot'); 
 
 var dbt = mongoose.connection;
