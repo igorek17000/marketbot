@@ -97,27 +97,15 @@ input {
 <p></br></br></br></br></p>
 <% if(details!=null) { %> 
 <table> 
-<tr> 
-<th></th>
-<th></th>
-<th></th>
+<tr>
 <th>Joke</th> 
-<th></th>
-<th></th>
-<th></th>
 <th>Description</th> 
 
 </tr> 
 <% details.forEach(function(item){ %> 
 <tr> 
-<td><%=' '%></td> 
-<td><%=' '%></td> 
-<td><%=' '%></td> 
-<td><%='/'+item.name%></td>
-<td><%=' '%></td> 
-<td><%=' '%></td> 
-<td><%=' '%></td> 
-<td><%=item.description%></td> 
+<td><%=' '+' '+' '+' '+' '+'/'+item.name%></td>
+<td><%=' '+' '+' '+' '+' '+item.description%></td> 
 </tr> 
 <% }) %> 
 </table> 
