@@ -191,7 +191,7 @@ console.log(res);
 
 
 
-if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/jokes' || req.url === '/amaral') {
+if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral') {
 app(req, res);
 } else {
 
@@ -545,7 +545,7 @@ app.get('/jokes', function(req, res) {
 //dbt.collection('joke_bot').find({name}, function(err, Customer) { 
 //if (err) throw err; 
 // object of all the users 
-res.render('index'); //, { details: null }); 
+res.render('index', { details: null }); 
 });
 //res.setHeader('Content-type', 'text/html');
 //var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
@@ -559,8 +559,8 @@ res.render('index'); //, { details: null });
 
 
 
-app.get('/details', function(req, res) {
-/*
+app.get('/detail', function(req, res) {
+
 Customer.find({}, function(err, allDetails) {
 if (err) {
 console.log(err);
@@ -568,18 +568,21 @@ console.log(err);
 res.render('getdetails', { details: allDetails });
 }
 });
-*/
-res.render('getdetails');
+
+//res.render('getdetails');
 });
 
+//User.findOne({username: req.body.username, password: req.body.password}, function(err, user){ if(err) { console.log(err); } else if(user){ res.redirect('/MainPage'); } else { console.log('Invalid'); } }); 
 
 
-app.post('/details', function(req, res) {
-Customer.find({}, function(err, allDetails) {
+app.post('/detail', function(req, res) {
+Customer.findOne({name: req.body.name}, function(err, user) {
 if (err) {
 console.log(err);
+} else if (user){
+res.redirect('/details');
 } else {
-res.render('getdetails', { details: allDetails });
+res.send('Invalid Credentials'); //, { details: allDetails });
 }
 });
 });
@@ -612,7 +615,7 @@ res.render("index.ejs", {details: null});
 //res.send('Hello');
 //});
 */
-/*
+
 app.get('/details', function(req, res) {
 Customer.find({}, function(err, allDetails) {
 if (err) {
@@ -622,7 +625,7 @@ res.render('getdetails', { details: allDetails });
 }
 });
 });
-*/
+
 app.get('/login', function(req, res) {
 //res.writeHead(200); 
 res.setHeader('Content-type', 'text/html');
