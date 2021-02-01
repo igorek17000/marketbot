@@ -545,7 +545,7 @@ app.get('/jokes', function(req, res) {
 //dbt.collection('joke_bot').find({name}, function(err, Customer) { 
 //if (err) throw err; 
 // object of all the users 
-res.render('index', { details: null }); 
+res.render('index'); //, { details: null }); 
 });
 //res.setHeader('Content-type', 'text/html');
 //var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
@@ -557,6 +557,32 @@ res.render('index', { details: null });
 //res.send('Hello');
 //});
 
+
+
+app.get('/details', function(req, res) {
+/*
+Customer.find({}, function(err, allDetails) {
+if (err) {
+console.log(err);
+} else {
+res.render('getdetails', { details: allDetails });
+}
+});
+*/
+res.render('getdetails');
+});
+
+
+
+app.post('/details', function(req, res) {
+Customer.find({}, function(err, allDetails) {
+if (err) {
+console.log(err);
+} else {
+res.render('getdetails', { details: allDetails });
+}
+});
+});
 
 
 
@@ -586,6 +612,7 @@ res.render("index.ejs", {details: null});
 //res.send('Hello');
 //});
 */
+/*
 app.get('/details', function(req, res) {
 Customer.find({}, function(err, allDetails) {
 if (err) {
@@ -595,7 +622,7 @@ res.render('getdetails', { details: allDetails });
 }
 });
 });
-
+*/
 app.get('/login', function(req, res) {
 //res.writeHead(200); 
 res.setHeader('Content-type', 'text/html');
