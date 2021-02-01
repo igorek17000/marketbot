@@ -98,13 +98,13 @@ input {
 <% if(details!=null) { %> 
 <table> 
 <tr>
-<th>Joke Command</th>
-<th>Joke Description</th>
+<th>Command</th>
+<th>Description</th>
 
 </tr> 
 <% details.forEach(function(item){ %> 
 <tr> 
-<td><%='/'+item.name%></td>
+<td><%='/'+item.name%>' '+' '+' '</td>
 <td><%=item.description%></td> 
 </tr> 
 <% }) %> 
