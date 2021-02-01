@@ -559,8 +559,8 @@ res.render('index', { details: null });
 
 
 
-app.get('/details', function(req, res) {
-
+app.get('/detail', function(req, res) {
+/*
 Customer.find({}, function(err, allDetails) {
 if (err) {
 console.log(err);
@@ -568,8 +568,8 @@ console.log(err);
 res.render('getdetails', { details: allDetails });
 }
 });
-
-//res.render('getdetails');
+*/
+res.render('getdetails');
 });
 
 //User.findOne({username: req.body.username, password: req.body.password}, function(err, user){ if(err) { console.log(err); } else if(user){ res.redirect('/MainPage'); } else { console.log('Invalid'); } }); 
