@@ -191,7 +191,7 @@ console.log(res);
 
 
 
-if(req.url === '/countdown' || req.url === '/login' || req.url === '/getdetails' || req.url === '/jokes' || req.url === '/amaral') {
+if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/jokes' || req.url === '/amaral') {
 app(req, res);
 } else {
 
@@ -586,7 +586,7 @@ res.render("index.ejs", {details: null});
 //res.send('Hello');
 //});
 */
-app.get('/getdetails', function(req, res) {
+app.get('/details', function(req, res) {
 Customer.find({}, function(err, allDetails) {
 if (err) {
 console.log(err);
