@@ -93,22 +93,24 @@ input {
 
 
           
-<hr> 
+<hr>
 <p></br></br></br></br></p>
-<% if(details!=null) { %> 
-<table> 
+<% if(details!=null) { %>
+<table>
 <tr>
 <th>Command</th>
+<th>---</th>
 <th>Description</th>
 
-</tr> 
-<% details.forEach(function(item){ %> 
-<tr> 
-<td><%='/'+item.name%>       </td>
-<td><%=item.description%></td> 
-</tr> 
-<% }) %> 
-</table> 
+</tr>
+<% details.forEach(function(item){ %>
+<tr>
+<td><%='/'+item.name%></td>
+<td><%=' '+' '+' '+' '+' '+%></td>
+<td><%=item.description%></td>
+</tr>
+<% }) %>
+</table>
 <% } %>
 
 
