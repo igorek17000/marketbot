@@ -96,17 +96,15 @@ input {
 <hr>
 <p></br></br></br></br></p>
 <% if(details!=null) { %>
-<table>
+<table cellspacing="30"> >
 <tr>
 <th>Command</th>
-<th>---</th>
 <th>Description</th>
 
 </tr>
 <% details.forEach(function(item){ %>
 <tr>
 <td><%='/'+item.name%></td>
-<td><%=' '+' '+' '+' '+' '%></td>
 <td><%=item.description%></td>
 </tr>
 <% }) %>
