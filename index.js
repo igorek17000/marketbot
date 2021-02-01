@@ -580,7 +580,14 @@ Customer.findOne({name: req.body.name}, function(err, user) {
 if (err) {
 console.log(err);
 } else if (user){
-res.redirect('/details');
+Customer.find({}, function(err, allDetails) {
+if (err) {
+console.log(err);
+} else {
+res.render('getdetails', { details: allDetails });
+}
+});
+//res.redirect('/details');
 } else {
 res.send('Invalid Credentials'); //, { details: allDetails });
 }
