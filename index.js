@@ -559,7 +559,7 @@ res.render('index', { details: null });
 
 
 
-app.get('/detail', function(req, res) {
+app.get('/details', function(req, res) {
 
 Customer.find({}, function(err, allDetails) {
 if (err) {
