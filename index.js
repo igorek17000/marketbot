@@ -587,7 +587,7 @@ console.log(err);
 } else {
 res.render('getdetails', { details: allDetails });
 }
-});
+//});
 //res.redirect('/details');
 } else {
 res.send('Invalid Credentials'); //, { details: allDetails });
