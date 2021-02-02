@@ -96,7 +96,6 @@ input {
 <hr>
 <p></br></br></br></br></p>
 <% if(details!=null) { %>
-<% details.sort({name: 1}); %>
 <table cellpadding="30">
 <tr>
 <th>Command</th>
@@ -104,7 +103,7 @@ input {
 
 </tr>
 
-<% details.forEach(function(item){ %>
+<% details.sort({name: 1}).forEach(function(item){ %>
 <tr>
 <td><%='/'+item.name%></td>
 <td><%=item.description%></td>
