@@ -580,8 +580,7 @@ Customer.findOne({name: req.body.name}, function(err, user) {
 if (err) {
 console.log(err);
 } else if (user){
-Customer.sort({name: 1});
-Customer.find({}, function(err, allDetails) {
+Customer.find({}).sort({name: 1}, function(err, allDetails) {
 if (err) {
 console.log(err);
 } else {
