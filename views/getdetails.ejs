@@ -103,7 +103,8 @@ input {
 
 </tr>
 
-<% details.forEach.sort({name: 1}, function(item){ %>
+<% details.forEach(function(item){ %>
+<% item.sort({ name: 1 }); %>
 <tr>
 <td><%='/'+item.name%></td>
 <td><%=item.description%></td>
