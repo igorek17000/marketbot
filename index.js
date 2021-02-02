@@ -580,14 +580,14 @@ Customer.findOne({name: req.body.name}, function(err, user) {
 if (err) {
 console.log(err);
 } else if (user){
-var cust = Customer.find({}); //.sort({name: 1}); //, function(err, allDetails) {
-cust.sort({name: 1}), function(err, allDetails) {
+var cust = Customer.find({}, function(err, allDetails) {
+//cust.sort({name: 1}), function(err, allDetails) {
 if (err) {
 console.log(err);
 } else {
 res.render('getdetails', { details: allDetails });
 }
-//});
+});
 //res.redirect('/details');
 } else {
 res.send('Invalid Credentials'); //, { details: allDetails });
