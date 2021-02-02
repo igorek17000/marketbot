@@ -580,8 +580,16 @@ Customer.findOne({name: req.body.name}, function(err, user) {
 if (err) {
 console.log(err);
 } else if (user){
-var cust = Customer.find({}, function(err, allDetails) {
-//cust.sort({name: 1}), function(err, allDetails) {
+/*
+Customer.sort(function(a, b) { 
+if (a.name < b.name) 
+return - 1; 
+else if (a.name > b.name) 
+return 1; 
+else return 0; 
+});
+*/
+Customer.find({}, function(err, allDetails) {
 if (err) {
 console.log(err);
 } else {
@@ -626,13 +634,6 @@ res.render("index.ejs", {details: null});
 
 app.get('/details', function(req, res) {
 Customer.find({}, function(err, allDetails) {
-Customer.sort(function(a, b) { 
-if (a.name < b.name) 
-return - 1; 
-else if (a.name > b.name) 
-return 1; 
-else return 0; 
-});
 if (err) {
 console.log(err);
 } else {
