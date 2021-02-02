@@ -626,6 +626,13 @@ res.render("index.ejs", {details: null});
 
 app.get('/details', function(req, res) {
 Customer.find({}, function(err, allDetails) {
+Customer.sort(function(a, b) { 
+if (a.name < b.name) 
+return - 1; 
+else if (a.name > b.name) 
+return 1; 
+else return 0; 
+});
 if (err) {
 console.log(err);
 } else {
