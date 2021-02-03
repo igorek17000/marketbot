@@ -3,7 +3,9 @@
 <!-- -->
 <head>
 <title>Jokes Command Page</title>
+
 <style>
+
 html {
 <!--background-image: url('https://thumbs2.imgbox.com/ae/ac/cWFn4eF8_t.jpg'); -->
 background-color: black;
@@ -15,22 +17,31 @@ color: white;
 font-family: 'Courier New', Courier;
 font-size: 25px;
 }
+
 body {
 height: 100%;
 position: relative;
 margin: 0;
 }
+
 .main {
     padding: 20px;
     font-family: 'Courier New', Courier;
     text-align: left;
     box-shadow: 5px 5px 7px 5px #888888;
 }
+
 h1 {
     font-size: 40px;
     text-align: left;
     font-family: 'Helvetica', serif;
 }
+
+table { 
+border-spacing: 10px 0; 
+}
+
+
 input {
     font-family: 'Courier New', Courier;
     width: 40%;
@@ -40,6 +51,7 @@ input {
     border: none;
     border-bottom: 2px solid #767474;
 }
+
     input[type=submit] {
     font-family: 'Courier New', Courier;
     width: 20%;
@@ -103,7 +115,7 @@ input {
 <div class='bodieleft'>
 <p></br></br></br></br></p>
 <% if(details!=null) { %>
-<table cellspacing="50">
+<table>
 <tr>
 <th>Command</th>
 <th>Description</th>
