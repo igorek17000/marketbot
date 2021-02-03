@@ -589,7 +589,9 @@ return 1;
 else return 0; 
 });
 */
-Customer.find({}, function(err, allDetails) {
+
+var query = Customer.find({}); //, function(err, allDetails) {
+query.sort({name: 'asc'}).exec(function(err, allDetails) {
 if (err) {
 console.log(err);
 } else {
