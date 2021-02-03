@@ -103,23 +103,23 @@ input {
 
 </tr>
 
-<% details.sort(function(a, b) { %>
-<% if(a.name < b.name) { %>
+<% details.forEach(function(item){ %>
+
+<% item.sort(function(a, b) { %>
+<% if(a.item.name < b.item.name) { %>
 <% return - 1 %>
 <% } %>
-<% if(a.name > b.name) { %>
+<% if(a.item.name > b.item.name) { %>
 <% return 1 %>
 <% } %>
 <% } else { %> 
 <% return 0 %>
-<% details.forEach(function(item){ %>
 <tr>
 <td><%='/'+item.name%></td>
 <td><%=item.description%></td>
 </tr>
 <% }) %>
 <% }) %>
-
 </table>
 <% } %>
 
