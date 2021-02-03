@@ -18,7 +18,7 @@ font-size: 25px;
 body {
 height: 100%;
 position: relative;
-margin: 0;
+margin: 20px 30px 20px 30px;
 }
 .main {
     padding: 20px;
@@ -79,7 +79,6 @@ input {
   position: absolute;
   top: 10%;
   left: 10%;
-  margin: 20px 30px 20px 30px;
 }
 
 </style>
@@ -109,6 +108,7 @@ input {
 <th>Command</th>
 <th>Description</th>
 </tr>
+<hr>
 <% details.forEach(function(item){ %>
 <tr>
 <td><%='/'+item.name%></td>
