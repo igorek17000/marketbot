@@ -101,27 +101,24 @@ input {
 
           
 <hr>
+<div class='bodieleft'>
 <p></br></br></br></br></p>
 <% if(details!=null) { %>
 <table>
-<div class='bodieleft'>
 <tr>
 <th>Command</th>
 <th>Description</th>
 </tr>
-</div>
 <% details.forEach(function(item){ %>
-<div class='bodieleft'>
 <tr>
 <td><%='/'+item.name%></td>
 <td><%=item.description%></td>
 </tr>
-</div>
 <% }) %>
 </table>
 <% } %>
 
-
+</div>
 
     <div class='bottomleft'>
     <p>Jokes Command Page</p>
