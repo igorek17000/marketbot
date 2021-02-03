@@ -96,6 +96,13 @@ input {
 <hr>
 <p></br></br></br></br></p>
 <% if(details!=null) { %>
+<table cellpadding="30">
+<tr>
+<th>Command</th>
+<th>Description</th>
+
+</tr>
+
 <% details.sort(function(a, b) { %>
 <% if(a.name < b.name) { %>
 <% return - 1 %>
@@ -105,25 +112,15 @@ input {
 <% } %>
 <% } else { %> 
 <% return 0 %>
-
-
-
-<table cellpadding="30">
-<tr>
-<th>Command</th>
-<th>Description</th>
-
-</tr>
-
 <% details.forEach(function(item){ %>
 <tr>
 <td><%='/'+item.name%></td>
 <td><%=item.description%></td>
 </tr>
 <% }) %>
+<% }) %>
 
 </table>
-<% }) %>
 <% } %>
 
 
