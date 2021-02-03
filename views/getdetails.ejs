@@ -105,20 +105,10 @@ input {
 
 <% details.forEach(function(item){ %>
 
-<% item.sort({name}, function(a, b) { %>
-<% if(a.item < b.item) { %>
-<% return - 1 %>
-<% } %>
-<% if(a.item > b.item) { %>
-<% return 1 %>
-<% } %>
-<% } else { %> 
-<% return 0 %>
 <tr>
 <td><%='/'+item.name%></td>
 <td><%=item.description%></td>
 </tr>
-<% }) %>
 <% }) %>
 </table>
 <% } %>
