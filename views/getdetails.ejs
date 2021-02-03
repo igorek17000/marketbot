@@ -2,7 +2,7 @@
 <html>
 <!-- -->
 <head>
-<title>Login Page</title>
+<title>Jokes Command Page</title>
 <style>
 html {
 <!--background-image: url('https://thumbs2.imgbox.com/ae/ac/cWFn4eF8_t.jpg'); -->
@@ -125,6 +125,15 @@ input {
 </div>
 </div>
 </body>
+
+<script> 
+$('list.name').click(function(){ 
+var currentDiv = $(this); 
+$('list.name').children('div').hide(); 
+currentDiv.children('div').fadeIn('slow'); 
+}); 
+</script>
+
 
 <!--
 <script>
