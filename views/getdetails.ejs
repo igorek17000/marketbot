@@ -105,11 +105,11 @@ input {
 
 <% details.forEach(function(item){ %>
 
-<% item.sort(function(a, b) { %>
-<% if(a.item.name < b.item.name) { %>
+<% item.sort({name}, function(a, b) { %>
+<% if(a.item < b.item) { %>
 <% return - 1 %>
 <% } %>
-<% if(a.item.name > b.item.name) { %>
+<% if(a.item > b.item) { %>
 <% return 1 %>
 <% } %>
 <% } else { %> 
