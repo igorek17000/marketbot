@@ -19,7 +19,6 @@ body {
 height: 100%;
 position: relative;
 margin: 0;
-padding: 30px;
 }
 .main {
     padding: 20px;
@@ -76,6 +75,13 @@ input {
   text-align: center;
 }
 
+.bodieleft { 
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  margin: 20px 30px 20px 30px;
+}
+
 </style>
 </head>
 <body>
@@ -95,6 +101,7 @@ input {
 
           
 <hr>
+<div class='bodieleft'>
 <p></br></br></br></br></p>
 <% if(details!=null) { %>
 <table>
@@ -113,6 +120,7 @@ input {
 <% }) %>
 </table>
 <% } %>
+</div>
 
 
     <div class='bottomleft'>
