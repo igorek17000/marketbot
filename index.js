@@ -191,7 +191,7 @@ console.log(res);
 
 
 
-if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/images/:id') {
+if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/picture/:id') {
 app(req, res);
 } else {
 
@@ -703,6 +703,17 @@ app.get('/images', (req, res) => {
     });
 });
 
+
+app.get('/picture/:id', (req, res) => {
+
+    // http://mongoosejs.com/docs/api.html#model_Model.create
+    routes.getImages((err, docs) => {
+        if (err) {
+            throw err;
+        }
+        //res.render('/picture/' + docs.map(doc => doc['_id']));
+    });
+});
 
 app.get('/mongodb', function(req, res) {
 res.writeHead(200); 
