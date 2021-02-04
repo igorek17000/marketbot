@@ -712,7 +712,7 @@ app.get('/picture/:id', (req, res) => {
             throw err;
         }
 
-res.render("image.ejs",{image: 'data:image/png;base64,' + base64ArrayBuffer(file.data)});
+res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file.data)});
 
     });
 });
