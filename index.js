@@ -191,7 +191,7 @@ console.log(res);
 
 
 
-if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/picture' || req.url === '/picture/') {
+if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/picture' || req.url === '/picture/' || req.url === '/picture/:id') {
 app(req, res);
 } else {
 
