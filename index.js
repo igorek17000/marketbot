@@ -704,7 +704,7 @@ app.get('/images', (req, res) => {
 });
 
 
-app.get('/images/:id', (req, res) => {
+app.get('/picture/:id', (req, res) => {
 
     // http://mongoosejs.com/docs/api.html#model_Model.create
     routes.getImagesById((err, docs) => {
@@ -712,7 +712,7 @@ app.get('/images/:id', (req, res) => {
             throw err;
         }
 
-res.render("images.ejs",{image: 'data:image/png;base64,' + base64ArrayBuffer(file.data)});
+res.render("image.ejs",{image: 'data:image/png;base64,' + base64ArrayBuffer(file.data)});
 
     });
 });
