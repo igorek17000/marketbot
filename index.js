@@ -699,7 +699,7 @@ app.get('/images', (req, res) => {
         if (err) {
             throw err;
         }
-        res.json(docs.map(doc => doc['_id']));
+        //res.json(docs.map(doc => doc['_id']));
     });
 });
 
