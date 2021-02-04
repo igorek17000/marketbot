@@ -704,14 +704,16 @@ app.get('/images', (req, res) => {
 });
 
 
-app.get('/picture', (req, res) => {
+app.get('/picture/:id', (req, res) => {
 
     // http://mongoosejs.com/docs/api.html#model_Model.create
     routes.getImages((err, docs) => {
         if (err) {
             throw err;
         }
-        //res.render('/picture/' + docs.map(doc => doc['_id']));
+
+res.render("image.ejs",{image: 'data:image/jpg;base64,' + base64ArrayBuffer(file.data)});
+
     });
 });
 
