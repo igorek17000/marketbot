@@ -704,7 +704,7 @@ app.get('/images', (req, res) => {
 });
 
 
-app.get('/picture/:id', (req, res) => {
+app.get('/picture', (req, res) => {
 
     // http://mongoosejs.com/docs/api.html#model_Model.create
     routes.getImages((err, docs) => {
