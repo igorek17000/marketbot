@@ -106,7 +106,7 @@ router.post('/images', upload.any(), function(req, res) {
 });
 
 //======================================================================================
-/*
+
 router.get('/images/:id',function(req, res){
 
 	Image.findById(req.params.id, function(err, file){
@@ -124,7 +124,7 @@ router.get('/images/:id',function(req, res){
 	});
 
 });
-*/
+
 //======================================================================================
 
 // https://gist.github.com/jonleighton/958841#gistcomment-1953137
