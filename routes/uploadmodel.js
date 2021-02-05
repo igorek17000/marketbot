@@ -1,5 +1,13 @@
 // modified by Yuxi Luo, July 2018
 
+var moment = require('moment-timezone'); 
+
+moment.tz.setDefault('America/Toronto'); 
+
+var date = moment().format('LLLL');
+
+
+
 var express = require('express');
 
 var router = express.Router();
@@ -14,9 +22,11 @@ var mongoose = require('mongoose');
 
 var ImageSchema = mongoose.Schema({
 
-	data: Buffer,	originalname: String,
-
+	data: Buffer,	
+        originalname: String,
 	contentType: String,
+        uploaded: String,
+        
 
 });
 
@@ -64,6 +74,8 @@ router.post('/images', upload.any(), function(req, res) {
 	image['originalname'] = req.files[0].originalname;
 
 	image['contentType'] = req.files[0].mimetype;
+        
+        image['uploaded'] = date;
 
 	// console.log(image['data']);
 
@@ -101,7 +113,7 @@ router.get('/picture/:id',function(req,res){
 
 		// display image from arrayBuffer stored in database
 
-		res.render("image.ejs",{image: 'data:image/png;base64,' + base64ArrayBuffer(file.data)});
+		res.render("image.ejs",{image: 'data:image/jpeg;base64,' + base64ArrayBuffer(file.data)});
 
 	});
 
