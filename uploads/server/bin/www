@@ -19,7 +19,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-//var server = http.Server(app);
+var server = app(req, res);
 
 /**
  * Listen on provided port, on all network interfaces.
