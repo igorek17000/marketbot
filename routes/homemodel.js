@@ -100,7 +100,7 @@ router.post('/images', upload.any(), function(req, res) {
 		
 
 		//res.send('File name ' +docs['originalname'] + ' added');
-res.render('image.ejs', {image: image});
+res.render('image.ejs', {image: 'data:docs['contentType'];base64,' + docs['data']});
 
 		console.log("Successfully inserted one image!");
 
