@@ -191,7 +191,7 @@ console.log(res);
 
 
 
-if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/picture/:id') {
+if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/images/:id') {
 app(req, res);
 } else {
 
@@ -704,7 +704,7 @@ app.get('/images', (req, res) => {
 });
 
 
-app.get('/picture/:id', (req, res) => {
+app.get('/images/:id', (req, res) => {
 
     // http://mongoosejs.com/docs/api.html#model_Model.create
     routes.getImagesById((err, docs) => {
