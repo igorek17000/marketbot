@@ -53,7 +53,7 @@ router.addImage = function(image, callback) {
 	Image.create(image, callback);
 
 }
-
+/*
 router.get('/images', function(req, res, next) {
 
     res.render('imageindex.ejs');
@@ -104,7 +104,7 @@ router.post('/images', upload.any(), function(req, res) {
 	});
 
 });
-
+*/
 //======================================================================================
 
 router.get('/images/:id',function(req, res){
