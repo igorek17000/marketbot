@@ -683,15 +683,22 @@ res.send(html);
 
 
 
-var routes = require('./routes/imagefile');
+var homeroutes = require('./routes/homemodel');
+var uploadroutes = require('./routes/uploadmodel');
+var retrieveroutes = require('./routes/retrievemodel');
+
 
 // connect to mongodb with default port (27017)
 //mongoose.connect('mongodb://localhost/imagespath');
 
-app.use(routes);
+app.use(homeroutes);
+app.use(uploadroutes);
+app.use(retrieveroutes);
 
 // URL : http://localhost:8000/images/
 // To get all the images/files ids stored in MongoDB
+
+/*
 app.get('/images', (req, res) => {
 
     // http://mongoosejs.com/docs/api.html#model_Model.create
@@ -702,7 +709,19 @@ app.get('/images', (req, res) => {
         //res.json(docs.map(doc => doc['_id']));
     });
 });
+*/
 
+homeroutes.get('/images', (req, res) => {
+
+    // http://mongoosejs.com/docs/api.html#model_Model.create
+/*    routes.getImages((err, docs) => {
+        if (err) {
+            throw err;
+        }
+        //res.json(docs.map(doc => doc['_id']));
+    });
+*/
+});
 
 app.get('/images/:id', (req, res) => {
 
