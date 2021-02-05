@@ -26,6 +26,10 @@ var ImageSchema = mongoose.Schema({
         originalname: String,
 	contentType: String,
         uploaded: String,
+        path : { 
+         type: String,
+         trim: true
+   },
         
 
 });
@@ -76,6 +80,8 @@ router.post('/images', upload.any(), function(req, res) {
 	image['contentType'] = req.files[0].mimetype;
         
         image['uploaded'] = date;
+     
+        image['path'] = req.files[0].path;
 
 	// console.log(image['data']);
 
@@ -91,7 +97,7 @@ router.post('/images', upload.any(), function(req, res) {
 
 		
 
-		res.send(docs['_id']);
+		res.send('File name ' +docs['originalname'] + ' added');
 
 		console.log("Successfully inserted one image!");
 
@@ -101,9 +107,9 @@ router.post('/images', upload.any(), function(req, res) {
 
 //======================================================================================
 
-router.get('/picture/:id',function(req,res){
+router.get('/images/:id',function(req, res){
 
-	Image.findById(req.params.id,function(err,file){
+	Image.findById(req.params.id, function(err, file){
 
 		if (err) {
 
@@ -113,7 +119,7 @@ router.get('/picture/:id',function(req,res){
 
 		// display image from arrayBuffer stored in database
 
-		res.render("image.ejs",{image: 'data:image/jpeg;base64,' + base64ArrayBuffer(file.data)});
+		res.render("image.ejs", {image: 'data:image/jpeg;base64,' + base64ArrayBuffer(file.data)});
 
 	});
 
