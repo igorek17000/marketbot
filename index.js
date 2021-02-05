@@ -1,31 +1,28 @@
 #!/bin/env node
 
-//chuncks = [];
-//var req = this.req;
-//var res = this.res;
+var express = require("express");
+var bodyParser = require("body-parser");
+var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
+var app = express();
+var mongoose = require('mongoose');
+mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
+var customerSchema = new mongoose.Schema({ name: String, answer: String, joke: String, regex: String, description: String, password: String });
+var Customer = mongoose.model('Customer', customerSchema, 'joke_bot');
+var dbt = mongoose.connection;
+
 var matchHash;
 matchHash = this.res;
 var nodemailer = require('nodemailer');
-var moment = require('moment-timezone'); 
-moment.tz.setDefault('America/Toronto'); 
-//var date = moment().utcOffset(-300).format('LLLL');
+var moment = require('moment-timezone');
+moment.tz.setDefault('America/Toronto');
 var date = moment().format('LLLL');
 var commandListSuccess = require('./commands_success/command-list.js'); //commandListSuccess.buildHTML(cmdArr, config.bot_name);
 var ccml = require('./modules/command-list.js');
 
 
 
-/*
-var moment = require('moment-timezone');
 
-//moment.tz.setDefault('America/Toronto');
-
-//var moment = require('moment');
-var date = moment.tz.setDefault('America/Toronto');
-*/
-//var app = require('express');
 var path = require('path');
-//var demo = require('./commands/countdown.html');
 var fs = require('fs');
 var http, director, bot, router, server, port, ip, db;
 
@@ -33,9 +30,7 @@ http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
 today       = require('./bot.js');
-//var countdown;
 
-//image       = require('./2A34A9R.jpg');
 
 router = new director.http.Router({
   '/'    : {
@@ -116,78 +111,19 @@ get: test
 });
 
 
-///http.createServer(app);
-
-/*
-http.createServer(function (req, res) {
-  req.chunks = [];
-  res.chunks = [];
-
-  req.on('data', function (chunk) {
-    req.chunks.push(chunk.toString());
-console.log(date + '\n' + chunk.toString());
-console.log(res);
-  });
-}).listen(port, ip, function() {
-console.log('started');
-});
-*/
-
-
-
-
-
 server = http.createServer(function(req, res) {
-
-//if (req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/login' || req.url === '/bot/:botRoom' || req.url === '/rend') {
-
-
-  req.chunks = [];
-  res.chunks = [];
-
-  req.on('data', function (chunk) {
-    req.chunks.push(chunk.toString());
-//if (chunk.toString().user_id == '685') {
-//chunk.toString().avatar_url = 'https://i.groupme.com/290x174.jpeg.531a4c83d04f4cafae67b323a4fd6418';
-//}
-//console.log(date + '\n' + chunk.toString());
-//console.log(req);
-  });
-//https.createServer(options, app).listen(443);
-/*
   req.chunks = [];
   res.chunks = [];
 
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
 
-console.log(date + '\n' + chunk.toString());
   });
-*/
-//http.createServer(app);
-/*
-req.on('end', function (res) {
-//res.chunks.push(chunk.toString());
-console.log('---------');
-console.log(res);
-});
-
-*/
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-//if (req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/login' req.url === '/Jokes' || req.url === '/bot/:botRoom' || req.url === '/bots/:botRoom' || req.url === '/rend') {
 
 
 
@@ -196,399 +132,60 @@ app(req, res);
 } else {
 
 router.dispatch(req, res, function(err) {
-/*
-req.on('end', function(res) {
-//res.chunks.push(chunkres.toString());
-console.log('---------');
-console.log(res);
-});
-*/
-
     res.writeHead(err.status, {"Content-Type": "text/plain"});
   res.end(err.message);
-
- });
-
-/*
-} else {
-app(req, res);
-*/
-}
-
-//});
-}); 
-/*
-.listen(port, ip, function() {
-console.log('Started');  
-});   
-*/
-/*
-http.createServer(port, function (req, res) {
-  req.chunks = [];
-  res.chunks = [];
-
-  req.on('data', function (chunk) {
-    req.chunks.push(chunk.toString());
-console.log(date + '\n' + chunk.toString());
-  });
+    });
+  }
 });
-*/
+
 port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
 ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
-//server.listen(port, ip);
-
 server.listen(port, ip, function() {
 console.log('Server started at ' + date + ' & listening on port ' + port);
-//router.post('Server');
 
-//console.log((new Date()) + ' Server is listening on port ' + port);
 });
 
 //--------------
 
-
-var express = require("express");
-
-var bodyParser = require("body-parser");
-
-var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
-
-
-var mongoose = require('mongoose');
-
-mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
-var customerSchema = new mongoose.Schema({ name: String, answer: String, joke: String, regex: String, description: String, password: String }); 
-var Customer = mongoose.model('Customer', customerSchema, 'joke_bot'); 
-
-var dbt = mongoose.connection;
-/*
-dbt.once('open', async function(callback){
-var customerSchema = new mongoose.Schema({ name: String, pass: String }); 
-var Customer = mongoose.model('Customer', customerSchema, 'joke_bot'); 
-//global.docs = Customer.find({name}, function(err, doc)); //var doc = docs.;//global.docs = docs; /*if (callback)callback(docs);
-//console.log("connection succeeded");
-//})
-*/
-  
-var app = express();
-//app = http.Server(app); //express(); //.listen(port, function() {
-
-/*
-function(req, res) {
-  req.chunks = [];
-  res.chunks = [];
-
-  req.on('data', function (chunk) {
-    req.chunks.push(chunk.toString());
-//console.log(chunk);
-  });// 
-});
-*/
-//var chunks = [];
-//var chunk = '';
-/*
-  app.on('data', function(chunk) {
-req.chunks = []; 
-//req.on('data', function(chunck) {
-
-//req.on('data', function (chunk) { 
-//req.chunks.push(chunk.toString());
-console.log(chunk); 
-});
-
-
-http.createServer(app) { 
-var req = this.req;
-req.chunks = []; 
-//res.chunks = []; 
-req.on('data', function (chunk) { 
-req.chunks.push(chunk.toString());
-//console.log(chunk.toString()); 
-});
-}).listen(port);
-*/
-
-/*
-app.listen = function listen() { 	
-var server = http.createServer(app);
- 	return server.listen.apply(server, arguments);
-}
-
-*/
-//}
-
-//app.listen(port); //8000, ip, function() {
-//console.log('App Listening');
-//});
-
-var myBotRoom = function(req, res, next) {
-bot.respond();
-next();
-}
-/*
-app.use(function(req, res) {
-req.chunks = []; //
-req.on('data', function(chunk) {
-req.chunks.push(chunk.toString());
-console.log(chunk.toString());
-});
-//bot.botRoom();
-
-});
-*/
-/*
-app.use(function(req, res) { 
-//app.use('/bot/:botRoom', function(req, res, ) { //'/bot/:botRoom', function(req, res) {
-//var request = this.req.chunks[0]; //chunks += chunk;
-//var chunks = [];
-req.chunks = [];
-//req.chunkit = [];
-//res.chunks = []
-//var chunk = '';
-//var resi = chunks += chunk;
-req.on('data', function(chunk) {
-//global.chunkit = chunk.toString(); // = '';
-//chunks = chunks += chunk;
-//var resssi = req.chunks.push(chunk.toString());
-req.chunks.push(chunk.toString());
-//req.chunkit.push(chunk.toString());
-//bot.respond();
-//---res.end(chunks);
-//res.status(200);
-//res.end();
-});
-
-//req.end();
-//next();
-req.on('end', function(chunk) {
-//var chunks = [];
-//req.chunks = [];
-//chunk = '';
-var resi = req.chunks + ' 1'; //chunks += chunk;
-var ressi = resi;
-
-//global.chunkit = req.chunkit;
-//---var request = this.req; // chunks += chunk;
-//var o = 0; 
-//var a = 1;
-//var i = o + a;
-//---var i = 1; 
-//i = i++;
-//var o = i++;
-//i = i++
-//if (o != 0) {
-//o = o + 1; //i++;
-//}
-
-//i = i++;
-
-//---res.end(chunk.toString());
-//var res = chunks += chunk;
-console.log(resi);
-console.log(ressi); // + ' ++++++++++'); //ressi['text']);
-//console.log(chunkit);
-//console.log(chunkit);
-
-//bot.respond();
-//return res.send(resi);
-});
-//bot.respond();
-//console.log(res);
-//res.writeHead(200);
-//res.end();
-//---next();
-//res.send(res);
-//res.status(200);
-//res.end();
-});
-*/
 app.use(bodyParser.json());
-
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
-
    extended: true
 }));
 
-//app.set('views', path.join(__dirname, 'views')); 
-//app.engine('html', require('ejs').renderFile); 
 app.set('view engine', 'ejs');
 
-/*
-app.on('data', function(chunk) {
-req.chunks = []; 
-//req.on('data', function(chunck) {
-
-//req.on('data', function (chunk) { 
-req.chunks.push(chunk.toString());
-console.log(chunk); 
-});
-*/
-
 app.get('/', function(req, res) {
-res.writeHead(200); 
+res.writeHead(200);
 res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 });
 
 
-/*
-app.get('/init', function(req, res) {
-//var body = {};
-//res.writeHead(200); 
-bot.init();
-res.status(200);
-res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
-//res.send('Hello');
-});
-
-app.post('/init', function(req, res) {
-//var body = {};
-bot.init();
-res.writeHead(200); 
-//bot.init();
-//res.status(200);
-res.end(); //("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
-//res.send('Hello');
-});
-
-app.get('/bot/:botRoom', function(req, res) {
-//res.writeHead(200);
-res.send(req.params.botRoom);
-});
-
-app.post('/bot/:botRoom', function(req, res) { //myBotRoom, function(req, res) {
-bot.respond();
-res.send(req.params.botRoom);
-//finish();
-});
-*/
-//----app.get('/bot/:botRoom', function(req, res) {
-
-//---var chunks = [];
- 
-/*
-  req.on('data', function (chunk) {
-    req.chunks.push(chunk.toString());
-//console.log(chunk.toString());
-  });
-*/
-//----bot.respond();
-//---res.status = 200; 
-//----res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
-//res.status(200);
-//res.end();
-//----});
-
-//----app.post('/bot/:botRoom', function(req, res) {
-
-//req.chunks = [];
- // res.chunks = [];
-/*
-  req.on('data', function (chunk) {
-    req.chunks.push(chunk.toString());
-console.log(chunk.toString());
-  });
-
-var request = JSON.parse(this.req.chunks[0]);
-
-  var dataHash = {
-
-    request:      request,
-    currentBot:   bot.rooms.getRoom(botRoom),
-    isMod:        bot.mods.isMod(request.user_id),
-    bots:         bot.rooms.getRooms(),
-    botARoom:     bot.rooms.getUserPath(botRoom),
-    funMode:      bot.sysCommands.fun_mode(),
-    owner:        bot.config.env().owner
-  };
-
-  */
-//----bot.respond(); 
-/*
-function(req, res) { //; //res.writeHead(200); 
-req.on('data', function(chunk) { //res.end(); //"I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
-req.chunks.push(chunk.toString());
-}); //res.send('Hello');
-*/
-
-//----res.writeHead(200);
-//res.send(bottt);
-//----res.send();
-//----});
-//---});
-// -----
-
 app.get('/countdown', function(req, res) {
-//res.writeHead(200); 
+//res.writeHead(200);
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/countdown.html"));
-
 //this.res.write(html);
 //this.res.end();
-
 res.send(html);
 //res.send('Hello');
 });
 
 app.get('/jokes', function(req, res) {
-//res.writeHead(200); 
-//res.setHeader('Content-type', 'text/html');
-
-//var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
-
-//var name = req.name;
-
-// var password = req.password;
-
-//dbt.collection('joke_bot').find({name}, function(err, Customer) { 
-//if (err) throw err; 
-// object of all the users 
-res.render('index', { details: null }); 
+res.render('index', { details: null });
 });
-//res.setHeader('Content-type', 'text/html');
-//var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
-
-//this.res.write(html);
-//this.res.end();
-
-//res.send(html);
-//res.send('Hello');
-//});
-
-
 
 app.get('/detail', function(req, res) {
-/*
-Customer.find({}, function(err, allDetails) {
-if (err) {
-console.log(err);
-} else {
-res.render('getdetails', { details: allDetails });
-}
-});
-*/
 res.render('getdetails');
 });
-
-//User.findOne({username: req.body.username, password: req.body.password}, function(err, user){ if(err) { console.log(err); } else if(user){ res.redirect('/MainPage'); } else { console.log('Invalid'); } }); 
-
 
 app.post('/detail', function(req, res) {
 Customer.findOne({name: req.body.name}, function(err, user) {
 if (err) {
 console.log(err);
 } else if (user){
-/*
-Customer.sort(function(a, b) { 
-if (a.name < b.name) 
-return - 1; 
-else if (a.name > b.name) 
-return 1; 
-else return 0; 
-});
-*/
 
 var query = Customer.find({}); //, function(err, allDetails) {
 query.sort({name: 'asc'}).exec(function(err, allDetails) {
@@ -598,7 +195,7 @@ console.log(err);
 res.render('getdetails', { details: allDetails });
 }
 });
-//res.redirect('/details');
+
 } else {
 res.send('Invalid Credentials'); //, { details: allDetails });
 }
@@ -609,7 +206,7 @@ res.send('Invalid Credentials'); //, { details: allDetails });
 
 /*
 app.get('/jokes', function(req, res) {
-//res.writeHead(200); 
+//res.writeHead(200);
 //res.setHeader('Content-type', 'text/html');
 
 //var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
@@ -618,10 +215,10 @@ app.get('/jokes', function(req, res) {
 
 // var password = req.password;
 
-//dbt.collection('joke_bot').find({name}, function(err, Customer) { 
-//if (err) throw err; 
-// object of all the users 
-res.render("index.ejs", {details: null}); 
+//dbt.collection('joke_bot').find({name}, function(err, Customer) {
+//if (err) throw err;
+// object of all the users
+res.render("index.ejs", {details: null});
 });
 //res.setHeader('Content-type', 'text/html');
 //var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
@@ -645,49 +242,28 @@ res.render('getdetails', { details: allDetails });
 });
 
 app.get('/login', function(req, res) {
-//res.writeHead(200); 
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
-
-//this.res.write(html);
-//this.res.end();
-
 res.send(html);
-//res.send('Hello');
 });
 
 
 app.get('/amaral', function(req, res) {
-//res.writeHead(200); 
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/amaral.html"));
-
-//this.res.write(html);
-//this.res.end();
-
 res.send(html);
-//res.send('Hello');
 });
 
 app.get('/home', function(req, res) {
-//res.writeHead(200); 
+//res.writeHead(200);
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/home.html"));
-
-//this.res.write(html);
-//this.res.end();
-
 res.send(html);
-//res.send('Hello');
 });
 
 
 
 var routes = require('./routes/homemodel');
-//var uploadroutes = require('./routes/uploadmodel');
-//var retrieveroutes = require('./routes/retrievemodel');
-
-
 // connect to mongodb with default port (27017)
 //mongoose.connect('mongodb://localhost/imagespath');
 
@@ -736,126 +312,6 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
     });
 */
 });
-
-app.get('/mongodb', function(req, res) {
-res.writeHead(200); 
-res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
-//res.send('Hello');
-});
-/*
-app.listen(port, function() {
-console.log('Started ' + port); //(port, ip, function() {
-//console.log('Server started at ' + date + ' & listening on port ' + port);
-});
-*/
-//app.listen('/countdown');
-/*
-app.route('/bot/:botRoom') 
-.get((req, res) => getLoginPage(req, res))
-.post((req, res) => doLogin(req, res)) 
-var chuncks = [];
-var chunk = '';
-var res = chunks += chunk;
-
-doLogin = (req, res) => { 
-//chunks = [];
-
-req.on('end', function(chunk) {
-var chunks = [];
-var chunk = '';
-var res = chunks += chunk;
-chunks.push(chunk.toString());
-bot.Respond(res);
-});
-//bot.respond(res);
-//res.send('doLogin'); 
-
-} 
-
-getLoginPage = (req, res) => { 
-//res.send('getLoginPage'); 
-req.chunks = [];
-  res.chunks = [];
-
-  req.on('data', function (chunk) {
-    req.chunks.push(chunk.toString());
-});
-res.writeHead(200);
-res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
-
-}
-
-*/
-
-
-/*
-app.post('/signup_success', function(req,res){
-
-
-    var name = doc.name; // this.req.name; //body.name;
-
-    var email = doc.email; //this.req.email; //body.email;
-
-    var pass = doc.password; // this.req.password; //body.password;
-
-    var phone = doc.phone; // this.req.phone; //body.phone;
-
-  
-
-    var data = {
-
-        "name": name,
-         unique: true,
-
-        "email":email,
-
-        "password":pass,
-
-        "phone":phone,
-        {"name": 1}, {unique: true}
-
-    }
-*/
-/*
-db.collection('details').insertOne(data,function(err, collection){
-//if (result["name"] != data.name) {
-
-        if (err) throw err;
-
-        console.log("Record inserted Successfully");
-
-           //   }
-
-    });
-
-          
-
-    return res.redirect('signup_success.html');
-})
-
-  
-
-  
-
-app.get('/rend',function(req,res){
-res.set({
-
-    'Access-control-Allow-Origin': '*'
-
-    });
-
-return res.redirect('index.html');
-});
-
-  
-
-  
-
-console.log("server listening at port 8080");
-
-*/
-
-
 
 function ping() {
   this.res.writeHead(200);
@@ -918,7 +374,7 @@ var i;
 for (var i in docs) {
 i = 0; i++;
 }
-//var name = await getAllDo(docs[name]).catch(error => console.log(error.stack)); 
+//var name = await getAllDo(docs[name]).catch(error => console.log(error.stack));
  //this.req.body.name;
   /*
   var email = this.req.body.email;
@@ -974,7 +430,7 @@ this.res.statusCode = 200;
 this.res.setHeader('content-type', 'text/plain', 'Access-control-Allow-Origin', '*');
 /*
 var dbhs;
-db.collection('details').find({}, function(err, docs) { 
+db.collection('details').find({}, function(err, docs) {
 
 var dbhs = docs;
 if (err) console.log(err);
@@ -988,13 +444,13 @@ console.log(dbhs[{name}]);//this.res.send(result);
 });
 */
 /*
-if (name) 
+if (name)
 console.log(name);
 */
 //var html = fs.readFileSync(path.join(__dirname + "/index.html"));
 this.res.write("Hi");
 this.res.write(output);
-this.res.end(); 
+this.res.end();
 //});
 }
 
@@ -1196,7 +652,7 @@ this.res.write(output);
 //this.res.write(html);
 //this.res.redirect('signup_success.html');
 this.res.end();
-//this.res.writeHead(200, {"Content-Type": "text/html"}); 
+//this.res.writeHead(200, {"Content-Type": "text/html"});
 //this.res.end();
 }
 
