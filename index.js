@@ -315,7 +315,8 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 
 
 var me = require('./uploads/server/routes/image.js');
-app.get('/me', me, function(req, res) {
+app.get('/me', function(req, res) {
+me
 //res.render('index', { details: null });
 });
 
