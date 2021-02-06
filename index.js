@@ -127,7 +127,7 @@ server = http.createServer(function(req, res) {
 
 
 
-if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/images/:id') {
+if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/images/:id' || req.url === '/me') {
 app(req, res);
 } else {
 
