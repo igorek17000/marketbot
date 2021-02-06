@@ -313,6 +313,13 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 */
 });
 
+
+var me = require('./uploads/server/routes/image.js');
+app.get('/me', me); //function(req, res) {
+//res.render('index', { details: null });
+//});
+
+
 function ping() {
   this.res.writeHead(200);
   this.res.end("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
