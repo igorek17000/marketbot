@@ -1,5 +1,5 @@
 #!/bin/env node
-
+/*
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -49,11 +49,11 @@ var connect = require('./modules/db.js'); //mongoose.connection; //connect(url, 
 connect.then(() => {
   console.log('Connected to database: GridApp');
 }, (err) => console.log(err));
-
+*/
 /*
     GridFs Configuration
 */
-
+/*
 // create storage engine
 var storage = new GridFsStorage({
     url: config.mongoURI,
