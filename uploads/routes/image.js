@@ -6,7 +6,8 @@ var config = require('../config');
 
 module.exports = (upload) => {
     var url = config.mongoURI;
-    var connect = mongoose.connection; //createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
+    var connection_string = config.mongoURI;
+    var connectt = mongoose.connection; //createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
     let gfs;
 /*
@@ -15,9 +16,9 @@ gfs = new mongoose.mongo.GridFSBucket(connect, db) {
         });
 */
 
-    connect.once('open', () => {
+    connectt.once('open', () => {
         // initialize stream
-        gfs = new mongoose.mongo.GridFSBucket(connect, db {
+        gfs = new mongoose.mongo.GridFSBucket(connectt, db {
             bucketName: "uploads"
         });
     });
