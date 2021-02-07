@@ -413,7 +413,7 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 */
 });
 
-app.use(upp);
+app.use('/upp', upp);
 //var me = require('./uploads/server/models/image.js');
 upp.get('/uploads', (req, res) => {
 
