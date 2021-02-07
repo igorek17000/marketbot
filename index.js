@@ -415,10 +415,10 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 
 app.use('/upp', upp);
 //var me = require('./uploads/server/models/image.js');
-upp.get('/upp', (req, res) => {
+//upp.get('/upp', (req, res) => {
 
 //res.render('./uploads/model/index', { details: null });
-});
+//});
 
 
 function ping() {
