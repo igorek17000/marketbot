@@ -1,50 +1,50 @@
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const methodOverride = require('method-override');
-const config = require('./config');
-const multer = require('multer');
-const GridFsStorage = require('multer-gridfs-storage');
-const crypto = require('crypto');
-const cors = require('cors');
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var methodOverride = require('method-override');
+var config = require('./config');
+var multer = require('multer');
+var GridFsStorage = require('multer-gridfs-storage');
+var crypto = require('crypto');
+var cors = require('cors');
 
-const imageRouter = require('./routes/image');
+var imageRouter = require('./routes/image');
 
-const app = express();
+var upp = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+upp.set('views', path.join(__dirname, 'views'));
+upp.set('view engine', 'jade');
 
-app.use(cors({
+upp.use(cors({
     origin: '*',
 }));
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(methodOverride('_method'));
-app.use(express.static(path.join(__dirname, 'public')));
+upp.use(logger('dev'));
+upp.use(express.json());
+upp.use(express.urlencoded({ extended: false }));
+upp.use(cookieParser());
+upp.use(methodOverride('_method'));
+upp.use(express.static(path.join(__dirname, 'public')));
 
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
-const url = config.mongoURI;
-const connect = mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+var url = config.mongoURI;
+var connectt = mongoose.connection; //connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // connect to the database
-connect.then(() => {
+connectt.then(() => {
   console.log('Connected to database: GridApp');
 }, (err) => console.log(err));
 
-/* 
+/*
     GridFs Configuration
 */
 
 // create storage engine
-const storage = new GridFsStorage({
+var storage = new GridFsStorage({
     url: config.mongoURI,
     file: (req, file) => {
         return new Promise((resolve, reject) => {
@@ -52,8 +52,8 @@ const storage = new GridFsStorage({
                 if (err) {
                     return reject(err);
                 }
-                const filename = buf.toString('hex') + path.extname(file.originalname);
-                const fileInfo = {
+                var filename = buf.toString('hex') + path.extname(file.originalname);
+                var fileInfo = {
                     filename: filename,
                     bucketName: 'uploads'
                 };
@@ -63,17 +63,17 @@ const storage = new GridFsStorage({
     }
 });
 
-const upload = multer({ storage });
+var upload = multer({ storage });
 
-app.use('/', imageRouter(upload));
+upp.use('/', imageRouter(upload));
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+upp.use(function(req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+upp.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -83,4 +83,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+module.exports = upp;
