@@ -6,7 +6,7 @@ var config = require('../config');
 
 module.exports = (upload) => {
     var url = config.mongoURI;
-    var connect = mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
+    var connect = mongoose.connection; //createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
     let gfs;
 
