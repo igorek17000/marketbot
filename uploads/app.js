@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override');
-var config = require('../config/config');
+var config = require('./config');
 var multer = require('multer');
 var GridFsStorage = require('multer-gridfs-storage');
 var crypto = require('crypto');
@@ -65,7 +65,7 @@ var storage = new GridFsStorage({
 
 var upload = multer({ storage });
 
-upp.use(imageRouter(upload));
+upp.use('/uploads', imageRouter(upload));
 
 // catch 404 and forward to error handler
 upp.use(function(req, res, next) {
