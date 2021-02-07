@@ -13,6 +13,7 @@ var cors = require('cors');
 var imageRouter = require('./routes/image');
 
 var upp = express();
+var app = express();
 
 // view engine setup
 upp.set('views', path.join(__dirname, 'views'));
