@@ -10,13 +10,17 @@ module.exports = (upload) => {
 
     let gfs;
 
-    connectt.once('open', () => {
+gfs = new mongoose.mongo.GridFSBucket(connectt, db {
+            bucketName: "uploads"
+        });
+/*
+   // connectt.once('open', () => {
         // initialize stream
-        gfs = new mongoose.mongo.GridFSBucket(connectt, {
+        gfs = new mongoose.mongo.GridFSBucket(connectt, db {
             bucketName: "uploads"
         });
     });
-
+*/
     /*
         POST: Upload a single image/file to Image collection
     */
