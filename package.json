@@ -4,7 +4,7 @@
   "description": "A bot made for groupme",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js", "start": "node ./uploads/server/bin/www"
+    "start": "node index.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
