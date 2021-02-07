@@ -1,5 +1,95 @@
 #!/bin/env node
 
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var methodOverride = require('method-override');
+var config = require('./config/config');
+var multer = require('multer');
+var GridFsStorage = require('multer-gridfs-storage');
+var crypto = require('crypto');
+var cors = require('cors');
+
+var imageRouter = require('./uploads/routes/image');
+
+var upp = express();
+
+// view engine setup
+upp.set('views', path.join(__dirname, './uploads/views'));
+upp.set('view engine', 'jade');
+
+upp.use(cors({
+    origin: '*',
+}));
+upp.use(logger('dev'));
+upp.use(express.json());
+upp.use(express.urlencoded({ extended: false }));
+upp.use(cookieParser());
+upp.use(methodOverride('_method'));
+upp.use(express.static(path.join(__dirname, './uploads/public')));
+
+var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
+
+var url = config.mongoURI;
+var connect = mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+
+// connect to the database
+connect.then(() => {
+  console.log('Connected to database: GridApp');
+}, (err) => console.log(err));
+
+/*
+    GridFs Configuration
+*/
+
+// create storage engine
+var storage = new GridFsStorage({
+    url: config.mongoURI,
+    file: (req, file) => {
+        return new Promise((resolve, reject) => {
+            crypto.randomBytes(16, (err, buf) => {
+                if (err) {
+                    return reject(err);
+                }
+                var filename = buf.toString('hex') + path.extname(file.originalname);
+                var fileInfo = {
+                    filename: filename,
+                    bucketName: 'uploads'
+                };
+                resolve(fileInfo);
+            });
+        });
+    }
+});
+
+var upload = multer({ storage });
+
+upp.use('/upp', imageRouter(upload));
+
+// catch 404 and forward to error handler
+upp.use(function(req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+upp.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.upp.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
+exports.upp = upp;
+
+
+
+
 var express = require("express");
 var bodyParser = require("body-parser");
 var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
@@ -129,7 +219,13 @@ server = http.createServer(function(req, res) {
 
 if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/images/:id') {
 app(req, res);
-} else {
+}
+
+if(req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id') {
+  upp(req, res);
+}
+
+  } else {
 
 router.dispatch(req, res, function(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
