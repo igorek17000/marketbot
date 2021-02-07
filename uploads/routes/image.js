@@ -15,14 +15,14 @@ gfs = new mongoose.mongo.GridFSBucket(connect, db) {
             bucketName: "uploads"
         });
 */
-
+/*
     connectt.once('open', () => {
         // initialize stream
         gfs = new mongoose.mongo.GridFSBucket(connectt, mongoose {
             bucketName: "uploads"
         });
     });
-
+*/
     /*
         POST: Upload a single image/file to Image collection
     */
