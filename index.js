@@ -223,7 +223,6 @@ app(req, res);
 
 if(req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id') {
   upp(req, res);
-}
 
   } else {
 
