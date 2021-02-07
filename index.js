@@ -261,6 +261,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.set('view engine', 'ejs');
+app.engine('jade', require('jade').__express);
+//app.engine('html', require('ejs').renderFile);
 
 app.get('/', function(req, res) {
 res.writeHead(200);
