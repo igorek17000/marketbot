@@ -16,8 +16,10 @@ var imageRouter = require('./uploads/routes/image');
 
 var upp = express();
 
+
+
 // view engine setup
-upp.set('views', path.join(__dirname, './uploads/views'));
+upp.set('views', path.join(__dirname, '/uploads/views'));
 upp.set('view engine', 'jade');
 
 upp.use(cors({
@@ -68,7 +70,7 @@ var storage = new GridFsStorage({
 
 var upload = multer({ storage });
 
-upp.use('/upp', imageRouter(upload));
+upp.use('/', imageRouter(upload));
 
 // catch 404 and forward to error handler
 upp.use(function(req, res, next) {
