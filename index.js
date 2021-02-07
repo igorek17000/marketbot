@@ -227,7 +227,7 @@ app(req, res);
 }
 
 if(req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id' || req.url === '/uploads') {
-  upp(req, res);
+  app(req, res);
 
   } else {
 
@@ -415,7 +415,7 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 
 
 //var me = require('./uploads/server/models/image.js');
-upp.get('/uploads', imageRouter(upload)); function(req, res) {
+upp.get('/uploads', imageRouter(upload)); // function(req, res) {
 
 //res.render('./uploads/model/index', { details: null });
 //});
