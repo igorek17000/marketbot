@@ -12,7 +12,7 @@ module.exports = (upload) => {
 
     connectt.once('open', () => {
         // initialize stream
-        gfs = new mongoose.mongo.GridFSBucket(connectt.db, {
+        gfs = new mongoose.mongo.GridFSBucket(connectt, {
             bucketName: "uploads"
         });
     });
@@ -20,7 +20,7 @@ module.exports = (upload) => {
     /*
         POST: Upload a single image/file to Image collection
     */
-    imageRouter.route('/upp')
+    imageRouter.route('/uploads')
         .post(upload.single('file'), (req, res, next) => {
             console.log(req.body);
             // check for existing images
