@@ -1,5 +1,5 @@
 #!/bin/env node
-/*
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -11,15 +11,15 @@ var multer = require('multer');
 var GridFsStorage = require('multer-gridfs-storage');
 var crypto = require('crypto');
 var cors = require('cors');
-*/
-//var imageRouter = require('./uploads/routes/image');
+
+var imageRouter = require('./uploads/routes/image');
 
 //var app = express();
 
 
 
 // view engine setup
-/*
+
 upp.set('views', path.join(__dirname, '/uploads/views'));
 upp.set('view engine', 'jade');
 
@@ -38,17 +38,17 @@ mongoose.Promise = require('bluebird');
 
 var url = config.mongoURI;
 
-var connectt = mongoose.connection; //connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+var connect = require('./modules/db.js'); //mongoose.connection; //connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // connect to the database
-connectt.then(() => {
+connect.then(() => {
   console.log('Connected to database: GridApp');
 }, (err) => console.log(err));
-*/
+
 /*
     GridFs Configuration
 */
-/*
+
 // create storage engine
 var storage = new GridFsStorage({
     url: config.mongoURI,
@@ -70,7 +70,7 @@ var storage = new GridFsStorage({
 });
 
 var upload = multer({ storage });
-*/
+
 //app.use(upp); //imageRouter(upload));
 /*
 // catch 404 and forward to error handler
@@ -88,7 +88,8 @@ upp.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
+exports.upp = upp;
+/*
 exports.upp = upp;
 */
 
@@ -415,10 +416,10 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 
 app.use(upp);
 //var me = require('./uploads/server/models/image.js');
-//upp.get('/upp', (req, res) => {
+upp.get('/uploads', (req, res) => {
 
 //res.render('./uploads/model/index', { details: null });
-//});
+});
 
 
 function ping() {
