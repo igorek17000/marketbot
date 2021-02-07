@@ -1,5 +1,5 @@
 #!/bin/env node
-
+/*
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -11,14 +11,15 @@ var multer = require('multer');
 var GridFsStorage = require('multer-gridfs-storage');
 var crypto = require('crypto');
 var cors = require('cors');
-
+*/
 var imageRouter = require('./uploads/routes/image');
 
-var upp = express();
+//var app = express();
 
 
 
 // view engine setup
+/*
 upp.set('views', path.join(__dirname, '/uploads/views'));
 upp.set('view engine', 'jade');
 
@@ -36,7 +37,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
 var url = config.mongoURI;
-/*
+
 var connectt = mongoose.connection; //connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // connect to the database
@@ -47,7 +48,7 @@ connectt.then(() => {
 /*
     GridFs Configuration
 */
-
+/*
 // create storage engine
 var storage = new GridFsStorage({
     url: config.mongoURI,
@@ -69,9 +70,9 @@ var storage = new GridFsStorage({
 });
 
 var upload = multer({ storage });
-
-upp.use('/', imageRouter(upload));
-
+*/
+app.use('/uploads', imageRouter(upload));
+/*
 // catch 404 and forward to error handler
 upp.use(function(req, res, next) {
   next(createError(404));
@@ -89,7 +90,7 @@ upp.use(function(err, req, res, next) {
 });
 
 exports.upp = upp;
-
+*/
 
 
 
@@ -97,6 +98,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
 var app = express();
+var upp = express();
 var mongoose = require('mongoose');
 mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
 var customerSchema = new mongoose.Schema({ name: String, answer: String, joke: String, regex: String, description: String, password: String });
@@ -224,7 +226,7 @@ if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' ||
 app(req, res);
 }
 
-if(req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id') {
+if(req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id' || req.url === '/uploads') {
   upp(req, res);
 
   } else {
@@ -413,9 +415,9 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 
 
 var me = require('./uploads/server/models/image.js');
-app.get('/me', function(req, res) {
-me
-//res.render('index', { details: null });
+upp.get('/uploads', function(req, res) {
+
+res.render('./uploads/model/index', { details: null });
 });
 
 
