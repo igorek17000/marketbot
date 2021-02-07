@@ -71,7 +71,7 @@ var storage = new GridFsStorage({
 
 var upload = multer({ storage });
 */
-app.use(upp); //imageRouter(upload));
+//app.use(upp); //imageRouter(upload));
 /*
 // catch 404 and forward to error handler
 upp.use(function(req, res, next) {
@@ -413,7 +413,7 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 */
 });
 
-
+app.use(upp);
 //var me = require('./uploads/server/models/image.js');
 upp.get('/uploads', (req, res) => {
 
