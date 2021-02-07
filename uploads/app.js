@@ -30,7 +30,7 @@ upp.use(express.static(path.join(__dirname, 'public')));
 
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-
+/*
 var url = config.mongoURI;
 var connectt = mongoose.connection; //connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -38,7 +38,7 @@ var connectt = mongoose.connection; //connect(url, { useNewUrlParser: true, useU
 connectt.then(() => {
   console.log('Connected to database: GridApp');
 }, (err) => console.log(err));
-
+*/
 /*
     GridFs Configuration
 */
