@@ -414,11 +414,11 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 });
 
 
-var me = require('./uploads/server/models/image.js');
-upp.get('/uploads', function(req, res) {
+//var me = require('./uploads/server/models/image.js');
+upp.get('/uploads', imageRouter(upload)); function(req, res) {
 
-res.render('./uploads/model/index', { details: null });
-});
+//res.render('./uploads/model/index', { details: null });
+//});
 
 
 function ping() {
