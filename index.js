@@ -429,17 +429,17 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 app.use(upp);
 /*
 //var me = require('./uploads/server/models/image.js');
-upp.get('/uploads', (req, res) => {
+app.get('/uploads', (req, res) => {
 
-//res.render('uploads/model/index', { details: null });
+res.render('./uploads/server/model/', { details: null });
 });
 */
 
-upp.get('/uploads', (req, res) => {
+app.get('/uploads', (req, res) => {
 //res.writeHead(200);
 //res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
-//res.render('layout');
+res.render('layout.jade');
 });
 
 
