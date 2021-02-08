@@ -16,18 +16,18 @@ var upp = express();
 var app = express();
 
 // view engine setup
-upp.set('views', path.join(__dirname, 'views'));
-upp.set('view engine', 'jade');
+app.set('views', path.join(__dirname, 'views'));
+app.engine('jade', 'jade');
 
-upp.use(cors({
+app.use(cors({
     origin: '*',
 }));
-upp.use(logger('dev'));
-upp.use(express.json());
-upp.use(express.urlencoded({ extended: false }));
-upp.use(cookieParser());
-upp.use(methodOverride('_method'));
-upp.use(express.static(path.join(__dirname, 'public')));
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
@@ -66,17 +66,17 @@ var storage = new GridFsStorage({
 
 var upload = multer({ storage });
 
-upp.get('/uploads', function(req, res) {// imageRouter(upload));
+app.get('/uploads', function(req, res) {// imageRouter(upload));
 res.render('layout.jade');
 });
 
 // catch 404 and forward to error handler
-upp.use(function(req, res, next) {
+app.use(function(req, res, next) {
   next(createError(404));
 });
 
 // error handler
-upp.use(function(err, req, res, next) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -86,4 +86,4 @@ upp.use(function(err, req, res, next) {
   res.render('error');
 });
 
-exports.upp = upp;
+exports.app = app;
