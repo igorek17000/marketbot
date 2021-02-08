@@ -6,7 +6,7 @@ var createError = require('http-errors');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override');
-var config = require('./config/config');
+//var config = require('./config/config');
 var multer = require('multer');
 var GridFsStorage = require('multer-gridfs-storage');
 var crypto = require('crypto');
@@ -104,7 +104,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
 var app = express();
-var upp = express();
+var upp = require('./uploads/app.js'); //express();
 var uppp = require('./uploads/routes/image');
 var mongoose = require('mongoose');
 mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -424,7 +424,7 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 */
 });
 
-//upp.use(uppp);
+app.use(upp);
 /*
 //var me = require('./uploads/server/models/image.js');
 uppp.get('/uploads', (req, res) => {
@@ -437,7 +437,7 @@ upp.get('/uploads', (req, res) => {
 //res.writeHead(200);
 //res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
-res.render('/uploads/views/layout.jade');
+res.render('./uploads/views/layout.jade');
 });
 
 function ping() {
