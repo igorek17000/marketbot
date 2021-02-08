@@ -429,7 +429,7 @@ res.render('uploads/model/index', { details: null });
 });
 */
 
-upp.get('/', (req, res) => {
+upp.get('/uploads', (req, res) => {
 //res.writeHead(200);
 //res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
