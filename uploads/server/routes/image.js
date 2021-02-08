@@ -45,7 +45,7 @@ gfs = Image; //new mongoose.mongo.GridFSBucket({
 
 conn.once('open', () => {
 
-   gfs = Grid.mongo(conn.db); // { // mongoose.mongo);
+   gfs = new Grid.mongo(conn.db); // { // mongoose.mongo);
 //if (err) 
  //throw err;
 //callback(db);
@@ -63,7 +63,7 @@ conn.once('open', () => {
 
     connectt.once('open', () => {
         // initialize stream
-        gfs = connectt(url, {
+        gfs =  connectt(url, {
             bucketName: "uploads"
         });
     });
