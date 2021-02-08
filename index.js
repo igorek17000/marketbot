@@ -285,7 +285,7 @@ res.send(html);
 });
 
 app.get('/jokes', function(req, res) {
-res.render('index', { details: null });
+res.render('/views/index', { details: null });
 });
 
 app.get('/detail', function(req, res) {
@@ -437,7 +437,7 @@ upp.get('/uploads', (req, res) => {
 //res.writeHead(200);
 //res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
-res.render('./uploads/views/layout.jade');
+res.render('/uploads/views/layout.jade');
 });
 
 function ping() {
