@@ -33,9 +33,9 @@ gfs = new mongoose.mongo.GridFSBucket({
 
     connectt.once('open', () => {
         // initialize stream
-        gfs = connectt.gridFSBucket({
+        gfs = {
             bucketName: "uploads"
-        });
+        }
     });
 /*
 connectt.once('open', () => {
