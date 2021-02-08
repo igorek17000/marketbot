@@ -433,11 +433,11 @@ res.render('./uploads/model/index', { details: null });
 });
 */
 
-imageRouter.get('/uploads', (req, res) => {
+imageRouter.route('/uploads', (req, res) => {
 //res.writeHead(200);
 //res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
-res.render('/uploads/views/layout.jade');
+//res.render('/uploads/views/layout.jade');
 });
 
 function ping() {
