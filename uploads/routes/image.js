@@ -51,6 +51,7 @@ connectt.once('open', () => {
     imageRouter.route('/upp')
         .post(upload.single('file'), (req, res, next) => {
             console.log(req.body);
+            console.log(req);
             // check for existing images
             Image.findOne({ caption: req.body.caption })
                 .then((image) => {
