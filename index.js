@@ -420,12 +420,12 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 */
 });
 //upp = express();
-app.use('/uploads', upp);
+app.use(upp);
 /*
 //var me = require('./uploads/server/models/image.js');
 upp.get('/uploads', (req, res) => {
 
-res.render('uploads/model/index', { details: null });
+//res.render('uploads/model/index', { details: null });
 });
 */
 
