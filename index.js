@@ -281,7 +281,7 @@ res.send(html);
 });
 
 app.get('/jokes', function(req, res) {
-res.render('/views/index', { details: null });
+res.render('index', { details: null });
 });
 
 app.get('/detail', function(req, res) {
