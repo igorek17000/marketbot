@@ -1,5 +1,5 @@
 #!/bin/env node
-/*
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -15,7 +15,7 @@ var mongoose = require('mongoose');
 
 var imageRouter = require('./uploads/routes/image');
 let gfs;
-gfs = new mongoose.mongo.GridFSBucket({ //connect, db) { 
+gfs = new mongoose.mongo.GridFSBucket(mongoose.connection.db { //connect, db) { 
 bucketName: "uploads" 
 });
 
@@ -26,7 +26,7 @@ bucketName: "uploads"
 // view engine setup
 
 upp.set('views', path.join(__dirname, '/uploads/views'));
-upp.set('view engine', 'jade');
+//upp.set('view engine', 'jade');
 
 upp.use(cors({
     origin: '*',
@@ -43,8 +43,8 @@ mongoose.Promise = require('bluebird');
 
 var url = config.mongoURI;
 
-var connect = require('./modules/db.js'); //mongoose.connection; //connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
-
+//var connect = require('./modules/db.js'); //mongoose.connection; //connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+/*
 // connect to the database
 connect.then(() => {
   console.log('Connected to database: GridApp');
@@ -76,8 +76,8 @@ var storage = new GridFsStorage({
 
 var upload = multer({ storage });
 
-//app.use(upp); //imageRouter(upload));
-/*
+upp.use('/uploads', imageRouter(upload));
+
 // catch 404 and forward to error handler
 upp.use(function(req, res, next) {
   next(createError(404));
@@ -93,7 +93,7 @@ upp.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-exports.upp = upp;
+//exports.upp = upp;
 /*
 exports.upp = upp;
 */
@@ -424,7 +424,7 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 */
 });
 
-upp.use(uppp);
+//upp.use(uppp);
 /*
 //var me = require('./uploads/server/models/image.js');
 uppp.get('/uploads', (req, res) => {
@@ -433,7 +433,7 @@ res.render('./uploads/model/index', { details: null });
 });
 */
 
-uppp.get('/uploads', (req, res) => {
+upp.get('/uploads', (req, res) => {
 //res.writeHead(200);
 //res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
