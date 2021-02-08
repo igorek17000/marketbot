@@ -260,11 +260,11 @@ app.use(bodyParser.urlencoded({
    extended: true
 }));
 
-//app.set('view engine', 'ejs');
-app.engine('jade', require('jade').__express);
-app.engine('ejs', require('ejs').renderFile);
+app.set('view engine', 'ejs');
+upp.engine('jade', require('jade').__express);
+upp.engine('ejs', require('ejs').renderFile);
 
-app.get('/uploads', function(req, res) {
+upp.get('/uploads', function(req, res) {
 //res.writeHead(200);
 //res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
