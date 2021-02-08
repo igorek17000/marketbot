@@ -1,8 +1,8 @@
 #!/bin/env node
 
 var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
+//var express = require('express');
+//var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override');
@@ -11,8 +11,8 @@ var multer = require('multer');
 var GridFsStorage = require('multer-gridfs-storage');
 var crypto = require('crypto');
 var cors = require('cors');
-var mongoose = require('mongoose');
-
+//var mongoose = require('mongoose');
+/*
 var imageRouter = require('./uploads/routes/image');
 let gfs;
 gfs = new mongoose.GridFSBucket({ //connect, db) { 
@@ -40,7 +40,7 @@ upp.use(express.static(path.join(__dirname, './uploads/public')));
 
 //var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-
+*/
 //var url = config.mongoURI;
 
 //var connect = require('./modules/db.js'); //mongoose.connection; //connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -53,7 +53,7 @@ connect.then(() => {
 /*
     GridFs Configuration
 */
-
+/*
 // create storage engine
 var storage = new GridFsStorage({
     url: config.mongoURI,
