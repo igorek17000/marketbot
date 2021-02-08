@@ -45,14 +45,14 @@ gfs = Image; //new mongoose.mongo.GridFSBucket({
 
 conn.once('open', () => {
 
-    var gfs = Grid(conn.db, {
+    var gfs = Grid(conn.db); /*, {
             bucketName: "uploads"
         }); // { // mongoose.mongo);
 //if (err) 
  //throw err;
 //callback(db);
 //});
-
+*/
  
 
   // all set!
