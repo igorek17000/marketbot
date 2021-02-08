@@ -11,7 +11,7 @@ module.exports = (upload) => {
 
     let gfs;
 //
-gfs = connectt.Image; //GridFSBucket({
+gfs = Image; //GridFSBucket({
            // bucketName: "uploads"
        // });
 
