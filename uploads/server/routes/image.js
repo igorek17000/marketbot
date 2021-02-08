@@ -41,7 +41,7 @@ gfs = Image; //new mongoose.mongo.GridFSBucket({
 
 
 
-connectt.once('open', => () {
+connectt.once('open', () => {
 
    gfs = Grid(connectt.db, mongoose.mongo);
 
