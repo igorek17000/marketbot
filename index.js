@@ -444,7 +444,7 @@ upp.get('/uploads', (req, res) => {
 
 
 
-'/upp' || '/delete/:id' || '/recent' || '/multiple' || '/files' || '/file/:filename' || '/image/:filename' || '/file/del/:id' || '/uploads/' || '/upp/') { 
+//'/upp' || '/delete/:id' || '/recent' || '/multiple' || '/files' || '/file/:filename' || '/image/:filename' || '/file/del/:id' || '/uploads/' || '/upp/') { 
 
 function ping() {
   this.res.writeHead(200);
