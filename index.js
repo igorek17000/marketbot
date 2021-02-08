@@ -15,7 +15,7 @@ var mongoose = require('mongoose');
 
 var imageRouter = require('./uploads/routes/image');
 let gfs;
-gfs = new mongoose.mongo.GridFSBucket(mongoose.connection.db, { //connect, db) { 
+gfs = new mongoose.mongo.GridFSBucket(mongoose.connection, { //connect, db) { 
 bucketName: "uploads" 
 });
 
