@@ -25,7 +25,7 @@ bucketName: "uploads"
 
 // view engine setup
 
-upp.set('views', path.join(__dirname, '/uploads/views'));
+upp.set('views', path.join(__dirname, 'uploads/views'));
 //upp.set('view engine', 'jade');
 
 upp.use(cors({
@@ -36,7 +36,7 @@ upp.use(express.json());
 upp.use(express.urlencoded({ extended: false }));
 upp.use(cookieParser());
 upp.use(methodOverride('_method'));
-upp.use(express.static(path.join(__dirname, './uploads/public')));
+upp.use(express.static(path.join(__dirname, 'uploads/public')));
 
 //var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
