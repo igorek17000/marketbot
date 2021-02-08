@@ -66,9 +66,8 @@ var storage = new GridFsStorage({
 
 var upload = multer({ storage });
 
-app.get('/uploads', function(req, res) {// imageRouter(upload));
-res.render('layout.jade');
-});
+app.use('/', imageRouter(upload));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
