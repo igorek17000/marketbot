@@ -260,14 +260,15 @@ app.use(bodyParser.urlencoded({
    extended: true
 }));
 
-app.set('view engine', 'ejs');
+//app.set('view engine', 'ejs');
 app.engine('jade', require('jade').__express);
-//app.engine('html', require('ejs').renderFile);
+app.engine('ejs', require('ejs').renderFile);
 
-app.get('/', function(req, res) {
-res.writeHead(200);
-res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
+app.get('/uploads', function(req, res) {
+//res.writeHead(200);
+//res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
+res.render('/uploads/views/layout.jade');
 });
 
 
