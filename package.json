@@ -27,6 +27,7 @@
     "geolocation": "^0.2.0",
     "gmail-send": "^1.8.10",
     "googleapis": "^43.0.0",
+    "gridfs-stream": "^1.1.1",
     "groupme": "^0.5.8",
     "grunt": "^1.0.4",
     "grunt-contrib-jshint": "^2.1.0",
