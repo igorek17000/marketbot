@@ -11,10 +11,10 @@ module.exports = (upload) => {
 
     let gfs;
 
-gfs = mongoose.connection.GridFSBucket({
+gfs = connectt.GridFSBucket({
             bucketName: "uploads"
         });
-
+});
 /*
     connectt.once('open', () => {
         // initialize stream
