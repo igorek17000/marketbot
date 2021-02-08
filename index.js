@@ -257,18 +257,21 @@ app.use(bodyParser.urlencoded({
    extended: true
 }));
 
+app.set('view engine', 'jade');
 app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
+app.set('view engine', 'html');
 app.set('views', './views' || 'views', './uploads/views'); //require('jade').__express);
 //upp.engine('ejs', require('ejs').renderFile);
 
-
+/*
 app.get('/', function(req, res) {
 //res.writeHead(200);
 res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 //res.render('/uploads/views/layout.jade');
 });
-
+*/
 
 app.get('/countdown', function(req, res) {
 //res.writeHead(200);
@@ -420,6 +423,9 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 */
 });
 //upp = express();
+
+
+
 app.use(upp);
 /*
 //var me = require('./uploads/server/models/image.js');
@@ -435,6 +441,10 @@ upp.get('/uploads', (req, res) => {
 //res.send('Hello');
 //res.render('layout');
 });
+
+
+
+'/upp' || '/delete/:id' || '/recent' || '/multiple' || '/files' || '/file/:filename' || '/image/:filename' || '/file/del/:id' || '/uploads/' || '/upp/') { 
 
 function ping() {
   this.res.writeHead(200);
