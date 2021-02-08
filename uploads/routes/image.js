@@ -11,10 +11,11 @@ module.exports = (upload) => {
 
     let gfs;
 
-gfs = connectt.GridFSBucket({
-            bucketName: "uploads"
-        });
-});
+gfs = connectt.Image; //GridFSBucket({
+           // bucketName: "uploads"
+       // });
+
+
 /*
     connectt.once('open', () => {
         // initialize stream
