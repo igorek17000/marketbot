@@ -3,6 +3,19 @@ var imageRouter = express.Router();
 var mongoose = require('mongoose');
 var Image = require('../models/image');
 var config = require('../config');
+var url = config.mongoURI;
+    var connection_string = config.mongoURI;
+    var connectt = mongoose.connection; //createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
+
+
+
+function connectt(callback){ 
+mongoose.connection(connection_string, function(err, db) { 
+if(err) throw err; 
+callback(db); 
+});
+}
+
 
 module.exports = (upload) => {
     var url = config.mongoURI;
@@ -17,13 +30,20 @@ gfs = new mongoose.mongo.GridFSBucket({
 
 
 */
+
     connectt.once('open', () => {
         // initialize stream
-        gfs = new mongoose.mongo.GridFSBucket(connection_string, {
+        gfs = new connectt.GridFSBucket({
             bucketName: "uploads"
         });
     });
 
+connectt.once('open', () => {
+        // initialize stream
+        gfs = new mongoose.mongo.GridFSBucket({
+            bucketName: "uploads"
+        }), ;
+    });
     /*
         POST: Upload a single image/file to Image collection
     */
