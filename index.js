@@ -264,13 +264,14 @@ app.set('view engine', 'ejs');
 upp.engine('jade', require('jade').__express);
 upp.engine('ejs', require('ejs').renderFile);
 
+/*
 upp.get('/uploads', function(req, res) {
 //res.writeHead(200);
 //res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 res.render('/uploads/views/layout.jade');
 });
-
+*/
 
 app.get('/countdown', function(req, res) {
 //res.writeHead(200);
@@ -423,12 +424,20 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 });
 
 app.use(upp);
+/*
 //var me = require('./uploads/server/models/image.js');
 upp.get('/uploads', (req, res) => {
 
 //res.render('./uploads/model/index', { details: null });
 });
+*/
 
+upp.get('/uploads', (req, res) => {
+//res.writeHead(200);
+//res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
+//res.send('Hello');
+res.render('/uploads/views/layout.jade');
+});
 
 function ping() {
   this.res.writeHead(200);
