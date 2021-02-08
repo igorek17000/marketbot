@@ -27,9 +27,9 @@ module.exports = (upload) => {
 
     let gfs;
 /*
-gfs = new mongoose.mongo.GridFSBucket({
-            bucketName: "uploads"
-        });
+gfs = Image; //new mongoose.mongo.GridFSBucket({
+           // bucketName: "uploads"
+        //});
 
 
 */
@@ -41,16 +41,16 @@ gfs = new mongoose.mongo.GridFSBucket({
 
 
 
-connectt.once('open', function () {
+//connectt.once('open', function () {
 
-   gfs = new Grid(connectt.db, { bucketName: 'uploads'
-});
+   gfs = Image; //new Grid(connectt.db, { bucketName: 'uploads'
+//});
 
  
 
   // all set!
 
-});
+//});
 
 
 
