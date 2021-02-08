@@ -229,7 +229,7 @@ server = http.createServer(function(req, res) {
 
 
 
-if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/images/:id' || req.url === '/me' || req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id' || req.url === '/uploads/') {
+if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/images/:id' || req.url === '/me' || req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id' || req.url === '/uploads/' || req.url === '/upp/') {
   app(req, res);
 
   } else {
@@ -429,11 +429,11 @@ res.render('uploads/model/index', { details: null });
 });
 */
 
-upp.get('/uploads', (req, res) => {
+upp.get('/upp', (req, res) => {
 //res.writeHead(200);
 //res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
-//res.render('uploads/views/layout');
+res.render('layout');
 });
 
 function ping() {
