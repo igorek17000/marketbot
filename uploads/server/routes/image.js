@@ -42,7 +42,7 @@ gfs = new mongoose.mongo.GridFSBucket({
 
 connectt.once('open', function () {
 
-  var gfs = Grid(connectt.db, {bucket name: 'uploads'
+  var gfs = Grid(connectt.db, {bucketName: 'uploads'
 });
 
  
