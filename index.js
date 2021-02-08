@@ -262,8 +262,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.set('view engine', 'ejs');
-upp.engine('jade', require('jade').__express);
-upp.engine('ejs', require('ejs').renderFile);
+app.engine('jade', require('jade').__express);
+//upp.engine('ejs', require('ejs').renderFile);
 
 /*
 upp.get('/uploads', function(req, res) {
