@@ -11,7 +11,7 @@ module.exports = (upload) => {
 
     let gfs;
 //
-gfs = mongoose.connection.GridFSBucket({
+gfs = new mongoose.connection.GridFSBucket({
             bucketName: "uploads"
         });
 
