@@ -229,7 +229,7 @@ server = http.createServer(function(req, res) {
 
 
 
-if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/images/:id' || req.url === '/me' || req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id' || req.url === '/uploads') {
+if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/images/:id' || req.url === '/me' || req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id' || req.url === '/uploads/') {
   app(req, res);
 
   } else {
