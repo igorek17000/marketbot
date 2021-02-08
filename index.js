@@ -53,7 +53,7 @@ connect.then(() => {
 /*
     GridFs Configuration
 */
-/*
+
 // create storage engine
 var storage = new GridFsStorage({
     url: config.mongoURI,
