@@ -21,7 +21,7 @@ gfs = connectt.GridFSBucket({
         gfs = new mongoose.mongo.GridFSBucket(connectt, mongoose {
             bucketName: "uploads"
         });
-    });
+    
 */
     /*
         POST: Upload a single image/file to Image collection
