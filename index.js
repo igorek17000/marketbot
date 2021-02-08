@@ -229,7 +229,7 @@ server = http.createServer(function(req, res) {
 
 
 
-if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/images/:id' || req.url === '/me' || req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id' || req.url === '/uploads/' || req.url === '/upp/') {
+if(req.url === '/' || req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/images/:id' || req.url === '/me' || req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id' || req.url === '/uploads/' || req.url === '/upp/') {
   app(req, res);
 
   } else {
@@ -264,14 +264,14 @@ app.set('view engine', 'html');
 app.set('views', './views' || 'views', './uploads/server/views'); //require('jade').__express);
 //upp.engine('ejs', require('ejs').renderFile);
 
-/*
+
 app.get('/', function(req, res) {
 //res.writeHead(200);
 res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 //res.render('/uploads/views/layout.jade');
 });
-*/
+
 
 app.get('/countdown', function(req, res) {
 //res.writeHead(200);
@@ -439,7 +439,7 @@ app.get('/uploads', (req, res) => {
 //res.writeHead(200);
 //res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
-res.render('./uploads/server/views/layout.jade');
+res.send('./uploads/client/src/components/ListPage.tsx');
 });
 
 
