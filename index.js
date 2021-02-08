@@ -38,10 +38,10 @@ upp.use(cookieParser());
 upp.use(methodOverride('_method'));
 upp.use(express.static(path.join(__dirname, './uploads/public')));
 
-var mongoose = require('mongoose');
+//var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
-var url = config.mongoURI;
+//var url = config.mongoURI;
 
 //var connect = require('./modules/db.js'); //mongoose.connection; //connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 /*
@@ -76,7 +76,7 @@ var storage = new GridFsStorage({
 
 var upload = multer({ storage });
 
-upp.use('/uploads', imageRouter(upload));
+upp.use('/uploads'); //, function(req, res); //imageRouter(upload));
 
 // catch 404 and forward to error handler
 upp.use(function(req, res, next) {
