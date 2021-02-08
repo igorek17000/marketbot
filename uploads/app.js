@@ -10,7 +10,7 @@ var GridFsStorage = require('multer-gridfs-storage');
 var crypto = require('crypto');
 var cors = require('cors');
 //
-var imageRouter = require('./uploads/routes/image');
+var imageRouter = require('./routes/image');
 
 var upp = express();
 var app = express();
