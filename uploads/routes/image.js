@@ -26,7 +26,7 @@ gfs = new mongoose.mongo.GridFSBucket(connect, db) {
     /*
         POST: Upload a single image/file to Image collection
     */
-    imageRouter.route('/uploads')
+    imageRouter.route('/')
         .post(upload.single('file'), (req, res, next) => {
             console.log(req.body);
             // check for existing images
