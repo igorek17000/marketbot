@@ -1,26 +1,28 @@
 var express = require('express');
 var imageRouter = express.Router();
 var mongoose = require('mongoose');
+var Grid = require('gridfs-stream');
+Grid.mongo = mongoose.mongo;
 var Image = require('../models/image');
 var config = require('../config');
 var url = config.mongoURI;
     var connection_string = config.mongoURI;
-    var connectt = mongoose.connection; //createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
+    var connectt = mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
-
+/*
 function connectt(callback){ 
 mongoose.connection(connection_string, function(err, db) { 
 if(err) throw err; 
 callback(db); 
 });
 }
-
+*/
 
 module.exports = (upload) => {
     var url = config.mongoURI;
     var connection_string = config.mongoURI;
-    var connectt = mongoose.connection; //createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
+    var connectt = mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
     let gfs;
 /*
@@ -31,12 +33,35 @@ gfs = new mongoose.mongo.GridFSBucket({
 
 */
 
+
+
+
+ 
+
+
+
+connectt.once('open', function () {
+
+  var gfs = Grid(connectt.db, {bucket name: 'uploads'
+});
+
+ 
+
+  // all set!
+
+});
+
+
+
+/*
+
     connectt.once('open', () => {
         // initialize stream
         gfs = connectt(url, {
             bucketName: "uploads"
         });
     });
+*/
 /*
 connectt.once('open', () => {
         // initialize stream
