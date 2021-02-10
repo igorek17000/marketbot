@@ -414,7 +414,7 @@ routes.get('/images', (req, res) => {
 */
 });
 
-routes.get('/upp/', (req, res) => {
+routes.get('/me', (req, res) => {
 
 //var url = req.url;
 //var id = url.split('/')[2];
@@ -442,7 +442,7 @@ res.render('/uploads/server/model', { details: null });
 });
 
 
-upp.get('/', (req, res) => {
+upp.get('/upp', (req, res) => {
 //res.writeHead(200);
 //res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
