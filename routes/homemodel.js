@@ -110,9 +110,9 @@ router.post('/images', upload.any(), function(req, res) {
 
 //======================================================================================
 
-router.get('/upp',function(req, res){
+router.get('/upp', function(req, res){
 
-	Image.getImages({}, function(err, docs){
+	Image.getImages(image, function(err, docs){
 
 		if (err) {
 
