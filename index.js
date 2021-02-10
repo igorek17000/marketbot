@@ -436,13 +436,14 @@ routes.get('/me', (req, res) => {
 app.use(upp);
 
 //var me = require('./uploads/server/models/image.js');
+/*
 app.get('/uploads', (req, res) => {
 
 res.render('/uploads/server/model', { details: null });
 });
+*/
 
-
-upp.get('/upp', (req, res) => {
+upp.get('/uploads', (req, res) => {
 //res.writeHead(200);
 //res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
