@@ -24,7 +24,7 @@ var mongoose = require('mongoose');
 
 var ImageSchema = mongoose.Schema({
 
-        id: String,
+        
 	data: Buffer,	
         originalname: String,
 	contentType: String,
