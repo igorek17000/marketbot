@@ -38,9 +38,9 @@ var ImageSchema = mongoose.Schema({
 
 var Image = module.exports = mongoose.model('uploads', ImageSchema);
 
-router.getImages = function(callback) {
+router.getImages = function(imager, callback) {
 
-    Image.find(callback);
+    Image.find(imager, callback);
 
 }
 
@@ -111,8 +111,8 @@ router.post('/images', upload.any(), function(req, res) {
 //======================================================================================
 
 router.get('/upp', function(req, res){
-//var image = {};
-	router.getImages({}, (err, docs) => {
+var imager = {};
+	router.getImages(imager, (err, docs) => {
 
 		if (err) {
 
