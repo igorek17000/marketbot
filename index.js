@@ -262,7 +262,7 @@ app.set('view engine', 'jade');
 app.set('view engine', 'pug');
 app.set('view engine', 'ejs');
 app.set('view engine', 'html');
-app.set('views', './views' || 'views', './uploads/server/views'); //require('jade').__express);
+app.set('views', '/views' || 'views', '/uploads/server/views'); //require('jade').__express);
 //upp.engine('ejs', require('ejs').renderFile);
 
 /*
@@ -285,11 +285,11 @@ res.send(html);
 });
 
 app.get('/jokes', function(req, res) {
-res.render('/views/index', { details: null });
+res.render('index.ejs', { details: null });
 });
 
 app.get('/detail', function(req, res) {
-res.render('/views/getdetails');
+res.render('getdetails.ejs');
 });
 
 app.post('/detail', function(req, res) {
@@ -303,7 +303,7 @@ query.sort({name: 'asc'}).exec(function(err, allDetails) {
 if (err) {
 console.log(err);
 } else {
-res.render('/views/getdetails', { details: allDetails });
+res.render('getdetails.ejs', { details: allDetails });
 }
 });
 
@@ -347,14 +347,14 @@ Customer.find({}, function(err, allDetails) {
 if (err) {
 console.log(err);
 } else {
-res.render('/views/getdetails', { details: allDetails });
+res.render('getdetails.ejs', { details: allDetails });
 }
 });
 });
 
 app.get('/login', function(req, res) {
 res.setHeader('Content-type', 'text/html');
-var html = fs.readFileSync(path.join(__dirname + "/views/index.html"));
+var html = fs.readFileSync(path.join(__dirname + "/views/index.ejs"));
 res.send(html);
 });
 
