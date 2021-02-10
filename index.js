@@ -135,10 +135,11 @@ today       = require('./bot.js');
 
 
 router = new director.http.Router({
+/*
   '/'    : {
     get: ping
   },
-
+*/
 '/home' : {
 get: home
 },
@@ -435,11 +436,11 @@ res.render('./uploads/server/model/', { details: null });
 });
 */
 
-app.get('/uploads', (req, res) => {
+app.get('/', (req, res) => {
 //res.writeHead(200);
 //res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
-res.send('./uploads/client/src/components/ListPage.tsx');
+//res.send('./uploads/client/src/components/ListPage.tsx');
 });
 
 
