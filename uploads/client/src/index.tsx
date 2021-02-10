@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './uploads/client/src/index.css';
-import App from './uploads/client/src/App';
-import * as serviceWorker from './uploads/client/src/serviceWorker';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Route to='/' uploads/client/src/component={App}/>
+      <Route to='/' component={App}/>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
