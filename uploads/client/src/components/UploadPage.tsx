@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import './uploads/client/src/style.scss';
+import './style.scss';
 import axios from 'axios';
 import Upload from '../assets/images/upload.png';
 
