@@ -38,7 +38,7 @@ gfs = Image; //new mongoose.mongo.GridFSBucket({
 
 
 var connectt = mongoose.connection; //createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true }); 
-var gfs = connectt.collection('uploads');
+//var gfs = connectt.collection('uploads');
 var bucketName = 'uploads';
 
 let gfs; 
