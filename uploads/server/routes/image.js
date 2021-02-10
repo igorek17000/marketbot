@@ -92,7 +92,7 @@ connectt.once('open', () => {
     /*
         POST: Upload a single image/file to Image collection
     */
-    imageRouter.route('/')
+    imageRouter.route('/upp')
         .post(upload.single('file'), (req, res, next) => {
             console.log(req.body);
             console.log(req);
