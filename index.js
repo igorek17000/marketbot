@@ -265,14 +265,14 @@ app.set('view engine', 'html');
 app.set('views', './views' || 'views', './uploads/server/views'); //require('jade').__express);
 //upp.engine('ejs', require('ejs').renderFile);
 
-
+/*
 app.get('/', function(req, res) {
 //res.writeHead(200);
 res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 //res.render('/uploads/views/layout.jade');
 });
-
+*/
 
 app.get('/countdown', function(req, res) {
 //res.writeHead(200);
