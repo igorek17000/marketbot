@@ -135,11 +135,11 @@ today       = require('./bot.js');
 
 
 router = new director.http.Router({
-/*
+
   '/'    : {
     get: ping
   },
-*/
+
 '/home' : {
 get: home
 },
