@@ -110,7 +110,7 @@ router.post('/images', upload.any(), function(req, res) {
 
 //======================================================================================
 
-router.get('/images/:id',function(req, res){
+router.get('/upp',function(req, res){
 
 	Image.findById(req.params.id, function(err, file){
 
