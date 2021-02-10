@@ -428,13 +428,13 @@ res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file
 
 
 app.use(upp);
-/*
+
 //var me = require('./uploads/server/models/image.js');
 app.get('/uploads', (req, res) => {
 
-res.render('./uploads/server/model/', { details: null });
+res.render('/uploads/server/model', { details: null });
 });
-*/
+
 
 upp.get('/', (req, res) => {
 //res.writeHead(200);
