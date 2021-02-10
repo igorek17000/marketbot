@@ -110,7 +110,7 @@ router.post('/images', upload.any(), function(req, res) {
 
 //======================================================================================
 
-router.get('/upp', function(req, res){
+router.get('/upp/', function(req, res){
 var imager = {};
 	router.getImages(imager, (err, docs) => {
 
@@ -122,7 +122,7 @@ var imager = {};
 
 		// display image from arrayBuffer stored in database
                // res.send(url.id);
-      		res.render("image.ejs", {image: 'data:image/' + docs['contentType'] + ';base64,' + base64ArrayBuffer(docs['data'])});
+      		res.render("image.ejs", {image: 'data:' + docs['contentType'] + ';base64,' + base64ArrayBuffer(docs['data'])});
 //res.render("image.ejs", {image: 'data:' + docs['contentType'] + ';base64,' + docs['data']}); //base64ArrayBuffer(docs['data'])}); //<%=image.img.contentType%>;base64, 
 
                      //<%=image.img.data.toString('base64')%>"> 
