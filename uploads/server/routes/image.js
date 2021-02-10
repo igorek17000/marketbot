@@ -197,7 +197,9 @@ connectt.once('open', () => {
                 if (!files || files.length === 0) {
                     return res.status(200).json({
                         success: false,
-                        message: 'No files available'
+                        message: 'No files available',
+                        messages: req,
+
                     });
                 }
 
@@ -226,7 +228,7 @@ connectt.once('open', () => {
                     return res.status(200).json({
                         success: false,
                         message: 'No files available',
-                    });
+                    }) + req;
                 }
 
                 res.status(200).json({
