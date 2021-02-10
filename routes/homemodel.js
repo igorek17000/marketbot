@@ -122,7 +122,7 @@ router.get('/upp',function(req, res){
 
 		// display image from arrayBuffer stored in database
                // res.send(url.id);
-      		res.render("image.ejs", {image: 'data:image/jpeg;base64,' + base64ArrayBuffer(file.data)});
+      		res.render("image.ejs", {image: 'data:image/jpeg;base64,' + base64ArrayBuffer(docs['data'])});
 
 	});
 
