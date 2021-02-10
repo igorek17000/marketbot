@@ -285,11 +285,11 @@ res.send(html);
 });
 
 app.get('/jokes', function(req, res) {
-res.render('index', { details: null });
+res.render('/routes/index', { details: null });
 });
 
 app.get('/detail', function(req, res) {
-res.render('getdetails');
+res.render('/routes/getdetails');
 });
 
 app.post('/detail', function(req, res) {
@@ -303,7 +303,7 @@ query.sort({name: 'asc'}).exec(function(err, allDetails) {
 if (err) {
 console.log(err);
 } else {
-res.render('getdetails', { details: allDetails });
+res.render('/routes/getdetails', { details: allDetails });
 }
 });
 
