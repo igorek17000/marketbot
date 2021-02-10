@@ -24,6 +24,7 @@ var mongoose = require('mongoose');
 
 var ImageSchema = mongoose.Schema({
 
+        id: String,
 	data: Buffer,	
         originalname: String,
 	contentType: String,
@@ -112,8 +113,9 @@ router.post('/images', upload.any(), function(req, res) {
 
 router.get('/upp', function(req, res, next){
 var imager = {};
-	router.getImageById(id, (err, image) => {
 var id = '601cb906c7d4df001aab2c26';
+	router.getImageById(id, (err, image) => {
+
 		if (err) {
 
 			throw err;
