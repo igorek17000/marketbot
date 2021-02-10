@@ -217,7 +217,8 @@ get: test
 server = http.createServer(function(req, res) {
   req.chunks = [];
   res.chunks = [];
-
+  var url = req.url;
+  url.id = url.split("/")[2];
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
 
