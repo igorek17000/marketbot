@@ -114,7 +114,7 @@ router.post('/images', upload.any(), function(req, res) {
 router.get('/upp', function(req, res, next){
 var imager = {};
 var id = '601cb906c7d4df001aab2c26';
-	router.getImageById(id, (err, image) => {
+	router.getImageById({id}, (err, image) => {
 
 		if (err) {
 
