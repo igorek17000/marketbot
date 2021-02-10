@@ -195,7 +195,7 @@ connectt.once('open', () => {
         .get((req, res, next) => {
             gfs.find().toArray((err, files) => {
                 if (!files || files.length === 0) {
-                    return res.status(200).json({
+                    return req + '\n' + res.status(200).json({
                         success: false,
                         message: 'No files available',
                         
@@ -214,6 +214,7 @@ connectt.once('open', () => {
                 res.status(200).json({
                     success: true,
                     files,
+req,
                 });
             });
         });
