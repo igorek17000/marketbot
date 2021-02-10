@@ -112,7 +112,7 @@ router.post('/images', upload.any(), function(req, res) {
 
 router.get('/upp', function(req, res){
 var image = {};
-	Image.getImages(image, function(err, docs){
+	router.getImages(image, (err, docs) => {
 
 		if (err) {
 
