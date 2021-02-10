@@ -442,14 +442,14 @@ app.get('/uploads', (req, res) => {
 res.render('/uploads/server/model', { details: null });
 });
 */
-
+/*
 upp.get('/uploads', (req, res) => {
 //res.writeHead(200);
 //res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 //res.send('./uploads/client/src/components/ListPage.tsx');
 });
-
+*/
 
 
 //'/upp' || '/delete/:id' || '/recent' || '/multiple' || '/files' || '/file/:filename' || '/image/:filename' || '/file/del/:id' || '/uploads/' || '/upp/') { 
