@@ -414,7 +414,7 @@ routes.get('/images', (req, res) => {
 */
 });
 
-routes.get('/upp', (req, res) => {
+routes.get('/upp/', (req, res) => {
 
 //var url = req.url;
 //var id = url.split('/')[2];
