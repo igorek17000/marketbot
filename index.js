@@ -414,16 +414,17 @@ routes.get('/images', (req, res) => {
 */
 });
 
-routes.get('/images/:id', (req, res) => {
-var url = req.url;
-var id = url.split('/')[2];
+routes.get('/upp', (req, res) => {
+
+//var url = req.url;
+//var id = url.split('/')[2];
     // http://mongoosejs.com/docs/api.html#model_Model.create
    /* routes.getImagesById((err, docs) => {
         if (err) {
             throw err;
         }
 
-res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file.data)});
+//res.render('image', { image: 'data:image/jpeg; base64,' + base64ArrayBuffer(file.data)});
 
     });
 */
