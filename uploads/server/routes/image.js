@@ -40,15 +40,15 @@ gfs = Image; //new mongoose.mongo.GridFSBucket({
 var connectt = mongoose.connection; //createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true }); 
 var gfs = connectt.collection('uploads');
 var bucketName = 'uploads';
-/*
+
 let gfs; 
 connectt.once('open', () => { 
 // initialize stream 
-gfs = new mongoose.mongo.GridFSBucket(connect.db, { 
+gfs = new mongoose.mongo.GridFSBucket(connectt.db, { 
 bucketName: "uploads" 
 }); 
 });
-*/
+
 
  
 
@@ -92,7 +92,7 @@ connectt.once('open', () => {
     /*
         POST: Upload a single image/file to Image collection
     */
-    imageRouter.route('/')
+    imageRouter.route('/upp')
         .post(upload.single('file'), (req, res, next) => {
             console.log(req.body);
             console.log(req);
