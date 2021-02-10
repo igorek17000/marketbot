@@ -195,10 +195,10 @@ connectt.once('open', () => {
         .get((req, res, next) => {
             gfs.find().toArray((err, files) => {
                 if (!files || files.length === 0) {
-                    return req + '\n' + res.status(200).json({
+                    return res.status(200).json({
                         success: false,
                         message: 'No files available',
-                        messages: req,
+                        
 
                     });
                 }
