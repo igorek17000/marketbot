@@ -11,7 +11,7 @@ var multer = require('multer');
 var GridFsStorage = require('multer-gridfs-storage');
 var crypto = require('crypto');
 var cors = require('cors');
-//var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var connectt = mongoose.connection;
 var imageRouter = require('./uploads/routes/image');
 let gfs;
