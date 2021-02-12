@@ -19,10 +19,10 @@
   },
   "scripts": {
     "start": "npm install --save react react-dom react-scripts",
-    "start": "npm start react-scripts",
-    "build": "npm start react-scripts build",
-    "test": "npm stary react-scripts test",
-    "eject": "nmp statr react-scripts eject"
+    "start": "start react-scripts",
+    "build": "start react-scripts build",
+    "test": "start react-scripts test",
+    "eject": "start react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
