@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import './App.scss';
 import { Switch, Route, Redirect, Link } from 'react-router-dom';
-import UploadPage from './uploads/client/src/components/UploadPage';
-import ListPage from './uploads/cliend/src/components/ListPage';
-import Upload from './uploads/client/src/assets/images/upload.png';
-import List from './uploads/client/src/assets/images/list.png';
+import UploadPage from './components/UploadPage';
+import ListPage from './components/ListPage';
+import Upload from './assets/images/upload.png';
+import List from './assets/images/list.png';
 
 class App extends PureComponent<{}> {
   render() {
@@ -33,9 +33,9 @@ class App extends PureComponent<{}> {
 
         <div className="Routes">
           <Switch>
-            <Route exact path='/uploads' component={UploadPage} />
+            <Route exact path='/' component={UploadPage} />
             <Route exact path='/list' component={ListPage} />
-            <Redirect from='/**' to='/uploads' />
+            <Redirect from='/**' to='/' />
           </Switch>
         </div>
       </div>
