@@ -34,9 +34,9 @@ mongoose.Promise = require('bluebird');
 
 var url = config.mongoURI;
 var connectt = mongoose.connection; //connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
-
+var connecttt = connectt.db;
 // connect to the database
-connectt.then(() => {
+connecttt.then(() => {
   console.log('Connected to database: GridApp');
 }, (err) => console.log(err));
 
