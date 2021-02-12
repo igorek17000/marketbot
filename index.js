@@ -46,7 +46,7 @@ mongoose.Promise = require('bluebird');
 
 var url = config.mongoURI;
 
-var connect mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
+var connect = mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // connect to the database
 connect.then(() => {
@@ -80,7 +80,7 @@ var storage = new GridFsStorage({
 
 var upload = multer({ storage });
 
-app.use('/', imageRouter(upload));
+app.use('/uploads', imageRouter(upload));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
