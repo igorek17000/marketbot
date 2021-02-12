@@ -46,14 +46,14 @@ mongoose.Promise = require('bluebird');
 
 var url = config.mongoURI;
 
-//var connect = require('./modules/db.js'); //mongoose.connection; //connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
-/*
+var connect mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
+
 // connect to the database
 connect.then(() => {
   console.log('Connected to database: GridApp');
 }, (err) => console.log(err));
-*/
-connectt;
+
+//connectt;
 /*
     GridFs Configuration
 */
@@ -80,7 +80,7 @@ var storage = new GridFsStorage({
 
 var upload = multer({ storage });
 
-app.use('/uploads', imageRouter(upload));
+app.use('/', imageRouter(upload));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
