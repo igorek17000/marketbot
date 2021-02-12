@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Route to='/' component={App}/>
+      <Route to='/uploads' component={App}/>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
