@@ -261,7 +261,7 @@ console.log('Server started at ' + date + ' & listening on port ' + port);
 //--------------
 
 app.use(bodyParser.json());
-app.use(express.static('public'));
+//app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
    extended: true
 }));
