@@ -43,7 +43,7 @@ class UploadPage extends PureComponent<{}, UploadState> {
         formData.append('caption', this.state.caption);
         formData.append('file', this.state.uploadedImage);
 
-        axios.post('http://localhost:8080/uploads', formData)
+        axios.post('http://localhost:8080/uploads/', formData)
             .then((response) => {
                 response.data.success ? alert('File successfully uploaded') : alert('File already exists');
                 this.fetchRecent();
