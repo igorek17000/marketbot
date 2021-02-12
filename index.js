@@ -28,10 +28,12 @@ bucketName: "uploads"
 
 //app.set('views', path.join(__dirname, 'uploads/server/views'));
 //upp.set('view engine', 'jade');
-
-app.use(cors({
+var origin = { origin: '*' };
+app.use(cors(origin)); 
+/* {
     origin: '*'
 }));
+*/
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
