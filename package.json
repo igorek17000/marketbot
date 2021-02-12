@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start:client": "cd ./uploads/client && npm run start", 
-    "start:server": "npm run index.js",
+    
     "install:server": "cd ./uploads/server && npm install", 
     "install:client": "cd ./uploads/client && npm install", 
     "install:all": "cd ./uploads && npm install && npm run install:server && npm run install:client", 
-    "start": "cd ./uploads && concurrently \"npm run start:server\" \"npm run start:client\"" 
+    "start": "cd ./uploads && concurrently \"npm run start:client\"" 
   },
 
 
