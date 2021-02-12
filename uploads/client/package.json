@@ -20,9 +20,9 @@
   "scripts": {
     "start": "npm install --save react react-dom react-scripts",
     "start": "start react-scripts",
-    "build": "start react-scripts build",
-    "test": "start react-scripts test",
-    "eject": "start react-scripts eject"
+    "build": "build react-scripts",
+    "test": "test react-scripts",
+    "eject": "eject react-scripts"
   },
   "eslintConfig": {
     "extends": "react-app"
