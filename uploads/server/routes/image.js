@@ -140,7 +140,7 @@ connectt.once('open', () => {
     /*
         GET: Delete an image from the collection
     */
-    imageRouter.route('/uploads/delete/:id')
+    imageRouter.route('/delete/:id')
         .get((req, res, next) => {
             Image.findOne({ _id: req.params.id })
                 .then((image) => {
@@ -166,7 +166,7 @@ connectt.once('open', () => {
     /*
         GET: Fetch most recently added record
     */
-    imageRouter.route('/uploads/recent')
+    imageRouter.route('/recent')
         .get((req, res, next) => {
             Image.findOne({}, {}, { sort: { '_id': -1 } })
                 .then((image) => {
@@ -181,7 +181,7 @@ connectt.once('open', () => {
     /*
         POST: Upload multiple files upto 3
     */
-    imageRouter.route('/uploads/multiple')
+    imageRouter.route('/multiple')
         .post(upload.array('file', 3), (req, res, next) => {
             res.status(200).json({
                 success: true,
@@ -192,7 +192,7 @@ connectt.once('open', () => {
     /*
         GET: Fetches all the files in the uploads collection
     */
-    imageRouter.route('/uploads/files')
+    imageRouter.route('/files')
         .get((req, res, next) => {
             gfs.find().toArray((err, files) => {
                 if (!files || files.length === 0) {
@@ -228,7 +228,7 @@ data,
     /*
         GET: Fetches a particular file by filename
     */
-    imageRouter.route('/uploads/file/:filename')
+    imageRouter.route('/file/:filename')
         .get((req, res, next) => {
             gfs.find({ filename: req.params.filename }).toArray((err, files) => {
                 if (!files[0] || files.length === 0) {
@@ -248,7 +248,7 @@ data,
     /*
         GET: Fetches a particular image and render on browser
     */
-    imageRouter.route('/uploads/image/:filename')
+    imageRouter.route('/image/:filename')
         .get((req, res, next) => {
             gfs.find({ filename: req.params.filename }).toArray((err, files) => {
                 if (!files[0] || files.length === 0) {
@@ -272,7 +272,7 @@ data,
     /*
         DELETE: Delete a particular file by an ID
     */
-    imageRouter.route('/uploads/file/del/:id')
+    imageRouter.route('/file/del/:id')
         .post((req, res, next) => {
             console.log(req.params.id);
             gfs.delete(new mongoose.Types.ObjectId(req.params.id), (err, data) => {
