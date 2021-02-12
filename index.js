@@ -26,7 +26,7 @@ bucketName: "uploads"
 
 // view engine setup
 
-app.set('views', path.join(__dirname, 'uploads/server/views'));
+//app.set('views', path.join(__dirname, 'uploads/server/views'));
 //upp.set('view engine', 'jade');
 
 app.use(cors({
