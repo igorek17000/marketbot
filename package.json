@@ -4,8 +4,19 @@
   "description": "A bot made for groupme",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start:client": "cd ./uploads/client && npm run start", 
+    "start:server": "node index.js",
+    "install:server": "cd ./uploads/server && npm install", 
+    "install:client": "cd ./uploads/client && npm install", 
+    "install:all": "npm install && npm run install:server && npm run install:client", 
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\"" 
   },
+
+
+
+
+
+
   "dependencies": {
     "body-parser": "^1.19.0",
     "concat": "^1.0.3",
@@ -13,6 +24,7 @@
     "cors": "^2.8.5",
     "cron": "^1.7.2",
     "crypto": "^1.0.1",
+    "concurrently": "^5.2.0",
     "curl": "^0.1.4",
     "director": "^1.2.8",
     "dotenv": "^8.2.0",
