@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "npm install --save react react-dom react-scripts",
-    "start": "start react-scripts",
+    "start": "NODE_ENV=production node_modules/react-scripts/bin/react-scripts.js start",
     "build": "build react-scripts",
     "test": "test react-scripts",
     "eject": "eject react-scripts"
