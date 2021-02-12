@@ -29,7 +29,7 @@ bucketName: "uploads"
 //app.set('views', path.join(__dirname, 'uploads/server/views'));
 //upp.set('view engine', 'jade');
 //var origin = { origin: '*' };
-app.options('*', cors()); 
+app.use(cors()); 
 /* {
     origin: '*'
 }));
