@@ -30,7 +30,7 @@ bucketName: "uploads"
 //upp.set('view engine', 'jade');
 
 app.use(cors({
-    origin: '*',
+    origin: '*'
 }));
 app.use(logger('dev'));
 app.use(express.json());
