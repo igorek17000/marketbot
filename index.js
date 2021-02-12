@@ -13,7 +13,7 @@ var crypto = require('crypto');
 var cors = require('cors');
 var mongoose = require('mongoose');
 var connectt = mongoose.connection;
-var imageRouter = require('./uploads/routes/image');
+var imageRouter = require('./uploads/server/routes/image');
 let gfs;
 
 gfs = new mongoose.mongo.GridFSBucket(connectt.db, { //connect, db) { 
