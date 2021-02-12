@@ -441,7 +441,7 @@ app.use(upp);
 
 //var me = require('./uploads/server/models/image.js');
 
-app.get('/uploads/', (req, res) => {
+upp.get('/uploads/', (req, res) => {
 
 res.render('uploads/client/static/index.html'); //, { details: null });
 });
