@@ -14,7 +14,7 @@ class App extends PureComponent<{}> {
           <p className="Header__Title">GridFS - Upload and List Files</p>
 
           <div className="Menu">
-            <Link to='/'>
+            <Link to='/uploads'>
               <img
                 src={Upload}
                 alt="upload"
