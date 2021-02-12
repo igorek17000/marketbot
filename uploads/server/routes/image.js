@@ -136,6 +136,18 @@ connectt.once('open', () => {
                 })
                 .catch(err => res.status(500).json(err));
         });
+imageRouter.route('/uploads')
+.get((req, res, next) => { 
+Image.find({}) 
+.then(images => { 
+res.status(200).json({ 
+success: true, 
+images, 
+}); 
+}) 
+.catch(err => res.status(500).json(err)); 
+});
+
 
     /*
         GET: Delete an image from the collection
