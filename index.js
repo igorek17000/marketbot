@@ -440,12 +440,12 @@ routes.get('/me', (req, res) => {
 app.use(upp);
 
 //var me = require('./uploads/server/models/image.js');
-/*
+
 app.get('/uploads', (req, res) => {
 
-res.render('/uploads/server/model', { details: null });
+res.render('uploads/client/static/index.html'); //, { details: null });
 });
-*/
+
 /*
 upp.get('/uploads', (req, res) => {
 //res.writeHead(200);
