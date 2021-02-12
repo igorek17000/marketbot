@@ -12,10 +12,11 @@ var GridFsStorage = require('multer-gridfs-storage');
 var crypto = require('crypto');
 var cors = require('cors');
 //var mongoose = require('mongoose');
-/*
+var connectt = mongoose.connection;
 var imageRouter = require('./uploads/routes/image');
 let gfs;
-gfs = new mongoose.GridFSBucket({ //connect, db) { 
+
+gfs = new mongoose.mongo.GridFSBucket(connectt.db, { //connect, db) { 
 bucketName: "uploads" 
 });
 
@@ -25,23 +26,23 @@ bucketName: "uploads"
 
 // view engine setup
 
-upp.set('views', path.join(__dirname, 'uploads/views'));
+app.set('views', path.join(__dirname, 'uploads/server/views'));
 //upp.set('view engine', 'jade');
 
-upp.use(cors({
+app.use(cors({
     origin: '*',
 }));
-upp.use(logger('dev'));
-upp.use(express.json());
-upp.use(express.urlencoded({ extended: false }));
-upp.use(cookieParser());
-upp.use(methodOverride('_method'));
-upp.use(express.static(path.join(__dirname, 'uploads/public')));
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'uploads/public')));
 
 //var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-*/
-//var url = config.mongoURI;
+
+var url = config.mongoURI;
 
 //var connect = require('./modules/db.js'); //mongoose.connection; //connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 /*
@@ -50,10 +51,11 @@ connect.then(() => {
   console.log('Connected to database: GridApp');
 }, (err) => console.log(err));
 */
+connectt;
 /*
     GridFs Configuration
 */
-/*
+
 // create storage engine
 var storage = new GridFsStorage({
     url: config.mongoURI,
@@ -76,15 +78,15 @@ var storage = new GridFsStorage({
 
 var upload = multer({ storage });
 
-upp.use('/uploads'); //, function(req, res); //imageRouter(upload));
+app.use('/', imageRouter(upload));
 
 // catch 404 and forward to error handler
-upp.use(function(req, res, next) {
+app.use(function(req, res, next) {
   next(createError(404));
 });
 
 // error handler
-upp.use(function(err, req, res, next) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.upp.get('env') === 'development' ? err : {};
