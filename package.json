@@ -10,7 +10,7 @@
     "install:server": "cd ./uploads/server && npm install",
     "install:client": "cd ./uploads/client && npm install",
     "install:all": "npm install && cd ./uploads && npm install && npm run install:server && npm run install:client",
-    "start": "concurrently \"npm run install:all\"  "npm run start:server\" \"npm run start:client\""
+    "start": "concurrently \"npm run install:all\" \"npm run start:server\" \"npm run start:client\""
   },
 
 
