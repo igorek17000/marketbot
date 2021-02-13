@@ -4,12 +4,13 @@
   "description": "A bot made for groupme",
   "main": "index.js",
   "scripts": {
-    "start:client": "cd ./uploads/client", 
-    "start:server": "node index.js",
-    "install:server": "cd ./uploads/server && npm install", 
-    "install:client": "cd ./uploads/client && npm install", 
-    "install:all": "npm install && npm run install:server && npm run install:client", 
-    "start": "concurrently \"npm run start:server\" \"npm run start:client\"" 
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:client": "cd ./client && npm run start",
+    "start:server": "node ./index.js",
+    "install:server": "cd ./uploads/server && npm install",
+    "install:client": "cd ./uploads/client && npm install",
+    "install:all": "npm install && npm run install:server && npm run install:client",
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\""
   },
 
 
