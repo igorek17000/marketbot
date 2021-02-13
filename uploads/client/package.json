@@ -20,12 +20,12 @@
   "scripts": {
     "start": "npm install --save react react-dom react-scripts",
     "start": "npm install",
-    "start": "NODE_ENV=production node_modules/react-scripts/bin/react-scripts.js start", 
+    "start": "react-scripts start", 
     
 
-    "build": "build react-scripts",
-    "test": "test react-scripts",
-    "eject": "eject react-scripts"
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
