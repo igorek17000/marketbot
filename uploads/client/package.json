@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "npm install --save react react-dom react-scripts",
-    "start": "npm install",
+    "start": "npm install"
   },
   "eslintConfig": {
     "extends": "react-app"
