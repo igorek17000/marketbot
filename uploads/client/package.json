@@ -18,8 +18,7 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "npm install --save react react-dom react-scripts",
-    "start": "npm install"
+    
   },
   "eslintConfig": {
     "extends": "react-app"
