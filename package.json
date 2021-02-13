@@ -6,12 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "start:client": "cd ./uploads && npm install",
-    "start:now": "cd ./uploads/server && npm run start",
     "start:server": "node index.js",
     "install:server": "cd ./uploads/server && npm install",
     "install:client": "cd ./uploads/client && npm install",
     "install:all": "npm install && npm run install:server && npm run install:client",
-    "start": "concurrently \"npm run start:server\" \"npm run start:client\" \"npm run start:now\""
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\""
   },
 
 
