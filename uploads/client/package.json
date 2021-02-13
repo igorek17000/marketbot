@@ -20,7 +20,7 @@
   "scripts": {
     "start": "npm install --save react react-dom react-scripts",
     "start": "npm install",
-    "start": "react-scripts start", 
+    "start": "npm run react-scripts", 
     
 
     "build": "react-scripts build",
