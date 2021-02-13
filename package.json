@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
-    "start:client": "cd ./uploads/client && npm install && node start", 
+    "start:client": "cd ./uploads/client && npm install",
+    "start:now": "node start", 
     "start:server": "node index.js",
     "install:server": "cd ./uploads/server && npm install",
     "install:client": "cd ./uploads/client && npm install",
     "install:all": "npm install && npm run install:server && npm run install:client",
-    "start": "concurrently \"npm run start:server\" \"npm run start:client\""
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\" \"npm run start:client\""
   },
 
 
