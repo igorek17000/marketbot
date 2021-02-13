@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "start:client": "cd ./client && npm run start",
-    "start:server": "node ./index.js",
+    "start:server": "node index.js",
     "install:server": "cd ./uploads/server && npm install",
     "install:client": "cd ./uploads/client && npm install",
     "install:all": "npm install && npm run install:server && npm run install:client",
