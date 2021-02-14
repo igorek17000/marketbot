@@ -26,7 +26,7 @@ bucketName: "uploads"
 
 
 // view engine setup
-
+/*
 app.set('views', path.join(__dirname, 'uploads/server/views'));
 //upp.set('view engine', 'jade');
 //var origin = { origin: '*' };
@@ -52,12 +52,12 @@ var connect = mongoose.createConnection(url, { useNewUrlParser: true, useUnified
 connect.then(() => {
   console.log('Connected to database: GridApp');
 }, (err) => console.log(err));
-
+*/
 //connectt;
 /*
     GridFs Configuration
 */
-
+/*
 // create storage engine
 var storage = new GridFsStorage({
     url: config.mongoURI,
@@ -97,6 +97,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+*/
 //exports.upp = upp;
 /*
 exports.upp = upp;
