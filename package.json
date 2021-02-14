@@ -4,9 +4,7 @@
   "description": "A bot made for groupme",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "start": "cd ./uploads && npm run install:all",
-    "start": "cd ./uploads && npm run start"
+    "start": "node index.js"
   },
 
 
