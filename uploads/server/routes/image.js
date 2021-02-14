@@ -21,79 +21,29 @@ callback(db);
 }
 */
 
+
+
 module.exports = (upload) => {
-    var url = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
+    const url = config.mongoURI;
+    const connect = mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
-    var connection_string = config.mongoURI;
-    var connect = mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
+    let gfs;
 
-    
-/*
-gfs = Image; //new mongoose.mongo.GridFSBucket({
-           // bucketName: "uploads"
-        //});
-
-
-*/
-
-
-var connectt = mongoose.connection; //createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true }); 
-//var gfs = connectt.collection('uploads');
-var bucketName = 'uploads';
-
-let gfs; 
-connect.once('open', () => { 
-// initialize stream 
-gfs = new mongoose.mongo.GridFSBucket(connect.db, { 
-bucketName: "uploads" 
-}); 
-
-});
-
-
- 
-
-/*
-
-conn.once('open', () => {
-
-    var gfs = Grid(conn.db); /*, {
-            bucketName: "uploads"
-        }); // { // mongoose.mongo);
-//if (err) 
- //throw err;
-//callback(db);
-//});
-
- 
-
-  // all set!
-
-});
-
-*/
-
-/*
-
-    connectt.once('open', () => {
+    connect.once('open', () => {
         // initialize stream
-        gfs =  connectt(url, {
+        gfs = new mongoose.mongo.GridFSBucket(connect.db, {
             bucketName: "uploads"
         });
     });
-*/
-/*
-connectt.once('open', () => {
-        // initialize stream
-        gfs = new mongoose.mongo.GridFSBucket({
-            bucketName: "uploads"
-        });
-    });
-*/
+
+
+
+
+
     /*
         POST: Upload a single image/file to Image collection
     */
-    imageRouter.route('/')
+    imageRouter.route('/uploads')
         .post(upload.single('file'), (req, res, next) => {
             console.log(req.body);
             console.log(req);
