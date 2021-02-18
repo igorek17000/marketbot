@@ -236,7 +236,7 @@ server = http.createServer(function(req, res) {
 
 
 //if(req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/bot/:botRoom') {
-if(req.url === '/' || req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/images' || req.url === '/images/:id' || req.url === '/me' || req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id' || req.url === '/uploads/' || req.url === '/upp/' || req.url === '/uploads') {
+if(req.url === '/' || req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/amaralbot' || req.url === '/images' || req.url === '/images/:id' || req.url === '/me' || req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id' || req.url === '/uploads/' || req.url === '/upp/' || req.url === '/uploads') {
 // var url = req.url;
  //url.id = url.split('/')[2]; 
 
@@ -294,6 +294,13 @@ var html = fs.readFileSync(path.join(__dirname + "/views/countdown.html"));
 res.send(html);
 //res.send('Hello');
 });
+
+app.get('/amaralbot', function(req, res) {
+res.setHeader('Content-type', 'text/html');
+var html = fs.readFileSync(path.join(__dirname + "/views/amaralbot.html"));
+res.send(html);
+});
+
 
 app.get('/jokes', function(req, res) {
 res.render('index.ejs', { details: null });
