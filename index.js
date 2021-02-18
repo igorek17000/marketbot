@@ -269,11 +269,11 @@ app.use(bodyParser.urlencoded({
    extended: true
 }));
 
-app.set('view engine', 'jade');
-app.set('view engine', 'pug');
+//app.set('view engine', 'jade');
+//app.set('view engine', 'pug');
 app.set('view engine', 'ejs');
-app.set('view engine', 'html');
-app.set('views', './views' || 'views', './uploads/server/views'); //require('jade').__express);
+//app.set('view engine', 'html');
+app.set('views', './views'); // || 'views', './uploads/server/views'); //require('jade').__express);
 //upp.engine('ejs', require('ejs').renderFile);
 
 /*
