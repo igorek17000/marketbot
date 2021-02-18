@@ -248,8 +248,8 @@ router.dispatch(req, res, function(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
   res.end(err.message);
     });
-  } else {
-app(req, res);
+  //} else {
+//app(req, res);
 }
 });
 
