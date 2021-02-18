@@ -27,7 +27,7 @@ bucketName: "uploads"
 
 // view engine setup
 /*
-app.set('views', path.join(__dirname, 'uploads/server/views'));
+//app.set('views', path.join(__dirname, 'uploads/server/views'));
 //upp.set('view engine', 'jade');
 //var origin = { origin: '*' };
 app.use(cors({
@@ -264,7 +264,7 @@ console.log('Server started at ' + date + ' & listening on port ' + port);
 //--------------
 
 app.use(bodyParser.json());
-//app.use(express.static('public'));
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
    extended: true
 }));
@@ -276,14 +276,14 @@ app.set('view engine', 'ejs');
 app.set('views', './views'); // || 'views', './uploads/server/views'); //require('jade').__express);
 //upp.engine('ejs', require('ejs').renderFile);
 
-/*
+
 app.get('/', function(req, res) {
 //res.writeHead(200);
 res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 //res.render('/uploads/views/layout.jade');
 });
-*/
+
 
 app.get('/countdown', function(req, res) {
 //res.writeHead(200);
