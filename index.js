@@ -295,7 +295,7 @@ res.send(html);
 //res.send('Hello');
 });
 
-app.get('/amaralbot', function(req, res) {
+app.get('/amaral', function(req, res) {
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/amaralbot.html"));
 res.send(html);
@@ -377,7 +377,7 @@ res.send(html);
 });
 
 
-app.get('/amaral', function(req, res) {
+app.get('/amaralbot', function(req, res) {
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/amaral.html"));
 res.send(html);
