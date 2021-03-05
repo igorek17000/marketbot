@@ -236,7 +236,7 @@ server = http.createServer(function(req, res) {
 
 
 //if(req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === '/bot/:botRoom') {
-if(req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/amaralbot' || req.url === '/images' || req.url === '/images/:id' || req.url === '/me' || req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id' || req.url === '/uploads/' || req.url === '/upp/' || req.url === '/uploads') {
+if(req.url === '/bc' || req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/amaralbot' || req.url === '/images' || req.url === '/images/:id' || req.url === '/me' || req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id' || req.url === '/uploads/' || req.url === '/upp/' || req.url === '/uploads') {
 // var url = req.url;
  //url.id = url.split('/')[2]; 
 
@@ -276,6 +276,11 @@ app.set('view engine', 'ejs');
 app.set('views', 'views'); // '/server/views', /'client/views'); // || 'views', './uploads/server/views'); //require('jade').__express);
 //upp.engine('ejs', require('ejs').renderFile);
 
+
+
+app.get('/bc', function(req, res) {
+res.render('bc.ejs');
+});
 
 app.get('/', function(req, res) {
 //res.writeHead(200);
