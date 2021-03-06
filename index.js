@@ -278,16 +278,16 @@ app.set('views', 'views'); // '/server/views', /'client/views'); // || 'views', 
 
 
 
-app.get('/bc', function(req, res) {
-res.render('bc.ejs');
-});
+//app.get('/bc', function(req, res) {
+//res.render('bc.ejs');
+//});
 
-app.get('/', function(req, res) {
+//app.get('/', function(req, res) {
 //res.writeHead(200);
-res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
+//res.send("I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 //res.send('Hello');
 //res.render('/uploads/views/layout.jade');
-});
+//});
 
 
 app.get('/countdown', function(req, res) {
@@ -421,7 +421,7 @@ app.get('/images', (req, res) => {
 });
 */
 
-routes.get('/images', (req, res) => {
+//routes.get('/images', (req, res) => {
 
     // http://mongoosejs.com/docs/api.html#model_Model.create
 /*    routes.getImages((err, docs) => {
@@ -431,9 +431,9 @@ routes.get('/images', (req, res) => {
         //res.json(docs.map(doc => doc['_id']));
     });
 */
-});
+//});
 
-routes.get('/me', (req, res) => {
+//routes.get('/me', (req, res) => {
 
 //var url = req.url;
 //var id = url.split('/')[2];
@@ -447,7 +447,7 @@ routes.get('/me', (req, res) => {
 
     });
 */
-});
+//});
 //upp = express();
 
 
