@@ -39,9 +39,9 @@ var ImageSchema = mongoose.Schema({
 
 var Image = module.exports = mongoose.model('uploads', ImageSchema);
 
-router.getImages = function(imager, callback) {
+router.getImages = function(image, callback) {
 
-    Image.find(imager, callback);
+    Image.find({}, callback);
 
 }
 
@@ -101,7 +101,7 @@ router.post('/images', upload.any(), function(req, res) {
 		
 
 		//res.send('File name ' +docs['originalname'] + ' added');
-res.render('image.ejs', {docs: docs}); //docs['contentType'] + ';' + docs['data']});
+res.render('image.ejs', {image: docs['contentType', 'data']}); //docs['contentType'] + ';' + docs['data']});
 
 		console.log("Successfully inserted one image!");
                 console.log(docs);
