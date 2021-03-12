@@ -59,7 +59,7 @@ router.addImage = function(image, callback) {
 
 router.get('/images', function(req, res, next) {
 
-    res.render('imageindex.ejs');
+    res.render('imageIndex.ejs');
 
 });
 
@@ -100,11 +100,11 @@ router.post('/images', upload.any(), function(req, res) {
 
 		
 
-		res.send('File name ' +docs['originalname'] + ' added');
-//res.render('image.ejs', {image: docs['contentType'] + ';' + docs['data']});
+		//res.send('File name ' +docs['originalname'] + ' added');
+res.render('image.ejs', {docs: docs}); //docs['contentType'] + ';' + docs['data']});
 
 		console.log("Successfully inserted one image!");
-
+                console.log(docs);
 	});
 });
 
