@@ -138,7 +138,7 @@ images,
                         image,
                     });
 */
-res.render('image', {image:image});
+res.render('layout', {image:image});
                 })
                 .catch(err => res.status(500).json(err));
         });
