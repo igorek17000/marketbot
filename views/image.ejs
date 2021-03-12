@@ -10,12 +10,12 @@
 	
 
 <% if(image!=null) { %>
-
-
-<img src="data:<%=image['contentType']%>;base64,
-<%=image['data'].base64%>">
-
+<% image.forEach(function(item){ %>
+<img src="data:<%=item.contentType%>;base64,
+<%=item.data.toString('base64')%>">
+<% }) %>
 <% } %>
+
 </body>
 
 </html>
