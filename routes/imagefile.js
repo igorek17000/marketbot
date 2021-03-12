@@ -42,7 +42,7 @@ router.addImage = function(image, callback) {
 
 router.get('/images', function(req, res, next) {
 
-    res.render('imageindex.ejs');
+    res.render('image.ejs');
 
 });
 
