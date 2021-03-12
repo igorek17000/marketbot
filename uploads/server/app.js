@@ -19,8 +19,8 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.use('view engine', 'jade');
-app.use('view engine', 'ejs');
+app.set('view engine', 'jade' || 'ejs');
+//app.use('view engine', 'ejs');
 app.use(cors({
     origin: '*',
 }));
