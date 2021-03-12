@@ -137,7 +137,7 @@ images,
                         success: true,
                         image,
                     });
-res.render('imageIndex', {image:image});
+res.render('image', {image:image});
                 })
                 .catch(err => res.status(500).json(err));
         });
