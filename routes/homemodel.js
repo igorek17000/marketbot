@@ -124,7 +124,7 @@ var id = '60235c64d1e4d5001aa0760c';
 		// display image from arrayBuffer stored in database
                // res.send(url.id);
       		//res.render("image.ejs", {image: 'data:' + docs['contentType'] + ';base64,' + base64ArrayBuffer(docs['data'])});
-res.render("images.ejs", {images: items}); //"data:" + docs['contentType'] + ";base64," + base64ArrayBuffer(docs['data'])}); //<%=image.img.contentType%>;base64, 
+res.render("img.ejs", {images: items}); //"data:" + docs['contentType'] + ";base64," + base64ArrayBuffer(docs['data'])}); //<%=image.img.contentType%>;base64, 
 
                      //<%=image.img.data.toString('base64')%>"> 
 
