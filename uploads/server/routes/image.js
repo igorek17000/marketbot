@@ -159,7 +159,7 @@ res.render('image.ejs', {image:image});
     */
     imageRouter.route('/files')
         .get((req, res, next) => {
-            Image.find({}).toArray((err, files) => {
+            Image.find({}).forEach((err, files) => {
                 if (!files || files.length === 0) {
                     return res.status(200).json({
                         success: false,
