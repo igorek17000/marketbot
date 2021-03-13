@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <div> 
-<% items.forEach(function(image) { %> 
+<% images.forEach(function(image) { %> 
 <div> 
 <div> 
-<img src="data:<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>" height="100" width="100"> 
+<img src="data:<%=image.contentType%>;base64,<%=image.data.toString('base64')%>" height="100" width="100"> 
 <div> 
-<h5><%= image.name %></h5>
-<p><%= image.desc %></p> 
+<h5><%= image.originalname %></h5>
+<p><%= image.uploaded %></p> 
 </div> 
 </div> 
 </div> 
