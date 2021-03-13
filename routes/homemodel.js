@@ -111,7 +111,7 @@ res.render('image.ejs', {image: docs}); //docs['contentType'] + ';' + docs['data
 //======================================================================================
 
 router.get('/me', function(req, res, next){
-var image = {};
+var images = {};
 
 	Image.find({}, (err, docs) => {
 
@@ -124,7 +124,7 @@ var image = {};
 		// display image from arrayBuffer stored in database
                // res.send(url.id);
       		//res.render("image.ejs", {image: 'data:' + docs['contentType'] + ';base64,' + base64ArrayBuffer(docs['data'])});
-res.render("img.ejs", {image: docs}); //"data:" + docs['contentType'] + ";base64," + base64ArrayBuffer(docs['data'])}); //<%=image.img.contentType%>;base64, 
+res.render("img.ejs", {images: docs}); //"data:" + docs['contentType'] + ";base64," + base64ArrayBuffer(docs['data'])}); //<%=image.img.contentType%>;base64, 
 
                      //<%=image.img.data.toString('base64')%>"> 
 
