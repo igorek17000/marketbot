@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <body>
-<% images.forEach(function(image) { %> 
+<% if(images!=null) { %> 
 
-<img src="data:<%=image.contentType%>;base64,<%=image.data.toString('base64')%>" height="100" width="100"> 
+<img src="data:<%=images.contentType%>;base64,<%=images.data.toString('base64')%>" height="100" width="100"> 
 
-<h5><%= image.originalname %></h5>
+<h5><%= images.originalname %></h5>
 
 <% }) %> 
 
