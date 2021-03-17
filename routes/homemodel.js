@@ -111,10 +111,10 @@ res.render('image.ejs', {image: docs}); //docs['contentType'] + ';' + docs['data
 //======================================================================================
 
 router.get('/me', function(req, res, next){
-var image = {};
+//var image = {};
 
-        
-router.getImages(image, (err, docs) => {
+        Image.find({}, (err, items) => { // function(req, res) { //;
+//router.getImages(image, (err, items) => {
 	
 
 		if (err) {
@@ -126,7 +126,7 @@ router.getImages(image, (err, docs) => {
 		// display image from arrayBuffer stored in database
                // res.send(url.id);
       		//res.render("image.ejs", {image: 'data:' + docs['contentType'] + ';base64,' + base64ArrayBuffer(docs['data'])});
-res.render('img.ejs', {image: docs}); //"data:" + docs['contentType'] + ";base64," + base64ArrayBuffer(docs['data'])}); //<%=image.img.contentType%>;base64, 
+res.render('img.ejs', {items: items}); //"data:" + docs['contentType'] + ";base64," + base64ArrayBuffer(docs['data'])}); //<%=image.img.contentType%>;base64, 
 
                      //<%=image.img.data.toString('base64')%>"> 
 
