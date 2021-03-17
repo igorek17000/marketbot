@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <body>
-<% if(images!=null) { %> 
 
-<img src="data:<%=images.contentType%>;base64,<%=images.data.toString('base64')%>" height="100" width="100"> 
+<% images.forEach(function(item) { %> 
 
-<h5><%= images.originalname %></h5>
+<img src="data:<%=item.contentType%>;base64,basitem.data.toString('base64')%>" height="100" width="100"> 
 
-<% } %> 
+<h5><%=item.originalname %></h5>
+
+<% }) %> 
 
 </body>
 </html>
