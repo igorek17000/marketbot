@@ -112,15 +112,15 @@ res.render('image.ejs', {image: docs}); //docs['contentType'] + ';' + docs['data
 
 router.get('/me', function(req, res, next){
 var images = {};
-images['data'] = req.files[0].buffer;
+images['data'] = docs['data'].toString('base64');
 
-	images['originalname'] = req.files[0].originalname;
+	images['originalname'] = docs['originalname'];
 
-	images['contentType'] = req.files[0].mimetype;
+	images['contentType'] = docs['contentType'];
         
-        images['uploaded'] = date;
+        images['uploaded'] = docs['uploaded'];
      
-        images['path'] = req.files[0].path;
+        
 router.getImages(images, (err, docs) => {
 	
 
