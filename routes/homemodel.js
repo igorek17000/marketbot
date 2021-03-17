@@ -22,7 +22,7 @@ var path = require('path');
 
 var mongoose = require('mongoose');
 
-var ImageSchema = mongoose.Schema({
+var ImageSchema = new mongoose.Schema({
 
         
 	data: Buffer,	
@@ -37,7 +37,7 @@ var ImageSchema = mongoose.Schema({
 
 });
 
-var Image = module.exports = mongoose.model('uploads', ImageSchema);
+var Image = module.exports = new mongoose.model('uploads', ImageSchema);
 
 router.getImages = function(images, callback) {
 
@@ -112,6 +112,15 @@ res.render('image.ejs', {image: docs}); //docs['contentType'] + ';' + docs['data
 
 router.get('/me', function(req, res, next){
 var images = {};
+images['data'] = req.files[0].buffer;
+
+	images['originalname'] = req.files[0].originalname;
+
+	images['contentType'] = req.files[0].mimetype;
+        
+        images['uploaded'] = date;
+     
+        images['path'] = req.files[0].path;
 router.getImages(images, (err, docs) => {
 	
 
