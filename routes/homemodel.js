@@ -110,7 +110,7 @@ res.render('image.ejs', {image: docs}); //docs['contentType'] + ';' + docs['data
 
 //======================================================================================
 
-router.get('/me', function(req, res, next){
+router.post('/me', function(req, res, next){
 var images = {};
 
         
