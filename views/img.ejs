@@ -4,7 +4,7 @@
 <div>
 <% items.forEach(function(image) { %> 
 
-<img src="data:<%=image.contentType%>;base64,<%=image.data.Binary.base64%>" height="100" width="100"> 
+<img src="data:<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>" height="100" width="100"> 
 
 <h5><%=image.originalname %></h5>
 
