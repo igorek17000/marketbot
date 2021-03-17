@@ -22,7 +22,7 @@ var path = require('path');
 
 var mongoose = require('mongoose');
 
-var ImageSchema = new mongoose.Schema({
+var ImageSchema = mongoose.Schema({
 
         
 	data: Buffer,	
@@ -37,7 +37,7 @@ var ImageSchema = new mongoose.Schema({
 
 });
 
-var Image = module.exports = new mongoose.model('uploads', ImageSchema);
+var Image = module.exports = mongoose.model('uploads', ImageSchema);
 
 router.getImages = function(images, callback) {
 
