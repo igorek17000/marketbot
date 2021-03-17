@@ -111,15 +111,8 @@ res.render('image.ejs', {image: docs}); //docs['contentType'] + ';' + docs['data
 //======================================================================================
 
 router.get('/me', function(req, res, next){
-var images = {};
-images['data'] = docs['data'].toString('base64');
+var images = [];
 
-	images['originalname'] = docs['originalname'];
-
-	images['contentType'] = docs['contentType'];
-        
-        images['uploaded'] = docs['uploaded'];
-     
         
 router.getImages(images, (err, docs) => {
 	
