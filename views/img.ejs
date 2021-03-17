@@ -2,11 +2,11 @@
 <html>
 <body>
 <div>
-<% image.forEach(function(item) { %> 
+<% items.forEach(function(image) { %> 
 
-<img src="data:<%=item.contentType%>;base64,<%=item.data%>" height="100" width="100"> 
+<img src="data:<%=image.contentType%>;base64,<%=image.data.toString('base64')%>" height="100" width="100"> 
 
-<h5><%=item.originalname %></h5>
+<h5><%=image.originalname %></h5>
 
 <% }) %> 
 </div>
