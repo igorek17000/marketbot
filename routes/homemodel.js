@@ -25,10 +25,12 @@ var mongoose = require('mongoose');
 var ImageSchema = mongoose.Schema({
 
         originalname: String,
-        
+        img: 
+         {
 	data: Buffer,	
         
 	contentType: String,
+},
         uploaded: String,
         path : { 
          type: String,
