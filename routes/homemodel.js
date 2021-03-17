@@ -124,7 +124,7 @@ router.getImages(images, (err, docs) => {
 		// display image from arrayBuffer stored in database
                // res.send(url.id);
       		//res.render("image.ejs", {image: 'data:' + docs['contentType'] + ';base64,' + base64ArrayBuffer(docs['data'])});
-res.render("img.ejs", {images: docs}); //"data:" + docs['contentType'] + ";base64," + base64ArrayBuffer(docs['data'])}); //<%=image.img.contentType%>;base64, 
+res.render('img.ejs', {images: docs}); //"data:" + docs['contentType'] + ";base64," + base64ArrayBuffer(docs['data'])}); //<%=image.img.contentType%>;base64, 
 
                      //<%=image.img.data.toString('base64')%>"> 
 
