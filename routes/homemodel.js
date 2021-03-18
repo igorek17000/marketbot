@@ -1,5 +1,5 @@
 // modified by Yuxi Luo, July 2018
-//
+
 var moment = require('moment-timezone'); 
 
 moment.tz.setDefault('America/Toronto'); 
