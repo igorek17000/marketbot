@@ -108,7 +108,7 @@ res.render('image.ejs', {image: docs}); //docs['contentType'] + ';' + docs['data
 router.get('/me', function(req, res, next){
 var image = {};
 
-        router.getImages(image, (err, items) => { // function(req, res) { //;
+        router.getImages(image, (err, docs) => { // function(req, res) { //;
 //router.getImages(image, (err, docs) => {
 	
 
