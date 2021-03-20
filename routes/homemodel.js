@@ -36,7 +36,7 @@ var Image = module.exports = mongoose.model('image', ImageSchema);
 var Ima = new mongoose.model('uploads', ImageSchema);
 router.getImages = function(image, callback) {
 
-    Image.find(image, callback);
+    Image.find({image}, callback);
 
 }
 
@@ -106,10 +106,9 @@ res.render('image.ejs', {image: docs}); //docs['contentType'] + ';' + docs['data
 //======================================================================================
 
 router.get('/me', function(req, res){
-var image = {};
 var base64 = '';
-
-        router.getImages(image, (err, docs) => { // function(req, res) { //;
+Image.find({}, function(err, docs) { //forEach, callback);
+       // router.getImages(image, (err, docs) => { // function(req, res) { //;
 //router.getImages(image, (err, docs) => {
 	
 
@@ -117,7 +116,7 @@ var base64 = '';
 
 			throw err;
 
-		}
+		} else {
 
 		// display image from arrayBuffer stored in database
                // res.send(url.id);
@@ -126,7 +125,7 @@ res.render('img.ejs', {items: docs}); //"data:" + docs['contentType'] + ";base64
 
                      //<%=image.img.data.toString('base64')%>"> 
 
- 
+ }
 
 
 	});
