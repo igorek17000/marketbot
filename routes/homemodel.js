@@ -32,7 +32,7 @@ var ImageSchema = mongoose.Schema({
 
 });
 
-var Image = module.exports = mongoose.model('uploads', ImageSchema);
+var Image = module.exports = mongoose.model('image', ImageSchema);
 var Ima = new mongoose.model('uploads', ImageSchema);
 router.getImages = function(image, callback) {
 
@@ -105,8 +105,9 @@ res.render('image.ejs', {image: docs}); //docs['contentType'] + ';' + docs['data
 
 //======================================================================================
 
-router.get('/me', function(req, res, next){
+router.get('/me', function(req, res){
 var image = {};
+var base64 = '';
 
         router.getImages(image, (err, docs) => { // function(req, res) { //;
 //router.getImages(image, (err, docs) => {
