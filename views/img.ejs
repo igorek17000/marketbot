@@ -10,7 +10,7 @@
 <% items.forEach(function(image) { %> 
 <div>
 <div>
-<img src="data:<%=image.contentType%>;base64,<%=image.data.toString('buffer')%>" height="100" width="100"> 
+<img src="data:<%=image.contentType%>;base64,<%=image.data%>;buffer, " height="100" width="100"> 
 <div>
 <h5><%=image.originalname %></h5>
 </div>
