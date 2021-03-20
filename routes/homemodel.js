@@ -121,7 +121,7 @@ Ima.find({}, function(err, docs) { //forEach, callback);
 			throw err;
 
 		} else {
-
+console.log(docs);
 		// display image from arrayBuffer stored in database
                // res.send(url.id);
       		//res.render("image.ejs", {image: 'data:' + docs['contentType'] + ';base64,' + base64ArrayBuffer(docs['data'])});
