@@ -12,7 +12,7 @@ var cors = require('cors');
 var ejs = require('ejs');
 var jade = require('jade');
 //
-var imageRouter = require('../../../uploads/server/routes/image');
+var imageRouter = require('../../uploads/server/routes/image');
 
 var upp = express();
 var app = express();
@@ -69,7 +69,7 @@ var storage = new GridFsStorage({
 
 var upload = multer({ storage });
 
-app.use('/', imageRouter(upload));
+app.use(imageRouter(upload));
 
 
 // catch 404 and forward to error handler
