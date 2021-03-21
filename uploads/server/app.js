@@ -12,7 +12,7 @@ var cors = require('cors');
 var ejs = require('ejs');
 var jade = require('jade');
 //
-var imageRouter = require('./uploads/server/routes/image');
+var imageRouter = require('../../uploads/server/routes/image');
 
 var upp = express();
 var app = express();
