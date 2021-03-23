@@ -81,7 +81,7 @@ module.exports = (upload) => {
                 .then(images => {
                     res.status(200).json({
                         success: true,
-                        images[name],
+                        images.name,
                     });
                 })
                 .catch(err => res.status(500).json(err));
