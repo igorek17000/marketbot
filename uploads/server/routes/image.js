@@ -135,7 +135,7 @@ images,
                 .then((image) => {
                     res.status(200).render('image.ejs', {image:image});  //json({
                       //  success: true,
-                      res.render('image.ejs', {image:image}); //  image,
+                     // res.render('image.ejs', {image:image}); //  image,
                    // });
 
 //res.render('image.ejs', {image:image});
