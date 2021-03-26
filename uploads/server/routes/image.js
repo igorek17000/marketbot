@@ -81,7 +81,7 @@ module.exports = (upload) => {
                 .then(images => {
                     res.status(200).json({
                         success: true,
-                        images.name,
+                        images,
                     });
                 })
                 .catch(err => res.status(500).json(err));
@@ -133,11 +133,11 @@ images,
         .get((req, res, next) => {
             Image.findOne({}, {}, { sort: { '_id': -1 } })
                 .then((image) => {
-                  /*  res.status(200).json({
+                    res.status(200).json({
                         success: true,
                         image,
                     });
-*/
+
 res.render('image.ejs', {image:image});
                 })
                 .catch(err => res.status(500).json(err));
