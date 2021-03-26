@@ -135,10 +135,10 @@ images,
                 .then((image) => {
                     res.status(200).json({
                         success: true,
-                        image,
+                      res.render('image.ejs', {image:image}); //  image,
                     });
 
-res.render('image.ejs', {image:image});
+//res.render('image.ejs', {image:image});
                 })
                 .catch(err => res.status(500).json(err));
         });
