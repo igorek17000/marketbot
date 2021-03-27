@@ -20,7 +20,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs'); //'jade' || 'ejs');
+app.set('view engine', 'ejs' || 'jade'); //'jade' || 'ejs');
 //app.use('view engine', 'ejs');
 app.use(cors({
     origin: '*',
