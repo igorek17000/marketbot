@@ -133,7 +133,7 @@ images,
         .get((req, res, next) => {
             Image.findOne({}, {}, { sort: { '_id': -1 } })
                 .then((image) => {
-                    res.status(200).render(image, {
+                    res.render(image, {
                         success: true, image: image
                      // res.render('image', {image:image}); // 
 // image
@@ -160,7 +160,7 @@ images,
     */
     imageRouter.route('/files')
         .get((req, res, next) => {
-            gfs.find({}).forEach((err, files) => {
+            Image.find({}, ((err, files) => {
                 if (!files || files.length === 0) {
                     return res.status(200).json({
                         success: false,
