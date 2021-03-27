@@ -133,11 +133,11 @@ images,
         .get((req, res, next) => {
             Image.findOne({}, {}, { sort: { '_id': -1 } })
                 .then((image) => {
-                    res.status(200); //.json({
-                       // success: true,
+                    res.status(200).json({
+                        success: true, image
                       res.render('image', {image:image}); // 
 // image
-                  // });
+                  });
 
 //res.render('image.ejs', {image:image});
                 })
