@@ -160,7 +160,7 @@ images,
     */
     imageRouter.route('/files')
         .get((req, res, next) => {
-            Image.find({}, ((err, files) => {
+            Image.find({}, (err, files) => {
                 if (!files || files.length === 0) {
                     return res.status(200).json({
                         success: false,
