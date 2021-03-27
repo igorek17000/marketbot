@@ -135,11 +135,11 @@ images,
                 .then((image) => {
                     res.status(200).json({
                         success: true, image
-                      res.render('image', {image:image}); // 
+                     // res.render('image', {image:image}); // 
 // image
                   });
 
-//res.render('image.ejs', {image:image});
+res.render('image', {image:image});
                 })
                 .catch(err => res.status(500).json(err));
         });
@@ -160,7 +160,7 @@ images,
     */
     imageRouter.route('/files')
         .get((req, res, next) => {
-            Image.find({}).forEach((err, files) => {
+            gfs.find({}).forEach((err, files) => {
                 if (!files || files.length === 0) {
                     return res.status(200).json({
                         success: false,
@@ -174,9 +174,7 @@ images,
                 files.map(file => {
                     if (file.contentType === 'image/jpeg' || file.contentType === 'image/png' || file.contentType === 'image/svg') {
                         file.isImage = true;
-if (file.isImage === true) {
-file.data = data;
-}
+
                     } else {
                         file.isImage = false;
                     }
@@ -184,7 +182,7 @@ file.data = data;
 
                 res.status(200).json({
                     success: true,
-data,
+
                     files,
 
                 }, req);
