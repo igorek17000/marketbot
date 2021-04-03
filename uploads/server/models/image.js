@@ -6,7 +6,7 @@ originalname: String,
 data: Buffer,	 
 img : { pic: Buffer },	
 contentType: String, 
-uploaded: String
+uploaded: String,
     caption: {
         required: true,
         type: String,
