@@ -90,7 +90,6 @@ module.exports = (upload) => {
 imageRouter.route('/down')
 .get((req, res, next) => { 
 var base64 ='';
-var image = {};
 Image1.find({}) 
 .then(images => { 
 res.render('image.ejs', { 
