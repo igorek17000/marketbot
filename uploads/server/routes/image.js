@@ -86,20 +86,19 @@ module.exports = (upload) => {
                 })
                 .catch(err => res.status(500).json(err));
         });
-/*
-imageRouter.route('/uploads')
+
+imageRouter.route('/down')
 .get((req, res, next) => { 
 Image.find({}) 
 .then(images => { 
-res.status(200).json({ 
-success: true, 
-images, 
+res.render(image.ejs, { 
+images: images, 
 }); 
 }) 
 .catch(err => res.status(500).json(err)); 
 });
 
-*/
+
     /*
         GET: Delete an image from the collection
     */
