@@ -3,7 +3,7 @@ var imageRouter = express.Router();
 var mongoose = require('mongoose');
 var Grid = require('gridfs-stream');
 Grid.mongo = mongoose.mongo;
-var Image = require('../models/image');
+var Image1 = require('../models/image');
 var config = require('../config');
 var url = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
     var connection_string = config.mongoURI;
@@ -48,7 +48,7 @@ module.exports = (upload) => {
             console.log(req.body);
             console.log(req);
             // check for existing images
-            Image.findOne({ caption: req.body.caption })
+            Image1.findOne({ caption: req.body.caption })
                 .then((image) => {
                     console.log(image);
                     if (image) {
@@ -77,7 +77,7 @@ module.exports = (upload) => {
                 .catch(err => res.status(500).json(err));
         })
         .get((req, res, next) => {
-            Image.find({})
+            Image1.find({})
                 .then(images => {
                     res.status(200).json({
                         success: true,
@@ -89,7 +89,7 @@ module.exports = (upload) => {
 
 imageRouter.route('/down')
 .get((req, res, next) => { 
-Image.find({}) 
+Image1.find({}) 
 .then(images => { 
 res.render('image.ejs', { 
 image: {}
@@ -104,10 +104,10 @@ image: {}
     */
     imageRouter.route('/delete/:id')
         .get((req, res, next) => {
-            Image.findOne({ _id: req.params.id })
+            Image1.findOne({ _id: req.params.id })
                 .then((image) => {
                     if (image) {
-                        Image.deleteOne({ _id: req.params.id })
+                        Image1.deleteOne({ _id: req.params.id })
                             .then(() => {
                                 return res.status(200).json({
                                     success: true,
@@ -130,7 +130,7 @@ image: {}
     */
     imageRouter.route('/recent')
         .get((req, res, next) => {
-            Image.findOne({}, {}, { sort: { '_id': -1 } })
+            Image1.findOne({}, {}, { sort: { '_id': -1 } })
                 .then((image) => {
                     res.render('image.ejs', {
                         success: true, image
@@ -159,7 +159,7 @@ image: {}
     */
     imageRouter.route('/files')
         .get((req, res, next) => {
-            Image.find({}, (err, files) => {
+            Image1.find({}, (err, files) => {
                 if (!files || files.length === 0) {
                     return res.status(200).json({
                         success: false,
