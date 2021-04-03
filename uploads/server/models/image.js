@@ -20,6 +20,6 @@ var ImageSchema = new Schema({
     },
 });
 
-var Image = mongoose.model('Image', ImageSchema);
+var Image = mongoose.model('image1', ImageSchema);
 
 module.exports = Image;
