@@ -27,4 +27,4 @@ uploaded: String,
 
 var Image1 = mongoose.model('image1', ImageSchema);
 
-module.exports = Image;
+module.exports = Image1;
