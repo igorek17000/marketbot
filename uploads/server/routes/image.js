@@ -92,7 +92,7 @@ imageRouter.route('/down')
 Image.find({}) 
 .then(images => { 
 res.render('image.ejs', { 
-image: image
+images
 }); 
 }) 
 .catch(err => res.status(500).json(err)); 
