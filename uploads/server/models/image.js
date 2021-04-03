@@ -2,6 +2,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ImageSchema = new Schema({
+originalname: String,	
+data: Buffer,	 
+img : { pic: Buffer },	
+contentType: String, 
+uploaded: String
     caption: {
         required: true,
         type: String,
