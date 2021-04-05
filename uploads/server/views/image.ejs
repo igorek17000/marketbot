@@ -10,7 +10,7 @@
 	
 
 <% if(images!=null) { %>
-<img src="data:<%=images.contentType%>;base64,<%=images.data.base64)%>">
+<img src="data:<%=images.contentType%>;base64,<%=images.data.toString('base64')%>">
 <% } %>
 </body>
 
