@@ -90,10 +90,10 @@ module.exports = (upload) => {
 imageRouter.route('/down')
 .get((req, res, next) => { 
 var base64 ='';
-Image1.find({}).forEach(function(image))
+Image1.find({})
 .then(images => { 
 res.render('image.ejs', { 
-success: true, image
+success: true, images.forEach(image)
 }); 
 }) 
 .catch(err => res.status(500).json(err)); 
