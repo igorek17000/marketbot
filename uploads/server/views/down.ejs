@@ -2,6 +2,6 @@
 
 
 
-<% images.forEach(err, image) => { %>
+<% images.forEach(function(image) { %>
 <img src="data:<%=image.contentType%>;base64,<%=image.data.toString('base64')%>">
 <% }) %>
