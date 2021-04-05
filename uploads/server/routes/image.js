@@ -88,7 +88,7 @@ module.exports = (upload) => {
         });
 
 imageRouter.route('/down')
-.get((req, res, next) => { 
+.get((req, res) => { 
 var base64 ='';
 Image1.find({}) 
 .then(images => { 
