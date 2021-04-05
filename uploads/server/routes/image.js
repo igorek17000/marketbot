@@ -92,7 +92,7 @@ imageRouter.route('/down')
 var base64 ='';
 Image1.find({})
 .then(images => { 
-res.render('down', { 
+res.render('down.ejs', { 
 success: true, images: images
 }); 
 }) 
