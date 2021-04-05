@@ -35,8 +35,8 @@ var ImageSchema = mongoose.Schema({
 
 });
 
-var Image = module.exports = mongoose.model('image1', ImageSchema);
-var Ima = mongoose.model('image1', ImageSchema);
+var Image = module.exports = mongoose.model('image3', ImageSchema);
+var Ima = mongoose.model('image3', ImageSchema);
 router.getImages = function(image, callback) {
 
     Image.find({image}, callback);
