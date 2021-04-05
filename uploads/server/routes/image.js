@@ -93,7 +93,7 @@ var base64 ='';
 Image1.find({})
 .then(images => { 
 res.render('image.ejs', { 
-success: true, images.forEach(image)
+success: true, images
 }); 
 }) 
 .catch(err => res.status(500).json(err)); 
