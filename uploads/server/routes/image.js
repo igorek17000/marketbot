@@ -58,7 +58,7 @@ module.exports = (upload) => {
                         });
                     }
 
-                    let newImage = new Image({
+                    let newImage = new Image1({
                         caption: req.body.caption,
                         filename: req.file.filename,
                         fileId: req.file.id,
