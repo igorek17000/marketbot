@@ -289,7 +289,7 @@ app.set('views', 'views'); // '/server/views', /'client/views'); // || 'views', 
 //res.render('/uploads/views/layout.jade');
 //});
 
-
+/*
 app.get('/countdown', function(req, res) {
 //res.writeHead(200);
 res.setHeader('Content-type', 'text/html');
@@ -299,7 +299,7 @@ var html = fs.readFileSync(path.join(__dirname + "/views/countdown.html"));
 res.send(html);
 //res.send('Hello');
 });
-
+*/
 app.get('/amaral', function(req, res) {
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/amaralbot.html"));
