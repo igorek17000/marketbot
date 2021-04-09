@@ -40,7 +40,7 @@ var connectt = mongoose.connection; //connect(url, { useNewUrlParser: true, useU
 connectt;
 
 // connect to the database
-connecttt.then(() => {
+connectt.then(() => {
   console.log('Connected to database: GridApp');
 }, (err) => console.log(err));
 
