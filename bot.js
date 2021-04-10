@@ -131,7 +131,6 @@ exports.respond = function(botRoom) { //botRoom, chunks, chunk) {
 //});
 
 var request = JSON.parse(this.req.chunks[0]);
-request.avatar_url = 'https://i.groupme.com/290x174.jpeg.531a4c83d04f4cafae67b323a4fd6418';
 //var request = JSON.parse(this.req.chunks[0]); //this.req[this]; //this.req[chunkit]; //req[chunks.chunks]; //.chunks; //req.param); 
 //app.post('/bot/:botRoom', function(req, res) {
 //req.on('data', function(chunk) {
