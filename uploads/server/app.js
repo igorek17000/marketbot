@@ -37,11 +37,11 @@ mongoose.Promise = require('bluebird');
 
 var url = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
  
-var connectt = mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+var connect = mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 //connectt;
 
 // connect to the database
-connectt.then(() => {
+connect.then(() => {
   console.log('Connected to database: GridApp');
 }, (err) => console.log(err));
 
