@@ -23,7 +23,8 @@ var path = require('path');
 var mongoose = require('mongoose');
 
 var ImageSchema = mongoose.Schema({
-
+        name: String,
+        desc: String,
         originalname: String,
 	data: Buffer,	
         img : {
@@ -76,8 +77,13 @@ router.post('/images', upload.any(), function(req, res) {
 
 	image['data'] = req.files[0].buffer;
 
-image['img.pic'] = req.files[0].buffer;
-	image['originalname'] = req.files[0].originalname;
+        image['img.pic'] = req.files[0].buffer;
+	
+        image['originalname'] = req.files[0].originalname;
+  
+        image['name'] = req.files[0].originalname;
+
+        image['desc'] = req.files[0].mimetype;
 
 	image['contentType'] = req.files[0].mimetype;
         
