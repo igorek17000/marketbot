@@ -1075,7 +1075,6 @@ var nickName = '';
     body = {
 
     "attachments" : attachments,
-    "avatar_url"  : "https://i.groupme.com/290x174.jpeg.531a4c83d04f4cafae67b323a4fd6418",
     "bot_id"      : botID,
     "text"        : botResponse
   };
@@ -1175,7 +1174,6 @@ console.log(date + '\n' + nickName + '\n' + botResponse);
     body = {
 
     "attachments" : attachments,
- //   "avatar_url"  : "https://i.groupme.com/290x174.jpeg.531a4c83d04f4cafae67b323a4fd6418",
     "bot_id"      : logID,
     "text"        : date + "\n" + logName + "\n" + botResponse
   };
