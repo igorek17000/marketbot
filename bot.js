@@ -1024,7 +1024,7 @@ function sendDelayedMessage(msg, attachments, botID, logID, nickName) {
 }
 
 function postMessage(botResponse, attachments, botID, logID, nickName, logName) {
-  var options, body, botReq, logReq, botID, logID, nickName, logName;
+  var options, options1, body, body1, botReq, logReq, botID, logID, nickName, logName;
 //botID = botID;
 //logID = logID;
 var chalk = require('chalk');
@@ -1147,7 +1147,7 @@ console.log(date + '\n' + nickName + '\n' + botResponse);
 
 
 
-    options = {
+    options1 = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
     method: 'POST'
@@ -1170,6 +1170,7 @@ console.log(date + '\n' + nickName + '\n' + botResponse);
 
 
 */
+/*
     body = {
 
     "attachments" : attachments,
@@ -1179,13 +1180,15 @@ console.log(date + '\n' + nickName + '\n' + botResponse);
 
 
 
-/* body1 = {
+*/
+
+ body1 = {
 
     "attachments" : attachments,
     "bot_id"      : logID,
-    "text"        : nickName + "\n" + botResponse
+    "text"        : logName + "\n" + botResponse
   };
-*/
+
 
 
     var logName = '';
@@ -1200,14 +1203,14 @@ console.log(date + '\n' + nickName + '\n' + botResponse);
            } else if (logID == 'b6c42cc2a1bee3c38f07723d78') {
            logName = 'Email';
            } else {
-             logName = '';
+             logName = logID;
            }
 
  // console.log('sending response to ' + logName + '\n' + botResponse);
 
 
 
-logReq = HTTPS.request(options, function(res) {
+logReq = HTTPS.request(options1, function(res) {
 console.log(logName + ' Status: ' + res.statusMessage + ' Status code: ' + res.statusCode + '\n' + botResponse)
 
 
@@ -1228,7 +1231,7 @@ console.log(logName + ' Status: ' + res.statusMessage + ' Status code: ' + res.s
   logReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
-  logReq.end(JSON.stringify(body));
+  logReq.end(JSON.stringify(body1));
 
 
 
