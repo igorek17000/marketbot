@@ -250,9 +250,9 @@ router.dispatch(req, res, function(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
   res.end(err.message);
     });
-} else {
+} // else {
 app(req, res);
-}
+//}
 });
 
 port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
