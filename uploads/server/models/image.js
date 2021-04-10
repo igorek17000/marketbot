@@ -25,6 +25,6 @@ uploaded: String,
     },
 });
 
-var Image1 = mongoose.model('image2', ImageSchema, 'image1');
+var Image1 = mongoose.model('image1', ImageSchema, 'uploads');
 
 module.exports = Image1;
