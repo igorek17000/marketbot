@@ -28,7 +28,8 @@ var ImageSchema = mongoose.Schema({
         originalname: String,
 	data: Buffer,	
         img : {
-        pic: Buffer
+        pic: Buffer,
+        contentType: String
 },
 	contentType: String,
         uploaded: String
