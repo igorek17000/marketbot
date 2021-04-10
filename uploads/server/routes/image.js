@@ -32,7 +32,7 @@ var url = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:2
     connect.once('open', () => {
         // initialize stream
         gfs = mongoose.connection; //new mongoose.mongo.GridFSBucket(connect.db, {
-           bucketName: "image1"
+           bucketName: "uploads"
        // });
     });
 
