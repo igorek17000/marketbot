@@ -25,15 +25,15 @@ module.exports = (upload) => {
    // const url = config.mongoURI;
 var url = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
  
-    const connect = mongoose.connection; //(url, { useNewUrlParser: true, useUnifiedTopology: true }); // mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
+    const connect = mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
     let gfs;
 
     connect.once('open', () => {
         // initialize stream
-        gfs = new mongoose.mongo.GridFSBucket(connect.db, {
-            bucketName: "image1"
-        });
+        gfs = mongoose.connection; //new mongoose.mongo.GridFSBucket(connect.db, {
+          //  bucketName: "image1"
+       // });
     });
 
 
