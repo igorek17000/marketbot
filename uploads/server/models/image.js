@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var ImageSchema = new Schema({
 originalname: String,	
 data: Buffer,	 
-img : { pic: Buffer },	
+img : { pic: Buffer, contentType: String },	
 contentType: String, 
 uploaded: String,
     caption: {
@@ -25,6 +25,6 @@ uploaded: String,
     },
 });
 
-var Image1 = mongoose.model('images', ImageSchema);
+var Image1 = mongoose.model('image4', ImageSchema);
 
 module.exports = Image1;
