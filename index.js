@@ -243,14 +243,14 @@ server = http.createServer(function(req, res) {
 // app(req, res);
 
  // } else {
-//if(req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === /bot/:botRoom') { // || req.url === '/' || req.url === '/' || req.url === '/' || 
+if(req.url === '/' || req.url === '/init' || req.url === '/commands' || req.url === /bot/:botRoom') { // || req.url === '/' || req.url === '/' || req.url === '/' || 
 router.dispatch(req, res, function(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
   res.end(err.message);
     });
- // } else {
-//app(req, res);
-//}
+ } else {
+app(req, res);
+}
 });
 
 port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
