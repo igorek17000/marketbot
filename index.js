@@ -400,7 +400,7 @@ res.send(html);
 
 app.get('/ai', function(req, res) {
 res.setHeader('Content-type', 'text/html');
-var html = fs.readFileSync(path.join(__dirname + "/views/ai.html"));
+var html = fs.readFileSync(path.join(__dirname + "/views/ai.ejs"));
 res.send(html);
 });
 
