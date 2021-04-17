@@ -1,1 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+-->
+<head>
+<title>Home Page</title>
 
+<style>
+
+   
+html {
+  background-image: url('https://thumbs2.imgbox.com/fa/15/AJwCzW7z_t.jpg');
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 25px;
+
+
+}
+
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  color: white;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  color: white;
+}
+
+.middle {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+hr {
+  margin: auto;
+  width: 40%;
+}
+
+hr2 {
+margin: auto;
+width: 40%;
+}
+
+</style>
+    </head>
+<body>
+
+
+    
+  <div class='topleft'>
+    <p>AlexBot</p></div>
+    <div class='middle'><h2>For Birthday Countdown</h2>
+<hr></hr>
+<button onclick="window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/countdown';">
+      Click Here
+    </button>
+
+<h2>For a list of commands</h2>
+ <hr></hr>
+<button onclick="window.location.href='http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login';">
+      Click Here
+    </button>
+
+<hr2></hr2>
+
+
+      </div>
+    <div class='bottomleft'>
+    <p>Home Page</p>
+  </div>
+
+</body>
+<script>
+/*
+var name = "AlexBot";
+    var countDownDate = new Date("oct 4, 2020 14:13:01").getTime();
+*/
+/*
+if (new Date("oct 4, 2020 15:02:01").getTime() > new Date().getTime()) {
+var countDownDate = new Date("oct 4, 2020 15:02:01").getTime();
+var name = "AlexBot";
+} else {
+var countDownDate = new Date("oct 4, 15:05:01").getTime();
+var name = "Alex";
+}
+*/
+var countDownDate = new Date("oct 5, 2020 22:14:00").getTime(); 
+var name = "AlexBot";
+
+
+
+var countdownfunction = setInterval(function() {
+
+    var now = new Date().getTime();
+  
+    var distance = countDownDate - now;
+
+  if (now > new Date("oct 5, 2020 22:14:30").getTime()) {
+countDownDate = new Date("oct 5, 2020 22:15:00").getTime();
+name = "Alex";
+} 
+
+if (now > new Date("oct 5, 2020 22:15:30").getTime()) {
+countDownDate = new Date("oct 5, 2020 22:16:00").getTime();
+name = "Alexs";
+}
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  
+
+ // document.getElementById('demo').innerHTML = "Commands"; 
+/*
+  if (new Date("oct 4, 2020 13:30:01").getTime() > new Date().getTime()) {
+document.getElementById('demo').innerHTML = "Happy Birthday " + name;
+}
+*/
+/*
+else if (new Date("oct 3, 2020 21:05:01").getTime() < new Date().getTime()) {
+document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
+  + minutes + 'm ' + seconds + 's ';
+}
+*/
+/*
+   if (distance < 0) {
+
+//  document.getElementById('demo').innerHTML = "Time's Up!";
+
+
+
+if (distance > -29000) {
+
+  document.getElementById('demo').innerHTML = "Happy Birthday " + name;
+
+}
+} else {
+
+document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
+  + minutes + 'm ' + seconds + 's ';
+
+}
+
+*/
+/*
+if (distance < -240000) {
+document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
+  + minutes + 'm ' + seconds + 's ';
+}
+
+}, 1000);
+*/
+</script>
+
+
+</html>
