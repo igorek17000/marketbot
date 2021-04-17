@@ -398,6 +398,11 @@ res.send(html);
 });
 
 
+app.get('/ai', function(req, res) {
+res.setHeader('Content-type', 'text/html');
+var html = fs.readFileSync(path.join(__dirname + "/views/ai.html"));
+res.send(html);
+});
 
 var routes = require('./routes/homemodel');
 // connect to mongodb with default port (27017)
