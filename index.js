@@ -201,6 +201,20 @@ var html = fs.readFileSync(path.join(__dirname + "/views/ai.html"));
 res.send(html);
 });
 
+app.post('/clicked', (req, res) => { 
+const click = {clickTime: new Date()}; 
+console.log(click); 
+console.log(db); 
+dbt.collection('clicks').save(click, (err, result) => { 
+if (err) { 
+return console.log(err); 
+} 
+console.log('click added to db'); 
+res.sendStatus(201); 
+}); 
+}); 
+
+
 
 var routes = require('./routes/homemodel');
 // connect to mongodb with default port (27017)
