@@ -202,9 +202,9 @@ res.send(html);
 });
 
 app.post('/clicked', (req, res) => { 
-const click = {clickTime: new Date()}; 
+const click = {clickTime: date}; //new Date()}; 
 console.log(click); 
-console.log(db); 
+//console.log(db); 
 dbt.collection('clicks').insertOne(click, (err, result) => { 
 if (err) { 
 return console.log(err); 
