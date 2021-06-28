@@ -205,7 +205,7 @@ app.post('/clicked', (req, res) => {
 const click = {clickTime: new Date()}; 
 console.log(click); 
 console.log(db); 
-dbt.collection('clicks').save(click, (err, result) => { 
+dbt.collection('clicks').insertOne(click, (err, result) => { 
 if (err) { 
 return console.log(err); 
 } 
