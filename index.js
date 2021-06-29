@@ -36,7 +36,10 @@ matchHash = this.res;
 var nodemailer = require('nodemailer');
 var moment = require('moment-timezone');
 moment.tz.setDefault('America/Toronto');
-var date = moment().format('LLLL');
+//var date = moment().format('LLLL');
+var date = moment().utcOffset(-400).format('LLLL');
+
+
 var commandListSuccess = require('./commands_success/command-list.js'); //commandListSuccess.buildHTML(cmdArr, config.bot_name);
 var ccml = require('./modules/command-list.js');
 
