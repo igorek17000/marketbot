@@ -35,7 +35,7 @@ var matchHash;
 matchHash = this.res;
 var nodemailer = require('nodemailer');
 var moment = require('moment-timezone');
-moment.tz.setDefault('America/Toronto');
+//moment.tz.setDefault('America/Toronto');
 //var date = moment().format('LLLL');
 var date = moment().utcOffset(-400).format('LLLL');
 
