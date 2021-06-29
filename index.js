@@ -34,7 +34,7 @@ var dbt = mongoose.connection;
 var matchHash;
 matchHash = this.res;
 var nodemailer = require('nodemailer');
-var moment = require('moment-timezone');
+var moment = require('moment');
 //moment.tz.setDefault('America/Toronto');
 //var date = moment().format('LLLL');
 var date = moment().utcOffset(-400).format('LLLL');
