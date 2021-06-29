@@ -139,8 +139,7 @@ get: test
 server = http.createServer(function(req, res) {
   req.chunks = [];
   res.chunks = [];
-//  var url = req.url;
- // url.id = url.split("/")[2];
+
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
 
@@ -153,16 +152,7 @@ server = http.createServer(function(req, res) {
 
 
 if(req.url === '/init' || req.url === '/commands' || req.url === '/bot/:botRoom' || req.url === '/bot/308boonbot') {
-//if(req.url === '/bc' || req.url === '/countdown' || req.url === '/login' || req.url === '/details' || req.url === '/detail' || req.url === '/jokes' || req.url === '/amaral' || req.url === '/amaralbot' || req.url === '/images' || req.url === '/images/:id' || req.url === '/me' || req.url === '/upp' || req.url === '/delete/:id' || req.url === '/recent' || req.url === '/multiple' || req.url === '/files' || req.url === '/file/:filename' || req.url === '/image/:filename' || req.url === '/file/del/:id' || req.url === '/uploads/' || req.url === '/upp/' || req.url === '/uploads') {
-// var url = req.url;
- //url.id = url.split('/')[2]; 
 
-// app(req, res);
-
- // } else {
-//if(!req.url === '/' || !req.url === '/init' || !req.url === '/commands' || !req.url === '/bot/:botRoom') { // || req.url === '/' || req.url === '/' || req.url === '/' || 
-//app(req, res);
-//} else {
 router.dispatch(req, res, function(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
   res.end(err.message);
@@ -188,12 +178,9 @@ app.use(bodyParser.urlencoded({
    extended: true
 }));
 
-//app.set('view engine', 'jade');
-//app.set('view engine', 'pug');
+
 app.set('view engine', 'ejs');
-//app.set('view engine', 'html');
-app.set('views', 'views'); // '/server/views', /'client/views'); // || 'views', './uploads/server/views'); //require('jade').__express);
-//upp.engine('ejs', require('ejs').renderFile);
+app.set('views', 'views'); 
 
 
 app.get('/', function(req, res) {
@@ -217,15 +204,6 @@ res.sendStatus(201);
 }); 
 }); 
 
-
-
-var routes = require('./routes/homemodel');
-// connect to mongodb with default port (27017)
-//mongoose.connect('mongodb://localhost/imagespath');
-
-app.use(routes);
-
-app.use(upp);
 
 function ping() {
   this.res.writeHead(200);
