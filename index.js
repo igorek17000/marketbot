@@ -37,7 +37,7 @@ var nodemailer = require('nodemailer');
 var moment = require('moment');
 //moment.tz.setDefault('America/Toronto');
 //var date = moment().format('LLLL');
-var date = moment().utcOffset(-400).format('LLLL');
+//var date = moment().utcOffset(-400).format('LLLL');
 
 
 var commandListSuccess = require('./commands_success/command-list.js'); //commandListSuccess.buildHTML(cmdArr, config.bot_name);
@@ -166,6 +166,7 @@ port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 300
 ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
 server.listen(port, ip, function() {
+var date = moment().utcOffset(-400).format('LLLL');
 console.log('Server started at ' + date + ' & listening on port ' + port);
 
 });
@@ -192,7 +193,9 @@ res.send(html);
 });
 
 app.post('/clicked', (req, res) => { 
-const click = {clickTime: date}; //new Date()}; 
+var date = moment().utcOffset(-400).format('LLLL');
+
+var click = {clickTime: date}; //new Date()}; 
 console.log(click); 
 //console.log(db); 
 dbt.collection('clicks').insertOne(click, (err, result) => { 
