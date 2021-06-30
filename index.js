@@ -166,7 +166,7 @@ port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 300
 ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 
 server.listen(port, ip, function() {
-var date = moment().utcOffset(-400).format('LLLL');
+var date = moment().utcOffset(-240).format('LLLL');
 console.log('Server started at ' + date + ' & listening on port ' + port);
 
 });
@@ -193,7 +193,7 @@ res.send(html);
 });
 
 app.post('/clicked', (req, res) => { 
-var date = moment().utcOffset(-400).format('LLLL');
+var date = moment().utcOffset(-240).format('LLLL');
 
 var click = {clickTime: date}; //new Date()}; 
 console.log(click); 
