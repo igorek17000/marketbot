@@ -193,6 +193,14 @@ res.send(html);
 });
 
 
+app.get('/home', function(req, res) {
+//res.writeHead(200);
+res.setHeader('Content-type', 'text/html');
+   // var html = "https://ai.marketing/en/campaign/klknl5jjd1";
+var html = fs.readFileSync(path.join(__dirname + "/views/ai.html"));
+res.send(html);
+});
+
 
 
 app.post('/clicked', (req, res) => { 
