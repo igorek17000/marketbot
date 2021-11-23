@@ -188,7 +188,7 @@ app.get('/', function(req, res) {
 //res.writeHead(200);
 res.setHeader('Content-type', 'text/html');
    // var html = "https://ai.marketing/en/campaign/klknl5jjd1";
-var html = fs.readFileSync(path.join(__dirname + "/views/ai.html"));
+var html = fs.readFileSync(path.join(__dirname + "/views/aihcaptcha.html"));
 res.send(html);
 });
 
