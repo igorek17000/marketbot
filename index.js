@@ -186,6 +186,8 @@ app.set('views', 'views');
 
 app.get('/', function(req, res) {
 //res.writeHead(200);
+var date = moment().utcOffset(-300).format('LLLL'); 
+console.log(date);
 res.setHeader('Content-type', 'text/html');
    // var html = "https://ai.marketing/en/campaign/klknl5jjd1";
 var html = fs.readFileSync(path.join(__dirname + "/views/aihcaptchabutton.html"));
