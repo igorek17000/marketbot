@@ -185,9 +185,38 @@ app.set('views', 'views');
 
 
 app.get('/', function(req, res) {
-//res.writeHead(200);
+
 var date = moment().utcOffset(-300).format('LLLL'); 
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+var year = moment().utcOffset(-300).format('YYYY');
+var month = moment().utcOffset(-300).format('MM');
+var day = moment().utcOffset(-300).format('DD');
+//var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+var click = {ip: ip, date: date}; //, repeat: {date}}; //new Date()};
+var repeat = "visited: " + date;
+var findDay = {day};
+var findIp = "{ip: ip}";
+dbt.collection(year + '-' + month + '-' + day).find({"ip": ip}).toArray(function(err, docs) {
+if (err) { 
+return console.log(err); 
+}
+if (docs < 1) { 
+dbt.collection(year + '-' + month + '-' + day).insertOne(click, (err, result) => { 
+if (err) { 
+return console.log(err); 
+} 
+});
+} else if(docs) {
+
+dbt.collection(year + '-' + month + '-' + day).updateOne({"ip": ip}, {$push: {repeat}}, (err, result) => { 
+if (err) { 
+return console.log(err); 
+} 
+});
+}
+
+
+});
 console.log(date);
 console.log(ip);
 res.setHeader('Content-type', 'text/html');
