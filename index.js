@@ -230,10 +230,75 @@ app.get('/home', function(req, res) {
 //res.writeHead(200);
 res.setHeader('Content-type', 'text/html');
    // var html = "https://ai.marketing/en/campaign/klknl5jjd1";
-var html = fs.readFileSync(path.join(__dirname + "/views/aihcaptcha.html"));
+//var html = fs.readFileSync(path.join(__dirname + "/views/aihcaptcha.html"));
+var html = fs.readFileSync(path.join(__dirname + "/views/aihcaptchabutton.html"));
 res.send(html);
 });
 
+
+app.get('/unsubscribe', function(req, res) {
+//res.writeHead(200);
+res.setHeader('Content-type', 'text/html');
+   // var html = "https://ai.marketing/en/campaign/klknl5jjd1";
+var html = fs.readFileSync(path.join(__dirname + "/views/unsubscribe.ejs"));
+res.send(html);
+});
+
+app.post('/unsubscribe', function(req, res) {
+//res.writeHead(200);
+var Transport = nodemailer.createTransport({
+
+
+service: 'gmail',
+auth: {
+user: 'alexdeabot@gmail.com',
+pass: 'mmyryttchudyncma'
+}
+});
+
+
+var to = "alexdeabot@gmail.com";
+var subject = "Unsubscribe Request";
+var name = req.body.name;
+var email = req.body.email;
+var reason = req.body.reason;
+var text = name + " " + email + " " + reason;
+
+
+var mailOptions = {
+
+
+to: to,
+from: 'alexdeabot@gmail.com',
+subject: subject,
+generateTextFromHTML: true,
+text: text
+};
+
+
+
+
+Transport.sendMail(mailOptions, function(error, response) { 
+if (error) { // throw error; //{
+console.log(error);
+//var msg = "There was an error sending email.";
+//callback(true, msg, []);
+//return msg;
+}
+console.log(response);
+
+Transport.close();
+});
+
+
+
+
+
+res.setHeader('Content-type', 'text/html');
+   // var html = "https://ai.marketing/en/campaign/klknl5jjd1";
+var html = fs.readFileSync(path.join(__dirname + "/views/unsubscribe-ai.ejs"));
+res.send(html);
+});
 
 
 app.post('/clicked', (req, res) => { 
