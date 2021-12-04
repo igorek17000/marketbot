@@ -262,7 +262,7 @@ var subject = "Unsubscribe Request";
 var name = req.body.name;
 var email = req.body.email;
 var reason = req.body.reason;
-var text = name + " " + email + " " + reason;
+var text = "Name\n" + name + "\nEmail\n" + email + "\nReason for leaving\n" + reason;
 
 
 var mailOptions = {
@@ -286,6 +286,7 @@ console.log(error);
 //return msg;
 }
 console.log(response);
+console.log(name + '\n' + email + '\n' + reason);
 
 Transport.close();
 });
