@@ -185,7 +185,7 @@ app.set('views', 'views');
 
 
 app.get('/', function(req, res) {
-
+/*
 var date = moment().utcOffset(-300).format('LLLL'); 
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var ippp = req.connection.remoteAddress;
@@ -209,14 +209,14 @@ var info = []; //json('https://api.ipdata.co/' + ip + '?api-key=ec4dc9ef04e95d5e
 
 // so many more properties 
 //});
-/*
+
 var request = require('request');
 request.get({'host': 'api.ipdata.co?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8', 'port': 8080, 'path': '/'}, function(response) {
 //response.on('data', function(ip) {
 console.log(response); //"My country is: " + country);
 //});
 });
-*/
+
 
 var ipp = "https://api.ipdata.co/" + ippp + "?api-key=${apiKey}";
 function json(ip) { 
@@ -266,7 +266,7 @@ return console.log(err);
 
 
 });
-/*
+
 console.log(date);
 console.log(ip);
 //console.log(data);
@@ -277,7 +277,7 @@ var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs"));
 res.send(html);
 
 */
-/*
+
 var date = moment().utcOffset(-300).format('LLLL'); 
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var year = moment().utcOffset(-300).format('YYYY');
@@ -309,7 +309,7 @@ return console.log(err);
 
 
 });
-*/
+
 console.log(date);
 console.log(ip);
 res.setHeader('Content-type', 'text/html');
