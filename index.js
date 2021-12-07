@@ -16,7 +16,7 @@ var mongoose = require('mongoose');
 var connectt = mongoose.connection;
 var imageRouter = require('./uploads/server/routes/image');
 let gfs;
-
+var fetch = require('node-fetch');
 
 
 var express = require("express");
