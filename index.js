@@ -185,6 +185,99 @@ app.set('views', 'views');
 
 
 app.get('/', function(req, res) {
+var date = moment().utcOffset(-300).format('LLLL'); 
+var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+var ippp = req.connection.remoteAddress;
+var year = moment().utcOffset(-300).format('YYYY');
+var month = moment().utcOffset(-300).format('MM');
+var day = moment().utcOffset(-300).format('DD');
+//var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+var click = {ip: ip, date: date, info: info}; //, repeat: {date}}; //new Date()};
+var repeat = "visited: " + date;
+var findDay = {day};
+var findIp = "{ip: ip}";
+//var data;
+//var infoo = info.data;
+var info = []; //json('https://api.ipdata.co/' + ip + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => { data = data; });
+
+//data = data;
+//return data;
+//console.log(yes); 
+//console.log(data.city); 
+//console.log(data.country_code); 
+
+// so many more properties 
+//});
+/*
+var request = require('request');
+request.get({'host': 'api.ipdata.co?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8', 'port': 8080, 'path': '/'}, function(response) {
+//response.on('data', function(ip) {
+console.log(response); //"My country is: " + country);
+//});
+});
+*/
+
+var ipp = "https://api.ipdata.co/" + ippp + "?api-key=${apiKey}";
+function json(ip) { 
+ip = ip;
+return fetch(ip).then(res => res.json()); 
+//let ipp = ip; //req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+
+} 
+/*
+//let ipp = ip;
+let apiKey = 'ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8'; 
+json('https://api.ipdata.co/' + ip + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => {
+console.log(data); 
+console.log(data.city); 
+console.log(data.country_code); 
+//return data;
+// so many more properties 
+});
+*/
+
+dbt.collection(year + '-' + month + '-' + day).find({"ip": ip}).toArray(function(err, docs) {
+if (err) { 
+return console.log(err); 
+}
+if (docs < 1) { 
+json('https://api.ipdata.co/' + ip + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => {
+var info = data; // []; // data;
+
+//console.log(data); 
+//console.log(data.city); 
+console.log(data.country_code); 
+//return data;
+// so many more properties 
+//});
+
+dbt.collection(year + '-' + month + '-' + day).insertOne( {ip: ip, date: date, info: info}, (err, result) => { 
+if (err) { 
+return console.log(err); 
+} 
+});
+});
+} else if(docs) {
+
+dbt.collection(year + '-' + month + '-' + day).updateOne({"ip": ip}, {$push: {repeat}}, (err, result) => { 
+if (err) { 
+return console.log(err); 
+} 
+});
+}
+
+
+});
+console.log(date);
+console.log(ip);
+//console.log(data);
+
+res.setHeader('Content-type', 'text/html');
+   // var html = "https://ai.marketing/en/campaign/klknl5jjd1";
+var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs"));
+res.send(html);
+
+/*
 
 var date = moment().utcOffset(-300).format('LLLL'); 
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
@@ -223,6 +316,7 @@ res.setHeader('Content-type', 'text/html');
    // var html = "https://ai.marketing/en/campaign/klknl5jjd1";
 var html = fs.readFileSync(path.join(__dirname + "/views/aihcaptchabutton.html"));
 res.send(html);
+*/
 });
 
 
