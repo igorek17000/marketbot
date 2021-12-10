@@ -365,9 +365,9 @@ return console.log(err);
 if (docs < 1) { 
 json('https://api.ipdata.co/' + ip + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => {
 var info = data; // []; // data;
-console.log(data); 
-console.log(data.city); 
-console.log(data.country_code); 
+//console.log(data); 
+//console.log(data.city); 
+//console.log(data.country_code); 
 
 dbt.collection(year + '-' + month + '-' + day).insertOne( {ip: ip, date: date, info: info}, (err, result) => { 
 if (err) { 
