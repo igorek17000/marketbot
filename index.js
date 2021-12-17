@@ -330,6 +330,7 @@ function ping() {
 app.get('/', (req, res) => {
 var date = moment().utcOffset(-300).format('LLLL'); 
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+var ipp = ip.split(/, /)[0];
 var ippp = req.connection.remoteAddress;
 var year = moment().utcOffset(-300).format('YYYY');
 var month = moment().utcOffset(-300).format('MM');
@@ -342,15 +343,17 @@ var findIp = "{ip: ip}";
 var info = []; //json('https://api.ipdata.co/' + ip + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => { data = data; });
 
 
-var ipp = "https://api.ipdata.co/" + ippp + "?api-key=${apiKey}";
+//var ipp = "https://api.ipdata.co/" + ippp + "?api-key=${apiKey}";
 function json(ip) { 
 ip = ip;
+var ipp = ip.split(/, /)[0];
 return fetch(ip).then(res => res.json()); 
 
 } 
 
 let apiKey = 'ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8'; 
-json('https://api.ipdata.co/' + ip + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => {
+json('https://api.ipdata.co/' + ipp + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => {
+var ipp = ip.split(/, /)[0];
 console.log(data); 
 console.log(data.city); 
 console.log(data.country_code); 
@@ -363,8 +366,9 @@ if (err) {
 return console.log(err); 
 }
 if (docs < 1) { 
-json('https://api.ipdata.co/' + ip + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => {
+json('https://api.ipdata.co/' + ipp + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => {
 var info = data; // []; // data;
+var ipp = ip.split(/, /)[0];
 //console.log(data); 
 //console.log(data.city); 
 //console.log(data.country_code); 
