@@ -356,7 +356,7 @@ var year = moment().utcOffset(-300).format('YYYY');
 var month = moment().utcOffset(-300).format('MM');
 var day = moment().utcOffset(-300).format('DD');
 var click = {ip: ip, date: date, info: info};
-var repeat = "visited: " + date;
+var repeat = "visited: " + date + "\n" + req.url;
 var findDay = {day};
 var findIp = "{ip: ip}";
 var info = []; 
@@ -375,23 +375,23 @@ console.log(data);
 var ipp = ip.split(/, /)[0];
 });
 
-dbt.collection('returning-visitor').find({"ip": ip}).toArray(function(err, docs) {
+dbt.collection(year + '-' + month).find({"ip": ip}).toArray(function(err, docs) {
 if (err) { 
 return console.log(err); 
 }
-if (docs) { 
+if (docs < 1) { 
 json('https://api.ipdata.co/' + ipp + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => {
 var info = data;
 var ipp = ip.split(/, /)[0];
 
-dbt.collection('returning-visitor').updateOne({"ip": ip}, {$push: {repeat}}, (err, result) => { 
+dbt.collection(year + '-' + month).insertOne({ip: ip, date: date, info: info}, (err, result) => { 
 if (err) { 
 return console.log(err); 
 } 
 });
 });
-} else if(docs < 1) {
-dbt.collection(year + '-' + month).find({"ip": ip}).toArray(function(err, docs) {
+} else if(docs) {
+dbt.collection(year + '-' + 'returning-visitor').find({"ip": ip}).toArray(function(err, docs) {
 if (err) { 
 return console.log(err); 
 }
@@ -400,7 +400,7 @@ json('https://api.ipdata.co/' + ipp + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73
 var info = data; 
 var ipp = ip.split(/, /)[0];
 
-dbt.collection(year + '-' + month).insertOne( {ip: ip, date: date, info: info}, (err, result) => { 
+dbt.collection(year + '-' + 'returning-visitor').insertOne( {ip: ip, date: date, info: info}, (err, result) => { 
 if (err) { 
 return console.log(err); 
 } 
@@ -408,7 +408,7 @@ return console.log(err);
 });
 //});
 } else if(docs) {
-dbt.collection('returning-visitor').insertOne( {ip: ip, date: date, info: info}, (err, result) => { 
+dbt.collection(year + '-' + 'returning-visitor').updateOne( {"ip": ip}, {$push: {repeat}}, (err, result) => { 
 if (err) { 
 return console.log(err); 
 } 
