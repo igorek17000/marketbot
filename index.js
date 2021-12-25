@@ -194,33 +194,55 @@ var month = moment().utcOffset(-300).format('MM');
 var day = moment().utcOffset(-300).format('DD');
 //var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var click = {ip: ip, date: date}; //, repeat: {date}}; //new Date()};
-var repeat = "visited: " + date;
+var repeat = "visited: " + date + "\n" + req.url;
 var findDay = {day};
 var findIp = "{ip: ip}";
-dbt.collection(year + '-' + month + '-' + day).find({"ip": ip}).toArray(function(err, docs) {
+dbt.collection(year + '-' + month).find({"ip": ip}).toArray(function(err, docs) {
 if (err) { 
 return console.log(err); 
 }
 if (docs < 1) { 
-dbt.collection(year + '-' + month + '-' + day).insertOne(click, (err, result) => { 
+json('https://api.ipdata.co/' + ipp + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => {
+var info = data;
+var ipp = ip.split(/, /)[0];
+
+dbt.collection(year + '-' + month).insertOne({ip: ip, date: date, info: info}, (err, result) => { 
 if (err) { 
 return console.log(err); 
 } 
 });
+});
 } else if(docs) {
+dbt.collection('returning-visitor').find({"ip": ip}).toArray(function(err, docs) {
+if (err) { 
+return console.log(err); 
+}
+if (docs < 1) { 
+json('https://api.ipdata.co/' + ipp + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => {
+var info = data; 
+var ipp = ip.split(/, /)[0];
 
-dbt.collection(year + '-' + month + '-' + day).updateOne({"ip": ip}, {$push: {repeat}}, (err, result) => { 
+dbt.collection('returning-visitor').insertOne( {ip: ip, date: date, info: info}, (err, result) => { 
+if (err) { 
+return console.log(err); 
+} 
+});
+});
+//});
+} else if(docs) {
+dbt.collection('returning-visitor').updateOne( {"ip": ip}, {$push: {repeat}}, (err, result) => { 
 if (err) { 
 return console.log(err); 
 } 
 });
 }
-
-
+});
+}
 });
 
 console.log(date);
 console.log(ip);
+console.log(req.url);
 res.setHeader('Content-type', 'text/html');
    // var html = "https://ai.marketing/en/campaign/klknl5jjd1";
 var html = fs.readFileSync(path.join(__dirname + "/views/aihcaptchabutton.html"));
@@ -346,9 +368,10 @@ return fetch(ip).then(res => res.json());
 
 let apiKey = 'ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8'; 
 json('https://api.ipdata.co/' + ipp + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => {
-console.log(data); 
+//console.log(data); 
 console.log(data.city); 
 console.log(data.country_code); 
+console.log(data);
 var ipp = ip.split(/, /)[0];
 });
 
