@@ -470,8 +470,7 @@ var to = "alexdeabot@gmail.com";
 var subject = "Telegram Subscriber Request";
 var name = req.body.name;
 var email = req.body.email;
-var registered = req.body.registered;
-var text = "The following is a Telegram Subscriber Request\n\n" + "Name\n" + name + "\n\nEmail\n" + email + "\n\nRegistered\n" + registered; //" " + email + " " + reason;
+var text = "The following is a Telegram Subscriber Request\n\n" + "Name\n" + name + "\n\nEmail\n" + email; //" " + email + " " + reason;
 
 
 var mailOptions = {
