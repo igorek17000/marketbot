@@ -427,7 +427,7 @@ var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs")); 
 res.send(html);
 });
 
-app.post('', function(req, res) {
+app.post('/', function(req, res) {
 //res.writeHead(200);
 var name = req.body.name;
 var email = req.body.email;
