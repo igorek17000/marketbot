@@ -24,6 +24,15 @@ window.location.href = 'https://ai.marketing/en/campaign/xkknl8vip0';
   }
 </script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("form").submit(function(){
+    alert("Your request has been successfully submitted");
+  });
+});
+</script>
+
 <style>
    
 html {
@@ -32,6 +41,30 @@ text-align: center;
   color: white;
   font-family: 'Courier New', Courier, monospace;
   font-size: 25px;
+}
+
+input {
+    font-family: 'Courier New', Courier;
+    width: 40%;
+    font-size: 20px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 2px solid #767474;
+}
+    input[type=submit] {
+    font-family: 'Courier New', Courier;
+    font-size: 1.1rem; 
+    font-weight: 400;
+    width: 20%;
+    text-align: center;
+    color: #fff; 
+    background-color: #007bff; 
+    cursor: pointer;
+    border: none;
+    padding: 16px 32px;
+    margin: 4px 2px;
+    border-radius: 10px;
 }
 
 .topleft {
@@ -119,7 +152,21 @@ Click Here</button>
 <p><br></p>
 </div>
 
-
+<div class="bb-block">
+<div-class="tt-block">
+<p><br><br><br></p>
+<p><strong>Be sure to join the official Ai.marketing News Telegram channel for news, events and site maintenance schedule. Submit your details for more info</strong><br><br></p>
+<form name="myform" method="post" action="/">
+            
+            <input class="box" type="text" name="name" id="name" placeholder="Name" required/></br>
+          <input class="box" type="email" name="email" id="email" placeholder="Email" required/></br>
+            <input class="box" type="registered" name="registered" id="registered" placeholder="Date registered" required/></br></br>
+         
+<input type="submit" id="submitDetails" name="submitDetails" value="Submit"/> 
+</form>
+<p><br></p>
+</div>
+</div>
 <div class="ui inverted footer" style="color:black;">
 <div class="ui container">
 Marketbot-ai.com 2021. All Rights Reserved.
