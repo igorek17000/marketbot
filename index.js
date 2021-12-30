@@ -179,7 +179,7 @@ app.use(bodyParser.urlencoded({
    extended: true
 }));
 
-
+app.use(express.static('views/partials'));
 app.set('view engine', 'ejs');
 app.set('views', 'views'); 
 /*
