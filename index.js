@@ -48,7 +48,7 @@ var ccml = require('./modules/command-list.js');
 
 var path = require('path');
 var fs = require('fs');
-var http, director, bot, router, server, port, ip, db;
+var http, director, bot, router, server, port, ip, db, GMAIL_USER, GMAIL_PASSWORD;
 
 http        = require('http');
 director    = require('director');
@@ -425,6 +425,90 @@ res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs")); //hcaptchabutton.ejs
 res.send(html);
 });
+
+app.post('', function(req, res) {
+//res.writeHead(200);
+var name = req.body.name;
+var email = req.body.email;
+var date = moment().utcOffset(-300).format('LLLL'); 
+var existing = "requested: " + date;
+
+dbt.collection('Telegram-subscribers').find({"email": email}).toArray(function(err, docs) {
+if (err) { 
+return console.log(err); 
+}
+if (docs < 1) { 
+
+dbt.collection('telegram-subscribers').insertOne( {name: name, email: email, date: date}, (err, result) => { 
+if (err) { 
+return console.log(err); 
+} 
+});
+
+} else if(docs) {
+dbt.collection('telegram-subscribers').updateOne( {"email": email}, {$push: {existing}}, (err, result) => { 
+if (err) { 
+return console.log(err); 
+} 
+});
+}
+});
+
+var Transport = nodemailer.createTransport({
+
+
+service: 'gmail',
+auth: {
+user: GMAIL_USER,
+pass: GMAIL_PASSWORD
+}
+});
+
+
+var to = "alexdeabot@gmail.com";
+var subject = "Unsubscribe Request";
+var name = req.body.name;
+var email = req.body.email;
+var reason = req.body.reason;
+var text = "Name\n" + name + "\nEmail\n" + email + "\nReason for leaving\n" + reason; //" " + email + " " + reason;
+
+
+var mailOptions = {
+
+
+to: to,
+from: 'alexdeabot@gmail.com',
+subject: subject,
+generateTextFromHTML: true,
+text: text
+};
+
+
+
+
+Transport.sendMail(mailOptions, function(error, response) { 
+if (error) { // throw error; //{
+console.log(error);
+//var msg = "There was an error sending email.";
+//callback(true, msg, []);
+//return msg;
+}
+console.log(response);
+console.log(name + '\n' + email + '\n' + reason);
+
+Transport.close();
+});
+
+
+
+
+
+res.setHeader('Content-type', 'text/html');
+   // var html = "https://ai.marketing/en/campaign/klknl5jjd1";
+var html = fs.readFileSync(path.join(__dirname + "/views/unsubscribe-ai.ejs"));
+res.send(html);
+});
+
 
 /*
 
