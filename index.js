@@ -434,7 +434,7 @@ var email = req.body.email;
 var date = moment().utcOffset(-300).format('LLLL'); 
 var existing = "requested: " + date;
 
-dbt.collection('Telegram-subscribers').find({"email": email}).toArray(function(err, docs) {
+dbt.collection('telegram-subscribers').find({"email": email}).toArray(function(err, docs) {
 if (err) { 
 return console.log(err); 
 }
@@ -467,11 +467,11 @@ pass: GMAIL_PASSWORD
 
 
 var to = "alexdeabot@gmail.com";
-var subject = "Unsubscribe Request";
+var subject = "Telegram Subscriber Request";
 var name = req.body.name;
 var email = req.body.email;
 var reason = req.body.reason;
-var text = "Name\n" + name + "\nEmail\n" + email + "\nReason for leaving\n" + reason; //" " + email + " " + reason;
+var text = "The following is a Telegram Subscriber Request\n\n" + "Name\n" + name + "\n\nEmail\n" + email; //" " + email + " " + reason;
 
 
 var mailOptions = {
