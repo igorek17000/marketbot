@@ -470,8 +470,8 @@ var to = "alexdeabot@gmail.com";
 var subject = "Telegram Subscriber Request";
 var name = req.body.name;
 var email = req.body.email;
-var reason = req.body.reason;
-var text = "The following is a Telegram Subscriber Request\n\n" + "Name\n" + name + "\n\nEmail\n" + email; //" " + email + " " + reason;
+var registered = req.body.registered;
+var text = "The following is a Telegram Subscriber Request\n\n" + "Name\n" + name + "\n\nEmail\n" + email + "\n\nRegistered\n" + registered; //" " + email + " " + reason;
 
 
 var mailOptions = {
@@ -495,7 +495,7 @@ console.log(error);
 //return msg;
 }
 console.log(response);
-console.log(name + '\n' + email + '\n' + reason);
+console.log(name + '\n' + email + '\n' + registered);
 
 Transport.close();
 });
@@ -506,7 +506,7 @@ Transport.close();
 
 res.setHeader('Content-type', 'text/html');
    // var html = "https://ai.marketing/en/campaign/klknl5jjd1";
-var html = fs.readFileSync(path.join(__dirname + "/views/unsubscribe-ai.ejs"));
+var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs"));
 res.send(html);
 });
 
