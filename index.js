@@ -349,7 +349,7 @@ function ping() {
   this.res.end(); //"I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 }
 
-app.get('/', (req, res) => {
+app.get('/marketbot', (req, res) => {
 var date = moment().utcOffset(-300).format('LLLL'); 
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var ipp = ip.split(/, /)[0];
@@ -427,7 +427,7 @@ var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs")); 
 res.send(html);
 });
 
-app.get('/marketbot', (req, res) => {
+app.get('/', (req, res) => {
 var date = moment().utcOffset(-300).format('LLLL'); 
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var ipp = ip.split(/, /)[0];
