@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.marketbotai.com/views/hcaptchabutton.ejs</loc>
+    <image:image>
+      <image:loc>https://www.marketbotai.com/views/partials/ai-4-1.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marketbotai.com/views/partials/blur.39d7f02.jpg</image:loc>
+    </image:image>
+<image:image>
+      <image:loc>https://thumbs2.imgbox.com/7a/d8/sTpX7WwZ_t.jpg</image:loc>
+    </image:image>
+  </url>
+</urlset>
