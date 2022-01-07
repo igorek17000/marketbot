@@ -663,3 +663,19 @@ var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs"));
 res.send(html);
 });
 */
+
+app.get('/sitemap.xml', async function(req, res, next){ 
+let xml_content = [ 
+'<?xml version="1.0" encoding="UTF-8"?>', 
+'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+'<xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">', 
+'<xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">',
+' <url>', 
+' <loc>https://www.marketbotai.com/</loc>', 
+' <lastmod>2022-01-07T22:07:55+00:00</lastmod>', 
+' </url>', 
+'</urlset>' 
+] 
+res.set('Content-Type', 'text/xml');
+res.send(xml_content.join('\n'));
+});
