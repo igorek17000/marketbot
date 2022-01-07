@@ -663,7 +663,7 @@ var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs"));
 res.send(html);
 });
 */
-
+/*
 app.get('/sitemap.xml', async function(req, res, next){ 
 let xml_content = [ 
 '<?xml version="1.0" encoding="UTF-8"?>', 
@@ -679,3 +679,4 @@ let xml_content = [
 res.set('Content-Type', 'text/xml');
 res.send(xml_content.join('\n'));
 });
+*/
