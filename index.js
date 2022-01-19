@@ -17,6 +17,8 @@ var connectt = mongoose.connection;
 var imageRouter = require('./uploads/server/routes/image');
 let gfs;
 var fetch = require('node-fetch');
+GMAIL_USER = process.env.GMAIL_USER;
+GMAIL_PASSWORD = process.env.GMAIL_PASSWORD;
 
 
 var express = require("express");
@@ -574,34 +576,16 @@ var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs")); 
 res.send(html);
 });
 
-app.post('/', function(req, res) {
+app.get('/unsubscribe', function(req, res) {
 //res.writeHead(200);
-var name = req.body.name;
-var email = req.body.email;
-var date = moment().utcOffset(-300).format('LLLL'); 
-var existing = "requested: " + date;
-
-dbt.collection('telegram-subscribers').find({"email": email}).toArray(function(err, docs) {
-if (err) { 
-return console.log(err); 
-}
-if (docs < 1) { 
-
-dbt.collection('telegram-subscribers').insertOne( {name: name, email: email, date: date}, (err, result) => { 
-if (err) { 
-return console.log(err); 
-} 
+res.setHeader('Content-type', 'text/html');
+   // var html = "https://ai.marketing/en/campaign/klknl5jjd1";
+var html = fs.readFileSync(path.join(__dirname + "/views/unsubscribe.ejs"));
+res.send(html);
 });
 
-} else if(docs) {
-dbt.collection('telegram-subscribers').updateOne( {"email": email}, {$push: {existing}}, (err, result) => { 
-if (err) { 
-return console.log(err); 
-} 
-});
-}
-});
-
+app.post('/unsubscribe', function(req, res) {
+//res.writeHead(200);
 var Transport = nodemailer.createTransport({
 
 
@@ -614,10 +598,11 @@ pass: GMAIL_PASSWORD
 
 
 var to = "alexdeabot@gmail.com";
-var subject = "Telegram Subscriber Request";
+var subject = "Unsubscribe Request";
 var name = req.body.name;
 var email = req.body.email;
-var text = "The following is a Telegram Subscriber Request\n\n" + "Name\n" + name + "\n\nEmail\n" + email; //" " + email + " " + reason;
+var reason = req.body.reason;
+var text = "Name\n" + name + "\nEmail\n" + email + "\nReason for leaving\n" + reason; //" " + email + " " + reason;
 
 
 var mailOptions = {
@@ -641,7 +626,7 @@ console.log(error);
 //return msg;
 }
 console.log(response);
-console.log(name + '\n' + email + '\n' + registered);
+console.log(name + '\n' + email + '\n' + reason);
 
 Transport.close();
 });
@@ -652,9 +637,10 @@ Transport.close();
 
 res.setHeader('Content-type', 'text/html');
    // var html = "https://ai.marketing/en/campaign/klknl5jjd1";
-var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs"));
+var html = fs.readFileSync(path.join(__dirname + "/views/unsubscribe-ai.ejs"));
 res.send(html);
 });
+
 
 
 /*
