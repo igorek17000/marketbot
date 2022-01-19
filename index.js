@@ -333,6 +333,8 @@ res.send(html);
 });
 
 
+/*
+
 app.get('/unsubscribe', function(req, res) {
 //res.writeHead(200);
 res.setHeader('Content-type', 'text/html');
@@ -397,7 +399,7 @@ res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/unsubscribe-ai.ejs"));
 res.send(html);
 });
-
+*/
 
 app.post('/clicked', (req, res) => { 
 var date = moment().utcOffset(-240).format('LLLL');
