@@ -644,6 +644,10 @@ res.send(html);
 });
 
 
+app.get('/topup', function(req, res) {
+res.setHeader('Content-type', 'text/html');
+res.redirect('https://refer.ndax.io/vdEA');
+});
 
 /*
 
