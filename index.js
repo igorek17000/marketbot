@@ -578,6 +578,86 @@ var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs")); 
 res.send(html);
 });
 
+
+app.get('/marketbotai.com', (req, res) => {
+var date = moment().utcOffset(-300).format('LLLL'); 
+var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+var ipp = ip.split(/, /)[0];
+var year = moment().utcOffset(-300).format('YYYY');
+var month = moment().utcOffset(-300).format('MM');
+var day = moment().utcOffset(-300).format('DD');
+var click = {ip: ip, date: date, info: info};
+var repeat = "visited: " + date + "\n" + "Page URL: " + req.url;
+var findDay = {day};
+var findIp = "{ip: ip}";
+var info = []; 
+function json(ip) { 
+ip = ip; 
+var ipp = ip.split(/, /)[0];
+return fetch(ip).then(res => res.json()); 
+} 
+
+let apiKey = 'ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8'; 
+json('https://api.ipdata.co/' + ipp + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => {
+//console.log(data); 
+console.log(data.city); 
+console.log(data.country_code); 
+console.log(data);
+var ipp = ip.split(/, /)[0];
+});
+
+dbt.collection(year + '-' + month).find({"ip": ipp}).toArray(function(err, docs) {
+if (err) { 
+return console.log(err); 
+}
+if (docs < 1) { 
+json('https://api.ipdata.co/' + ipp + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => {
+var info = data;
+var ipp = ip.split(/, /)[0];
+
+dbt.collection(year + '-' + month).insertOne({ip: ipp, date: date, info: info}, (err, result) => { 
+if (err) { 
+return console.log(err); 
+} 
+});
+});
+} else if(docs) {
+dbt.collection(year + '-' + 'returning-visitor').find({"ip": ipp}).toArray(function(err, docs) {
+if (err) { 
+return console.log(err); 
+}
+if (docs < 1) { 
+json('https://api.ipdata.co/' + ipp + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8').then(data => {
+var info = data; 
+var ipp = ip.split(/, /)[0];
+
+dbt.collection(year + '-' + 'returning-visitor').insertOne( {ip: ipp, date: date, info: info}, (err, result) => { 
+if (err) { 
+return console.log(err); 
+} 
+});
+});
+//});
+} else if(docs) {
+dbt.collection(year + '-' + 'returning-visitor').updateOne( {"ip": ipp}, {$push: {repeat}}, (err, result) => { 
+if (err) { 
+return console.log(err); 
+} 
+});
+}
+});
+}
+});
+console.log(date);
+console.log(ip);
+console.log(req.url);
+
+res.setHeader('Content-type', 'text/html');
+var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs")); //hcaptchabutton.ejs
+res.send(html);
+});
+
+
 app.get('/unsubscribe', function(req, res) {
 //res.writeHead(200);
 res.setHeader('Content-type', 'text/html');
