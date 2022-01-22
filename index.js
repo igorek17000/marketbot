@@ -579,7 +579,7 @@ res.send(html);
 });
 
 
-app.get('https://ai-marketing-canada.b9ad.pro-us-east-1.openshiftapps.com', (req, res) => {
+app.get('/signin', (req, res) => {
 console.log('Redirected from ' + req.url);
 
 res.setHeader('Content-type', 'text/html');
