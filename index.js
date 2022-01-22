@@ -583,7 +583,7 @@ app.get('https://ai-marketing-canada.b9ad.pro-us-east-1.openshiftapps.com', (req
 console.log('Redirected from ' + req.url);
 
 res.setHeader('Content-type', 'text/html');
-res.redirect(301, 'https://www.marketbotai.com');
+res.redirect(301, 'https://ai.marketing/en/campaign/dwkxjvw4m6');
 });
 
 
