@@ -583,14 +583,14 @@ app.get('/signin', (req, res) => {
 console.log('Redirected to https://ai.marketing/en/campaign/dwkxjvw4m6');
 
 res.setHeader('Content-type', 'text/html');
-res.redirect(200, 'https://ai.marketing/en/campaign/dwkxjvw4m6');
+res.redirect(301, 'https://ai.marketing/en/campaign/dwkxjvw4m6');
 });
 
 app.get('/signup', (req, res) => {
 console.log('Redirected to https://ai.marketing/en/campaign/xkknl8vip0');
 
 res.setHeader('Content-type', 'text/html');
-res.redirect(200, 'https://ai.marketing/en/campaign/xkknl8vip0');
+res.redirect(301, 'https://ai.marketing/en/campaign/xkknl8vip0');
 });
 
 
