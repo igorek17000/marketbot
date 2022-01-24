@@ -578,22 +578,6 @@ var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs")); 
 res.send(html);
 });
 
-
-app.get('/signin', (req, res) => {
-console.log('Redirected to https://ai.marketing/en/campaign/dwkxjvw4m6');
-
-res.setHeader('Content-type', 'text/html');
-res.redirect(301, 'https://ai.marketing/en/campaign/dwkxjvw4m6');
-});
-
-app.get('/signup', (req, res) => {
-console.log('Redirected to https://ai.marketing/en/campaign/xkknl8vip0');
-
-res.setHeader('Content-type', 'text/html');
-res.redirect(301, 'https://ai.marketing/en/campaign/xkknl8vip0');
-});
-
-
 app.get('/unsubscribe', function(req, res) {
 //res.writeHead(200);
 res.setHeader('Content-type', 'text/html');
@@ -634,8 +618,6 @@ text: text
 };
 
 
-
-
 Transport.sendMail(mailOptions, function(error, response) { 
 if (error) { // throw error; //{
 console.log(error);
@@ -650,9 +632,6 @@ Transport.close();
 });
 
 
-
-
-
 res.setHeader('Content-type', 'text/html');
    // var html = "https://ai.marketing/en/campaign/klknl5jjd1";
 var html = fs.readFileSync(path.join(__dirname + "/views/unsubscribe-ai.ejs"));
@@ -661,12 +640,25 @@ res.send(html);
 
 
 app.get('/topup', function(req, res) {
+console.log('Redirected to https://refer.ndax.io/vdEA');
 res.setHeader('Content-type', 'text/html');
 res.redirect(301, 'https://refer.ndax.io/vdEA');
 });
 
-/*
+app.get('/signin', (req, res) => {
+console.log('Redirected to https://ai.marketing/en/campaign/dwkxjvw4m6');
+res.setHeader('Content-type', 'text/html');
+res.redirect(301, 'https://ai.marketing/en/campaign/dwkxjvw4m6');
+});
 
+app.get('/signup', (req, res) => {
+console.log('Redirected to https://ai.marketing/en/campaign/xkknl8vip0');
+res.setHeader('Content-type', 'text/html');
+res.redirect(301, 'https://ai.marketing/en/campaign/xkknl8vip0');
+});
+
+
+/*
 app.get('/', (req, res) => {
 var date = moment().utcOffset(-300).format('LLLL'); 
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
