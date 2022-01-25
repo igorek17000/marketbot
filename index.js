@@ -254,7 +254,7 @@ res.send(html);
 });
 */
 
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
 var date = moment().utcOffset(-300).format('LLLL'); 
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var ipp = ip.split(/, /)[0];
@@ -500,7 +500,7 @@ var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs")); 
 res.send(html);
 });
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
 var date = moment().utcOffset(-300).format('LLLL'); 
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var ipp = ip.split(/, /)[0];
