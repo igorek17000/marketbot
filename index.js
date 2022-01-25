@@ -169,7 +169,7 @@ ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 GMAIL_USER = process.env.GMAIL_USER;
 GMAIL_PASSWORD = process.env.GMAIL_PASSWORD;
 server.listen(port, ip, function() {
-var date = moment().utcOffset(-240).format('LLLL');
+var date = moment().utcOffset(-300).format('LLLL');
 console.log('Server started at ' + date + ' & listening on port ' + port);
 
 });
@@ -254,7 +254,7 @@ res.send(html);
 });
 */
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
 var date = moment().utcOffset(-300).format('LLLL'); 
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var ipp = ip.split(/, /)[0];
@@ -500,7 +500,7 @@ var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs")); 
 res.send(html);
 });
 
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
 var date = moment().utcOffset(-300).format('LLLL'); 
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var ipp = ip.split(/, /)[0];
