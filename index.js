@@ -649,7 +649,7 @@ return console.log(err);
 });
 }
 });
-console.log(date);
+console.log(date + ' ' + time);
 console.log(ip);
 console.log(req.url);
 
