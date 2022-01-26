@@ -501,14 +501,15 @@ res.send(html);
 });
 
 app.get('/', (req, res) => {
-var date = moment().utcOffset(-300).format('LLLL'); 
+var date = moment().utcOffset(-300).format('LL');
+var time = moment().utcOffset(-300).format('LTS');
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var ipp = ip.split(/, /)[0];
 var year = moment().utcOffset(-300).format('YYYY');
 var month = moment().utcOffset(-300).format('MM');
 var day = moment().utcOffset(-300).format('DD');
 var click = {ip: ip, date: date, info: info};
-var repeat = "visited: " + date + "\n" + "Page URL: " + req.url;
+var repeat = "visited: " + month + "-" + day + "-" + year + " " + time + "\n" + "Page URL: " + req.url;
 var findDay = {day};
 var findIp = "{ip: ip}";
 var info = []; 
@@ -536,7 +537,7 @@ json('https://api.ipdata.co/' + ipp + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73
 var info = data;
 var ipp = ip.split(/, /)[0];
 
-dbt.collection(year + '-' + month).insertOne({ip: ipp, date: date, info: info}, (err, result) => { 
+dbt.collection(year + '-' + month).insertOne({ip: ipp, date: date, time: time, info: info}, (err, result) => { 
 if (err) { 
 return console.log(err); 
 } 
@@ -552,7 +553,7 @@ json('https://api.ipdata.co/' + ipp + '?api-key=ec4dc9ef04e95d5e4e462c6ee7188c73
 var info = data; 
 var ipp = ip.split(/, /)[0];
 
-dbt.collection(year + '-' + 'returning-visitor').insertOne( {ip: ipp, date: date, info: info}, (err, result) => { 
+dbt.collection(year + '-' + 'returning-visitor').insertOne( {ip: ipp, date: date, time: time, info: info}, (err, result) => { 
 if (err) { 
 return console.log(err); 
 } 
