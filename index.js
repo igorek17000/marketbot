@@ -655,7 +655,8 @@ console.log(req.url);
 
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs")); //hcaptchabutton.ejs
-res.send(html);
+//res.send(html);
+res.render('marketbothome.ejs');
 });
 
 
