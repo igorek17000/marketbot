@@ -21,10 +21,10 @@ GMAIL_USER = process.env.GMAIL_USER;
 GMAIL_PASSWORD = process.env.GMAIL_PASSWORD;
 
 
-var express = require("express");
-var bodyParser = require("body-parser");
+//var express = require("express");
+var bodyParser = require('body-parser");
 var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
-var app = express();
+//var app = express();
 var upp = require('./uploads/server/app.js'); //express();
 var uppp = express(); //require('./uploads/routes/image');
 var mongoose = require('mongoose');
@@ -576,7 +576,7 @@ console.log(req.url);
 
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/marketbothome.ejs")); //hcaptchabutton.ejs")); //hcaptchabutton.ejs
-res.send(html);
+res.render('/marketbothome.ejs');
 });
 
 app.get('/', (req, res) => {
