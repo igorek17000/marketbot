@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>marketbotai.com</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("form").submit(function(){
+    alert("Your request has been submitted, please allow 24 hours for changes to take effect.");
+  });
+});
+</script>
+
+<style>
+
+body {
+background: linear-gradient(to right, #003665, #00a3b6);
+color: white;
+height: 100%;
+font-family: 'Courier New', Courier;
+font-size: 25px;
+}
+
+
+input {
+    font-family: 'Courier New', Courier;
+    width: 40%;
+    font-size: 20px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 2px solid #767474;
+}
+    input[type=submit] {
+    font-family: 'Courier New', Courier;
+    font-size: 1.1rem; 
+    font-weight: 400;
+    width: 20%;
+    text-align: center;
+    color: #fff; 
+    background-color: #007bff; 
+    cursor: pointer;
+    border: none;
+    padding: 16px 32px;
+    margin: 4px 2px;
+    border-radius: 10px;
+}
+
+
+
+.topleft {
+  position: absolute;
+  top: 2%;
+  left: 3%;
+  color: white;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 10%;
+width: 100%;
+  text-align: center;
+  
+  color: white;
+}
+
+</style>
+</head>
+<body>
+
+
+<div class='topleft'>
+    <p>Marketbotai.com</p>
+</div>
+     <div class='bottom'>
+            <form name="myform" method="post" action="/unsubscribe">
+            <p><strong>To unsubscribe, please submit your details</strong><br><br></p>
+            <input class="box" type="text" name="name" id="name" placeholder="Name" required/></br>
+          <input class="box" type="email" name="email" id="email" placeholder="Email" required/></br>
+            <input class="box" type="reason" name="reason" id="reason" placeholder="Reason for leaving (Optional)"/></br></br>
+         
+<input type="submit" id="submitDetails" name="submitDetails" value="Submit"/> <!--onclick="validate()"/>-->
+</form>
+
+</div>
+
+</body>
+</html>
