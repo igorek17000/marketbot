@@ -40,19 +40,7 @@ director    = require('director');
 
 router = new director.http.Router({
 
-  '/init' : {
-    get:  bot.init,
-    post: bot.init
-  },
-
-  '/commands' : {
-   post: bot.commands
-},
-
-  '/bot/:botRoom' : {
-    get: ping,
-    post: bot.respond
-  },
+ 
 });
 
 server = http.createServer(function(req, res) {
