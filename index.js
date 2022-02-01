@@ -318,7 +318,7 @@ console.log(req.url);
 
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/home.ejs")); //hcaptchabutton.ejs
-res.render('marketbothome.ejs');
+res.render('home.ejs');
 });
 
 
