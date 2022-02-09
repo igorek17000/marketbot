@@ -87,7 +87,7 @@ function ping() {
   this.res.writeHead(200);
   this.res.end(); //"I am AlexBot.\n\For a list of commands go to\n\http://nodejs-mongo-persistent-cc.b9ad.pro-us-east-1.openshiftapps.com/login");
 }
-
+/*
 app.get('/p', (req, res) => {
 var date = moment().utcOffset(-300).format('LL');
 var time = moment().utcOffset(-300).format('LTS');
@@ -164,7 +164,7 @@ res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/marketbothome.ejs")); //hcaptchabutton.ejs")); //hcaptchabutton.ejs
 res.render('marketbothome.ejs');
 });
-
+*/
 app.get('/', (req, res) => {
 var date = moment().utcOffset(-300).format('LL');
 var time = moment().utcOffset(-300).format('LTS');
@@ -240,7 +240,7 @@ console.log(req.url);
 
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs")); //hcaptchabutton.ejs
-res.render('marketbothome.ejs');
+res.render('hcaptchabutton.ejs');
 });
 
 app.get('/home', (req, res) => {
