@@ -372,17 +372,17 @@ res.send(html);
 app.get('/topup', function(req, res) {
 console.log('Redirected to https://refer.ndax.io/vdEA');
 res.setHeader('Content-type', 'text/html');
-res.redirect(301, 'https://refer.ndax.io/vdEA');
+res.status(301).redirect('https://refer.ndax.io/vdEA');
 });
 
 app.get('/signin', (req, res) => {
 console.log('Redirected to https://ai.marketing/en/campaign/dwkxjvw4m6');
 res.setHeader('Content-type', 'text/html');
-res.redirect(301, 'https://ai.marketing/en/campaign/dwkxjvw4m6');
+res.status(301).redirect('https://ai.marketing/en/campaign/dwkxjvw4m6');
 });
 
 app.get('/signup', (req, res) => {
 console.log('Redirected to https://ai.marketing/en/campaign/xkknl8vip0');
 res.setHeader('Content-type', 'text/html');
-res.redirect(301, 'https://ai.marketing/en/campaign/xkknl8vip0');
+res.status(301).redirect('https://ai.marketing/en/campaign/xkknl8vip0');
 });
