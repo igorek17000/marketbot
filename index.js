@@ -240,7 +240,7 @@ console.log(req.url);
 
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/hcaptchabutton.ejs")); //hcaptchabutton.ejs
-res.render('menu.ejs'); //hcaptchabutton.ejs');
+res.render('hcaptchabutton.ejs');
 });
 
 app.get('/home', (req, res) => {
