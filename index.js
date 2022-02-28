@@ -387,6 +387,9 @@ res.setHeader('Content-type', 'text/html');
 res.status(301).redirect('https://ai.marketing/en/campaign/xkknl8vip0');
 });
 
-app.get('/sitemap.xml', function(req, res) { 
-res.sendFile('sitemap.xml');
+app.get('/sitemap.xml', function(req, res) {
+res.setHeader('Content-type', 'text/xml');
+var html = fs.readFileSync(path.join(__dirname + "/views/sitemap.xml"));
+res.send(html);
+//res.sendFile('sitemap.xml');
 });
