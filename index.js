@@ -386,3 +386,7 @@ console.log('Redirected to https://ai.marketing/en/campaign/xkknl8vip0');
 res.setHeader('Content-type', 'text/html');
 res.status(301).redirect('https://ai.marketing/en/campaign/xkknl8vip0');
 });
+
+app.get('/sitemap.xml', function(req, res) { 
+res.sendFile('sitemap.xml');
+});
