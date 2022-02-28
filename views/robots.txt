@@ -1,0 +1,4 @@
+Sitemap: https://www.marketbotai.com/sitemap.xml
+User-agent: *
+Allow: /*
+Disallow: /api/*
