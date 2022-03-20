@@ -16,13 +16,13 @@ gtag('config', 'UA-199797979-2');
 <title>MarketBot</title>
 <link data-n-head="1" rel="icon" type="image/x-icon" href="/favicon-32x32-1.png">
 <meta name="description" content="Wait what, An Artificial Intelligence Robot. The digital world is inheriting the use of Bots. An Autonomous computer program on the internet or another network that can interact with systems or users. Put the internet to work for you. Hire a Bot today">
-<link rel="canonical" href="https://www.marketbotai.com/info">
+<link rel="canonical" href="https://ai-aii.b9ad.pro-us-east-1.openshiftapps.com/menu-home.ejs">
 <link rel="shortcut icon" href="/favicon-32x32-1.png" type="image/x-icon">
 
 <style>
 @media screen and (max-width: 500px) {
 html {
-font-size: 16px !important;
+font-size: 18px !important;
 }
 #css-top-div {
 min-height: 70% !important;
@@ -32,7 +32,7 @@ top: 1%;
 width: 100%;
 }
 #css-bottom-div { 
-font-size: 10px !important;
+font-size: 8px !important;
 }
 #parent a {
 font-size: 16px !important;
@@ -210,6 +210,7 @@ margin-right: 1px;
 </ul>
 <h1>MarketBot</h1>
 <img width="183" height="150" src="/animation.c88f848.svg" alt="ai marketing logo">
+
 <div id="css-padding">Wait what, An Artificial Intelligence Robot?<br>The digital world is inheriting the use of Bots.<br>An Autonomous computer program on the internet or another network that can interact with systems or users.<br>Put the internet to work for you. Hire a Bot today<br><br></div>
 <div id="css-bottom">Find out how AI Marketing's MarketBot can change your business. <br> Click below to watch a video tutorial <br><br> <a href="https://ai.marketing/en/campaign/xkknl8vip0">Watch Video</a></div>
 </div>
