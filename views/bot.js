@@ -16,7 +16,7 @@ gtag('config', 'UA-199797979-2');
 <title>MarketBot</title>
 <link data-n-head="1" rel="icon" type="image/x-icon" href="/favicon-32x32-1.png">
 <meta name="description" content="Wait what, An Artificial Intelligence Robot. The digital world is inheriting the use of Bots. An Autonomous computer program on the internet or another network that can interact with systems or users. Put the internet to work for you. Hire a Bot today">
-<link rel="canonical" href="https://ai-aii.b9ad.pro-us-east-1.openshiftapps.com/menu-home.ejs">
+<link rel="canonical" href="https://www.marketbotai.com/bot">
 <link rel="shortcut icon" href="/favicon-32x32-1.png" type="image/x-icon">
 
 <style>
