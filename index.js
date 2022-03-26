@@ -402,7 +402,7 @@ res.render('hcaptchabutton.ejs');
 
 app.get('/unsubscribe', function(req, res) {
 res.setHeader('Content-type', 'text/html');
-var html = fs.readFileSync(path.join(__dirname + "/views/unsubscribe.ejs"));
+var html = fs.readFileSync(path.join(__dirname + "/views/un-test.ejs"));
 res.send(html);
 });
 
@@ -442,7 +442,7 @@ Transport.close();
 });
 
 res.setHeader('Content-type', 'text/html');
-var html = fs.readFileSync(path.join(__dirname + "/views/unsubscribe-ai.ejs"));
+var html = fs.readFileSync(path.join(__dirname + "/views/un-test-ai.ejs"));
 res.send(html);
 });
 
