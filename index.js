@@ -67,7 +67,7 @@ ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 GMAIL_USER = process.env.GMAIL_USER;
 GMAIL_PASSWORD = process.env.GMAIL_PASSWORD;
 server.listen(port, ip, function() {
-var date = moment().utcOffset(-300).format('LLLL');
+var date = moment().utcOffset(-240).format('LLLL');
 console.log('Server started at ' + date + ' & listening on port ' + port);
 
 });
@@ -89,13 +89,13 @@ function ping() {
 }
 /*
 app.get('/p', (req, res) => {
-var date = moment().utcOffset(-300).format('LL');
-var time = moment().utcOffset(-300).format('LTS');
+var date = moment().utcOffset(-240).format('LL');
+var time = moment().utcOffset(-240).format('LTS');
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var ipp = ip.split(/, /)[0];
-var year = moment().utcOffset(-300).format('YYYY');
-var month = moment().utcOffset(-300).format('MM');
-var day = moment().utcOffset(-300).format('DD');
+var year = moment().utcOffset(-240).format('YYYY');
+var month = moment().utcOffset(-240).format('MM');
+var day = moment().utcOffset(-240).format('DD');
 var click = {ip: ip, date: date, info: info};
 var repeat = "visited: " + month + "-" + day + "-" + year + " " + time + "\n" + "Page URL: " + req.url;
 var findDay = {day};
@@ -166,13 +166,13 @@ res.render('marketbothome.ejs');
 });
 */
 app.get('/', (req, res) => {
-var date = moment().utcOffset(-300).format('LL');
-var time = moment().utcOffset(-300).format('LTS');
+var date = moment().utcOffset(-240).format('LL');
+var time = moment().utcOffset(-240).format('LTS');
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var ipp = ip.split(/, /)[0];
-var year = moment().utcOffset(-300).format('YYYY');
-var month = moment().utcOffset(-300).format('MM');
-var day = moment().utcOffset(-300).format('DD');
+var year = moment().utcOffset(-240).format('YYYY');
+var month = moment().utcOffset(-240).format('MM');
+var day = moment().utcOffset(-240).format('DD');
 var click = {ip: ip, date: date, info: info};
 var repeat = "visited: " + month + "-" + day + "-" + year + " " + time + "\n" + "Page URL: " + req.url;
 var findDay = {day};
@@ -244,13 +244,13 @@ res.render('menu.ejs'); //hcaptchabutton.ejs');
 });
 
 app.get('/bot', (req, res) => {
-var date = moment().utcOffset(-300).format('LL');
-var time = moment().utcOffset(-300).format('LTS');
+var date = moment().utcOffset(-240).format('LL');
+var time = moment().utcOffset(-240).format('LTS');
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var ipp = ip.split(/, /)[0];
-var year = moment().utcOffset(-300).format('YYYY');
-var month = moment().utcOffset(-300).format('MM');
-var day = moment().utcOffset(-300).format('DD');
+var year = moment().utcOffset(-240).format('YYYY');
+var month = moment().utcOffset(-240).format('MM');
+var day = moment().utcOffset(-240).format('DD');
 var click = {ip: ip, date: date, info: info};
 var repeat = "visited: " + month + "-" + day + "-" + year + " " + time + "\n" + "Page URL: " + req.url;
 var findDay = {day};
@@ -322,13 +322,13 @@ res.render('bot.ejs'); //hcaptchabutton.ejs');
 });
 
 app.get('/home', (req, res) => {
-var date = moment().utcOffset(-300).format('LL');
-var time = moment().utcOffset(-300).format('LTS');
+var date = moment().utcOffset(-240).format('LL');
+var time = moment().utcOffset(-240).format('LTS');
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var ipp = ip.split(/, /)[0];
-var year = moment().utcOffset(-300).format('YYYY');
-var month = moment().utcOffset(-300).format('MM');
-var day = moment().utcOffset(-300).format('DD');
+var year = moment().utcOffset(-240).format('YYYY');
+var month = moment().utcOffset(-240).format('MM');
+var day = moment().utcOffset(-240).format('DD');
 var click = {ip: ip, date: date, info: info};
 var repeat = "visited: " + month + "-" + day + "-" + year + " " + time + "\n" + "Page URL: " + req.url;
 var findDay = {day};
