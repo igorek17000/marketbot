@@ -34,6 +34,15 @@ var path = require('path');
 var fs = require('fs');
 var http, director, bot, router, server, port, ip, db, GMAIL_USER, GMAIL_PASSWORD;
 
+app.enable('trust proxy');
+
+app.use(function(request, response, next) {
+if (process.env.NODE_ENV != 'development' && !request.secure) {
+return response.redirect("https://" + request.headers.host + request.url);
+}
+next();
+});
+
 http        = require('http');
 director    = require('director');
 
@@ -236,6 +245,7 @@ return console.log(err);
 });
 console.log(date + ' ' + time);
 console.log(ip);
+console.log(req.protocol + '://' + req.hostname + req.url);
 console.log(req.url);
 
 res.setHeader('Content-type', 'text/html');
@@ -314,6 +324,7 @@ return console.log(err);
 });
 console.log(date + ' ' + time);
 console.log(ip);
+console.log(req.protocol + '://' + req.hostname + req.url);
 console.log(req.url);
 
 res.setHeader('Content-type', 'text/html');
@@ -392,6 +403,7 @@ return console.log(err);
 });
 console.log(date + ' ' + time);
 console.log(ip);
+console.log(req.protocol + '://' + req.hostname + req.url);
 console.log(req.url);
 
 res.setHeader('Content-type', 'text/html');
@@ -470,6 +482,7 @@ return console.log(err);
 });
 console.log(date + ' ' + time);
 console.log(ip);
+console.log(req.protocol + '://' + req.hostname + req.url);
 console.log(req.url);
 
 res.setHeader('Content-type', 'text/html');
@@ -479,6 +492,7 @@ res.render('hcaptchabutton.ejs');
 
 
 app.get('/unsubscribe', function(req, res) {
+console.log(req.protocol + '://' + req.hostname + req.url);
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/un-test.ejs"));
 res.send(html);
@@ -519,6 +533,7 @@ console.log(name + '\n' + email + '\n' + reason);
 Transport.close();
 });
 
+console.log(req.protocol + '://' + req.hostname + req.url);
 res.setHeader('Content-type', 'text/html');
 var html = fs.readFileSync(path.join(__dirname + "/views/un-test-ai.ejs"));
 res.send(html);
@@ -526,24 +541,28 @@ res.send(html);
 
 
 app.get('/topup', function(req, res) {
+console.log(req.protocol + '://' + req.hostname + req.url);
 console.log('Redirected to https://refer.ndax.io/vdEA');
 res.setHeader('Content-type', 'text/html');
 res.status(301).redirect('https://refer.ndax.io/vdEA');
 });
 
 app.get('/signin', (req, res) => {
+console.log(req.protocol + '://' + req.hostname + req.url);
 console.log('Redirected to https://ai.marketing/en/campaign/dwkxjvw4m6');
 res.setHeader('Content-type', 'text/html');
 res.status(301).redirect('https://ai.marketing/en/campaign/dwkxjvw4m6');
 });
 
 app.get('/signup', (req, res) => {
+console.log(req.protocol + '://' + req.hostname + req.url);
 console.log('Redirected to https://ai.marketing/en/campaign/xkknl8vip0');
 res.setHeader('Content-type', 'text/html');
 res.status(301).redirect('https://ai.marketing/en/campaign/xkknl8vip0');
 });
 
 app.get('/sitemap.xml', function(req, res) {
+console.log(req.protocol + '://' + req.hostname + req.url);
 res.setHeader('Content-type', 'text/xml');
 var html = fs.readFileSync(path.join(__dirname + "/views/sitemap.xml"));
 res.send(html);
