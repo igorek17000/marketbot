@@ -40,7 +40,7 @@ app.use(function(request, response, next) {
 if (request.headers.host != 'www.marketbotai.com') {
 return response.redirect("https://www.marketbotai.com" + request.url);
 } else if (process.env.NODE_ENV != 'development' && !request.secure) {
-return response.redirect("https://" + request.headers.host + request.url);
+return response.redirect("https://www.marketbotai.com" + request.url);
 }
 next();
 });
