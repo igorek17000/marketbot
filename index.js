@@ -37,7 +37,7 @@ var http, director, bot, router, server, port, ip, db, GMAIL_USER, GMAIL_PASSWOR
 app.enable('trust proxy');
 
 app.use(function(request, response, next) {
-if (request.headers.host != 'www.marketbotai.com') || if (process.env.NODE_ENV != 'development' && !request.secure) {
+if (request.headers.host != 'www.marketbotai.com' || process.env.NODE_ENV != 'development' && !request.secure) {
 return response.redirect("https://www.marketbotai.com" + request.url);
 }
 /*if (process.env.NODE_ENV != 'development' && !request.secure) {
