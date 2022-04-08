@@ -42,8 +42,8 @@ var msg;
 msg = return response.redirect("https://www.marketbotai.com" + request.url);
 */
 if (process.env.NODE_ENV != 'development') {
-if (!request.secure || request.headers.host != 'www.marketbotai.com') {
-return response.redirect("https://www.marketbotai.com" + request.url);
+if (!request.secure || request.headers.host == 'ai-marketing.b9ad.pro-us-east-1.openshiftapps.com' || request.headers.host == 'elb.b9ad.pro-us-east-1.openshiftapps.com') {
+return response.status(301).redirect("https://www.marketbotai.com" + request.url);
 }
 }
 next();
