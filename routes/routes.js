@@ -50,7 +50,7 @@ app.use(async function(req, res, next) {
    //var ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress;
 
 app.get('/', async function(req, res, next) {
-  var ip = var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ip.split(/, /)[0];
 getIpData(ipp);
   //var matchHash = {ip: ipp, reqUrl: req.url, date: date, time: time, info: info};
