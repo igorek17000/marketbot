@@ -70,7 +70,7 @@ dbt.collection(db_table2).find({"ip": ipp}).toArray(function(err, docs) {
     }
   });
 } else if(docs) {
-  dbt.collection(db_table3).updateOne( {"ip": ipp}, {$set: {datee, {push: {repeat}}}}, (err, result) => {
+  dbt.collection(db_table3).updateOne( {"ip": ipp}, {$set: {datee, {$push: {repeat: {datee}}}}}, (err, result) => {
  var datee = moment().utcOffset(-240).format('LL');
  if (err) {
   return console.log(err);
