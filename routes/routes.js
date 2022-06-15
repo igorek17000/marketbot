@@ -20,9 +20,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(async function(req, res, next) {
-  var ipp = req.headers['X-Forwarded-For'] || req.connection.remoteAddress;
-var ip = ipp.split(/, /)[0];
-  var ipdata = await getIpData(ip);
+  var ip = req.headers['X-Forwarded-For'] || req.connection.remoteAddress;
+var ipp = ip.split(/, /)[0];
+  var ipdata = await getIpData(ipp);
   var { is_threat, is_anonymous } = ipdata.threat;
   if (is_threat) {
     console.log("Blocked IP");
@@ -50,11 +50,11 @@ var ip = ipp.split(/, /)[0];
    //var ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress;
 
 app.get('/', async function(req, res, next) {
-  var ipp = req.headers['X-Forwarded-For'] || req.connection.remoteAddress;
-var ip = ipp.split(/, /)[0];
-getIpData(ip);
+  var ip = req.headers['X-Forwarded-For'] || req.connection.remoteAddress;
+var ipp = ip.split(/, /)[0];
+getIpData(ipp);
   //var matchHash = {ip: ipp, reqUrl: req.url, date: date, time: time, info: info};
-  var ipdata = await getIpData(ip);
+  var ipdata = await getIpData(ipp);
   var is_ip = ipdata.ip;
   //var ipp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var reqUrl = req.path; //is_ip;

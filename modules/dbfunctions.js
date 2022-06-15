@@ -20,7 +20,7 @@ mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology:
 
 //exports.getAllDocuments
 var getAllDocuments = async function(reqUrl) {
-  var ipdata = await getIpData(ip);
+  var ipdata = await getIpData(ipp);
   var is_ip = ipdata.ip;
   //var ipp = ip.split(/, /)[0];
   var date = moment().utcOffset(-240).format('LL');
@@ -28,13 +28,13 @@ var getAllDocuments = async function(reqUrl) {
   var year = moment().utcOffset(-240).format('YYYY');
   var month = moment().utcOffset(-240).format('MM');
   var day = moment().utcOffset(-240).format('DD');
-  var matchHash = { ip: ip, reqUrl: reqUrl, date: date, time: time, info: ipdata};
-  var repeat = { date, ip, time, reqUrl};
+  var matchHash = { ip: ipp, reqUrl: reqUrl, date: date, time: time, info: ipdata};
+  var repeat = { date, ipp, time, reqUrl};
   var info = ipdata;
   reqUrl = reqUrl;
 date = date;
-var ip = ip; //is_ip; //ip.split(/, /)[0]; //is_ip;
-dbt.collection(db_table).find({ip}).toArray(function(err, docs) {
+var ipp = ipp; //is_ip; //ip.split(/, /)[0]; //is_ip;
+dbt.collection(db_table).find({ipp}).toArray(function(err, docs) {
 
 if (err) {
 return console.log(err);
@@ -46,7 +46,7 @@ if (docs < 1) {
 }
   });
 } else if(docs) {
-dbt.collection(db_table2).find({ip}).toArray(function(err, docs) {
+dbt.collection(db_table2).find({ipp}).toArray(function(err, docs) {
   if (err) {
   return console.log(err);
 }
@@ -57,7 +57,7 @@ dbt.collection(db_table2).find({ip}).toArray(function(err, docs) {
   }
 });
   } else if(docs) {
-  dbt.collection(db_table3).find({ip}).toArray(function(err, docs) {
+  dbt.collection(db_table3).find({ipp}).toArray(function(err, docs) {
     if (err) {
     return console.log(err);
 }
