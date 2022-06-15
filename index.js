@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
    //var ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress;
 app.use(routes);
 
-app.listen(port, ip, function(error) {
+app.listen(port, function(error) {
   if(error) {
     console.log(error);
   }
