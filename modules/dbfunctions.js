@@ -33,6 +33,7 @@ var getAllDocuments = async function(reqUrl) {
   var info = ipdata;
   reqUrl = reqUrl;
 date = date;
+var ip = ip;
 dbt.collection(db_table).find(is_ip).toArray(function(err, docs) {
 
 if (err) {
