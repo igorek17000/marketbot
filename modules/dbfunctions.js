@@ -22,7 +22,7 @@ mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology:
 var getAllDocuments = async function(reqUrl) {
   var ipdata = await getIpData(ip);
   var is_ip = ipdata.ip;
-  var ipp = is_ip; //ip.split(/, /)[0];
+  var ipp = ip.split(/, /)[0];
   var date = moment().utcOffset(-240).format('LL');
   var time = moment().utcOffset(-240).format('LTS');
   var year = moment().utcOffset(-240).format('YYYY');
@@ -33,8 +33,8 @@ var getAllDocuments = async function(reqUrl) {
   var info = ipdata;
   reqUrl = reqUrl;
 date = date;
-var ip = ip.split(/, /)[0]; //is_ip;
-dbt.collection(db_table).find(is_ip).toArray(function(err, docs) {
+var ip = ip; //ip.split(/, /)[0]; //is_ip;
+dbt.collection(db_table).find(ipp).toArray(function(err, docs) {
 
 if (err) {
 return console.log(err);
@@ -46,7 +46,7 @@ if (docs < 1) {
 }
   });
 } else if(docs) {
-dbt.collection(db_table2).find(is_ip).toArray(function(err, docs) {
+dbt.collection(db_table2).find(ipp).toArray(function(err, docs) {
   if (err) {
   return console.log(err);
 }
@@ -57,7 +57,7 @@ dbt.collection(db_table2).find(is_ip).toArray(function(err, docs) {
   }
 });
   } else if(docs) {
-  dbt.collection(db_table3).find(is_ip).toArray(function(err, docs) {
+  dbt.collection(db_table3).find(ipp).toArray(function(err, docs) {
     if (err) {
     return console.log(err);
 }
@@ -68,7 +68,7 @@ dbt.collection(db_table2).find(is_ip).toArray(function(err, docs) {
     }
   });
 } else if(docs) {
-  dbt.collection(db_table3).updateOne( {"ip": is_ip}, {$push: {repeat}}, (err, result) => {
+  dbt.collection(db_table3).updateOne( {"ip": ipp}, {$push: {repeat}}, (err, result) => {
   if (err) {
   return console.log(err);
   }
