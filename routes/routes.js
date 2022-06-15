@@ -62,9 +62,9 @@ app.get('/', async function(req, res, next) {
 var reqUrl = req.path; //is_ip;
 //var info = [];
   var { is_threat, is_anonymous } = ipdata.threat;
-  if(is_ip == ipp) {
+ // if(is_ip == ipp) {
 getAllDocuments(reqUrl);
-}
+//}
   console.log(req);
   res.status(200).send("Welcome");
 
