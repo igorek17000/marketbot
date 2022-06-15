@@ -22,7 +22,7 @@ mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology:
 var getAllDocuments = async function(reqUrl) {
   var ipdata = await getIpData(ip);
   var is_ip = ipdata.ip;
-  var ipp = ip.split(/, /)[0];
+  //var ipp = ip.split(/, /)[0];
   var date = moment().utcOffset(-240).format('LL');
   var time = moment().utcOffset(-240).format('LTS');
   var year = moment().utcOffset(-240).format('YYYY');

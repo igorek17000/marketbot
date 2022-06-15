@@ -20,8 +20,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(async function(req, res, next) {
-  var ip = req.ip; //req.headers['X-Forwarded-For'] || req.connection.remoteAddress;
-//var ip = ipp.split(/, /)[0];
+  var ipp = req.headers['X-Forwarded-For'] || req.connection.remoteAddress;
+var ip = ipp.split(/, /)[0];
   var ipdata = await getIpData(ip);
   var { is_threat, is_anonymous } = ipdata.threat;
   if (is_threat) {
@@ -50,8 +50,8 @@ app.use(async function(req, res, next) {
    //var ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress;
 
 app.get('/', async function(req, res, next) {
-  var ip = req.ip; //req.headers['X-Forwarded-For'] || req.connection.remoteAddress;
-//var ip = ipp.split(/, /)[0];
+  var ipp = req.headers['X-Forwarded-For'] || req.connection.remoteAddress;
+var ip = ipp.split(/, /)[0];
 getIpData(ip);
   //var matchHash = {ip: ipp, reqUrl: req.url, date: date, time: time, info: info};
   var ipdata = await getIpData(ip);
