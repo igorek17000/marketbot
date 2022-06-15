@@ -20,8 +20,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(async function(req, res, next) {
-  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  var ipp = ip.split(/, /)[0];
+  var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
   var { is_threat, is_anonymous } = ipdata.threat;
   if (is_threat) {
@@ -50,8 +50,8 @@ app.use(async function(req, res, next) {
    //var ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress;
 
 app.get('/', async function(req, res, next) {
-  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  var ipp = ip.split(/, /)[0];
+  var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  var ipp = ippp.split(/, /)[0];
 
 
 //getIpData(ipp);
@@ -64,7 +64,7 @@ var reqUrl = req.path; //is_ip;
 //var info = [];
   var { is_threat, is_anonymous } = ipdata.threat;
 //  if(!is_threat) {
-getAllDocuments(reqUrl);
+getAllDocuments(ipp, reqUrl);
 //}
   console.log(req);
   res.status(200).send("Welcome");
