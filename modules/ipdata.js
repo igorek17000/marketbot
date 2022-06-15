@@ -3,7 +3,7 @@ var axios = require('axios');
 var app = express();
 
 var getIpData = async (ip) => {
-  ip = ip;
+  //ip = ip;
   var IpDataKey = 'ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8';
   try {
     var IpDataKey = 'ec4dc9ef04e95d5e4e462c6ee7188c73ddadfc3016fb1da35b1128d8';
