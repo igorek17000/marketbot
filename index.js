@@ -6,6 +6,7 @@ var axios = require('axios');
 var getIpData = require('./modules/ipdata.js');
 var routes = require('./routes/routes.js');
 var port = 8080;
+app.set('trust proxy', true)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
    extended: true
