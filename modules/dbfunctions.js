@@ -19,7 +19,7 @@ mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology:
 
 
 //exports.getAllDocuments
-var getAllDocuments = async function(reqUrl) {
+var getAllDocuments = async function(ipp, reqUrl) {
   var ipdata = await getIpData(ipp);
   var { is_ip } = ipdata;
   //var ipp = ip.split(/, /)[0];
