@@ -57,14 +57,15 @@ app.get('/', async function(req, res, next) {
 //getIpData(ipp);
   //var matchHash = {ip: ipp, reqUrl: req.url, date: date, time: time, info: info};
   var ipdata = await getIpData(ipp);
-  var { is_ip } = ipdata;
+ipdata;
+  var { ip } = ipdata;
   //var ipp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var reqUrl = req.path; //is_ip;
 //var info = [];
   var { is_threat, is_anonymous } = ipdata.threat;
-  if(!is_threat) {
+//  if(!is_threat) {
 getAllDocuments(reqUrl);
-}
+//}
   console.log(req);
   res.status(200).send("Welcome");
 
