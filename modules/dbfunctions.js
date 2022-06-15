@@ -29,12 +29,12 @@ var getAllDocuments = async function(reqUrl) {
   var month = moment().utcOffset(-240).format('MM');
   var day = moment().utcOffset(-240).format('DD');
   var matchHash = { ip: ip, reqUrl: reqUrl, date: date, time: time, info: ipdata};
-  var repeat = { date, is_ip, time, reqUrl};
+  var repeat = { date, ip, time, reqUrl};
   var info = ipdata;
   reqUrl = reqUrl;
 date = date;
-var ip = ip; //ip.split(/, /)[0]; //is_ip;
-dbt.collection(db_table).find(ip).toArray(function(err, docs) {
+var ip = _is_ip; //ip.split(/, /)[0]; //is_ip;
+dbt.collection(db_table).find({ip}).toArray(function(err, docs) {
 
 if (err) {
 return console.log(err);
@@ -46,7 +46,7 @@ if (docs < 1) {
 }
   });
 } else if(docs) {
-dbt.collection(db_table2).find(ip).toArray(function(err, docs) {
+dbt.collection(db_table2).find({ip}).toArray(function(err, docs) {
   if (err) {
   return console.log(err);
 }
@@ -57,7 +57,7 @@ dbt.collection(db_table2).find(ip).toArray(function(err, docs) {
   }
 });
   } else if(docs) {
-  dbt.collection(db_table3).find(ip).toArray(function(err, docs) {
+  dbt.collection(db_table3).find({ip}).toArray(function(err, docs) {
     if (err) {
     return console.log(err);
 }
@@ -68,7 +68,7 @@ dbt.collection(db_table2).find(ip).toArray(function(err, docs) {
     }
   });
 } else if(docs) {
-  dbt.collection(db_table3).updateOne( {"ip": ipp}, {$push: {repeat}}, (err, result) => {
+  dbt.collection(db_table3).updateOne( {"ip": ip}, {$push: {repeat}}, (err, result) => {
   if (err) {
   return console.log(err);
   }
