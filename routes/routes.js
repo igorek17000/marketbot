@@ -13,13 +13,14 @@ var day = moment().utcOffset(-240).format('DD');
 var getIpData = require('../modules/ipdata.js');
 getAllDocuments = require('../modules/dbfunctions.js')
 //var ip = '24.114.79.251';
+app.set('trust proxy', true);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
    extended: true
 }));
 
 app.use(async function(req, res, next) {
-  var ip = req.connection.remoteAddress; //req.headers['X-Forwarded-For'] || req.connection.remoteAddress;
+  var ip = req.ip; //req.headers['X-Forwarded-For'] || req.connection.remoteAddress;
 //var ip = ipp.split(/, /)[0];
   var ipdata = await getIpData(ip);
   var { is_threat, is_anonymous } = ipdata.threat;
@@ -49,7 +50,7 @@ app.use(async function(req, res, next) {
    //var ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress;
 
 app.get('/', async function(req, res, next) {
-  var ip = req.connection.remoteAddress; //req.headers['X-Forwarded-For'] || req.connection.remoteAddress;
+  var ip = req.ip; //req.headers['X-Forwarded-For'] || req.connection.remoteAddress;
 //var ip = ipp.split(/, /)[0];
 getIpData(ip);
   //var matchHash = {ip: ipp, reqUrl: req.url, date: date, time: time, info: info};
