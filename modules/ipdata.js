@@ -17,4 +17,4 @@ catch (error) {
 return res.data;
 };
 
-module.exports = getIpData(ip);
+module.exports = getIpData;
