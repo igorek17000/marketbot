@@ -5,7 +5,8 @@ var bodyParser = require('body-parser');
 var axios = require('axios');
 var getIpData = require('./modules/ipdata.js');
 var routes = require('./routes/routes.js');
-var port = 8080;
+var port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
+var ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
 app.set('trust proxy', true);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -16,7 +17,7 @@ app.use(bodyParser.urlencoded({
    //var ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress;
 app.use(routes);
 
-app.listen(port, function(error) {
+app.listen(port, ip, function(error) {
   if(error) {
     console.log(error);
   }
