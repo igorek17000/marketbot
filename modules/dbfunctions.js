@@ -71,7 +71,8 @@ dbt.collection(db_table2).find({"ip": ipp}).toArray(function(err, docs) {
       return console.log(err);
     }
   });
-} else if (docs >= 1) {
+} 
+if (docs >= 1) {
       dbt.collection(db_table3).updateOne(updateHash, (err, result) => {
       if (err) {
       return console.log(err);
