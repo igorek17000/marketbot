@@ -71,7 +71,7 @@ dbt.collection(db_table2).find({"ip": ipp}).toArray(function(err, docs) {
       return console.log(err);
     }
   });
-} 
+//} 
 if (docs >= 1) {
       dbt.collection(db_table3).updateOne(updateHash, (err, result) => {
       if (err) {
@@ -79,6 +79,7 @@ if (docs >= 1) {
     }
   
 });
+}
 } else if(docs) {
   dbt.collection(db_table3).updateOne( {"ip": ipp}, {$push: {datee}}, (err, result) => {
  var datee = moment().utcOffset(-240).format('LL');
