@@ -34,7 +34,7 @@ var getAllDocuments = async function(reqUrl) {
   reqUrl = reqUrl;
 date = date;
 var ipp = ipp; //is_ip; //ip.split(/, /)[0]; //is_ip;
-dbt.collection(db_table).find({ipp}).toArray(function(err, docs) {
+dbt.collection(db_table).find({"ip": ipp}).toArray(function(err, docs) {
 
 if (err) {
 return console.log(err);
@@ -46,7 +46,7 @@ if (docs < 1) {
 }
   });
 } else if(docs) {
-dbt.collection(db_table2).find({ipp}).toArray(function(err, docs) {
+dbt.collection(db_table2).find({"ip": ipp}).toArray(function(err, docs) {
   if (err) {
   return console.log(err);
 }
@@ -57,7 +57,7 @@ dbt.collection(db_table2).find({ipp}).toArray(function(err, docs) {
   }
 });
   } else if(docs) {
-  dbt.collection(db_table3).find({ipp}).toArray(function(err, docs) {
+  dbt.collection(db_table3).find({"ip": ipp}).toArray(function(err, docs) {
     if (err) {
     return console.log(err);
 }
