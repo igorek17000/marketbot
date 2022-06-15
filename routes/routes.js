@@ -53,7 +53,7 @@ app.get('/', async function(req, res, next) {
 getIpData(ip);
   //var matchHash = {ip: ipp, reqUrl: req.url, date: date, time: time, info: info};
   var ipdata = await getIpData(ip);
-  //var is_ip = ipdata.ip;
+  var is_ip = ipdata.ip;
   //var ipp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 var reqUrl = req.path; //is_ip;
 //var info = [];
