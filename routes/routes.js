@@ -12,13 +12,15 @@ var month = moment().utcOffset(-240).format('MM');
 var day = moment().utcOffset(-240).format('DD');
 var getIpData = require('../modules/ipdata.js');
 getAllDocuments = require('../modules/dbfunctions.js')
-var ip = '24.114.79.251';
+//var ip = '24.114.79.251';
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
    extended: true
 }));
 
 app.use(async function(req, res, next) {
+  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+
   var ipdata = await getIpData(ip);
   var { is_threat, is_anonymous } = ipdata.threat;
   if (is_threat) {
@@ -47,6 +49,8 @@ app.use(async function(req, res, next) {
    //var ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress;
 
 app.get('/', async function(req, res, next) {
+  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+getIpData(ip);
   //var matchHash = {ip: ipp, reqUrl: req.url, date: date, time: time, info: info};
   var ipdata = await getIpData(ip);
   //var is_ip = ipdata.ip;

@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
    extended: true
 }));
 
-   var ip = '24.114.79.251';
+   //var ip = '24.114.79.251';
    //var ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress;
 app.use(routes);
 
