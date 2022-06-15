@@ -7,7 +7,7 @@ var getIpData = require('./modules/ipdata.js');
 var routes = require('./routes/routes.js');
 var port = Number(process.env.NODEJS_SERVICE_PORT || process.env.PORT || 8080 || 3002);
 var ip = process.env.NODEJS_SERVICE_IP || "0.0.0.0" || "127.0.0.1";
-app.set('trust proxy', true);
+app.enable('trust proxy');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
    extended: true
