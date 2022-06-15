@@ -21,5 +21,5 @@ app.listen(port, function(error) {
   if(error) {
     console.log(error);
   }
-  console.log('Server running on Port: ' + port + ', IP: ' + ip);
+  console.log('Server running on Port: ' + port);
 });
