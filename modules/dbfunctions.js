@@ -25,11 +25,13 @@ var getAllDocuments = async function(ipp, reqUrl) {
   //var ipp = ip.split(/, /)[0];
   var date = moment().utcOffset(-240).format('LL');
   var datee = moment().utcOffset(-240).format('LL');
+ vat dateee = await datee;
   var time = moment().utcOffset(-240).format('LTS');
   var year = moment().utcOffset(-240).format('YYYY');
   var month = moment().utcOffset(-240).format('MM');
   var day = moment().utcOffset(-240).format('DD');
   var matchHash = { ip: ipp, reqUrl: reqUrl, date: date, time: time, info: ipdata};
+  var updateHash = { "repeat": { dateee: { time }}}};
   var repeat = { date, "ip": ipp, time, reqUrl };
  // var datee = date; //+ ":" + repeat;
 var info = ipdata;
@@ -69,6 +71,14 @@ dbt.collection(db_table2).find({"ip": ipp}).toArray(function(err, docs) {
       return console.log(err);
     }
   });
+
+if (docs >= 1) {
+      dbt.collection(db_table3).updateOne(updateHash, (err, result) => {
+      if (err) {
+      return console.log(err);
+    }
+  });
+
 } else if(docs) {
   dbt.collection(db_table3).updateOne( {"ip": ipp}, {$push: {datee}}, (err, result) => {
  var datee = moment().utcOffset(-240).format('LL');
