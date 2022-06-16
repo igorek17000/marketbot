@@ -28,8 +28,8 @@ var getAllDocuments = async function(ipp, reqUrl) {
   var datee = moment().utcOffset(-240).format('MM-DD');
   var time = moment().utcOffset(-240).format('LTS');
 
-var timee = moment().utcOffset(-240).format('LTS');
-var timeee = moment().utcOffset(-240).format('LTS');
+var timee = moment().utcOffset(-240).format('HH:mm');
+//var timeee = moment().utcOffset(-240).format('LTS');
 
   var year = moment().utcOffset(-240).format('YYYY');
   var month = moment().utcOffset(-240).format('MM');
@@ -77,7 +77,7 @@ dbt.collection(db_table2).find({"ip": ipp}).toArray(function(err, docs) {
     }
   });
 } else if(docs) {
-  dbt.collection(db_table3).updateOne( {"ip": ipp}, {$push: {[datee]: {[moment().utcOffset(-240).format('HH:mm')]: date, "ip": ipp, time, reqUrl}}}, (err, result) => {
+  dbt.collection(db_table3).updateOne( {"ip": ipp}, {$push: {[datee]: {[timee]: date, "ip": ipp, time, reqUrl}}}, (err, result) => {
 
   //dbt.collection(db_table3).updateOne( {"ip": ipp}, {$push: {repeat}}, (err, result) => {
   if (err) {
