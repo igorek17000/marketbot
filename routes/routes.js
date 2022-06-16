@@ -29,13 +29,13 @@ app.use(async function(req, res, next) {
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
   if (!is_threat) {
-    console.log("Blocked IP at " + date + " " + time + "\n" + ipdataa);
+    console.log("Blocked IP at " + date + " " + time + "\n" + ipdata.ip);
     res.status(403).end("Access Denied");
     return;
   }
 
     if (!is_known_abuser) {
-    console.log("Blocked IP at " + date + " " + time + "\n" + ipdataa);
+    console.log("Blocked IP at " + date + " " + time + "\n" + ipdataa.city);
     res.status(403).end("Access Denied");
     return;
   }
