@@ -4,6 +4,7 @@ var app = express();
 var routes = express();
 var bodyParser = require('body-parser');
 var axios = require('axios');
+var ejs = require('ejs');
 var moment = require('moment');
 var date = moment().utcOffset(-240).format('LL');
 var time = moment().utcOffset(-240).format('LTS');
@@ -67,7 +68,7 @@ var reqUrl = req.path; //is_ip;
 getAllDocuments(ipp, reqUrl);
 //}
   console.log(req);
-  res.status(200).send("Welcome");
+  res.render('/views/menu2.ejs'); //status(200).send("Welcome");
 
 });
 
