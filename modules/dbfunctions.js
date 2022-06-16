@@ -27,6 +27,8 @@ var getAllDocuments = async function(ipp, reqUrl) {
   var date = moment().utcOffset(-240).format('LL');
   var datee = moment().utcOffset(-240).format('LL');
   var time = moment().utcOffset(-240).format('LTS');
+
+var timee = moment().utcOffset(-240).format('LTS');
   var year = moment().utcOffset(-240).format('YYYY');
   var month = moment().utcOffset(-240).format('MM');
   var day = moment().utcOffset(-240).format('DD');
