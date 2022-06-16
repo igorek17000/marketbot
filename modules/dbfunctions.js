@@ -75,7 +75,7 @@ dbt.collection(db_table2).find({"ip": ipp}).toArray(function(err, docs) {
     }
   });
 } else if(docs) {
-  dbt.collection(db_table3).updateOne( {"ip": ipp}, {$set: {timee: {repeat, timee}}}, (err, result) => {
+  dbt.collection(db_table3).updateOne( {"ip": ipp}, {$set: [timee], {repeat}, {timee}}, (err, result) => {
 
   //dbt.collection(db_table3).updateOne( {"ip": ipp}, {$push: {repeat}}, (err, result) => {
   if (err) {
