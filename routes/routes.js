@@ -24,18 +24,18 @@ app.use(async function(req, res, next) {
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
-  //var ipdataa = ipdata;
+  var ipdataa = ipdata.ip, ipdata.city, ipdata.country_name, ipdata.threat;
   var ipdataa = ipdata;
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
   if (!is_threat) {
-    msg = "Blocked IP at " + date + " " + time + "\n" + ipdata;
+    msg = "Blocked IP at " + date + " " + time + "\n" + ipdataa;
     res.status(403).end("Access Denied");
     return;
   }
 
     if (!is_known_abuser) {
-    //console.log("Blocked IP at " + date + " " + time + "\n" + ipdata.city);
+    console.log("Blocked IP at " + date + " " + time + "\n" + ipdataa);
     res.status(403).end("Access Denied");
     return;
   }
