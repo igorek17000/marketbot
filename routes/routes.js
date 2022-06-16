@@ -68,7 +68,7 @@ var reqUrl = req.path; //is_ip;
 getAllDocuments(ipp, reqUrl);
 //}
   console.log(req);
-  res.render('/views/menu2.ejs'); //status(200).send("Welcome");
+  res.render('menu2.ejs'); //status(200).send("Welcome");
 
 });
 
