@@ -27,25 +27,25 @@ app.use(async function(req, res, next) {
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
   if (!is_threat) {
-    console.log("Blocked IP at " + date + " " + time + "\n" + ipdata);
+    console.log("Blocked IP at " + date + " " + time + "\n" + ipdata.ip);
     res.status(403).end("Access Denied");
     return;
   }
 
     if (!is_known_abuser) {
-    console.log("Blocked IP at " + date + " " + time + "\n" + ipdata);
+    console.log("Blocked IP at " + date + " " + time + "\n" + ipdata.ip);
     res.status(403).end("Access Denied");
     return;
   }
 
     if (is_known_attacker) {
-    console.log("Blocked IP at " + date + " " + time + "\n" + ipdata);
+    console.log("Blocked IP at " + date + " " + time + "\n" + ipdata.ip);
     res.status(403).end("Access Denied");
     return;
   }
 
   if (is_anonymous) {
-    console.log("VPN's are not allowed at " + date + " " + time + "\n" + ipdata);
+    console.log("VPN's are not allowed at " + date + " " + time + "\n" + ipdata.ip);
     res.status(403).end("VPN's are not allowed."); //"VPNs are not allowed");
     return;
   }
