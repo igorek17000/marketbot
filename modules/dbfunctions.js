@@ -77,7 +77,7 @@ dbt.collection(db_table2).find({"ip": ipp}).toArray(function(err, docs) {
     }
   });
 } else if(docs) {
-  dbt.collection(db_table3).updateOne( {"ip": ipp}, {$push: [datee]: {[moment().utcOffset(-240).format('HH:mm')]: date, "ip": ipp, time, reqUrl}}, (err, result) => {
+  dbt.collection(db_table3).updateOne( {"ip": ipp}, {$push: {[datee]: {[moment().utcOffset(-240).format('HH:mm')]: date, "ip": ipp, time, reqUrl}}}, (err, result) => {
 
   //dbt.collection(db_table3).updateOne( {"ip": ipp}, {$push: {repeat}}, (err, result) => {
   if (err) {
