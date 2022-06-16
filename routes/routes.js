@@ -13,7 +13,6 @@ var month = moment().utcOffset(-240).format('MM');
 var day = moment().utcOffset(-240).format('DD');
 var getIpData = require('../modules/ipdata.js');
 getAllDocuments = require('../modules/dbfunctions.js')
-//var ip = '24.114.79.251';
 app.set('trust proxy', true);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -25,7 +24,6 @@ app.use(async function(req, res, next) {
   var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
   var ipdataa = ipdata.ip + ipdata.city + ipdata.country_name + ipdata.threat;
-  //var ipdataa = ipdata;
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
   if (is_threat) {
@@ -48,45 +46,36 @@ app.use(async function(req, res, next) {
 
   if (is_anonymous) {
     console.log("VPN's are not allowed at " + date + " " + time + "\n" + ipdata.ip);
-    res.status(403).end("VPN's are not allowed."); //"VPNs are not allowed");
+    res.status(403).end("VPN's are not allowed.");
     return;
   }
-  //console.log(msg);
-  if (process.env.NODE_ENV != 'development') {
-    /*
-  if (!req.secure) { // || request.headers.host == 'elb.b9ad.pro-us-east-1.openshiftapps.com' || request.headers.host == 'ai-marketing.b9ad.pro-us-east-1.openshiftapps.com') { // || //request.headers.host == 'marketbot.ca') { // || request.headers.host == 'https://www.marketbot-ai.com' || request.headers.host == 'marketbot-ai.com' || !request.secure) {
+
+  //if (process.env.NODE_ENV != 'development') {
+
+  if (!req.secure || req.headers.host == 'elb.b9ad.pro-us-east-1.openshiftapps.com' || req.headers.host == 'ai-marketing.b9ad.pro-us-east-1.openshiftapps.com') {
   return res.status(301).redirect('https://marketbotai.com/home');
   }
-  */
+  /*
     if (req.headers.host == 'elb.b9ad.pro-us-east-1.openshiftapps.com' || req.headers.host == 'ai-marketing.b9ad.pro-us-east-1.openshiftapps.com') { // || //request.headers.host == 'marketbot.ca') { // || request.headers.host == 'https://www.marketbot-ai.com' || request.headers.host == 'marketbot-ai.com' || !request.secure) {
   return res.status(301).redirect('https://marketbotai.com/home');
   }
-  }
+  */
+  //}
   next();
   });
-
-   //var ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress;
 
 app.get('/', async function(req, res, next) {
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ippp.split(/, /)[0];
-
-
-//getIpData(ipp);
-  //var matchHash = {ip: ipp, reqUrl: req.url, date: date, time: time, info: info};
   var ipdata = await getIpData(ipp);
-//ipdata;
   var { ip } = ipdata;
-  //var ipp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-var reqUrl = req.path; //is_ip;
-//var info = [];
+  var reqUrl = req.path;
   var { is_threat, is_anonymous } = ipdata.threat;
-//  if(!is_threat) {
-getAllDocuments(ipp, reqUrl);
-//}
-  console.log(ipdata);
-  res.render('menu2.ejs'); //status(200).send("Welcome");
 
+getAllDocuments(ipp, reqUrl);
+
+  console.log(ipdata);
+  res.render('menu2.ejs');
 });
 
 
