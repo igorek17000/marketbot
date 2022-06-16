@@ -24,12 +24,26 @@ app.use(async function(req, res, next) {
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
-  var { is_threat, is_anonymous } = ipdata.threat;
-  if (is_threat) {
+  var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
+   
+  if (!is_threat) {
     console.log("Blocked IP");
-    res.status(403).end("Not Allowed");
+    res.status(403).end("Access Denied");
     return;
   }
+   
+    if (is_known_abuser) {
+    console.log("Blocked IP");
+    res.status(403).end("Access Denied");
+    return;
+  }
+   
+    if (is_known_attacker) {
+    console.log("Blocked IP");
+    res.status(403).end("Access Denied");
+    return;
+  }
+   
   if (is_anonymous) {
     console.log("VPN's are not allowed");
     res.status(403).end("VPN's are not allowed."); //"VPNs are not allowed");
