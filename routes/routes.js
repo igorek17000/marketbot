@@ -25,7 +25,7 @@ app.use(async function(req, res, next) {
   var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
   var ipdataa = [];
-  ipdataa = ipdata;
+  ipdataa = [ipdata];
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
   if (!is_threat) {
