@@ -25,7 +25,7 @@ var getAllDocuments = async function(ipp, reqUrl) {
   var { is_ip } = ipdata;
   //var ipp = ip.split(/, /)[0];
   var date = moment().utcOffset(-240).format('LL');
-  var datee = moment().utcOffset(-240).format('LL');
+  var datee = moment().utcOffset(-240).format('MM-YY');
   var time = moment().utcOffset(-240).format('LTS');
 
 var timee = moment().utcOffset(-240).format('LTS');
