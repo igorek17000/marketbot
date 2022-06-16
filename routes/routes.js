@@ -25,11 +25,11 @@ app.use(async function(req, res, next) {
   var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
   var ipdataa = ipdata.ip + ipdata.city + ipdata.country_name + ipdata.threat;
-  var ipdataa = ipdata;
+  //var ipdataa = ipdata;
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
   if (!is_threat) {
-    msg = "Blocked IP at " + date + " " + time + "\n" + ipdataa;
+    console.log("Blocked IP at " + date + " " + time + "\n" + ipdataa);
     res.status(403).end("Access Denied");
     return;
   }
@@ -51,7 +51,7 @@ app.use(async function(req, res, next) {
     res.status(403).end("VPN's are not allowed."); //"VPNs are not allowed");
     return;
   }
-  console.log(msg);
+  //console.log(msg);
   if (process.env.NODE_ENV != 'development') {
     /*
   if (!req.secure) { // || request.headers.host == 'elb.b9ad.pro-us-east-1.openshiftapps.com' || request.headers.host == 'ai-marketing.b9ad.pro-us-east-1.openshiftapps.com') { // || //request.headers.host == 'marketbot.ca') { // || request.headers.host == 'https://www.marketbot-ai.com' || request.headers.host == 'marketbot-ai.com' || !request.secure) {
