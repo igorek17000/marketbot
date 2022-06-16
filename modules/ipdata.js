@@ -14,6 +14,7 @@ var getIpData = async (ipp) => {
 catch (error) {
     console.error(error);
   }
+console.log(res.data);
 return res.data;
 };
 
