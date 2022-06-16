@@ -32,7 +32,7 @@ app.use(async function(req, res, next) {
     return;
   }
 
-    if (is_known_abuser) {
+    if (!is_known_abuser) {
     console.log("Blocked IP at " + date + " " + time + "\n" + ipdata);
     res.status(403).end("Access Denied");
     return;
