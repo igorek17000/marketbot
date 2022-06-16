@@ -67,7 +67,7 @@ var reqUrl = req.path; //is_ip;
 //  if(!is_threat) {
 getAllDocuments(ipp, reqUrl);
 //}
-  console.log(req);
+ // console.log(req);
   res.render('menu2.ejs'); //status(200).send("Welcome");
 
 });
