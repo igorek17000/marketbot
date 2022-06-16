@@ -24,7 +24,7 @@ var getAllDocuments = async function(ipp, reqUrl) {
   var { is_ip } = ipdata;
   //var ipp = ip.split(/, /)[0];
   var date = moment().utcOffset(-240).format('LL');
-  //var datee = moment().utcOffset(-240).format('LL');
+  var datee = moment().utcOffset(-240).format('LL');
   var time = moment().utcOffset(-240).format('LTS');
   var year = moment().utcOffset(-240).format('YYYY');
   var month = moment().utcOffset(-240).format('MM');
@@ -33,7 +33,7 @@ var getAllDocuments = async function(ipp, reqUrl) {
   //var repeat = { date, "ip": ipp, time, reqUrl };
   //var datee = date; //+ ":" + repeat;
   var repeat = { date, "ip": ipp, time, reqUrl };
-  var datee = repeat;
+ // var datee = repeat;
 var info = ipdata;
   reqUrl = reqUrl;
 date = date;
@@ -72,7 +72,7 @@ dbt.collection(db_table2).find({"ip": ipp}).toArray(function(err, docs) {
     }
   });
 } else if(docs) {
-  dbt.collection(db_table3).updateOne( {"ip": ipp}, {$push: {$set: {repeat: {date: {repeat}}}}}, (err, result) => {
+  dbt.collection(db_table3).updateOne( {"ip": ipp}, {$push: {repeat: {datee, {repeat}}}}, (err, result) => {
 
   //dbt.collection(db_table3).updateOne( {"ip": ipp}, {$push: {repeat}}, (err, result) => {
   if (err) {
