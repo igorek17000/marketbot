@@ -25,6 +25,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(async function(req, res, next) {
+var date = moment().utcOffset(-240).format('LL');
+var time = moment().utcOffset(-240).format('LTS');
+
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
@@ -63,6 +66,9 @@ app.use(async function(req, res, next) {
   });
 
 app.get('/', async function(req, res, next) {
+var date = moment().utcOffset(-240).format('LL');
+var time = moment().utcOffset(-240).format('LTS');
+
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ippp.split(/, /)[0];
   var reqUrl = req.path;
@@ -79,6 +85,9 @@ var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hos
 });
 
 app.get('/home', async function(req, res, next) {
+var date = moment().utcOffset(-240).format('LL');
+var time = moment().utcOffset(-240).format('LTS');
+
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ippp.split(/, /)[0];
   var reqUrl = req.path;
