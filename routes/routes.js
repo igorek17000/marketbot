@@ -31,7 +31,7 @@ app.use(async function(req, res, next) {
   var ipdataa = ipdata.ip + ipdata.city + ipdata.country_name + ipdata.threat;
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
-  if (is_threat) {
+  if (!is_threat) {
     console.log("Blocked is_threat IP at " + date + " " + time + "\n" + ipdata.ip);
     res.status(403).end("Access Denied");
     return;
@@ -66,13 +66,14 @@ app.use(async function(req, res, next) {
   });
 
 app.get('/', async function(req, res, next) {
-  var logg = date + ' ' + time + '\n' + ipp + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + ipdata.city + ', \n' + 'Contry: ' + ipdata.country_name + ', \n' + 'Postal: ' + ipdata.postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + ipdata.asn.name + ', \n' + 'Domain: ' + ipdata.asn.domain + '\n' + '}';
+  var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + city + ', \n' + 'Contry: ' + country_name + ', \n' + 'Postal: ' + postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + name + ', \n' + 'Domain: ' + domain + '\n' + '}';
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
-  var { ip } = ipdata;
+  var { ip, city, country_name, postal } = ipdata;
+  var { name, domain } ipdata.asn;
   var reqUrl = req.path;
-  var { is_threat, is_anonymous } = ipdata.threat;
+  var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
 getAllDocuments(ipp, reqUrl);
 
@@ -81,13 +82,14 @@ getAllDocuments(ipp, reqUrl);
 });
 
 app.get('/home', async function(req, res, next) {
-  var logg = date + ' ' + time + '\n' + ipp + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + ipdata.city + ', \n' + 'Contry: ' + ipdata.country_name + ', \n' + 'Postal: ' + ipdata.postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + ipdata.asn.name + ', \n' + 'Domain: ' + ipdata.asn.domain + '\n' + '}';
+  var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + city + ', \n' + 'Contry: ' + country_name + ', \n' + 'Postal: ' + postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + name + ', \n' + 'Domain: ' + domain + '\n' + '}';
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
-  var { ip } = ipdata;
+  var { ip, city, country_name, postal } = ipdata;
+  var { name, domain } ipdata.asn;
   var reqUrl = req.path;
-  var { is_threat, is_anonymous } = ipdata.threat;
+  var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
 getAllDocuments(ipp, reqUrl);
 
