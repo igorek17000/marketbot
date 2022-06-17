@@ -33,16 +33,14 @@ app.use(async function(req, res, next) {
 var city = ipdata.city;
 var country_name = ipdata.country_name;
 var postal = ipdata.postal;
-  var is_threat = ipdata.threat.is_threat; 
-var is_anonymous = ipdata.threat.is_anonumous;
-var is_known_attacker = ipdata.threat.is_known_attacker;
-var is_known_abuser = ipdata.threat.is_known_abuser;
+  var { is_threat, is_anonymous, is_known_attacker, is_known_abuser = ipdata.threat };
 
-  if (!is_threat) {
-    console.log(date + " " + time + "\n" + ipp + "\n" + "Blocked is_threat IP");
+  if (!is_threat || is_known_abuser || is_known_attacker) {
+    console.log(date + " " + time + "\n" + ipp + "\n" + "Blocked Threat");
     res.status(403).end("Access Denied");
     return;
   }
+  /*
     if (is_known_abuser) {
     console.log(date + " " + time + "\n" + ipp + "\n" + "Blocked is_known_abuser IP");
     res.status(403).end("Access Denied");
@@ -53,6 +51,7 @@ var is_known_abuser = ipdata.threat.is_known_abuser;
     res.status(403).end("Access Denied");
     return;
   }
+  */
   if (is_anonymous) {
     console.log(date + " " + time + "\n" + ipp + "\n" + "VPN's are not allowed");
     res.status(403).end("VPN's are not allowed.");
