@@ -19,6 +19,7 @@
     "moment-timezone": "^0.5.34",
     "mongoose": "^5.13.14",
     "node-fetch": "^3.2.6",
+    "nodemailer": "^6.7.5",
     "util": "^0.12.4",
     "utils": "^0.3.1"
   }
