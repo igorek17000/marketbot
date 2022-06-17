@@ -33,22 +33,22 @@ app.use(async function(req, res, next) {
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
   if (!is_threat) {
-    console.log(date + " " + time + "\n" + ip + "\n" + "Blocked is_threat IP");
+    console.log(date + " " + time + "\n" + ipp + "\n" + "Blocked is_threat IP");
     res.status(403).end("Access Denied");
     return;
   }
     if (is_known_abuser) {
-    console.log(date + " " + time + "\n" + ip + "\n" + "Blocked is_known_abuser IP");
+    console.log(date + " " + time + "\n" + ipp + "\n" + "Blocked is_known_abuser IP");
     res.status(403).end("Access Denied");
     return;
   }
     if (is_known_attacker) {
-    console.log(date + " " + time + "\n" + ip + "\n" + "Blocked is_known_attacker IP");
+    console.log(date + " " + time + "\n" + ipp + "\n" + "Blocked is_known_attacker IP");
     res.status(403).end("Access Denied");
     return;
   }
   if (is_anonymous) {
-    console.log(date + " " + time + "\n" + ip + "\n" + "VPN's are not allowed");
+    console.log(date + " " + time + "\n" + ipp + "\n" + "VPN's are not allowed");
     res.status(403).end("VPN's are not allowed.");
     return;
   }
