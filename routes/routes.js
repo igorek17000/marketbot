@@ -16,7 +16,7 @@ var day = moment().utcOffset(-240).format('DD');
 var getIpData = require('../modules/ipdata.js');
 getAllDocuments = require('../modules/dbfunctions.js')
 app.set('trust proxy', true);
-app.use(express.static(path.join(__dirname + '/partials')));
+app.use(express.static(path.join(__dirname + 'partials')));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 app.use(bodyParser.json());
