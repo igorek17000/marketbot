@@ -52,7 +52,7 @@ var postal = ipdata.postal;
     return;
   }
   */
-  if (is_anonymous) {
+  if (!is_anonymous) {
     console.log(date + " " + time + "\n" + ipp + "\n" + "VPN's are not allowed");
     res.status(403).end("VPN's are not allowed.");
     return;
