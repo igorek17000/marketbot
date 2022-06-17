@@ -59,7 +59,7 @@ var postal = ipdata.postal;
     return;
   }
   */
-  if (!is_anonymous) {
+  if (is_anonymous) {
     var ipdataa = date + " " + time + "\n" + ipp + "\n" + "VPN's are not allowed" + "\n" + req.protocol + '://' + domain + "\n" + req.protocol + '://' + domain + "\n" + "ip: " + ipp + "\n" + "City: " + city + "\n" + "Country: " + country_name + "\n" + "Threat: {" + "\n" + "is_threat: " + is_threat + "\n" + "is_known_attacker: " + is_known_attacker + "\n" + "is_known_abuser: " + is_known_abuser + "\n" + "is_anonymous: " + is_anonymous + "\n" + "}";
     var domain = ipdata.asn.domain;
     var ip = ipdata.ip;
