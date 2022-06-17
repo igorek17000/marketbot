@@ -35,7 +35,7 @@ var country_name = ipdata.country_name;
 var postal = ipdata.postal;
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
-  if (!is_threat || is_known_abuser || is_known_attacker) {
+  if (!is_threat || !is_known_abuser || !is_known_attacker) {
     console.log(date + " " + time + "\n" + ipp + "\n" + "Blocked Threat");
     res.status(403).end("Access Denied");
     return;
