@@ -71,7 +71,7 @@ app.get('/', async function(req, res, next) {
   var reqUrl = req.path;
   var ipdata = await getIpData(ipp);
   var { ip, city, country_name, postal } = ipdata;
-  var { name, domain } ipdata.asn;
+  var { name, domain } = ipdata.asn;
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
 getAllDocuments(ipp, reqUrl);
@@ -87,7 +87,7 @@ app.get('/home', async function(req, res, next) {
   var reqUrl = req.path;
   var ipdata = await getIpData(ipp);
   var { ip, city, country_name, postal } = ipdata;
-  var { name, domain } ipdata.asn;
+  var { name, domain } = ipdata.asn;
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
 getAllDocuments(ipp, reqUrl);
