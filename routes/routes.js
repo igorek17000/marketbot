@@ -66,32 +66,32 @@ app.use(async function(req, res, next) {
   });
 
 app.get('/', async function(req, res, next) {
-  var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + city + ', \n' + 'Contry: ' + country_name + ', \n' + 'Postal: ' + postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + name + ', \n' + 'Domain: ' + domain + '\n' + '}';
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ippp.split(/, /)[0];
+  var reqUrl = req.path;
   var ipdata = await getIpData(ipp);
   var { ip, city, country_name, postal } = ipdata;
   var { name, domain } ipdata.asn;
-  var reqUrl = req.path;
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
 getAllDocuments(ipp, reqUrl);
+var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + city + ', \n' + 'Contry: ' + country_name + ', \n' + 'Postal: ' + postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + name + ', \n' + 'Domain: ' + domain + '\n' + '}';
 
   console.log(logg);
   res.render('menu2.ejs');
 });
 
 app.get('/home', async function(req, res, next) {
-  var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + city + ', \n' + 'Contry: ' + country_name + ', \n' + 'Postal: ' + postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + name + ', \n' + 'Domain: ' + domain + '\n' + '}';
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ippp.split(/, /)[0];
+  var reqUrl = req.path;
   var ipdata = await getIpData(ipp);
   var { ip, city, country_name, postal } = ipdata;
   var { name, domain } ipdata.asn;
-  var reqUrl = req.path;
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
 getAllDocuments(ipp, reqUrl);
+var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + city + ', \n' + 'Contry: ' + country_name + ', \n' + 'Postal: ' + postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + name + ', \n' + 'Domain: ' + domain + '\n' + '}';
 
   console.log(logg);
   res.render('menu.ejs');
