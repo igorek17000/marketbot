@@ -29,8 +29,14 @@ app.use(async function(req, res, next) {
   var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
   //var ipdataa = ipdata.ip + ipdata.city + ipdata.country_name + ipdata.threat;
-  var { ip, city, country_name, postal } = ipdata;
-  var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
+  var ip = ipdata.ip;
+var city = ipdata.city;
+var country_name = ipdata.country_name;
+var postal = ipdata.postal;
+  var is_threat = ipdata.threat.is_threat; 
+var is_anonymous = ipdata.threat.is_anonumous;
+var is_known_attacker = ipdata.threat.is_known_attacker;
+var is_known_abuser = ipdata.threat.is_known_abuser;
 
   if (!is_threat) {
     console.log(date + " " + time + "\n" + ipp + "\n" + "Blocked is_threat IP");
