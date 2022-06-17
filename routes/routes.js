@@ -37,7 +37,7 @@ var postal = ipdata.postal;
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
   if (!is_threat || !is_known_abuser || !is_known_attacker) {
-    var ipdataa = date + " " + time + "\n" + ipp + "\n" + "Blocked Threat!" + "\n" + domain + "\n" + domain + "\n" + "{" + "\n" + "ip: " + ipp + "\n" + "City: " + city + "\n" + "Country: " + country_name + "\n" + "Threat: {" + "\n" + "is_threat: " + is_threat + "\n" + "is_known_attacker: " + is_known_attacker + "\n" + "is_known_abuser: " + is_known_abuser + "\n" + "is_anonymous: " + is_anonymous + "\n" + "}";
+    var ipdataa = date + " " + time + "\n" + ipp + "\n" + "Blocked Threat!" + "\n" + req.protocol + '://' + domain + "\n" + req.protocol + '://' + domain + "\n" + "{" + "\n" + "ip: " + ipp + "\n" + "City: " + city + "\n" + "Country: " + country_name + "\n" + "Threat: {" + "\n" + "is_threat: " + is_threat + "\n" + "is_known_attacker: " + is_known_attacker + "\n" + "is_known_abuser: " + is_known_abuser + "\n" + "is_anonymous: " + is_anonymous + "\n" + "}";
     var domain = ipdata.asn.domain;
     var ip = ipdata.ip;
   var city = ipdata.city;
