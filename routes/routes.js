@@ -28,7 +28,7 @@ app.use(async function(req, res, next) {
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
-  var ipdataa = date + " " + time + "\n" + ipp + "\n" + "Blocked Threat!" "\n" + domain + "\n" + domain + "\n" + "{" + "\n" + "ip: " + ipp + "\n" + "City: " + city + "\n" + "Country: " + country_name + "\n" + "Threat: {" + "\n" + "is_threat: " + is_threat + "\n" + "is_known_attacker: " + is_known_attacker + "\n" + "is_known_abuser: " + is_known_abuser + "\n" + "is_anonymous: " + is_anonymous + "\n" + "}";
+  var ipdataa = date + " " + time + "\n" + ipp + "\n" + "Blocked Threat!" + "\n" + domain + "\n" + domain + "\n" + "{" + "\n" + "ip: " + ipp + "\n" + "City: " + city + "\n" + "Country: " + country_name + "\n" + "Threat: {" + "\n" + "is_threat: " + is_threat + "\n" + "is_known_attacker: " + is_known_attacker + "\n" + "is_known_abuser: " + is_known_abuser + "\n" + "is_anonymous: " + is_anonymous + "\n" + "}";
   var domain = ipdata.asn.domain;
   var ip = ipdata.ip;
 var city = ipdata.city;
