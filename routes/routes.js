@@ -50,7 +50,7 @@ app.use(async function(req, res, next) {
 
   //if (process.env.NODE_ENV != 'development') {
   if (!req.secure || req.headers.host == 'elb.b9ad.pro-us-east-1.openshiftapps.com' || req.headers.host == 'ai-marketing.b9ad.pro-us-east-1.openshiftapps.com') {
-  return res.status(301).redirect('https://marketbotai.com/home');
+  return res.status(301).redirect('https://marketbotai.com');
   }
   /*
     if (req.headers.host == 'elb.b9ad.pro-us-east-1.openshiftapps.com' || req.headers.host == 'ai-marketing.b9ad.pro-us-east-1.openshiftapps.com') { // || //request.headers.host == 'marketbot.ca') { // || request.headers.host == 'https://www.marketbot-ai.com' || request.headers.host == 'marketbot-ai.com' || !request.secure) {
@@ -62,7 +62,7 @@ app.use(async function(req, res, next) {
   });
 
 app.get('/', async function(req, res, next) {
-  var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + data.city + ', \n' + 'Contry: ' + data.country_name + ', \n' + 'Postal: ' + data.postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + data.asn.name + ', \n' + 'Domain: ' + data.asn.domain + '\n' + '}';
+  var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + ipdata.city + ', \n' + 'Contry: ' + ipdata.country_name + ', \n' + 'Postal: ' + ipdata.postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + ipdata.asn.name + ', \n' + 'Domain: ' + ipdata.asn.domain + '\n' + '}';
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
@@ -77,7 +77,7 @@ getAllDocuments(ipp, reqUrl);
 });
 
 app.get('/home', async function(req, res, next) {
-  var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + data.city + ', \n' + 'Contry: ' + data.country_name + ', \n' + 'Postal: ' + data.postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + data.asn.name + ', \n' + 'Domain: ' + data.asn.domain + '\n' + '}';
+  var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + ipdata.city + ', \n' + 'Contry: ' + ipdata.country_name + ', \n' + 'Postal: ' + ipdata.postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + ipdata.asn.name + ', \n' + 'Domain: ' + ipdata.asn.domain + '\n' + '}';
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
