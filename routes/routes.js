@@ -66,7 +66,7 @@ app.use(async function(req, res, next) {
   });
 
 app.get('/', async function(req, res, next) {
-  var logg = date + ' ' + time + '\n' + ipdata.ipp + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + ipdata.city + ', \n' + 'Contry: ' + ipdata.country_name + ', \n' + 'Postal: ' + ipdata.postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + ipdata.asn.name + ', \n' + 'Domain: ' + ipdata.asn.domain + '\n' + '}';
+  var logg = date + ' ' + time + '\n' + ipp + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + ipdata.city + ', \n' + 'Contry: ' + ipdata.country_name + ', \n' + 'Postal: ' + ipdata.postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + ipdata.asn.name + ', \n' + 'Domain: ' + ipdata.asn.domain + '\n' + '}';
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
@@ -81,7 +81,7 @@ getAllDocuments(ipp, reqUrl);
 });
 
 app.get('/home', async function(req, res, next) {
-  var logg = date + ' ' + time + '\n' + ipdata.ipp + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + ipdata.city + ', \n' + 'Contry: ' + ipdata.country_name + ', \n' + 'Postal: ' + ipdata.postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + ipdata.asn.name + ', \n' + 'Domain: ' + ipdata.asn.domain + '\n' + '}';
+  var logg = date + ' ' + time + '\n' + ipp + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + ipdata.city + ', \n' + 'Contry: ' + ipdata.country_name + ', \n' + 'Postal: ' + ipdata.postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + ipdata.asn.name + ', \n' + 'Domain: ' + ipdata.asn.domain + '\n' + '}';
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
