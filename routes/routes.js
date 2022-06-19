@@ -81,7 +81,7 @@ getAllDocuments(ipp, reqUrl);
 var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + city + ', \n' + 'Contry: ' + country_name + ', \n' + 'Postal: ' + postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + name + ', \n' + 'Domain: ' + domain + '\n' + '}';
 
   console.log(logg);
-  res.render('menu2.ejs');
+  res.render('ai.marketing.ejs');
 });
 
 app.get('/home', async function(req, res, next) {
