@@ -43,6 +43,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 html {
 font-size: 18px !important;
 }
+.btn--green {
+min-height: 1em !important;
+min-width: 125px !important;
+line-height: 0.7em !important;
+}
+.btn--green-bottom {
+min-height: 0.4em !important;
+min-width: 100px !important;
+line-height: 0.4em !important;
+}
 #css-menu {
 top: 1%;
 width: 100%;
@@ -121,6 +131,59 @@ color: white;
 position: relative;
 font-family: 'IBM-Plex-SemiBold', sans-serif;
 }
+.btn--green {
+  --swiper-theme-color: #007aff;
+-webkit-text-size-adjust: 100%;
+-webkit-font-smoothing: antialiased;
+box-sizing: border-box;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: .675em 1em .5em;
+border-radius: 4px;
+outline: none;
+text-align: center;
+margin: 0;
+color: #fff;
+cursor: pointer;
+font-family: "IBM-Plex-SemiBold", sans-serif;
+box-shadow: 0 4px 10px rgba(0,0,0,.15);
+white-space: normal;
+border: 1px solid #28beb2;
+background: #28beb2;
+text-decoration: none;
+min-height: 56px;
+text-transform: uppercase;
+margin-top: 0.5em;
+min-width: 150px;
+}
+.btn--green-bottom {
+  --swiper-theme-color: #007aff;
+-webkit-text-size-adjust: 100%;
+-webkit-font-smoothing: antialiased;
+box-sizing: border-box;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: .675em 1em .5em;
+border-radius: 4px;
+outline: none;
+text-align: center;
+margin: 0;
+color: #fff;
+cursor: pointer;
+
+font-family: "IBM-Plex-SemiBold", sans-serif;
+box-shadow: 0 4px 10px rgba(0,0,0,.15);
+white-space: normal;
+border: 1px solid #28beb2;
+background: #28beb2;
+text-decoration: none;
+min-height: 56px;
+text-transform: uppercase;
+margin-top: 1%;
+min-width: 200px;
+}
 body {
 margin: 0px 0px;
 color: white;
@@ -149,14 +212,13 @@ margin: 0px 0px;
 position: relative;
 display: block;
 width: 100%;
-margin: 0px 0px;
 }
 #css-bottom {
 position: absolute;
 text-align: center;
-width: 100%;
+margin-left: 10%;
+width: 80%;
 bottom: 1%;
-margin: 0px 0px;
 }
 #css-padding {
 font-size: 1.3rem;
@@ -309,19 +371,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 -->
 <!-- <img id="css-svg" src="https://marketbotai.com/logo.a1a2f16.svg"> -->
-<div id="css-align">Have you heard about<br> <h1>MarketBot</h1>
-<div id="css-padding">Earn up to 35% Cashback!<br>Without complications.<br><br> <!-- Hire an Artificial Intelligence robot to work for you with minimal supervision required.<br> Fund your MarketBot campaign and watch it go to work.<br> -->
-</div>
-</div> <!--llow MarketBot to set up your advertising strategy and earn on the Traffic Arbitrage!<br> AI Marketing's MarketBot monitors trends in social media and search queries and predicts the future demand analyzing the keywords popularity dynamics.<br><br></div></div>-->
-</div>
-<img src="https://marketbotai.com/ai.marketing.jpg" width="800" height="548" style="width: 100%; height: auto;" alt="marketbot">
-<div id="css-bottom-div">
-<img src="https://marketbotai.com/ai-4-1.jpg" width="790" height="469" style="width: 100%; height: auto; display: block;" alt="ai marketing">
-<!-- <img src="https://marketbotai.com/ai-4-1.jpg" width="790" height="469" style="width: 100%; height: auto; display: block; transform: scaleY(-1); }" alt="ai robot"> -->
-
-<div id="css-bottom">Find out how AI Marketing's MarketBot can change your business. <br> Click below to watch a video tutorial.<br><br><a href="https://ai.marketing/en/campaign/lul22ks3j8">Watch Video</a></div></div>
-<!-- <div id="css-banner-div">Not what you're looking for?<br><iframe src="//ws-na.amazon-adsystem.com/widgets/cm?o=15&p=40&l=ur1&category=amazonhomepage&f=ifr&linkID=48dc55e6fdcb2a757202a97c534812bc&t=105cdd-20&tracking_id=105cdd-20" width="120" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe></div>
+<div id="css-align"><h1>MarketBot</h1>
+<div id="css-padding">Earn up to 35% Cashback!<br>Without complications.<br><br><a class="btn--green" href="https://ai.marketing/en/campaign/lul22ks3j8">Sign in | Sign up</a></div></div></div>
+<!--  <script>
+  function myFunction() {
+    window.location.href="https://ai.marketing/en/campaign/lul22ks3j8";
+  }
+  </script>
 -->
+
+
+<picture>
+  <source srcset="ai.marketing-1.webp" type="image/webp">
+      <source srcset="ai.marketing.jpg" type="image/jpg">
+<img src="ai.marketing-1.webp" style="width: 800; height: 548; display: block;" alt="">
+</picture>
+<div id="css-bottom-div">
+  <picture>
+    <source srcset="ai-4-1.webp" type="image/webp">
+        <source srcset="ai-4-1.jpeg" type="image/jpeg">
+  <img src="ai-4-1.webp" style="width: 790; height: 469; display: block;" alt="">
+  </picture>
+
+<div id="css-bottom">Find out how MarketBot can change your business. <br> USD50 Gift Certificate at registration!<br><a class="btn--green-bottom" href="https://ai.marketing/en/campaign/lul22ks3j8">GET USD50 ADVERTISING BUDGET!</a></div></div>
+ <!-- <script>
+  function myFunction() {
+    window.location.href="https://ai.marketing/en/campaign/lul22ks3j8";
+  }
+  </script>-->
 <footer>All Rights Reserved.</footer>
 </body>
 </html>
