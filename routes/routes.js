@@ -103,5 +103,60 @@ var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hos
   res.render('menu.ejs');
 });
 
+app.get('/aimarketing', async function(req, res, next) {
+var date = moment().utcOffset(-240).format('LL');
+var time = moment().utcOffset(-240).format('LTS');
+
+  var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  var ipp = ippp.split(/, /)[0];
+  var reqUrl = req.path;
+  var ipdata = await getIpData(ipp);
+  var { ip, city, country_name, postal } = ipdata;
+  var { name, domain } = ipdata.asn;
+  var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
+
+getAllDocuments(ipp, reqUrl);
+var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + city + ', \n' + 'Contry: ' + country_name + ', \n' + 'Postal: ' + postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + name + ', \n' + 'Domain: ' + domain + '\n' + '}';
+
+  console.log(logg);
+  res.render('ai.marketing.ejs');
+});
+app.get('/ai.marketing', async function(req, res, next) {
+var date = moment().utcOffset(-240).format('LL');
+var time = moment().utcOffset(-240).format('LTS');
+
+  var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  var ipp = ippp.split(/, /)[0];
+  var reqUrl = req.path;
+  var ipdata = await getIpData(ipp);
+  var { ip, city, country_name, postal } = ipdata;
+  var { name, domain } = ipdata.asn;
+  var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
+
+getAllDocuments(ipp, reqUrl);
+var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + city + ', \n' + 'Contry: ' + country_name + ', \n' + 'Postal: ' + postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + name + ', \n' + 'Domain: ' + domain + '\n' + '}';
+
+  console.log(logg);
+  res.render('ai.marketing.ejs');
+});
+
+app.get('/bot', async function(req, res, next) {
+var date = moment().utcOffset(-240).format('LL');
+var time = moment().utcOffset(-240).format('LTS');
+
+  var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  var ipp = ippp.split(/, /)[0];
+  var reqUrl = req.path;
+  var ipdata = await getIpData(ipp);
+  var { ip, city, country_name, postal } = ipdata;
+  var { name, domain } = ipdata.asn;
+  var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
+
+getAllDocuments(ipp, reqUrl);
+var logg = date + ' ' + time + '\n' + ip + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + city + ', \n' + 'Contry: ' + country_name + ', \n' + 'Postal: ' + postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + name + ', \n' + 'Domain: ' + domain + '\n' + '}';
+
+  console.log(logg);
+  res.render('bot.ejs');
+});
 
 module.exports = app;
