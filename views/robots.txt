@@ -6,4 +6,4 @@ User-agent: *
 Allow: /
 Disallow: /nobot/
 
-Sitemap: http://marketbotai.com/sitemap.xml
+Sitemap: https://marketbotai.com/sitemap.xml
