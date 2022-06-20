@@ -29,7 +29,7 @@ var date = moment().utcOffset(-240).format('LL');
 var time = moment().utcOffset(-240).format('LTS');
 //var ippp = req.socket.remoteAddress
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  var ipp = ippp.split(', ')[0];
+  var ipp = ippp.split(',')[0].trim();
   var ipdata = await getIpData(ipp);
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
@@ -70,7 +70,7 @@ var date = moment().utcOffset(-240).format('LL');
 var time = moment().utcOffset(-240).format('LTS');
 //var ippp = req.socket.remoteAddress
   var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  var ipp = ippp.split('/, /')[0];
+  var ipp = ippp.split(',')[0].trim();
   var reqUrl = req.path;
   var ipdata = await getIpData(ipp);
   var { ip, city, country_name, postal } = ipdata;
