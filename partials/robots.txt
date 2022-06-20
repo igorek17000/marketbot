@@ -1,0 +1,9 @@
+User-agent: Googlebot
+Allow: /
+Disallow: /nobot/
+
+User-agent: *
+Allow: /
+Disallow: /nobot/
+
+Sitemap: https://marketbotai.com/sitemap.xml
