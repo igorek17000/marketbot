@@ -27,9 +27,9 @@ app.use(bodyParser.urlencoded({
 app.use(async function(req, res, next) {
 var date = moment().utcOffset(-240).format('LL');
 var time = moment().utcOffset(-240).format('LTS');
-var ipp = req.socket.remoteAddress
+var ippp = req.socket.remoteAddress
   //var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  //var ipp = ippp.split(/, /)[0];
+  var ipp = ippp.split(/, /)[0];
   var ipdata = await getIpData(ipp);
   var { is_threat, is_anonymous, is_known_attacker, is_known_abuser } = ipdata.threat;
 
@@ -68,9 +68,9 @@ var ipp = req.socket.remoteAddress
 app.get('/', async function(req, res, next) {
 var date = moment().utcOffset(-240).format('LL');
 var time = moment().utcOffset(-240).format('LTS');
-var ipp = req.socket.remoteAddress 
+var ippp = req.socket.remoteAddress
   //var ippp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  //var ipp = ippp.split(/, /)[0];
+  var ipp = ippp.split(/, /)[0];
   var reqUrl = req.path;
   var ipdata = await getIpData(ipp);
   var { ip, city, country_name, postal } = ipdata;
