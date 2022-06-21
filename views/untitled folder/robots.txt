@@ -1,8 +1,0 @@
-User-agent: Googlebot
-Disallow: /nobot/
-
-User-agent: *
-Allow: /
-Disallow: /nobot/
-
-Sitemap: http://www.example.com/sitemap.xml
