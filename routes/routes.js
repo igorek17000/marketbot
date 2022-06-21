@@ -81,7 +81,7 @@ getAllDocuments(ipp, reqUrl);
 var logg = date + ' ' + time + '\n' + ipp + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + city + ', \n' + 'Contry: ' + country_name + ', \n' + 'Postal: ' + postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + name + ', \n' + 'Domain: ' + domain + '\n' + '}';
 
   console.log(logg + '\n' + ipp);
-  res.render('ai.marketing.ejs');
+  res.render('canonical.ejs');
 });
 
 app.get('/home', async function(req, res, next) {
@@ -119,7 +119,7 @@ getAllDocuments(ipp, reqUrl);
 var logg = date + ' ' + time + '\n' + ipp + '\n' + req.protocol + '://' + req.hostname + '\n' + req.url + '\n' + 'Location: {' + '\n' + 'City: ' + city + ', \n' + 'Contry: ' + country_name + ', \n' + 'Postal: ' + postal + ', \n' + '},' + '\n' + 'Asn: {' + '\n' + 'Name: ' + name + ', \n' + 'Domain: ' + domain + '\n' + '}';
 
   console.log(logg);
-  res.render('ai.marketing.ejs');
+  res.render('aimarketing.ejs');
 });
 app.get('/ai.marketing', async function(req, res, next) {
 var date = moment().utcOffset(-240).format('LL');
